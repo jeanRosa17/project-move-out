@@ -4,6 +4,8 @@ class_name StateManager
 extends Node
 
 @export var initialState:State
+## Shorthand for the parent of a StateManager.
+@onready var client = self.get_parent()
 ## If true, a message will be outputed stating the state that was attempted to enter
 @export var reportFails:bool = false
 

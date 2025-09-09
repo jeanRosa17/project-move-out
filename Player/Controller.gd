@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody2D
 
 @onready var model:StateManager = $StateManager
@@ -20,9 +21,9 @@ func _process(delta:float) -> void:
 	self.currentState = model.currentState
 	self.handleMovement(delta)
 
+## Looks out for the "Move" set of Inputs and moves the character accordingly using
+## its MovementComponent.
 func handleMovement(delta:float) -> void:
-	#self.movement.decelerate(delta)
-	
 	if (Input.is_action_pressed("MoveLeft") \
 	or Input.is_action_pressed("MoveRight")
 	or Input.is_action_pressed("MoveDown")
@@ -34,13 +35,11 @@ func handleMovement(delta:float) -> void:
 		
 		if (direction == Vector2i.ZERO): self.isMirrored = self.isMirrored
 		self.isMirrored = direction.x < 0
+		
+		if (self.model.currentState.name != "Move"):
+			self.model.currentState.transitioned.emit(self.model.currentState, "Move")
 	
-	#if (not Input.is_action_pressed("MoveLeft") and not Input.is_action_pressed("MoveRight")): return
-		#
-	#if (not Input.is_action_pressed("MoveDown") and not Input.is_action_pressed("MoveUp")): return
-		#
-	#if (Input.is_action_pressed("MoveLeft") and Input.is_action_pressed("MoveRight")): return
-		#
-	#if (Input.is_action_pressed("MoveDown") and Input.is_action_pressed("MoveUp")): return
 	else:
 		self.movement.decelerate(delta)
+		if (self.model.currentState.name != "Idle"):
+			self.model.currentState.transitioned.emit(self.model.currentState, "Idle")

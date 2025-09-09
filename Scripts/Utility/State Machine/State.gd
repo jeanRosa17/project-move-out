@@ -57,5 +57,14 @@ func enable() -> void:
 func isEnabled() -> bool:
 	return self._isEnabled
 
+## Returns the State's name in addition to the time that the function was called.
 func logStatus() -> String:
 	return str(self.name + " @" + Time.get_time_string_from_system() + "|")
+	
+## Returns the StateManager that this State should belong to.
+func getManager() -> StateManager:
+	if (not self.get_parent() is StateManager):
+		Exception.new("The parent of a State should be a StateManager.")
+	
+	return self.get_parent()
+	

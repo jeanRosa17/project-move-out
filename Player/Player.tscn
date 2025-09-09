@@ -1,9 +1,10 @@
-[gd_scene load_steps=37 format=3 uid="uid://d0yd01mkkwtji"]
+[gd_scene load_steps=38 format=3 uid="uid://d0yd01mkkwtji"]
 
 [ext_resource type="Script" uid="uid://0slq88tkfqsi" path="res://Player/Controller.gd" id="1_ddoul"]
 [ext_resource type="Script" uid="uid://fn7206me6v1x" path="res://Scripts/Utility/State Machine/StateManager.gd" id="1_q3lat"]
 [ext_resource type="Texture2D" uid="uid://dkh22y1hno0y0" path="res://Assets/Temp Character Spritesheet.png" id="1_tok1r"]
 [ext_resource type="Script" uid="uid://idg0tggjdf4f" path="res://Player/IdleState.gd" id="3_tok1r"]
+[ext_resource type="Script" uid="uid://kbl6mj8r1fd" path="res://Player/MovementState.gd" id="5_8g4oa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l2ndj"]
 size = Vector2(18, 26)
@@ -264,14 +265,21 @@ shape = SubResource("RectangleShape2D_l2ndj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_78fhc")
-animation = &"idle down"
-autoplay = "idle down"
+animation = &"idle side"
+autoplay = "idle side"
 
 [node name="StateManager" type="Node" parent="." node_paths=PackedStringArray("initialState")]
 script = ExtResource("1_q3lat")
-initialState = NodePath("IdleState")
+initialState = NodePath("Idle")
 metadata/_custom_type_script = "uid://fn7206me6v1x"
 
-[node name="IdleState" type="Node" parent="StateManager"]
+[node name="Idle" type="Node" parent="StateManager" node_paths=PackedStringArray("view")]
 script = ExtResource("3_tok1r")
+view = NodePath("../../AnimatedSprite2D")
 metadata/_custom_type_script = "uid://idg0tggjdf4f"
+
+[node name="Move" type="Node" parent="StateManager" node_paths=PackedStringArray("view", "body")]
+script = ExtResource("5_8g4oa")
+view = NodePath("../../AnimatedSprite2D")
+body = NodePath("../..")
+metadata/_custom_type_script = "uid://c2tqhau6vnsm6"
