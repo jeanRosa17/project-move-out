@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PlayerPhysics" load_steps=2 format=3 uid="uid://d0cpypyslsqyo"]
+
+[ext_resource type="Script" uid="uid://daxp253b2rvub" path="res://Scripts/Resources/PlayerPhysics.gd" id="1_gbmgp"]
+
+[resource]
+script = ExtResource("1_gbmgp")
+maxSpeed = 200.0
+acceleration = 400.0
+deceleration = 400.0
+metadata/_custom_type_script = "uid://daxp253b2rvub"
