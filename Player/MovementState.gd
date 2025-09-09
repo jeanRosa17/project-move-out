@@ -20,8 +20,9 @@ func exit() -> void:
 ## Updates the animation's flipping state
 func update(_delta:float) -> void:
 	self.view.flip_h = self.body.velocity.x < 0
+	self.enter()
 
 ## This method runs every _physics_process() frame of the StateManager.
 func physicsUpdate(delta:float) -> void:
-	self.getManager().client.move_and_slide()
+	self.body.move_and_slide()
 	
