@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqt367stu26c2"]
+
+[ext_resource type="Texture2D" uid="uid://drpfaulsu8pf6" path="res://Assets/Objects Spritesheet.png" id="1_cmayr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kle06"]
+atlas = ExtResource("1_cmayr")
+region = Rect2(160, 15, 14, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wptk5"]
+size = Vector2(40, 40)
+
+[node name="Pot" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_kle06")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xnri0")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_wptk5")
