@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bd4iaouuaddvw"]
+[gd_scene load_steps=4 format=3 uid="uid://bd4iaouuaddvw"]
 
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Player/Player.tscn" id="1_uib4f"]
 [ext_resource type="PackedScene" uid="uid://cqt367stu26c2" path="res://Objects/Pot.tscn" id="2_iqcmb"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iqcmb"]
+normal = Vector2(0, 1)
+distance = -3.99999
 
 [node name="Node2D" type="Node2D"]
 
@@ -10,3 +14,22 @@ position = Vector2(128, 64)
 
 [node name="Pot" parent="." instance=ExtResource("2_iqcmb")]
 position = Vector2(189, 87)
+
+[node name="World Border" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D(North)" type="CollisionShape2D" parent="World Border"]
+shape = SubResource("WorldBoundaryShape2D_iqcmb")
+
+[node name="CollisionShape2D(West)" type="CollisionShape2D" parent="World Border"]
+rotation = 4.71239
+shape = SubResource("WorldBoundaryShape2D_iqcmb")
+
+[node name="CollisionShape2D(South)" type="CollisionShape2D" parent="World Border"]
+position = Vector2(955, 535)
+rotation = -3.14159
+shape = SubResource("WorldBoundaryShape2D_iqcmb")
+
+[node name="CollisionShape2D(East)" type="CollisionShape2D" parent="World Border"]
+position = Vector2(955, 535)
+rotation = -4.71239
+shape = SubResource("WorldBoundaryShape2D_iqcmb")
