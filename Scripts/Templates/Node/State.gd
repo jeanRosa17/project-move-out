@@ -1,13 +1,10 @@
-class_name IdleState
 extends State
 
-@export var view:AnimatedSprite2D = null
-@export var body:CharacterBody2D = null
+@export var controller = null
 
 ## The first method called when the state is transitioned into
-func enter() -> void: 
+func enter() -> void:
 	pass
-	#self.view.play("idle down")
 
 ## The last method called when the state is transitioned out of
 func exit() -> void:
@@ -19,7 +16,6 @@ func update(_delta:float) -> void:
 
 ## This method runs every _physics_process() frame of the StateManager.
 func physicsUpdate(delta:float) -> void:
-	self.body.velocity = Vector2.ZERO
-	#pass
-	#self.body.move_and_slide()
+	pass
+	#self.player.move_and_slide()
 	

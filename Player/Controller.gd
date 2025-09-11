@@ -1,27 +1,27 @@
 class_name Player
 extends CharacterBody2D
 
-@onready var model:StateManager = $StateManager
+@onready var manager:StateManager = $StateManager
 @onready var view:AnimatedSprite2D = $AnimatedSprite2D
 @onready var physics:PlayerPhysics
 var movement:MovementComponent
 
 var currentState:State
-var isMirrored:bool = false
 
 func _ready() -> void:
 	self.physics = preload("res://Scripts/Resources/DefaultPhysics.tres")
 	self.movement = MovementComponent.new(self, self.physics)
-	self.model.start()
+	self.manager.start()
 	
 func _process(delta:float) -> void:
-	if (model == null):
-		Exception.new("Model for Controller can't be null.")
+	if (manager == null):
+		Exception.new("Manager for Controller can't be null.")
 		
-	self.currentState = model.currentState
+	self.currentState = manager.currentState
 	self.handleMovement(delta)
+	self.handleLift(delta)
 
-## Looks out for the "Move" set of Inputs and moves the character accordingly using
+## Handles the "Move" set of Inputs and moves the character accordingly using
 ## its MovementComponent.
 func handleMovement(delta:float) -> void:
 	if (Input.is_action_pressed("MoveLeft") \
@@ -33,13 +33,16 @@ func handleMovement(delta:float) -> void:
 		
 		self.movement.accelerate(direction, delta)
 		
-		if (direction == Vector2i.ZERO): self.isMirrored = self.isMirrored
-		self.isMirrored = direction.x < 0
-		
-		if (self.model.currentState.name != "Move"):
-			self.model.currentState.transitioned.emit(self.model.currentState, "Move")
+		if (self.manager.currentState.name != "Move"):
+			self.manager.currentState.transitioned.emit(self.manager.currentState, "Move")
 	
 	else:
 		self.movement.decelerate(delta)
-		if (self.model.currentState.name != "Idle"):
-			self.model.currentState.transitioned.emit(self.model.currentState, "Idle")
+		if (self.manager.currentState.name == "Move"):
+			self.manager.currentState.transitioned.emit(self.manager.currentState, "Idle")
+
+## Handles the "Lift" set of Inputs and triggers a Carryable item up
+func handleLift(delta:float) -> void:
+	if (Input.is_action_just_pressed("Lift")):
+		if (self.manager.currentState.name != "Lift"):
+			self.manager.currentState.transitioned.emit(self.manager.currentState, "Lift")

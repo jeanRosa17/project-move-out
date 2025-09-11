@@ -6,16 +6,25 @@ extends State
 
 ## The first method called when the state is transitioned into
 func enter() -> void:
+	var prefix:String = "move"
+	
+	if (self.view.animation.contains("lift")): prefix = "movelift"
+		
 	if ((is_equal_approx(self.body.velocity.y, 0.0))
 		and (not (is_equal_approx(self.body.velocity.x, 0.0)))): 
-		self.view.play("move side")
+		self.view.play(prefix + " side")
 	else:
-		if (self.body.velocity.y < 0): self.view.play("move up")
-		else: self.view.play("move down")
+		if (self.body.velocity.y < 0): self.view.play(prefix+" up")
+		else: self.view.play(prefix + " down")
 
 ## The last method called when the state is transitioned out of
 func exit() -> void:
-	pass
+	
+	if (self.view.animation.contains("lift")):
+		self.view.play("lift " + self.view.animation.split(" ")[1].to_lower())
+		self.view.frame = 5
+	else:
+		self.view.play("idle " + self.view.animation.split(" ")[1].to_lower()) 
 	
 ## Updates the animation's flipping state
 func update(_delta:float) -> void:

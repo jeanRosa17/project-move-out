@@ -11,7 +11,8 @@ region = Rect2(160, 15, 14, 17)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wptk5"]
 size = Vector2(40, 40)
 
-[node name="Pot" type="RigidBody2D"]
+[node name="Pot" type="StaticBody2D"]
+collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_kle06")
@@ -20,6 +21,7 @@ texture = SubResource("AtlasTexture_kle06")
 shape = SubResource("RectangleShape2D_xnri0")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_wptk5")
