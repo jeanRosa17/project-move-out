@@ -10,11 +10,12 @@ func enter() -> void:
 	
 	if (self.view.animation.contains("idle")): return
 	
-	if (self.view.animation.contains("lift")):
-		if not (self.view.is_playing()):
-			self.view.play("lift " + dir)
-	else: 
-		self.view.play("idle " + dir)
+	self.view.play("idle " + dir)
+	#if (self.view.animation.contains("lift")):
+		#if not (self.view.is_playing()):
+			#self.view.play("lift " + dir)
+	#else: 
+		#self.view.play("idle " + dir)
 	
 	#self.view.play("idle down")
 

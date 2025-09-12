@@ -1,18 +1,22 @@
-class_name LiftState
+class_name ThrowState
 extends State
 
+@onready var manager:StateManager = self.getManager()
+@onready var backToIdle:Callable = func (): self.manager.currentState.transitioned.emit(self.manager.currentState, "Idle")
 @export var view:AnimatedSprite2D = null
 
 ## The first method called when the state is transitioned into
 func enter() -> void:
 	var dir:String = self.view.animation.split(" ")[1].to_lower()
 	
-	if not (self.view.animation.contains("lift")):
-		self.view.play("lift " + dir)
+	self.view.play_backwards("lift " + dir)
+	self.view.speed_scale = 2.0
+	self.view.animation_finished.connect(backToIdle)
 
 ## The last method called when the state is transitioned out of
 func exit() -> void:
-	pass
+	self.view.speed_scale = 1.0
+	self.view.animation_finished.disconnect(backToIdle)
 
 ## Constantly checks for input from the user and changes state.
 func update(_delta:float) -> void:
