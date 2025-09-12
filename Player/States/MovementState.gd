@@ -23,8 +23,8 @@ func exit() -> void:
 	if (self.view.animation.contains("lift")):
 		self.view.play("lift " + self.view.animation.split(" ")[1].to_lower())
 		self.view.frame = 5
-	else:
-		self.view.play("idle " + self.view.animation.split(" ")[1].to_lower()) 
+	#else:
+		#self.view.play("idle " + self.view.animation.split(" ")[1].to_lower()) 
 	
 ## Updates the animation's flipping state
 func update(_delta:float) -> void:

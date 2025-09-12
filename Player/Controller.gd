@@ -46,3 +46,5 @@ func handleLift(delta:float) -> void:
 	if (Input.is_action_just_pressed("Lift")):
 		if (self.manager.currentState.name != "Lift"):
 			self.manager.currentState.transitioned.emit(self.manager.currentState, "Lift")
+		else:
+			self.manager.currentState.transitioned.emit(self.manager.currentState, "Idle")

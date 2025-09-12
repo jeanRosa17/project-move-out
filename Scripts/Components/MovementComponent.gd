@@ -12,10 +12,6 @@ func _init(_body:CharacterBody2D, _physics:PlayerPhysics) -> void:
 
 ## Sets the player's velocity to increase or decrease based on the given direction (-1 left, 1 right)
 func accelerate(direction:Vector2i, delta:float) -> void:
-	#if (direction.length() > 0):
-		#var dir:Vector2 = Vector2(direction.x, direction.y)
-		#direction = dir.normalized()
-		
 	if direction != Vector2i.ZERO:
 		self.body.velocity.x = move_toward(self.body.velocity.x, direction.x * self.body.physics.maxSpeed, self.body.physics.acceleration * delta) 
 		self.body.velocity.y = move_toward(self.body.velocity.y, direction.y * self.body.physics.maxSpeed, self.body.physics.acceleration * delta)
