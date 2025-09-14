@@ -12,6 +12,10 @@ distance = -3.99999
 [node name="Node2D" parent="." instance=ExtResource("1_uib4f")]
 position = Vector2(128, 64)
 
+[node name="Camera2D" type="Camera2D" parent="Node2D"]
+limit_bottom = 500
+position_smoothing_enabled = true
+
 [node name="Pot" parent="." instance=ExtResource("2_iqcmb")]
 position = Vector2(189, 87)
 
