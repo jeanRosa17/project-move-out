@@ -6,18 +6,10 @@ extends State
 
 ## The first method called when the state is transitioned into
 func enter() -> void: 
-	var dir:String = self.view.animation.split(" ")[1].to_lower()
-	
 	if (self.view.animation.contains("idle")): return
+	if (self.view.animation.contains("lift")): return
 	
-	self.view.play("idle " + dir)
-	#if (self.view.animation.contains("lift")):
-		#if not (self.view.is_playing()):
-			#self.view.play("lift " + dir)
-	#else: 
-		#self.view.play("idle " + dir)
-	
-	#self.view.play("idle down")
+	self.view.play("idle " + self.view.animation.split(" ")[1].to_lower())
 
 ## The last method called when the state is transitioned out of
 func exit() -> void:

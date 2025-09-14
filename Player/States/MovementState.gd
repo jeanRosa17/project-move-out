@@ -26,6 +26,13 @@ func exit() -> void:
 	#else:
 		#self.view.play("idle " + self.view.animation.split(" ")[1].to_lower()) 
 	
+func canEnter() -> bool:
+	if (self.view.animation.contains("idle")): return true
+	else:
+		if (self.view.animation.contains("lift") and not (self.view.is_playing())): return true
+	
+	return false
+
 ## Updates the animation's flipping state
 func update(_delta:float) -> void:
 	self.view.flip_h = self.body.velocity.x < 0
