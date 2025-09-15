@@ -7,11 +7,12 @@ atlas = ExtResource("1_cmayr")
 region = Rect2(200, 0, 32, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
+size = Vector2(30, 26)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wptk5"]
 size = Vector2(40, 40)
 
-[node name="Pot" type="StaticBody2D"]
+[node name="Bed" type="StaticBody2D"]
 collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

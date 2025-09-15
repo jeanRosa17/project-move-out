@@ -1,13 +1,37 @@
-[gd_scene load_steps=4 format=3 uid="uid://bd4iaouuaddvw"]
+[gd_scene load_steps=5 format=3 uid="uid://bd4iaouuaddvw"]
 
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Player/Player.tscn" id="1_uib4f"]
 [ext_resource type="PackedScene" uid="uid://cqt367stu26c2" path="res://Objects/Pot.tscn" id="2_iqcmb"]
+
+[sub_resource type="Theme" id="Theme_iqcmb"]
+default_font_size = 12
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iqcmb"]
 normal = Vector2(0, 1)
 distance = -3.99999
 
 [node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_scale = 3.0
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -132.0
+offset_top = -47.0
+offset_right = 132.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer"]
+layout_mode = 2
+theme = SubResource("Theme_iqcmb")
+text = "	Hmm what's that?"
 
 [node name="Node2D" parent="." instance=ExtResource("1_uib4f")]
 position = Vector2(128, 64)

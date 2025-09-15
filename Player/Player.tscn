@@ -592,7 +592,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"throw down",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -612,7 +612,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"throw side",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -632,7 +632,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"throw up",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [node name="Body" type="CharacterBody2D"]
@@ -643,7 +643,7 @@ shape = SubResource("RectangleShape2D_l2ndj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_78fhc")
-animation = &"throw up"
+animation = &"throw down"
 autoplay = "idle down"
 
 [node name="StateManager" type="Node" parent="." node_paths=PackedStringArray("initialState")]

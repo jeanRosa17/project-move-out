@@ -44,9 +44,10 @@ func handleMovement(delta:float) -> void:
 ## Handles the "Lift" set of Inputs and triggers a Carryable item up
 func handleLift(delta:float) -> void:
 	if (Input.is_action_just_pressed("Lift")):
-		if (self.manager.currentState.name != "Lift"):
+		if ((self.manager.currentState.name == "Throw") or (self.view.animation.contains("Lift"))):
+			self.manager.currentState.transitioned.emit(self.manager.currentState, "Throw")
+		else: 
+			#(self.manager.currentState.name != "Lift")
 			self.manager.currentState.transitioned.emit(self.manager.currentState, "Lift")
 		#if (self.manager.currentState.name = "Lift"):
-		
-		elif (self.view.animation.contains("lift")):
-			self.manager.currentState.transitioned.emit(self.manager.currentState, "Throw")
+	
