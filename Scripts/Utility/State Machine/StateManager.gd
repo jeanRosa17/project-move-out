@@ -5,6 +5,7 @@ extends Node
 
 @export var initialState:State
 ## Shorthand for the parent of a StateManager.
+@warning_ignore("untyped_declaration")
 @onready var client = self.get_parent()
 ## If true, a message will be outputed stating the state that was attempted to enter
 @export var reportFails:bool = false

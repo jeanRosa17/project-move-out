@@ -23,6 +23,7 @@ func _process(delta:float) -> void:
 
 ## Handles the "Move" set of Inputs and moves the character accordingly using
 ## its MovementComponent.
+@warning_ignore("narrowing_conversion")
 func handleMovement(delta:float) -> void:
 	if (Input.is_action_pressed("MoveLeft") \
 	or Input.is_action_pressed("MoveRight")
@@ -42,7 +43,7 @@ func handleMovement(delta:float) -> void:
 			self.manager.currentState.transitioned.emit(self.manager.currentState, "Idle")
 
 ## Handles the "Lift" set of Inputs and triggers a Carryable item up
-func handleLift(delta:float) -> void:
+func handleLift(_delta:float) -> void:
 	if (Input.is_action_just_pressed("Lift")):
 		if ((self.manager.currentState.name == "Throw") or (self.view.animation.contains("Lift"))):
 			self.manager.currentState.transitioned.emit(self.manager.currentState, "Throw")

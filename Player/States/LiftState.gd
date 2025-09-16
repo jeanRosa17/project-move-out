@@ -19,6 +19,6 @@ func update(_delta:float) -> void:
 	pass
 
 ## This method runs every _physics_process() frame of the StateManager.
-func physicsUpdate(delta:float) -> void:
+func physicsUpdate(_delta:float) -> void:
 	pass
 	

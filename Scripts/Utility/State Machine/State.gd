@@ -8,9 +8,11 @@ var _isEnabled:bool = true
 
 ## This signal calls up to the StateManager to inform it when it wants the state
 ## to change.
+@warning_ignore("unused_signal")
 signal transitioned
 
 ## This signal tells those subscribed when this state has successfully been entered
+@warning_ignore("unused_signal")
 signal entered(state:State)
 
 signal onDisabled
