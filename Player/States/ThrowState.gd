@@ -16,7 +16,8 @@ func enter() -> void:
 ## The last method called when the state is transitioned out of
 func exit() -> void:
 	self.view.speed_scale = 1.0
-	self.view.animation_finished.disconnect(backToIdle)
+	if (self.view.animation_finished.is_connected(backToIdle)):
+		self.view.animation_finished.disconnect(backToIdle)
 
 ## Constantly checks for input from the user and changes state.
 func update(_delta:float) -> void:

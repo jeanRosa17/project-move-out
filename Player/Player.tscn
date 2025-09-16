@@ -657,9 +657,10 @@ view = NodePath("../../AnimatedSprite2D")
 body = NodePath("../..")
 metadata/_custom_type_script = "uid://idg0tggjdf4f"
 
-[node name="Lift" type="Node" parent="StateManager" node_paths=PackedStringArray("view")]
+[node name="Lift" type="Node" parent="StateManager" node_paths=PackedStringArray("view", "body")]
 script = ExtResource("6_6ysni")
 view = NodePath("../../AnimatedSprite2D")
+body = NodePath("../..")
 metadata/_custom_type_script = "uid://u8kdu3je8hxq"
 
 [node name="Move" type="Node" parent="StateManager" node_paths=PackedStringArray("view", "body")]

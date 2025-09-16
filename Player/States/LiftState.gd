@@ -2,6 +2,7 @@ class_name LiftState
 extends State
 
 @export var view:AnimatedSprite2D = null
+@export var body:CharacterBody2D
 
 ## The first method called when the state is transitioned into
 func enter() -> void:
@@ -16,7 +17,7 @@ func exit() -> void:
 
 ## Constantly checks for input from the user and changes state.
 func update(_delta:float) -> void:
-	pass
+	self.body.move_and_slide()
 
 ## This method runs every _physics_process() frame of the StateManager.
 func physicsUpdate(_delta:float) -> void:
