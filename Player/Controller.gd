@@ -9,7 +9,9 @@ var movement:MovementComponent
 
 var currentState:State
 
-var furniture:StaticBody2D
+var furniture:Furniture
+
+const Date = preload("res://Objects/Furniture.gd")
 
 func _ready() -> void:
 	self.physics = preload("res://Scripts/Resources/DefaultPhysics.tres")
@@ -62,12 +64,16 @@ func handleLift(_delta:float) -> void:
 			
 			## if toucning liftable object, do lift animation and child object. 
 			## For lift, object would be held above players head so it doesnt collide with anything. (turning off its collider)
-			if (furniture) :
+			if (furniture && furniture.canLift) :
+				
 				print ("pick up")
 				self.manager.currentState.transitioned.emit(self.manager.currentState, "Lift")
 				
 				furniture.position = self.position
 				furniture.collision_layer = 4;
+				furniture.reparent(self)
+			elif (furniture):
+				print ("push")
 				furniture.reparent(self)
 		
 		elif (self.view.animation.contains("lift")):
@@ -86,8 +92,10 @@ func handlePushPull(delta:float) -> void:
 # Assigns furniture to most recently touched object
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	
-	furniture = area.get_parent()
-	print("furniture = " + furniture.name)
+	if (area.get_parent().is_in_group("Furniture")):
+		furniture = area.get_parent()
+		print("furniture = " + furniture.name)
+		print(furniture.canLift)
 	
 	
 # Unassigns furniture on exit

@@ -58,7 +58,7 @@ position_smoothing_enabled = true
 position = Vector2(-1, 1.5)
 shape = SubResource("RectangleShape2D_y1yrn")
 
-[node name="Pot" parent="." instance=ExtResource("2_iqcmb")]
+[node name="Pot" parent="." groups=["Furniture"] instance=ExtResource("2_iqcmb")]
 position = Vector2(189, 87)
 scale = Vector2(0.973214, 1.01571)
 
@@ -69,7 +69,7 @@ position = Vector2(0.513763, -0.492264)
 scale = Vector2(1, 0.999999)
 shape = SubResource("RectangleShape2D_iqcmb")
 
-[node name="Bed" parent="." instance=ExtResource("2_iqcmb")]
+[node name="Bed" parent="." groups=["Furniture"] instance=ExtResource("2_iqcmb")]
 position = Vector2(292, 87)
 scale = Vector2(0.973214, 1.01571)
 canLift = false
