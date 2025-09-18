@@ -73,7 +73,7 @@ func handleLift(_delta:float) -> void:
 				furniture.collision_layer = 4;
 				furniture.reparent(self)
 			elif (furniture):
-				print ("push")
+				print ("Too heavy to lift")
 				furniture.reparent(self)
 		
 		elif (self.view.animation.contains("lift")):
@@ -86,8 +86,23 @@ func handleLift(_delta:float) -> void:
 ## Handles "Push" and "Pull"
 func handlePushPull(delta:float) -> void:
 	if (Input.is_action_just_pressed("Push")):
-		self.manager.currentState.transitioned.emit(self.manager.currentState, "Push")
-		print("Push")
+		if (furniture && furniture.canPush):
+			self.manager.currentState.transitioned.emit(self.manager.currentState, "Push")
+			#Check to see if the player is pusing against a wall (no longer able to push it)
+			#Move the furniture in the same direction as the player
+			print("Push")
+		else:
+			print("To heavy to push")
+			furniture.reparent(self)
+	elif(Input.is_action_just_pressed("Pull")):
+		if (furniture && furniture.canPull):
+			self.manager.currentState.transitioned.emit(self.manager.currentState, "Pull")
+			#Check to see if the player is pulling against a wall (no longer able to pull)
+			#Move the furniture in the same direction as the player
+			print("Pull")
+		elif(furniture):
+			print("Too heavy to pull")
+			furniture.reparent(self)
 
 # Assigns furniture to most recently touched object
 func _on_area_2d_area_entered(area: Area2D) -> void:

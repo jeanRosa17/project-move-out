@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=3 uid="uid://d0yd01mkkwtji"]
+[gd_scene load_steps=89 format=3 uid="uid://d0yd01mkkwtji"]
 
 [ext_resource type="Script" uid="uid://0slq88tkfqsi" path="res://Player/Controller.gd" id="1_ddoul"]
 [ext_resource type="Script" uid="uid://fn7206me6v1x" path="res://Scripts/Utility/State Machine/StateManager.gd" id="1_q3lat"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://kbl6mj8r1fd" path="res://Player/States/MovementState.gd" id="5_8g4oa"]
 [ext_resource type="Script" uid="uid://u8kdu3je8hxq" path="res://Player/States/LiftState.gd" id="6_6ysni"]
 [ext_resource type="Script" uid="uid://n3x8myoud04l" path="res://Player/States/ThrowState.gd" id="7_vlldt"]
+[ext_resource type="Script" uid="uid://bx82iq4syv1q6" path="res://Player/States/PushState.gd" id="8_s1rgi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l2ndj"]
 size = Vector2(18, 26)
@@ -673,3 +674,6 @@ metadata/_custom_type_script = "uid://c2tqhau6vnsm6"
 script = ExtResource("7_vlldt")
 view = NodePath("../../AnimatedSprite2D")
 metadata/_custom_type_script = "uid://n3x8myoud04l"
+
+[node name="Push" type="Node" parent="StateManager"]
+script = ExtResource("8_s1rgi")

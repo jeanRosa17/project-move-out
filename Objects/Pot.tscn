@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cqt367stu26c2"]
+[gd_scene load_steps=9 format=3 uid="uid://cqt367stu26c2"]
 
 [ext_resource type="Texture2D" uid="uid://drpfaulsu8pf6" path="res://Assets/Objects Spritesheet.png" id="1_cmayr"]
 [ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Objects/Furniture.gd" id="1_kle06"]
+[ext_resource type="Script" uid="uid://cs3b7yqh5b7v0" path="res://Player/States/carried.gd" id="3_xnri0"]
+[ext_resource type="Script" uid="uid://dupw3y4tqxs8d" path="res://Player/States/pushed.gd" id="4_wptk5"]
+[ext_resource type="Script" uid="uid://djyttqtqi01b3" path="res://Player/States/pulled.gd" id="5_i71i1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cmayr"]
 atlas = ExtResource("1_cmayr")
@@ -31,3 +34,16 @@ collision_layer = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_wptk5")
+
+[node name="StateManager" type="Node" parent="."]
+
+[node name="Carried" type="Node" parent="StateManager"]
+script = ExtResource("3_xnri0")
+
+[node name="Pushed" type="Node" parent="StateManager"]
+script = ExtResource("4_wptk5")
+
+[node name="Pulled" type="Node" parent="StateManager"]
+script = ExtResource("5_i71i1")
+
+[node name="Idle" type="Node" parent="StateManager"]
