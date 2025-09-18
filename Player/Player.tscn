@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://d0yd01mkkwtji"]
+[gd_scene load_steps=90 format=3 uid="uid://d0yd01mkkwtji"]
 
 [ext_resource type="Script" uid="uid://0slq88tkfqsi" path="res://Player/Controller.gd" id="1_ddoul"]
 [ext_resource type="Script" uid="uid://fn7206me6v1x" path="res://Scripts/Utility/State Machine/StateManager.gd" id="1_q3lat"]
@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://kbl6mj8r1fd" path="res://Player/States/MovementState.gd" id="5_8g4oa"]
 [ext_resource type="Script" uid="uid://u8kdu3je8hxq" path="res://Player/States/LiftState.gd" id="6_6ysni"]
 [ext_resource type="Script" uid="uid://n3x8myoud04l" path="res://Player/States/ThrowState.gd" id="7_vlldt"]
-[ext_resource type="Script" path="res://Player/States/PushState.gd" id="8_s1rgi"]
+[ext_resource type="Script" uid="uid://bx82iq4syv1q6" path="res://Player/States/PushState.gd" id="8_s1rgi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l2ndj"]
 size = Vector2(18, 26)
@@ -636,6 +636,9 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s1rgi"]
+size = Vector2(28, 33)
+
 [node name="Body" type="CharacterBody2D"]
 script = ExtResource("1_ddoul")
 
@@ -677,3 +680,18 @@ metadata/_custom_type_script = "uid://n3x8myoud04l"
 
 [node name="Push" type="Node" parent="StateManager"]
 script = ExtResource("8_s1rgi")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = -20
+limit_top = -1000
+limit_right = 1000
+limit_bottom = 1000
+position_smoothing_enabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_s1rgi")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

@@ -8,7 +8,7 @@
 default_font_size = 11
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y1yrn"]
-size = Vector2(22, 33)
+size = Vector2(28, 33)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iqcmb"]
 size = Vector2(25.6881, 22.6443)
@@ -48,14 +48,9 @@ script = ExtResource("1_y1yrn")
 position = Vector2(128, 64)
 safe_margin = 1.159
 
-[node name="Camera2D" type="Camera2D" parent="Node2D"]
-limit_bottom = 500
-position_smoothing_enabled = true
-
 [node name="Area2D" type="Area2D" parent="Node2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D"]
-position = Vector2(-1, 1.5)
 shape = SubResource("RectangleShape2D_y1yrn")
 
 [node name="Pot" parent="." groups=["Furniture"] instance=ExtResource("2_iqcmb")]

@@ -3,9 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://drpfaulsu8pf6" path="res://Assets/Objects Spritesheet.png" id="1_cmayr"]
 [ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Objects/Furniture.gd" id="1_kle06"]
 [ext_resource type="Script" uid="uid://fn7206me6v1x" path="res://Scripts/Utility/State Machine/StateManager.gd" id="3_mnhvh"]
-[ext_resource type="Script" path="res://Player/States/carried.gd" id="3_xnri0"]
-[ext_resource type="Script" path="res://Player/States/pushed.gd" id="4_wptk5"]
-[ext_resource type="Script" path="res://Player/States/pulled.gd" id="5_i71i1"]
+[ext_resource type="Script" uid="uid://cs3b7yqh5b7v0" path="res://Player/States/carried.gd" id="3_xnri0"]
+[ext_resource type="Script" uid="uid://dupw3y4tqxs8d" path="res://Player/States/pushed.gd" id="4_wptk5"]
+[ext_resource type="Script" uid="uid://djyttqtqi01b3" path="res://Player/States/pulled.gd" id="5_i71i1"]
 [ext_resource type="Script" uid="uid://b3vhky1waji7a" path="res://Objects/idle.gd" id="7_s63gg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cmayr"]
@@ -13,10 +13,10 @@ atlas = ExtResource("1_cmayr")
 region = Rect2(199, -0.575039, 33.7968, 49.0655)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
-size = Vector2(29, 49)
+size = Vector2(26, 36)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wptk5"]
-size = Vector2(34, 50)
+size = Vector2(42, 56)
 
 [node name="Pot" type="StaticBody2D"]
 collision_mask = 0
@@ -26,15 +26,14 @@ canLift = true
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_cmayr")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 0)
+[node name="BedCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_xnri0")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1, 0)
+position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_wptk5")
 
 [node name="StateManager" type="Node" parent="." node_paths=PackedStringArray("initialState")]
