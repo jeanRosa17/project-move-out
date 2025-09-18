@@ -3,6 +3,7 @@ extends StaticBody2D
 class_name Furniture
 
 @onready var manager:StateManager = $StateManager
+var currentState: State
 
 @export var canLift:bool
 @export var canPush:bool
@@ -15,10 +16,10 @@ func _process(delta: float) -> void:
 		Exception.new("Manager for Furniture can't be null.")
 		
 	self.currentState = manager.currentState
-	is_lifting(delta)
-	is_pushing(delta)
-	is_pulling(delta)
-	is_idle(delta)
+	#is_lifting(delta)
+	#is_pushing(delta)
+	#is_pulling(delta)
+	#is_idle(delta)
 
 func get_canLift() -> bool:
 	return canLift

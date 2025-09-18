@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://kbl6mj8r1fd" path="res://Player/States/MovementState.gd" id="5_8g4oa"]
 [ext_resource type="Script" uid="uid://u8kdu3je8hxq" path="res://Player/States/LiftState.gd" id="6_6ysni"]
 [ext_resource type="Script" uid="uid://n3x8myoud04l" path="res://Player/States/ThrowState.gd" id="7_vlldt"]
-[ext_resource type="Script" uid="uid://bx82iq4syv1q6" path="res://Player/States/PushState.gd" id="8_s1rgi"]
+[ext_resource type="Script" path="res://Player/States/PushState.gd" id="8_s1rgi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l2ndj"]
 size = Vector2(18, 26)
