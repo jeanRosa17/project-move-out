@@ -7,6 +7,9 @@ extends CharacterBody2D
 @onready var area:Area2D 
 var movement:MovementComponent
 
+var inertia = 100
+var SPEED = 40
+
 var currentState:State
 
 var furniture:Furniture
@@ -85,23 +88,22 @@ func handleLift(_delta:float) -> void:
 			
 ## Handles "Push" and "Pull"
 func handlePushPull(delta:float) -> void:
-	if (Input.is_action_just_pressed("Push")):
+	if (Input.is_action_just_pressed("Push-Pull")):
 		if (furniture && furniture.canPush):
+			var input_vector = Input.get_vector("MoveLeft", "MoveRight", "MoveUp", "MoveDown")
+			
+			var move_dircetion = input_vector.normalized()
+			move_and_slide() #move_dircetion, Vector2(0,0), false, 4, PI/4, false
+			
+			for i in get_slide_collision_count():
+				var collision = get_slide_collision(i)
+				if collision.collider.is_in_group("furniture"):
+					collision.collider.apply_central_impulse(-collision.normal * inertia)
 			self.manager.currentState.transitioned.emit(self.manager.currentState, "Push")
-			#Check to see if the player is pusing against a wall (no longer able to push it)
-			#Move the furniture in the same direction as the player
+			
 			print("Push")
 		else:
 			print("To heavy to push")
-			furniture.reparent(self)
-	elif(Input.is_action_just_pressed("Pull")):
-		if (furniture && furniture.canPull):
-			self.manager.currentState.transitioned.emit(self.manager.currentState, "Pull")
-			#Check to see if the player is pulling against a wall (no longer able to pull)
-			#Move the furniture in the same direction as the player
-			print("Pull")
-		elif(furniture):
-			print("Too heavy to pull")
 			furniture.reparent(self)
 
 # Assigns furniture to most recently touched object
