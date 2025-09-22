@@ -18,8 +18,8 @@ size = Vector2(26, 36)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wptk5"]
 size = Vector2(42, 56)
 
-[node name="Pot" type="StaticBody2D"]
-collision_mask = 0
+[node name="Pot" type="CharacterBody2D" groups=["Furniture"]]
+motion_mode = 1
 script = ExtResource("1_kle06")
 canLift = true
 
@@ -29,18 +29,12 @@ texture = SubResource("AtlasTexture_cmayr")
 [node name="BedCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_xnri0")
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
+[node name="PlayerDetection" type="Area2D" parent="."]
 collision_layer = 0
-gravity_scale = 0.0
-linear_damp = 50.0
-angular_damp = 50.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_wptk5")
-
-[node name="Area2D" type="Area2D" parent="."]
-collision_layer = 0
 
 [node name="StateManager" type="Node" parent="." node_paths=PackedStringArray("initialState")]
 script = ExtResource("3_mnhvh")

@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends CharacterBody2D
 
 class_name Furniture
 
@@ -12,6 +12,7 @@ var currentState: State
 @export var weight:int
 
 func _process(delta: float) -> void:
+	move_and_slide()
 	if (manager == null):
 		Exception.new("Manager for Furniture can't be null.")
 		

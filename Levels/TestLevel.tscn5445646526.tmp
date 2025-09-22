@@ -1,0 +1,84 @@
+[gd_scene load_steps=7 format=3 uid="uid://bd4iaouuaddvw"]
+
+[ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Player/Player.tscn" id="1_uib4f"]
+[ext_resource type="Script" path="res://Levels/Dialogue.gd" id="1_y1yrn"]
+[ext_resource type="PackedScene" uid="uid://cqt367stu26c2" path="res://Objects/Pot.tscn" id="2_iqcmb"]
+
+[sub_resource type="Theme" id="Theme_iqcmb"]
+default_font_size = 11
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iqcmb"]
+size = Vector2(25.6881, 22.6443)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iqcmb"]
+normal = Vector2(0, 1)
+distance = -3.99999
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_scale = 3.0
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -132.0
+offset_top = -47.0
+offset_right = 132.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer"]
+custom_minimum_size = Vector2(240, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_iqcmb")
+text = "	Hmm what's that?"
+autowrap_mode = 2
+script = ExtResource("1_y1yrn")
+
+[node name="Node2D" parent="." instance=ExtResource("1_uib4f")]
+position = Vector2(128, 64)
+safe_margin = 1.159
+
+[node name="Area2D2" type="Area2D" parent="Node2D"]
+
+[node name="Pot" parent="." groups=["Furniture"] instance=ExtResource("2_iqcmb")]
+position = Vector2(189, 87)
+scale = Vector2(0.973214, 1.01571)
+
+[node name="Area2D2" type="Area2D" parent="Pot"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pot/Area2D2"]
+position = Vector2(0.513763, -0.492264)
+scale = Vector2(1, 0.999999)
+shape = SubResource("RectangleShape2D_iqcmb")
+
+[node name="Bed" parent="." groups=["Furniture"] instance=ExtResource("2_iqcmb")]
+position = Vector2(292, 87)
+scale = Vector2(0.973214, 1.01571)
+canLift = false
+canPush = true
+
+[node name="World Border" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D(North)" type="CollisionShape2D" parent="World Border"]
+shape = SubResource("WorldBoundaryShape2D_iqcmb")
+
+[node name="CollisionShape2D(West)" type="CollisionShape2D" parent="World Border"]
+rotation = 4.71239
+shape = SubResource("WorldBoundaryShape2D_iqcmb")
+
+[node name="CollisionShape2D(South)" type="CollisionShape2D" parent="World Border"]
+position = Vector2(955, 535)
+rotation = -3.14159
+shape = SubResource("WorldBoundaryShape2D_iqcmb")
+
+[node name="CollisionShape2D(East)" type="CollisionShape2D" parent="World Border"]
+position = Vector2(955, 535)
+rotation = -4.71239
+shape = SubResource("WorldBoundaryShape2D_iqcmb")

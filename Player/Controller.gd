@@ -29,6 +29,7 @@ func _process(delta:float) -> void:
 	self.currentState = manager.currentState
 	self.handleMovement(delta)
 	self.handleLift(delta)
+	self.handlePushPull(delta)
 
 ## Handles the "Move" set of Inputs and moves the character accordingly using
 ## its MovementComponent.
@@ -89,20 +90,26 @@ func handleLift(_delta:float) -> void:
 ## Handles "Push" and "Pull"
 func handlePushPull(delta:float) -> void:
 	if (Input.is_action_just_pressed("Push-Pull")):
+		print("attempting to push")
 		if (furniture && furniture.canPush):
-			var input_vector = Input.get_vector("MoveLeft", "MoveRight", "MoveUp", "MoveDown")
+			print("pushing object")
+
+			#var input_vector = Input.get_vector("MoveLeft", "MoveRight", "MoveUp", "MoveDown")
+			#
+			#var move_dircetion = input_vector.normalized()
+			#
+			##furniture.collision_layer = 4;
+			#furniture.reparent(self)
+			#move_and_slide() #move_dircetion, Vector2(0,0), false, 4, PI/4, false
 			
-			var move_dircetion = input_vector.normalized()
-			move_and_slide() #move_dircetion, Vector2(0,0), false, 4, PI/4, false
-			
-			for i in get_slide_collision_count():
-				var collision = get_slide_collision(i)
-				if collision.collider.is_in_group("furniture"):
-					collision.collider.apply_central_impulse(-collision.normal * inertia)
+			#for i in get_slide_collision_count():
+				#var collision = get_slide_collision(i)
+				#if collision.collider.is_in_group("furniture"):
+					#collision.collider.apply_central_impulse(-collision.normal * inertia)
 			self.manager.currentState.transitioned.emit(self.manager.currentState, "Push")
 			
-			print("Push")
-		else:
+			print("Pussssssssssssh")
+		elif(furniture):
 			print("To heavy to push")
 			furniture.reparent(self)
 

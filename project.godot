@@ -32,6 +32,10 @@ window/stretch/scale=3.0
 
 script/templates_search_path="res://Scripts/Templates"
 
+[global_group]
+
+Furniture="This is where the objects should be in in terms of moving them"
+
 [input]
 
 MoveLeft={
