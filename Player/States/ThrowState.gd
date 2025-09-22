@@ -10,7 +10,6 @@ func enter() -> void:
 	var dir:String = self.view.animation.split(" ")[1].to_lower()
 	
 	self.view.play("throw " + dir)
-	#self.view.speed_scale = 2.0
 	self.view.animation_finished.connect(backToIdle)
 
 ## The last method called when the state is transitioned out of

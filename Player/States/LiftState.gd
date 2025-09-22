@@ -2,7 +2,7 @@ class_name LiftState
 extends State
 
 @export var view:AnimatedSprite2D = null
-@export var body:CharacterBody2D
+@export var body:Player
 
 ## The first method called when the state is transitioned into
 func enter() -> void:
