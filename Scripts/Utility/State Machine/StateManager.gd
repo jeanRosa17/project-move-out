@@ -41,6 +41,19 @@ func _physics_process(delta:float) -> void:
 func getRootNode():
 	return $".."
 
+## Returns the most recent state name
+func getStateName() -> String:
+	return self.currentState.name
+	
+## Returns the current state's object
+func getState() -> State:
+	return self.currentState
+
+## Signals to the currentState that it is being transitioned to.
+func changeState(newState:String) -> void:
+	self.currentState.transitioned.emit(self.currentState, newState)
+
+
 ## This function is called whenever a State signals transitioned. The function
 ## then confirms if it can exits the current state via canExit(). If the function successfully
 ## exits the state, it will confirm if it can enter the new State via canEnter(), executing enter if yes or 

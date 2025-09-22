@@ -3,6 +3,17 @@ extends State
 
 @export var view:AnimatedSprite2D = null
 @export var body:Player
+@export var furniture:Furniture
+
+## Furniture needs to be not null and needs to be lifted
+func canEnter() -> bool:
+	if (furniture && furniture.canLift):
+		furniture.position = self.body.position
+		furniture.collision_layer = 4;
+		furniture.reparent(self.body)
+		return true
+	else:
+		return false
 
 ## The first method called when the state is transitioned into
 func enter() -> void:
@@ -22,4 +33,12 @@ func update(_delta:float) -> void:
 ## This method runs every _physics_process() frame of the StateManager.
 func physicsUpdate(_delta:float) -> void:
 	pass
-	
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if (area.get_parent().is_in_group("Furniture")):
+		self.furniture = area.get_parent()
+
+
+func _on_area_2d_area_exited(area: Area2D) -> void:
+	self.furniture = null

@@ -38,17 +38,19 @@ text = "	Hmm what's that?"
 autowrap_mode = 2
 script = ExtResource("1_y1yrn")
 
-[node name="Node2D" parent="." instance=ExtResource("1_uib4f")]
+[node name="Node2D" parent="." groups=["Furniture"] instance=ExtResource("1_uib4f")]
 position = Vector2(128, 64)
 safe_margin = 1.159
 
-[node name="Pot" parent="." groups=["Furniture"] instance=ExtResource("2_iqcmb")]
+[node name="Pot" parent="." instance=ExtResource("2_iqcmb")]
 position = Vector2(189, 87)
 scale = Vector2(0.973214, 1.01571)
+collision_mask = 0
 
-[node name="Bed" parent="." groups=["Furniture"] instance=ExtResource("2_iqcmb")]
+[node name="Bed" parent="." instance=ExtResource("2_iqcmb")]
 position = Vector2(292, 87)
 scale = Vector2(0.973214, 1.01571)
+collision_mask = 0
 canLift = false
 
 [node name="World Border" type="StaticBody2D" parent="."]
