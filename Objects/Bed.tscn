@@ -1,0 +1,53 @@
+[gd_scene load_steps=11 format=3 uid="uid://cv6u6nkys85s8"]
+
+[ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Objects/Furniture.gd" id="1_jno4m"]
+[ext_resource type="Texture2D" uid="uid://drpfaulsu8pf6" path="res://Assets/Objects Spritesheet.png" id="2_g6pvx"]
+[ext_resource type="Script" uid="uid://fn7206me6v1x" path="res://Scripts/Utility/State Machine/StateManager.gd" id="3_tdtap"]
+[ext_resource type="Script" uid="uid://cs3b7yqh5b7v0" path="res://Player/States/carried.gd" id="4_otoh0"]
+[ext_resource type="Script" uid="uid://dupw3y4tqxs8d" path="res://Player/States/pushed.gd" id="5_6figi"]
+[ext_resource type="Script" uid="uid://djyttqtqi01b3" path="res://Player/States/pulled.gd" id="6_qwhii"]
+[ext_resource type="Script" uid="uid://b3vhky1waji7a" path="res://Objects/idle.gd" id="7_tgufw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmayr"]
+atlas = ExtResource("2_g6pvx")
+region = Rect2(200, -0.5, 32, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
+size = Vector2(26, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wptk5"]
+size = Vector2(42, 56)
+
+[node name="Bed" type="CharacterBody2D" groups=["Furniture"]]
+motion_mode = 1
+script = ExtResource("1_jno4m")
+canLift = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_cmayr")
+
+[node name="BedCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xnri0")
+
+[node name="PlayerDetection" type="Area2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_wptk5")
+
+[node name="StateManager" type="Node" parent="." node_paths=PackedStringArray("initialState")]
+script = ExtResource("3_tdtap")
+initialState = NodePath("Idle")
+
+[node name="Carried" type="Node" parent="StateManager"]
+script = ExtResource("4_otoh0")
+
+[node name="Pushed" type="Node" parent="StateManager"]
+script = ExtResource("5_6figi")
+
+[node name="Pulled" type="Node" parent="StateManager"]
+script = ExtResource("6_qwhii")
+
+[node name="Idle" type="Node" parent="StateManager"]
+script = ExtResource("7_tgufw")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bd4iaouuaddvw"]
+[gd_scene load_steps=7 format=3 uid="uid://bd4iaouuaddvw"]
 
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Player/Player.tscn" id="1_uib4f"]
 [ext_resource type="Script" uid="uid://cau3mgvyc3sus" path="res://Levels/Dialogue.gd" id="1_y1yrn"]
 [ext_resource type="PackedScene" uid="uid://cqt367stu26c2" path="res://Objects/Pot.tscn" id="2_iqcmb"]
+[ext_resource type="PackedScene" uid="uid://cv6u6nkys85s8" path="res://Objects/Bed.tscn" id="4_jyvk6"]
 
 [sub_resource type="Theme" id="Theme_iqcmb"]
 default_font_size = 11
@@ -47,12 +48,11 @@ position = Vector2(189, 87)
 scale = Vector2(0.973214, 1.01571)
 collision_mask = 0
 
-[node name="Bed" parent="." instance=ExtResource("2_iqcmb")]
-position = Vector2(292, 87)
-scale = Vector2(0.973214, 1.01571)
-collision_mask = 0
+[node name="Bed" parent="." instance=ExtResource("4_jyvk6")]
+position = Vector2(309, 80)
 canLift = false
 canPush = true
+canPull = true
 
 [node name="World Border" type="StaticBody2D" parent="."]
 
