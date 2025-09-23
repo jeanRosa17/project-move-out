@@ -9,6 +9,7 @@ extends State
 func canEnter() -> bool:
 	if (furniture && furniture.canLift):
 		furniture.position = self.body.position
+		#furniture.position.y = self.body.position.y - 8
 		furniture.collision_layer = 4;
 		furniture.reparent(self.body)
 		return true

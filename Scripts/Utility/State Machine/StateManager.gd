@@ -12,6 +12,7 @@ extends Node
 
 var currentState:State
 var states:Dictionary = {}
+var coState:State = null
 
 ## Adds all the child nodes that are States to this StateManager's 
 ## state dictionary by using the node's name (lowercased) as the keys, and
@@ -52,6 +53,7 @@ func getState() -> State:
 ## Signals to the currentState that it is being transitioned to.
 func changeState(newState:String) -> void:
 	self.currentState.transitioned.emit(self.currentState, newState)
+
 
 
 ## This function is called whenever a State signals transitioned. The function

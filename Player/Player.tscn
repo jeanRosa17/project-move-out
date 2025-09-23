@@ -60,6 +60,18 @@ region = Rect2(72, 72, 36, 36)
 atlas = ExtResource("1_tok1r")
 region = Rect2(108, 72, 36, 36)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_roy6y"]
+atlas = ExtResource("1_tok1r")
+region = Rect2(144, 216, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0mko"]
+atlas = ExtResource("1_tok1r")
+region = Rect2(144, 252, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgaaw"]
+atlas = ExtResource("1_tok1r")
+region = Rect2(144, 288, 36, 36)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_8sa4y"]
 atlas = ExtResource("1_tok1r")
 region = Rect2(0, 216, 36, 36)
@@ -75,10 +87,6 @@ region = Rect2(72, 216, 36, 36)
 [sub_resource type="AtlasTexture" id="AtlasTexture_evw08"]
 atlas = ExtResource("1_tok1r")
 region = Rect2(108, 216, 36, 36)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_roy6y"]
-atlas = ExtResource("1_tok1r")
-region = Rect2(144, 216, 36, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u5tep"]
 atlas = ExtResource("1_tok1r")
@@ -96,10 +104,6 @@ region = Rect2(72, 252, 36, 36)
 atlas = ExtResource("1_tok1r")
 region = Rect2(108, 252, 36, 36)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s0mko"]
-atlas = ExtResource("1_tok1r")
-region = Rect2(144, 252, 36, 36)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_hqjia"]
 atlas = ExtResource("1_tok1r")
 region = Rect2(0, 288, 36, 36)
@@ -115,10 +119,6 @@ region = Rect2(72, 288, 36, 36)
 [sub_resource type="AtlasTexture" id="AtlasTexture_croik"]
 atlas = ExtResource("1_tok1r")
 region = Rect2(108, 288, 36, 36)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bgaaw"]
-atlas = ExtResource("1_tok1r")
-region = Rect2(144, 288, 36, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gv3fu"]
 atlas = ExtResource("1_tok1r")
@@ -376,6 +376,30 @@ animations = [{
 "loop": true,
 "name": &"idle up",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_roy6y")
+}],
+"loop": true,
+"name": &"idlelift down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s0mko")
+}],
+"loop": true,
+"name": &"idlelift side",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bgaaw")
+}],
+"loop": true,
+"name": &"idlelift up",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -647,7 +671,7 @@ shape = SubResource("RectangleShape2D_l2ndj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_78fhc")
-animation = &"throw down"
+animation = &"idlelift down"
 autoplay = "idle down"
 
 [node name="StateManager" type="Node" parent="." node_paths=PackedStringArray("initialState")]

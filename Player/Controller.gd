@@ -43,23 +43,20 @@ func handleMovement(delta:float) -> void:
 		
 		if (self.manager.getStateName() != "Move" && self.manager.getStateName() != "Lift"):
 			self.manager.changeState("Move")
+			
+		if (self.manager.getStateName() == "Lift"):
+			self.manager.changeState("Move")
 	
 	else:
 		self.movement.decelerate(delta)
+		
 		if (self.manager.getStateName() == "Move" && self.manager.getStateName() != "Lift"):
 			self.manager.changeState("Idle")
+		
 
 ## Handles the "Lift" set of Inputs and triggers a Carryable item up
 func handleLift(_delta:float) -> void:
 	if (Input.is_action_just_pressed("Lift")):
-		# Luna wrote this block just removing it for now
-		#if ((self.manager.getStateName() == "Throw") or (self.view.animation.contains("Lift"))):
-			#self.manager.changeState("Throw")
-		#else: 
-			#(self.manager.getStateName() != "Lift")
-			#self.manager.changeState("Lift")
-		#if (self.manager.getStateName() = "Lift"):
-	
 		if (self.manager.getStateName() != "Lift"): self.manager.changeState("Lift")
 		
 		#elif (self.view.animation.contains("lift")):
