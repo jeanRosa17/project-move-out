@@ -3,12 +3,17 @@ extends State
 
 @export var view:AnimatedSprite2D = null
 @export var body:CharacterBody2D
+@onready var physics:PlayerPhysics
 
+func _ready() -> void:
+	self.physics = preload("res://Scripts/Resources/DefaultPhysics.tres")
+	
 ## The first method called when the state is transitioned into
-func enter() -> void:
+func enter() -> void:	
 	var prefix:String = "move"
 	
 	if (self.view.animation.contains("lift")): prefix = "movelift"
+	if (self.view.animation.contains("push")): prefix = "push"
 		
 	if ((is_equal_approx(self.body.velocity.y, 0.0))
 		and (not (is_equal_approx(self.body.velocity.x, 0.0)))): 
@@ -21,8 +26,7 @@ func enter() -> void:
 func exit() -> void:
 	
 	if (self.view.animation.contains("lift")):
-		self.view.play("lift " + self.view.animation.split(" ")[1].to_lower())
-		self.view.frame = 5
+		self.view.play("idlelift " + self.view.animation.split(" ")[1].to_lower())
 	#else:
 		#self.view.play("idle " + self.view.animation.split(" ")[1].to_lower()) 
 	
@@ -40,5 +44,19 @@ func update(_delta:float) -> void:
 
 ## This method runs every _physics_process() frame of the StateManager.
 func physicsUpdate(_delta:float) -> void:
+	self.accelerate(self.getManager().direction, _delta)
 	self.body.move_and_slide()
 	
+## Sets the player's velocity to increase or decrease based on the given direction (-1 left, 1 right)
+func accelerate(direction:Vector2i, delta:float) -> void:
+	if direction != Vector2i.ZERO:
+		self.body.velocity.x = move_toward(self.body.velocity.x, direction.x * self.physics.maxSpeed, self.physics.acceleration * delta) 
+		self.body.velocity.y = move_toward(self.body.velocity.y, direction.y * self.physics.maxSpeed, self.physics.acceleration * delta)
+
+## Decreases the player's velocity. This function should only be called after the player
+## stops pressing a direction.
+#func decelerate(delta:float) -> void:
+	#if (not self.body.velocity.is_equal_approx(Vector2i.ZERO)):
+		#var deceleration:float = self.physics.deceleration
+		#self.body.velocity.x = move_toward(self.body.velocity.x, 0, deceleration * delta)
+		#self.body.velocity.y = move_toward(self.body.velocity.y, 0, deceleration * delta)

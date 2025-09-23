@@ -3,15 +3,15 @@ extends State
 
 @export var view:AnimatedSprite2D
 @export var body:Player
-@export var furniture:Furniture
+@onready var manager:StateManager = self.getManager()
 
 ## Furniture needs to be not null and needs to be lifted
 func canEnter() -> bool:
-	if (furniture && furniture.canLift):
-		furniture.position = self.body.position
-		#furniture.position.y = self.body.position.y - 8
-		furniture.collision_layer = 4;
-		furniture.reparent(self.body)
+	if (self.manager.furniture && self.manager.furniture.canLift):
+		self.manager.furniture.position = self.body.position
+		#self.manager.furniture.position.y = self.body.position.y - 8
+		self.manager.furniture.collision_layer = 4;
+		self.manager.furniture.reparent(self.body)
 		return true
 	else:
 		return false
@@ -34,12 +34,3 @@ func update(_delta:float) -> void:
 ## This method runs every _physics_process() frame of the StateManager.
 func physicsUpdate(_delta:float) -> void:
 	pass
-
-
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	if (area.get_parent().is_in_group("Furniture")):
-		self.furniture = area.get_parent()
-
-
-func _on_area_2d_area_exited(area: Area2D) -> void:
-	self.furniture = null

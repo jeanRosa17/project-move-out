@@ -5,15 +5,14 @@ extends State
 @onready var manager:StateManager = self.getManager()
 @export var view:AnimatedSprite2D
 @export var body:Player
-@onready var backToIdle:Callable = func () -> void : self.manager.currentState.transitioned.emit(self.manager.currentState, "Push")
-var furniture:Furniture
+@onready var backToIdle:Callable = func () -> void : self.manager.changeState.bind("Idle")
 
 func canEnter() -> bool:
-	if (furniture && furniture.canPush):
-		furniture.position = self.body.position
-		furniture.position.x += 8
-		furniture.collision_layer = 4;
-		furniture.reparent(self.body)
+	if (self.manager.furniture && self.manager.furniture.canPush):
+		self.manager.furniture.position = self.body.position
+		self.manager.furniture.position.x += 8
+		self.manager.furniture.collision_layer = 4;
+		self.manager.furniture.reparent(self.body)
 		return true
 	else:
 		return false
@@ -26,13 +25,13 @@ func enter() -> void:
 
 ## The last method called when the state is transitioned out of
 func exit() -> void:
-	if (furniture):
-		#furniture.position.y = self.body.position.y - 8
-		furniture.collision_layer = 1
-		self.body.remove_child(furniture)
-		self.body.get_parent().add_child(furniture)
-		#furniture.get_parent().add_sibling(furniture)
-		furniture.position.x -= 20
+	if (self.manager.furniture):
+		#self.manager.furniture.position.y = self.body.position.y - 8
+		self.manager.furniture.collision_layer = 1
+		self.body.remove_child(self.manager.furniture)
+		self.body.get_parent().add_child(self.manager.furniture)
+		#self.manager.furniture.get_parent().add_sibling(self.manager.furniture)
+		self.manager.furniture.position.x -= 20
 	
 ## Constantly checks for input from the user and changes state.
 func update(_delta:float) -> void:
@@ -43,11 +42,3 @@ func physicsUpdate(_delta:float) -> void:
 	pass
 	#pass
 	#self.body.move_and_slide()
-	
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	if (area.get_parent().is_in_group("Furniture")):
-		self.furniture = area.get_parent()
-
-
-func _on_area_2d_area_exited(area: Area2D) -> void:
-	self.furniture = null

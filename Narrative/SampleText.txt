@@ -1,5 +1,4 @@
 #start {
-	Good morning, my name is Allison Nora. It's nice to meet you! What's your name?
-	I said. WHAT. IS. YOUR. NAME???
-	Are you deaf?
+	Another day, another job.
+	Lets get down to business.
 }
