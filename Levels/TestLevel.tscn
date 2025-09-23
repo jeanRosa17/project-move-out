@@ -52,7 +52,6 @@ collision_mask = 0
 position = Vector2(309, 80)
 canLift = false
 canPush = true
-canPull = true
 
 [node name="World Border" type="StaticBody2D" parent="."]
 

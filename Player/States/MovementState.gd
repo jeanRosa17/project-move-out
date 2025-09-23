@@ -31,7 +31,7 @@ func exit() -> void:
 		#self.view.play("idle " + self.view.animation.split(" ")[1].to_lower()) 
 	
 func canEnter() -> bool:
-	if (self.view.animation.contains("idle")): return true
+	if (self.view.animation.contains("idle") || self.view.animation.contains("push")): return true
 	else:
 		if (self.view.animation.contains("lift") and not (self.view.is_playing())): return true
 		if (self.view.animation.contains("throw") and not (self.view.is_playing())): return true

@@ -71,9 +71,6 @@ func handlePushPull(delta:float) -> void:
 		
 		print("attempting to push")
 		
-		#if (furniture && furniture.canPush):
-			#print("pushing object")
-#
 			##var input_vector = Input.get_vector("MoveLeft", "MoveRight", "MoveUp", "MoveDown")
 			##
 			##var move_dircetion = input_vector.normalized()

@@ -7,12 +7,24 @@ extends State
 @export var body:Player
 @onready var backToIdle:Callable = func () -> void : self.manager.changeState.bind("Idle")
 
+@export var isPushing:bool
+
 func canEnter() -> bool:
+	var prefix:String = "push"
+	print("can enter push")
 	if (self.manager.furniture && self.manager.furniture.canPush):
-		self.manager.furniture.position = self.body.position
-		self.manager.furniture.position.x += 8
-		self.manager.furniture.collision_layer = 4;
-		self.manager.furniture.reparent(self.body)
+		if (!isPushing):
+			##self.manager.furniture.position = self.body.position
+			self.manager.furniture.position.x += 8
+			self.manager.furniture.collision_layer = 4;
+			self.manager.furniture.reparent(self.body)
+			isPushing = true;
+		else:
+			##self.manager.furniture.position = self.body.position
+			self.manager.furniture.position.x += 8
+			self.manager.furniture.collision_layer = 1;
+			self.manager.furniture.reparent(self.manager.furniture.get_parent().get_parent())
+			isPushing = false;
 		return true
 	else:
 		return false
@@ -25,13 +37,7 @@ func enter() -> void:
 
 ## The last method called when the state is transitioned out of
 func exit() -> void:
-	if (self.manager.furniture):
-		#self.manager.furniture.position.y = self.body.position.y - 8
-		self.manager.furniture.collision_layer = 1
-		self.body.remove_child(self.manager.furniture)
-		self.body.get_parent().add_child(self.manager.furniture)
-		#self.manager.furniture.get_parent().add_sibling(self.manager.furniture)
-		self.manager.furniture.position.x -= 20
+	pass
 	
 ## Constantly checks for input from the user and changes state.
 func update(_delta:float) -> void:

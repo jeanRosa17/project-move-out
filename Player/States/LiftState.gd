@@ -13,7 +13,9 @@ func canEnter() -> bool:
 		self.manager.furniture.collision_layer = 4;
 		self.manager.furniture.reparent(self.body)
 		return true
+		
 	else:
+		self.manager.changeState("Push")
 		return false
 
 ## The first method called when the state is transitioned into
