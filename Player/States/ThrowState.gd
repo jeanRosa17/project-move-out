@@ -5,6 +5,9 @@ extends State
 @onready var backToIdle:Callable = func () -> void : self.manager.currentState.transitioned.emit(self.manager.currentState, "Idle")
 @export var view:AnimatedSprite2D = null
 
+func canEnter() -> bool:
+	return self.manager.getStateName() == "Idle"
+
 ## The first method called when the state is transitioned into
 func enter() -> void:
 	var dir:String = self.view.animation.split(" ")[1].to_lower()

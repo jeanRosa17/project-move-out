@@ -44,7 +44,7 @@ func handleMovement(delta:float) -> void:
 		if (self.manager.getStateName() == "Push"):
 			self.manager.changeState("Move")
 	
-	else:		
+	else:
 		if (self.manager.getStateName() == "Move" && self.manager.getStateName() != "Lift"):
 			self.manager.changeState("Idle")
 		

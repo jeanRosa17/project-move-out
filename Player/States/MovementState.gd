@@ -34,7 +34,7 @@ func canEnter() -> bool:
 	if (self.view.animation.contains("idle")): return true
 	else:
 		if (self.view.animation.contains("lift") and not (self.view.is_playing())): return true
-	
+		if (self.view.animation.contains("throw") and not (self.view.is_playing())): return true
 	return false
 
 ## Updates the animation's flipping state
