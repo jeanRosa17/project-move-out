@@ -59,10 +59,8 @@ func handleLift(_delta:float) -> void:
 	if (Input.is_action_just_pressed("Lift")):
 		if (self.manager.getStateName() != "Lift"): self.manager.changeState("Lift")
 		
-		#elif (self.view.animation.contains("lift")):
-			#furniture.reparent(self.get_parent())
-			#furniture.collision_layer = 1;
-			#self.manager.changeState("Throw")
+		elif (self.view.animation.contains("lift")):
+			self.manager.changeState("Throw")
 			
 			
 ## Handles "Push" and "Pull"
@@ -90,3 +88,7 @@ func handlePushPull(delta:float) -> void:
 		#elif(furniture):
 			#print("To heavy to push")
 			#furniture.reparent(self)
+
+
+func _on_area_2d_area_exited(area: Area2D) -> void:
+	pass # Replace with function body.
