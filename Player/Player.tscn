@@ -264,14 +264,6 @@ region = Rect2(144, 396, 36, 36)
 atlas = ExtResource("1_tok1r")
 region = Rect2(180, 396, 36, 36)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4ufoc"]
-atlas = ExtResource("1_tok1r")
-region = Rect2(0, 432, 36, 36)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4wb44"]
-atlas = ExtResource("1_tok1r")
-region = Rect2(36, 432, 36, 36)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_8cyal"]
 atlas = ExtResource("1_tok1r")
 region = Rect2(72, 432, 36, 36)
@@ -279,6 +271,30 @@ region = Rect2(72, 432, 36, 36)
 [sub_resource type="AtlasTexture" id="AtlasTexture_d4hlt"]
 atlas = ExtResource("1_tok1r")
 region = Rect2(108, 432, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wef8"]
+atlas = ExtResource("1_tok1r")
+region = Rect2(72, 468, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kb1oy"]
+atlas = ExtResource("1_tok1r")
+region = Rect2(108, 468, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gr648"]
+atlas = ExtResource("1_tok1r")
+region = Rect2(72, 504, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efsdk"]
+atlas = ExtResource("1_tok1r")
+region = Rect2(108, 504, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ufoc"]
+atlas = ExtResource("1_tok1r")
+region = Rect2(0, 432, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wb44"]
+atlas = ExtResource("1_tok1r")
+region = Rect2(36, 432, 36, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7wdt0"]
 atlas = ExtResource("1_tok1r")
@@ -292,14 +308,6 @@ region = Rect2(0, 468, 36, 36)
 atlas = ExtResource("1_tok1r")
 region = Rect2(36, 468, 36, 36)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7wef8"]
-atlas = ExtResource("1_tok1r")
-region = Rect2(72, 468, 36, 36)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kb1oy"]
-atlas = ExtResource("1_tok1r")
-region = Rect2(108, 468, 36, 36)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_3e2x5"]
 atlas = ExtResource("1_tok1r")
 region = Rect2(144, 468, 36, 36)
@@ -311,14 +319,6 @@ region = Rect2(0, 504, 36, 36)
 [sub_resource type="AtlasTexture" id="AtlasTexture_lr4jq"]
 atlas = ExtResource("1_tok1r")
 region = Rect2(36, 504, 36, 36)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gr648"]
-atlas = ExtResource("1_tok1r")
-region = Rect2(72, 504, 36, 36)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_efsdk"]
-atlas = ExtResource("1_tok1r")
-region = Rect2(108, 504, 36, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e2bo2"]
 atlas = ExtResource("1_tok1r")
@@ -601,6 +601,39 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_8cyal")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4hlt")
+}],
+"loop": true,
+"name": &"push down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wef8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kb1oy")
+}],
+"loop": true,
+"name": &"push side",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gr648")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efsdk")
+}],
+"loop": true,
+"name": &"push up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_4ufoc")
 }, {
 "duration": 1.0,
@@ -671,7 +704,7 @@ shape = SubResource("RectangleShape2D_l2ndj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_78fhc")
-animation = &"idlelift down"
+animation = &"push up"
 autoplay = "idle down"
 
 [node name="StateManager" type="Node" parent="." node_paths=PackedStringArray("initialState")]
@@ -702,8 +735,10 @@ script = ExtResource("7_vlldt")
 view = NodePath("../../AnimatedSprite2D")
 metadata/_custom_type_script = "uid://n3x8myoud04l"
 
-[node name="Push" type="Node" parent="StateManager"]
+[node name="Push" type="Node" parent="StateManager" node_paths=PackedStringArray("view", "body")]
 script = ExtResource("8_s1rgi")
+view = NodePath("../../AnimatedSprite2D")
+body = NodePath("../..")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = -20
@@ -720,5 +755,7 @@ shape = SubResource("RectangleShape2D_s1rgi")
 
 [connection signal="area_entered" from="Area2D" to="StateManager/Lift" method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="Area2D" to="StateManager/Throw" method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="Area2D" to="StateManager/Push" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="StateManager/Lift" method="_on_area_2d_area_exited"]
 [connection signal="area_exited" from="Area2D" to="StateManager/Throw" method="_on_area_2d_area_exited"]
+[connection signal="area_exited" from="Area2D" to="StateManager/Push" method="_on_area_2d_area_exited"]

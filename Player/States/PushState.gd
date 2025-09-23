@@ -3,14 +3,36 @@ class_name PushState
 extends State
 
 @onready var manager:StateManager = self.getManager()
+@export var view:AnimatedSprite2D
+@export var body:Player
 @onready var backToIdle:Callable = func () -> void : self.manager.currentState.transitioned.emit(self.manager.currentState, "Push")
+var furniture:Furniture
+
+func canEnter() -> bool:
+	if (furniture && furniture.canPush):
+		furniture.position = self.body.position
+		furniture.position.x += 8
+		furniture.collision_layer = 4;
+		furniture.reparent(self.body)
+		return true
+	else:
+		return false
 
 func enter() -> void: 
-	pass
+	var dir:String = self.view.animation.split(" ")[1].to_lower()
+	
+	if not (self.view.animation.contains("push")):
+		self.view.play("push " + dir)
 
 ## The last method called when the state is transitioned out of
 func exit() -> void:
-	pass
+	if (furniture):
+		#furniture.position.y = self.body.position.y - 8
+		furniture.collision_layer = 1
+		self.body.remove_child(furniture)
+		self.body.get_parent().add_child(furniture)
+		#furniture.get_parent().add_sibling(furniture)
+		furniture.position.x -= 20
 	
 ## Constantly checks for input from the user and changes state.
 func update(_delta:float) -> void:
@@ -22,3 +44,10 @@ func physicsUpdate(_delta:float) -> void:
 	#pass
 	#self.body.move_and_slide()
 	
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if (area.get_parent().is_in_group("Furniture")):
+		self.furniture = area.get_parent()
+
+
+func _on_area_2d_area_exited(area: Area2D) -> void:
+	self.furniture = null

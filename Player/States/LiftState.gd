@@ -1,7 +1,7 @@
 class_name LiftState
 extends State
 
-@export var view:AnimatedSprite2D = null
+@export var view:AnimatedSprite2D
 @export var body:Player
 @export var furniture:Furniture
 

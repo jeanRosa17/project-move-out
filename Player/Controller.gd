@@ -52,21 +52,29 @@ func handleMovement(delta:float) -> void:
 		
 		if (self.manager.getStateName() == "Move" && self.manager.getStateName() != "Lift"):
 			self.manager.changeState("Idle")
+		if (self.manager.getStateName() == "Push"):
+			self.manager.changeState("Idle")
 		
 
-## Handles the "Lift" set of Inputs and triggers a Carryable item up
+## Handles the "Lift" set of Inputs and enters the Lift State if
+## 1. Lift is inputed 
+## 2. node from the Furniture Group is around the player
+## 3. Furniture node can be lifted 
 func handleLift(_delta:float) -> void:
 	if (Input.is_action_just_pressed("Lift")):
-		if (self.manager.getStateName() != "Lift"): self.manager.changeState("Lift")
-		
-		elif (self.view.animation.contains("lift")):
+		if (self.view.animation.contains("lift")):
 			self.manager.changeState("Throw")
+			
+		elif (self.manager.getStateName() != "Lift"): self.manager.changeState("Lift")
 			
 			
 ## Handles "Push" and "Pull"
 func handlePushPull(delta:float) -> void:
-	if (Input.is_action_just_pressed("Push-Pull")):
+	if (Input.is_action_pressed("Push-Pull")):
+		if (self.manager.getStateName() != "Push"): self.manager.changeState("Push")
+		
 		print("attempting to push")
+		
 		#if (furniture && furniture.canPush):
 			#print("pushing object")
 #

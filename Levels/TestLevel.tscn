@@ -52,6 +52,7 @@ position = Vector2(292, 87)
 scale = Vector2(0.973214, 1.01571)
 collision_mask = 0
 canLift = false
+canPush = true
 
 [node name="World Border" type="StaticBody2D" parent="."]
 
