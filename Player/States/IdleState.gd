@@ -6,10 +6,6 @@ extends State
 
 ## The first method called when the state is transitioned into
 func enter() -> void: 
-	
-	#if (self.view.animation.contains("idlelift")): 
-		#self.view.play("idlelift " + self.view.animation.split(" ")[1].to_lower())
-		#return
 	if (self.view.animation.contains("idle")): return
 	if (self.view.animation.contains("lift")): 
 		self.view.play("idlelift " + self.view.animation.split(" ")[1].to_lower())
