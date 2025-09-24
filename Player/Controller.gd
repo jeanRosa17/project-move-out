@@ -7,11 +7,6 @@ extends CharacterBody2D
 
 var currentState:State
 
-signal newFurniture(furniture:Furniture)
-
-
-const Date = preload("res://Objects/Furniture.gd") #?
-
 func _ready() -> void:
 	self.manager.start()
 	
@@ -28,7 +23,7 @@ func _process(delta:float) -> void:
 ## Handles the "Move" set of Inputs and moves the character accordingly using
 ## its MovementComponent.
 @warning_ignore("narrowing_conversion")
-func handleMovement(delta:float) -> void:
+func handleMovement(_delta:float) -> void:
 	if (Input.is_action_pressed("MoveLeft") \
 	or Input.is_action_pressed("MoveRight")
 	or Input.is_action_pressed("MoveDown")
@@ -47,10 +42,6 @@ func handleMovement(delta:float) -> void:
 	else:
 		if (self.manager.getStateName() == "Move" && self.manager.getStateName() != "Lift"):
 			self.manager.changeState("Idle")
-		
-		#if (self.manager.getStateName() == "Push"):
-			#self.manager.changeState("Idle")
-		#
 
 ## Handles the "Lift" set of Inputs and enters the Lift State if
 ## 1. Lift is inputed 
@@ -62,30 +53,8 @@ func handleLift(_delta:float) -> void:
 			self.manager.changeState("Throw")
 			
 		elif (self.manager.getStateName() != "Lift"): self.manager.changeState("Lift")
-			
-			
+
 ## Handles "Push" and "Pull"
-func handlePushPull(delta:float) -> void:
+func handlePushPull(_delta:float) -> void:
 	if (Input.is_action_pressed("Push-Pull")):
 		if (self.manager.getStateName() != "Push"): self.manager.changeState("Push")
-		
-		print("attempting to push")
-		
-			##var input_vector = Input.get_vector("MoveLeft", "MoveRight", "MoveUp", "MoveDown")
-			##
-			##var move_dircetion = input_vector.normalized()
-			##
-			###furniture.collision_layer = 4;
-			##furniture.reparent(self)
-			##move_and_slide() #move_dircetion, Vector2(0,0), false, 4, PI/4, false
-			#
-			##for i in get_slide_collision_count():
-				##var collision = get_slide_collision(i)
-				##if collision.collider.is_in_group("furniture"):
-					##collision.collider.apply_central_impulse(-collision.normal * inertia)
-			#self.manager.changeState("Push")
-			#
-			#print("Pussssssssssssh")
-		#elif(furniture):
-			#print("To heavy to push")
-			#furniture.reparent(self)

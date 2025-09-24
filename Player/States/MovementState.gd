@@ -19,16 +19,16 @@ func enter() -> void:
 		and (not (is_equal_approx(self.body.velocity.x, 0.0)))): 
 		self.view.play(prefix + " side")
 	else:
-		if (self.body.velocity.y < 0): self.view.play(prefix+" up")
-		else: self.view.play(prefix + " down")
+		if (self.body.velocity.y < 0): self.view.play(prefix + " up")
+		elif (self.body.velocity.y > 0): self.view.play(prefix + " down")
 
 ## The last method called when the state is transitioned out of
 func exit() -> void:
 	
 	if (self.view.animation.contains("lift")):
 		self.view.play("idlelift " + self.view.animation.split(" ")[1].to_lower())
-	#else:
-		#self.view.play("idle " + self.view.animation.split(" ")[1].to_lower()) 
+	else:
+		self.view.play("idle " + self.view.animation.split(" ")[1].to_lower()) 
 	
 func canEnter() -> bool:
 	if (self.view.animation.contains("idle") || self.view.animation.contains("push")): return true
@@ -39,7 +39,7 @@ func canEnter() -> bool:
 
 ## Updates the animation's flipping state
 func update(_delta:float) -> void:
-	self.view.flip_h = self.body.velocity.x < 0
+	self.view.flip_h = self.getManager().direction.x < 0
 	self.enter()
 
 ## This method runs every _physics_process() frame of the StateManager.
