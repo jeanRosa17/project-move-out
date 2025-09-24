@@ -5,6 +5,13 @@ extends CharacterBody2D
 @onready var view:AnimatedSprite2D = $AnimatedSprite2D
 @onready var area:Area2D
 
+var areaPositions:Dictionary = {
+	"up": Vector2(0, -16),
+	"left": Vector2(-16, 0),
+	"right": Vector2(16, 0),
+	"down": Vector2(0, 16)
+}
+
 var currentState:State
 
 func _ready() -> void:

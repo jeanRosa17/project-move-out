@@ -3,13 +3,15 @@ extends State
 
 @export var view:AnimatedSprite2D = null
 @export var body:CharacterBody2D
+@export var area2DCollision:CollisionShape2D
 @onready var physics:PlayerPhysics
+
 
 func _ready() -> void:
 	self.physics = preload("res://Scripts/Resources/DefaultPhysics.tres")
 	
 ## The first method called when the state is transitioned into
-func enter() -> void:	
+func enter() -> void:
 	var prefix:String = "move"
 	
 	if (self.view.animation.contains("lift")): prefix = "movelift"
@@ -40,7 +42,9 @@ func canEnter() -> bool:
 ## Updates the animation's flipping state
 func update(_delta:float) -> void:
 	self.view.flip_h = self.getManager().direction.x < 0
-	self.enter()
+	self.enter() ## Sets run animation
+	
+	self.area2DCollision.position = self.getManager().direction * 16
 
 ## This method runs every _physics_process() frame of the StateManager.
 func physicsUpdate(_delta:float) -> void:

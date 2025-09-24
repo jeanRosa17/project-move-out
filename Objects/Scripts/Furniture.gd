@@ -6,7 +6,6 @@ class_name Furniture
 @export var canPush:bool
 @export var canPull:bool
 @export var weight:int
-@export var sprite2D:Sprite2D
 
 
 func _process(_delta: float) -> void:

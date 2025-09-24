@@ -1234,7 +1234,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1rgi"]
-size = Vector2(28, 33)
+size = Vector2(16, 16)
 
 [node name="Body" type="CharacterBody2D"]
 collision_layer = 3
@@ -1250,8 +1250,15 @@ animation = &"push up"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_78fhc")
-animation = &"push up"
+animation = &"idle down"
 autoplay = "idle down"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_s1rgi")
 
 [node name="StateManager" type="Node" parent="." node_paths=PackedStringArray("initialState")]
 script = ExtResource("3_s1rgi")
@@ -1271,10 +1278,11 @@ view = NodePath("../../AnimatedSprite2D")
 body = NodePath("../..")
 metadata/_custom_type_script = "uid://u8kdu3je8hxq"
 
-[node name="Move" type="Node" parent="StateManager" node_paths=PackedStringArray("view", "body")]
+[node name="Move" type="Node" parent="StateManager" node_paths=PackedStringArray("view", "body", "area2DCollision")]
 script = ExtResource("5_8g4oa")
 view = NodePath("../../AnimatedSprite2D")
 body = NodePath("../..")
+area2DCollision = NodePath("../../Area2D/CollisionShape2D")
 metadata/_custom_type_script = "uid://c2tqhau6vnsm6"
 
 [node name="Throw" type="Node" parent="StateManager" node_paths=PackedStringArray("view")]
@@ -1293,12 +1301,6 @@ limit_top = -1000
 limit_right = 1000
 limit_bottom = 1000
 position_smoothing_enabled = true
-
-[node name="Area2D" type="Area2D" parent="."]
-collision_layer = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_s1rgi")
 
 [connection signal="area_entered" from="Area2D" to="StateManager" method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="Area2D" to="StateManager/Push" method="_on_area_2d_area_entered"]
