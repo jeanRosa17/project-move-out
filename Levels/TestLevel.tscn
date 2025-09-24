@@ -93,7 +93,7 @@ scale = Vector2(1.5, 1.5)
 canLift = false
 canPush = true
 
-[node name="World Border" type="StaticBody2D" parent="."]
+[node name="World Border" type="StaticBody2D" parent="." groups=["Immovable Object"]]
 
 [node name="CollisionShape2D(North)" type="CollisionShape2D" parent="World Border"]
 position = Vector2(0, 2.5)
@@ -114,7 +114,7 @@ position = Vector2(372.5, 250)
 rotation = -4.71239
 shape = SubResource("WorldBoundaryShape2D_iqcmb")
 
-[node name="Level Borders" type="StaticBody2D" parent="."]
+[node name="Level Borders" type="Node2D" parent="." groups=["Immovable Object"]]
 
 [node name="Walls" type="StaticBody2D" parent="Level Borders"]
 

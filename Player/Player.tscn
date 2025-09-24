@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dkh22y1hno0y0" path="res://Assets/Temp Character Spritesheet.png" id="1_tok1r"]
 [ext_resource type="Texture2D" uid="uid://bnmcqih2l4enf" path="res://Assets/Player_Sprite/mover_lift_front.png" id="2_8sa4y"]
 [ext_resource type="Texture2D" uid="uid://q8auopvfhe4u" path="res://Assets/Player_Sprite/mover_lift_side.png" id="3_3nb2p"]
-[ext_resource type="Script" uid="uid://d0ryul7cekxdv" path="res://Player/PlayerStateManager.gd" id="3_s1rgi"]
+[ext_resource type="Script" path="res://Player/PlayerStateManager.gd" id="3_s1rgi"]
 [ext_resource type="Script" uid="uid://idg0tggjdf4f" path="res://Player/States/IdleState.gd" id="3_tok1r"]
 [ext_resource type="Texture2D" uid="uid://bgdy3v4je7ap8" path="res://Assets/Player_Sprite/mover_lift_back.png" id="4_d7xyo"]
 [ext_resource type="Script" uid="uid://kbl6mj8r1fd" path="res://Player/States/MovementState.gd" id="5_8g4oa"]
@@ -1237,9 +1237,10 @@ animations = [{
 size = Vector2(28, 33)
 
 [node name="Body" type="CharacterBody2D"]
+collision_layer = 3
 script = ExtResource("1_ddoul")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["player_collision"]]
 shape = SubResource("RectangleShape2D_l2ndj")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]

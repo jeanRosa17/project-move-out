@@ -36,3 +36,10 @@ func is_pulling(delta:float) -> void:
 	
 func is_idle(delta:float) -> void:
 	self.manager.currentState.transitioned.emit(self.manager.currentState, "Idle")			
+	
+
+func _on_player_detection_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Immovable Object"):
+		body.collision_layer = 2
+		body.collision_mask = 2
+	pass # Replace with function body.

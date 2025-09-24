@@ -16,7 +16,7 @@ region = Rect2(200, -0.5, 32, 48)
 size = Vector2(26, 36)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wptk5"]
-size = Vector2(42, 56)
+size = Vector2(34, 49)
 
 [node name="Bed" type="CharacterBody2D" groups=["Furniture"]]
 motion_mode = 1
@@ -30,10 +30,11 @@ texture = SubResource("AtlasTexture_cmayr")
 shape = SubResource("RectangleShape2D_xnri0")
 
 [node name="PlayerDetection" type="Area2D" parent="."]
-collision_mask = 0
+collision_layer = 3
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
-position = Vector2(0, 2)
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_wptk5")
 
 [node name="StateManager" type="Node" parent="." node_paths=PackedStringArray("initialState")]
@@ -51,3 +52,5 @@ script = ExtResource("6_qwhii")
 
 [node name="Idle" type="Node" parent="StateManager"]
 script = ExtResource("7_tgufw")
+
+[connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
