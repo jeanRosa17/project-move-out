@@ -13,10 +13,10 @@ atlas = ExtResource("1_cmayr")
 region = Rect2(160, 15, 14, 17)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
-size = Vector2(26, 36)
+size = Vector2(14, 17)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wptk5"]
-size = Vector2(42, 56)
+size = Vector2(30, 32)
 
 [node name="Pot" type="CharacterBody2D" groups=["Furniture"]]
 motion_mode = 1
@@ -27,13 +27,13 @@ canLift = true
 texture = SubResource("AtlasTexture_cmayr")
 
 [node name="BedCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_xnri0")
 
 [node name="PlayerDetection" type="Area2D" parent="."]
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
-position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_wptk5")
 
 [node name="StateManager" type="Node" parent="." node_paths=PackedStringArray("initialState")]

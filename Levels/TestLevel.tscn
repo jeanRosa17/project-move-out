@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bd4iaouuaddvw"]
+[gd_scene load_steps=19 format=3 uid="uid://bd4iaouuaddvw"]
 
+[ext_resource type="Texture2D" uid="uid://byjdse3pdpxef" path="res://Assets/Level Art/Bachelor_pad_test_level.png" id="1_2yvdw"]
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Player/Player.tscn" id="1_uib4f"]
-[ext_resource type="Script" uid="uid://cau3mgvyc3sus" path="res://Levels/Dialogue.gd" id="1_y1yrn"]
+[ext_resource type="Script" path="res://Levels/Dialogue.gd" id="1_y1yrn"]
 [ext_resource type="PackedScene" uid="uid://cqt367stu26c2" path="res://Objects/Pot.tscn" id="2_iqcmb"]
 [ext_resource type="PackedScene" uid="uid://cv6u6nkys85s8" path="res://Objects/Bed.tscn" id="4_jyvk6"]
 
@@ -12,7 +13,44 @@ default_font_size = 11
 normal = Vector2(0, 1)
 distance = -3.99999
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2yvdw"]
+size = Vector2(3, 108)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_voj1p"]
+size = Vector2(3, 45)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kxr0u"]
+size = Vector2(3, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kv5fy"]
+size = Vector2(124, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jeepb"]
+size = Vector2(32, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8x8nf"]
+size = Vector2(29, 137)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ej1bv"]
+size = Vector2(59, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cxxvu"]
+size = Vector2(29, 63)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a5le3"]
+size = Vector2(47, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ijb51"]
+size = Vector2(23, 48)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2yvdw"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(147.75, 125)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_2yvdw")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_scale = 3.0
@@ -23,10 +61,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -132.0
-offset_top = -47.0
-offset_right = 132.0
-offset_bottom = -7.0
+offset_left = -448.0
+offset_top = -337.0
+offset_right = -184.0
+offset_bottom = -297.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -39,35 +77,103 @@ text = "	Hmm what's that?"
 autowrap_mode = 2
 script = ExtResource("1_y1yrn")
 
-[node name="Node2D" parent="." groups=["Furniture"] instance=ExtResource("1_uib4f")]
+[node name="Player" parent="." groups=["Furniture"] instance=ExtResource("1_uib4f")]
 position = Vector2(128, 64)
 safe_margin = 1.159
 
 [node name="Pot" parent="." instance=ExtResource("2_iqcmb")]
-position = Vector2(189, 87)
+position = Vector2(115, 236)
 scale = Vector2(0.973214, 1.01571)
 collision_mask = 0
 
 [node name="Bed" parent="." instance=ExtResource("4_jyvk6")]
-position = Vector2(309, 80)
+position = Vector2(333, 36)
+rotation = 1.5707964
+scale = Vector2(1.5, 1.5)
 canLift = false
 canPush = true
 
 [node name="World Border" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D(North)" type="CollisionShape2D" parent="World Border"]
+position = Vector2(0, 2.5)
 shape = SubResource("WorldBoundaryShape2D_iqcmb")
 
 [node name="CollisionShape2D(West)" type="CollisionShape2D" parent="World Border"]
+position = Vector2(2.5, 0)
 rotation = 4.71239
 shape = SubResource("WorldBoundaryShape2D_iqcmb")
 
 [node name="CollisionShape2D(South)" type="CollisionShape2D" parent="World Border"]
-position = Vector2(955, 535)
+position = Vector2(375, 247.5)
 rotation = -3.14159
 shape = SubResource("WorldBoundaryShape2D_iqcmb")
 
 [node name="CollisionShape2D(East)" type="CollisionShape2D" parent="World Border"]
-position = Vector2(955, 535)
+position = Vector2(372.5, 250)
 rotation = -4.71239
 shape = SubResource("WorldBoundaryShape2D_iqcmb")
+
+[node name="Level Borders" type="StaticBody2D" parent="."]
+
+[node name="Walls" type="StaticBody2D" parent="Level Borders"]
+
+[node name="Bedroom-Kitchen Wall" type="CollisionShape2D" parent="Level Borders/Walls"]
+position = Vector2(187.5, 54)
+shape = SubResource("RectangleShape2D_2yvdw")
+
+[node name="Bedroom-Kitchen-Bathroom Wall" type="CollisionShape2D" parent="Level Borders/Walls"]
+position = Vector2(187.5, 172.5)
+shape = SubResource("RectangleShape2D_voj1p")
+
+[node name="Bathroom-Kitchen Wall" type="CollisionShape2D" parent="Level Borders/Walls"]
+position = Vector2(187.5, 241)
+shape = SubResource("RectangleShape2D_kxr0u")
+
+[node name="Bedroom-Bathroom Long Wall" type="CollisionShape2D" parent="Level Borders/Walls"]
+position = Vector2(251, 161.5)
+shape = SubResource("RectangleShape2D_kv5fy")
+
+[node name="Bedroom-Bathroom Short Wall" type="CollisionShape2D" parent="Level Borders/Walls"]
+position = Vector2(359, 161.5)
+shape = SubResource("RectangleShape2D_jeepb")
+
+[node name="Kitchen Area" type="Node2D" parent="Level Borders"]
+
+[node name="Kitchen Cabinets" type="StaticBody2D" parent="Level Borders/Kitchen Area"]
+
+[node name="Long Kitchen Wall" type="CollisionShape2D" parent="Level Borders/Kitchen Area/Kitchen Cabinets"]
+position = Vector2(14.5, 181.5)
+shape = SubResource("RectangleShape2D_8x8nf")
+
+[node name="Short Kitchen Wall" type="CollisionShape2D" parent="Level Borders/Kitchen Area/Kitchen Cabinets"]
+position = Vector2(58.5, 238)
+shape = SubResource("RectangleShape2D_ej1bv")
+
+[node name="Kitchen Island" type="StaticBody2D" parent="Level Borders/Kitchen Area"]
+
+[node name="Island" type="CollisionShape2D" parent="Level Borders/Kitchen Area/Kitchen Island"]
+position = Vector2(71.5, 162.5)
+shape = SubResource("RectangleShape2D_cxxvu")
+
+[node name="Bathroom Area" type="Node2D" parent="Level Borders"]
+position = Vector2(267, 207)
+
+[node name="Bathroom Sink" type="StaticBody2D" parent="Level Borders/Bathroom Area"]
+
+[node name="Sink" type="CollisionShape2D" parent="Level Borders/Bathroom Area/Bathroom Sink"]
+position = Vector2(-4.5, 27.5)
+shape = SubResource("RectangleShape2D_a5le3")
+
+[node name="Bathroom Toilet" type="StaticBody2D" parent="Level Borders/Bathroom Area"]
+
+[node name="Toilet" type="CollisionShape2D" parent="Level Borders/Bathroom Area/Bathroom Toilet"]
+position = Vector2(54.5, 19)
+shape = SubResource("RectangleShape2D_ijb51")
+
+[node name="Bathroom Bathtub" type="StaticBody2D" parent="Level Borders/Bathroom Area"]
+
+[node name="Bathtub" type="CollisionShape2D" parent="Level Borders/Bathroom Area/Bathroom Bathtub"]
+position = Vector2(87, -1)
+scale = Vector2(2.1, 4.5)
+shape = SubResource("CircleShape2D_2yvdw")
