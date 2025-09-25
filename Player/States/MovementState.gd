@@ -4,7 +4,9 @@ extends State
 @export var view:AnimatedSprite2D = null
 @export var body:CharacterBody2D
 @export var area2DCollision:CollisionShape2D
+
 @onready var physics:PlayerPhysics
+
 
 
 func _ready() -> void:
@@ -45,7 +47,8 @@ func update(_delta:float) -> void:
 	self.enter() ## Sets run animation
 	
 	self.area2DCollision.position = self.getManager().direction * 16
-
+	self.area2DCollision.position = self.getManager().direction * 16
+	
 ## This method runs every _physics_process() frame of the StateManager.
 func physicsUpdate(_delta:float) -> void:
 	self.accelerate(self.getManager().direction, _delta)
@@ -56,6 +59,7 @@ func accelerate(direction:Vector2i, delta:float) -> void:
 	if direction != Vector2i.ZERO:
 		self.body.velocity.x = move_toward(self.body.velocity.x, direction.x * self.physics.maxSpeed, self.physics.acceleration * delta) 
 		self.body.velocity.y = move_toward(self.body.velocity.y, direction.y * self.physics.maxSpeed, self.physics.acceleration * delta)
+		#prints(self.body.velocity, " v")
 
 ## Decreases the player's velocity. This function should only be called after the player
 ## stops pressing a direction.

@@ -3,14 +3,7 @@ extends CharacterBody2D
 
 @onready var manager:StateManager = $StateManager
 @onready var view:AnimatedSprite2D = $AnimatedSprite2D
-@onready var area:Area2D
 
-var areaPositions:Dictionary = {
-	"up": Vector2(0, -16),
-	"left": Vector2(-16, 0),
-	"right": Vector2(16, 0),
-	"down": Vector2(0, 16)
-}
 
 var currentState:State
 
@@ -21,7 +14,7 @@ func _ready() -> void:
 func _process(delta:float) -> void:
 	if (manager == null):
 		Exception.new("Manager for Controller can't be null.")
-		
+	
 	self.currentState = manager.currentState
 	self.handleMovement(delta)
 	self.handleLift(delta)
@@ -35,8 +28,9 @@ func handleMovement(_delta:float) -> void:
 	or Input.is_action_pressed("MoveRight")
 	or Input.is_action_pressed("MoveDown")
 	or Input.is_action_pressed("MoveUp")):
-		self.manager.direction= Input.get_vector("MoveLeft", "MoveRight", "MoveUp", "MoveDown")
-		
+		self.manager.direction = Input.get_vector("MoveLeft", "MoveRight", "MoveUp", "MoveDown", 0.1)                  
+		#print(self.manager.direction)
+			
 		if (self.manager.getStateName() != "Move" && self.manager.getStateName() != "Lift"):
 			self.manager.changeState("Move")
 			
@@ -49,6 +43,7 @@ func handleMovement(_delta:float) -> void:
 	else:
 		if (self.manager.getStateName() == "Move" && self.manager.getStateName() != "Lift"):
 			self.manager.changeState("Idle")
+
 
 ## Handles the "Lift" set of Inputs and enters the Lift State if
 ## 1. Lift is inputed 
