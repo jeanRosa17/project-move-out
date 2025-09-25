@@ -1643,6 +1643,12 @@ size = Vector2(16, 16)
 collision_mask = 6
 script = ExtResource("1_ddoul")
 
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(0, 9)
+color = Color(0.08235294, 0.08235294, 0.36078432, 0.43137255)
+polygon = PackedVector2Array(-7.9999924, 0, -3.9999962, -4, 4, -4, 8, 0, 8, 7.999998, 4, 12, -4, 12, -8, 8)
+uv = PackedVector2Array(-7.9999924, 0, -3.9999962, -4, 4, -4, 8, 0, 8, 7.999998, 4, 12, -4, 12, -8, 8)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_l2ndj")
 

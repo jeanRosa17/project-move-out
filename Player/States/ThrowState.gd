@@ -49,9 +49,6 @@ func physicsUpdate(_delta:float) -> void:
 
 func _on_area_2d_body_entered2(body: Node2D) -> void:
 	self.hadEmptySpace = false
-	print(self.hadEmptySpace)
-
 
 func _on_area_2d_body_exited2(body: Node2D) -> void:
 	self.hadEmptySpace = true
-	print(self.hadEmptySpace)

@@ -14,18 +14,18 @@ func canEnter() -> bool:
 	print("can enter push")
 	
 	if (self.manager.furniture && self.manager.furniture.canPush):
-		if (!self.isPushing):
-			##self.manager.furniture.position = self.body.position
-			self.manager.furniture.position.x += 8
-			#self.manager.furniture.collision_layer = 4;
-			self.manager.furniture.reparent(self.body)
-			self.isPushing = true;
-		else:
-			##self.manager.furniture.position = self.body.position
-			self.manager.furniture.position.x += 8
-			self.manager.furniture.collision_layer = 1;
-			self.manager.furniture.reparent(self.manager.furniture.get_parent().get_parent())
-			self.isPushing = false;
+		if (!self.isPushing): pass
+			###self.manager.furniture.position = self.body.position
+			#self.manager.furniture.position.x += 8
+			##self.manager.furniture.collision_layer = 4;
+			#self.manager.furniture.reparent(self.body)
+			#self.isPushing = true;
+		#else:
+			###self.manager.furniture.position = self.body.position
+			#self.manager.furniture.position.x += 8
+			#self.manager.furniture.collision_layer = 1;
+			#self.manager.furniture.reparent(self.manager.furniture.get_parent().get_parent())
+			#self.isPushing = false;
 		return true
 	else:
 		return false
@@ -39,16 +39,11 @@ func enter() -> void:
 ## The last method called when the state is transitioned out of
 func exit() -> void:
 	pass
-	#self.isPushing = false
-	#self.manager.furniture.position.x += 8
-	#self.manager.furniture.collision_layer = 1;
-	#self.manager.furniture.reparent(self.manager.furniture.get_parent().get_parent())
-	#self.isPushing = false;
 	
 ## Constantly checks for input from the user and changes state.
 func update(_delta:float) -> void:
 	if (self.manager.furniture):
-		print(self.manager.furniture.position.distance_to(self.body.position))
+		#print(self.manager.furniture.position.distance_to(self.body.position))
 		if (self.manager.furniture.position.distance_to(self.body.position) > 400):
 			pass
 			#self.exit()
