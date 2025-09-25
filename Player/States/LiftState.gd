@@ -8,12 +8,7 @@ extends State
 ## Furniture needs to be not null and needs to be lifted
 func canEnter() -> bool:
 	if (self.manager.furniture && self.manager.furniture.canLift):
-		self.manager.furniture.position = self.body.position
-		#self.manager.furniture.position.y = self.body.position.y - 8
-		self.manager.furniture.collision_layer = 4;
-		self.manager.furniture.reparent(self.body)
 		return true
-		
 	else:
 		self.manager.changeState("Push")
 		return false
@@ -24,6 +19,8 @@ func enter() -> void:
 	
 	if not (self.view.animation.contains("lift")):
 		self.view.play("lift " + dir)
+		
+	self.manager.furniture.enterLift(self.body)
 
 ## The last method called when the state is transitioned out of
 func exit() -> void:

@@ -84,7 +84,6 @@ safe_margin = 1.159
 [node name="Pot" parent="." instance=ExtResource("2_iqcmb")]
 position = Vector2(115, 236)
 scale = Vector2(0.973214, 1.01571)
-collision_mask = 0
 
 [node name="Bed" parent="." instance=ExtResource("4_jyvk6")]
 position = Vector2(333, 36)
@@ -94,6 +93,7 @@ canLift = false
 canPush = true
 
 [node name="World Border" type="StaticBody2D" parent="." groups=["Immovable Object"]]
+collision_layer = 4
 
 [node name="CollisionShape2D(North)" type="CollisionShape2D" parent="World Border"]
 position = Vector2(0, 2.5)
@@ -117,6 +117,7 @@ shape = SubResource("WorldBoundaryShape2D_iqcmb")
 [node name="Level Borders" type="Node2D" parent="." groups=["Immovable Object"]]
 
 [node name="Walls" type="StaticBody2D" parent="Level Borders"]
+collision_layer = 4
 
 [node name="Bedroom-Kitchen Wall" type="CollisionShape2D" parent="Level Borders/Walls"]
 position = Vector2(187.5, 54)
@@ -141,6 +142,7 @@ shape = SubResource("RectangleShape2D_jeepb")
 [node name="Kitchen Area" type="Node2D" parent="Level Borders"]
 
 [node name="Kitchen Cabinets" type="StaticBody2D" parent="Level Borders/Kitchen Area"]
+collision_layer = 4
 
 [node name="Long Kitchen Wall" type="CollisionShape2D" parent="Level Borders/Kitchen Area/Kitchen Cabinets"]
 position = Vector2(14.5, 181.5)
@@ -151,6 +153,7 @@ position = Vector2(58.5, 238)
 shape = SubResource("RectangleShape2D_ej1bv")
 
 [node name="Kitchen Island" type="StaticBody2D" parent="Level Borders/Kitchen Area"]
+collision_layer = 4
 
 [node name="Island" type="CollisionShape2D" parent="Level Borders/Kitchen Area/Kitchen Island"]
 position = Vector2(71.5, 162.5)
@@ -160,18 +163,21 @@ shape = SubResource("RectangleShape2D_cxxvu")
 position = Vector2(267, 207)
 
 [node name="Bathroom Sink" type="StaticBody2D" parent="Level Borders/Bathroom Area"]
+collision_layer = 4
 
 [node name="Sink" type="CollisionShape2D" parent="Level Borders/Bathroom Area/Bathroom Sink"]
 position = Vector2(-4.5, 27.5)
 shape = SubResource("RectangleShape2D_a5le3")
 
 [node name="Bathroom Toilet" type="StaticBody2D" parent="Level Borders/Bathroom Area"]
+collision_layer = 4
 
 [node name="Toilet" type="CollisionShape2D" parent="Level Borders/Bathroom Area/Bathroom Toilet"]
 position = Vector2(54.5, 19)
 shape = SubResource("RectangleShape2D_ijb51")
 
 [node name="Bathroom Bathtub" type="StaticBody2D" parent="Level Borders/Bathroom Area"]
+collision_layer = 4
 
 [node name="Bathtub" type="CollisionShape2D" parent="Level Borders/Bathroom Area/Bathroom Bathtub"]
 position = Vector2(87, -1)

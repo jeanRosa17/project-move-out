@@ -14,6 +14,18 @@ func _process(_delta: float) -> void:
 func get_canLift() -> bool:
 	return canLift
 
+## Reparents this Furniture to the given CharacterBody
+func enterLift(body:CharacterBody2D) -> void:
+	self.position = body.position
+	self.collision_layer = 1;
+	self.collision_mask = 4;
+	self.reparent(body)
+
+## Returns this Furniture back to not being held
+func exitLift() -> void:
+	self.collision_layer = 2;
+	self.collision_mask = 5;
+	self.reparent(self.get_parent().get_parent())
 
 func _on_player_detection_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Immovable Object"):
