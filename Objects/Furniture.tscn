@@ -9,6 +9,12 @@ size = Vector2(14, 17)
 size = Vector2(30, 32)
 
 [node name="Furniture" type="CharacterBody2D"]
+process_mode = 4
+physics_interpolation_mode = 2
+auto_translate_mode = 2
+slide_on_ceiling = false
+platform_floor_layers = 0
+safe_margin = 38.832
 script = ExtResource("1_3ymjy")
 metadata/_custom_type_script = "uid://c2vh27coguldq"
 

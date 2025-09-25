@@ -9,7 +9,7 @@ class_name Furniture
 
 
 func _process(_delta: float) -> void:
-	self.move_and_slide()
+	self.move_and_collide(self.velocity * _delta)
 
 func get_canLift() -> bool:
 	return canLift

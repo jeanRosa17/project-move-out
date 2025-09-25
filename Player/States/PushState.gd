@@ -18,7 +18,7 @@ func canEnter() -> bool:
 		if (!self.isPushing):
 			##self.manager.furniture.position = self.body.position
 			self.manager.furniture.position.x += 8
-			self.manager.furniture.collision_layer = 4;
+			#self.manager.furniture.collision_layer = 4;
 			self.manager.furniture.reparent(self.body)
 			self.isPushing = true;
 		else:
