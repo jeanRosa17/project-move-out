@@ -18,13 +18,13 @@ func get_canLift() -> bool:
 func enterLift(body:CharacterBody2D) -> void:
 	self.position = body.position
 	self.collision_layer = 1;
-	self.collision_mask = 4;
+	self.collision_mask = 6;
 	self.reparent(body)
 
 ## Returns this Furniture back to not being held
 func exitLift() -> void:
 	self.collision_layer = 2;
-	self.collision_mask = 5;
+	self.collision_mask = 7;
 	self.reparent(self.get_parent().get_parent())
 
 func _on_player_detection_body_entered(body: Node2D) -> void:

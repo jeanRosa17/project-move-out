@@ -9,6 +9,7 @@ extends Node
 @onready var client = self.get_parent()
 ## If true, a message will be outputed stating the state that was attempted to enter
 @export var reportFails:bool = false
+@export var logStatuses:bool = true
 
 var currentState:State
 var states:Dictionary = {}
@@ -76,7 +77,7 @@ func onStateChanged(state:State, newStateName:String) -> void:
 	
 	if (newState.canEnter()):
 		newState.enter()
-		print(newState.logStatus())
+		if (logStatuses): print(newState.logStatus())
 		self.currentState = newState
 	else:
 		if (self.reportFails): print("Failed to enter " + newStateName)

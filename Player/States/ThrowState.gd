@@ -6,13 +6,14 @@ extends State
 @export var view:AnimatedSprite2D = null
 @export var throwDistance:int = 20
 @export var area2D:Area2D
+var hadEmptySpace:bool
 
 
 func canEnter() -> bool:
-	self.area2D.collision_mask = 6
-	var emptyDropZone:bool = not self.area2D.has_overlapping_bodies()
-	self.area2D.collision_mask = 1
-	return self.manager.getStateName() == "Idle" && emptyDropZone
+	#self.area2D.collision_mask = 6
+	#var emptyDropZone:bool = self.area2D.has_overlapping_bodies()
+	print(hadEmptySpace)
+	return self.manager.getStateName() == "Idle" && self.hadEmptySpace
 
 ## The first method called when the state is transitioned into
 func enter() -> void:
@@ -49,3 +50,12 @@ func update(_delta:float) -> void:
 ## This method runs every _physics_process() frame of the StateManager.
 func physicsUpdate(_delta:float) -> void:
 	pass
+
+func _on_area_2d_body_entered2(body: Node2D) -> void:
+	self.hadEmptySpace = false
+	print(self.hadEmptySpace)
+
+
+func _on_area_2d_body_exited2(body: Node2D) -> void:
+	self.hadEmptySpace = true
+	print(self.hadEmptySpace)

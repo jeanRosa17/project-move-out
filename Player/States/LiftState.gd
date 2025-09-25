@@ -13,7 +13,7 @@ func canEnter() -> bool:
 		self.manager.changeState("Push")
 		return false
 
-## The first method called when the state is transitioned into
+## The first methosd called when the state is transitioned into
 func enter() -> void:
 	var dir:String = self.view.animation.split(" ")[1].to_lower()
 	
