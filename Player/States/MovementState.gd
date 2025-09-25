@@ -1,7 +1,7 @@
 class_name MovementState
 extends State
 
-@export var view:AnimatedSprite2D = null
+
 @export var body:CharacterBody2D
 @export var area2DCollision:CollisionShape2D
 
@@ -16,34 +16,34 @@ func _ready() -> void:
 func enter() -> void:
 	var prefix:String = "move"
 	
-	if (self.view.animation.contains("lift")): prefix = "movelift"
-	if (self.view.animation.contains("push")): prefix = "push"
+	if (self.getManager().view.animation.contains("lift")): prefix = "movelift"
+	if (self.getManager().view.animation.contains("push")): prefix = "push"
 		
 	if ((is_equal_approx(self.body.velocity.y, 0.0))
 		and (not (is_equal_approx(self.body.velocity.x, 0.0)))): 
-		self.view.play(prefix + " side")
+		self.getManager().view.play(prefix + " side")
 	else:
-		if (self.body.velocity.y < 0): self.view.play(prefix + " up")
-		elif (self.body.velocity.y > 0): self.view.play(prefix + " down")
+		if (self.body.velocity.y < 0): self.getManager().view.play(prefix + " up")
+		elif (self.body.velocity.y > 0): self.getManager().view.play(prefix + " down")
 
 ## The last method called when the state is transitioned out of
 func exit() -> void:
 	
-	if (self.view.animation.contains("lift")):
-		self.view.play("idlelift " + self.view.animation.split(" ")[1].to_lower())
+	if (self.getManager().view.animation.contains("lift")):
+		self.getManager().view.play("idlelift " + self.getManager().view.animation.split(" ")[1].to_lower())
 	else:
-		self.view.play("idle " + self.view.animation.split(" ")[1].to_lower()) 
+		self.getManager().view.play("idle " + self.getManager().view.animation.split(" ")[1].to_lower()) 
 	
 func canEnter() -> bool:
-	if (self.view.animation.contains("idle") || self.view.animation.contains("push")): return true
+	if (self.getManager().view.animation.contains("idle") || self.getManager().view.animation.contains("push")): return true
 	else:
-		if (self.view.animation.contains("lift") and not (self.view.is_playing())): return true
-		if (self.view.animation.contains("throw") and not (self.view.is_playing())): return true
+		if (self.getManager().view.animation.contains("lift") and not (self.getManager().view.is_playing())): return true
+		if (self.getManager().view.animation.contains("throw") and not (self.getManager().view.is_playing())): return true
 	return false
 
 ## Updates the animation's flipping state
 func update(_delta:float) -> void:
-	self.view.flip_h = self.getManager().direction.x < 0
+	self.getManager().view.flip_h = self.getManager().direction.x < 0
 	self.enter() ## Sets run animation
 	
 	self.area2DCollision.position = self.getManager().direction * 16

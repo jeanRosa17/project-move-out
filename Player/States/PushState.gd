@@ -3,7 +3,6 @@ class_name PushState
 extends State
 
 @onready var manager:StateManager = self.getManager()
-@export var view:AnimatedSprite2D
 @export var body:Player
 @onready var backToIdle:Callable = func () -> void : self.manager.changeState.bind("Idle")
 
@@ -32,10 +31,10 @@ func canEnter() -> bool:
 		return false
 
 func enter() -> void: 
-	var dir:String = self.view.animation.split(" ")[1].to_lower()
+	var dir:String = self.getManager().view.animation.split(" ")[1].to_lower()
 	
-	if not (self.view.animation.contains("push")):
-		self.view.play("push " + dir)
+	if not (self.getManager().view.animation.contains("push")):
+		self.getManager().view.play("push " + dir)
 
 ## The last method called when the state is transitioned out of
 func exit() -> void:

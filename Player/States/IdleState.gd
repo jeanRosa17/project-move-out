@@ -1,17 +1,17 @@
 class_name IdleState
 extends State
 
-@export var view:AnimatedSprite2D = null
+
 @export var body:CharacterBody2D = null
 
 ## The first method called when the state is transitioned into
 func enter() -> void: 
-	if (self.view.animation.contains("idle")): return
-	if (self.view.animation.contains("lift")): 
-		self.view.play("idlelift " + self.view.animation.split(" ")[1].to_lower())
+	if (self.getManager().view.animation.contains("idle")): return
+	if (self.getManager().view.animation.contains("lift")): 
+		self.getManager().view.play("idlelift " + self.getManager().view.animation.split(" ")[1].to_lower())
 		return
 	
-	self.view.play("idle " + self.view.animation.split(" ")[1].to_lower())
+	self.getManager().view.play("idle " + self.getManager().view.animation.split(" ")[1].to_lower())
 
 ## The last method called when the state is transitioned out of
 func exit() -> void:

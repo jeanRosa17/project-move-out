@@ -1,7 +1,6 @@
 class_name LiftState
 extends State
 
-@export var view:AnimatedSprite2D
 @export var body:Player
 @onready var manager:StateManager = self.getManager()
 
@@ -15,10 +14,10 @@ func canEnter() -> bool:
 
 ## The first methosd called when the state is transitioned into
 func enter() -> void:
-	var dir:String = self.view.animation.split(" ")[1].to_lower()
+	var dir:String = self.getManager().view.animation.split(" ")[1].to_lower()
 	
-	if not (self.view.animation.contains("lift")):
-		self.view.play("lift " + dir)
+	if not (self.getManager().view.animation.contains("lift")):
+		self.getManager().view.play("lift " + dir)
 		
 	self.manager.furniture.enterLift(self.body)
 

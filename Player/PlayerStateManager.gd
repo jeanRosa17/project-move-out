@@ -1,6 +1,8 @@
 extends StateManager
 class_name PlayerManager
 
+@export var view:AnimatedSprite2D
+
 var furniture:Furniture
 var direction:Vector2
 var hasEmptyDropZone:bool
@@ -18,5 +20,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		self.furniture = body
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
+	if (self.furniture == null): return
 	if (self.getRootNode().find_child(self.furniture.name) != null): return
 	self.furniture = null
