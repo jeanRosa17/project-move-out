@@ -7,6 +7,7 @@ class_name Furniture
 @export var canPull:bool
 @export var weight:int
 
+@export var liftPosition:Vector2
 
 func _process(_delta: float) -> void:
 	self.move_and_collide(self.velocity * _delta)
@@ -16,7 +17,7 @@ func get_canLift() -> bool:
 
 ## Reparents this Furniture to the given CharacterBody
 func enterLift(body:CharacterBody2D) -> void:
-	self.position = body.position
+	self.position = body.position + self.liftPosition
 	self.collision_layer = 1;
 	self.collision_mask = 6;
 	self.reparent(body)
