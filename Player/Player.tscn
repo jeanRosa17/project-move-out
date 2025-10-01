@@ -1705,9 +1705,9 @@ body = NodePath("../..")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = -20
-limit_top = -1000
-limit_right = 1000
-limit_bottom = 1000
+limit_top = -20
+limit_right = 405
+limit_bottom = 405
 position_smoothing_enabled = true
 
 [connection signal="area_entered" from="Area2D" to="StateManager" method="_on_area_2d_area_entered"]
