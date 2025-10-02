@@ -1,7 +1,6 @@
-[gd_scene load_steps=28 format=4 uid="uid://bd4iaouuaddvw"]
+[gd_scene load_steps=26 format=4 uid="uid://bd4iaouuaddvw"]
 
 [ext_resource type="Texture2D" uid="uid://byjdse3pdpxef" path="res://Assets/Level Art/Bachelor_pad_test_level.png" id="1_2yvdw"]
-[ext_resource type="Texture2D" uid="uid://c27gwm3wsqool" path="res://Assets/Level Art/Template Garage Floor.png" id="1_ej1bv"]
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Player/Player.tscn" id="1_uib4f"]
 [ext_resource type="Script" uid="uid://cau3mgvyc3sus" path="res://Levels/Dialogue.gd" id="1_y1yrn"]
 [ext_resource type="PackedScene" uid="uid://cqt367stu26c2" path="res://Objects/Pot.tscn" id="2_iqcmb"]
@@ -97,9 +96,6 @@ size = Vector2(128.5, 17.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jeepb"]
 size = Vector2(32, 3)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a5le3"]
-size = Vector2(184, 3)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8x8nf"]
 size = Vector2(23, 153)
 
@@ -113,11 +109,6 @@ size = Vector2(23, 31)
 radius = 6.6703744
 
 [node name="Main" type="Node2D"]
-
-[node name="Background Garage" type="Sprite2D" parent="."]
-position = Vector2(188.5, 322)
-scale = Vector2(0.25, 0.132)
-texture = ExtResource("1_ej1bv")
 
 [node name="Tilemap" type="CanvasLayer" parent="."]
 layer = -1
@@ -135,7 +126,7 @@ tile_set = SubResource("TileSet_kv5fy")
 tile_map_data = PackedByteArray("AAAAAAQAAQAAAAIAAAAAAAUAAQADAAQAAAAAAAYAAQAAAAIAAAAAAAcAAQACAAIAAAABAAcAAQABAAAAAAACAAcAAQACAAAAAAAAAAMAAQAAAAEAAAAHAAUAAQACAAQAAAAIAAUAAQACAAAAAAA=")
 tile_set = SubResource("TileSet_kv5fy")
 
-[node name="Background Main Area" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(147.75, 125)
 scale = Vector2(0.5, 0.5)
@@ -330,7 +321,7 @@ rotation = 4.71239
 shape = SubResource("WorldBoundaryShape2D_iqcmb")
 
 [node name="CollisionShape2D(South)" type="CollisionShape2D" parent="World Border"]
-position = Vector2(375, 385)
+position = Vector2(375, 247.5)
 rotation = -3.14159
 shape = SubResource("WorldBoundaryShape2D_iqcmb")
 
@@ -362,13 +353,13 @@ shape = SubResource("RectangleShape2D_kxr0u")
 position = Vector2(255.75, 168.25)
 shape = SubResource("RectangleShape2D_kv5fy")
 
+[node name="Bedroom-Bathroom Long Wall3" type="CollisionShape2D" parent="Level Borders/Walls"]
+position = Vector2(433.5, 2)
+shape = SubResource("RectangleShape2D_kv5fy")
+
 [node name="Bedroom-Bathroom Short Wall" type="CollisionShape2D" parent="Level Borders/Walls"]
 position = Vector2(359, 161.5)
 shape = SubResource("RectangleShape2D_jeepb")
-
-[node name="Garage-Bathroom Wall" type="CollisionShape2D" parent="Level Borders/Walls"]
-position = Vector2(283.5, 256.5)
-shape = SubResource("RectangleShape2D_a5le3")
 
 [node name="Kitchen Area" type="Node2D" parent="Level Borders"]
 
