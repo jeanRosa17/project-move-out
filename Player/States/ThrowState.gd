@@ -2,7 +2,7 @@ class_name ThrowState
 extends State
 
 @onready var manager:StateManager = self.getManager()
-@onready var backToIdle:Callable = func () -> void : self.manager.currentState.transitioned.emit(self.manager.currentState, "Idle")
+@onready var backToIdle:Callable = func () -> void : self.manager.changeState("Idle")
 @export var throwDistance:int = 20
 @export var area2D:Area2D
 var hadEmptySpace:bool
