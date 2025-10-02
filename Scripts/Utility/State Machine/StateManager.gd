@@ -13,7 +13,7 @@ extends Node
 
 var currentState:State
 var states:Dictionary = {}
-var coState:State = null
+var previousState:State
 
 ## Adds all the child nodes that are States to this StateManager's 
 ## state dictionary by using the node's name (lowercased) as the keys, and
@@ -25,6 +25,7 @@ func start() -> void:
 		if (not child.transitioned.is_connected(onStateChanged)): child.transitioned.connect(onStateChanged)
 	
 	if (self.initialState != null):
+		self.previousState = self.initialState
 		self.initialState.enter()
 		self.currentState = self.initialState
 
@@ -43,9 +44,12 @@ func _physics_process(delta:float) -> void:
 func getRootNode():
 	return $".."
 
-## Returns the most recent state name
+## Returns the current  state name
 func getStateName() -> String:
 	return self.currentState.name
+	
+func wasPreviousState(stateName:String) -> bool:
+	return self.previousState.name == stateName
 	
 ## Returns the current state's object
 func getState() -> State:

@@ -16,7 +16,7 @@ func canEnter() -> bool:
 func enter() -> void:
 	var dir:String = self.getManager().view.animation.split(" ")[1].to_lower()
 	
-	if not (self.getManager().view.animation.contains("lift")):
+	if not (self.getManager().wasPreviousState("Lift")):
 		self.getManager().view.play("lift " + dir)
 		
 	self.manager.furniture.enterLift(self.body)

@@ -33,7 +33,7 @@ func canEnter() -> bool:
 func enter() -> void: 
 	var dir:String = self.getManager().view.animation.split(" ")[1].to_lower()
 	
-	if not (self.getManager().view.animation.contains("push")):
+	if not (self.getManager().wasPreviousState("push")):
 		self.getManager().view.play("push " + dir)
 
 ## The last method called when the state is transitioned out of

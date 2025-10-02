@@ -6,8 +6,8 @@ extends State
 
 ## The first method called when the state is transitioned into
 func enter() -> void: 
-	if (self.getManager().view.animation.contains("idle")): return
-	if (self.getManager().view.animation.contains("lift")): 
+	if (self.getManager().wasPreviousState("Idle")): return
+	if (self.getManager().wasPreviousState("Lift")): 
 		self.getManager().view.play("idlelift " + self.getManager().view.animation.split(" ")[1].to_lower())
 		return
 	

@@ -5,8 +5,6 @@ extends CharacterBody2D
 @onready var view:AnimatedSprite2D = $NewAnimatedSprite2D
 
 
-var currentState:State
-
 func _ready() -> void:
 	self.manager.start()
 	
@@ -15,7 +13,6 @@ func _process(delta:float) -> void:
 	if (manager == null):
 		Exception.new("Manager for Controller can't be null.")
 	
-	self.currentState = manager.currentState
 	self.handleMovement(delta)
 	self.handleLift(delta)
 	self.handlePushPull(delta)
@@ -51,7 +48,7 @@ func handleMovement(_delta:float) -> void:
 ## 3. Furniture node can be lifted 
 func handleLift(_delta:float) -> void:
 	if (Input.is_action_just_pressed("Lift")):
-		if (self.view.animation.contains("lift")):
+		if (self.manager.wasPreviousState("Lift")):
 			self.manager.changeState("Throw")
 			
 		elif (self.manager.getStateName() != "Lift"): self.manager.changeState("Lift")

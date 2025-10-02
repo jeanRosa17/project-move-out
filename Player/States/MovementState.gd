@@ -16,8 +16,8 @@ func _ready() -> void:
 func enter() -> void:
 	var prefix:String = "move"
 	
-	if (self.getManager().view.animation.contains("lift")): prefix = "movelift"
-	if (self.getManager().view.animation.contains("push")): prefix = "push"
+	if (self.getManager().wasPreviousState("Lift")): prefix = "movelift"
+	if (self.getManager().wasPreviousState("Push")): prefix = "push"
 		
 	if ((is_equal_approx(self.body.velocity.y, 0.0))
 		and (not (is_equal_approx(self.body.velocity.x, 0.0)))): 
@@ -29,16 +29,16 @@ func enter() -> void:
 ## The last method called when the state is transitioned out of
 func exit() -> void:
 	
-	if (self.getManager().view.animation.contains("lift")):
+	if (self.getManager().wasPreviousState("Lift")):
 		self.getManager().view.play("idlelift " + self.getManager().view.animation.split(" ")[1].to_lower())
 	else:
 		self.getManager().view.play("idle " + self.getManager().view.animation.split(" ")[1].to_lower()) 
 	
 func canEnter() -> bool:
-	if (self.getManager().view.animation.contains("idle") || self.getManager().view.animation.contains("push")): return true
+	if (self.getManager().wasPreviousState("Idle") || self.getManager().wasPreviousState("Push")): return true
 	else:
-		if (self.getManager().view.animation.contains("lift") and not (self.getManager().view.is_playing())): return true
-		if (self.getManager().view.animation.contains("throw") and not (self.getManager().view.is_playing())): return true
+		if (self.getManager().wasPreviousState("Lift") and not (self.getManager().view.is_playing())): return true
+		if (self.getManager().wasPreviousState("Throw") and not (self.getManager().view.is_playing())): return true
 	return false
 
 ## Updates the animation's flipping state
