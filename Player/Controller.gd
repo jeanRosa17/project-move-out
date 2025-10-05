@@ -48,8 +48,7 @@ func handleMovement(_delta:float) -> void:
 ## 3. Furniture node can be lifted 
 func handleLift(_delta:float) -> void:
 	if (Input.is_action_just_pressed("Lift")):
-		print(self.manager.getStateName())
-		if (self.manager.furniture.isLifting):
+		if ((self.manager.furniture) and (self.manager.furniture.isLifting)): 
 			self.manager.changeState("Throw")
 			
 		elif (self.manager.getStateName() != "Lift"): self.manager.changeState("Lift")

@@ -1,75 +1,15 @@
-[gd_scene load_steps=26 format=4 uid="uid://bd4iaouuaddvw"]
+[gd_scene load_steps=23 format=4 uid="uid://bd4iaouuaddvw"]
 
 [ext_resource type="Texture2D" uid="uid://byjdse3pdpxef" path="res://Assets/Level Art/Bachelor_pad_test_level.png" id="1_2yvdw"]
+[ext_resource type="TileSet" uid="uid://b611ygot7kux2" path="res://Levels/Tileset Resources/TestLevel.tres" id="1_8x8nf"]
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Player/Player.tscn" id="1_uib4f"]
 [ext_resource type="Script" uid="uid://cau3mgvyc3sus" path="res://Levels/Dialogue.gd" id="1_y1yrn"]
+[ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Assets/tiles/Support Columns-autotile2/Support Columns-autotile2.tres" id="2_8x8nf"]
 [ext_resource type="PackedScene" uid="uid://cqt367stu26c2" path="res://Objects/Pot.tscn" id="2_iqcmb"]
-[ext_resource type="Texture2D" uid="uid://xb4g61m2b78c" path="res://Assets/Level Art/Counter_Tileset.png" id="3_kv5fy"]
 [ext_resource type="PackedScene" uid="uid://cv6u6nkys85s8" path="res://Objects/Bed.tscn" id="4_jyvk6"]
 [ext_resource type="PackedScene" uid="uid://d26wukook25xb" path="res://Objects/Table.tscn" id="5_kxr0u"]
-[ext_resource type="Texture2D" uid="uid://cpkmnwh4l7op6" path="res://Assets/Level Art/House_Tileset.png" id="6_voj1p"]
 [ext_resource type="Texture2D" uid="uid://drpfaulsu8pf6" path="res://Assets/Objects Spritesheet.png" id="7_jeepb"]
 [ext_resource type="Texture2D" uid="uid://b1h3op3pjraac" path="res://Assets/Level Art/couch1.png" id="10_8x8nf"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kxr0u"]
-texture = ExtResource("6_voj1p")
-separation = Vector2i(1, 1)
-texture_region_size = Vector2i(32, 32)
-use_texture_padding = false
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-1:3/0 = 0
-0:3/0 = 0
-0:4/0 = 0
-0:5/0 = 0
-1:5/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-1:2/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jeepb"]
-texture = ExtResource("3_kv5fy")
-separation = Vector2i(1, 1)
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-0:4/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-3:4/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_kv5fy"]
-tile_size = Vector2i(32, 32)
-sources/0 = SubResource("TileSetAtlasSource_kxr0u")
-sources/1 = SubResource("TileSetAtlasSource_jeepb")
 
 [sub_resource type="Theme" id="Theme_iqcmb"]
 default_font_size = 11
@@ -116,15 +56,18 @@ follow_viewport_enabled = true
 
 [node name="Ground Tiles" type="TileMapLayer" parent="Tilemap"]
 tile_map_data = PackedByteArray("AAACAAMAAAAAAAMAAAAAAAAAAAAAAAMAAAAAAAEAAAAAAAMAAAAAAAIAAAAAAAMAAAAAAAMAAAAAAAUAAAAAAAQAAAAAAAUAAAAAAAUAAAAAAAUAAAAAAAYAAAAAAAUAAAAAAAcAAAAAAAUAAAABAAAAAAAAAAMAAAABAAEAAAAAAAMAAAABAAIAAAAAAAMAAAABAAMAAAAAAAUAAAABAAQAAAAAAAUAAAABAAUAAAAAAAUAAAABAAYAAAAAAAUAAAABAAcAAAAAAAUAAAACAAAAAAAAAAMAAAACAAEAAAAAAAMAAAACAAIAAAAAAAMAAAACAAQAAAAAAAMAAAACAAUAAAAAAAUAAAACAAYAAAAAAAUAAAACAAcAAAAAAAUAAAADAAAAAAAAAAMAAAADAAEAAAAAAAMAAAADAAIAAAAAAAMAAAADAAMAAAAAAAMAAAADAAQAAAAAAAMAAAADAAUAAAAAAAMAAAADAAYAAAAAAAMAAAADAAcAAAAAAAMAAAAEAAAAAAAAAAMAAAAEAAEAAAAAAAMAAAAEAAIAAAAAAAMAAAAEAAMAAAAAAAMAAAAEAAQAAAAAAAMAAAAEAAUAAAAAAAMAAAAEAAYAAAAAAAMAAAAEAAcAAAAAAAMAAAAFAAAAAAAAAAMAAAAFAAEAAAAAAAMAAAAFAAIAAAAAAAMAAAAFAAMAAAAAAAMAAAAFAAQAAAAAAAMAAAAFAAUAAAAAAAMAAAAFAAYAAAAAAAMAAAAFAAcAAAAAAAMAAAAGAAAAAAAAAAMAAAAGAAEAAAAAAAMAAAAGAAIAAAAAAAMAAAAGAAMAAAAAAAMAAAAGAAQAAAAAAAMAAAAGAAUAAAABAAUAAAAGAAYAAAABAAUAAAAGAAcAAAABAAUAAAAHAAAAAAAAAAMAAAAHAAEAAAAAAAMAAAAHAAIAAAAAAAMAAAAHAAMAAAAAAAMAAAAHAAQAAAAAAAMAAAAHAAUAAAABAAUAAAAHAAYAAAABAAUAAAAHAAcAAAABAAUAAAAIAAAAAAAAAAMAAAAIAAEAAAAAAAMAAAAIAAIAAAAAAAMAAAAIAAMAAAAAAAMAAAAIAAQAAAAAAAMAAAAIAAUAAAABAAUAAAAIAAYAAAABAAUAAAAIAAcAAAABAAUAAAAJAAAAAAAAAAMAAAAJAAEAAAAAAAMAAAAJAAIAAAAAAAMAAAAJAAMAAAAAAAMAAAAJAAQAAAAAAAMAAAAJAAUAAAABAAUAAAAJAAYAAAABAAUAAAAJAAcAAAABAAUAAAAKAAAAAAAAAAMAAAAKAAEAAAAAAAMAAAAKAAIAAAAAAAMAAAAKAAMAAAAAAAMAAAAKAAQAAAAAAAMAAAAKAAUAAAABAAUAAAAKAAYAAAABAAUAAAAKAAcAAAABAAUAAAALAAAAAAAAAAMAAAALAAEAAAAAAAMAAAALAAIAAAAAAAMAAAALAAMAAAAAAAMAAAALAAQAAAAAAAMAAAALAAUAAAABAAUAAAALAAYAAAABAAUAAAALAAcAAAABAAUAAAA=")
-tile_set = SubResource("TileSet_kv5fy")
+tile_set = ExtResource("1_8x8nf")
 
 [node name="Wall Tiles" type="TileMapLayer" parent="Tilemap"]
 tile_map_data = PackedByteArray("AAAFAAAAAAACAAMAAAAFAAEAAAACAAMAAAAFAAIAAAACAAMAAAAGAAIAAAADAAMAAAAGAAEAAAADAAMAAAAGAAAAAAADAAMAAAAGAAUAAAABAAMAAAAHAAUAAAACAAMAAAAIAAUAAAACAAMAAAAJAAUAAAADAAMAAAAGAAcAAAABAAMAAAA=")
-tile_set = SubResource("TileSet_kv5fy")
+tile_set = ExtResource("1_8x8nf")
 
 [node name="Counter Tiles" type="TileMapLayer" parent="Tilemap"]
 tile_map_data = PackedByteArray("AAAAAAQAAQAAAAIAAAAAAAUAAQADAAQAAAAAAAYAAQAAAAIAAAAAAAcAAQACAAIAAAABAAcAAQABAAAAAAACAAcAAQACAAAAAAAAAAMAAQAAAAEAAAAHAAUAAQACAAQAAAAIAAUAAQACAAAAAAA=")
-tile_set = SubResource("TileSet_kv5fy")
+tile_set = ExtResource("1_8x8nf")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Tilemap"]
+tile_set = ExtResource("2_8x8nf")
 
 [node name="Background" type="Sprite2D" parent="."]
 visible = false
@@ -192,7 +135,7 @@ scale = Vector2(1, 0.9999996)
 shape = SubResource("RectangleShape2D_cxxvu")
 
 [node name="Table4" parent="." instance=ExtResource("5_kxr0u")]
-position = Vector2(264, 32.00003)
+position = Vector2(264, 31.000004)
 scale = Vector2(0.973214, 1.01571)
 canLift = false
 
@@ -269,6 +212,7 @@ shape = SubResource("RectangleShape2D_cxxvu")
 [node name="Boxes5" parent="." instance=ExtResource("5_kxr0u")]
 position = Vector2(128, 112)
 scale = Vector2(1.5, 1.5)
+platform_on_leave = 2
 canLift = false
 canPush = true
 liftPosition = Vector2(0, -16)
