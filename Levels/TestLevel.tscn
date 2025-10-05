@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://bd4iaouuaddvw"]
+[gd_scene load_steps=24 format=4 uid="uid://bd4iaouuaddvw"]
 
 [ext_resource type="Texture2D" uid="uid://byjdse3pdpxef" path="res://Assets/Level Art/Bachelor_pad_test_level.png" id="1_2yvdw"]
 [ext_resource type="TileSet" uid="uid://b611ygot7kux2" path="res://Levels/Tileset Resources/TestLevel.tres" id="1_8x8nf"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://d26wukook25xb" path="res://Objects/Table.tscn" id="5_kxr0u"]
 [ext_resource type="Texture2D" uid="uid://drpfaulsu8pf6" path="res://Assets/Objects Spritesheet.png" id="7_jeepb"]
 [ext_resource type="Texture2D" uid="uid://b1h3op3pjraac" path="res://Assets/Level Art/couch1.png" id="10_8x8nf"]
+[ext_resource type="Texture2D" uid="uid://dffq6tyiqk8ch" path="res://Assets/tiles/Template Garage Floor.png" id="11_ej1bv"]
 
 [sub_resource type="Theme" id="Theme_iqcmb"]
 default_font_size = 11
@@ -49,6 +50,11 @@ size = Vector2(23, 31)
 radius = 6.6703744
 
 [node name="Main" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(191.99998, 334)
+scale = Vector2(0.25676873, 0.1616402)
+texture = ExtResource("11_ej1bv")
 
 [node name="Tilemap" type="CanvasLayer" parent="."]
 layer = -1
