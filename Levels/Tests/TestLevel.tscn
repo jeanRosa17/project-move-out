@@ -1,16 +1,16 @@
 [gd_scene load_steps=24 format=4 uid="uid://bd4iaouuaddvw"]
 
-[ext_resource type="Texture2D" uid="uid://byjdse3pdpxef" path="res://Assets/Level Art/Bachelor_pad_test_level.png" id="1_2yvdw"]
-[ext_resource type="TileSet" uid="uid://b611ygot7kux2" path="res://Levels/Tileset Resources/TestLevel.tres" id="1_8x8nf"]
-[ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Player/Player.tscn" id="1_uib4f"]
-[ext_resource type="Script" uid="uid://cau3mgvyc3sus" path="res://Levels/Dialogue.gd" id="1_y1yrn"]
-[ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Assets/tiles/Support Columns-autotile2/Support Columns-autotile2.tres" id="2_8x8nf"]
-[ext_resource type="PackedScene" uid="uid://cqt367stu26c2" path="res://Objects/Pot.tscn" id="2_iqcmb"]
-[ext_resource type="PackedScene" uid="uid://cv6u6nkys85s8" path="res://Objects/Bed.tscn" id="4_jyvk6"]
-[ext_resource type="PackedScene" uid="uid://d26wukook25xb" path="res://Objects/Table.tscn" id="5_kxr0u"]
-[ext_resource type="Texture2D" uid="uid://drpfaulsu8pf6" path="res://Assets/Objects Spritesheet.png" id="7_jeepb"]
-[ext_resource type="Texture2D" uid="uid://b1h3op3pjraac" path="res://Assets/Level Art/couch1.png" id="10_8x8nf"]
-[ext_resource type="Texture2D" uid="uid://dffq6tyiqk8ch" path="res://Assets/tiles/Template Garage Floor.png" id="11_ej1bv"]
+[ext_resource type="Texture2D" uid="uid://dffq6tyiqk8ch" path="res://Assets/tiles/Template Garage Floor.png" id="1_ovj46"]
+[ext_resource type="TileSet" uid="uid://bfsdyggvkp2d" path="res://Levels/Resources/OldTileMap.tres" id="2_2ubmf"]
+[ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Assets/tiles/Support Columns-autotile2/Support Columns-autotile2.tres" id="3_uvob4"]
+[ext_resource type="Texture2D" uid="uid://byjdse3pdpxef" path="res://Assets/Level Art/Bachelor_pad_test_level.png" id="4_cifax"]
+[ext_resource type="Script" uid="uid://cau3mgvyc3sus" path="res://Levels/Dialogue.gd" id="5_gfoas"]
+[ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Player/Player.tscn" id="6_b3xeb"]
+[ext_resource type="PackedScene" uid="uid://d26wukook25xb" path="res://Objects/Table.tscn" id="7_plhdx"]
+[ext_resource type="Texture2D" uid="uid://drpfaulsu8pf6" path="res://Assets/Objects Spritesheet.png" id="8_nr1ry"]
+[ext_resource type="PackedScene" uid="uid://cqt367stu26c2" path="res://Objects/Pot.tscn" id="9_4h1ag"]
+[ext_resource type="PackedScene" uid="uid://cv6u6nkys85s8" path="res://Objects/Bed.tscn" id="10_x3jp6"]
+[ext_resource type="Texture2D" uid="uid://b1h3op3pjraac" path="res://Assets/Level Art/couch1.png" id="11_p8gqs"]
 
 [sub_resource type="Theme" id="Theme_iqcmb"]
 default_font_size = 11
@@ -54,7 +54,7 @@ radius = 6.6703744
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(191.99998, 334)
 scale = Vector2(0.25676873, 0.1616402)
-texture = ExtResource("11_ej1bv")
+texture = ExtResource("1_ovj46")
 
 [node name="Tilemap" type="CanvasLayer" parent="."]
 layer = -1
@@ -62,24 +62,23 @@ follow_viewport_enabled = true
 
 [node name="Ground Tiles" type="TileMapLayer" parent="Tilemap"]
 tile_map_data = PackedByteArray("AAACAAMAAAAAAAMAAAAAAAAAAAAAAAMAAAAAAAEAAAAAAAMAAAAAAAIAAAAAAAMAAAAAAAMAAAAAAAUAAAAAAAQAAAAAAAUAAAAAAAUAAAAAAAUAAAAAAAYAAAAAAAUAAAAAAAcAAAAAAAUAAAABAAAAAAAAAAMAAAABAAEAAAAAAAMAAAABAAIAAAAAAAMAAAABAAMAAAAAAAUAAAABAAQAAAAAAAUAAAABAAUAAAAAAAUAAAABAAYAAAAAAAUAAAABAAcAAAAAAAUAAAACAAAAAAAAAAMAAAACAAEAAAAAAAMAAAACAAIAAAAAAAMAAAACAAQAAAAAAAMAAAACAAUAAAAAAAUAAAACAAYAAAAAAAUAAAACAAcAAAAAAAUAAAADAAAAAAAAAAMAAAADAAEAAAAAAAMAAAADAAIAAAAAAAMAAAADAAMAAAAAAAMAAAADAAQAAAAAAAMAAAADAAUAAAAAAAMAAAADAAYAAAAAAAMAAAADAAcAAAAAAAMAAAAEAAAAAAAAAAMAAAAEAAEAAAAAAAMAAAAEAAIAAAAAAAMAAAAEAAMAAAAAAAMAAAAEAAQAAAAAAAMAAAAEAAUAAAAAAAMAAAAEAAYAAAAAAAMAAAAEAAcAAAAAAAMAAAAFAAAAAAAAAAMAAAAFAAEAAAAAAAMAAAAFAAIAAAAAAAMAAAAFAAMAAAAAAAMAAAAFAAQAAAAAAAMAAAAFAAUAAAAAAAMAAAAFAAYAAAAAAAMAAAAFAAcAAAAAAAMAAAAGAAAAAAAAAAMAAAAGAAEAAAAAAAMAAAAGAAIAAAAAAAMAAAAGAAMAAAAAAAMAAAAGAAQAAAAAAAMAAAAGAAUAAAABAAUAAAAGAAYAAAABAAUAAAAGAAcAAAABAAUAAAAHAAAAAAAAAAMAAAAHAAEAAAAAAAMAAAAHAAIAAAAAAAMAAAAHAAMAAAAAAAMAAAAHAAQAAAAAAAMAAAAHAAUAAAABAAUAAAAHAAYAAAABAAUAAAAHAAcAAAABAAUAAAAIAAAAAAAAAAMAAAAIAAEAAAAAAAMAAAAIAAIAAAAAAAMAAAAIAAMAAAAAAAMAAAAIAAQAAAAAAAMAAAAIAAUAAAABAAUAAAAIAAYAAAABAAUAAAAIAAcAAAABAAUAAAAJAAAAAAAAAAMAAAAJAAEAAAAAAAMAAAAJAAIAAAAAAAMAAAAJAAMAAAAAAAMAAAAJAAQAAAAAAAMAAAAJAAUAAAABAAUAAAAJAAYAAAABAAUAAAAJAAcAAAABAAUAAAAKAAAAAAAAAAMAAAAKAAEAAAAAAAMAAAAKAAIAAAAAAAMAAAAKAAMAAAAAAAMAAAAKAAQAAAAAAAMAAAAKAAUAAAABAAUAAAAKAAYAAAABAAUAAAAKAAcAAAABAAUAAAALAAAAAAAAAAMAAAALAAEAAAAAAAMAAAALAAIAAAAAAAMAAAALAAMAAAAAAAMAAAALAAQAAAAAAAMAAAALAAUAAAABAAUAAAALAAYAAAABAAUAAAALAAcAAAABAAUAAAA=")
-tile_set = ExtResource("1_8x8nf")
+tile_set = ExtResource("2_2ubmf")
 
 [node name="Wall Tiles" type="TileMapLayer" parent="Tilemap"]
 tile_map_data = PackedByteArray("AAAFAAAAAAACAAMAAAAFAAEAAAACAAMAAAAFAAIAAAACAAMAAAAGAAIAAAADAAMAAAAGAAEAAAADAAMAAAAGAAAAAAADAAMAAAAGAAUAAAABAAMAAAAHAAUAAAACAAMAAAAIAAUAAAACAAMAAAAJAAUAAAADAAMAAAAGAAcAAAABAAMAAAA=")
-tile_set = ExtResource("1_8x8nf")
+tile_set = ExtResource("2_2ubmf")
 
 [node name="Counter Tiles" type="TileMapLayer" parent="Tilemap"]
 tile_map_data = PackedByteArray("AAAAAAQAAQAAAAIAAAAAAAUAAQADAAQAAAAAAAYAAQAAAAIAAAAAAAcAAQACAAIAAAABAAcAAQABAAAAAAACAAcAAQACAAAAAAAAAAMAAQAAAAEAAAAHAAUAAQACAAQAAAAIAAUAAQACAAAAAAA=")
-tile_set = ExtResource("1_8x8nf")
+tile_set = ExtResource("2_2ubmf")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Tilemap"]
-tile_set = ExtResource("2_8x8nf")
+tile_set = ExtResource("3_uvob4")
 
 [node name="Background" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(147.75, 125)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_2yvdw")
+texture = ExtResource("4_cifax")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 visible = false
@@ -105,25 +104,25 @@ size_flags_horizontal = 4
 theme = SubResource("Theme_iqcmb")
 text = "	Hmm what's that?"
 autowrap_mode = 2
-script = ExtResource("1_y1yrn")
+script = ExtResource("5_gfoas")
 
-[node name="Player" parent="." instance=ExtResource("1_uib4f")]
+[node name="Player" parent="." instance=ExtResource("6_b3xeb")]
 position = Vector2(128, 64)
 safe_margin = 1.159
 
-[node name="Table" parent="." instance=ExtResource("5_kxr0u")]
+[node name="Table" parent="." instance=ExtResource("7_plhdx")]
 position = Vector2(72, 152)
 scale = Vector2(0.973214, 1.01571)
 
-[node name="Table2" parent="." instance=ExtResource("5_kxr0u")]
+[node name="Table2" parent="." instance=ExtResource("7_plhdx")]
 position = Vector2(72, 176)
 scale = Vector2(0.973214, 1.01571)
 
-[node name="Table5" parent="." instance=ExtResource("5_kxr0u")]
+[node name="Table5" parent="." instance=ExtResource("7_plhdx")]
 position = Vector2(352, 112.000015)
 scale = Vector2(0.973214, 1.01571)
 
-[node name="Table3" parent="." instance=ExtResource("5_kxr0u")]
+[node name="Table3" parent="." instance=ExtResource("7_plhdx")]
 position = Vector2(112.00001, 232.00002)
 scale = Vector2(0.973214, 1.01571)
 collision_layer = 0
@@ -131,7 +130,7 @@ collision_mask = 0
 canLift = false
 
 [node name="Sprite2D" parent="Table3" index="0"]
-texture = ExtResource("7_jeepb")
+texture = ExtResource("8_nr1ry")
 region_enabled = true
 region_rect = Rect2(63, 16, 16, 16)
 
@@ -140,13 +139,13 @@ position = Vector2(0, -3.0517578e-05)
 scale = Vector2(1, 0.9999996)
 shape = SubResource("RectangleShape2D_cxxvu")
 
-[node name="Table4" parent="." instance=ExtResource("5_kxr0u")]
+[node name="Table4" parent="." instance=ExtResource("7_plhdx")]
 position = Vector2(264, 31.000004)
 scale = Vector2(0.973214, 1.01571)
 canLift = false
 
 [node name="Sprite2D" parent="Table4" index="0"]
-texture = ExtResource("7_jeepb")
+texture = ExtResource("8_nr1ry")
 region_enabled = true
 region_rect = Rect2(63, 16, 16, 16)
 
@@ -155,13 +154,13 @@ position = Vector2(0, -3.0517578e-05)
 scale = Vector2(1, 0.9999996)
 shape = SubResource("RectangleShape2D_cxxvu")
 
-[node name="Boxes" parent="." instance=ExtResource("5_kxr0u")]
+[node name="Boxes" parent="." instance=ExtResource("7_plhdx")]
 position = Vector2(176, 160)
 scale = Vector2(0.973214, 1.01571)
 liftPosition = Vector2(0, -16)
 
 [node name="Sprite2D" parent="Boxes" index="0"]
-texture = ExtResource("7_jeepb")
+texture = ExtResource("8_nr1ry")
 region_enabled = true
 region_rect = Rect2(112, 12, 16, 22)
 
@@ -170,13 +169,13 @@ position = Vector2(0, -3.0517578e-05)
 scale = Vector2(1, 0.9999996)
 shape = SubResource("RectangleShape2D_cxxvu")
 
-[node name="Boxes2" parent="." instance=ExtResource("5_kxr0u")]
+[node name="Boxes2" parent="." instance=ExtResource("7_plhdx")]
 position = Vector2(160, 152)
 scale = Vector2(0.973214, 1.01571)
 liftPosition = Vector2(0, -16)
 
 [node name="Sprite2D" parent="Boxes2" index="0"]
-texture = ExtResource("7_jeepb")
+texture = ExtResource("8_nr1ry")
 region_enabled = true
 region_rect = Rect2(112, 12, 16, 22)
 
@@ -185,13 +184,13 @@ position = Vector2(0, -3.0517578e-05)
 scale = Vector2(1, 0.9999996)
 shape = SubResource("RectangleShape2D_cxxvu")
 
-[node name="Boxes3" parent="." instance=ExtResource("5_kxr0u")]
+[node name="Boxes3" parent="." instance=ExtResource("7_plhdx")]
 position = Vector2(152, 40.000008)
 scale = Vector2(0.973214, 1.01571)
 liftPosition = Vector2(0, -16)
 
 [node name="Sprite2D" parent="Boxes3" index="0"]
-texture = ExtResource("7_jeepb")
+texture = ExtResource("8_nr1ry")
 region_enabled = true
 region_rect = Rect2(112, 12, 16, 22)
 
@@ -200,13 +199,13 @@ position = Vector2(0, -3.0517578e-05)
 scale = Vector2(1, 0.9999996)
 shape = SubResource("RectangleShape2D_cxxvu")
 
-[node name="Boxes4" parent="." instance=ExtResource("5_kxr0u")]
+[node name="Boxes4" parent="." instance=ExtResource("7_plhdx")]
 position = Vector2(152, 72)
 scale = Vector2(0.973214, 1.01571)
 liftPosition = Vector2(0, -16)
 
 [node name="Sprite2D" parent="Boxes4" index="0"]
-texture = ExtResource("7_jeepb")
+texture = ExtResource("8_nr1ry")
 region_enabled = true
 region_rect = Rect2(112, 12, 16, 22)
 
@@ -215,7 +214,7 @@ position = Vector2(0, -3.0517578e-05)
 scale = Vector2(1, 0.9999996)
 shape = SubResource("RectangleShape2D_cxxvu")
 
-[node name="Boxes5" parent="." instance=ExtResource("5_kxr0u")]
+[node name="Boxes5" parent="." instance=ExtResource("7_plhdx")]
 position = Vector2(128, 112)
 scale = Vector2(1.5, 1.5)
 platform_on_leave = 2
@@ -224,7 +223,7 @@ canPush = true
 liftPosition = Vector2(0, -16)
 
 [node name="Sprite2D" parent="Boxes5" index="0"]
-texture = ExtResource("7_jeepb")
+texture = ExtResource("8_nr1ry")
 region_enabled = true
 region_rect = Rect2(112, 12, 16, 22)
 
@@ -233,11 +232,11 @@ position = Vector2(0, -3.0517578e-05)
 scale = Vector2(1, 0.9999996)
 shape = SubResource("RectangleShape2D_cxxvu")
 
-[node name="Pot" parent="." instance=ExtResource("2_iqcmb")]
+[node name="Pot" parent="." instance=ExtResource("9_4h1ag")]
 position = Vector2(112.00001, 225.00002)
 scale = Vector2(0.973214, 1.01571)
 
-[node name="Bed" parent="." instance=ExtResource("4_jyvk6")]
+[node name="Bed" parent="." instance=ExtResource("10_x3jp6")]
 position = Vector2(304, 40)
 scale = Vector2(1.5, 1.5)
 platform_floor_layers = 0
@@ -245,7 +244,7 @@ safe_margin = 15.346
 canLift = false
 canPush = true
 
-[node name="Couch" parent="." instance=ExtResource("4_jyvk6")]
+[node name="Couch" parent="." instance=ExtResource("10_x3jp6")]
 position = Vector2(24, 48.000004)
 rotation = 3.1415927
 scale = Vector2(1.5, 1.5)
@@ -255,7 +254,7 @@ canLift = false
 canPush = true
 
 [node name="Sprite2D" parent="Couch" index="0"]
-texture = ExtResource("10_8x8nf")
+texture = ExtResource("11_p8gqs")
 
 [node name="World Border" type="StaticBody2D" parent="." groups=["Immovable Object"]]
 collision_layer = 4
