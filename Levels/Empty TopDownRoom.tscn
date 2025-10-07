@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Assets/tiles/Support Columns-autotile2/Support Columns-autotile2.tres" id="1_guw12"]
 [ext_resource type="Texture2D" uid="uid://byjdse3pdpxef" path="res://Assets/Level Art/Bachelor_pad_test_level.png" id="2_euv87"]
-[ext_resource type="Script" path="res://Levels/Dialogue.gd" id="3_fqnor"]
+[ext_resource type="Script" uid="uid://cau3mgvyc3sus" path="res://Levels/Dialogue.gd" id="3_fqnor"]
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Player/Player.tscn" id="4_p3iwt"]
 [ext_resource type="PackedScene" path="res://Objects/Bed.tscn" id="5_7ntl6"]
 [ext_resource type="Texture2D" uid="uid://b1h3op3pjraac" path="res://Assets/Level Art/couch1.png" id="6_t3k7s"]
@@ -28,15 +28,15 @@ tile_set = ExtResource("1_guw12")
 tile_map_data = PackedByteArray("AAArABIABQACAAIAAAArABQABQACAAIAAAArABUABQACAAIAAAAzAAkABQACAAIAAAAAAAAABQAAAAAAAAACAAAABQACAAAAAAADAAAABQACAAAAAAAEAAAABQACAAAAAAAFAAAABQACAAAAAAAGAAAABQACAAAAAAAHAAAABQACAAAAAAAIAAAABQACAAAAAAAJAAAABQACAAAAAAAKAAAABQACAAAAAAALAAAABQACAAAAAAAMAAAABQACAAAAAAANAAAABQACAAAAAAAOAAAABQACAAAAAAAPAAAABQACAAAAAAAQAAAABQACAAAAAAARAAAABQACAAAAAAAAAAIABQAAAAIAAAAAAAMABQAAAAIAAAAAAAQABQAAAAIAAAAAAAUABQAAAAIAAAAAAAYABQAAAAIAAAAAAAcABQAAAAIAAAAAAAgABQAAAAIAAAAAAAkABQAAAAIAAAAAAAoABQAAAAMAAAASAAAABQADAAAAAAASAAIABQADAAIAAAASAAMABQADAAIAAAASAAQABQADAAIAAAASAAUABQADAAIAAAASAAYABQADAAIAAAASAAcABQADAAIAAAASAAgABQADAAIAAAASAAkABQADAAIAAAACAAoABQACAAMAAAADAAoABQACAAMAAAAEAAoABQACAAMAAAAFAAoABQACAAMAAAAGAAoABQACAAMAAAAHAAoABQACAAMAAAAIAAoABQACAAMAAAAJAAoABQACAAMAAAAKAAoABQACAAMAAAALAAoABQACAAMAAAAMAAoABQACAAMAAAANAAoABQACAAMAAAAOAAoABQACAAMAAAAPAAoABQACAAMAAAAQAAoABQACAAMAAAARAAoABQACAAMAAAASAAoABQADAAMAAAA=")
 tile_set = ExtResource("1_guw12")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 3
-follow_viewport_enabled = true
-
-[node name="Sketch" type="Sprite2D" parent="CanvasLayer"]
+[node name="Sketch" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(147.75, 125)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_euv87")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 3
+follow_viewport_enabled = true
 
 [node name="Panel" type="Panel" parent="CanvasLayer"]
 offset_left = 63.0
@@ -64,12 +64,12 @@ custom_minimum_size = Vector2(192, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 theme = SubResource("Theme_iqcmb")
-text = "	Hmm what's that?"
+text = "wFIEE SJ"
 autowrap_mode = 2
 script = ExtResource("3_fqnor")
 
 [node name="Player" parent="." instance=ExtResource("4_p3iwt")]
-position = Vector2(67, 87)
+position = Vector2(127, 88)
 safe_margin = 1.159
 
 [node name="Camera2D" parent="Player" index="6"]

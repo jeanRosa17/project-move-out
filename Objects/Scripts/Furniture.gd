@@ -9,6 +9,7 @@ class_name Furniture
 var isLifting: bool = false
 
 @export var liftPosition:Vector2
+@export var dialogueTag:DialogueTag
 
 func _process(_delta: float) -> void:
 	self.move_and_collide(self.velocity * _delta)

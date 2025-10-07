@@ -1,10 +1,11 @@
-class_name Dialogue
+class_name DialogueManager
 extends Label
 
 ## File path to the Dialogue script
 @export var dialogueScriptPath: StringName = "res://Narrative/SampleText.txt"
+var dialogueTag: StringName = "couch" ## The tag of text within the dialogueScript
+
 var dialogueScript: String ## The file contents of the dialogueScriptPath
-var dialogueTag: StringName = "start" ## The tag of text within the dialogueScript
 var lineCounter: int = 0 ## the current line within the dialogue tag
 var charCounter: int ## the current character within the current line
 var timer: Timer ## timer for typewriting effect
@@ -18,6 +19,7 @@ const punctuationsDelay = {
 	";" : 0.25,
 	":" : 0.25
 }
+
 @warning_ignore("untyped_declaration")
 var jumpToTag = null
 var quitting: bool = false
@@ -35,6 +37,16 @@ func _ready() -> void:
 		Exception.new("Given Dialogue Script does not exist")
 	else:
 		self.startDialogue()
+
+## Sets the dialogue tag and script to the one given in the dTag. It then 
+## starts the DialogueManager using those
+func setDialogueTo(dTag:DialogueTag) -> void:
+	if (dTag == null):
+		Exception.new("dTag is set to null.")
+	
+	self.dialogueScriptPath = dTag.dialogueScriptPath
+	self.dialogueTag = dTag.dialogueTag
+	self.startDialogue()
 
 #region Dialogue Controls (Start, Restart, )
 ## Begins the dialogue sequence

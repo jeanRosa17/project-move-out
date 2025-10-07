@@ -2,3 +2,8 @@
 	Another day, another job.
 	Lets get down to business.
 }
+
+#couch {
+	When I was your age, couches were hard.
+	They built character goddamnit. $jumpto start 0
+}

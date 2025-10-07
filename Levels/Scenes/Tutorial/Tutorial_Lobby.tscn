@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://cau3mgvyc3sus" path="res://Levels/Dialogue.gd" id="3_hlt0u"]
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Player/Player.tscn" id="4_a2lav"]
 [ext_resource type="PackedScene" uid="uid://d26wukook25xb" path="res://Objects/Table.tscn" id="5_dpslo"]
-[ext_resource type="PackedScene" uid="uid://cv6u6nkys85s8" path="res://Objects/Bed.tscn" id="5_on7kk"]
+[ext_resource type="PackedScene" path="res://Objects/Bed.tscn" id="5_on7kk"]
 [ext_resource type="Texture2D" uid="uid://b1h3op3pjraac" path="res://Assets/Level Art/couch1.png" id="6_x0yed"]
 [ext_resource type="Shape2D" uid="uid://chlinrgkjlcsr" path="res://Levels/Resources/WorldBorder.tres" id="7_0xyol"]
 
