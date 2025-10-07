@@ -11,23 +11,26 @@ extends State
 func canEnter() -> bool:
 	var prefix:String = "push"
 	
-	print("can enter push")
+	#print("can enter push")
 	
 	if (self.manager.furniture && self.manager.furniture.canPush):
 		if (!self.isPushing):
 			##self.manager.furniture.position = self.body.position
-			self.manager.furniture.position.x += 8
+			#self.manager.furniture.position.x += 8
 			#self.manager.furniture.collision_layer = 4;
-			#self.manager.furniture.reparent(self.body)
+			self.manager.furniture.reparent(self.body)
+			print("pushing")
 			self.isPushing = true;
 		else:
 			##self.manager.furniture.position = self.body.position
-			self.manager.furniture.position.x += 8
-			#self.manager.furniture.collision_layer = 2;
-			#self.manager.furniture.reparent(self.manager.furniture.get_parent().get_parent())
+			#self.manager.furniture.position.x += 8
+			print("stop pushing")
+			self.manager.furniture.collision_layer = 2;
+			self.manager.furniture.reparent(self.manager.furniture.get_parent().get_parent())
 			self.isPushing = false;
 		return true
 	else:
+		print("error pushing")
 		return false
 
 func enter() -> void: 

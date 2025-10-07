@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cv6u6nkys85s8"]
+[gd_scene load_steps=6 format=3 uid="uid://cv6u6nkys85s8"]
 
-[ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Objects/Scripts/Furniture.gd" id="1_jno4m"]
+[ext_resource type="Script" uid="uid://c3qi1xhmnbif3" path="res://Objects/FurniturePush.gd" id="1_ardoa"]
 [ext_resource type="Texture2D" uid="uid://drpfaulsu8pf6" path="res://Assets/Objects Spritesheet.png" id="2_g6pvx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cmayr"]
@@ -10,16 +10,26 @@ region = Rect2(200, -0.5, 32, 48)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
 size = Vector2(26, 36)
 
-[node name="Bed" type="CharacterBody2D" groups=["Furniture"]]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sc44f"]
+size = Vector2(32, 48)
+
+[node name="Bed" type="Area2D" groups=["Furniture"]]
 collision_layer = 2
 collision_mask = 7
-motion_mode = 1
-script = ExtResource("1_jno4m")
-canLift = true
-metadata/_custom_type_script = "uid://c2vh27coguldq"
+input_pickable = false
+script = ExtResource("1_ardoa")
+canPush = true
+canPull = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_cmayr")
 
 [node name="BedCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_xnri0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_sc44f")
