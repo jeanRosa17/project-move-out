@@ -1,4 +1,4 @@
-[gd_scene load_steps=145 format=3 uid="uid://d0yd01mkkwtji"]
+[gd_scene load_steps=146 format=3 uid="uid://d0yd01mkkwtji"]
 
 [ext_resource type="Script" uid="uid://0slq88tkfqsi" path="res://Player/Controller.gd" id="1_ddoul"]
 [ext_resource type="Texture2D" uid="uid://cfrvyuj3bknc0" path="res://Assets/Player_Sprite/idle.png" id="2_7uipr"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://78e0wc48wa57" path="res://Assets/Player_Sprite/throw_down.png" id="15_x70vp"]
 [ext_resource type="Texture2D" uid="uid://b1fw7sr57gpc5" path="res://Assets/Player_Sprite/throw_side.png" id="16_wo5nf"]
 [ext_resource type="Texture2D" uid="uid://dlyesp5yj0tu0" path="res://Assets/Player_Sprite/throw_up.png" id="17_croik"]
+[ext_resource type="Script" uid="uid://dxpvyml32g27k" path="res://Player/Interact.gd" id="25_yifbt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l2ndj"]
 size = Vector2(18, 26)
@@ -977,11 +978,11 @@ sprite_frames = SubResource("SpriteFrames_dter7")
 animation = &"throw up"
 autoplay = "idle down"
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Detector" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 6
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
 position = Vector2(0, 16)
 shape = SubResource("RectangleShape2D_s1rgi")
 
@@ -1005,28 +1006,31 @@ metadata/_custom_type_script = "uid://u8kdu3je8hxq"
 [node name="Move" type="Node" parent="StateManager" node_paths=PackedStringArray("body", "area2DCollision")]
 script = ExtResource("5_8g4oa")
 body = NodePath("../..")
-area2DCollision = NodePath("../../Area2D/CollisionShape2D")
+area2DCollision = NodePath("../../Detector/CollisionShape2D")
 metadata/_custom_type_script = "uid://c2tqhau6vnsm6"
 
 [node name="Throw" type="Node" parent="StateManager" node_paths=PackedStringArray("area2D")]
 script = ExtResource("7_vlldt")
-area2D = NodePath("../../Area2D")
+area2D = NodePath("../../Detector")
 metadata/_custom_type_script = "uid://n3x8myoud04l"
 
 [node name="Push" type="Node" parent="StateManager" node_paths=PackedStringArray("body")]
 script = ExtResource("8_s1rgi")
 body = NodePath("../..")
 
+[node name="Interact" type="Node" parent="StateManager"]
+script = ExtResource("25_yifbt")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 enabled = false
 limit_smoothed = true
 position_smoothing_enabled = true
 
-[connection signal="area_entered" from="Area2D" to="StateManager" method="_on_area_2d_area_entered"]
-[connection signal="area_entered" from="Area2D" to="StateManager/Push" method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Area2D" to="StateManager" method="_on_area_2d_area_exited"]
-[connection signal="area_exited" from="Area2D" to="StateManager/Push" method="_on_area_2d_area_exited"]
-[connection signal="body_entered" from="Area2D" to="StateManager" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Area2D" to="StateManager/Throw" method="_on_area_2d_body_entered2"]
-[connection signal="body_exited" from="Area2D" to="StateManager" method="_on_area_2d_body_exited"]
-[connection signal="body_exited" from="Area2D" to="StateManager/Throw" method="_on_area_2d_body_exited2"]
+[connection signal="area_entered" from="Detector" to="StateManager" method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="Detector" to="StateManager/Push" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Detector" to="StateManager" method="_on_area_2d_area_exited"]
+[connection signal="area_exited" from="Detector" to="StateManager/Push" method="_on_area_2d_area_exited"]
+[connection signal="body_entered" from="Detector" to="StateManager" method="_on_furniture_body_entered"]
+[connection signal="body_entered" from="Detector" to="StateManager/Throw" method="_on_detected_body_entered"]
+[connection signal="body_exited" from="Detector" to="StateManager" method="_on_furniture_body_exited"]
+[connection signal="body_exited" from="Detector" to="StateManager/Throw" method="_on_detected_body_exited"]

@@ -16,6 +16,7 @@ func _process(delta:float) -> void:
 	self.handleMovement(delta)
 	self.handleLift(delta)
 	self.handlePushPull(delta)
+	self.handleInteract(delta)
 
 ## Handles the "Move" set of Inputs and moves the character accordingly using
 ## its MovementComponent.
@@ -57,3 +58,9 @@ func handleLift(_delta:float) -> void:
 func handlePushPull(_delta:float) -> void:
 	if (Input.is_action_pressed("Push-Pull")):
 		if (self.manager.getStateName() != "Push"): self.manager.changeState("Push")
+
+func handleInteract(_delta:float) -> void:
+	if (Input.is_action_just_pressed("Interact")):
+		if ((self.manager.getStateName() == "Idle") and (not self.manager.wasPreviousState("Lift"))):
+			self.manager.changeState("Interact")
+			

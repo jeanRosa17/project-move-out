@@ -20,8 +20,10 @@ const punctuationsDelay = {
 	":" : 0.25
 }
 
+
 @warning_ignore("untyped_declaration")
 var jumpToTag = null
+var currentTagFinished: bool
 var quitting: bool = false
 
 ## Immediately begins dialogue if the self.dialogueScriptPath is valid.
@@ -36,7 +38,8 @@ func _ready() -> void:
 	if not FileAccess.file_exists(self.dialogueScriptPath):
 		Exception.new("Given Dialogue Script does not exist")
 	else:
-		self.startDialogue()
+		#self.startDialogue()
+		pass
 
 ## Sets the dialogue tag and script to the one given in the dTag. It then 
 ## starts the DialogueManager using those
@@ -55,6 +58,7 @@ func startDialogue() -> void:
 	self.text = ""
 	self.lineCounter = 0
 	self.charCounter = 0
+	self.currentTagFinished = false
 	self.parseCommandsInLine()
 
 ## Restarts dialogue back to the very beginning of the current script tag.
@@ -147,6 +151,7 @@ func nextLine(lineTimer: Timer) -> void:
 	
 	if (self.lineCounter + 1 >= lines.size()):
 		print("Reached end of dialogue for tag: ", self.dialogueTag)
+		self.currentTagFinished = true
 		return
 	
 	self.lineCounter += 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://db18pxq8crbym"]
+[gd_scene load_steps=15 format=4 uid="uid://db18pxq8crbym"]
 
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Assets/tiles/Support Columns-autotile2/Support Columns-autotile2.tres" id="1_0vuas"]
 [ext_resource type="Texture2D" uid="uid://byjdse3pdpxef" path="res://Assets/Level Art/Bachelor_pad_test_level.png" id="2_l00sm"]
@@ -7,11 +7,21 @@
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Player/Player.tscn" id="4_a2lav"]
 [ext_resource type="PackedScene" uid="uid://d26wukook25xb" path="res://Objects/Table.tscn" id="5_dpslo"]
 [ext_resource type="PackedScene" path="res://Objects/Bed.tscn" id="5_on7kk"]
+[ext_resource type="Resource" uid="uid://brwl51b3u5pqg" path="res://Narrative/nullDialogue.tres" id="6_4jkoc"]
 [ext_resource type="Texture2D" uid="uid://b1h3op3pjraac" path="res://Assets/Level Art/couch1.png" id="6_x0yed"]
 [ext_resource type="Shape2D" uid="uid://chlinrgkjlcsr" path="res://Levels/Resources/WorldBorder.tres" id="7_0xyol"]
+[ext_resource type="Script" uid="uid://bmqryoobj44j2" path="res://Scripts/Resources/DialogueTag.gd" id="8_jwaso"]
 
-[sub_resource type="Theme" id="Theme_iqcmb"]
-default_font_size = 11
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jwaso"]
+content_margin_left = 5.0
+
+[sub_resource type="Theme" id="Theme_4jkoc"]
+default_font_size = 10
+
+[sub_resource type="Resource" id="Resource_4jkoc"]
+script = ExtResource("8_jwaso")
+dialogueTag = &"couch"
+metadata/_custom_type_script = "uid://bmqryoobj44j2"
 
 [node name="Empty Room" type="Node2D"]
 
@@ -45,42 +55,51 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_l00sm")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
-follow_viewport_scale = 3.0
+layer = 3
+follow_viewport_enabled = true
 
-[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_left = 63.0
+offset_top = 120.0
+offset_right = 255.0
+offset_bottom = 160.0
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Panel"]
+layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -448.0
-offset_top = -337.0
-offset_right = -184.0
-offset_bottom = -297.0
+offset_left = -95.0
+offset_top = -39.0
+offset_right = 97.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_jwaso")
 
-[node name="Label" type="Label" parent="CanvasLayer/PanelContainer"]
-custom_minimum_size = Vector2(240, 30)
+[node name="Label" type="Label" parent="CanvasLayer/Panel/PanelContainer"]
+custom_minimum_size = Vector2(192, 40)
 layout_mode = 2
 size_flags_horizontal = 4
-theme = SubResource("Theme_iqcmb")
-text = "	Hmm what's that?"
+theme = SubResource("Theme_4jkoc")
+text = "wFIEE SJ"
 autowrap_mode = 2
 script = ExtResource("3_hlt0u")
 
 [node name="Table" parent="." instance=ExtResource("5_dpslo")]
 position = Vector2(117, 63)
+dialogueTag = ExtResource("6_4jkoc")
 
 [node name="Table2" parent="." instance=ExtResource("5_dpslo")]
 position = Vector2(117, 91)
 
 [node name="Player" parent="." instance=ExtResource("4_a2lav")]
-position = Vector2(67, 87)
+position = Vector2(229, 87)
 safe_margin = 1.159
 
-[node name="Camera2D" parent="Player" index="6"]
+[node name="Camera2D" parent="Player" index="5"]
 limit_left = 0
 limit_top = 0
 limit_right = 320
@@ -94,6 +113,7 @@ platform_floor_layers = 0
 safe_margin = 15.346
 canLift = false
 canPush = true
+dialogueTag = SubResource("Resource_4jkoc")
 
 [node name="Sprite2D" parent="Couch" index="0"]
 texture = ExtResource("6_x0yed")

@@ -12,14 +12,16 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if (area.get_parent().is_in_group("Furniture")):
 		self.furniture = area.get_parent()
 
-func _on_area_2d_area_exited(_area: Area2D) -> void:
-	self.furniture = null
+func _on_area_2d_area_exited(area: Area2D) -> void:
+	if (area.get_parent().is_in_group("Furniture")):
+		self.furniture = null
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_furniture_body_entered(body: Node2D) -> void:
 	if (body.is_in_group("Furniture") && self.furniture == null):
 		self.furniture = body
 
-func _on_area_2d_body_exited(body: Node2D) -> void:
+func _on_furniture_body_exited(body: Node2D) -> void:
 	if (self.furniture == null): return
-	if (self.getRootNode().find_child(self.furniture.name) != null): return
-	self.furniture = null
+	if (body.is_in_group("Furniture") && self.furniture != null):
+		self.furniture = null
+	#if (self.getRootNode().find_child(self.furniture.name) != null): return
