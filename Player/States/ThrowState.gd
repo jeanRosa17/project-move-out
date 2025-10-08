@@ -15,6 +15,7 @@ func canEnter() -> bool:
 func enter() -> void:
 	var dir:String = self.getManager().view.animation.split(" ")[1].to_lower()
 	
+	
 	self.getManager().view.play("throw " + dir)
 	self.getManager().view.animation_finished.connect(backToIdle)
 

@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://cau3mgvyc3sus" path="res://Levels/Dialogue.gd" id="3_hlt0u"]
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Player/Player.tscn" id="4_a2lav"]
 [ext_resource type="PackedScene" uid="uid://d26wukook25xb" path="res://Objects/Table.tscn" id="5_dpslo"]
-[ext_resource type="PackedScene" path="res://Objects/Bed.tscn" id="5_on7kk"]
+[ext_resource type="PackedScene" uid="uid://cv6u6nkys85s8" path="res://Objects/Bed.tscn" id="5_on7kk"]
 [ext_resource type="Resource" uid="uid://brwl51b3u5pqg" path="res://Narrative/nullDialogue.tres" id="6_4jkoc"]
 [ext_resource type="Texture2D" uid="uid://b1h3op3pjraac" path="res://Assets/Level Art/couch1.png" id="6_x0yed"]
 [ext_resource type="Shape2D" uid="uid://chlinrgkjlcsr" path="res://Levels/Resources/WorldBorder.tres" id="7_0xyol"]
@@ -20,6 +20,7 @@ default_font_size = 10
 
 [sub_resource type="Resource" id="Resource_4jkoc"]
 script = ExtResource("8_jwaso")
+dialogueScriptPath = &"res://Narrative/SampleText.txt"
 dialogueTag = &"couch"
 metadata/_custom_type_script = "uid://bmqryoobj44j2"
 
@@ -27,9 +28,9 @@ metadata/_custom_type_script = "uid://bmqryoobj44j2"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
-modulate = Color(1, 1, 1, 0.36078432)
+modulate = Color(1, 1, 1, 0.360784)
 position = Vector2(208, 24)
-scale = Vector2(0.59670496, 0.59670496)
+scale = Vector2(0.596705, 0.596705)
 texture = ExtResource("2_l00sm")
 
 [node name="Tilemap" type="CanvasLayer" parent="."]
@@ -106,8 +107,8 @@ limit_right = 320
 limit_bottom = 240
 
 [node name="Couch" parent="." instance=ExtResource("5_on7kk")]
-position = Vector2(225, 45.000008)
-rotation = -1.5707964
+position = Vector2(225, 45)
+rotation = -1.5708
 scale = Vector2(1.5, 1.5)
 platform_floor_layers = 0
 safe_margin = 15.346
@@ -123,12 +124,12 @@ collision_layer = 4
 
 [node name="Vertical" type="CollisionShape2D" parent="World Border"]
 position = Vector2(61, 276)
-rotation = -3.1415927
+rotation = -3.14159
 shape = ExtResource("7_0xyol")
 
 [node name="Horizontal" type="CollisionShape2D" parent="World Border"]
 position = Vector2(276, 249)
-rotation = 1.5707964
+rotation = 1.5708
 shape = ExtResource("7_0xyol")
 
 [editable path="Player"]

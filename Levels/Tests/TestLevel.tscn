@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://bd4iaouuaddvw"]
+[gd_scene load_steps=31 format=4 uid="uid://bd4iaouuaddvw"]
 
 [ext_resource type="Texture2D" uid="uid://dffq6tyiqk8ch" path="res://Assets/tiles/Template Garage Floor.png" id="1_ovj46"]
 [ext_resource type="TileSet" uid="uid://bfsdyggvkp2d" path="res://Levels/Resources/OldTileMap.tres" id="2_2ubmf"]
@@ -11,15 +11,17 @@
 [ext_resource type="PackedScene" uid="uid://cqt367stu26c2" path="res://Objects/Pot.tscn" id="9_4h1ag"]
 [ext_resource type="PackedScene" uid="uid://cv6u6nkys85s8" path="res://Objects/Bed.tscn" id="10_x3jp6"]
 [ext_resource type="Texture2D" uid="uid://b1h3op3pjraac" path="res://Assets/Level Art/couch1.png" id="11_p8gqs"]
+[ext_resource type="PackedScene" uid="uid://ip4pm1ex6klr" path="res://Levels/Scenes/Garage.tscn" id="12_uvob4"]
+[ext_resource type="Texture2D" uid="uid://xb4g61m2b78c" path="res://Assets/Level Art/Counter_Tileset.png" id="13_cifax"]
 
 [sub_resource type="Theme" id="Theme_iqcmb"]
 default_font_size = 11
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cxxvu"]
-size = Vector2(14.385345, 9.84536)
+size = Vector2(14.3853, 9.84536)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iqcmb"]
-normal = Vector2(0, 1)
+normal = Vector2(1.79515e-06, 1)
 distance = -3.99999
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2yvdw"]
@@ -41,19 +43,38 @@ size = Vector2(32, 3)
 size = Vector2(23, 153)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ej1bv"]
-size = Vector2(73.01865, 25)
+size = Vector2(73.0186, 25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ijb51"]
 size = Vector2(23, 31)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2yvdw"]
-radius = 6.6703744
+radius = 6.67037
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gfoas"]
+atlas = ExtResource("13_cifax")
+region = Rect2(75, 38, 45, 59)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b3xeb"]
+size = Vector2(45, 56.5417)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_plhdx"]
+a = Vector2(86, -11)
+b = Vector2(87, 81)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_nr1ry"]
+a = Vector2(8, -9)
+b = Vector2(8, 81)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_4h1ag"]
+a = Vector2(7, -11)
+b = Vector2(87, -11)
 
 [node name="Main" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(191.99998, 334)
-scale = Vector2(0.25676873, 0.1616402)
+position = Vector2(192, 334)
+scale = Vector2(0.256769, 0.16164)
 texture = ExtResource("1_ovj46")
 
 [node name="Tilemap" type="CanvasLayer" parent="."]
@@ -110,20 +131,29 @@ script = ExtResource("5_gfoas")
 position = Vector2(128, 64)
 safe_margin = 1.159
 
+[node name="Camera2D2" type="Camera2D" parent="Player"]
+position = Vector2(1, 0)
+
 [node name="Table" parent="." instance=ExtResource("7_plhdx")]
 position = Vector2(72, 152)
 scale = Vector2(0.973214, 1.01571)
+canLift = false
+canPush = true
 
 [node name="Table2" parent="." instance=ExtResource("7_plhdx")]
 position = Vector2(72, 176)
 scale = Vector2(0.973214, 1.01571)
+canLift = false
+canPush = true
 
 [node name="Table5" parent="." instance=ExtResource("7_plhdx")]
-position = Vector2(352, 112.000015)
+position = Vector2(352, 112)
 scale = Vector2(0.973214, 1.01571)
+canLift = false
+canPush = true
 
 [node name="Table3" parent="." instance=ExtResource("7_plhdx")]
-position = Vector2(112.00001, 232.00002)
+position = Vector2(112, 232)
 scale = Vector2(0.973214, 1.01571)
 collision_layer = 0
 collision_mask = 0
@@ -135,12 +165,12 @@ region_enabled = true
 region_rect = Rect2(63, 16, 16, 16)
 
 [node name="Collision" parent="Table3" index="1"]
-position = Vector2(0, -3.0517578e-05)
-scale = Vector2(1, 0.9999996)
+position = Vector2(0, -3.05176e-05)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_cxxvu")
 
 [node name="Table4" parent="." instance=ExtResource("7_plhdx")]
-position = Vector2(264, 31.000004)
+position = Vector2(264, 31)
 scale = Vector2(0.973214, 1.01571)
 canLift = false
 
@@ -150,8 +180,8 @@ region_enabled = true
 region_rect = Rect2(63, 16, 16, 16)
 
 [node name="Collision" parent="Table4" index="1"]
-position = Vector2(0, -3.0517578e-05)
-scale = Vector2(1, 0.9999996)
+position = Vector2(0, -3.05176e-05)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_cxxvu")
 
 [node name="Boxes" parent="." instance=ExtResource("7_plhdx")]
@@ -165,8 +195,8 @@ region_enabled = true
 region_rect = Rect2(112, 12, 16, 22)
 
 [node name="Collision" parent="Boxes" index="1"]
-position = Vector2(0, -3.0517578e-05)
-scale = Vector2(1, 0.9999996)
+position = Vector2(0, -3.05176e-05)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_cxxvu")
 
 [node name="Boxes2" parent="." instance=ExtResource("7_plhdx")]
@@ -180,12 +210,12 @@ region_enabled = true
 region_rect = Rect2(112, 12, 16, 22)
 
 [node name="Collision" parent="Boxes2" index="1"]
-position = Vector2(0, -3.0517578e-05)
-scale = Vector2(1, 0.9999996)
+position = Vector2(0, -3.05176e-05)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_cxxvu")
 
 [node name="Boxes3" parent="." instance=ExtResource("7_plhdx")]
-position = Vector2(152, 40.000008)
+position = Vector2(152, 40)
 scale = Vector2(0.973214, 1.01571)
 liftPosition = Vector2(0, -16)
 
@@ -195,8 +225,8 @@ region_enabled = true
 region_rect = Rect2(112, 12, 16, 22)
 
 [node name="Collision" parent="Boxes3" index="1"]
-position = Vector2(0, -3.0517578e-05)
-scale = Vector2(1, 0.9999996)
+position = Vector2(0, -3.05176e-05)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_cxxvu")
 
 [node name="Boxes4" parent="." instance=ExtResource("7_plhdx")]
@@ -210,8 +240,8 @@ region_enabled = true
 region_rect = Rect2(112, 12, 16, 22)
 
 [node name="Collision" parent="Boxes4" index="1"]
-position = Vector2(0, -3.0517578e-05)
-scale = Vector2(1, 0.9999996)
+position = Vector2(0, -3.05176e-05)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_cxxvu")
 
 [node name="Boxes5" parent="." instance=ExtResource("7_plhdx")]
@@ -228,12 +258,12 @@ region_enabled = true
 region_rect = Rect2(112, 12, 16, 22)
 
 [node name="Collision" parent="Boxes5" index="1"]
-position = Vector2(0, -3.0517578e-05)
-scale = Vector2(1, 0.9999996)
+position = Vector2(0, -3.05176e-05)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_cxxvu")
 
 [node name="Pot" parent="." instance=ExtResource("9_4h1ag")]
-position = Vector2(112.00001, 225.00002)
+position = Vector2(112, 225)
 scale = Vector2(0.973214, 1.01571)
 
 [node name="Bed" parent="." instance=ExtResource("10_x3jp6")]
@@ -245,8 +275,8 @@ canLift = false
 canPush = true
 
 [node name="Couch" parent="." instance=ExtResource("10_x3jp6")]
-position = Vector2(24, 48.000004)
-rotation = 3.1415927
+position = Vector2(24, 48)
+rotation = 3.14159
 scale = Vector2(1.5, 1.5)
 platform_floor_layers = 0
 safe_margin = 15.346
@@ -270,7 +300,7 @@ rotation = 4.71239
 shape = SubResource("WorldBoundaryShape2D_iqcmb")
 
 [node name="CollisionShape2D(South)" type="CollisionShape2D" parent="World Border"]
-position = Vector2(375, 247.5)
+position = Vector2(376, 412)
 rotation = -3.14159
 shape = SubResource("WorldBoundaryShape2D_iqcmb")
 
@@ -320,7 +350,7 @@ position = Vector2(11.5, 179.5)
 shape = SubResource("RectangleShape2D_8x8nf")
 
 [node name="Short Kitchen Wall" type="CollisionShape2D" parent="Level Borders/Kitchen Area/Kitchen Cabinets"]
-position = Vector2(59.490677, 243.57307)
+position = Vector2(59.4907, 243.573)
 shape = SubResource("RectangleShape2D_ej1bv")
 
 [node name="Kitchen Island" type="StaticBody2D" parent="Level Borders/Kitchen Area"]
@@ -343,9 +373,50 @@ shape = SubResource("RectangleShape2D_ijb51")
 collision_layer = 4
 
 [node name="Bathtub" type="CollisionShape2D" parent="Level Borders/Bathroom Area/Bathroom Bathtub"]
-position = Vector2(89, 11.999999)
+position = Vector2(89, 12)
 scale = Vector2(2.1, 4.5)
 shape = SubResource("CircleShape2D_2yvdw")
+
+[node name="Garage" parent="." instance=ExtResource("12_uvob4")]
+position = Vector2(145, 317)
+
+[node name="Placeholder Van" type="Sprite2D" parent="Garage"]
+position = Vector2(47, 34)
+scale = Vector2(1.73333, 1.62712)
+texture = SubResource("AtlasTexture_gfoas")
+
+[node name="Area2D" type="Area2D" parent="Garage/Placeholder Van"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Garage/Placeholder Van/Area2D"]
+shape = SubResource("RectangleShape2D_b3xeb")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Garage"]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Garage/StaticBody2D"]
+shape = SubResource("SegmentShape2D_plhdx")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Garage"]
+collision_layer = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Garage/StaticBody2D3"]
+shape = SubResource("SegmentShape2D_nr1ry")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Garage"]
+collision_layer = 4
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Garage/StaticBody2D2"]
+position = Vector2(0, 93)
+shape = SubResource("SegmentShape2D_4h1ag")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Garage"]
+collision_layer = 4
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Garage/StaticBody2D4"]
+position = Vector2(0, -1)
+shape = SubResource("SegmentShape2D_4h1ag")
+disabled = true
 
 [editable path="Table3"]
 [editable path="Table4"]
