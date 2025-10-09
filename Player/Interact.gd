@@ -32,7 +32,7 @@ func update(_delta:float) -> void:
 		self.exit()
 
 ## This method runs every _physics_process() frame of the StateManager.
-func physicsUpdate(delta:float) -> void:
+func physicsUpdate(_delta:float) -> void:
 	pass
 
 ## Disables this State. Unlike canEnter, this function's job is to be a sure fire way to prevent a

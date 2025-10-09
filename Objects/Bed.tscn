@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cv6u6nkys85s8"]
+[gd_scene load_steps=5 format=3 uid="uid://dq5dgctxnghmb"]
 
 [ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Objects/Scripts/Furniture.gd" id="1_jno4m"]
 [ext_resource type="Texture2D" uid="uid://drpfaulsu8pf6" path="res://Assets/Objects Spritesheet.png" id="2_g6pvx"]
@@ -21,5 +21,5 @@ metadata/_custom_type_script = "uid://c2vh27coguldq"
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_cmayr")
 
-[node name="BedCollision" type="CollisionShape2D" parent="."]
+[node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_xnri0")

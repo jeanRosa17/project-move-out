@@ -9,7 +9,7 @@ extends State
 @export var isPushing:bool
 
 func canEnter() -> bool:
-	var prefix:String = "push"
+	var _prefix:String = "push"
 	
 	print("can enter push")
 	

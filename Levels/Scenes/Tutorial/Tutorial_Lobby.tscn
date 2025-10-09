@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://cau3mgvyc3sus" path="res://Levels/Dialogue.gd" id="3_hlt0u"]
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Player/Player.tscn" id="4_a2lav"]
 [ext_resource type="PackedScene" uid="uid://d26wukook25xb" path="res://Objects/Table.tscn" id="5_dpslo"]
-[ext_resource type="PackedScene" path="res://Objects/Bed.tscn" id="5_on7kk"]
+[ext_resource type="PackedScene" uid="uid://dq5dgctxnghmb" path="res://Objects/Bed.tscn" id="5_on7kk"]
 [ext_resource type="Resource" uid="uid://brwl51b3u5pqg" path="res://Narrative/nullDialogue.tres" id="6_4jkoc"]
 [ext_resource type="Texture2D" uid="uid://b1h3op3pjraac" path="res://Assets/Level Art/couch1.png" id="6_x0yed"]
 [ext_resource type="Shape2D" uid="uid://chlinrgkjlcsr" path="res://Levels/Resources/WorldBorder.tres" id="7_0xyol"]
@@ -56,6 +56,7 @@ texture = ExtResource("2_l00sm")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 3
+visible = false
 follow_viewport_enabled = true
 
 [node name="Panel" type="Panel" parent="CanvasLayer"]
@@ -84,7 +85,6 @@ custom_minimum_size = Vector2(192, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 theme = SubResource("Theme_4jkoc")
-text = "wFIEE SJ"
 autowrap_mode = 2
 script = ExtResource("3_hlt0u")
 
