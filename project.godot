@@ -37,6 +37,7 @@ script/templates_search_path="res://Scripts/Templates"
 Furniture="This is where the objects should be in in terms of moving them"
 player_collision="This is the player's collision box"
 "Immovable Object"="These are objects that are not movable/static"
+"World Bounds"="These are the walls within the level"
 
 [input]
 

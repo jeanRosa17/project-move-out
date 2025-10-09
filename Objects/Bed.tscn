@@ -10,13 +10,15 @@ region = Rect2(200, -0.5, 32, 48)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
 size = Vector2(26, 36)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sc44f"]
-size = Vector2(32, 48)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
+size = Vector2(36, 52)
 
-[node name="Bed" type="Area2D" groups=["Furniture"]]
+[node name="Bed" type="RigidBody2D" groups=["Furniture"]]
 collision_layer = 2
 collision_mask = 7
-input_pickable = false
+gravity_scale = 0.0
+can_sleep = false
+lock_rotation = true
 script = ExtResource("1_ardoa")
 canPush = true
 canPull = true
@@ -27,9 +29,13 @@ texture = SubResource("AtlasTexture_cmayr")
 [node name="BedCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_xnri0")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["Furniture"]]
 collision_layer = 2
 collision_mask = 7
+input_pickable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("RectangleShape2D_sc44f")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_ardoa")
+
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
+[connection signal="body_shape_exited" from="Area2D" to="." method="_on_area_2d_body_shape_exited"]

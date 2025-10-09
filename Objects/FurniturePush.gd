@@ -1,4 +1,4 @@
-extends Area2D
+extends RigidBody2D
 
 class_name FurniturePush
 
@@ -7,11 +7,24 @@ class_name FurniturePush
 @export var canPull:bool
 @export var weight:int
 var isLifting: bool = false
+var isPushing: bool = false
+
+var player: CharacterBody2D
+
+var distanceFromPlayer:float
+
+var objects: Array[Node2D] = []
 
 @export var liftPosition:Vector2
 
-#func _process(_delta: float) -> void:
-	#self.move_and_collide(self.velocity * _delta)
+func _physics_process(delta: float) -> void:
+	if (isPushing):
+		if(objects.is_empty()):
+			collision_layer = 0
+		else:
+			self.collision_layer = 2;
+		linear_velocity = linear_velocity.lerp(player.velocity, 0.4)
+
 
 func get_canLift() -> bool:
 	return canLift
@@ -26,7 +39,7 @@ func enterLift(body:CharacterBody2D) -> void:
 
 ## Returns this Furniture back to not being held
 func exitLift() -> void:
-	var body:Area2D = self
+	var body:Area2D = self.get_parent()
 	body.remove_child(self)
 	body.add_sibling(self)
 	self.position = body.position + self.liftPosition
@@ -34,8 +47,50 @@ func exitLift() -> void:
 	self.collision_mask = 7;
 	self.isLifting = false
 	
-func _on_player_detection_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Immovable Object"):
-		##add code so player is not able to move and object cannot leave
-		pass
+func enterPush(body: CharacterBody2D) -> void:
+	print("entered pushing")
+	self.player = body
+	self.collision_layer = 0;
+	distanceFromPlayer = position.distance_to(player.position)
+	self.isPushing = true
+
+func exitPush()-> void:
+	print("exited pushing")
+	self.player = null
+	self.collision_layer = 2;
+	self.isPushing = false
+
+func againstObject(newObject: Node2D) -> void:
+	objects.append(newObject)
+	print("added object: ")
+	print(newObject.name)
+	pass
+
+func relieveObject(newObject: Node2D) -> void:
+	if (objects.has(newObject)):
+		objects.erase(newObject)
+		print("removed object: ")
+		print(newObject.name)
+	pass
+
+func _on_area_2d_body_shape_entered(body_rid: RID,
+ body: Node2D,
+ body_shape_index: int,
+ local_shape_index: int) -> void:
+	if (body.is_in_group("World Bounds") && self.isPushing):
+		print("cannot push")
+		againstObject(body)
+	elif (body.name != "Player" && self.isPushing):
+		print(body.name)
+	pass # Replace with function body.
+
+func _on_area_2d_body_shape_exited(body_rid: RID,
+ body: Node2D,
+ body_shape_index: int,
+ local_shape_index: int) -> void:
+	if (body.is_in_group("World Bounds") && self.isPushing):
+		print("can push")
+		relieveObject(body)
+	elif(body.name != "Player" && self.isPushing):
+		print(body.name)
 	pass # Replace with function body.

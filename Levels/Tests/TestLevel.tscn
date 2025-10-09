@@ -16,7 +16,7 @@
 default_font_size = 11
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cxxvu"]
-size = Vector2(14.385345, 9.84536)
+size = Vector2(13.333324, 9.84536)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iqcmb"]
 normal = Vector2(0, 1)
@@ -226,8 +226,8 @@ region_enabled = true
 region_rect = Rect2(112, 12, 16, 22)
 
 [node name="Collision" parent="Boxes5" index="1"]
-position = Vector2(0, -3.0517578e-05)
-scale = Vector2(1, 0.9999996)
+position = Vector2(-7.6293945e-06, -3.0517578e-05)
+scale = Vector2(1, 0.9999997)
 shape = SubResource("RectangleShape2D_cxxvu")
 
 [node name="Pot" parent="." instance=ExtResource("9_4h1ag")]
@@ -236,104 +236,103 @@ scale = Vector2(0.973214, 1.01571)
 
 [node name="Bed" parent="." instance=ExtResource("10_x3jp6")]
 position = Vector2(304, 40)
-scale = Vector2(1.5, 1.5)
-platform_floor_layers = 0
-safe_margin = 15.346
-canLift = false
-canPush = true
 
 [node name="Couch" parent="." instance=ExtResource("10_x3jp6")]
 position = Vector2(24, 48.000004)
 rotation = 3.1415927
 scale = Vector2(1.5, 1.5)
-platform_floor_layers = 0
-safe_margin = 15.346
-canLift = false
-canPush = true
 
 [node name="Sprite2D" parent="Couch" index="0"]
 texture = ExtResource("11_p8gqs")
 
-[node name="World Border" type="StaticBody2D" parent="." groups=["Immovable Object"]]
+[node name="World Border" type="StaticBody2D" parent="." groups=["Immovable Object", "World Bounds"]]
 collision_layer = 4
+collision_mask = 3
 
-[node name="CollisionShape2D(North)" type="CollisionShape2D" parent="World Border" groups=["Immovable Object"]]
+[node name="CollisionShape2D(North)" type="CollisionShape2D" parent="World Border" groups=["World Bounds"]]
 position = Vector2(0, 2.5)
 shape = SubResource("WorldBoundaryShape2D_iqcmb")
 one_way_collision_margin = 0.0
 
-[node name="CollisionShape2D(West)" type="CollisionShape2D" parent="World Border" groups=["Immovable Object"]]
+[node name="CollisionShape2D(West)" type="CollisionShape2D" parent="World Border" groups=["World Bounds"]]
 position = Vector2(2.5, 0)
 rotation = 4.71239
 shape = SubResource("WorldBoundaryShape2D_iqcmb")
 
-[node name="CollisionShape2D(South)" type="CollisionShape2D" parent="World Border" groups=["Immovable Object"]]
+[node name="CollisionShape2D(South)" type="CollisionShape2D" parent="World Border" groups=["World Bounds"]]
 position = Vector2(375, 247.5)
 rotation = -3.14159
 shape = SubResource("WorldBoundaryShape2D_iqcmb")
 
-[node name="CollisionShape2D(East)" type="CollisionShape2D" parent="World Border" groups=["Immovable Object"]]
+[node name="CollisionShape2D(East)" type="CollisionShape2D" parent="World Border" groups=["World Bounds"]]
 position = Vector2(372.5, 250)
 rotation = -4.71239
 shape = SubResource("WorldBoundaryShape2D_iqcmb")
 
 [node name="Level Borders" type="Node2D" parent="." groups=["Immovable Object"]]
 
-[node name="Walls" type="StaticBody2D" parent="Level Borders"]
+[node name="Walls" type="StaticBody2D" parent="Level Borders" groups=["World Bounds"]]
 collision_layer = 4
+collision_mask = 3
 
-[node name="Bedroom-Kitchen Wall2" type="CollisionShape2D" parent="Level Borders/Walls" groups=["Immovable Object"]]
+[node name="Bedroom-Kitchen Wall2" type="CollisionShape2D" parent="Level Borders/Walls" groups=["World Bounds"]]
 position = Vector2(192, 40)
 shape = SubResource("RectangleShape2D_2yvdw")
 
-[node name="Bathroom-Kitchen Wall" type="CollisionShape2D" parent="Level Borders/Walls"]
+[node name="Bathroom-Kitchen Wall" type="CollisionShape2D" parent="Level Borders/Walls" groups=["World Bounds"]]
 position = Vector2(199.75, 240)
 shape = SubResource("RectangleShape2D_kxr0u")
 
-[node name="Bedroom-Bathroom Long Wall" type="CollisionShape2D" parent="Level Borders/Walls"]
+[node name="Bedroom-Bathroom Long Wall" type="CollisionShape2D" parent="Level Borders/Walls" groups=["World Bounds"]]
 position = Vector2(255.75, 168.25)
 shape = SubResource("RectangleShape2D_kv5fy")
 
-[node name="Bedroom-Bathroom Short Wall" type="CollisionShape2D" parent="Level Borders/Walls"]
+[node name="Bedroom-Bathroom Short Wall" type="CollisionShape2D" parent="Level Borders/Walls" groups=["World Bounds"]]
 position = Vector2(359, 161.5)
 shape = SubResource("RectangleShape2D_jeepb")
 
 [node name="Kitchen Area" type="Node2D" parent="Level Borders"]
 
-[node name="Kitchen Cabinets" type="StaticBody2D" parent="Level Borders/Kitchen Area"]
+[node name="Kitchen Cabinets" type="StaticBody2D" parent="Level Borders/Kitchen Area" groups=["World Bounds"]]
 collision_layer = 4
+collision_mask = 3
 
-[node name="Long Kitchen Wall" type="CollisionShape2D" parent="Level Borders/Kitchen Area/Kitchen Cabinets"]
+[node name="Long Kitchen Wall" type="CollisionShape2D" parent="Level Borders/Kitchen Area/Kitchen Cabinets" groups=["World Bounds"]]
 position = Vector2(11.5, 179.5)
 shape = SubResource("RectangleShape2D_8x8nf")
 
-[node name="Short Kitchen Wall" type="CollisionShape2D" parent="Level Borders/Kitchen Area/Kitchen Cabinets"]
+[node name="Short Kitchen Wall" type="CollisionShape2D" parent="Level Borders/Kitchen Area/Kitchen Cabinets" groups=["World Bounds"]]
 position = Vector2(59.490677, 243.57307)
 shape = SubResource("RectangleShape2D_ej1bv")
 
-[node name="Kitchen Island" type="StaticBody2D" parent="Level Borders/Kitchen Area"]
+[node name="Kitchen Island" type="StaticBody2D" parent="Level Borders/Kitchen Area" groups=["World Bounds"]]
 collision_layer = 4
 
 [node name="Bathroom Area" type="Node2D" parent="Level Borders"]
 position = Vector2(267, 207)
 
-[node name="Bathroom Sink" type="StaticBody2D" parent="Level Borders/Bathroom Area"]
+[node name="Bathroom Sink" type="StaticBody2D" parent="Level Borders/Bathroom Area" groups=["World Bounds"]]
 collision_layer = 4
+collision_mask = 3
 
-[node name="Bathroom Toilet" type="StaticBody2D" parent="Level Borders/Bathroom Area"]
+[node name="Bathroom Toilet" type="StaticBody2D" parent="Level Borders/Bathroom Area" groups=["World Bounds"]]
 collision_layer = 4
+collision_mask = 3
 
-[node name="Toilet" type="CollisionShape2D" parent="Level Borders/Bathroom Area/Bathroom Toilet"]
+[node name="Toilet" type="CollisionShape2D" parent="Level Borders/Bathroom Area/Bathroom Toilet" groups=["World Bounds"]]
 position = Vector2(54.5, 27.5)
 shape = SubResource("RectangleShape2D_ijb51")
+disabled = true
 
-[node name="Bathroom Bathtub" type="StaticBody2D" parent="Level Borders/Bathroom Area"]
+[node name="Bathroom Bathtub" type="StaticBody2D" parent="Level Borders/Bathroom Area" groups=["World Bounds"]]
 collision_layer = 4
+collision_mask = 3
 
-[node name="Bathtub" type="CollisionShape2D" parent="Level Borders/Bathroom Area/Bathroom Bathtub"]
+[node name="Bathtub" type="CollisionShape2D" parent="Level Borders/Bathroom Area/Bathroom Bathtub" groups=["World Bounds"]]
 position = Vector2(89, 11.999999)
 scale = Vector2(2.1, 4.5)
 shape = SubResource("CircleShape2D_2yvdw")
+disabled = true
 
 [editable path="Table3"]
 [editable path="Table4"]

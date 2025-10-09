@@ -57,4 +57,5 @@ func handleLift(_delta:float) -> void:
 func handlePushPull(_delta:float) -> void:
 	if (Input.is_action_pressed("Push-Pull")):
 		#issue with entering following state
+		#print("pressing push key")
 		if (self.manager.getStateName() != "Push"): self.manager.changeState("Push")

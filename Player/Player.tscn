@@ -1638,9 +1638,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1rgi"]
-size = Vector2(16, 16)
+size = Vector2(16, 9)
 
 [node name="Body" type="CharacterBody2D"]
+collision_layer = 3
 collision_mask = 6
 platform_on_leave = 2
 platform_floor_layers = 4278190080
@@ -1670,7 +1671,8 @@ collision_layer = 2
 collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 16)
+position = Vector2(0, 19.5)
+scale = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_s1rgi")
 
 [node name="StateManager" type="Node" parent="." node_paths=PackedStringArray("view", "initialState")]
