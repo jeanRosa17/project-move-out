@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkh22y1hno0y0"
-path="res://.godot/imported/Temp Character Spritesheet.png-b8484e1f17972ca084577dae369f8e76.ctex"
+uid="uid://cjfkhqw70rdr"
+path="res://.godot/imported/waldgeist-1x.png-089cd5040c6f0d92f537c8bfab6eed0c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Temp Character Spritesheet.png"
-dest_files=["res://.godot/imported/Temp Character Spritesheet.png-b8484e1f17972ca084577dae369f8e76.ctex"]
+source_file="res://Assets/Color Palettes/waldgeist-1x.png"
+dest_files=["res://.godot/imported/waldgeist-1x.png-089cd5040c6f0d92f537c8bfab6eed0c.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkh22y1hno0y0"
-path="res://.godot/imported/Temp Character Spritesheet.png-b8484e1f17972ca084577dae369f8e76.ctex"
+uid="uid://cow43tuhy0ivm"
+path="res://.godot/imported/endesga-64-1x.png-1f1ce3d473d4d8322cbd7760fe19168e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Temp Character Spritesheet.png"
-dest_files=["res://.godot/imported/Temp Character Spritesheet.png-b8484e1f17972ca084577dae369f8e76.ctex"]
+source_file="res://Assets/Color Palettes/endesga-64-1x.png"
+dest_files=["res://.godot/imported/endesga-64-1x.png-1f1ce3d473d4d8322cbd7760fe19168e.ctex"]
 
 [params]
 
