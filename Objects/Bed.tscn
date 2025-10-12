@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dq5dgctxnghmb"]
+[gd_scene load_steps=6 format=3 uid="uid://dq5dgctxnghmb"]
 
 [ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Objects/Scripts/Furniture.gd" id="1_jno4m"]
 [ext_resource type="Texture2D" uid="uid://drpfaulsu8pf6" path="res://Assets/Objects Spritesheet.png" id="2_g6pvx"]
@@ -10,12 +10,18 @@ region = Rect2(200, -0.5, 32, 48)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
 size = Vector2(26, 36)
 
-[node name="Bed" type="CharacterBody2D" groups=["Furniture"]]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
+size = Vector2(36, 52)
+
+[node name="Bed" type="RigidBody2D" groups=["Furniture"]]
 collision_layer = 2
 collision_mask = 7
-motion_mode = 1
+gravity_scale = 0.0
+can_sleep = false
+lock_rotation = true
 script = ExtResource("1_jno4m")
-canLift = true
+canPush = true
+canPull = true
 metadata/_custom_type_script = "uid://c2vh27coguldq"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -23,3 +29,10 @@ texture = SubResource("AtlasTexture_cmayr")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_xnri0")
+
+[node name="AreaDetector" type="Area2D" parent="." groups=["Furniture"]]
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector"]
+shape = SubResource("RectangleShape2D_ardoa")

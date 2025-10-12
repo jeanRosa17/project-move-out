@@ -23,5 +23,6 @@ func _on_furniture_body_entered(body: Node2D) -> void:
 func _on_furniture_body_exited(body: Node2D) -> void:
 	if (self.furniture == null): return
 	if (body.is_in_group("Furniture") && self.furniture != null && !self.furniture.isLifting):
-		self.furniture = null
+		pass
+		#self.furniture = null
 	#if (self.getRootNode().find_child(self.furniture.name) != null): return

@@ -10,10 +10,9 @@ region = Rect2(160, 15, 14, 17)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
 size = Vector2(14, 17)
 
-[node name="Furniture" type="CharacterBody2D" groups=["Furniture"]]
+[node name="Furniture" type="RigidBody2D" groups=["Furniture"]]
 collision_layer = 2
 collision_mask = 7
-motion_mode = 1
 script = ExtResource("1_kle06")
 canLift = true
 liftPosition = Vector2(0, -16)
