@@ -1,5 +1,8 @@
 class_name DialogueManager
-extends Label
+extends Panel
+
+@onready var label:Label = $PanelContainer/Label
+#@export var 
 
 ## File path to the Dialogue script
 @export var dialogueScriptPath: StringName = "res://Narrative/SampleText.txt"
@@ -55,7 +58,7 @@ func setDialogueTo(dTag:DialogueTag) -> void:
 ## Begins the dialogue sequence
 func startDialogue() -> void:
 	self.dialogueScript = FileAccess.get_file_as_string(self.dialogueScriptPath)
-	self.text = ""
+	self.label.text = ""
 	self.lineCounter = 0
 	self.charCounter = 0
 	self.currentTagFinished = false
@@ -133,7 +136,7 @@ func nextChar() -> void:
 		return
 	
 	var nextCharHelper: Callable = func (_textSpeed:float) -> void: 
-		self.text = line.left(charCounter)
+		self.label.text = line.left(charCounter)
 		self.timer.start(_textSpeed)
 	
 	self.charCounter += 1

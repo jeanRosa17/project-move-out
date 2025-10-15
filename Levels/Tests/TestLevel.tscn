@@ -1,10 +1,10 @@
-[gd_scene load_steps=33 format=4 uid="uid://bd4iaouuaddvw"]
+[gd_scene load_steps=32 format=4 uid="uid://bd4iaouuaddvw"]
 
 [ext_resource type="Texture2D" uid="uid://dffq6tyiqk8ch" path="res://Assets/tiles/Template Garage Floor.png" id="1_ovj46"]
 [ext_resource type="TileSet" uid="uid://bfsdyggvkp2d" path="res://Levels/Resources/OldTileMap.tres" id="2_2ubmf"]
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Assets/tiles/Support Columns-autotile2/Support Columns-autotile2.tres" id="3_uvob4"]
 [ext_resource type="Texture2D" uid="uid://byjdse3pdpxef" path="res://Assets/Level Art/Bachelor_pad_test_level.png" id="4_cifax"]
-[ext_resource type="Script" uid="uid://cau3mgvyc3sus" path="res://Scripts/Dialogue/Dialogue.gd" id="5_gfoas"]
+[ext_resource type="PackedScene" uid="uid://psh4s5sym8kd" path="res://UI/Textbox.tscn" id="5_cifax"]
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Player/Player.tscn" id="6_b3xeb"]
 [ext_resource type="PackedScene" uid="uid://d26wukook25xb" path="res://Objects/Table.tscn" id="7_plhdx"]
 [ext_resource type="Texture2D" uid="uid://drpfaulsu8pf6" path="res://Assets/Objects Spritesheet.png" id="8_nr1ry"]
@@ -14,9 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://ip4pm1ex6klr" path="res://Levels/Scenes/Garage.tscn" id="12_uvob4"]
 [ext_resource type="Texture2D" uid="uid://xb4g61m2b78c" path="res://Assets/Level Art/Counter_Tileset.png" id="13_cifax"]
 [ext_resource type="Script" uid="uid://bg35t571kh220" path="res://Scripts/Van/Van.gd" id="13_gfoas"]
-
-[sub_resource type="Theme" id="Theme_iqcmb"]
-default_font_size = 11
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cxxvu"]
 size = Vector2(14.3853, 9.84536)
@@ -100,6 +97,7 @@ tile_set = ExtResource("2_2ubmf")
 tile_set = ExtResource("3_uvob4")
 
 [node name="Background" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(147.75, 125)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_cifax")
@@ -108,27 +106,7 @@ texture = ExtResource("4_cifax")
 visible = false
 follow_viewport_scale = 3.0
 
-[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -448.0
-offset_top = -337.0
-offset_right = -184.0
-offset_bottom = -297.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="Label" type="Label" parent="CanvasLayer/PanelContainer"]
-custom_minimum_size = Vector2(240, 30)
-layout_mode = 2
-size_flags_horizontal = 4
-theme = SubResource("Theme_iqcmb")
-text = "	Hmm what's that?"
-autowrap_mode = 2
-script = ExtResource("5_gfoas")
+[node name="Textbox" parent="CanvasLayer" instance=ExtResource("5_cifax")]
 
 [node name="Player" parent="." instance=ExtResource("6_b3xeb")]
 position = Vector2(128, 64)

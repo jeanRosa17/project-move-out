@@ -6,6 +6,7 @@ class_name Furniture
 @export var canPush:bool
 @export var canPull:bool
 @export var weight:int
+@export var dialogueTag:DialogueTag = preload("res://Scripts/Dialogue/nullDialogue.tres")
 
 var isLifting: bool = false
 var isPushing: bool = false

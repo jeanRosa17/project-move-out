@@ -3,18 +3,17 @@
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Assets/tiles/Support Columns-autotile2/Support Columns-autotile2.tres" id="1_0vuas"]
 [ext_resource type="Texture2D" uid="uid://byjdse3pdpxef" path="res://Assets/Level Art/Bachelor_pad_test_level.png" id="2_l00sm"]
 [ext_resource type="TileSet" uid="uid://bfsdyggvkp2d" path="res://Levels/Resources/OldTileMap.tres" id="3_4gc1d"]
-[ext_resource type="Script" uid="uid://cau3mgvyc3sus" path="res://Scripts/Dialogue/Dialogue.gd" id="3_hlt0u"]
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Player/Player.tscn" id="4_a2lav"]
+[ext_resource type="PackedScene" uid="uid://psh4s5sym8kd" path="res://UI/Textbox.tscn" id="4_dpslo"]
 [ext_resource type="PackedScene" uid="uid://d26wukook25xb" path="res://Objects/Table.tscn" id="5_dpslo"]
 [ext_resource type="PackedScene" uid="uid://dq5dgctxnghmb" path="res://Objects/Bed.tscn" id="5_on7kk"]
 [ext_resource type="Texture2D" uid="uid://b1h3op3pjraac" path="res://Assets/Level Art/couch1.png" id="6_x0yed"]
 [ext_resource type="Shape2D" uid="uid://chlinrgkjlcsr" path="res://Levels/Resources/WorldBorder.tres" id="7_0xyol"]
+[ext_resource type="Script" uid="uid://bmqryoobj44j2" path="res://Scripts/Dialogue/DialogueTag.gd" id="8_jwaso"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jwaso"]
-content_margin_left = 5.0
-
-[sub_resource type="Theme" id="Theme_4jkoc"]
-default_font_size = 10
+[sub_resource type="Resource" id="Resource_4jkoc"]
+script = ExtResource("8_jwaso")
+metadata/_custom_type_script = "uid://bmqryoobj44j2"
 
 [node name="Empty Room" type="Node2D"]
 
@@ -52,34 +51,7 @@ layer = 3
 visible = false
 follow_viewport_enabled = true
 
-[node name="Panel" type="Panel" parent="CanvasLayer"]
-offset_left = 63.0
-offset_top = 120.0
-offset_right = 255.0
-offset_bottom = 160.0
-
-[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Panel"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -95.0
-offset_top = -39.0
-offset_right = 97.0
-offset_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxEmpty_jwaso")
-
-[node name="Label" type="Label" parent="CanvasLayer/Panel/PanelContainer"]
-custom_minimum_size = Vector2(192, 40)
-layout_mode = 2
-size_flags_horizontal = 4
-theme = SubResource("Theme_4jkoc")
-autowrap_mode = 2
-script = ExtResource("3_hlt0u")
+[node name="Textbox" parent="CanvasLayer" instance=ExtResource("4_dpslo")]
 
 [node name="Table" parent="." instance=ExtResource("5_dpslo")]
 position = Vector2(117, 63)
@@ -101,6 +73,7 @@ limit_bottom = 240
 position = Vector2(225, 45)
 rotation = -1.5708
 scale = Vector2(1.5, 1.5)
+dialogueTag = SubResource("Resource_4jkoc")
 
 [node name="Sprite2D" parent="Couch" index="0"]
 texture = ExtResource("6_x0yed")

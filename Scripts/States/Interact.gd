@@ -1,7 +1,7 @@
 extends State
 
 @onready var canvas_layer: CanvasLayer = $"../../../CanvasLayer"
-@onready var label: DialogueManager = $"../../../CanvasLayer/Panel/PanelContainer/Label"
+@onready var textbox: DialogueManager = $"../../../CanvasLayer/Textbox"
 
 
 ## Determines if the state can be entered. By default returns true.
@@ -12,9 +12,9 @@ func canEnter() -> bool:
 ## The first method called when the state is transitioned into
 func enter() -> void:
 	if (self.getManager().furniture == null or self.getManager().furniture.dialogueTag == null):
-		self.label.setDialogueTo(load("res://Narrative/nullDialogue.tres"))
+		self.textbox.setDialogueTo(load("res://Scripts/Dialogue/nullDialogue.tres"))
 	else:
-		self.label.setDialogueTo(self.getManager().furniture.dialogueTag)
+		self.textbox.setDialogueTo(self.getManager().furniture.dialogueTag)
 	self.canvas_layer.visible = true
 	
 	
@@ -28,7 +28,7 @@ func exit() -> void:
 	
 ## Constantly checks for input from the user and changes state.
 func update(_delta:float) -> void:
-	if (self.label.currentTagFinished):
+	if (self.textbox.currentTagFinished):
 		self.exit()
 
 ## This method runs every _physics_process() frame of the StateManager.
