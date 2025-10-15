@@ -1,27 +1,20 @@
-[gd_scene load_steps=15 format=4 uid="uid://db18pxq8crbym"]
+[gd_scene load_steps=12 format=4 uid="uid://db18pxq8crbym"]
 
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Assets/tiles/Support Columns-autotile2/Support Columns-autotile2.tres" id="1_0vuas"]
 [ext_resource type="Texture2D" uid="uid://byjdse3pdpxef" path="res://Assets/Level Art/Bachelor_pad_test_level.png" id="2_l00sm"]
 [ext_resource type="TileSet" uid="uid://bfsdyggvkp2d" path="res://Levels/Resources/OldTileMap.tres" id="3_4gc1d"]
-[ext_resource type="Script" uid="uid://cau3mgvyc3sus" path="res://Levels/Dialogue.gd" id="3_hlt0u"]
+[ext_resource type="Script" uid="uid://cau3mgvyc3sus" path="res://Scripts/Dialogue/Dialogue.gd" id="3_hlt0u"]
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Player/Player.tscn" id="4_a2lav"]
 [ext_resource type="PackedScene" uid="uid://d26wukook25xb" path="res://Objects/Table.tscn" id="5_dpslo"]
 [ext_resource type="PackedScene" uid="uid://dq5dgctxnghmb" path="res://Objects/Bed.tscn" id="5_on7kk"]
-[ext_resource type="Resource" uid="uid://brwl51b3u5pqg" path="res://Narrative/nullDialogue.tres" id="6_4jkoc"]
 [ext_resource type="Texture2D" uid="uid://b1h3op3pjraac" path="res://Assets/Level Art/couch1.png" id="6_x0yed"]
 [ext_resource type="Shape2D" uid="uid://chlinrgkjlcsr" path="res://Levels/Resources/WorldBorder.tres" id="7_0xyol"]
-[ext_resource type="Script" uid="uid://bmqryoobj44j2" path="res://Scripts/Resources/DialogueTag.gd" id="8_jwaso"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jwaso"]
 content_margin_left = 5.0
 
 [sub_resource type="Theme" id="Theme_4jkoc"]
 default_font_size = 10
-
-[sub_resource type="Resource" id="Resource_4jkoc"]
-script = ExtResource("8_jwaso")
-dialogueTag = &"couch"
-metadata/_custom_type_script = "uid://bmqryoobj44j2"
 
 [node name="Empty Room" type="Node2D"]
 
@@ -90,7 +83,6 @@ script = ExtResource("3_hlt0u")
 
 [node name="Table" parent="." instance=ExtResource("5_dpslo")]
 position = Vector2(117, 63)
-dialogueTag = ExtResource("6_4jkoc")
 
 [node name="Table2" parent="." instance=ExtResource("5_dpslo")]
 position = Vector2(117, 91)
@@ -109,11 +101,6 @@ limit_bottom = 240
 position = Vector2(225, 45)
 rotation = -1.5708
 scale = Vector2(1.5, 1.5)
-platform_floor_layers = 0
-safe_margin = 15.346
-canLift = false
-canPush = true
-dialogueTag = SubResource("Resource_4jkoc")
 
 [node name="Sprite2D" parent="Couch" index="0"]
 texture = ExtResource("6_x0yed")

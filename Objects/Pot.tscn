@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cqt367stu26c2"]
 
 [ext_resource type="Texture2D" uid="uid://drpfaulsu8pf6" path="res://Assets/Objects Spritesheet.png" id="1_cmayr"]
-[ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Objects/Scripts/Furniture.gd" id="1_kle06"]
+[ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_kle06"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cmayr"]
 atlas = ExtResource("1_cmayr")
@@ -13,6 +13,7 @@ size = Vector2(14, 17)
 [node name="Furniture" type="RigidBody2D" groups=["Furniture"]]
 collision_layer = 2
 collision_mask = 7
+gravity_scale = 0.0
 script = ExtResource("1_kle06")
 canLift = true
 liftPosition = Vector2(0, -16)

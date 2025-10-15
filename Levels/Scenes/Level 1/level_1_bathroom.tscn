@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://byjdse3pdpxef" path="res://Assets/Level Art/Bachelor_pad_test_level.png" id="1_kf11t"]
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Assets/tiles/Support Columns-autotile2/Support Columns-autotile2.tres" id="2_ik8lv"]
 [ext_resource type="TileSet" uid="uid://bfsdyggvkp2d" path="res://Levels/Resources/OldTileMap.tres" id="3_c4m4x"]
-[ext_resource type="Script" uid="uid://cau3mgvyc3sus" path="res://Levels/Dialogue.gd" id="4_prcn2"]
+[ext_resource type="Script" uid="uid://cau3mgvyc3sus" path="res://Scripts/Dialogue/Dialogue.gd" id="4_prcn2"]
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Player/Player.tscn" id="5_haxof"]
 [ext_resource type="Shape2D" uid="uid://chlinrgkjlcsr" path="res://Levels/Resources/WorldBorder.tres" id="6_82jk2"]
 
