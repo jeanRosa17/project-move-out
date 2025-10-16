@@ -833,7 +833,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_b5gfp")
 }],
-"loop": true,
+"loop": false,
 "name": &"push down",
 "speed": 6.0
 }, {
@@ -862,7 +862,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6oo8f")
 }],
-"loop": true,
+"loop": false,
 "name": &"push side",
 "speed": 6.0
 }, {
@@ -891,7 +891,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wy7gj")
 }],
-"loop": true,
+"loop": false,
 "name": &"push up",
 "speed": 6.0
 }, {
@@ -975,7 +975,7 @@ shape = SubResource("RectangleShape2D_l2ndj")
 
 [node name="NewAnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dter7")
-animation = &"throw up"
+animation = &"push up"
 autoplay = "idle down"
 
 [node name="Detector" type="Area2D" parent="."]

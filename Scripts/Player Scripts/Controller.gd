@@ -48,6 +48,7 @@ func handleMovement(_delta:float) -> void:
 ## 2. node from the Furniture Group is around the player
 ## 3. Furniture node can be lifted 
 func handleLift(_delta:float) -> void:
+	pass
 	if (Input.is_action_just_pressed("Lift")):
 		if ((self.manager.furniture) and (self.manager.furniture.isLifting)):
 			self.manager.changeState("Throw")
@@ -57,7 +58,7 @@ func handleLift(_delta:float) -> void:
 
 ## Handles "Push" and "Pull"
 func handlePushPull(_delta:float) -> void:
-	if (Input.is_action_pressed("Push-Pull")):
+	if (Input.is_action_just_pressed("Push-Pull")):
 		if (self.manager.getStateName() != "Push"): self.manager.changeState("Push")
 
 func handleInteract(_delta:float) -> void:

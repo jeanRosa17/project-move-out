@@ -81,7 +81,7 @@ func onStateChanged(state:State, newStateName:String) -> void:
 	
 	if (newState.canEnter()):
 		newState.enter()
-		if (logStatuses): print(newState.logStatus())
+		self.previousState = self.currentState
 		self.currentState = newState
-	else:
-		if (self.reportFails): print("Failed to enter " + newStateName)
+		if (logStatuses): print("Entering " + self.currentState.logStatus())
+	elif (self.reportFails): print("Failed to enter " + newStateName)

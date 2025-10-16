@@ -12,12 +12,22 @@ extends State
 func _ready() -> void:
 	self.physics = preload("res://Scripts/Resources/DefaultPhysics.tres")
 	
+	
+func canEnter() -> bool:
+	return super.canEnter()
+	#if (self.getManager().wasPreviousState("Idle") || self.getManager().wasPreviousState("Push")): return true
+	#else:
+		#if (self.getManager().wasPreviousState("Lift") and not (self.getManager().view.is_playing())): return true
+		#if (self.getManager().wasPreviousState("Throw") and not (self.getManager().view.is_playing())): return true
+	#return false
+
 ## The first method called when the state is transitioned into
 func enter() -> void:
 	var prefix:String = "move"
 	
 	if (self.getManager().wasPreviousState("Lift")): prefix = "movelift"
-	if (self.getManager().wasPreviousState("Push")): prefix = "push"
+	if (self.getManager().wasPreviousState("Push") || self.getManager().view.animation.split()[0] == "push"): 
+		prefix = "push"
 		
 	if ((is_equal_approx(self.body.velocity.y, 0.0))
 		and (not (is_equal_approx(self.body.velocity.x, 0.0)))): 
@@ -28,18 +38,12 @@ func enter() -> void:
 
 ## The last method called when the state is transitioned out of
 func exit() -> void:
-	
 	if (self.getManager().wasPreviousState("Lift")):
 		self.getManager().view.play("idlelift " + self.getManager().view.animation.split(" ")[1].to_lower())
+	elif (self.getManager().wasPreviousState("Push")):
+		self.getManager().view.play("push " + self.getManager().view.animation.split(" ")[1].to_lower()) 
 	else:
 		self.getManager().view.play("idle " + self.getManager().view.animation.split(" ")[1].to_lower()) 
-	
-func canEnter() -> bool:
-	if (self.getManager().wasPreviousState("Idle") || self.getManager().wasPreviousState("Push")): return true
-	else:
-		if (self.getManager().wasPreviousState("Lift") and not (self.getManager().view.is_playing())): return true
-		if (self.getManager().wasPreviousState("Throw") and not (self.getManager().view.is_playing())): return true
-	return false
 
 ## Updates the animation's flipping state
 func update(_delta:float) -> void:

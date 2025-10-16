@@ -6,12 +6,13 @@ extends State
 
 ## The first method called when the state is transitioned into
 func enter() -> void: 
-	if (self.getManager().wasPreviousState("Idle")): return
-	if (self.getManager().wasPreviousState("Lift")): 
-		self.getManager().view.play("idlelift " + self.getManager().view.animation.split(" ")[1].to_lower())
-		return
+	var dir:String = self.getManager().view.animation.split(" ")[1].to_lower()
 	
-	self.getManager().view.play("idle " + self.getManager().view.animation.split(" ")[1].to_lower())
+	self.getManager().view.play("idle " + dir)
+	
+	if (self.getManager().wasPreviousState("Idle")): return
+	if (self.getManager().wasPreviousState("Push")): self.getManager().view.play("push " + dir)
+	if (self.getManager().wasPreviousState("Lift")): self.getManager().view.play("idlelift " + dir)
 
 ## The last method called when the state is transitioned out of
 func exit() -> void:

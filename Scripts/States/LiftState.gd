@@ -4,7 +4,7 @@ extends State
 @export var body:Player
 @onready var manager:StateManager = self.getManager()
 
-## Furniture needs to be not null and needs to be lifted
+## Furniture needs to be not null and needs to be lifted.
 func canEnter() -> bool:
 	if (self.manager.furniture && self.manager.furniture.canLift):
 		return true

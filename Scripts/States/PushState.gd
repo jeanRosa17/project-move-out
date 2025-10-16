@@ -9,26 +9,20 @@ extends State
 @export var isPushing:bool
 
 func canEnter() -> bool:
-	var prefix:String = "push"
-	
-	print("can enter push")
-	
-	if (manager.furniture && manager.furniture.canPush):
-		return true
-	else:
-		print("error pushing")
-		return false
+	return manager.furniture && manager.furniture.canPush
 
 
 func enter() -> void: 
 	var dir:String = manager.view.animation.split(" ")[1].to_lower()
 	
-	if not (manager.wasPreviousState("push")):
-		manager.view.play("push " + dir)
+	#if not (manager.wasPreviousState("push")):
+		#manager.view.play("push " + dir)
 		
 	#lock player rotation/flip
 	manager.furniture.enterPush(self.body)
 		
+#func canExit() -> bool:
+	#return false
 
 ## The last method called when the state is transitioned out of
 func exit() -> void:
