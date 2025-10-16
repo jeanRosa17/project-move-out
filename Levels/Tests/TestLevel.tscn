@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://bd4iaouuaddvw"]
+[gd_scene load_steps=33 format=4 uid="uid://bd4iaouuaddvw"]
 
 [ext_resource type="Texture2D" uid="uid://dffq6tyiqk8ch" path="res://Assets/tiles/Template Garage Floor.png" id="1_ovj46"]
 [ext_resource type="TileSet" uid="uid://bfsdyggvkp2d" path="res://Levels/Resources/OldTileMap.tres" id="2_2ubmf"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://ip4pm1ex6klr" path="res://Levels/Scenes/Garage.tscn" id="12_uvob4"]
 [ext_resource type="Texture2D" uid="uid://xb4g61m2b78c" path="res://Assets/Level Art/Counter_Tileset.png" id="13_cifax"]
 [ext_resource type="Script" uid="uid://bg35t571kh220" path="res://Scripts/Van/Van.gd" id="13_gfoas"]
+[ext_resource type="Texture2D" uid="uid://cqguipmcnrdn1" path="res://Assets/Shadow.png" id="15_gfoas"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cxxvu"]
 size = Vector2(14.3853, 9.84536)
@@ -335,14 +336,21 @@ position = Vector2(47, 34)
 scale = Vector2(1.73333, 1.62712)
 texture = SubResource("AtlasTexture_gfoas")
 
-[node name="Area2D" type="Area2D" parent="Garage/Placeholder Van"]
+[node name="Area2D" type="Area2D" parent="Garage/Placeholder Van" node_paths=PackedStringArray("vanDoor")]
+visible = false
 collision_layer = 7
 collision_mask = 7
 script = ExtResource("13_gfoas")
+vanDoor = NodePath("../../Door")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Garage/Placeholder Van/Area2D"]
 position = Vector2(0.28846, 0.921875)
 shape = SubResource("RectangleShape2D_cifax")
+
+[node name="Interactable zone" type="Sprite2D" parent="Garage/Placeholder Van/Area2D"]
+position = Vector2(-30.0001, 13.5208)
+scale = Vector2(0.528848, 1.42187)
+texture = ExtResource("15_gfoas")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Garage"]
 collision_layer = 4
@@ -363,14 +371,6 @@ collision_layer = 4
 position = Vector2(0, 93)
 shape = SubResource("SegmentShape2D_4h1ag")
 
-[node name="StaticBody2D4" type="StaticBody2D" parent="Garage"]
-collision_layer = 4
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Garage/StaticBody2D4"]
-position = Vector2(0, -1)
-shape = SubResource("SegmentShape2D_4h1ag")
-disabled = true
-
 [node name="Button Area" type="Area2D" parent="Garage"]
 scale = Vector2(1.00294, 1)
 collision_layer = 2
@@ -379,6 +379,17 @@ collision_mask = 7
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Garage/Button Area"]
 position = Vector2(-3, 57)
 shape = SubResource("RectangleShape2D_plhdx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Garage/Button Area"]
+position = Vector2(-2.99121, 56)
+scale = Vector2(1.04008, 1.66667)
+texture = ExtResource("15_gfoas")
+
+[node name="Door" type="Area2D" parent="Garage"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Garage/Door"]
+position = Vector2(0, -1)
+shape = SubResource("SegmentShape2D_4h1ag")
 
 [connection signal="area_entered" from="Garage/Button Area" to="Garage/Placeholder Van/Area2D" method="_on_button_area_area_entered"]
 [connection signal="area_exited" from="Garage/Button Area" to="Garage/Placeholder Van/Area2D" method="_on_button_area_area_exited"]
