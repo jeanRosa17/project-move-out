@@ -19,7 +19,10 @@ func enter() -> void:
 		#manager.view.play("push " + dir)
 		
 	#lock player rotation/flip
-	manager.furniture.enterPush(self.body)
+	if (!manager.furniture.isPushing):
+		manager.furniture.enterPush(self.body)
+	else:
+		manager.furniture.exitPush()
 		
 #func canExit() -> bool:
 	#return false
