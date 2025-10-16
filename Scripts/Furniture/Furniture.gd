@@ -62,6 +62,7 @@ func exitPush()-> void:
 	self.player = null
 	self.collision_layer = 2;
 	self.isPushing = false
+	self.linear_velocity = Vector2.ZERO
 
 func againstObject(newObject: Node2D) -> void:
 	objects.append(newObject)
