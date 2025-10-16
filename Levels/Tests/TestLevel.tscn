@@ -381,8 +381,8 @@ position = Vector2(-3, 57)
 shape = SubResource("RectangleShape2D_plhdx")
 
 [node name="Sprite2D" type="Sprite2D" parent="Garage/Button Area"]
-position = Vector2(-2.99121, 56)
-scale = Vector2(1.04008, 1.66667)
+position = Vector2(-3.7478, 56)
+scale = Vector2(0.97703, 1.66667)
 texture = ExtResource("15_gfoas")
 
 [node name="Door" type="Area2D" parent="Garage"]
