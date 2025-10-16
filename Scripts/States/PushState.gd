@@ -36,8 +36,3 @@ func update(_delta:float) -> void:
 		if (manager.furniture.position.distance_to(self.body.position) > 400):
 			pass
 			#self.exit()
-
-## This method runs every _physics_process() frame of the StateManager.
-func physicsUpdate(_delta:float) -> void:
-	pass
-	#self.body.move_and_slide()

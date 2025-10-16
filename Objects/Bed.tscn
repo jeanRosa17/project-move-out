@@ -36,3 +36,6 @@ collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector"]
 shape = SubResource("RectangleShape2D_ardoa")
+
+[connection signal="body_shape_entered" from="AreaDetector" to="." method="_on_area_detector_body_shape_entered"]
+[connection signal="body_shape_exited" from="AreaDetector" to="." method="_on_area_detector_body_shape_exited"]
