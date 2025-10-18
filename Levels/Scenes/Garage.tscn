@@ -1,3 +1,92 @@
-[gd_scene format=3 uid="uid://ip4pm1ex6klr"]
+[gd_scene load_steps=11 format=3 uid="uid://ip4pm1ex6klr"]
+
+[ext_resource type="Texture2D" uid="uid://xb4g61m2b78c" path="res://Assets/Level Art/Counter_Tileset.png" id="1_y5pj0"]
+[ext_resource type="Script" uid="uid://bg35t571kh220" path="res://Scripts/Van/Van.gd" id="2_6h86o"]
+[ext_resource type="Texture2D" uid="uid://cqguipmcnrdn1" path="res://Assets/Shadow.png" id="3_qf7y8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cl1lp"]
+atlas = ExtResource("1_y5pj0")
+region = Rect2(75, 38, 45, 59)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wmaxs"]
+size = Vector2(43.2693, 55.9271)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_gjpfk"]
+a = Vector2(86, -11)
+b = Vector2(87, 81)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_oj64t"]
+a = Vector2(8, -9)
+b = Vector2(8, 81)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_gxfmd"]
+a = Vector2(7, -11)
+b = Vector2(87, -11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5gn37"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_o43ih"]
+a = Vector2(7, -11)
+b = Vector2(87, -11)
 
 [node name="Garage" type="Node2D"]
+
+[node name="Placeholder Van" type="Sprite2D" parent="."]
+position = Vector2(47, 34)
+scale = Vector2(1.73333, 1.62712)
+texture = SubResource("AtlasTexture_cl1lp")
+
+[node name="Area2D" type="Area2D" parent="Placeholder Van" node_paths=PackedStringArray("vanDoor")]
+visible = false
+collision_layer = 7
+collision_mask = 7
+script = ExtResource("2_6h86o")
+vanDoor = NodePath("")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Placeholder Van/Area2D"]
+position = Vector2(0.28846, 0.921875)
+shape = SubResource("RectangleShape2D_wmaxs")
+
+[node name="Interactable zone" type="Sprite2D" parent="Placeholder Van/Area2D"]
+position = Vector2(-30.0001, 13.5208)
+scale = Vector2(0.528848, 1.42187)
+texture = ExtResource("3_qf7y8")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_gjpfk")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+collision_layer = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+shape = SubResource("SegmentShape2D_oj64t")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(0, 93)
+shape = SubResource("SegmentShape2D_gxfmd")
+
+[node name="Button Area" type="Area2D" parent="."]
+scale = Vector2(1.00294, 1)
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button Area"]
+position = Vector2(-3, 57)
+shape = SubResource("RectangleShape2D_5gn37")
+
+[node name="Sprite2D" type="Sprite2D" parent="Button Area"]
+position = Vector2(-3.7478, 56)
+scale = Vector2(0.97703, 1.66667)
+texture = ExtResource("3_qf7y8")
+
+[node name="Door" type="Area2D" parent="Button Area"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Button Area/Door"]
+position = Vector2(0, -1)
+shape = SubResource("SegmentShape2D_o43ih")
