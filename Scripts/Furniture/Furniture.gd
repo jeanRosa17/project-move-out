@@ -42,7 +42,7 @@ func enterLift(body:CharacterBody2D) -> void:
 
 ## Returns this Furniture back to not being held
 func exitLift() -> void:
-	var body:Area2D = self.get_parent()
+	var body:CharacterBody2D = self.get_parent()
 	body.remove_child(self)
 	body.add_sibling(self)
 	self.position = body.position + self.liftPosition
