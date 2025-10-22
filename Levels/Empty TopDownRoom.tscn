@@ -56,15 +56,15 @@ scale = Vector2(1.5, 1.5)
 [node name="Sprite2D" parent="Couch" index="0"]
 texture = ExtResource("6_t3k7s")
 
-[node name="World Border" type="StaticBody2D" parent="." groups=["Immovable Object"]]
+[node name="World Border" type="StaticBody2D" parent="." groups=["Immovable Object", "World Bounds"]]
 collision_layer = 4
 
-[node name="Vertical" type="CollisionShape2D" parent="World Border"]
+[node name="Vertical" type="CollisionShape2D" parent="World Border" groups=["World Bounds"]]
 position = Vector2(61, 276)
 rotation = -3.14159
 shape = ExtResource("7_h821t")
 
-[node name="Horizontal" type="CollisionShape2D" parent="World Border"]
+[node name="Horizontal" type="CollisionShape2D" parent="World Border" groups=["World Bounds"]]
 position = Vector2(276, 249)
 rotation = 1.5708
 shape = ExtResource("7_h821t")
