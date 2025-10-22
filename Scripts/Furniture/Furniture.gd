@@ -2,6 +2,8 @@ extends RigidBody2D
 
 class_name Furniture
 
+@onready var audioPlayer:FurnitureAudio = get_parent().get_node("AudioStreamPlayer2D")
+
 @export var canLift:bool = false
 @export var canPush:bool
 @export var canPull:bool
@@ -54,6 +56,7 @@ func enterPush(body: CharacterBody2D) -> void:
 	print("entered pushing")
 	self.player = body
 	self.collision_layer = 0;
+	audioPlayer.push_sound(self)
 	distanceFromPlayer = position.distance_to(player.position)
 	self.isPushing = true
 
