@@ -13,7 +13,7 @@ func canEnter() -> bool:
 
 
 func enter() -> void: 
-	var dir:String = manager.view.animation.split(" ")[1].to_lower()
+	#var dir:String = manager.view.animation.split(" ")[1].to_lower()
 	
 	#if not (manager.wasPreviousState("push")):
 		#manager.view.play("push " + dir)

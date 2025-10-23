@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://xdjv122pxc6c"]
+[gd_scene load_steps=29 format=4 uid="uid://xdjv122pxc6c"]
 
 [ext_resource type="Texture2D" uid="uid://dlqlqw0fvr4wp" path="res://Assets/furniture/carpet.png" id="2_pebci"]
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Assets/tiles/Support Columns-autotile2/Support Columns-autotile2.tres" id="3_3j8mk"]
@@ -41,12 +41,6 @@ size = Vector2(152.125, 17.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jeepb"]
 size = Vector2(150.5, 16.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8x8nf"]
-size = Vector2(23, 153)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ej1bv"]
-size = Vector2(73.0186, 25)
-
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_b3xeb"]
 
 [node name="Main" type="Node2D"]
@@ -57,6 +51,7 @@ texture = ExtResource("2_pebci")
 
 [node name="Tilemap" type="CanvasLayer" parent="."]
 layer = -1
+visible = false
 follow_viewport_enabled = true
 
 [node name="Floor" type="TileMapLayer" parent="Tilemap"]
@@ -132,58 +127,37 @@ position = Vector2(372.5, 250)
 rotation = -4.71239
 shape = SubResource("WorldBoundaryShape2D_iqcmb")
 
-[node name="Level Borders" type="Node2D" parent="." groups=["Immovable Object"]]
-visible = false
-
-[node name="Walls" type="StaticBody2D" parent="Level Borders" groups=["World Bounds"]]
-visible = false
+[node name="Walls" type="StaticBody2D" parent="." groups=["World Bounds"]]
 collision_layer = 4
 
-[node name="Bedroom-Kitchen Wall2" type="CollisionShape2D" parent="Level Borders/Walls" groups=["World Bounds"]]
+[node name="Bedroom-Kitchen Wall2" type="CollisionShape2D" parent="Walls" groups=["World Bounds"]]
 position = Vector2(192, 64)
 shape = SubResource("RectangleShape2D_2yvdw")
 
-[node name="Bedroom-Kitchen Wall3" type="CollisionShape2D" parent="Level Borders/Walls"]
+[node name="Bedroom-Kitchen Wall3" type="CollisionShape2D" parent="Walls"]
 process_mode = 4
 physics_interpolation_mode = 2
 position = Vector2(378, 129)
 shape = SubResource("RectangleShape2D_76fkc")
 
-[node name="Bathroom Entrance Wall" type="CollisionShape2D" parent="Level Borders/Walls" groups=["World Bounds"]]
+[node name="Bathroom Entrance Wall" type="CollisionShape2D" parent="Walls" groups=["World Bounds"]]
 position = Vector2(192.5, 244)
 shape = SubResource("RectangleShape2D_kxr0u")
 
-[node name="Bathroom Wall" type="CollisionShape2D" parent="Level Borders/Walls" groups=["World Bounds"]]
+[node name="Bathroom Wall" type="CollisionShape2D" parent="Walls" groups=["World Bounds"]]
 position = Vector2(246.875, 168)
 shape = SubResource("RectangleShape2D_kv5fy")
 
-[node name="Bedroom-Bathroom Long Wall3" type="CollisionShape2D" parent="Level Borders/Walls" groups=["World Bounds"]]
+[node name="Bedroom-Bathroom Long Wall3" type="CollisionShape2D" parent="Walls" groups=["World Bounds"]]
 position = Vector2(87, 23)
 shape = SubResource("RectangleShape2D_kv5fy")
 
-[node name="Bedroom-Bathroom Short Wall" type="CollisionShape2D" parent="Level Borders/Walls" groups=["World Bounds"]]
+[node name="Bedroom-Bathroom Short Wall" type="CollisionShape2D" parent="Walls" groups=["World Bounds"]]
 position = Vector2(296.25, 24)
 shape = SubResource("RectangleShape2D_jeepb")
 
-[node name="Bed" parent="Level Borders/Walls" instance=ExtResource("10_pu0s2")]
+[node name="Bed" parent="Walls" instance=ExtResource("10_pu0s2")]
 position = Vector2(60, 170)
-
-[node name="Kitchen Area" type="Node2D" parent="Level Borders"]
-visible = false
-
-[node name="Kitchen Cabinets" type="StaticBody2D" parent="Level Borders/Kitchen Area" groups=["World Bounds"]]
-collision_layer = 4
-
-[node name="Long Kitchen Wall" type="CollisionShape2D" parent="Level Borders/Kitchen Area/Kitchen Cabinets" groups=["World Bounds"]]
-position = Vector2(11.5, 179.5)
-shape = SubResource("RectangleShape2D_8x8nf")
-
-[node name="Short Kitchen Wall" type="CollisionShape2D" parent="Level Borders/Kitchen Area/Kitchen Cabinets" groups=["World Bounds"]]
-position = Vector2(59.4907, 243.573)
-shape = SubResource("RectangleShape2D_ej1bv")
-
-[node name="Kitchen Island" type="StaticBody2D" parent="Level Borders/Kitchen Area" groups=["World Bounds"]]
-collision_layer = 4
 
 [node name="Toilet2" parent="." instance=ExtResource("9_4s3f5")]
 position = Vector2(321, 235)
@@ -196,7 +170,7 @@ stream = SubResource("AudioStreamRandomizer_b3xeb")
 script = ExtResource("14_37gu0")
 streams = [ExtResource("15_ckuxd")]
 
-[node name="Support Beams" type="TileMapLayer" parent="."]
+[node name="Support Beams" type="TileMapLayer" parent="." groups=["World Bounds"]]
 tile_map_data = PackedByteArray("AAArABIABQACAAIAAAArABQABQACAAIAAAArABUABQACAAIAAAAzAAkABQACAAIAAAAAAAAABAAAAAAAAAAAAAEABAAAAAEAAAAAAAIABAAAAAEAAAAAAAMABAAAAAEAAAAAAAQABAAAAAEAAAAAAAUABAAAAAEAAAAAAAYABAAAAAEAAAAAAAcABAAAAAEAAAAAAAgABAAAAAEAAAAAAAkABAAAAAEAAAAAAAoABAAAAAEAAAAAAAsABAAAAAEAAAAAAAwABAAAAAEAAAAAAA0ABAAAAAEAAAAAAA4ABAAAAAEAAAAAAA8ABAAAAAIAAAABAA8ABAABAAIAAAACAA8ABAABAAIAAAADAA8ABAABAAIAAAAEAA8ABAABAAIAAAAKAA8ABAAAAAAAAAALAA8ABAAEAAEAAAAMAA8ABAADAAEAAAAMAAkABAABAAAAAAANAAkABAABAAAAAAAOAAkABAABAAAAAAAPAAkABAABAAAAAAAQAAkABAABAAAAAAARAAkABAABAAAAAAASAAkABAABAAAAAAALAAkABAAAAAAAAAAWAAkABAABAAAAAAAXAAkABAABAAAAAAANAA8ABAABAAAAAAAOAA8ABAABAAAAAAAPAA8ABAABAAAAAAAQAA8ABAABAAAAAAARAA8ABAABAAAAAAASAA8ABAABAAAAAAATAA8ABAABAAAAAAAUAA8ABAABAAAAAAAVAA8ABAABAAAAAAAWAA8ABAABAAAAAAAXAA8ABAACAAIAAAAXAAoABAACAAEAAAAXAAsABAACAAEAAAAXAAwABAACAAEAAAAXAA0ABAACAAEAAAAXAA4ABAACAAEAAAAXAAEABAACAAEAAAAXAAIABAACAAEAAAAXAAMABAACAAEAAAAXAAQABAACAAEAAAAXAAUABAACAAEAAAAXAAYABAACAAEAAAAXAAcABAACAAEAAAAXAAgABAACAAEAAAAXAAAABAACAAAAAAAEAAAABAABAAAAAAAFAAAABAABAAAAAAAGAAAABAABAAAAAAAHAAAABAABAAAAAAAIAAAABAABAAAAAAAJAAAABAABAAAAAAAKAAAABAACAAAAAAANAAAABAAAAAAAAAAOAAAABAABAAAAAAAPAAAABAABAAAAAAAQAAAABAABAAAAAAARAAAABAABAAAAAAASAAAABAABAAAAAAATAAAABAABAAAAAAAUAAAABAABAAAAAAAVAAAABAABAAAAAAAWAAAABAABAAAAAAABAAAABAABAAAAAAACAAAABAABAAAAAAADAAAABAABAAAAAAAKAAIABAACAAEAAAAKAAEABAACAAEAAAANAAEABAAAAAEAAAANAAIABAAAAAEAAAALAAoABAAAAAEAAAALAAsABAAAAAEAAAALAA4ABAAAAAAAAAAMAA4ABAACAAAAAAAKAAQABAADAAEAAAALAAQABAABAAIAAAAMAAQABAABAAIAAAANAAQABAAEAAEAAAANAAMABAAAAAEAAAAKAAMABAACAAEAAAAFAA8ABAABAAAAAAAGAA8ABAACAAAAAAA=")
 tile_set = ExtResource("3_3j8mk")
 

@@ -2,6 +2,7 @@ extends RigidBody2D
 
 class_name Furniture
 
+## Update to be $AudioStreamPlayer2D
 @onready var audioPlayer:FurnitureAudio = get_parent().get_node("AudioStreamPlayer2D")
 
 @export var canLift:bool = false
@@ -24,7 +25,7 @@ var objects: Array[Node2D] = []
 
 func _physics_process(_delta: float) -> void:
 	if (isPushing):
-		if(objects.is_empty()):
+		if (objects.is_empty()):
 			collision_layer = 0
 		else:
 			self.collision_layer = 2;
@@ -80,7 +81,7 @@ func relieveObject(newObject: Node2D) -> void:
 		print(newObject.name)
 	pass
 
-func _on_area_detector_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+func _on_area_detector_body_shape_entered(_body_rid: RID, body: Node2D, _body_shape_index: int, _local_shape_index: int) -> void:
 	if (body.is_in_group("World Bounds") && self.isPushing):
 		print("cannot push")
 		againstObject(body)
@@ -88,7 +89,7 @@ func _on_area_detector_body_shape_entered(body_rid: RID, body: Node2D, body_shap
 		print(body.name)
 	pass # Replace with function body.
 
-func _on_area_detector_body_shape_exited(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+func _on_area_detector_body_shape_exited(_body_rid: RID, body: Node2D, _body_shape_index: int, _local_shape_index: int) -> void:
 	if (body.is_in_group("World Bounds") && self.isPushing):
 		print("can push")
 		relieveObject(body)

@@ -2,7 +2,7 @@ extends AudioStreamPlayer2D
 
 class_name FurnitureAudio
 
-@export var streams = [];
+@export var streams:Array = [];
 
 
 func _ready() -> void:

@@ -47,6 +47,7 @@ func exit() -> void:
 
 ## Updates the animation's flipping state
 func update(_delta:float) -> void:
+	
 	self.getManager().view.flip_h = self.getManager().direction.x < 0
 	self.enter() ## Sets run animation
 	

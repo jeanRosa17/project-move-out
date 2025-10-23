@@ -135,7 +135,6 @@ texture = ExtResource("4_x0wy3")
 1:0/0/terrains_peering_bit/bottom_left_corner = 0
 3:2/0 = 0
 3:2/0/terrain_set = 0
-3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bo1jn"]
 texture = ExtResource("6_x0wy3")
