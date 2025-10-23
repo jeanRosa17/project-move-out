@@ -29,6 +29,10 @@ func _physics_process(_delta: float) -> void:
 		else:
 			self.collision_layer = 2;
 		linear_velocity = linear_velocity.lerp(player.velocity, 0.4)
+		print(position.distance_to(player.position))
+		## check to see if player is detached from object
+		if (position.distance_to(player.position) > 45):
+				exitPush()
 
 
 func get_canLift() -> bool:
