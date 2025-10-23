@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ilbhsc2vwd1n"
+path="res://.godot/imported/furniture 1.wav-5e7f35baa014ab1579476d0e0d7978ac.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/furniture 1.wav"
+dest_files=["res://.godot/imported/furniture 1.wav-5e7f35baa014ab1579476d0e0d7978ac.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

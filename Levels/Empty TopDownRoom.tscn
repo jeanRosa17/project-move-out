@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://d232pgtn4b17h"]
+[gd_scene load_steps=12 format=4 uid="uid://d232pgtn4b17h"]
 
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Assets/tiles/Support Columns-autotile2/Support Columns-autotile2.tres" id="1_guw12"]
 [ext_resource type="Texture2D" uid="uid://byjdse3pdpxef" path="res://Assets/Level Art/Bachelor_pad_test_level.png" id="2_euv87"]
@@ -6,7 +6,17 @@
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Player/Player.tscn" id="4_p3iwt"]
 [ext_resource type="PackedScene" uid="uid://dq5dgctxnghmb" path="res://Objects/Bed.tscn" id="5_7ntl6"]
 [ext_resource type="Texture2D" uid="uid://b1h3op3pjraac" path="res://Assets/Level Art/couch1.png" id="6_t3k7s"]
+[ext_resource type="PackedScene" uid="uid://d1etsnjfgvtu8" path="res://Scripts/FurnitureAudio.tscn" id="7_euv87"]
 [ext_resource type="Shape2D" uid="uid://chlinrgkjlcsr" path="res://Levels/Resources/WorldBorder.tres" id="7_h821t"]
+[ext_resource type="AudioStream" uid="uid://co27kfjleoj27" path="res://Assets/Audio/furniture [game capstone].wav" id="8_fqnor"]
+[ext_resource type="AudioStream" uid="uid://ilbhsc2vwd1n" path="res://Assets/Audio/furniture 1.wav" id="8_p3iwt"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_7ntl6"]
+playback_mode = 1
+random_pitch = 2.15
+streams_count = 2
+stream_0/stream = ExtResource("8_p3iwt")
+stream_1/stream = ExtResource("8_fqnor")
 
 [node name="Empty Room" type="Node2D"]
 
@@ -55,6 +65,9 @@ scale = Vector2(1.5, 1.5)
 
 [node name="Sprite2D" parent="Couch" index="0"]
 texture = ExtResource("6_t3k7s")
+
+[node name="AudioStreamPlayer2D" parent="." instance=ExtResource("7_euv87")]
+stream = SubResource("AudioStreamRandomizer_7ntl6")
 
 [node name="World Border" type="StaticBody2D" parent="." groups=["Immovable Object", "World Bounds"]]
 collision_layer = 4
