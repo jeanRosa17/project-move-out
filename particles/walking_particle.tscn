@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dotpp2gym0w7k"]
+
+[node name="Walking_particle" type="Node2D"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+lifetime = 0.2
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+angle_max = 50.0
+scale_amount_max = 3.0
+hue_variation_max = 1.0
