@@ -8,15 +8,14 @@
 [ext_resource type="Texture2D" uid="uid://b1h3op3pjraac" path="res://Assets/Level Art/couch1.png" id="6_t3k7s"]
 [ext_resource type="PackedScene" uid="uid://d1etsnjfgvtu8" path="res://Scripts/FurnitureAudio.tscn" id="7_euv87"]
 [ext_resource type="Shape2D" uid="uid://chlinrgkjlcsr" path="res://Levels/Resources/WorldBorder.tres" id="7_h821t"]
-[ext_resource type="AudioStream" uid="uid://co27kfjleoj27" path="res://Assets/Audio/furniture [game capstone].wav" id="8_fqnor"]
 [ext_resource type="AudioStream" uid="uid://ilbhsc2vwd1n" path="res://Assets/Audio/furniture 1.wav" id="8_p3iwt"]
+[ext_resource type="AudioStream" uid="uid://ixm05apa3fsb" path="res://Assets/Audio/furniture2 [game capstone].wav" id="9_p3iwt"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_7ntl6"]
 playback_mode = 1
-random_pitch = 2.51
 streams_count = 2
 stream_0/stream = ExtResource("8_p3iwt")
-stream_1/stream = ExtResource("8_fqnor")
+stream_1/stream = ExtResource("9_p3iwt")
 
 [node name="Empty Room" type="Node2D"]
 
