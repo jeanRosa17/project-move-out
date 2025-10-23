@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://xdjv122pxc6c"]
+[gd_scene load_steps=31 format=4 uid="uid://xdjv122pxc6c"]
 
 [ext_resource type="Texture2D" uid="uid://dlqlqw0fvr4wp" path="res://Assets/furniture/carpet.png" id="2_pebci"]
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Assets/tiles/Support Columns-autotile2/Support Columns-autotile2.tres" id="3_3j8mk"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://bfp82m6exqyhy" path="res://Objects/Furniture/Sink.tscn" id="16_heyvs"]
 [ext_resource type="PackedScene" uid="uid://b7qk52eapta2s" path="res://Objects/Furniture/Wardrobe.tscn" id="18_6pr51"]
 [ext_resource type="PackedScene" uid="uid://bujcbosiagjri" path="res://Objects/Furniture/Shelf.tscn" id="19_u0unu"]
+[ext_resource type="Texture2D" uid="uid://b0r0nkq7wuc8b" path="res://Assets/Untitled_Artwork.png" id="21_4jb3v"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iqcmb"]
 normal = Vector2(1.79515e-06, 1)
@@ -132,8 +133,10 @@ rotation = -4.71239
 shape = SubResource("WorldBoundaryShape2D_iqcmb")
 
 [node name="Level Borders" type="Node2D" parent="." groups=["Immovable Object"]]
+visible = false
 
 [node name="Walls" type="StaticBody2D" parent="Level Borders" groups=["World Bounds"]]
+visible = false
 collision_layer = 4
 
 [node name="Bedroom-Kitchen Wall2" type="CollisionShape2D" parent="Level Borders/Walls" groups=["World Bounds"]]
@@ -211,3 +214,10 @@ position = Vector2(260, 50)
 
 [node name="Shelf" parent="." instance=ExtResource("19_u0unu")]
 position = Vector2(191, 103)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(244, 123.99999)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("21_4jb3v")
+region_enabled = true
+region_rect = Rect2(903, 355, 721, 684)

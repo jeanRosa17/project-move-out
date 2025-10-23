@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j4x16u8h5sdo"
-path="res://.godot/imported/selfcare-table_1.png-317721907776fdf10cd3ebdc06a0d2fa.ctex"
+uid="uid://b0r0nkq7wuc8b"
+path="res://.godot/imported/Untitled_Artwork.png-c20b93741ef60195012b7ba1798377fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/furniture/selfcare-table_1.png"
-dest_files=["res://.godot/imported/selfcare-table_1.png-317721907776fdf10cd3ebdc06a0d2fa.ctex"]
+source_file="res://Assets/Untitled_Artwork.png"
+dest_files=["res://.godot/imported/Untitled_Artwork.png-c20b93741ef60195012b7ba1798377fa.ctex"]
 
 [params]
 

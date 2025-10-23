@@ -14,7 +14,7 @@ func _on_play_tutorial_a_pressed() -> void:
 
 
 func _on_play_tutorial_b_pressed() -> void:
-	self.changeSceneTo("res://Levels/Tests/TestLevel.tscn")
+	self.changeSceneTo("res://Levels/Scenes/Tutorial/Tutorial_Lobby.tscn")
 
 func changeSceneTo(filePath:StringName) -> void:
 	tween = null
