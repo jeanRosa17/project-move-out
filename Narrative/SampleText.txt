@@ -1,6 +1,33 @@
 #start {
-	Another day, another job.
-	Lets get down to business.
+	It’s been a bit since I got to work, but this job should be easy, not many things to fit in my van.
+	I should pick things up using (button), I’ll be done as soon as I move everything on the list I was given.
+}
+
+#enterLivingRoom {
+	I was told to leave the table and shelf, I guess this guy rents furniture as well.
+}
+
+#firstEnterVan {
+	I can’t stack these lazily, re-arranging it all to make everything fit is a pain.
+}
+
+#firstEnterBathroom {
+	Doesn’t look like I need to move anything in here. 
+	That bathtub looks like it has more spells than it needs anyways.
+}
+
+#interactKitchen {
+	That's a lot of alcohol, I suppose he's one of those party folk.
+}
+
+#pickUpTV {
+	I don’t understand these new models, they barely look better and cost three times as much. 
+	Shows nowadays are bad anyways, I prefer SoundBoxes.
+}
+
+#pickupMattress {
+	No partner, otherwise he wouldn’t be allowed to sleep on the floor....
+	...It is pretty efficient.
 }
 
 #couch {
