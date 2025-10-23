@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://dusa8ptt6iao1"]
+
+[ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_3tp16"]
+[ext_resource type="Texture2D" uid="uid://dkxx1sad5andm" path="res://Assets/furniture/Kitchencounter_2.png" id="2_3tp16"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
+size = Vector2(30, 140)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_35l5p"]
+size = Vector2(64, 29)
+
+[node name="Bed" type="RigidBody2D" groups=["Furniture"]]
+collision_layer = 2
+collision_mask = 7
+gravity_scale = 0.0
+can_sleep = false
+lock_rotation = true
+script = ExtResource("1_3tp16")
+metadata/_custom_type_script = "uid://c2vh27coguldq"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_3tp16")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(-32, -6)
+shape = SubResource("RectangleShape2D_xnri0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(15, 49.5)
+shape = SubResource("RectangleShape2D_35l5p")

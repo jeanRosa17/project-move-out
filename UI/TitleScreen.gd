@@ -10,7 +10,7 @@ var tween:Tween = null
 
 
 func _on_play_tutorial_a_pressed() -> void:
-	self.changeSceneTo("res://Levels/Scenes/Tutorial/Tutorial_Lobby.tscn")
+	self.changeSceneTo("res://Levels/Scenes/Tutorial/OpenFloorTutorial.tscn")
 
 
 func _on_play_tutorial_b_pressed() -> void:

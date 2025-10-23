@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://byjdse3pdpxef" path="res://Assets/Level Art/Bachelor_pad_test_level.png" id="2_euv87"]
 [ext_resource type="PackedScene" uid="uid://psh4s5sym8kd" path="res://UI/Textbox.tscn" id="3_guw12"]
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Player/Player.tscn" id="4_p3iwt"]
-[ext_resource type="PackedScene" uid="uid://dq5dgctxnghmb" path="res://Objects/Bed.tscn" id="5_7ntl6"]
+[ext_resource type="PackedScene" uid="uid://dq5dgctxnghmb" path="res://Objects/Furniture/Bed.tscn" id="5_7ntl6"]
 [ext_resource type="Texture2D" uid="uid://b1h3op3pjraac" path="res://Assets/Level Art/couch1.png" id="6_t3k7s"]
 [ext_resource type="PackedScene" uid="uid://d1etsnjfgvtu8" path="res://Scripts/FurnitureAudio.tscn" id="7_euv87"]
 [ext_resource type="Shape2D" uid="uid://chlinrgkjlcsr" path="res://Levels/Resources/WorldBorder.tres" id="7_h821t"]

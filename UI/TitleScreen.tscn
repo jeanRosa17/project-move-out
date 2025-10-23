@@ -38,7 +38,7 @@ custom_minimum_size = Vector2(100, 36)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
-text = "Created by Ashton, Joel Juhyun, 
+text = "Created by Ashton, Joel, Juhyun, 
 Luna, Thomas"
 horizontal_alignment = 1
 
