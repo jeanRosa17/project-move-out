@@ -13,7 +13,7 @@
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_7ntl6"]
 playback_mode = 1
-random_pitch = 2.15
+random_pitch = 2.51
 streams_count = 2
 stream_0/stream = ExtResource("8_p3iwt")
 stream_1/stream = ExtResource("8_fqnor")
@@ -68,6 +68,7 @@ texture = ExtResource("6_t3k7s")
 
 [node name="AudioStreamPlayer2D" parent="." instance=ExtResource("7_euv87")]
 stream = SubResource("AudioStreamRandomizer_7ntl6")
+volume_db = -0.2
 
 [node name="World Border" type="StaticBody2D" parent="." groups=["Immovable Object", "World Bounds"]]
 collision_layer = 4
