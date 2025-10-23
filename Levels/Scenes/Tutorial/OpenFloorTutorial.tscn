@@ -97,7 +97,7 @@ position = Vector2(87, 149)
 scale = Vector2(0.973214, 1.01571)
 
 [node name="TV" parent="." instance=ExtResource("7_d4vco")]
-position = Vector2(114.00001, 62)
+position = Vector2(114, 62)
 scale = Vector2(0.973214, 1.01571)
 canPush = false
 
@@ -190,7 +190,7 @@ position = Vector2(260, 50)
 position = Vector2(191, 103)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(244, 123.99999)
+position = Vector2(244, 124)
 scale = Vector2(0.04, 0.04)
 texture = ExtResource("21_4jb3v")
 region_enabled = true

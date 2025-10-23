@@ -1,0 +1,31 @@
+#start {
+	This sure is a mess, I understand why they rushed me on the phone. 
+	I’d best be careful on that ice, my boots aren’t made for walking on it.
+}
+
+#objectiveReminder {
+	They said that some of their furniture was damaged or rented. 
+	I wouldn’t want to repair anything in that kitchen either. 
+	It’d be best to make sure nothing else gets damaged.
+}
+
+#firstTouchIce {
+	Brrr, I should have brought a coat.
+}
+
+#firstMoveDesk {
+	These designs seem like a waste of time, but I suppose it pays rent.
+}
+
+#firstRentedObject {
+	Everyone is renting furniture, when I was young nobody would wase a hand-cast piece of work.
+}
+
+#firstBedroomEnter {
+	I’ll have to get all this across the ice. 
+	Suppose I’ll also need hot tea with dinner.
+}
+
+#touchFridge {
+	Why am I touching this freezing thing?
+}
