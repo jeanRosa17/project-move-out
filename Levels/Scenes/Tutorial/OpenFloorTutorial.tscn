@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://xdjv122pxc6c"]
+[gd_scene load_steps=32 format=4 uid="uid://xdjv122pxc6c"]
 
 [ext_resource type="Texture2D" uid="uid://dlqlqw0fvr4wp" path="res://Assets/furniture/carpet.png" id="2_pebci"]
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Assets/tiles/Support Columns-autotile2/Support Columns-autotile2.tres" id="3_3j8mk"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://psh4s5sym8kd" path="res://UI/Textbox.tscn" id="5_s1e3h"]
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Player/Player.tscn" id="6_4y23e"]
 [ext_resource type="PackedScene" uid="uid://dkssiia1dmwor" path="res://Objects/Furniture/Chair.tscn" id="6_u0unu"]
+[ext_resource type="PackedScene" uid="uid://cqt367stu26c2" path="res://Objects/Pot.tscn" id="6_v8k2n"]
 [ext_resource type="PackedScene" uid="uid://dpyl8x5qojmng" path="res://Objects/Table Decore/TV.tscn" id="7_d4vco"]
 [ext_resource type="PackedScene" uid="uid://d26wukook25xb" path="res://Objects/Furniture/Table.tscn" id="7_j8pg1"]
 [ext_resource type="PackedScene" uid="uid://bo0ebf2yshixt" path="res://Objects/Furniture/KitchenIsland.tscn" id="7_pebci"]
@@ -76,13 +77,16 @@ position = Vector2(147.75, 125)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_odab6")
 
+[node name="Furniture" parent="." instance=ExtResource("6_v8k2n")]
+position = Vector2(132, 176)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_scale = 3.0
 
 [node name="Textbox" parent="CanvasLayer" instance=ExtResource("5_s1e3h")]
 
 [node name="Player" parent="." instance=ExtResource("6_4y23e")]
-position = Vector2(128, 64)
+position = Vector2(128, 110)
 safe_margin = 1.159
 
 [node name="Camera2D2" type="Camera2D" parent="Player"]
