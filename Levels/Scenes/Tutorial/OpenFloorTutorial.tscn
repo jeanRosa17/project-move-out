@@ -106,7 +106,6 @@ scale = Vector2(0.973214, 1.01571)
 [node name="TV" parent="." instance=ExtResource("7_d4vco")]
 position = Vector2(114, 62)
 scale = Vector2(0.973214, 1.01571)
-canPush = false
 
 [node name="Bed" parent="." instance=ExtResource("11_8inuc")]
 position = Vector2(316, 66)

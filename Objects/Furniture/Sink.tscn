@@ -16,8 +16,6 @@ gravity_scale = 0.0
 can_sleep = false
 lock_rotation = true
 script = ExtResource("1_04rml")
-canPush = true
-canPull = true
 metadata/_custom_type_script = "uid://c2vh27coguldq"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
