@@ -8,8 +8,10 @@ extends State
 func canEnter() -> bool:
 	if (self.manager.furniture && self.manager.furniture.canLift):
 		return true
-	else:
+	elif (self.manager.furniture && self.manager.furniture.canPush):
 		self.manager.changeState("Push")
+		return false;
+	else:
 		return false
 
 ## The first methosd called when the state is transitioned into

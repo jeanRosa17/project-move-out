@@ -9,7 +9,6 @@ func _ready() -> void:
 	pass
 
 func push_sound(furniture:Furniture) -> void:
-		print("sound")
 		play(0.3)
 		await get_tree().create_timer(.05).timeout
 		stop()
