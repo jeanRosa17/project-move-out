@@ -30,7 +30,6 @@ func _physics_process(_delta: float) -> void:
 		else:
 			self.collision_layer = 2;
 		linear_velocity = linear_velocity.lerp(player.velocity, 0.4)
-		print(position.distance_to(player.position))
 		## check to see if player is detached from object
 		if (position.distance_to(player.position) > 45):
 				exitPush()
@@ -41,11 +40,14 @@ func get_canLift() -> bool:
 
 ## Reparents this Furniture to the given CharacterBody
 func enterLift(body:CharacterBody2D) -> void:
-	self.collision_layer = 1;
-	self.collision_mask = 6;
-	self.position = body.position + self.liftPosition
-	self.reparent(body)
-	self.isLifting = true
+	if (isLifting):
+		self.exitLift()
+	else:
+		self.collision_layer = 1;
+		self.collision_mask = 6;
+		self.position = body.position + self.liftPosition
+		self.reparent(body)
+		self.isLifting = true
 
 ## Returns this Furniture back to not being held
 func exitLift() -> void:

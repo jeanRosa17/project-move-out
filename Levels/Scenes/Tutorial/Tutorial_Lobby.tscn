@@ -96,6 +96,7 @@ rotation = 1.5708
 shape = ExtResource("7_0xyol")
 
 [node name="AudioStreamPlayer2D" parent="." instance=ExtResource("11_4jkoc")]
+unique_name_in_owner = true
 
 [editable path="Player"]
 [editable path="Couch"]
