@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://xdjv122pxc6c"]
+[gd_scene load_steps=33 format=4 uid="uid://xdjv122pxc6c"]
 
 [ext_resource type="Texture2D" uid="uid://dlqlqw0fvr4wp" path="res://Assets/furniture/carpet.png" id="2_pebci"]
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Assets/tiles/Support Columns-autotile2/Support Columns-autotile2.tres" id="3_3j8mk"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://b7qk52eapta2s" path="res://Objects/Furniture/Wardrobe.tscn" id="18_6pr51"]
 [ext_resource type="PackedScene" uid="uid://bujcbosiagjri" path="res://Objects/Furniture/Shelf.tscn" id="19_u0unu"]
 [ext_resource type="Texture2D" uid="uid://b0r0nkq7wuc8b" path="res://Assets/Untitled_Artwork.png" id="21_4jb3v"]
+[ext_resource type="AudioStream" uid="uid://dy61bwuip8a27" path="res://Assets/Audio/lvl1.wav" id="25_4alro"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iqcmb"]
 normal = Vector2(1.79515e-06, 1)
@@ -201,3 +202,7 @@ scale = Vector2(0.04, 0.04)
 texture = ExtResource("21_4jb3v")
 region_enabled = true
 region_rect = Rect2(903, 355, 721, 684)
+
+[node name="Level Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("25_4alro")
+autoplay = true
