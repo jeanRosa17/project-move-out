@@ -9,7 +9,8 @@ func _ready() -> void:
 	pass
 
 func push_sound(furniture:Furniture) -> void:
-		play(0.3)
+		if(furniture.linear_velocity.length() > 1):
+			play(0.3)
 		await get_tree().create_timer(.05).timeout
 		stop()
 		if (furniture.isPushing):
