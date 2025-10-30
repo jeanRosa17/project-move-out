@@ -1,12 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://ip4pm1ex6klr"]
 
-[ext_resource type="Texture2D" uid="uid://xb4g61m2b78c" path="res://Assets/Level Art/Counter_Tileset.png" id="1_y5pj0"]
+[ext_resource type="Texture2D" uid="uid://bidfxw8ay6ayh" path="res://Assets/Level Art/truck_back_01.png" id="1_y5pj0"]
 [ext_resource type="Script" uid="uid://bg35t571kh220" path="res://Scripts/Van/Van.gd" id="2_6h86o"]
 [ext_resource type="Texture2D" uid="uid://cqguipmcnrdn1" path="res://Assets/Shadow.png" id="3_qf7y8"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cl1lp"]
-atlas = ExtResource("1_y5pj0")
-region = Rect2(75, 38, 45, 59)
+[ext_resource type="Texture2D" uid="uid://da21gw6ai8h4v" path="res://Assets/Level Art/leaver_01.png" id="4_6h86o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wmaxs"]
 size = Vector2(43.2693, 55.9271)
@@ -34,7 +31,7 @@ b = Vector2(87, -11)
 [node name="Placeholder Van" type="Sprite2D" parent="."]
 position = Vector2(47, 34)
 scale = Vector2(1.73333, 1.62712)
-texture = SubResource("AtlasTexture_cl1lp")
+texture = ExtResource("1_y5pj0")
 
 [node name="Area2D" type="Area2D" parent="Placeholder Van"]
 visible = false
@@ -81,8 +78,8 @@ shape = SubResource("RectangleShape2D_5gn37")
 
 [node name="Sprite2D" type="Sprite2D" parent="Button Area"]
 position = Vector2(-3.7478, 56)
-scale = Vector2(0.97703, 1.66667)
-texture = ExtResource("3_qf7y8")
+texture = ExtResource("4_6h86o")
+offset = Vector2(10, 0)
 
 [node name="Door" type="Area2D" parent="Button Area"]
 
