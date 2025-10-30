@@ -9,9 +9,11 @@ func canEnter() -> bool:
 	if (self.manager.furniture && self.manager.furniture.canLift):
 		return true
 	elif (self.manager.furniture && self.manager.furniture.canPush):
+		print("elif")
 		self.manager.changeState("Push")
 		return false;
 	else:
+		print ("el")
 		return false
 
 ## The first methosd called when the state is transitioned into
