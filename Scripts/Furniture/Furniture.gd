@@ -51,6 +51,7 @@ func enterLift(body:CharacterBody2D) -> void:
 
 ## Returns this Furniture back to not being held
 func exitLift() -> void:
+	## check if youll be able to put down the object
 	var body:CharacterBody2D = self.get_parent()
 	body.remove_child(self)
 	body.add_sibling(self)
@@ -86,6 +87,10 @@ func relieveObject(newObject: Node2D) -> void:
 		print("removed object: ")
 		print(newObject.name)
 	pass
+	
+func canPutDown() -> Vector2:
+	
+	
 
 func _on_area_detector_body_shape_entered(_body_rid: RID, body: Node2D, _body_shape_index: int, _local_shape_index: int) -> void:
 	if (body.is_in_group("World Bounds") && self.isPushing):
