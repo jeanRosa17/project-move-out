@@ -80,10 +80,6 @@ texture = ExtResource("4_odab6")
 
 [node name="Furniture" parent="." instance=ExtResource("6_v8k2n")]
 position = Vector2(132, 176)
-canPush = null
-canPull = null
-weight = null
-dialogueTag = null
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_scale = 3.0
@@ -96,13 +92,13 @@ safe_margin = 1.159
 
 [node name="Camera2D2" type="Camera2D" parent="Player"]
 position = Vector2(1, 0)
+limit_left = 0
+limit_top = 0
+limit_right = 385
+limit_bottom = 415
 
 [node name="Chair" parent="." instance=ExtResource("6_u0unu")]
 position = Vector2(335, 122)
-canLift = null
-weight = null
-dialogueTag = null
-liftPosition = null
 
 [node name="Table" parent="." instance=ExtResource("7_j8pg1")]
 position = Vector2(356, 125)
@@ -112,27 +108,13 @@ scale = Vector2(0.973214, 1.01571)
 position = Vector2(87, 149)
 scale = Vector2(0.973214, 1.01571)
 collision_layer = 4
-canLift = null
-canPush = null
-canPull = null
-weight = null
-dialogueTag = null
-liftPosition = null
 
 [node name="TV" parent="." instance=ExtResource("7_d4vco")]
 position = Vector2(114, 62)
 scale = Vector2(0.973214, 1.01571)
-canLift = null
-weight = null
-dialogueTag = null
-liftPosition = null
 
 [node name="Bed" parent="." instance=ExtResource("11_8inuc")]
 position = Vector2(316, 66)
-canLift = null
-weight = null
-dialogueTag = null
-liftPosition = null
 
 [node name="World Border" type="StaticBody2D" parent="." groups=["Immovable Object", "World Bounds"]]
 collision_layer = 4
@@ -188,19 +170,9 @@ shape = SubResource("RectangleShape2D_jeepb")
 
 [node name="Bed" parent="Walls" instance=ExtResource("10_pu0s2")]
 position = Vector2(60, 170)
-canLift = null
-canPush = null
-canPull = null
-weight = null
-dialogueTag = null
-liftPosition = null
 
 [node name="Toilet2" parent="." instance=ExtResource("9_4s3f5")]
 position = Vector2(321, 235)
-canLift = null
-weight = null
-dialogueTag = null
-liftPosition = null
 
 [node name="Garage" parent="." instance=ExtResource("13_ymjk0")]
 position = Vector2(145, 317)
@@ -216,40 +188,18 @@ tile_set = ExtResource("3_3j8mk")
 
 [node name="Couch" parent="." instance=ExtResource("12_4s3f5")]
 position = Vector2(45, 56)
-canLift = null
-weight = null
-dialogueTag = null
-liftPosition = null
 
 [node name="Tub" parent="." instance=ExtResource("15_5qxh5")]
 position = Vector2(353, 205)
-canLift = null
-weight = null
-dialogueTag = null
-liftPosition = null
 
 [node name="Sink" parent="." instance=ExtResource("16_heyvs")]
 position = Vector2(239, 191)
-canLift = null
-canPush = null
-canPull = null
-weight = null
-dialogueTag = null
-liftPosition = null
 
 [node name="Wardrobe" parent="." instance=ExtResource("18_6pr51")]
 position = Vector2(260, 50)
-canLift = null
-weight = null
-dialogueTag = null
-liftPosition = null
 
 [node name="Shelf" parent="." instance=ExtResource("19_u0unu")]
 position = Vector2(191, 103)
-canLift = null
-weight = null
-dialogueTag = null
-liftPosition = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(244, 124)

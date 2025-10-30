@@ -64,7 +64,7 @@ func enterPush(body: CharacterBody2D) -> void:
 	print("entered pushing")
 	self.player = body
 	self.collision_layer = 0;
-	audioPlayer.push_sound(self)
+	#audioPlayer.push_sound(self) #no push sound yet
 	distanceFromPlayer = position.distance_to(player.position)
 	self.isPushing = true
 
@@ -88,8 +88,8 @@ func relieveObject(newObject: Node2D) -> void:
 		print(newObject.name)
 	pass
 	
-func canPutDown() -> Vector2:
-	
+func canPutDown() -> void: #change to be Vector2
+	pass
 	
 
 func _on_area_detector_body_shape_entered(_body_rid: RID, body: Node2D, _body_shape_index: int, _local_shape_index: int) -> void:

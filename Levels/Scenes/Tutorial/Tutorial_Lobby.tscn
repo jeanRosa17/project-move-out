@@ -14,11 +14,16 @@
 
 [sub_resource type="Resource" id="Resource_4jkoc"]
 script = ExtResource("8_jwaso")
-dialogueScriptPath = &"res://Narrative/SampleText.txt"
-dialogueTag = &"start"
 metadata/_custom_type_script = "uid://bmqryoobj44j2"
 
 [node name="Empty Room" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(160, 95)
+limit_left = 0
+limit_top = 0
+limit_right = 320
+limit_bottom = 190
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
@@ -66,12 +71,6 @@ position = Vector2(117, 94)
 [node name="Player" parent="." instance=ExtResource("4_a2lav")]
 position = Vector2(229, 87)
 safe_margin = 1.159
-
-[node name="Camera2D" parent="Player" index="5"]
-limit_left = 0
-limit_top = 0
-limit_right = 320
-limit_bottom = 240
 
 [node name="Couch" parent="." instance=ExtResource("5_on7kk")]
 position = Vector2(225, 45)

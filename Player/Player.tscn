@@ -988,9 +988,9 @@ shape = SubResource("RectangleShape2D_s1rgi")
 
 [node name="StateManager" type="Node" parent="." node_paths=PackedStringArray("view", "initialState")]
 script = ExtResource("3_s1rgi")
+reportFails = true
 view = NodePath("../NewAnimatedSprite2D")
 initialState = NodePath("Idle")
-reportFails = true
 metadata/_custom_type_script = "uid://fn7206me6v1x"
 
 [node name="Idle" type="Node" parent="StateManager" node_paths=PackedStringArray("body")]
@@ -1020,11 +1020,6 @@ body = NodePath("../..")
 
 [node name="Interact" type="Node" parent="StateManager"]
 script = ExtResource("25_yifbt")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-enabled = false
-limit_smoothed = true
-position_smoothing_enabled = true
 
 [connection signal="area_entered" from="Detector" to="StateManager" method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="Detector" to="StateManager/Push" method="_on_area_2d_area_entered"]
