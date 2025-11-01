@@ -1,13 +1,13 @@
 [gd_scene load_steps=13 format=4 uid="uid://db18pxq8crbym"]
 
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Assets/tiles/Support Columns-autotile2/Support Columns-autotile2.tres" id="1_0vuas"]
+[ext_resource type="Script" uid="uid://bkxu2j3u51oln" path="res://Scripts/Camera/cameraMove.gd" id="1_4jkoc"]
 [ext_resource type="Texture2D" uid="uid://byjdse3pdpxef" path="res://Assets/Level Art/Bachelor_pad_test_level.png" id="2_l00sm"]
 [ext_resource type="TileSet" uid="uid://bfsdyggvkp2d" path="res://Levels/Resources/OldTileMap.tres" id="3_4gc1d"]
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Player/Player.tscn" id="4_a2lav"]
 [ext_resource type="PackedScene" uid="uid://psh4s5sym8kd" path="res://UI/Textbox.tscn" id="4_dpslo"]
 [ext_resource type="PackedScene" uid="uid://d26wukook25xb" path="res://Objects/Furniture/Table.tscn" id="5_dpslo"]
 [ext_resource type="PackedScene" uid="uid://dq5dgctxnghmb" path="res://Objects/Furniture/Bed.tscn" id="5_on7kk"]
-[ext_resource type="Shape2D" uid="uid://chlinrgkjlcsr" path="res://Levels/Resources/WorldBorder.tres" id="7_0xyol"]
 [ext_resource type="Script" uid="uid://bmqryoobj44j2" path="res://Scripts/Dialogue/DialogueTag.gd" id="8_jwaso"]
 [ext_resource type="Texture2D" uid="uid://xlgq8bh8mvly" path="res://Assets/furniture/red_couch_2.png" id="9_4jkoc"]
 [ext_resource type="PackedScene" uid="uid://d1etsnjfgvtu8" path="res://Scripts/FurnitureAudio.tscn" id="11_4jkoc"]
@@ -18,12 +18,14 @@ metadata/_custom_type_script = "uid://bmqryoobj44j2"
 
 [node name="Empty Room" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(160, 95)
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
+anchor_mode = 0
+limit_enabled = false
 limit_left = 0
 limit_top = 0
 limit_right = 320
-limit_bottom = 190
+script = ExtResource("1_4jkoc")
+player = NodePath("../Player")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
@@ -80,19 +82,6 @@ dialogueTag = SubResource("Resource_4jkoc")
 [node name="Sprite2D" parent="Couch" index="0"]
 rotation = 1.5708
 texture = ExtResource("9_4jkoc")
-
-[node name="World Border" type="StaticBody2D" parent="." groups=["Immovable Object", "World Bounds"]]
-collision_layer = 4
-
-[node name="Vertical" type="CollisionShape2D" parent="World Border" groups=["World Bounds"]]
-position = Vector2(61, 276)
-rotation = -3.14159
-shape = ExtResource("7_0xyol")
-
-[node name="Horizontal" type="CollisionShape2D" parent="World Border" groups=["World Bounds"]]
-position = Vector2(276, 249)
-rotation = 1.5708
-shape = ExtResource("7_0xyol")
 
 [node name="AudioStreamPlayer2D" parent="." instance=ExtResource("11_4jkoc")]
 unique_name_in_owner = true
