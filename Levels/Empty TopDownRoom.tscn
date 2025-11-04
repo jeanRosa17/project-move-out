@@ -47,12 +47,6 @@ follow_viewport_enabled = true
 position = Vector2(127, 88)
 safe_margin = 1.159
 
-[node name="Camera2D" parent="Player" index="5"]
-limit_left = 0
-limit_top = 0
-limit_right = 320
-limit_bottom = 240
-
 [node name="Bed" parent="." instance=ExtResource("5_7ntl6")]
 position = Vector2(229, 117)
 scale = Vector2(1.5, 1.5)

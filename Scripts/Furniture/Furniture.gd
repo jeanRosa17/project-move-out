@@ -52,7 +52,9 @@ func enterLift(body:CharacterBody2D) -> void:
 ## Returns this Furniture back to not being held
 func exitLift() -> void:
 	## check if youll be able to put down the object
+
 	var body:CharacterBody2D = self.get_parent()
+
 	body.remove_child(self)
 	body.add_sibling(self)
 	self.position = body.position + self.liftPosition
@@ -64,7 +66,7 @@ func enterPush(body: CharacterBody2D) -> void:
 	print("entered pushing")
 	self.player = body
 	self.collision_layer = 0;
-	#audioPlayer.push_sound(self) #no push sound yet
+	audioPlayer.push_sound(self) #no push sound yet
 	distanceFromPlayer = position.distance_to(player.position)
 	self.isPushing = true
 

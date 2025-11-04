@@ -14,13 +14,14 @@
 
 [sub_resource type="Resource" id="Resource_4jkoc"]
 script = ExtResource("8_jwaso")
+dialogueScriptPath = &"res://Narrative/SampleText.txt"
+dialogueTag = &"start"
 metadata/_custom_type_script = "uid://bmqryoobj44j2"
 
 [node name="Empty Room" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
 anchor_mode = 0
-limit_enabled = false
 limit_left = 0
 limit_top = 0
 limit_right = 320
