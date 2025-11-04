@@ -43,8 +43,19 @@ func enterLift(body:CharacterBody2D) -> void:
 	if (isLifting):
 		self.exitLift()
 	else:
+		# create copy of sprite for ghosting display
+		var ghost:Sprite2D = self.get_child(0).duplicate()
+		ghost.position = Vector2(0, 20)
+		self.add_child(ghost)
+		ghost.name = "Ghost"
+		
+		# have an object attached to player that is the "put down spot", so it moves with them and rotates
+		# depending on direction faced
+		# ghost is shown at this spot
+		
 		self.collision_layer = 1;
 		self.collision_mask = 6;
+		# lift position is not a real thing right now
 		self.position = body.position + self.liftPosition
 		self.reparent(body)
 		self.isLifting = true
@@ -61,6 +72,7 @@ func exitLift() -> void:
 	self.collision_layer = 2;
 	self.collision_mask = 7;
 	self.isLifting = false
+	
 	
 func enterPush(body: CharacterBody2D) -> void:
 	print("entered pushing")
