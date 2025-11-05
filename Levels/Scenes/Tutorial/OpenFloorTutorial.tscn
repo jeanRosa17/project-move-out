@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://xdjv122pxc6c"]
+[gd_scene load_steps=29 format=4 uid="uid://xdjv122pxc6c"]
 
 [ext_resource type="Texture2D" uid="uid://dlqlqw0fvr4wp" path="res://Assets/furniture/carpet.png" id="2_pebci"]
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Assets/tiles/Support Columns-autotile2/Support Columns-autotile2.tres" id="3_3j8mk"]
@@ -29,18 +29,6 @@
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iqcmb"]
 normal = Vector2(1.79515e-06, 1)
 distance = -3.99999
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2yvdw"]
-size = Vector2(62, 64)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_76fkc"]
-size = Vector2(14, 256)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kxr0u"]
-size = Vector2(31, 24)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kv5fy"]
-size = Vector2(118, 17.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jeepb"]
 size = Vector2(150.5, 16.5)
@@ -115,6 +103,7 @@ scale = Vector2(0.973214, 1.01571)
 
 [node name="Bed" parent="." instance=ExtResource("11_8inuc")]
 position = Vector2(316, 66)
+collision_layer = 4
 
 [node name="World Border" type="StaticBody2D" parent="." groups=["Immovable Object", "World Bounds"]]
 collision_layer = 4
@@ -142,33 +131,12 @@ shape = SubResource("WorldBoundaryShape2D_iqcmb")
 [node name="Walls" type="StaticBody2D" parent="." groups=["World Bounds"]]
 collision_layer = 4
 
-[node name="Bedroom-Kitchen Wall2" type="CollisionShape2D" parent="Walls" groups=["World Bounds"]]
-position = Vector2(192, 64)
-shape = SubResource("RectangleShape2D_2yvdw")
-
-[node name="Bedroom-Kitchen Wall3" type="CollisionShape2D" parent="Walls"]
-process_mode = 4
-physics_interpolation_mode = 2
-position = Vector2(378, 129)
-shape = SubResource("RectangleShape2D_76fkc")
-
-[node name="Bathroom Entrance Wall" type="CollisionShape2D" parent="Walls" groups=["World Bounds"]]
-position = Vector2(192.5, 244)
-shape = SubResource("RectangleShape2D_kxr0u")
-
-[node name="Bathroom Wall" type="CollisionShape2D" parent="Walls" groups=["World Bounds"]]
-position = Vector2(243, 168)
-shape = SubResource("RectangleShape2D_kv5fy")
-
-[node name="Bedroom-Bathroom Long Wall3" type="CollisionShape2D" parent="Walls" groups=["World Bounds"]]
-position = Vector2(87, 23)
-shape = SubResource("RectangleShape2D_kv5fy")
-
 [node name="Bedroom-Bathroom Short Wall" type="CollisionShape2D" parent="Walls" groups=["World Bounds"]]
+visible = false
 position = Vector2(296.25, 24)
 shape = SubResource("RectangleShape2D_jeepb")
 
-[node name="Bed" parent="Walls" instance=ExtResource("10_pu0s2")]
+[node name="Counter" parent="Walls" instance=ExtResource("10_pu0s2")]
 position = Vector2(60, 170)
 
 [node name="Toilet2" parent="." instance=ExtResource("9_4s3f5")]
@@ -193,7 +161,7 @@ position = Vector2(45, 56)
 position = Vector2(353, 205)
 
 [node name="Sink" parent="." instance=ExtResource("16_heyvs")]
-position = Vector2(239, 191)
+position = Vector2(265, 191)
 
 [node name="Wardrobe" parent="." instance=ExtResource("18_6pr51")]
 position = Vector2(260, 50)

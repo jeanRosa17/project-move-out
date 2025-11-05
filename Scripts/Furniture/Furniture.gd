@@ -101,23 +101,27 @@ func relieveObject(newObject: Node2D) -> void:
 		print("removed object: ")
 		print(newObject.name)
 	pass
-	
+
 func canPutDown() -> void: #change to be Vector2
 	pass
-	
 
 func _on_area_detector_body_shape_entered(_body_rid: RID, body: Node2D, _body_shape_index: int, _local_shape_index: int) -> void:
 	if (body.is_in_group("World Bounds") && self.isPushing):
-		print("cannot push")
-		againstObject(body)
-	elif (body.name != "Player" && self.isPushing):
+		print("cannot push (wall)")
 		print(body.name)
+		againstObject(body)
+	elif (body.is_in_group("Furniture") && body != self && self.isPushing):
+		print("cannot push (furniture)")
+		print(body.name)
+		againstObject(body)
 	pass # Replace with function body.
 
 func _on_area_detector_body_shape_exited(_body_rid: RID, body: Node2D, _body_shape_index: int, _local_shape_index: int) -> void:
 	if (body.is_in_group("World Bounds") && self.isPushing):
-		print("can push")
+		print("can push (off wall)")
 		relieveObject(body)
-	elif(body.name != "Player" && self.isPushing):
+	elif(body.is_in_group("Furniture") && body != self && self.isPushing):
+		print("can push (off furniture)")
 		print(body.name)
+		relieveObject(body)
 	pass # Replace with function body.
