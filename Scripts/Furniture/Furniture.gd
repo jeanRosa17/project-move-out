@@ -40,30 +40,27 @@ func get_canLift() -> bool:
 
 ## Reparents this Furniture to the given CharacterBody
 func enterLift(body:CharacterBody2D) -> void:
-	if (isLifting):
-		self.exitLift()
-	else:
-		# create copy of sprite for ghosting display
-		var ghost:Sprite2D = self.get_child(0).duplicate()
-		ghost.position = Vector2(0, 20)
-		self.add_child(ghost)
-		ghost.name = "Ghost"
-		
-		# have an object attached to player that is the "put down spot", so it moves with them and rotates
-		# depending on direction faced
-		# ghost is shown at this spot
-		
-		self.collision_layer = 1;
-		self.collision_mask = 6;
-		# lift position is not a real thing right now
-		self.position = body.position + self.liftPosition
-		self.reparent(body)
-		self.isLifting = true
+	# create copy of sprite for ghosting display
+	var ghost:Sprite2D = self.get_child(0).duplicate()
+	ghost.position = Vector2(0, 20)
+	self.add_child(ghost)
+	ghost.name = "Ghost"
+	
+	# have an object attached to player that is the "put down spot", so it moves with them and rotates
+	# depending on direction faced
+	# ghost is shown at this spot
+	
+	self.collision_layer = 1;
+	self.collision_mask = 6;
+	# lift position is not a real thing right now
+	self.position = body.position + self.liftPosition
+	self.reparent(body)
+	self.isLifting = true
 
 ## Returns this Furniture back to not being held
 func exitLift() -> void:
 	## check if youll be able to put down the object
-
+   
 	var body:CharacterBody2D = self.get_parent()
 
 	body.remove_child(self)
@@ -78,7 +75,7 @@ func enterPush(body: CharacterBody2D) -> void:
 	print("entered pushing")
 	self.player = body
 	self.collision_layer = 0;
-	audioPlayer.push_sound(self) #no push sound yet
+	audioPlayer.push_sound(self)
 	distanceFromPlayer = position.distance_to(player.position)
 	self.isPushing = true
 
