@@ -8,7 +8,6 @@ var direction:Vector2
 var hasEmptyDropZone:bool
 
 
-
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if (area.get_parent().is_in_group("Furniture")):
 		if (furniture && !self.furniture.isPushing && !self.furniture.isLifting):
