@@ -40,15 +40,6 @@ func get_canLift() -> bool:
 
 ## Reparents this Furniture to the given CharacterBody
 func enterLift(body:CharacterBody2D) -> void:
-	# create copy of sprite for ghosting display
-	var ghost:Sprite2D = self.get_child(0).duplicate()
-	ghost.position = Vector2(0, 20)
-	self.add_child(ghost)
-	ghost.name = "Ghost"
-	
-	# have an object attached to player that is the "put down spot", so it moves with them and rotates
-	# depending on direction faced
-	# ghost is shown at this spot
 	
 	self.collision_layer = 1;
 	self.collision_mask = 6;
@@ -56,16 +47,39 @@ func enterLift(body:CharacterBody2D) -> void:
 	self.position = body.position + self.liftPosition
 	self.reparent(body)
 	self.isLifting = true
+	
+	
+	# create copy of sprite for ghosting display
+	var ghost:Sprite2D = self.get_child(0).duplicate()
+	var collider:CollisionShape2D = self.get_child(1).duplicate()
+	ghost.add_child(collider)
+	body.find_child("Detector").get_child(0).add_child(ghost)
+	
+	ghost.name = "Ghost"
+	
+	# have an object attached to player that is the "put down spot", so it moves with them and rotates
+	# depending on direction faced
+	# ghost is shown at this spot
+	
+	
 
 ## Returns this Furniture back to not being held
 func exitLift() -> void:
 	## check if youll be able to put down the object
    
 	var body:CharacterBody2D = self.get_parent()
+	
+	# removes ghost
+	var ghost:Node2D = body.find_child("Detector").get_child(0).get_child(0)
+	print("ghost global pos = ", ghost.global_position)
+	var pos:Vector2 = ghost.global_position
+	
+	ghost.queue_free()
 
+	
 	body.remove_child(self)
 	body.add_sibling(self)
-	self.position = body.position + self.liftPosition
+	self.position = pos
 	self.collision_layer = 2;
 	self.collision_mask = 7;
 	self.isLifting = false
@@ -74,7 +88,7 @@ func exitLift() -> void:
 func enterPush(body: CharacterBody2D) -> void:
 	print("entered pushing")
 	self.player = body
-	self.collision_layer = 0;
+	self.collision_layer = 0
 	audioPlayer.push_sound(self)
 	distanceFromPlayer = position.distance_to(player.position)
 	self.isPushing = true

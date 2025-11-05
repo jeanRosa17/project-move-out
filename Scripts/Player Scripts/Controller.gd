@@ -58,7 +58,6 @@ func handleLift(_delta:float) -> void:
 ## Handles "Push" and "Pull"
 func handlePushPull(_delta:float) -> void:
 	if (Input.is_action_just_pressed("Push-Pull")):
-		print("handle push pull")
 		if (self.manager.getStateName() != "Push"): self.manager.changeState("Push")
 
 func handleInteract(_delta:float) -> void:

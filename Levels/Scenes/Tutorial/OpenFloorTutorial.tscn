@@ -68,6 +68,7 @@ texture = ExtResource("4_odab6")
 
 [node name="Furniture" parent="." instance=ExtResource("6_v8k2n")]
 position = Vector2(132, 176)
+lock_rotation = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_scale = 3.0

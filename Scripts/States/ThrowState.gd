@@ -3,7 +3,7 @@ extends State
 
 @onready var manager:StateManager = self.getManager()
 @onready var backToIdle:Callable = func () -> void : self.manager.changeState("Idle")
-@export var throwDistance:int = 20
+@export var throwDistance:int = 12
 @export var area2D:Area2D
 var hadEmptySpace:bool
 
@@ -26,17 +26,7 @@ func exit() -> void:
 		
 		var dir:String = self.getManager().view.animation.split(" ")[1].to_lower()
 
-		match (dir):
-			"side":
-				if (self.getManager().view.flip_h):
-					self.manager.furniture.position.x -= self.throwDistance
-				else:
-					self.manager.furniture.position.x += self.throwDistance
-			"up":
-				self.manager.furniture.position.y -= self.throwDistance
-			"down":
-				self.manager.furniture.position.y += self.throwDistance
-				
+
 	if (self.getManager().view.animation_finished.is_connected(backToIdle)):
 		self.getManager().view.animation_finished.disconnect(backToIdle)
 
