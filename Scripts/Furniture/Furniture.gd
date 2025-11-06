@@ -74,13 +74,10 @@ func enterLift(body:CharacterBody2D) -> void:
 	var collider:CollisionShape2D = self.get_child(1).duplicate()
 	ghost.add_child(area)
 	area.add_child(collider)
+	area.collision_layer = 0
 	body.find_child("Detector").get_child(0).add_child(ghost)
 	
 	ghost.name = "Ghost"
-	
-	# have an object attached to player that is the "put down spot", so it moves with them and rotates
-	# depending on direction faced
-	# ghost is shown at this spot
 	
 	
 
