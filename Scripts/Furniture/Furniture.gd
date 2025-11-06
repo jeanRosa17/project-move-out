@@ -47,12 +47,15 @@ func enterLift(body:CharacterBody2D) -> void:
 	self.position = body.position + self.liftPosition
 	self.reparent(body)
 	self.isLifting = true
+	self.remove_from_group("Furniture")
 	
 	
 	# create copy of sprite for ghosting display
 	var ghost:Sprite2D = self.get_child(0).duplicate()
+	var area:Area2D = Area2D.new()
 	var collider:CollisionShape2D = self.get_child(1).duplicate()
-	ghost.add_child(collider)
+	ghost.add_child(area)
+	area.add_child(collider)
 	body.find_child("Detector").get_child(0).add_child(ghost)
 	
 	ghost.name = "Ghost"
@@ -69,20 +72,30 @@ func exitLift() -> void:
    
 	var body:CharacterBody2D = self.get_parent()
 	
-	# removes ghost
+	
 	var ghost:Node2D = body.find_child("Detector").get_child(0).get_child(0)
 	print("ghost global pos = ", ghost.global_position)
 	var pos:Vector2 = ghost.global_position
 	
-	ghost.queue_free()
-
+	var col:Area2D = ghost.get_child(0)
 	
-	body.remove_child(self)
-	body.add_sibling(self)
-	self.position = pos
-	self.collision_layer = 2;
-	self.collision_mask = 7;
-	self.isLifting = false
+	var bodies:Array[Node2D] = col.get_overlapping_bodies()
+	
+	var canDrop:bool = true;
+	
+	for i in range(bodies.size()):
+			if (bodies[i].is_in_group("Furniture") || bodies[i].is_in_group("Immovable Object")):
+				canDrop = false
+	
+	if (canDrop):
+		ghost.queue_free()
+		body.remove_child(self)
+		body.add_sibling(self)
+		self.position = pos
+		self.collision_layer = 2;
+		self.collision_mask = 7;
+		self.isLifting = false
+		self.add_to_group("Furniture")
 	
 	
 func enterPush(body: CharacterBody2D) -> void:
