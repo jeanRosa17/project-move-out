@@ -960,6 +960,7 @@ animations = [{
 size = Vector2(2, 16)
 
 [node name="Body" type="CharacterBody2D"]
+y_sort_enabled = true
 collision_mask = 6
 platform_on_leave = 2
 platform_floor_layers = 4278190080
@@ -967,6 +968,7 @@ script = ExtResource("1_f5xin")
 
 [node name="Shadow" type="Sprite2D" parent="."]
 self_modulate = Color(1, 1, 1, 0.447059)
+z_index = -1
 position = Vector2(0, 13)
 texture = ExtResource("2_xgcxo")
 
