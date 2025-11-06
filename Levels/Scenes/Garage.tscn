@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://ip4pm1ex6klr"]
 
-[ext_resource type="Texture2D" uid="uid://bidfxw8ay6ayh" path="res://Assets/Level Art/truck_back_01.png" id="1_y5pj0"]
+[ext_resource type="Texture2D" uid="uid://bh2e8ltvpt5g8" path="res://Assets/Garage/truck_back_01.png" id="1_y5pj0"]
 [ext_resource type="Script" uid="uid://bg35t571kh220" path="res://Scripts/Van/Van.gd" id="2_6h86o"]
-[ext_resource type="Texture2D" uid="uid://cqguipmcnrdn1" path="res://Assets/Shadow.png" id="3_qf7y8"]
-[ext_resource type="Texture2D" uid="uid://da21gw6ai8h4v" path="res://Assets/Level Art/leaver_01.png" id="4_6h86o"]
+[ext_resource type="Texture2D" uid="uid://cqguipmcnrdn1" path="res://Assets/Player/Shadow.png" id="3_qf7y8"]
+[ext_resource type="Texture2D" uid="uid://da21gw6ai8h4v" path="res://Assets/Garage/leaver_01.png" id="4_6h86o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wmaxs"]
 size = Vector2(43.2693, 55.9271)

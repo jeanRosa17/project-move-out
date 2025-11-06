@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="1_pqq6j"]
 [ext_resource type="PackedScene" uid="uid://psh4s5sym8kd" path="res://UI/Textbox.tscn" id="3_13a2q"]
-[ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Player/Player.tscn" id="4_jf1pg"]
+[ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Assets/Player/Scenes/Player.tscn" id="7_h7qxw"]
 [ext_resource type="PackedScene" uid="uid://d1etsnjfgvtu8" path="res://Scripts/FurnitureAudio.tscn" id="7_u3oty"]
 [ext_resource type="AudioStream" uid="uid://ilbhsc2vwd1n" path="res://Assets/Audio/furniture 1.wav" id="8_mqyje"]
 [ext_resource type="AudioStream" uid="uid://ixm05apa3fsb" path="res://Assets/Audio/furniture2 [game capstone].wav" id="9_l3pbo"]
@@ -35,10 +35,6 @@ follow_viewport_enabled = true
 
 [node name="Textbox" parent="CanvasLayer" instance=ExtResource("3_13a2q")]
 
-[node name="Player" parent="." instance=ExtResource("4_jf1pg")]
-position = Vector2(127, 88)
-safe_margin = 1.159
-
 [node name="AudioStreamPlayer2D" parent="." instance=ExtResource("7_u3oty")]
 stream = SubResource("AudioStreamRandomizer_7ntl6")
 volume_db = -0.2
@@ -55,3 +51,6 @@ shape = ExtResource("10_rgojk")
 position = Vector2(276, 249)
 rotation = 1.5708
 shape = ExtResource("10_rgojk")
+
+[node name="Player" parent="." instance=ExtResource("7_h7qxw")]
+position = Vector2(84, 74)
