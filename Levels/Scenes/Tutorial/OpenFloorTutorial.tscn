@@ -1,9 +1,10 @@
-[gd_scene load_steps=27 format=4 uid="uid://xdjv122pxc6c"]
+[gd_scene load_steps=29 format=4 uid="uid://xdjv122pxc6c"]
 
 [ext_resource type="Texture2D" uid="uid://dlqlqw0fvr4wp" path="res://Assets/Objects/Carpets/carpet.png" id="2_pebci"]
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="3_3j8mk"]
 [ext_resource type="Texture2D" uid="uid://dytgdsg146xfm" path="res://Levels/Level Sketches/Bachelor_pad_test_level.png" id="4_odab6"]
 [ext_resource type="PackedScene" uid="uid://psh4s5sym8kd" path="res://UI/Textbox.tscn" id="5_s1e3h"]
+[ext_resource type="Script" uid="uid://bmqryoobj44j2" path="res://Scripts/Dialogue/DialogueTag.gd" id="5_v8k2n"]
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Assets/Player/Scenes/Player.tscn" id="6_4y23e"]
 [ext_resource type="PackedScene" uid="uid://dkssiia1dmwor" path="res://Assets/Objects/Chairs/Scene/Chair.tscn" id="6_u0unu"]
 [ext_resource type="PackedScene" uid="uid://cqt367stu26c2" path="res://Assets/Objects/Table Items/Scenes/Pot.tscn" id="6_v8k2n"]
@@ -23,6 +24,11 @@
 [ext_resource type="PackedScene" uid="uid://bujcbosiagjri" path="res://Assets/Objects/Dressers & Shelves/Scenes/Shelf.tscn" id="19_u0unu"]
 [ext_resource type="Texture2D" uid="uid://b0r0nkq7wuc8b" path="res://Assets/Untitled_Artwork.png" id="21_4jb3v"]
 [ext_resource type="AudioStream" uid="uid://dy61bwuip8a27" path="res://Assets/Audio/lvl1.wav" id="25_4alro"]
+
+[sub_resource type="Resource" id="Resource_4alro"]
+script = ExtResource("5_v8k2n")
+dialogueTag = &"null"
+metadata/_custom_type_script = "uid://bmqryoobj44j2"
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iqcmb"]
 normal = Vector2(1.79515e-06, 1)
@@ -71,6 +77,7 @@ texture = ExtResource("4_odab6")
 [node name="Furniture" parent="." instance=ExtResource("6_v8k2n")]
 position = Vector2(132, 176)
 lock_rotation = true
+dialogueTag = SubResource("Resource_4alro")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 visible = false

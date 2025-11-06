@@ -24,7 +24,8 @@ func canExit() -> bool:
 
 ## The last method called when the state is transitioned out of
 func exit() -> void:
-	self.canvas_layer.visible = false
+	pass
+	#self.canvas_layer.visible = false
 	
 ## Constantly checks for input from the user and changes state.
 func update(_delta:float) -> void:

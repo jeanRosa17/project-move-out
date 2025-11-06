@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpar4i68b5oc2"
-path="res://.godot/imported/Pot-2.png-267480a98c66008dd828b3b31b176d4a.ctex"
+uid="uid://d3eu5wmu40kyf"
+path="res://.godot/imported/Pots & Vases-Sheet.png-d7430aced57734b647f5c6fc8020e7b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Objects/Table Items/Pot-2.png"
-dest_files=["res://.godot/imported/Pot-2.png-267480a98c66008dd828b3b31b176d4a.ctex"]
+source_file="res://Assets/Objects/Table Items/Pots & Vases-Sheet.png"
+dest_files=["res://.godot/imported/Pots & Vases-Sheet.png-d7430aced57734b647f5c6fc8020e7b6.ctex"]
 
 [params]
 

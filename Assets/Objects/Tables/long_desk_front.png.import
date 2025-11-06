@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5vob7cna4ng3"
-path="res://.godot/imported/long_desk_front.png-5124a9efac40fe70fbedf17d745bc111.ctex"
+path="res://.godot/imported/long_desk_front.png-2a110d64203a93a952c50afc643d2257.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Objects/Dressers & Shelves/long_desk_front.png"
-dest_files=["res://.godot/imported/long_desk_front.png-5124a9efac40fe70fbedf17d745bc111.ctex"]
+source_file="res://Assets/Objects/Tables/long_desk_front.png"
+dest_files=["res://.godot/imported/long_desk_front.png-2a110d64203a93a952c50afc643d2257.ctex"]
 
 [params]
 

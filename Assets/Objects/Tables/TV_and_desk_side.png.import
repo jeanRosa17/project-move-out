@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dbwg58xoehpib"
-path="res://.godot/imported/TV_and_desk_side.png-0b4ca1cb156fb354c5a3bf12586092ea.ctex"
+path="res://.godot/imported/TV_and_desk_side.png-4b61338be843312a1aa4d3bcb5940587.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Objects/Dressers & Shelves/TV_and_desk_side.png"
-dest_files=["res://.godot/imported/TV_and_desk_side.png-0b4ca1cb156fb354c5a3bf12586092ea.ctex"]
+source_file="res://Assets/Objects/Tables/TV_and_desk_side.png"
+dest_files=["res://.godot/imported/TV_and_desk_side.png-4b61338be843312a1aa4d3bcb5940587.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cr0s7j5niis74"
-path="res://.godot/imported/orange_chair_back.png-f62d875b3e3193e6322b75df115f83bb.ctex"
+path="res://.godot/imported/orange_chair_back.png-99508025d8d2be24aaf5bd377e70961f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Objects/Dressers & Shelves/orange_chair_back.png"
-dest_files=["res://.godot/imported/orange_chair_back.png-f62d875b3e3193e6322b75df115f83bb.ctex"]
+source_file="res://Assets/Objects/Chairs/orange_chair_back.png"
+dest_files=["res://.godot/imported/orange_chair_back.png-99508025d8d2be24aaf5bd377e70961f.ctex"]
 
 [params]
 

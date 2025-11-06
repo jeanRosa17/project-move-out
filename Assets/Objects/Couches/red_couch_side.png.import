@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ns7srn0aamg8"
-path="res://.godot/imported/red_couch_side.png-cf57f2d70f9c91088905c323ca56d3c5.ctex"
+path="res://.godot/imported/red_couch_side.png-1d692981d1d2fa6fa1dc7aa19f8b3944.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Objects/Dressers & Shelves/red_couch_side.png"
-dest_files=["res://.godot/imported/red_couch_side.png-cf57f2d70f9c91088905c323ca56d3c5.ctex"]
+source_file="res://Assets/Objects/Couches/red_couch_side.png"
+dest_files=["res://.godot/imported/red_couch_side.png-1d692981d1d2fa6fa1dc7aa19f8b3944.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dcqwj1132fkdt"
-path="res://.godot/imported/stove_counter_side.png-b3004f3862066a3e30fd60f10ea0d743.ctex"
+path="res://.godot/imported/stove_counter_side.png-c1854566bf161983353789fdaa36e661.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Objects/Dressers & Shelves/stove_counter_side.png"
-dest_files=["res://.godot/imported/stove_counter_side.png-b3004f3862066a3e30fd60f10ea0d743.ctex"]
+source_file="res://Assets/Objects/Kitchen/stove_counter_side.png"
+dest_files=["res://.godot/imported/stove_counter_side.png-c1854566bf161983353789fdaa36e661.ctex"]
 
 [params]
 
