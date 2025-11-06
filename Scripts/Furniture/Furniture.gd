@@ -3,7 +3,7 @@ extends RigidBody2D
 class_name Furniture
 
 ## Update to be $AudioStreamPlayer2D
-@onready var audioPlayer:FurnitureAudio = get_parent().get_node("AudioStreamPlayer2D")
+@onready var audioPlayer:FurnitureAudio = get_parent().get_node("Push_Pull Audio")
 @onready var area_detector: Area2D = $AreaDetector
 @onready var area_shape: CollisionShape2D = $AreaDetector/CollisionShape2D
 
@@ -66,7 +66,7 @@ func enterLift(body:CharacterBody2D) -> void:
 	self.reparent(body)
 	self.isLifting = true
 
-	
+	self.get_node("Collision").disabled = true
 	
 	# create copy of sprite for ghosting display
 	var ghost:Sprite2D = self.get_child(0).duplicate()
@@ -92,6 +92,8 @@ func exitLift() -> void:
 	print("ghost global pos = ", ghost.global_position)
 	var pos:Vector2 = ghost.global_position
 	
+	
+	## this is where the ghosting doesnt line up
 	var col:Area2D = ghost.get_child(0)
 	
 	var bodies:Array[Node2D] = col.get_overlapping_bodies()
@@ -106,6 +108,7 @@ func exitLift() -> void:
 		ghost.queue_free()
 		body.remove_child(self)
 		body.add_sibling(self)
+		self.get_node("Collision").disabled = false
 		self.position = pos
 		self.collision_layer = 2;
 		self.collision_mask = 7;

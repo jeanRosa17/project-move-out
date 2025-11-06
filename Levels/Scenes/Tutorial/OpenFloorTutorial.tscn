@@ -148,7 +148,7 @@ position = Vector2(321, 235)
 [node name="Garage" parent="." instance=ExtResource("13_ymjk0")]
 position = Vector2(145, 317)
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="Push_Pull Audio" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_b3xeb")
 script = ExtResource("14_37gu0")
 streams = [ExtResource("15_ckuxd")]
