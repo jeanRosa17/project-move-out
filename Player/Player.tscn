@@ -27,7 +27,7 @@
 [ext_resource type="Script" uid="uid://dxpvyml32g27k" path="res://Scripts/States/Interact.gd" id="25_yifbt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l2ndj"]
-size = Vector2(18, 26)
+size = Vector2(18, 5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dter7"]
 atlas = ExtResource("2_7uipr")
@@ -971,6 +971,7 @@ position = Vector2(0, 13)
 texture = ExtResource("2_yifbt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 13.75)
 shape = SubResource("RectangleShape2D_l2ndj")
 
 [node name="NewAnimatedSprite2D" type="AnimatedSprite2D" parent="."]

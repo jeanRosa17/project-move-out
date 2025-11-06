@@ -75,17 +75,6 @@ follow_viewport_scale = 3.0
 
 [node name="Textbox" parent="CanvasLayer" instance=ExtResource("5_s1e3h")]
 
-[node name="Player" parent="." instance=ExtResource("6_4y23e")]
-position = Vector2(128, 110)
-safe_margin = 1.159
-
-[node name="Camera2D2" type="Camera2D" parent="Player"]
-position = Vector2(1, 0)
-limit_left = 0
-limit_top = 0
-limit_right = 385
-limit_bottom = 415
-
 [node name="Chair" parent="." instance=ExtResource("6_u0unu")]
 position = Vector2(335, 122)
 
@@ -169,6 +158,7 @@ position = Vector2(260, 50)
 
 [node name="Shelf" parent="." instance=ExtResource("19_u0unu")]
 position = Vector2(191, 103)
+disable_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(244, 124)
@@ -176,6 +166,17 @@ scale = Vector2(0.04, 0.04)
 texture = ExtResource("21_4jb3v")
 region_enabled = true
 region_rect = Rect2(903, 355, 721, 684)
+
+[node name="Player" parent="." instance=ExtResource("6_4y23e")]
+position = Vector2(128, 110)
+safe_margin = 1.159
+
+[node name="Camera2D2" type="Camera2D" parent="Player"]
+position = Vector2(1, 0)
+limit_left = 0
+limit_top = 0
+limit_right = 385
+limit_bottom = 415
 
 [node name="Level Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("25_4alro")

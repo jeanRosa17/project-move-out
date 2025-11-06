@@ -4,11 +4,12 @@ class_name Furniture
 
 ## Update to be $AudioStreamPlayer2D
 @onready var audioPlayer:FurnitureAudio = get_parent().get_node("AudioStreamPlayer2D")
+@onready var area_detector: Area2D = $AreaDetector
+@onready var area_shape: CollisionShape2D = $AreaDetector/CollisionShape2D
 
 @export var canLift:bool = false
 @export var canPush:bool
 @export var canPull:bool
-@export var weight:int
 @export var dialogueTag:DialogueTag = preload("res://Scripts/Dialogue/nullDialogue.tres")
 
 var isLifting: bool = false
@@ -25,15 +26,31 @@ var objects: Array[Node2D] = []
 
 func _physics_process(_delta: float) -> void:
 	if (isPushing):
+		var dir = player.velocity.normalized()
+		if (dir.length() > 0.1):
+				update_detector_direction(dir)
 		if (objects.is_empty()):
 			collision_layer = 0
+			linear_velocity = linear_velocity.lerp(player.velocity, 0.4)
 		else:
 			self.collision_layer = 2;
-		linear_velocity = linear_velocity.lerp(player.velocity, 0.4)
+			linear_velocity = Vector2.ZERO
 		## check to see if player is detached from object
 		if (position.distance_to(player.position) > 45):
 				exitPush()
 
+
+func update_detector_direction(direction: Vector2) -> void:
+	if (abs(direction.x) > abs(direction.y)):
+		if (direction.x > 0):
+			area_detector.position = Vector2(5, 0)
+		else:
+			area_detector.position = Vector2(-5, 0)
+	else:
+		if (direction.y > 0):
+			area_detector.position = Vector2(0, 5)
+		else:
+			area_detector.position = Vector2(0, -5)
 
 func get_canLift() -> bool:
 	return canLift
