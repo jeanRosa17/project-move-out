@@ -13,7 +13,7 @@ var lineCounter: int = 0 ## the current line within the dialogue tag
 var charCounter: int ## the current character within the current line
 var timer: Timer ## timer for typewriting effect
 var textSpeed: float = 0.025
-const endOfLineDelay: float = 0.75 ## seconds to delay at the end of line
+const endOfLineDelay: float = 0.5 ## seconds to delay at the end of line
 const punctuationsDelay = {
 	"." : 0.3,
 	"?" : 0.3,

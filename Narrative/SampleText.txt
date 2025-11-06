@@ -1,6 +1,6 @@
 #start {
 	It’s been a bit since I got to work, but this job should be easy, not many things to fit in my van.
-	I should pick things up using (button), I’ll be done as soon as I move everything on the list I was given.
+	I can move with wsad and pick objects up with space, I’ll be done as soon as I move everything on the list I was given.
 }
 
 #enterLivingRoom {

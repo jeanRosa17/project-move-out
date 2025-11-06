@@ -1,8 +1,9 @@
 [gd_resource type="Resource" script_class="DialogueTag" load_steps=2 format=3 uid="uid://brwl51b3u5pqg"]
 
-[ext_resource type="Script" path="res://Scripts/Dialogue/DialogueTag.gd" id="1_ukgbs"]
+[ext_resource type="Script" uid="uid://bmqryoobj44j2" path="res://Scripts/Dialogue/DialogueTag.gd" id="1_ukgbs"]
 
 [resource]
 script = ExtResource("1_ukgbs")
+dialogueScriptPath = &"res://Narrative/SampleText.txt"
 dialogueTag = &"null"
 metadata/_custom_type_script = "uid://bmqryoobj44j2"
