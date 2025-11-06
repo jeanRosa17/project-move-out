@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cqt367stu26c2"]
 
 [ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_kle06"]
-[ext_resource type="Texture2D" uid="uid://cp6ieyai1xv13" path="res://Assets/Objects/Table Items/Pot.png" id="2_kle06"]
+[ext_resource type="Texture2D" uid="uid://d3eu5wmu40kyf" path="res://Assets/Objects/Table Items/Pots & Vases-Sheet.png" id="2_gifpp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
 size = Vector2(14, 17)
@@ -15,8 +15,11 @@ canLift = true
 liftPosition = Vector2(0, -16)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_kle06")
+position = Vector2(0, -7.5)
+texture = ExtResource("2_gifpp")
+region_enabled = true
+region_rect = Rect2(29, 28, 14, 15)
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
+position = Vector2(0, -7)
 shape = SubResource("RectangleShape2D_xnri0")
