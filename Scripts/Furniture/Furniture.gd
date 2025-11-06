@@ -58,13 +58,14 @@ func get_canLift() -> bool:
 ## Reparents this Furniture to the given CharacterBody
 func enterLift(body:CharacterBody2D) -> void:
 	
+	self.remove_from_group("Furniture")
 	self.collision_layer = 1;
 	self.collision_mask = 6;
 	# lift position is not a real thing right now
 	self.position = body.position + self.liftPosition
 	self.reparent(body)
 	self.isLifting = true
-	self.remove_from_group("Furniture")
+
 	
 	
 	# create copy of sprite for ghosting display
