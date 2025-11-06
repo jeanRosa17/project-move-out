@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dffq6tyiqk8ch" path="res://Assets/tiles/Template Garage Floor.png" id="1_ovj46"]
 [ext_resource type="TileSet" uid="uid://bfsdyggvkp2d" path="res://Levels/Resources/OldTileMap.tres" id="2_2ubmf"]
-[ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Assets/tiles/Support Columns-autotile2/Support Columns-autotile2.tres" id="3_uvob4"]
+[ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="3_uvob4"]
 [ext_resource type="Texture2D" uid="uid://byjdse3pdpxef" path="res://Assets/Level Art/Bachelor_pad_test_level.png" id="4_cifax"]
 [ext_resource type="PackedScene" uid="uid://psh4s5sym8kd" path="res://UI/Textbox.tscn" id="5_cifax"]
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Player/Player.tscn" id="6_b3xeb"]

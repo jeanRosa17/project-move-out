@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=4 uid="uid://b0og1tsxfobb3"]
 
-[ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Assets/tiles/Support Columns-autotile2/Support Columns-autotile2.tres" id="1_pqq6j"]
+[ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="1_pqq6j"]
 [ext_resource type="PackedScene" uid="uid://psh4s5sym8kd" path="res://UI/Textbox.tscn" id="3_13a2q"]
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Player/Player.tscn" id="4_jf1pg"]
 [ext_resource type="PackedScene" uid="uid://d1etsnjfgvtu8" path="res://Scripts/FurnitureAudio.tscn" id="7_u3oty"]
