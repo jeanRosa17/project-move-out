@@ -1,4 +1,4 @@
-[gd_scene load_steps=146 format=3 uid="uid://d0yd01mkkwtji"]
+[gd_scene load_steps=150 format=3 uid="uid://d0yd01mkkwtji"]
 
 [ext_resource type="Script" uid="uid://0slq88tkfqsi" path="res://Scripts/Player Scripts/Controller.gd" id="1_f5xin"]
 [ext_resource type="Texture2D" uid="uid://cqguipmcnrdn1" path="res://Assets/Player/Shadow.png" id="2_xgcxo"]
@@ -25,6 +25,9 @@
 [ext_resource type="Script" uid="uid://n3x8myoud04l" path="res://Scripts/States/ThrowState.gd" id="23_r7dr2"]
 [ext_resource type="Script" uid="uid://bx82iq4syv1q6" path="res://Scripts/States/PushState.gd" id="24_k1w57"]
 [ext_resource type="Script" uid="uid://dxpvyml32g27k" path="res://Scripts/States/Interact.gd" id="25_5cp4r"]
+[ext_resource type="AudioStream" uid="uid://drvmqxy4hog5k" path="res://Assets/Audio/footstep 1.wav" id="26_jjwbh"]
+[ext_resource type="AudioStream" uid="uid://bmmehmpnjs2op" path="res://Assets/Audio/footstep 2.wav" id="27_bmblf"]
+[ext_resource type="Script" uid="uid://btk3jmqdxo7pv" path="res://Assets/Player/Scenes/WalkSound.gd" id="28_m53rv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l2ndj"]
 size = Vector2(8, 16)
@@ -959,6 +962,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1rgi"]
 size = Vector2(2, 2)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_77jqo"]
+streams_count = 2
+stream_0/stream = ExtResource("26_jjwbh")
+stream_1/stream = ExtResource("27_bmblf")
+
 [node name="Body" type="CharacterBody2D"]
 y_sort_enabled = true
 collision_mask = 6
@@ -1024,6 +1032,12 @@ body = NodePath("../..")
 [node name="Interact" type="Node" parent="StateManager"]
 script = ExtResource("25_5cp4r")
 
+[node name="Walk Sound" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_77jqo")
+volume_db = 3.564
+script = ExtResource("28_m53rv")
+
+[connection signal="frame_changed" from="NewAnimatedSprite2D" to="Walk Sound" method="_on_new_animated_sprite_2d_frame_changed"]
 [connection signal="area_entered" from="Detector" to="StateManager" method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="Detector" to="StateManager/Push" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Detector" to="StateManager" method="_on_area_2d_area_exited"]

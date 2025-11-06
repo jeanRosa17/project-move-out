@@ -7,10 +7,14 @@ extends State
 
 @onready var physics:PlayerPhysics
 
+@onready var walkSound:Walk_Sound
+
 
 
 func _ready() -> void:
 	self.physics = preload("res://Scripts/Resources/DefaultPhysics.tres")
+	
+	walkSound = self.get_parent().get_parent().find_child("Walk Sound")
 	
 	
 func canEnter() -> bool:
@@ -50,6 +54,7 @@ func update(_delta:float) -> void:
 	
 	self.getManager().view.flip_h = self.getManager().direction.x < 0
 	self.enter() ## Sets run animation
+
 	
 	self.area2DCollision.position = self.getManager().direction * 16
 	self.area2DCollision.position = self.getManager().direction * 16
