@@ -969,19 +969,22 @@ script = ExtResource("1_f5xin")
 [node name="Shadow" type="Sprite2D" parent="."]
 self_modulate = Color(1, 1, 1, 0.447059)
 z_index = -1
-position = Vector2(0, 13)
+z_as_relative = false
+position = Vector2(0, 5)
 texture = ExtResource("2_xgcxo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_l2ndj")
 
 [node name="NewAnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_dter7")
 animation = &"push up"
 autoplay = "idle down"
 
 [node name="Detector" type="Area2D" parent="."]
+position = Vector2(0, -8)
 collision_layer = 2
 collision_mask = 6
 

@@ -1,31 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://dkssiia1dmwor"]
+[gd_scene load_steps=5 format=3 uid="uid://cmwh2w2blwcsq"]
 
-[ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_ey0ij"]
-[ext_resource type="Texture2D" uid="uid://chlww608vatwc" path="res://Assets/furniture/wooden_chair_2.png" id="2_ey0ij"]
+[ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_abp27"]
+[ext_resource type="Texture2D" uid="uid://c7mdlrt7tr8sm" path="res://Assets/Objects/Beds/bed_1.png" id="2_abp27"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
-size = Vector2(14, 21)
+size = Vector2(22, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
-size = Vector2(26, 40)
+size = Vector2(32, 48)
 
-[node name="Chair" type="RigidBody2D" groups=["Furniture"]]
+[node name="Twin_Bed" type="RigidBody2D" groups=["Furniture"]]
 collision_layer = 2
 collision_mask = 7
 gravity_scale = 0.0
 can_sleep = false
 lock_rotation = true
-script = ExtResource("1_ey0ij")
+script = ExtResource("1_abp27")
 canPush = true
 canPull = true
 metadata/_custom_type_script = "uid://c2vh27coguldq"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_ey0ij")
-flip_h = true
+texture = ExtResource("2_abp27")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_xnri0")
 
 [node name="AreaDetector" type="Area2D" parent="." groups=["Furniture"]]

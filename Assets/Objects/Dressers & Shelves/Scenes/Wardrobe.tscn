@@ -1,10 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://b7qk52eapta2s"]
 
 [ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_4rlbe"]
-[ext_resource type="Texture2D" uid="uid://d72w6tylojhu" path="res://Assets/furniture/wardrobe_2.png" id="2_4rlbe"]
+[ext_resource type="Texture2D" uid="uid://d72w6tylojhu" path="res://Assets/Objects/Dressers & Shelves/wardrobe_2.png" id="2_4rlbe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
-size = Vector2(44, 32)
+size = Vector2(44, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
 size = Vector2(56, 68)
@@ -24,6 +24,7 @@ metadata/_custom_type_script = "uid://c2vh27coguldq"
 texture = ExtResource("2_4rlbe")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_xnri0")
 
 [node name="AreaDetector" type="Area2D" parent="." groups=["Furniture"]]

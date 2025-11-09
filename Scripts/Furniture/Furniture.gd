@@ -11,6 +11,8 @@ class_name Furniture
 @export var canPush:bool
 @export var canPull:bool
 @export var dialogueTag:DialogueTag = preload("res://Scripts/Dialogue/nullDialogue.tres")
+@onready var sprite_2d: Sprite2D = $Sprite2D
+
 
 var isLifting: bool = false
 var isPushing: bool = false
@@ -39,6 +41,10 @@ func _physics_process(_delta: float) -> void:
 		if (position.distance_to(player.position) > 45):
 				exitPush()
 
+func changeToAltArt() -> void:
+	var temp = self.sprite_2d.texture
+	self.sprite_2d.texture = self.altArt
+	self.altArt = temp
 
 func update_detector_direction(direction: Vector2) -> void:
 	if (abs(direction.x) > abs(direction.y)):
