@@ -1,7 +1,7 @@
 extends State
 
-@onready var canvas_layer: CanvasLayer = $"../../../CanvasLayer"
-@onready var textbox: DialogueManager = $"../../../CanvasLayer/Textbox"
+@onready var hud: CanvasLayer = $"../../../../HUD"
+@onready var textbox: DialogueManager = $"../../../../HUD/Textbox"
 
 
 ## Determines if the state can be entered. By default returns true.
@@ -15,7 +15,7 @@ func enter() -> void:
 		self.textbox.setDialogueTo(load("res://Scripts/Dialogue/nullDialogue.tres"))
 	else:
 		self.textbox.setDialogueTo(self.getManager().furniture.dialogueTag)
-	self.canvas_layer.visible = true
+	self.hud.visible = true
 	
 	
 ## Determines if the state can be exited. By default returns true.

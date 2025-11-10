@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://xdjv122pxc6c"]
+[gd_scene load_steps=31 format=4 uid="uid://xdjv122pxc6c"]
 
 [ext_resource type="Texture2D" uid="uid://dlqlqw0fvr4wp" path="res://Assets/Objects/Carpets/carpet.png" id="2_pebci"]
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="3_3j8mk"]
@@ -23,11 +23,11 @@
 [ext_resource type="PackedScene" uid="uid://b7qk52eapta2s" path="res://Assets/Objects/Dressers & Shelves/Scenes/Wardrobe.tscn" id="18_6pr51"]
 [ext_resource type="PackedScene" uid="uid://bujcbosiagjri" path="res://Assets/Objects/Dressers & Shelves/Scenes/Shelf.tscn" id="19_u0unu"]
 [ext_resource type="Texture2D" uid="uid://b0r0nkq7wuc8b" path="res://Assets/Untitled_Artwork.png" id="21_4jb3v"]
+[ext_resource type="PackedScene" uid="uid://cfmb3mmeue8au" path="res://UI/HUD.tscn" id="24_4alro"]
 [ext_resource type="AudioStream" uid="uid://dy61bwuip8a27" path="res://Assets/Audio/lvl1.wav" id="25_4alro"]
 
 [sub_resource type="Resource" id="Resource_4alro"]
 script = ExtResource("5_v8k2n")
-dialogueScriptPath = &"res://Narrative/SampleText.txt"
 dialogueTag = &"null"
 metadata/_custom_type_script = "uid://bmqryoobj44j2"
 
@@ -45,7 +45,6 @@ stream_1/stream = ExtResource("15_v8k2n")
 
 [sub_resource type="Resource" id="Resource_v8k2n"]
 script = ExtResource("5_v8k2n")
-dialogueScriptPath = &"res://Narrative/SampleText.txt"
 dialogueTag = &"null"
 metadata/_custom_type_script = "uid://bmqryoobj44j2"
 
@@ -203,6 +202,8 @@ tile_set = ExtResource("3_3j8mk")
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAArABIABQACAAIAAAArABQABQACAAIAAAArABUABQACAAIAAAAzAAkABQACAAIAAAAFAAgAAgADAAAAAAAFAAkAAgADAAEAAAAFAAoAAgADAAIAAAAEAAgAAgABAAAAAAAEAAkAAgABAAEAAAAEAAoAAgABAAIAAAABAAgAAgAAAAAAAAABAAkAAgAAAAEAAAABAAoAAgAAAAEAAAABAAsAAgAAAAEAAAABAAwAAgAAAAEAAAABAA0AAgABAAEAAAABAA4AAgABAAIAAAACAA0AAgACAAAAAAADAA0AAgACAAAAAAAEAA0AAgACAAAAAAAFAA0AAgADAAAAAAAFAA4AAgADAAIAAAACAA4AAgACAAIAAAADAA4AAgACAAIAAAAEAA4AAgACAAIAAAA=")
 tile_set = ExtResource("3_3j8mk")
+
+[node name="HUD" parent="." instance=ExtResource("24_4alro")]
 
 [node name="Level Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("25_4alro")
