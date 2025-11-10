@@ -10,4 +10,4 @@ func _on_play_tutorial_a_pressed() -> void:
 
 
 func _on_play_tutorial_b_pressed() -> void:
-	self.levelManager.changeSceneTo("res://Levels/Level Templates/LevelTemplate.tscn")
+	self.levelManager.changeSceneTo("res://UI/TitleScreen.tscn")

@@ -13,6 +13,7 @@ func _process(_delta:float)  -> void:
 	if (Input.is_action_just_pressed("Lift") && playerInArea):
 		print("pressed")
 		clearVan()
+		#display the score with the HUD
 
 func clearVan() -> void:
 	# gets all furniture in van

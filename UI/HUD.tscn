@@ -1,12 +1,58 @@
-[gd_scene load_steps=3 format=3 uid="uid://cfmb3mmeue8au"]
+[gd_scene load_steps=4 format=3 uid="uid://cfmb3mmeue8au"]
 
+[ext_resource type="Script" uid="uid://j5jhi8fi2uk0" path="res://UI/LevelTransition.gd" id="1_4n7mi"]
 [ext_resource type="PackedScene" uid="uid://b0xffv4xtxnru" path="res://UI/LevelManager.tscn" id="1_yixhe"]
 [ext_resource type="PackedScene" uid="uid://psh4s5sym8kd" path="res://UI/Textbox.tscn" id="2_ijstf"]
 
 [node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_4n7mi")
 
 [node name="LevelManager" parent="." instance=ExtResource("1_yixhe")]
 modulate = Color(1, 1, 1, 1)
-color = Color(0, 0, 0, 0)
 
-[node name="Textbox" parent="." instance=ExtResource("2_ijstf")]
+[node name="Result Screen" type="CanvasLayer" parent="."]
+
+[node name="Next Level" type="Button" parent="Result Screen"]
+offset_left = 275.0
+offset_top = 170.0
+offset_right = 383.0
+offset_bottom = 201.0
+text = "Next Level ->"
+
+[node name="Replay Level" type="Button" parent="Result Screen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -310.0
+offset_top = -118.0
+offset_right = -250.0
+offset_bottom = -87.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Replay
+"
+
+[node name="Exit Game" type="Button" parent="Result Screen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -455.0
+offset_top = -118.0
+offset_right = -368.0
+offset_bottom = -87.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Exit Game
+"
+
+[node name="Dialogue" type="CanvasLayer" parent="."]
+
+[node name="Textbox" parent="Dialogue" instance=ExtResource("2_ijstf")]
+
+[connection signal="pressed" from="Result Screen/Next Level" to="." method="_on_next_level_pressed"]
+[connection signal="pressed" from="Result Screen/Replay Level" to="." method="_on_replay_level_pressed"]
+[connection signal="pressed" from="Result Screen/Exit Game" to="." method="_on_exit_game_pressed"]
