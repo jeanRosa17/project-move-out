@@ -1,0 +1,34 @@
+[gd_scene load_steps=8 format=3 uid="uid://crdtte7lvxl6g"]
+
+[ext_resource type="PackedScene" uid="uid://ce4x5g5hrvxce" path="res://Assets/Objects/Bathroom/Scenes/Bathtub.tscn" id="2_fohyl"]
+[ext_resource type="PackedScene" uid="uid://bbjaifsnvghre" path="res://Assets/Objects/Bathroom/Scenes/Bathtub_Side.tscn" id="3_uirbu"]
+[ext_resource type="PackedScene" uid="uid://bfp82m6exqyhy" path="res://Assets/Objects/Bathroom/Scenes/Sink.tscn" id="4_331kc"]
+[ext_resource type="PackedScene" uid="uid://dlj0g6t453wk6" path="res://Assets/Objects/Bathroom/Scenes/Sink_Side.tscn" id="5_iissi"]
+[ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Assets/Player/Scenes/Player.tscn" id="6_7ay7y"]
+[ext_resource type="PackedScene" uid="uid://c638p25j2md1l" path="res://Assets/Objects/Bathroom/Scenes/Toilet.tscn" id="6_8fxao"]
+[ext_resource type="PackedScene" uid="uid://b88hxixgay80f" path="res://Assets/Objects/Bathroom/Scenes/Toilet_Side.tscn" id="7_qghby"]
+
+[node name="Main" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("6_7ay7y")]
+position = Vector2(76, 72)
+safe_margin = 1.159
+
+[node name="Bathtub" parent="." instance=ExtResource("2_fohyl")]
+position = Vector2(16, 15)
+
+[node name="Bathtub_Side" parent="." instance=ExtResource("3_uirbu")]
+position = Vector2(78, 17)
+
+[node name="Sink" parent="." instance=ExtResource("4_331kc")]
+position = Vector2(157, 19)
+
+[node name="Sink_Side" parent="." instance=ExtResource("5_iissi")]
+position = Vector2(20, 126)
+
+[node name="Toilet" parent="." instance=ExtResource("6_8fxao")]
+position = Vector2(68, 119)
+
+[node name="Toilet_Side" parent="." instance=ExtResource("7_qghby")]
+position = Vector2(121, 106)
