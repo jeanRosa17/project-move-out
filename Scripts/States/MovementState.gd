@@ -9,6 +9,8 @@ extends State
 
 @onready var walkSound:Walk_Sound
 
+var lastFrame = 0
+
 
 
 func _ready() -> void:
@@ -78,3 +80,12 @@ func accelerate(direction:Vector2i, delta:float) -> void:
 		#var deceleration:float = self.physics.deceleration
 		#self.body.velocity.x = move_toward(self.body.velocity.x, 0, deceleration * delta)
 		#self.body.velocity.y = move_toward(self.body.velocity.y, 0, deceleration * delta)
+
+
+func _on_new_animated_sprite_2d_frame_changed() -> void:
+	var frame = self.getManager().view.frame
+	if (frame == 3 || frame == 7):
+		if (frame != lastFrame):
+			walkSound.play()
+	
+	lastFrame = self.getManager().view.frame
