@@ -1,8 +1,10 @@
 extends State
 
-@onready var hud: CanvasLayer = $"../../../../HUD"
-@onready var textbox: DialogueManager = $"../../../../HUD/Textbox"
+@onready var hud: CanvasLayer = $"../../../../../HUD"
+@onready var textbox: DialogueManager
 
+func _ready() -> void:
+	self.textbox = self.hud.get_node("Dialogue").get_child(0)
 
 ## Determines if the state can be entered. By default returns true.
 func canEnter() -> bool:

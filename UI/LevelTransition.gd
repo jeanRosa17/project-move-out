@@ -13,15 +13,14 @@ extends CanvasLayer
 @export var threeStarCompletion: float = 1
 
 
-
 func _on_next_level_pressed() -> void:
 	if (nextLevelName != null):
 		self.levelManager.changeSceneTo(nextLevelName)
 
-
 func _on_replay_level_pressed() -> void:
 	if (replayLevelName != null):
-		self.levelManager.changeSceneTo(replayLevelName)
+		self.levelManager.changeSceneTo(get_tree().edited_scene_root.filename)
 
 func _on_exit_game_pressed() -> void:
-	get_tree().quit()
+	#get_tree().quit()
+	self.levelManager.changeSceneTo("res://UI/TitleScreen.tscn")

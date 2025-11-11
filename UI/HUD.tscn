@@ -12,14 +12,17 @@ modulate = Color(1, 1, 1, 1)
 
 [node name="Result Screen" type="CanvasLayer" parent="."]
 
-[node name="Next Level" type="Button" parent="Result Screen"]
+[node name="CanvasLayer" type="CanvasLayer" parent="Result Screen"]
+visible = false
+
+[node name="Next Level" type="Button" parent="Result Screen/CanvasLayer"]
 offset_left = 275.0
 offset_top = 170.0
 offset_right = 383.0
 offset_bottom = 201.0
 text = "Next Level ->"
 
-[node name="Replay Level" type="Button" parent="Result Screen"]
+[node name="Replay Level" type="Button" parent="Result Screen/CanvasLayer"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -34,7 +37,7 @@ grow_vertical = 2
 text = "Replay
 "
 
-[node name="Exit Game" type="Button" parent="Result Screen"]
+[node name="Exit Game" type="Button" parent="Result Screen/CanvasLayer"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -49,10 +52,85 @@ grow_vertical = 2
 text = "Exit Game
 "
 
+[node name="Container" type="CenterContainer" parent="Result Screen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -22.5
+offset_right = -610.0
+offset_bottom = -349.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BoxContainer" type="BoxContainer" parent="Result Screen/Container"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+vertical = true
+
+[node name="Title" type="RichTextLabel" parent="Result Screen/Container/BoxContainer"]
+custom_minimum_size = Vector2(350, 52)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 36
+theme_override_font_sizes/bold_font_size = 48
+theme_override_font_sizes/bold_italics_font_size = 48
+theme_override_font_sizes/italics_font_size = 36
+theme_override_font_sizes/mono_font_size = 48
+bbcode_enabled = true
+text = "House Packed!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Creators" type="RichTextLabel" parent="Result Screen/Container/BoxContainer"]
+custom_minimum_size = Vector2(100, 20)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "Your score is:"
+horizontal_alignment = 1
+
+[node name="Creators2" type="RichTextLabel" parent="Result Screen/Container/BoxContainer"]
+custom_minimum_size = Vector2(100, 20)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "You earned..."
+horizontal_alignment = 1
+
+[node name="Star Box" type="Panel" parent="Result Screen/Container/BoxContainer"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+
+[node name="Panel" type="HFlowContainer" parent="Result Screen/Container/BoxContainer"]
+custom_minimum_size = Vector2(350, 71.105)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Play Tutorial A" type="Button" parent="Result Screen/Container/BoxContainer/Panel"]
+custom_minimum_size = Vector2(50, 10)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 8
+text = "Replay"
+
+[node name="Play Tutorial B" type="Button" parent="Result Screen/Container/BoxContainer/Panel"]
+custom_minimum_size = Vector2(50, 10)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 8
+text = "Next Level"
+
+[node name="Settings" type="Button" parent="Result Screen/Container/BoxContainer/Panel"]
+custom_minimum_size = Vector2(50, 10)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 8
+text = "Quit"
+
 [node name="Dialogue" type="CanvasLayer" parent="."]
+layer = 2
 
 [node name="Textbox" parent="Dialogue" instance=ExtResource("2_ijstf")]
 
-[connection signal="pressed" from="Result Screen/Next Level" to="." method="_on_next_level_pressed"]
-[connection signal="pressed" from="Result Screen/Replay Level" to="." method="_on_replay_level_pressed"]
-[connection signal="pressed" from="Result Screen/Exit Game" to="." method="_on_exit_game_pressed"]
+[connection signal="pressed" from="Result Screen/CanvasLayer/Next Level" to="." method="_on_next_level_pressed"]
+[connection signal="pressed" from="Result Screen/CanvasLayer/Replay Level" to="." method="_on_replay_level_pressed"]
+[connection signal="pressed" from="Result Screen/CanvasLayer/Exit Game" to="." method="_on_exit_game_pressed"]
