@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dlqlqw0fvr4wp" path="res://Assets/Objects/Carpets/carpet.png" id="2_pebci"]
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="3_3j8mk"]
 [ext_resource type="Texture2D" uid="uid://dytgdsg146xfm" path="res://Levels/Level Sketches/Bachelor_pad_test_level.png" id="4_odab6"]
-[ext_resource type="PackedScene" uid="uid://psh4s5sym8kd" path="res://UI/Textbox.tscn" id="5_s1e3h"]
+[ext_resource type="PackedScene" uid="uid://psh4s5sym8kd" path="res://UI/Scenes/Textbox.tscn" id="5_s1e3h"]
 [ext_resource type="Script" uid="uid://bmqryoobj44j2" path="res://Scripts/Dialogue/DialogueTag.gd" id="5_v8k2n"]
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Assets/Player/Scenes/Player.tscn" id="6_4y23e"]
 [ext_resource type="PackedScene" uid="uid://dkssiia1dmwor" path="res://Assets/Objects/Chairs/Scene/Wood_Chair_Side.tscn" id="6_u0unu"]
@@ -21,9 +21,10 @@
 [ext_resource type="AudioStream" uid="uid://ilbhsc2vwd1n" path="res://Assets/Audio/furniture 1.wav" id="15_v8k2n"]
 [ext_resource type="PackedScene" uid="uid://bfp82m6exqyhy" path="res://Assets/Objects/Bathroom/Scenes/Sink.tscn" id="16_heyvs"]
 [ext_resource type="PackedScene" uid="uid://b7qk52eapta2s" path="res://Assets/Objects/Dressers & Shelves/Scenes/Wardrobe.tscn" id="18_6pr51"]
+[ext_resource type="Resource" path="res://Narrative/couchTag.tres" id="18_c0tsg"]
 [ext_resource type="PackedScene" uid="uid://bujcbosiagjri" path="res://Assets/Objects/Dressers & Shelves/Scenes/Shelf.tscn" id="19_u0unu"]
 [ext_resource type="Texture2D" uid="uid://b0r0nkq7wuc8b" path="res://Assets/Untitled_Artwork.png" id="21_4jb3v"]
-[ext_resource type="PackedScene" uid="uid://cfmb3mmeue8au" path="res://UI/HUD.tscn" id="24_4alro"]
+[ext_resource type="PackedScene" uid="uid://cfmb3mmeue8au" path="res://UI/Scenes/HUD.tscn" id="24_4alro"]
 [ext_resource type="AudioStream" uid="uid://dy61bwuip8a27" path="res://Assets/Audio/lvl1.wav" id="25_4alro"]
 
 [sub_resource type="Resource" id="Resource_4alro"]
@@ -42,11 +43,6 @@ size = Vector2(150.5, 16.5)
 streams_count = 2
 stream_0/stream = ExtResource("14_rwqj1")
 stream_1/stream = ExtResource("15_v8k2n")
-
-[sub_resource type="Resource" id="Resource_v8k2n"]
-script = ExtResource("5_v8k2n")
-dialogueTag = &"null"
-metadata/_custom_type_script = "uid://bmqryoobj44j2"
 
 [node name="Main" type="Node2D"]
 y_sort_enabled = true
@@ -160,7 +156,7 @@ streams = [ExtResource("15_ckuxd")]
 
 [node name="Couch" parent="Y-Sorting" instance=ExtResource("12_4s3f5")]
 position = Vector2(45, 56)
-dialogueTag = SubResource("Resource_v8k2n")
+dialogueTag = ExtResource("18_c0tsg")
 
 [node name="Tub" parent="Y-Sorting" instance=ExtResource("15_5qxh5")]
 position = Vector2(353, 205)

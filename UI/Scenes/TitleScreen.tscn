@@ -1,18 +1,18 @@
 [gd_scene load_steps=3 format=3 uid="uid://rtrhhspwen6a"]
 
-[ext_resource type="Script" uid="uid://bhcre3gsfa5n3" path="res://UI/TitleScreen.gd" id="1_t0ndd"]
-[ext_resource type="PackedScene" uid="uid://b0xffv4xtxnru" path="res://UI/LevelManager.tscn" id="2_om36u"]
+[ext_resource type="Script" uid="uid://bhcre3gsfa5n3" path="res://UI/TitleScreen.gd" id="1_jpkfb"]
+[ext_resource type="PackedScene" uid="uid://b0xffv4xtxnru" path="res://UI/Scenes/FadeToBlackTransition.tscn" id="2_p1rv5"]
 
 [node name="TitleScreen" type="Node2D"]
-script = ExtResource("1_t0ndd")
+script = ExtResource("1_jpkfb")
 
 [node name="Container" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(0, 180)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -17.0
-offset_right = 333.0
-offset_bottom = 205.0
+offset_right = 320.0
+offset_bottom = 180.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -22,7 +22,7 @@ layout_mode = 2
 vertical = true
 
 [node name="Title" type="RichTextLabel" parent="Container/BoxContainer"]
-custom_minimum_size = Vector2(350, 52)
+custom_minimum_size = Vector2(320, 50)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 36
 theme_override_font_sizes/bold_font_size = 48
@@ -35,75 +35,46 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Creators" type="RichTextLabel" parent="Container/BoxContainer"]
-custom_minimum_size = Vector2(100, 36)
+custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
-text = "Created by Ashton, Joel, Juhyun, 
-Luna, Thomas"
+text = "Created by Ashton, Joel, Juhyun, Luna, & Thomas"
 horizontal_alignment = 1
 
 [node name="HSeparator" type="HSeparator" parent="Container/BoxContainer"]
+custom_minimum_size = Vector2(0, 28)
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="Container/BoxContainer"]
-custom_minimum_size = Vector2(200, 100)
+[node name="Panel" type="PanelContainer" parent="Container/BoxContainer"]
+custom_minimum_size = Vector2(200, 70)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="Play Tutorial A" type="Button" parent="Container/BoxContainer/Panel"]
-custom_minimum_size = Vector2(50, 10)
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -60.0
-offset_top = 5.0
-offset_right = 60.0
-offset_bottom = 25.0
-grow_horizontal = 2
-size_flags_horizontal = 4
+custom_minimum_size = Vector2(50, 20)
+layout_mode = 2
+size_flags_vertical = 0
 theme_override_font_sizes/font_size = 8
 text = "Play Tutorial A"
 
 [node name="Play Tutorial B" type="Button" parent="Container/BoxContainer/Panel"]
-custom_minimum_size = Vector2(50, 10)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -60.0
-offset_top = -22.0
-offset_right = 60.0
-offset_bottom = -2.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
+custom_minimum_size = Vector2(50, 20)
+layout_mode = 2
+size_flags_vertical = 4
 theme_override_font_sizes/font_size = 8
 text = "Play Tutorial B"
 
 [node name="Settings" type="Button" parent="Container/BoxContainer/Panel"]
 custom_minimum_size = Vector2(50, 10)
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -91.0
-offset_top = -49.0
-offset_right = 92.0
-offset_bottom = -29.0
-grow_horizontal = 2
-grow_vertical = 0
-size_flags_horizontal = 4
+layout_mode = 2
+size_flags_vertical = 8
 theme_override_font_sizes/font_size = 8
 text = "Settings (coming soon)"
 
-[node name="LevelManager" parent="." instance=ExtResource("2_om36u")]
+[node name="LevelManager" parent="." instance=ExtResource("2_p1rv5")]
+visible = false
 
 [connection signal="pressed" from="Container/BoxContainer/Panel/Play Tutorial A" to="." method="_on_play_tutorial_a_pressed"]
 [connection signal="pressed" from="Container/BoxContainer/Panel/Play Tutorial B" to="." method="_on_play_tutorial_b_pressed"]

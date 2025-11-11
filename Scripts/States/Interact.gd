@@ -1,6 +1,6 @@
 extends State
 
-@onready var hud: CanvasLayer = $"../../../../../HUD"
+@onready var hud: Node = $"../../../../HUD"
 @onready var textbox: DialogueManager
 
 func _ready() -> void:
@@ -15,10 +15,9 @@ func canEnter() -> bool:
 ## The first method called when the state is transitioned into
 func enter() -> void:
 	if (self.getManager().furniture == null or self.getManager().furniture.dialogueTag == null):
-		self.textbox.setDialogueTo(load("res://Scripts/Dialogue/nullDialogue.tres"))
+		self.hud.setDialogueTo(load("res://Scripts/Dialogue/nullDialogue.tres"))
 	else:
-		self.textbox.setDialogueTo(self.getManager().furniture.dialogueTag)
-	self.hud.visible = true
+		self.hud.setDialogueTo(self.getManager().furniture.dialogueTag)
 	
 	
 ## Determines if the state can be exited. By default returns true.
@@ -28,12 +27,12 @@ func canExit() -> bool:
 ## The last method called when the state is transitioned out of
 func exit() -> void:
 	pass
-	#self.canvas_layer.visible = false
-	
+
 ## Constantly checks for input from the user and changes state.
 func update(_delta:float) -> void:
-	if (self.textbox.currentTagFinished):
-		self.exit()
+	#if (self.textbox.currentTagFinished):
+		#self.exit()
+	pass
 
 ## This method runs every _physics_process() frame of the StateManager.
 func physicsUpdate(_delta:float) -> void:

@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=4 uid="uid://dfdxpvv4xu5wv"]
 
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="1_pqq6j"]
-[ext_resource type="PackedScene" uid="uid://psh4s5sym8kd" path="res://UI/Textbox.tscn" id="3_13a2q"]
+[ext_resource type="PackedScene" uid="uid://psh4s5sym8kd" path="res://UI/Scenes/Textbox.tscn" id="3_13a2q"]
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Assets/Player/Scenes/Player.tscn" id="7_h7qxw"]
 [ext_resource type="PackedScene" uid="uid://d1etsnjfgvtu8" path="res://Scripts/FurnitureAudio.tscn" id="7_u3oty"]
 [ext_resource type="AudioStream" uid="uid://ilbhsc2vwd1n" path="res://Assets/Audio/furniture 1.wav" id="8_mqyje"]
