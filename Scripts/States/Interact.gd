@@ -4,8 +4,9 @@ extends State
 @onready var textbox: DialogueManager
 
 func _ready() -> void:
-	self.textbox = self.hud.get_node("Dialogue").get_child(0)
-
+	#self.textbox = self.hud.get_node("Dialogue").get_child(0)
+	pass
+	
 ## Determines if the state can be entered. By default returns true.
 func canEnter() -> bool:
 	#return self.getManager().furniture != null

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b0xffv4xtxnru"]
 
-[ext_resource type="Script" uid="uid://dq8giawgjifnx" path="res://Scripts/SceneManager.gd" id="1_5gji3"]
+[ext_resource type="Script" uid="uid://dq8giawgjifnx" path="res://Scripts/LevelManager.gd" id="1_5gji3"]
 
 [node name="LevelManager" type="ColorRect"]
 modulate = Color(7.659314e-06, 0, 0, 1)

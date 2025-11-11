@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqt367stu26c2"]
+[gd_scene load_steps=5 format=3 uid="uid://cqt367stu26c2"]
 
 [ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_kle06"]
 [ext_resource type="Texture2D" uid="uid://d3eu5wmu40kyf" path="res://Assets/Objects/Table Items/Pots & Vases-Sheet.png" id="2_gifpp"]
@@ -6,7 +6,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
 size = Vector2(14, 17)
 
-[node name="Furniture" type="RigidBody2D" groups=["Furniture"]]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gifpp"]
+size = Vector2(56, 68)
+
+[node name="Pot" type="RigidBody2D" groups=["Furniture"]]
 y_sort_enabled = true
 collision_layer = 2
 collision_mask = 7
@@ -24,3 +27,12 @@ region_rect = Rect2(29, 28, 14, 15)
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7)
 shape = SubResource("RectangleShape2D_xnri0")
+
+[node name="AreaDetector" type="Area2D" parent="." groups=["Furniture"]]
+position = Vector2(0, -1)
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_gifpp")

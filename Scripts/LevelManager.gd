@@ -9,8 +9,8 @@ func _ready() -> void:
 	level_manager.modulate.a = 1.0
 	tween = null
 	tween = get_tree().create_tween()
-	#potentially add a delay here to make it transition a bit smoothly between tweens
-	tween.tween_property(self, "modulate:a", 0.0, duration * 1.5).from(1.0)
+	tween.tween_property(self, "modulate:a", 0.0, duration * 1.5).from(1.0).set_delay(1)
+
 
 
 func changeSceneTo(filePath:StringName) -> void:
