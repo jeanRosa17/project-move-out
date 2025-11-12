@@ -21,7 +21,7 @@
 [ext_resource type="AudioStream" uid="uid://ilbhsc2vwd1n" path="res://Assets/Audio/furniture 1.wav" id="15_v8k2n"]
 [ext_resource type="PackedScene" uid="uid://bfp82m6exqyhy" path="res://Assets/Objects/Bathroom/Scenes/Sink.tscn" id="16_heyvs"]
 [ext_resource type="PackedScene" uid="uid://b7qk52eapta2s" path="res://Assets/Objects/Dressers & Shelves/Scenes/Wardrobe.tscn" id="18_6pr51"]
-[ext_resource type="Resource" path="res://Narrative/couchTag.tres" id="18_c0tsg"]
+[ext_resource type="Resource" uid="uid://c6dysgimf0cue" path="res://Narrative/couchTag.tres" id="18_c0tsg"]
 [ext_resource type="PackedScene" uid="uid://bujcbosiagjri" path="res://Assets/Objects/Dressers & Shelves/Scenes/Shelf.tscn" id="19_u0unu"]
 [ext_resource type="Texture2D" uid="uid://b0r0nkq7wuc8b" path="res://Assets/Untitled_Artwork.png" id="21_4jb3v"]
 [ext_resource type="PackedScene" uid="uid://cfmb3mmeue8au" path="res://UI/Scenes/HUD.tscn" id="24_4alro"]
@@ -29,6 +29,7 @@
 
 [sub_resource type="Resource" id="Resource_4alro"]
 script = ExtResource("5_v8k2n")
+dialogueScriptPath = &"res://Narrative/SampleText.txt"
 dialogueTag = &"null"
 metadata/_custom_type_script = "uid://bmqryoobj44j2"
 

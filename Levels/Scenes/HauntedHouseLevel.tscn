@@ -1,0 +1,161 @@
+[gd_scene load_steps=22 format=3 uid="uid://cxowcytqevm5r"]
+
+[ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="1_ieyoq"]
+[ext_resource type="Texture2D" uid="uid://dytgdsg146xfm" path="res://Levels/Level Sketches/Bachelor_pad_test_level.png" id="2_8pl7b"]
+[ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Assets/Player/Scenes/Player.tscn" id="3_0cx80"]
+[ext_resource type="PackedScene" uid="uid://ip4pm1ex6klr" path="res://Levels/Scenes/Garage.tscn" id="4_wn1jt"]
+[ext_resource type="PackedScene" uid="uid://dkssiia1dmwor" path="res://Assets/Objects/Chairs/Scene/Wood_Chair_Side.tscn" id="5_of3nc"]
+[ext_resource type="PackedScene" uid="uid://d26wukook25xb" path="res://Assets/Objects/Dressers & Shelves/Scenes/Table.tscn" id="6_5buyg"]
+[ext_resource type="PackedScene" uid="uid://ce4x5g5hrvxce" path="res://Assets/Objects/Bathroom/Scenes/Bathtub.tscn" id="7_n6jrh"]
+[ext_resource type="PackedScene" uid="uid://bfp82m6exqyhy" path="res://Assets/Objects/Bathroom/Scenes/Sink.tscn" id="8_vuwhr"]
+[ext_resource type="PackedScene" uid="uid://c638p25j2md1l" path="res://Assets/Objects/Bathroom/Scenes/Toilet.tscn" id="9_ytwfh"]
+[ext_resource type="PackedScene" uid="uid://diko086yswlr0" path="res://Assets/Objects/Beds/Scene/Twin_Bed_Side.tscn" id="10_2p47e"]
+[ext_resource type="PackedScene" uid="uid://bujcbosiagjri" path="res://Assets/Objects/Dressers & Shelves/Scenes/Shelf.tscn" id="11_2ew7u"]
+[ext_resource type="PackedScene" uid="uid://dpyl8x5qojmng" path="res://Assets/Objects/Table Items/Scenes/TV.tscn" id="12_jmsxy"]
+[ext_resource type="PackedScene" uid="uid://cqt367stu26c2" path="res://Assets/Objects/Table Items/Scenes/Pot.tscn" id="13_pe3pk"]
+[ext_resource type="AudioStream" uid="uid://ixm05apa3fsb" path="res://Assets/Audio/furniture2 [game capstone].wav" id="14_5cbu3"]
+[ext_resource type="AudioStream" uid="uid://ilbhsc2vwd1n" path="res://Assets/Audio/furniture 1.wav" id="15_fas05"]
+[ext_resource type="Script" uid="uid://cv8mdnilcdg0d" path="res://Levels/Tests/FurnitureAudio.gd" id="16_4ynr2"]
+[ext_resource type="AudioStream" uid="uid://co27kfjleoj27" path="res://Assets/Audio/furniture [game capstone].wav" id="17_da7rw"]
+[ext_resource type="AudioStream" uid="uid://dy61bwuip8a27" path="res://Assets/Audio/lvl1.wav" id="18_yb2hw"]
+[ext_resource type="PackedScene" uid="uid://cfmb3mmeue8au" path="res://UI/Scenes/HUD.tscn" id="19_iglh1"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iqcmb"]
+normal = Vector2(1.79515e-06, 1)
+distance = -3.99999
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_b3xeb"]
+streams_count = 2
+stream_0/stream = ExtResource("14_5cbu3")
+stream_1/stream = ExtResource("15_fas05")
+
+[node name="Main" type="Node2D"]
+y_sort_enabled = true
+
+[node name="World Border" type="StaticBody2D" parent="." groups=["Immovable Object", "World Bounds"]]
+collision_layer = 4
+
+[node name="CollisionShape2D(North)" type="CollisionShape2D" parent="World Border" groups=["World Bounds"]]
+position = Vector2(0, 2.5)
+shape = SubResource("WorldBoundaryShape2D_iqcmb")
+one_way_collision_margin = 0.0
+
+[node name="CollisionShape2D(West)" type="CollisionShape2D" parent="World Border" groups=["World Bounds"]]
+position = Vector2(2.5, 0)
+rotation = 4.71239
+shape = SubResource("WorldBoundaryShape2D_iqcmb")
+
+[node name="CollisionShape2D(South)" type="CollisionShape2D" parent="World Border" groups=["World Bounds"]]
+position = Vector2(376, 412)
+rotation = -3.14159
+shape = SubResource("WorldBoundaryShape2D_iqcmb")
+
+[node name="CollisionShape2D(East)" type="CollisionShape2D" parent="World Border" groups=["World Bounds"]]
+position = Vector2(372.5, 250)
+rotation = -4.71239
+shape = SubResource("WorldBoundaryShape2D_iqcmb")
+
+[node name="Environment" type="Node2D" parent="."]
+
+[node name="Walls" type="TileMapLayer" parent="Environment"]
+tile_set = ExtResource("1_ieyoq")
+
+[node name="Floor" type="TileMapLayer" parent="Environment"]
+z_index = -1
+tile_set = ExtResource("1_ieyoq")
+
+[node name="Darkness" type="TileMapLayer" parent="Environment"]
+z_index = -2
+tile_set = ExtResource("1_ieyoq")
+
+[node name="Support Beams" type="TileMapLayer" parent="Environment" groups=["World Bounds"]]
+z_index = 1
+tile_set = ExtResource("1_ieyoq")
+
+[node name="Y-Sorting" type="Node2D" parent="Environment"]
+y_sort_enabled = true
+
+[node name="Background" type="Sprite2D" parent="Environment/Y-Sorting"]
+visible = false
+position = Vector2(147.75, 125)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_8pl7b")
+
+[node name="Player" parent="Environment/Y-Sorting" instance=ExtResource("3_0cx80")]
+position = Vector2(129, 327)
+safe_margin = 1.159
+
+[node name="Camera2D2" type="Camera2D" parent="Environment/Y-Sorting/Player"]
+position = Vector2(1, 0)
+limit_left = 0
+limit_top = 0
+limit_right = 385
+limit_bottom = 415
+
+[node name="Garage" parent="Environment/Y-Sorting" instance=ExtResource("4_wn1jt")]
+position = Vector2(145, 317)
+
+[node name="Wood_Chair_Side4" parent="Environment/Y-Sorting" instance=ExtResource("5_of3nc")]
+position = Vector2(112, 130)
+
+[node name="Wood_Chair_Side5" parent="Environment/Y-Sorting" instance=ExtResource("5_of3nc")]
+position = Vector2(113, 100)
+
+[node name="Wood_Chair_Side6" parent="Environment/Y-Sorting" instance=ExtResource("5_of3nc")]
+position = Vector2(112, 159)
+
+[node name="Wood_Chair_Side3" parent="Environment/Y-Sorting" instance=ExtResource("5_of3nc")]
+position = Vector2(45, 124)
+
+[node name="Wood_Chair_Side" parent="Environment/Y-Sorting" instance=ExtResource("5_of3nc")]
+position = Vector2(46, 94)
+
+[node name="Wood_Chair_Side2" parent="Environment/Y-Sorting" instance=ExtResource("5_of3nc")]
+position = Vector2(45, 153)
+
+[node name="Table" parent="Environment/Y-Sorting" instance=ExtResource("6_5buyg")]
+position = Vector2(76, 134)
+scale = Vector2(0.973214, 1.01571)
+
+[node name="Bathtub" parent="Environment/Y-Sorting" instance=ExtResource("7_n6jrh")]
+position = Vector2(23, 230)
+
+[node name="Sink" parent="Environment/Y-Sorting" instance=ExtResource("8_vuwhr")]
+position = Vector2(58, 225)
+
+[node name="Toilet" parent="Environment/Y-Sorting" instance=ExtResource("9_ytwfh")]
+position = Vector2(90, 221)
+
+[node name="Twin_Bed_Side" parent="Environment/Y-Sorting" instance=ExtResource("10_2p47e")]
+position = Vector2(255, 18)
+
+[node name="Shelf" parent="Environment/Y-Sorting" instance=ExtResource("11_2ew7u")]
+position = Vector2(215, 18)
+
+[node name="Couch" parent="Environment/Y-Sorting" instance=ExtResource("12_jmsxy")]
+position = Vector2(228, 48)
+
+[node name="Pot" parent="Environment/Y-Sorting" instance=ExtResource("13_pe3pk")]
+position = Vector2(261, 57)
+
+[node name="Bathtub2" parent="Environment/Y-Sorting" instance=ExtResource("7_n6jrh")]
+position = Vector2(358, 25)
+
+[node name="Sink2" parent="Environment/Y-Sorting" instance=ExtResource("8_vuwhr")]
+position = Vector2(324, 23)
+
+[node name="Toilet2" parent="Environment/Y-Sorting" instance=ExtResource("9_ytwfh")]
+position = Vector2(297, 23)
+
+[node name="Push_Pull Audio" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_b3xeb")
+bus = &"Furniture"
+script = ExtResource("16_4ynr2")
+streams = [ExtResource("17_da7rw")]
+
+[node name="Level Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_yb2hw")
+autoplay = true
+
+[node name="HUD" parent="." instance=ExtResource("19_iglh1")]
+visible = false
