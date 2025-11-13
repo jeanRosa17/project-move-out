@@ -4,5 +4,6 @@
 
 [resource]
 script = ExtResource("1_ukgbs")
+dialogueScriptPath = &"res://Narrative/SampleText.txt"
 dialogueTag = &"null"
 metadata/_custom_type_script = "uid://bmqryoobj44j2"
