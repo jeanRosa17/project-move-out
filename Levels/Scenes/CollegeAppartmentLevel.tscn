@@ -30,6 +30,7 @@
 
 [sub_resource type="Resource" id="Resource_4alro"]
 script = ExtResource("5_vke6w")
+dialogueScriptPath = &"res://Narrative/SampleText.txt"
 dialogueTag = &"null"
 metadata/_custom_type_script = "uid://bmqryoobj44j2"
 
@@ -161,7 +162,7 @@ position = Vector2(321, 235)
 
 [node name="Garage" parent="Y-Sorting" instance=ExtResource("12_qdg8e")]
 position = Vector2(100, 300)
-rotation = 1.5707964
+rotation = 1.5708
 
 [node name="Push_Pull Audio" type="AudioStreamPlayer2D" parent="Y-Sorting"]
 stream = SubResource("AudioStreamRandomizer_b3xeb")

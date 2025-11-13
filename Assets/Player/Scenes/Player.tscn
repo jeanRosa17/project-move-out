@@ -1039,7 +1039,7 @@ script = ExtResource("25_5cp4r")
 
 [node name="Walk Sound" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_77jqo")
-volume_db = -9.647
+volume_db = -7.11
 pitch_scale = 0.94
 bus = &"Walking"
 script = ExtResource("28_m53rv")

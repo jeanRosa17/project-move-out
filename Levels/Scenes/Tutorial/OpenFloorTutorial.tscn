@@ -201,6 +201,7 @@ tile_map_data = PackedByteArray("AAArABIABQACAAIAAAArABQABQACAAIAAAArABUABQACAAI
 tile_set = ExtResource("3_3j8mk")
 
 [node name="HUD" parent="." instance=ExtResource("24_4alro")]
+unique_name_in_owner = true
 
 [node name="Level Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("25_4alro")
