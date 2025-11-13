@@ -12,6 +12,7 @@ script = ExtResource("1_t2p4a")
 modulate = Color(1, 1, 1, 1)
 
 [node name="Level Results" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("1_4n7mi")
 
 [node name="Container" type="CenterContainer" parent="Level Results"]
