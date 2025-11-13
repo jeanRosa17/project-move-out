@@ -64,4 +64,4 @@ func handleInteract(_delta:float) -> void:
 	if (Input.is_action_just_pressed("Interact")):
 		if ((self.manager.getStateName() == "Idle") and (not self.manager.wasPreviousState("Lift"))):
 			self.manager.changeState("Interact")
-				
+			

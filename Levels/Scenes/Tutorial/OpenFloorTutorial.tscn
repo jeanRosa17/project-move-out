@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
 [gd_scene load_steps=31 format=4 uid="uid://xdjv122pxc6c"]
-=======
-[gd_scene load_steps=32 format=4 uid="uid://xdjv122pxc6c"]
->>>>>>> Stashed changes
 
 [ext_resource type="Texture2D" uid="uid://dlqlqw0fvr4wp" path="res://Assets/Objects/Carpets/carpet.png" id="2_pebci"]
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="3_3j8mk"]
@@ -30,8 +26,6 @@
 [ext_resource type="Texture2D" uid="uid://b0r0nkq7wuc8b" path="res://Assets/Untitled_Artwork.png" id="21_4jb3v"]
 [ext_resource type="PackedScene" uid="uid://cfmb3mmeue8au" path="res://UI/Scenes/HUD.tscn" id="24_4alro"]
 [ext_resource type="AudioStream" uid="uid://dy61bwuip8a27" path="res://Assets/Audio/lvl1.wav" id="25_4alro"]
-[ext_resource type="PackedScene" uid="uid://mcsayjbeibp3" path="res://dialogueTrigger.tscn" id="25_c0tsg"]
-[ext_resource type="Resource" uid="uid://8oqkr01obmdh" path="res://Narrative/start.tres" id="26_c0tsg"]
 
 [sub_resource type="Resource" id="Resource_4alro"]
 script = ExtResource("5_v8k2n")
@@ -211,7 +205,3 @@ tile_set = ExtResource("3_3j8mk")
 [node name="Level Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("25_4alro")
 autoplay = true
-
-[node name="dialogueTrigger" parent="." instance=ExtResource("25_c0tsg")]
-position = Vector2(136, 256)
-tag = ExtResource("26_c0tsg")

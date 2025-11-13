@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="DialogueTag" load_steps=2 format=3 uid="uid://8oqkr01obmdh"]
-
-[ext_resource type="Script" uid="uid://bmqryoobj44j2" path="res://Scripts/Dialogue/DialogueTag.gd" id="1_j7pis"]
-
-[resource]
-script = ExtResource("1_j7pis")
-dialogueScriptPath = &"res://Narrative/SampleText.txt"
-dialogueTag = &"start"
-metadata/_custom_type_script = "uid://bmqryoobj44j2"
