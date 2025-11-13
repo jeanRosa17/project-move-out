@@ -74,7 +74,6 @@ theme_override_font_sizes/font_size = 8
 text = "Settings (coming soon)"
 
 [node name="LevelManager" parent="." instance=ExtResource("2_p1rv5")]
-visible = false
 
 [connection signal="pressed" from="Container/BoxContainer/Panel/Play Tutorial A" to="." method="_on_play_tutorial_a_pressed"]
 [connection signal="pressed" from="Container/BoxContainer/Panel/Play Tutorial B" to="." method="_on_play_tutorial_b_pressed"]

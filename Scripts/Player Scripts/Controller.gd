@@ -17,6 +17,19 @@ func _process(delta:float) -> void:
 	self.handleLift(delta)
 	#self.handlePushPull(delta)
 	self.handleInteract(delta)
+	
+	
+	var prefix:String = "move"
+	
+	if (self.manager.wasPreviousState("Lift")): prefix = "movelift"
+	if (self.manager.wasPreviousState("Push") || self.manager.view.animation.split()[0] == "push"): 
+		prefix = "push"
+
+	if (Input.is_action_pressed("MoveLeft") or Input.is_action_pressed("MoveRight")):
+		self.manager.view.play(prefix + " side")
+	else:
+		if (Input.is_action_pressed("MoveUp")): self.manager.view.play(prefix + " up")
+		elif (Input.is_action_pressed("MoveDown")): self.manager.view.play(prefix + " down")
 
 ## Handles the "Move" set of Inputs and moves the character accordingly using
 ## its MovementComponent.

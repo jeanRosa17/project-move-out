@@ -29,18 +29,7 @@ func canEnter() -> bool:
 
 ## The first method called when the state is transitioned into
 func enter() -> void:
-	var prefix:String = "move"
-	
-	if (self.getManager().wasPreviousState("Lift")): prefix = "movelift"
-	if (self.getManager().wasPreviousState("Push") || self.getManager().view.animation.split()[0] == "push"): 
-		prefix = "push"
-		
-	if ((is_equal_approx(self.body.velocity.y, 0.0))
-		and (not (is_equal_approx(self.body.velocity.x, 0.0)))): 
-		self.getManager().view.play(prefix + " side")
-	else:
-		if (self.body.velocity.y < 0): self.getManager().view.play(prefix + " up")
-		elif (self.body.velocity.y > 0): self.getManager().view.play(prefix + " down")
+	pass
 
 ## The last method called when the state is transitioned out of
 func exit() -> void:
@@ -51,7 +40,7 @@ func exit() -> void:
 	else:
 		self.getManager().view.play("idle " + self.getManager().view.animation.split(" ")[1].to_lower()) 
 
-## Updates the animation's flipping state
+## Updates the animation's flipping stateww
 func update(_delta:float) -> void:
 	
 	self.getManager().view.flip_h = self.getManager().direction.x < 0
