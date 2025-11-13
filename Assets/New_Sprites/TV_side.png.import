@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvam324b2bolu"
-path="res://.godot/imported/LevelLayoutMysticMover.png-3f35b8f49c5d0fa058ab6ba8665563dd.ctex"
+uid="uid://bxylxb3tnr42q"
+path="res://.godot/imported/TV_side.png-c21bfe45d222920a6f77ae5f6c62b8a5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/Level Sketches/LevelLayoutMysticMover.png"
-dest_files=["res://.godot/imported/LevelLayoutMysticMover.png-3f35b8f49c5d0fa058ab6ba8665563dd.ctex"]
+source_file="res://Assets/New_Sprites/TV_side.png"
+dest_files=["res://.godot/imported/TV_side.png-c21bfe45d222920a6f77ae5f6c62b8a5.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://d26wukook25xb"]
 
-[ext_resource type="Texture2D" uid="uid://bh1tj50gjc856" path="res://Assets/furniture/wooden_table_1.png" id="1_3hms5"]
+[ext_resource type="Texture2D" uid="uid://bh1tj50gjc856" path="res://Assets/Objects/Tables/wooden_table_1.png" id="1_3hms5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
 size = Vector2(26, 29)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvam324b2bolu"
-path="res://.godot/imported/LevelLayoutMysticMover.png-3f35b8f49c5d0fa058ab6ba8665563dd.ctex"
+uid="uid://di1m0qwtuva2e"
+path="res://.godot/imported/sink_frontt.png-e7691ae10d3b5d0067000db92357d84a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/Level Sketches/LevelLayoutMysticMover.png"
-dest_files=["res://.godot/imported/LevelLayoutMysticMover.png-3f35b8f49c5d0fa058ab6ba8665563dd.ctex"]
+source_file="res://Assets/New_Sprites/sink_frontt.png"
+dest_files=["res://.godot/imported/sink_frontt.png-e7691ae10d3b5d0067000db92357d84a.ctex"]
 
 [params]
 
