@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://mcsayjbeibp3"]
+
+[ext_resource type="Script" uid="uid://1ugs6cpgg5xy" path="res://Levels/Scenes/Tutorial/trigger_sensor.gd" id="1_vho40"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fqpg0"]
+size = Vector2(20, 1.8)
+
+[node name="TriggerSensor" type="Area2D"]
+collision_layer = 16
+script = ExtResource("1_vho40")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5.96046e-08, 2.27374e-13)
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_fqpg0")
+one_way_collision_margin = 0.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
