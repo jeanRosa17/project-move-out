@@ -12,6 +12,7 @@ class_name Furniture
 @export var canPull:bool
 @export var dialogueTag:DialogueTag = preload("res://Scripts/Dialogue/nullDialogue.tres")
 @onready var sprite_2d: Sprite2D = $Sprite2D
+var isGhost: bool = false
 
 
 var isLifting: bool = false
@@ -23,8 +24,20 @@ var player: CharacterBody2D
 var distanceFromPlayer:float
 
 var objects: Array[Node2D] = []
+var ghostTween = null
 
 @export var liftPosition:Vector2
+
+func _process(delta: float) -> void:
+	
+	
+	if (self.isGhost):
+		self.ghostTween = self.get_tree().create_tween()
+		self.ghostTween.tween_property(self, "modulate:a", 0, 1.0).from(1.0)
+		self.ghostTween.set_delay(0.2)
+		self.ghostTween.tween_property(self, "modulate:a", 1.0, 1.0).from(0.0)
+		self.ghostTween.set_loops()
+
 
 func _physics_process(_delta: float) -> void:
 	if (isPushing):
@@ -83,7 +96,8 @@ func enterLift(body:CharacterBody2D) -> void:
 	area.collision_layer = 0
 	body.find_child("Detector").get_child(0).add_child(ghost)
 	
-	ghost.name = "Ghost"
+	ghost.isGhost = true
+	
 	
 	
 
