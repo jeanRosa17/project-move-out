@@ -23,3 +23,7 @@ func stop_sound() -> void:
 func put_down_noise() -> void:
 	var player:AudioStreamPlayer2D = self.get_child(0)
 	player.play()
+	
+func pick_up_noise() -> void:
+	var player:AudioStreamPlayer2D = self.get_child(1)
+	player.play()

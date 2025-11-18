@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://uacgji4vcg37"]
+[gd_scene load_steps=8 format=3 uid="uid://uacgji4vcg37"]
 
 [ext_resource type="AudioStream" uid="uid://ixm05apa3fsb" path="res://Assets/Audio/furniture2 [game capstone].wav" id="1_550bs"]
 [ext_resource type="AudioStream" uid="uid://ilbhsc2vwd1n" path="res://Assets/Audio/furniture 1.wav" id="2_0cgvr"]
 [ext_resource type="Script" uid="uid://cv8mdnilcdg0d" path="res://Levels/Tests/FurnitureAudio.gd" id="3_jnu4o"]
 [ext_resource type="AudioStream" uid="uid://co27kfjleoj27" path="res://Assets/Audio/furniture [game capstone].wav" id="4_eewuc"]
 [ext_resource type="AudioStream" uid="uid://bsbx8bv14ram7" path="res://Assets/Audio/put down noise.wav" id="5_0cgvr"]
+[ext_resource type="AudioStream" uid="uid://cwfmi17ld40fy" path="res://Assets/Audio/pick up noise.wav" id="6_jnu4o"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_b3xeb"]
 streams_count = 2
@@ -19,3 +20,8 @@ streams = [ExtResource("4_eewuc")]
 
 [node name="Put Down Noise" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_0cgvr")
+
+[node name="Pick Up noise" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_jnu4o")
+volume_db = -6.657
+bus = &"Furniture"

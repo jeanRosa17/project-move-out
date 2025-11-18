@@ -84,6 +84,8 @@ func enterLift(body:CharacterBody2D) -> void:
 	self.position = body.position + self.liftPosition
 	self.reparent(body)
 	self.isLifting = true
+	
+
 
 	self.get_node("Collision").disabled = true
 	
@@ -98,7 +100,8 @@ func enterLift(body:CharacterBody2D) -> void:
 	
 	#ghost.isGhost = true
 	
-	
+		#play pickup sound
+	audioPlayer.pick_up_noise()
 	
 
 ## Returns this Furniture back to not being held
