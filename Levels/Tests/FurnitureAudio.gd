@@ -19,3 +19,7 @@ func push_sound(furniture:Furniture) -> void:
 
 func stop_sound() -> void:
 	stop()
+	
+func put_down_noise() -> void:
+	var player:AudioStreamPlayer2D = self.get_child(0)
+	player.play()

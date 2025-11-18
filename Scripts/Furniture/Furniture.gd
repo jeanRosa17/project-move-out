@@ -96,7 +96,7 @@ func enterLift(body:CharacterBody2D) -> void:
 	area.collision_layer = 0
 	body.find_child("Detector").get_child(0).add_child(ghost)
 	
-	ghost.isGhost = true
+	#ghost.isGhost = true
 	
 	
 	
@@ -124,6 +124,7 @@ func exitLift() -> void:
 			if (bodies[i].is_in_group("Furniture") || bodies[i].is_in_group("Immovable Object")):
 				canDrop = false
 	
+	# put down object
 	if (canDrop):
 		ghost.queue_free()
 		body.remove_child(self)
@@ -134,6 +135,7 @@ func exitLift() -> void:
 		self.collision_mask = 7;
 		self.isLifting = false
 		self.add_to_group("Furniture")
+		audioPlayer.put_down_noise()
 	
 	
 func enterPush(body: CharacterBody2D) -> void:

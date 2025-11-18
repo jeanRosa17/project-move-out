@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djbgvclxv2ggx"
-path="res://.godot/imported/Support Columns.png-fb4859f4e5743ba4941731b3875d0c1c.ctex"
+uid="uid://e2xxuul8sgd7"
+path="res://.godot/imported/Strong_John_walk_side.png-839aecfb0ab55907c4fbd15f029b6970.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/tiles/Support Columns.png"
-dest_files=["res://.godot/imported/Support Columns.png-fb4859f4e5743ba4941731b3875d0c1c.ctex"]
+source_file="res://Assets/Player/Spritesheets v2/Strong_John_walk_side.png"
+dest_files=["res://.godot/imported/Strong_John_walk_side.png-839aecfb0ab55907c4fbd15f029b6970.ctex"]
 
 [params]
 
