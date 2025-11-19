@@ -1,11 +1,22 @@
-[gd_scene format=3 uid="uid://dotpp2gym0w7k"]
+[gd_scene load_steps=3 format=3 uid="uid://dotpp2gym0w7k"]
+
+[ext_resource type="Script" uid="uid://bwgoahn5brpfe" path="res://particles/walking_particle.gd" id="1_g3rbx"]
+[ext_resource type="Texture2D" uid="uid://bcaw1p2bcw5rb" path="res://particles/dust_particle.png" id="1_wf2aj"]
 
 [node name="Walking_particle" type="Node2D"]
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-lifetime = 0.2
+amount = 4
+texture = ExtResource("1_wf2aj")
+lifetime = 0.6
+speed_scale = 0.6
+spread = 30.0
+gravity = Vector2(0, 0)
 initial_velocity_min = 50.0
 initial_velocity_max = 100.0
+radial_accel_min = -50.0
+radial_accel_max = 50.0
 angle_max = 50.0
 scale_amount_max = 3.0
 hue_variation_max = 1.0
+script = ExtResource("1_g3rbx")
