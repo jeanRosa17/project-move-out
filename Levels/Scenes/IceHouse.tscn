@@ -17,7 +17,7 @@
 [ext_resource type="Script" uid="uid://cv8mdnilcdg0d" path="res://Levels/Tests/FurnitureAudio.gd" id="15_3f2cd"]
 [ext_resource type="AudioStream" uid="uid://co27kfjleoj27" path="res://Assets/Audio/furniture [game capstone].wav" id="16_rt88h"]
 [ext_resource type="Script" uid="uid://cyso0emuh7ori" path="res://Levels/Scenes/ice_areas.gd" id="17_s7dve"]
-[ext_resource type="AudioStream" uid="uid://bvwdohcnm2b0t" path="res://Assets/Audio/ice slide noise.wav" id="18_3f2cd"]
+[ext_resource type="AudioStream" uid="uid://0q4m8jstuh5j" path="res://Assets/Audio/ice slide noise.wav" id="18_3f2cd"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hedka"]
 normal = Vector2(1.79515e-06, 1)

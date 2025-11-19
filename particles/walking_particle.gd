@@ -28,6 +28,6 @@ func _process(delta: float) -> void:
 		# vel.angle() is direction of movement, +PI flips it
 		global_rotation = vel.angle() + PI
 	else:
-		print("no")
+		#print("no")
 		# Player is standing still → no dust
 		emitting = false
