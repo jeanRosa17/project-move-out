@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://yaa8cqy3awu1"]
+[gd_scene load_steps=25 format=4 uid="uid://yaa8cqy3awu1"]
 
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Assets/Player/Scenes/Player.tscn" id="1_siuop"]
 [ext_resource type="PackedScene" uid="uid://ip4pm1ex6klr" path="res://Levels/Scenes/Garage.tscn" id="2_b36xl"]
@@ -16,6 +16,8 @@
 [ext_resource type="AudioStream" uid="uid://ilbhsc2vwd1n" path="res://Assets/Audio/furniture 1.wav" id="14_s7dve"]
 [ext_resource type="Script" uid="uid://cv8mdnilcdg0d" path="res://Levels/Tests/FurnitureAudio.gd" id="15_3f2cd"]
 [ext_resource type="AudioStream" uid="uid://co27kfjleoj27" path="res://Assets/Audio/furniture [game capstone].wav" id="16_rt88h"]
+[ext_resource type="Script" uid="uid://cyso0emuh7ori" path="res://Levels/Scenes/ice_areas.gd" id="17_s7dve"]
+[ext_resource type="AudioStream" uid="uid://bvwdohcnm2b0t" path="res://Assets/Audio/ice slide noise.wav" id="18_3f2cd"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hedka"]
 normal = Vector2(1.79515e-06, 1)
@@ -26,12 +28,24 @@ streams_count = 2
 stream_0/stream = ExtResource("13_2fgwj")
 stream_1/stream = ExtResource("14_s7dve")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2fgwj"]
+size = Vector2(96, 45.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7dve"]
+size = Vector2(61, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3f2cd"]
+size = Vector2(88.75, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rt88h"]
+size = Vector2(32, 98)
+
 [node name="Main" type="Node2D"]
 
-[node name="Body" parent="." instance=ExtResource("1_siuop")]
-position = Vector2(47, -78)
+[node name="Player" parent="." instance=ExtResource("1_siuop")]
+position = Vector2(47, 309)
 
-[node name="Camera2D" type="Camera2D" parent="Body"]
+[node name="Camera2D" type="Camera2D" parent="Player"]
 
 [node name="Garage" parent="." instance=ExtResource("2_b36xl")]
 position = Vector2(143, 419)
@@ -125,3 +139,31 @@ stream = SubResource("AudioStreamRandomizer_452e0")
 bus = &"Furniture"
 script = ExtResource("15_3f2cd")
 streams = [ExtResource("16_rt88h")]
+
+[node name="Ice Areas" type="Area2D" parent="." node_paths=PackedStringArray("soundPlayer")]
+audio_bus_name = &"Furniture"
+script = ExtResource("17_s7dve")
+soundPlayer = NodePath("AudioStreamPlayer2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ice Areas"]
+position = Vector2(190, 169)
+shape = SubResource("RectangleShape2D_2fgwj")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Ice Areas"]
+position = Vector2(192.5, 289)
+shape = SubResource("RectangleShape2D_s7dve")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Ice Areas"]
+position = Vector2(192.625, 79)
+shape = SubResource("RectangleShape2D_3f2cd")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Ice Areas"]
+position = Vector2(191, -2)
+shape = SubResource("RectangleShape2D_rt88h")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Ice Areas"]
+stream = ExtResource("18_3f2cd")
+volume_db = -10.654
+
+[connection signal="body_entered" from="Ice Areas" to="Ice Areas" method="_on_body_entered"]
+[connection signal="body_exited" from="Ice Areas" to="Ice Areas" method="_on_body_exited"]

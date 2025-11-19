@@ -4,6 +4,8 @@ extends CharacterBody2D
 @onready var manager:StateManager = $StateManager
 @onready var view:AnimatedSprite2D = $NewAnimatedSprite2D
 
+var canControl:bool = true
+
 
 func _ready() -> void:
 	self.manager.start()
@@ -13,10 +15,11 @@ func _process(delta:float) -> void:
 	if (manager == null):
 		Exception.new("Manager for Controller can't be null.")
 	
-	self.handleMovement(delta)
-	self.handleLift(delta)
-	#self.handlePushPull(delta)
-	self.handleInteract(delta)
+	if (canControl):
+		self.handleMovement(delta)
+		self.handleLift(delta)
+		#self.handlePushPull(delta)
+		self.handleInteract(delta)
 	
 	
 	var prefix:String = "move"
@@ -78,3 +81,11 @@ func handleInteract(_delta:float) -> void:
 		if ((self.manager.getStateName() == "Idle") and (not self.manager.wasPreviousState("Lift"))):
 			self.manager.changeState("Interact")
 				
+
+
+func offControls() -> void:
+	canControl = false
+
+
+func onControls() -> void:
+	canControl = true
