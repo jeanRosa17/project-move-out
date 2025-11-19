@@ -1,38 +1,25 @@
-[gd_scene load_steps=32 format=4 uid="uid://u3kf42enbqyl"]
+[gd_scene load_steps=24 format=4 uid="uid://u3kf42enbqyl"]
 
 [ext_resource type="Texture2D" uid="uid://dlqlqw0fvr4wp" path="res://Assets/Objects/Carpets/carpet.png" id="1_ykasp"]
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="2_otbpy"]
-[ext_resource type="Texture2D" uid="uid://dytgdsg146xfm" path="res://Levels/Level Sketches/Bachelor_pad_test_level.png" id="3_4j0od"]
 [ext_resource type="Texture2D" uid="uid://dvam324b2bolu" path="res://Levels/Level Sketches/LevelLayoutMysticMover.png" id="3_6cfkj"]
-[ext_resource type="PackedScene" uid="uid://cqt367stu26c2" path="res://Assets/Objects/Table Items/Scenes/Pot.tscn" id="4_0yeua"]
-[ext_resource type="Script" uid="uid://bmqryoobj44j2" path="res://Scripts/Dialogue/DialogueTag.gd" id="5_vke6w"]
 [ext_resource type="PackedScene" uid="uid://psh4s5sym8kd" path="res://UI/Scenes/Textbox.tscn" id="6_ussp6"]
 [ext_resource type="PackedScene" uid="uid://dkssiia1dmwor" path="res://Assets/Objects/Chairs/Scene/Wood_Chair_Side.tscn" id="7_ysqfs"]
 [ext_resource type="PackedScene" uid="uid://d26wukook25xb" path="res://Assets/Objects/Dressers & Shelves/Scenes/Table.tscn" id="8_ru6yg"]
 [ext_resource type="PackedScene" uid="uid://dpyl8x5qojmng" path="res://Assets/Objects/Table Items/Scenes/TV.tscn" id="9_2amxq"]
-[ext_resource type="PackedScene" uid="uid://dq5dgctxnghmb" path="res://Assets/Objects/Beds/Scene/Double_Bed.tscn" id="10_u5ea3"]
-[ext_resource type="PackedScene" uid="uid://c638p25j2md1l" path="res://Assets/Objects/Bathroom/Scenes/Toilet.tscn" id="11_ect80"]
 [ext_resource type="PackedScene" uid="uid://ip4pm1ex6klr" path="res://Levels/Scenes/Garage.tscn" id="12_qdg8e"]
 [ext_resource type="AudioStream" uid="uid://ixm05apa3fsb" path="res://Assets/Audio/furniture2 [game capstone].wav" id="13_d231f"]
 [ext_resource type="AudioStream" uid="uid://ilbhsc2vwd1n" path="res://Assets/Audio/furniture 1.wav" id="14_nus4x"]
 [ext_resource type="Script" uid="uid://cv8mdnilcdg0d" path="res://Levels/Tests/FurnitureAudio.gd" id="15_gfx3e"]
 [ext_resource type="AudioStream" uid="uid://co27kfjleoj27" path="res://Assets/Audio/furniture [game capstone].wav" id="16_bhxys"]
+[ext_resource type="PackedScene" uid="uid://diko086yswlr0" path="res://Assets/Objects/Beds/Scene/Twin_Bed_Side.tscn" id="17_kyk2i"]
 [ext_resource type="PackedScene" uid="uid://nomguund5j25" path="res://Assets/Objects/Couches/Scenes/Couch.tscn" id="17_x82x2"]
-[ext_resource type="Resource" uid="uid://c6dysgimf0cue" path="res://Narrative/couchTag.tres" id="18_qvtjr"]
-[ext_resource type="PackedScene" uid="uid://ce4x5g5hrvxce" path="res://Assets/Objects/Bathroom/Scenes/Bathtub.tscn" id="19_83f02"]
-[ext_resource type="PackedScene" uid="uid://bfp82m6exqyhy" path="res://Assets/Objects/Bathroom/Scenes/Sink.tscn" id="20_jtetr"]
 [ext_resource type="PackedScene" uid="uid://b7qk52eapta2s" path="res://Assets/Objects/Dressers & Shelves/Scenes/Wardrobe.tscn" id="21_lr55i"]
 [ext_resource type="PackedScene" uid="uid://bujcbosiagjri" path="res://Assets/Objects/Dressers & Shelves/Scenes/Shelf.tscn" id="22_0p0vu"]
 [ext_resource type="Texture2D" uid="uid://b0r0nkq7wuc8b" path="res://Assets/Untitled_Artwork.png" id="23_qnbnb"]
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Assets/Player/Scenes/Player.tscn" id="24_xqx0e"]
 [ext_resource type="PackedScene" uid="uid://cfmb3mmeue8au" path="res://UI/Scenes/HUD.tscn" id="25_3xhsd"]
 [ext_resource type="AudioStream" uid="uid://dy61bwuip8a27" path="res://Assets/Audio/lvl1.wav" id="26_aituv"]
-
-[sub_resource type="Resource" id="Resource_4alro"]
-script = ExtResource("5_vke6w")
-dialogueScriptPath = &"res://Narrative/SampleText.txt"
-dialogueTag = &"null"
-metadata/_custom_type_script = "uid://bmqryoobj44j2"
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iqcmb"]
 normal = Vector2(1.79515e-06, 1)
@@ -88,42 +75,11 @@ follow_viewport_enabled = true
 [node name="Y-Sorting" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="Background" type="Sprite2D" parent="Y-Sorting"]
-visible = false
-position = Vector2(147.75, 125)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_4j0od")
-
-[node name="Pot" parent="Y-Sorting" instance=ExtResource("4_0yeua")]
-visible = false
-position = Vector2(132, 176)
-lock_rotation = true
-dialogueTag = SubResource("Resource_4alro")
-
 [node name="CanvasLayer" type="CanvasLayer" parent="Y-Sorting"]
 visible = false
 follow_viewport_scale = 3.0
 
 [node name="Textbox" parent="Y-Sorting/CanvasLayer" instance=ExtResource("6_ussp6")]
-
-[node name="Chair" parent="Y-Sorting" instance=ExtResource("7_ysqfs")]
-visible = false
-position = Vector2(335, 122)
-
-[node name="Table" parent="Y-Sorting" instance=ExtResource("8_ru6yg")]
-visible = false
-position = Vector2(356, 125)
-scale = Vector2(0.973214, 1.01571)
-
-[node name="TV" parent="Y-Sorting" instance=ExtResource("9_2amxq")]
-visible = false
-position = Vector2(114, 62)
-scale = Vector2(0.973214, 1.01571)
-
-[node name="Bed" parent="Y-Sorting" instance=ExtResource("10_u5ea3")]
-visible = false
-position = Vector2(316, 66)
-collision_layer = 4
 
 [node name="World Border" type="StaticBody2D" parent="Y-Sorting" groups=["Immovable Object", "World Bounds"]]
 collision_layer = 4
@@ -156,10 +112,6 @@ visible = false
 position = Vector2(296.25, 24)
 shape = SubResource("RectangleShape2D_jeepb")
 
-[node name="Toilet2" parent="Y-Sorting" instance=ExtResource("11_ect80")]
-visible = false
-position = Vector2(321, 235)
-
 [node name="Garage" parent="Y-Sorting" instance=ExtResource("12_qdg8e")]
 position = Vector2(100, 300)
 rotation = 1.5708
@@ -170,29 +122,8 @@ bus = &"Furniture"
 script = ExtResource("15_gfx3e")
 streams = [ExtResource("16_bhxys")]
 
-[node name="Couch" parent="Y-Sorting" instance=ExtResource("17_x82x2")]
-visible = false
-position = Vector2(45, 56)
-dialogueTag = ExtResource("18_qvtjr")
-
-[node name="Tub" parent="Y-Sorting" instance=ExtResource("19_83f02")]
-visible = false
-position = Vector2(353, 205)
-
-[node name="Sink" parent="Y-Sorting" instance=ExtResource("20_jtetr")]
-visible = false
-position = Vector2(265, 191)
-
-[node name="Wardrobe" parent="Y-Sorting" instance=ExtResource("21_lr55i")]
-visible = false
-position = Vector2(260, 50)
-
-[node name="Shelf" parent="Y-Sorting" instance=ExtResource("22_0p0vu")]
-visible = false
-position = Vector2(191, 103)
-disable_mode = 2
-
 [node name="Sprite2D" type="Sprite2D" parent="Y-Sorting"]
+visible = false
 position = Vector2(245, 87)
 scale = Vector2(0.04, 0.04)
 texture = ExtResource("23_qnbnb")
@@ -211,15 +142,13 @@ limit_right = 385
 limit_bottom = 415
 
 [node name="Sink and Stove" type="TileMapLayer" parent="Y-Sorting"]
-visible = false
 z_index = 1
-tile_map_data = PackedByteArray("AAABAAsAAgAEAAAAAAABAAwAAgAEAAEAAAABAAgAAgAFAAAAAAABAAkAAgAFAAEAAAACAAgAAgAGAAAAAAACAAkAAgAGAAEAAAA=")
+tile_map_data = PackedByteArray("AAACAAkAAgAGAAEAAAAXAPz/AgAEAAEAAFAYAPz/AgAEAAAAAFAaAPz/AgAFAAAAAFAZAPz/AgAFAAEAAFAaAP3/AgAGAAAAAFAZAP3/AgAGAAEAAFA=")
 tile_set = ExtResource("2_otbpy")
 
 [node name="Counter" type="TileMapLayer" parent="Y-Sorting"]
-visible = false
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAArABIABQACAAIAAAArABQABQACAAIAAAArABUABQACAAIAAAAzAAkABQACAAIAAAAFAAgAAgADAAAAAAAFAAkAAgADAAEAAAAFAAoAAgADAAIAAAAEAAgAAgABAAAAAAAEAAkAAgABAAEAAAAEAAoAAgABAAIAAAABAAgAAgAAAAAAAAABAAkAAgAAAAEAAAABAAoAAgAAAAEAAAABAAsAAgAAAAEAAAABAAwAAgAAAAEAAAABAA0AAgABAAEAAAABAA4AAgABAAIAAAACAA0AAgACAAAAAAADAA0AAgACAAAAAAAEAA0AAgACAAAAAAAFAA0AAgADAAAAAAAFAA4AAgADAAIAAAACAA4AAgACAAIAAAADAA4AAgACAAIAAAAEAA4AAgACAAIAAAA=")
+tile_map_data = PackedByteArray("AAArABIABQACAAIAAAArABQABQACAAIAAAArABUABQACAAIAAAAzAAkABQACAAIAAAAUAPz/AgABAAAAAAAUAP//AgAAAAIAAAAUAP3/AgAAAAEAAAAUAP7/AgAAAAEAAAAVAPz/AgACAAAAAAAWAPz/AgACAAAAAAAXAPz/AgACAAAAAAAYAPz/AgAAAAEAAAAYAP3/AgACAAIAAAAXAP3/AgACAAIAAAAWAP3/AgACAAIAAAAVAP3/AgACAAIAAAA=")
 tile_set = ExtResource("2_otbpy")
 
 [node name="HUD" parent="." instance=ExtResource("25_3xhsd")]
@@ -228,3 +157,102 @@ visible = false
 [node name="Level Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("26_aituv")
 autoplay = true
+
+[node name="Fire Room" type="Node2D" parent="."]
+position = Vector2(1310, 425)
+rotation = 3.1415927
+scale = Vector2(2, -2)
+
+[node name="Fire Bed" parent="Fire Room" instance=ExtResource("17_kyk2i")]
+position = Vector2(0, -153.5)
+
+[node name="Table" parent="Fire Room" instance=ExtResource("8_ru6yg")]
+position = Vector2(20.5, -181)
+rotation = 3.1415927
+scale = Vector2(0.5, -0.5)
+
+[node name="Wardrobe" parent="Fire Room" instance=ExtResource("21_lr55i")]
+position = Vector2(-2.5, -189)
+rotation = 3.1415927
+scale = Vector2(0.5, -0.5)
+
+[node name="Shelf" parent="Fire Room" instance=ExtResource("22_0p0vu")]
+position = Vector2(37, -193)
+rotation = 3.1415927
+scale = Vector2(0.5, -0.5)
+
+[node name="Electric Room" type="Node2D" parent="."]
+
+[node name="Electric Bed" parent="Electric Room" instance=ExtResource("17_kyk2i")]
+position = Vector2(1310, 285)
+rotation = 3.1415927
+scale = Vector2(2, -2)
+
+[node name="Wardrobe" parent="Electric Room" instance=ExtResource("21_lr55i")]
+position = Vector2(1317, 188)
+
+[node name="Table" parent="Electric Room" instance=ExtResource("8_ru6yg")]
+position = Vector2(1233, 184)
+
+[node name="Shelf" parent="Electric Room" instance=ExtResource("22_0p0vu")]
+position = Vector2(1269, 182)
+
+[node name="Nature Room" type="Node2D" parent="."]
+
+[node name="Earth Bed" parent="Nature Room" instance=ExtResource("17_kyk2i")]
+position = Vector2(1310, 425)
+rotation = 3.1415927
+scale = Vector2(2, -2)
+
+[node name="Wardrobe" parent="Nature Room" instance=ExtResource("21_lr55i")]
+position = Vector2(1096, 348)
+
+[node name="Table" parent="Nature Room" instance=ExtResource("8_ru6yg")]
+position = Vector2(1144, 358)
+
+[node name="Shelf" parent="Nature Room" instance=ExtResource("22_0p0vu")]
+position = Vector2(1182, 346)
+
+[node name="Living Room" type="Node2D" parent="."]
+position = Vector2(383, 14)
+
+[node name="Couch" parent="Living Room" instance=ExtResource("17_x82x2")]
+position = Vector2(285, -71)
+
+[node name="TV" parent="Living Room" instance=ExtResource("9_2amxq")]
+position = Vector2(287, 12)
+
+[node name="Kitchen Area" type="Node2D" parent="."]
+position = Vector2(383, 14)
+
+[node name="Table2" parent="Kitchen Area" instance=ExtResource("8_ru6yg")]
+
+[node name="Wood_Chair_Side" parent="Kitchen Area" instance=ExtResource("7_ysqfs")]
+position = Vector2(-26, 7)
+
+[node name="Wood_Chair_Side2" parent="Kitchen Area" instance=ExtResource("7_ysqfs")]
+position = Vector2(-25, -18)
+
+[node name="Wood_Chair_Side3" parent="Kitchen Area" instance=ExtResource("7_ysqfs")]
+position = Vector2(29, -19)
+scale = Vector2(-1, 1)
+
+[node name="Wood_Chair_Side4" parent="Kitchen Area" instance=ExtResource("7_ysqfs")]
+position = Vector2(28, 3)
+scale = Vector2(-1, 1)
+
+[node name="Ice Room" type="Node2D" parent="."]
+
+[node name="Ice Bed" parent="Ice Room" instance=ExtResource("17_kyk2i")]
+position = Vector2(1310, 575)
+rotation = 3.1415927
+scale = Vector2(2, -2)
+
+[node name="Wardrobe2" parent="Ice Room" instance=ExtResource("21_lr55i")]
+position = Vector2(1096, 494)
+
+[node name="Table" parent="Ice Room" instance=ExtResource("8_ru6yg")]
+position = Vector2(1220, 504)
+
+[node name="Shelf" parent="Ice Room" instance=ExtResource("22_0p0vu")]
+position = Vector2(1142, 488)
