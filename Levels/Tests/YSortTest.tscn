@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bfp82m6exqyhy" path="res://Assets/Objects/Bathroom/Scenes/Sink.tscn" id="4_331kc"]
 [ext_resource type="PackedScene" uid="uid://dlj0g6t453wk6" path="res://Assets/Objects/Bathroom/Scenes/Sink_Side.tscn" id="5_iissi"]
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Assets/Player/Scenes/Player.tscn" id="6_7ay7y"]
-[ext_resource type="PackedScene" uid="uid://c638p25j2md1l" path="res://Assets/Objects/Bathroom/Scenes/Toilet.tscn" id="6_8fxao"]
+[ext_resource type="PackedScene" uid="uid://c638p25j2md1l" path="res://Assets/Objects/Bathroom/Scenes/Toilet_Back.tscn" id="6_8fxao"]
 [ext_resource type="PackedScene" uid="uid://b88hxixgay80f" path="res://Assets/Objects/Bathroom/Scenes/Toilet_Side.tscn" id="7_qghby"]
 
 [node name="Main" type="Node2D"]

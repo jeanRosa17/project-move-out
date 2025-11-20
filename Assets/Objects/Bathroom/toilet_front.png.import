@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://di1m0qwtuva2e"
-path="res://.godot/imported/sink_frontt.png-e7691ae10d3b5d0067000db92357d84a.ctex"
+uid="uid://46r25swb0bbf"
+path="res://.godot/imported/toilet_front.png-09592d2ce9f68280d60eaac2f4b1a605.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/New_Sprites/sink_frontt.png"
-dest_files=["res://.godot/imported/sink_frontt.png-e7691ae10d3b5d0067000db92357d84a.ctex"]
+source_file="res://Assets/Objects/Bathroom/toilet_front.png"
+dest_files=["res://.godot/imported/toilet_front.png-09592d2ce9f68280d60eaac2f4b1a605.ctex"]
 
 [params]
 

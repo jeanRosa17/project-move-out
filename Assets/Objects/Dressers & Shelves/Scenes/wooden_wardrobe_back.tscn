@@ -1,38 +1,39 @@
-[gd_scene load_steps=5 format=3 uid="uid://b88hxixgay80f"]
+[gd_scene load_steps=5 format=3 uid="uid://l8cjl5djbbev"]
 
-[ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_rv4fd"]
-[ext_resource type="Texture2D" uid="uid://cg1mt63xhegpq" path="res://Assets/Objects/Bathroom/toilet_side_2.png" id="2_rv4fd"]
+[ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_x3wdw"]
+[ext_resource type="Texture2D" uid="uid://d72w6tylojhu" path="res://Assets/Objects/Dressers & Shelves/wardrobe_2.png" id="2_lvnue"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
-size = Vector2(24, 16)
+size = Vector2(44, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
-size = Vector2(28, 28)
+size = Vector2(56, 68)
 
-[node name="Toilet_Side" type="RigidBody2D" groups=["Furniture"]]
+[node name="Wardrobe" type="RigidBody2D" groups=["Furniture"]]
 collision_layer = 2
 collision_mask = 7
 gravity_scale = 0.0
 can_sleep = false
 lock_rotation = true
-script = ExtResource("1_rv4fd")
+script = ExtResource("1_x3wdw")
 canPush = true
 canPull = true
 metadata/_custom_type_script = "uid://c2vh27coguldq"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -4)
-texture = ExtResource("2_rv4fd")
+texture = ExtResource("2_lvnue")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_xnri0")
 
 [node name="AreaDetector" type="Area2D" parent="." groups=["Furniture"]]
-position = Vector2(0, -4)
+position = Vector2(0, -1)
 collision_layer = 2
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector"]
+position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_ardoa")
 
 [connection signal="body_shape_entered" from="AreaDetector" to="." method="_on_area_detector_body_shape_entered"]
