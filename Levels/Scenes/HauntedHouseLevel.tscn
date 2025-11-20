@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cxowcytqevm5r"]
+[gd_scene load_steps=26 format=3 uid="uid://cxowcytqevm5r"]
 
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="1_ieyoq"]
 [ext_resource type="Texture2D" uid="uid://dytgdsg146xfm" path="res://Levels/Level Sketches/Bachelor_pad_test_level.png" id="2_8pl7b"]
@@ -19,6 +19,10 @@
 [ext_resource type="AudioStream" uid="uid://co27kfjleoj27" path="res://Assets/Audio/furniture [game capstone].wav" id="17_da7rw"]
 [ext_resource type="AudioStream" uid="uid://dy61bwuip8a27" path="res://Assets/Audio/lvl1.wav" id="18_yb2hw"]
 [ext_resource type="PackedScene" uid="uid://cfmb3mmeue8au" path="res://UI/Scenes/HUD.tscn" id="19_iglh1"]
+[ext_resource type="PackedScene" uid="uid://3y6qm1obo8js" path="res://Assets/Objects/Tables/Scenes/TV_and_desk_side.tscn" id="20_of3nc"]
+[ext_resource type="PackedScene" uid="uid://dupq6esd0r2ps" path="res://Assets/Objects/Tables/Scenes/white_bedside_table.tscn" id="21_5buyg"]
+[ext_resource type="PackedScene" uid="uid://cuho4egtuhmvt" path="res://Assets/Objects/Tables/Scenes/TV_and_desk_front.tscn" id="22_n6jrh"]
+[ext_resource type="PackedScene" uid="uid://bcmy8dq2ef0uc" path="res://Assets/Objects/Tables/Scenes/long_desk_front.tscn" id="23_vuwhr"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iqcmb"]
 normal = Vector2(1.79515e-06, 1)
@@ -146,6 +150,18 @@ position = Vector2(324, 23)
 
 [node name="Toilet2" parent="Environment/Y-Sorting" instance=ExtResource("9_ytwfh")]
 position = Vector2(297, 23)
+
+[node name="TV_and_desk_side" parent="Environment/Y-Sorting" instance=ExtResource("20_of3nc")]
+position = Vector2(157, 127)
+
+[node name="white_bedside_table" parent="Environment/Y-Sorting" instance=ExtResource("21_5buyg")]
+position = Vector2(278, 135)
+
+[node name="TV_and_desk_front" parent="Environment/Y-Sorting" instance=ExtResource("22_n6jrh")]
+position = Vector2(226, 102)
+
+[node name="long_desk_front" parent="Environment/Y-Sorting" instance=ExtResource("23_vuwhr")]
+position = Vector2(237, 146)
 
 [node name="Push_Pull Audio" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_b3xeb")

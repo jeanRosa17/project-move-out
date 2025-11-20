@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bujcbosiagjri"]
 
 [ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_5i6bh"]
-[ext_resource type="Texture2D" uid="uid://doxedqhi3ox7p" path="res://Assets/furniture/wooden_shelf_1.png" id="2_5i6bh"]
+[ext_resource type="Texture2D" uid="uid://doxedqhi3ox7p" path="res://Assets/Objects/Dressers & Shelves/wooden_shelf_1.png" id="2_5i6bh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
 size = Vector2(30, 35)
@@ -9,7 +9,7 @@ size = Vector2(30, 35)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
 size = Vector2(32, 40)
 
-[node name="Shelf" type="RigidBody2D" groups=["Furniture"]]
+[node name="wooden_shelf_front" type="RigidBody2D" groups=["Furniture"]]
 collision_layer = 2
 collision_mask = 7
 gravity_scale = 0.0
@@ -18,8 +18,6 @@ lock_rotation = true
 script = ExtResource("1_5i6bh")
 canPush = true
 canPull = true
-furnitureLength = 30.0
-furnitureHeight = 40.0
 metadata/_custom_type_script = "uid://c2vh27coguldq"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

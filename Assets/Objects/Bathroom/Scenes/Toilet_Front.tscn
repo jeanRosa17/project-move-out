@@ -9,7 +9,7 @@ size = Vector2(14, 23)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
 size = Vector2(20, 28)
 
-[node name="Toilet" type="RigidBody2D" groups=["Furniture"]]
+[node name="Toilet_Front" type="RigidBody2D" groups=["Furniture"]]
 collision_layer = 2
 collision_mask = 7
 gravity_scale = 0.0

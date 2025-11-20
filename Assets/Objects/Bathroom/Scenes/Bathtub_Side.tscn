@@ -25,7 +25,7 @@ texture = ExtResource("2_1fd1c")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, 6)
-rotation = -1.5707964
+rotation = -1.5708
 shape = SubResource("RectangleShape2D_xnri0")
 
 [node name="AreaDetector" type="Area2D" parent="." groups=["Furniture"]]

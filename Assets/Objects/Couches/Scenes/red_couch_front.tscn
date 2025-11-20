@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://nomguund5j25"]
 
 [ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_jcvgw"]
-[ext_resource type="Texture2D" uid="uid://xlgq8bh8mvly" path="res://Assets/furniture/red_couch_2.png" id="2_jcvgw"]
+[ext_resource type="Texture2D" uid="uid://xlgq8bh8mvly" path="res://Assets/Objects/Couches/red_couch_2.png" id="2_jcvgw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
 size = Vector2(44, 20)
@@ -9,7 +9,7 @@ size = Vector2(44, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
 size = Vector2(54, 38)
 
-[node name="Couch" type="RigidBody2D" groups=["Furniture"]]
+[node name="red_couch_front" type="RigidBody2D" groups=["Furniture"]]
 collision_layer = 2
 collision_mask = 7
 gravity_scale = 0.0

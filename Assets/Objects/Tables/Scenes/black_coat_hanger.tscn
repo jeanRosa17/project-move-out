@@ -1,39 +1,41 @@
-[gd_scene load_steps=5 format=3 uid="uid://brgy71yxn4aj2"]
+[gd_scene load_steps=5 format=3 uid="uid://c86vjg6ru1gnn"]
 
-[ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_e7fv8"]
-[ext_resource type="Texture2D" uid="uid://cr0s7j5niis74" path="res://Assets/Objects/Chairs/orange_chair_back.png" id="2_e7fv8"]
+[ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_jl0e2"]
+[ext_resource type="Texture2D" uid="uid://bkpa536bxbb70" path="res://Assets/Objects/black_coat_hanger_1.png" id="2_jl0e2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
-size = Vector2(16, 16)
+size = Vector2(12, 12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
-size = Vector2(24, 28)
+size = Vector2(16, 38)
 
-[node name="Orange_Chair_Back" type="RigidBody2D" groups=["Furniture"]]
+[node name="black_coat_hanger" type="RigidBody2D" groups=["Furniture"]]
 collision_layer = 2
 collision_mask = 7
 gravity_scale = 0.0
 can_sleep = false
 lock_rotation = true
-script = ExtResource("1_e7fv8")
+script = ExtResource("1_jl0e2")
+canLift = true
 canPush = true
 canPull = true
 metadata/_custom_type_script = "uid://c2vh27coguldq"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_e7fv8")
-flip_h = true
+texture = ExtResource("2_jl0e2")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4)
+position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_xnri0")
 
 [node name="AreaDetector" type="Area2D" parent="." groups=["Furniture"]]
+position = Vector2(0, -1)
 collision_layer = 2
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector"]
-position = Vector2(0, 4)
+visible = false
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_ardoa")
 
 [connection signal="body_shape_entered" from="AreaDetector" to="." method="_on_area_detector_body_shape_entered"]
