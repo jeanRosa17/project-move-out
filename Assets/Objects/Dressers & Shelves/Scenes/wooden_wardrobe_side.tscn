@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://dmkupkplc1pu"]
 
 [ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_luo25"]
-[ext_resource type="Texture2D" uid="uid://d72w6tylojhu" path="res://Assets/Objects/Dressers & Shelves/wardrobe_2.png" id="2_cfjsk"]
+[ext_resource type="Texture2D" uid="uid://bbrra3i2smrsc" path="res://Assets/Objects/Dressers & Shelves/wardrobe_3.png" id="2_luo25"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
-size = Vector2(44, 48)
+size = Vector2(30, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
-size = Vector2(56, 68)
+size = Vector2(38, 66)
 
 [node name="Wardrobe" type="RigidBody2D" groups=["Furniture"]]
 collision_layer = 2
@@ -21,7 +21,7 @@ canPull = true
 metadata/_custom_type_script = "uid://c2vh27coguldq"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_cfjsk")
+texture = ExtResource("2_luo25")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1)
@@ -33,7 +33,7 @@ collision_layer = 2
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector"]
-position = Vector2(0, 2)
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_ardoa")
 
 [connection signal="body_shape_entered" from="AreaDetector" to="." method="_on_area_detector_body_shape_entered"]

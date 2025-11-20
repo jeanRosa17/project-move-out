@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://l8cjl5djbbev"]
 
 [ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_x3wdw"]
-[ext_resource type="Texture2D" uid="uid://d72w6tylojhu" path="res://Assets/Objects/Dressers & Shelves/wardrobe_2.png" id="2_lvnue"]
+[ext_resource type="Texture2D" uid="uid://cdby44iet1bt4" path="res://Assets/Objects/Dressers & Shelves/wardrobe_1.png" id="2_x3wdw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
 size = Vector2(44, 48)
@@ -21,7 +21,7 @@ canPull = true
 metadata/_custom_type_script = "uid://c2vh27coguldq"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_lvnue")
+texture = ExtResource("2_x3wdw")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1)

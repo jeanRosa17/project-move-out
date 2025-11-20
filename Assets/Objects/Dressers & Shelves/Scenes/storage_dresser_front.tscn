@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://cjingj81fm3hm"]
 
 [ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_rmnye"]
-[ext_resource type="Texture2D" uid="uid://doxedqhi3ox7p" path="res://Assets/Objects/Dressers & Shelves/wooden_shelf_1.png" id="2_tvybd"]
+[ext_resource type="Texture2D" uid="uid://dlpy2hrdysfqq" path="res://Assets/Objects/Dressers & Shelves/storage_dresser_front.png" id="2_rmnye"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
-size = Vector2(30, 35)
+size = Vector2(30, 15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
-size = Vector2(32, 40)
+size = Vector2(36, 41)
 
 [node name="Shelf" type="RigidBody2D" groups=["Furniture"]]
 collision_layer = 2
@@ -18,15 +18,13 @@ lock_rotation = true
 script = ExtResource("1_rmnye")
 canPush = true
 canPull = true
-furnitureLength = 30.0
-furnitureHeight = 40.0
 metadata/_custom_type_script = "uid://c2vh27coguldq"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_tvybd")
+texture = ExtResource("2_rmnye")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2.5)
+position = Vector2(0, 13)
 shape = SubResource("RectangleShape2D_xnri0")
 
 [node name="AreaDetector" type="Area2D" parent="." groups=["Furniture"]]
@@ -34,6 +32,7 @@ collision_layer = 2
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector"]
+position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_ardoa")
 
 [connection signal="body_shape_entered" from="AreaDetector" to="." method="_on_area_detector_body_shape_entered"]
