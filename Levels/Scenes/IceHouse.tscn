@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://yaa8cqy3awu1"]
+[gd_scene load_steps=26 format=4 uid="uid://yaa8cqy3awu1"]
 
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Assets/Player/Scenes/Player.tscn" id="1_siuop"]
 [ext_resource type="PackedScene" uid="uid://ip4pm1ex6klr" path="res://Levels/Scenes/Garage.tscn" id="2_b36xl"]
@@ -18,6 +18,7 @@
 [ext_resource type="AudioStream" uid="uid://co27kfjleoj27" path="res://Assets/Audio/furniture [game capstone].wav" id="16_rt88h"]
 [ext_resource type="Script" uid="uid://cyso0emuh7ori" path="res://Levels/Scenes/ice_areas.gd" id="17_s7dve"]
 [ext_resource type="AudioStream" uid="uid://0q4m8jstuh5j" path="res://Assets/Audio/ice slide noise.wav" id="18_3f2cd"]
+[ext_resource type="PackedScene" uid="uid://cew0q8r43cndi" path="res://Assets/Objects/Beds/Scene/Double_BedROTATE.tscn" id="19_rt88h"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hedka"]
 normal = Vector2(1.79515e-06, 1)
@@ -164,6 +165,9 @@ shape = SubResource("RectangleShape2D_rt88h")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Ice Areas"]
 stream = ExtResource("18_3f2cd")
 volume_db = -10.654
+
+[node name="Double Bed" parent="." instance=ExtResource("19_rt88h")]
+position = Vector2(68, 368)
 
 [connection signal="body_entered" from="Ice Areas" to="Ice Areas" method="_on_body_entered"]
 [connection signal="body_exited" from="Ice Areas" to="Ice Areas" method="_on_body_exited"]

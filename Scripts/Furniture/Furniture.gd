@@ -15,6 +15,9 @@ class_name Furniture
 var isGhost: bool = false
 
 
+@export var rotatedVersion:Node2D
+
+
 var isLifting: bool = false
 var isPushing: bool = false
 
@@ -192,3 +195,10 @@ func _on_area_detector_body_shape_exited(_body_rid: RID, body: Node2D, _body_sha
 		print(body.name)
 		relieveObject(body)
 	pass # Replace with function body.
+
+func rotateFurniture() -> void:
+	if (rotatedVersion != null):
+		print("rotate")
+		var me = self
+		self.replace_by(rotatedVersion)
+		rotatedVersion = me
