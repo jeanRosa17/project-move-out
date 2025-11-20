@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfrvyuj3bknc0"
-path="res://.godot/imported/idle.png-5f50448012dccd9d95ac6e5f6f033c29.ctex"
+uid="uid://c8umlc7a0jjmt"
+path="res://.godot/imported/Strong_John_lift_side.png-b4e787963e3857c5f12b1893e42f09ed.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Player/Spritesheets/idle.png"
-dest_files=["res://.godot/imported/idle.png-5f50448012dccd9d95ac6e5f6f033c29.ctex"]
+source_file="res://Assets/Player/Spritesheets v2/Strong_John_lift_side.png"
+dest_files=["res://.godot/imported/Strong_John_lift_side.png-b4e787963e3857c5f12b1893e42f09ed.ctex"]
 
 [params]
 

@@ -2,7 +2,7 @@ class_name Player
 extends CharacterBody2D
 
 @onready var manager:StateManager = $StateManager
-@onready var view:AnimatedSprite2D = $NewAnimatedSprite2D
+@onready var view:AnimatedSprite2D = $FrogJohn
 
 var canControl:bool = true
 
@@ -33,7 +33,8 @@ func _process(delta:float) -> void:
 		self.manager.view.play(prefix + " side")
 	else:
 		if (Input.is_action_pressed("MoveUp")): self.manager.view.play(prefix + " up")
-		elif (Input.is_action_pressed("MoveDown")): self.manager.view.play(prefix + " down")
+		elif (Input.is_action_pressed("MoveDown")): 
+			self.manager.view.play(prefix + " down")
 
 ## Handles the "Move" set of Inputs and moves the character accordingly using
 ## its MovementComponent.
