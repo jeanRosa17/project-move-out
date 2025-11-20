@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 	var vel: Vector2 = player.velocity
 	if vel.length() > min_speed:
 		# Player is moving
-		print("yes")
+		#print("yes")
 		emitting = true
 
 		# Point the dust opposite the direction of movement

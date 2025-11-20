@@ -25,6 +25,5 @@ func update(_delta:float) -> void:
 ## This method runs every _physics_process() frame of the StateManager.
 func physicsUpdate(_delta:float) -> void:
 	self.body.velocity = Vector2.ZERO
-	#pass
 	#self.body.move_and_slide()
 	
