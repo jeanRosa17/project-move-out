@@ -2,7 +2,7 @@ class_name Player
 extends CharacterBody2D
 
 @onready var manager:StateManager = $StateManager
-@onready var view:AnimatedSprite2D = $FrogJohn
+@onready var view:AnimatedSprite2D = $NewAnimatedSprite2D
 
 var canControl:bool = true
 
