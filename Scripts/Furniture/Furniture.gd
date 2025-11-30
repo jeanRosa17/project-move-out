@@ -14,7 +14,6 @@ class_name Furniture
 @onready var sprite_2d: Sprite2D = $Sprite2D
 var isGhost: bool = false
 
-
 @export var rotatedVersion:Node2D
 
 
@@ -27,24 +26,20 @@ var player: CharacterBody2D
 var distanceFromPlayer:float
 
 var objects: Array[Node2D] = []
-var ghostTween = null
+var ghostTween:Tween = null
+var floatXTween:Tween = null
+var floatYTween:Tween = null
+var floatTiltTween:Tween = null
 
-@export var liftPosition:Vector2
+@export var liftPosition:Vector2 = Vector2(0, -16)
 
-func _process(delta: float) -> void:
-	
-	
-	if (self.isGhost):
-		self.ghostTween = self.get_tree().create_tween()
-		self.ghostTween.tween_property(self, "modulate:a", 0, 1.0).from(1.0)
-		self.ghostTween.set_delay(0.2)
-		self.ghostTween.tween_property(self, "modulate:a", 1.0, 1.0).from(0.0)
-		self.ghostTween.set_loops()
+func _process(_delta: float) -> void:
+	pass
 
 
 func _physics_process(_delta: float) -> void:
 	if (isPushing):
-		var dir = player.velocity.normalized()
+		var dir:Vector2 = player.velocity.normalized()
 		if (dir.length() > 0.1):
 				update_detector_direction(dir)
 		if (objects.is_empty()):
@@ -56,11 +51,6 @@ func _physics_process(_delta: float) -> void:
 		## check to see if player is detached from object
 		if (position.distance_to(player.position) > 45):
 				exitPush()
-
-func changeToAltArt() -> void:
-	var temp = self.sprite_2d.texture
-	self.sprite_2d.texture = self.altArt
-	self.altArt = temp
 
 func update_detector_direction(direction: Vector2) -> void:
 	if (abs(direction.x) > abs(direction.y)):
@@ -83,11 +73,12 @@ func enterLift(body:CharacterBody2D) -> void:
 	self.remove_from_group("Furniture")
 	self.collision_layer = 1;
 	self.collision_mask = 6;
+	#self.top_level = true
 	# lift position is not a real thing right now
 	self.position = body.position + self.liftPosition
 	self.reparent(body)
 	self.isLifting = true
-	
+	self.startLiftingTween()
 
 
 	self.get_node("Collision").disabled = true
@@ -100,12 +91,36 @@ func enterLift(body:CharacterBody2D) -> void:
 	area.add_child(collider)
 	area.collision_layer = 0
 	body.find_child("Detector").get_child(0).add_child(ghost)
-	
+	self.ghostTween = self.get_tree().create_tween()	
+	self.ghostTween.tween_property(ghost, "modulate:a", 0, 1.0).from(1.0).set_delay(0.1)
+	self.ghostTween.tween_property(ghost, "modulate:a", 1.0, 1.0).from(0.0).set_delay(0.1)
+	self.ghostTween.set_loops()
 	#ghost.isGhost = true
 	
 		#play pickup sound
 	audioPlayer.pick_up_noise()
+
+func startLiftingTween() -> void:
+	self.floatXTween = get_tree().create_tween()
+	self.floatYTween = get_tree().create_tween()
+	self.floatTiltTween = get_tree().create_tween()
 	
+	self.floatXTween.tween_property(self, "position:x", -8, 0.4).set_delay(0.05)
+	self.floatXTween.tween_property(self, "position:x", 8, 0.3).set_delay(0.05)
+	self.floatXTween.set_loops().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_ELASTIC)
+	
+	self.floatYTween.tween_property(self, "position:y", -8, 0.2).set_delay(0.05)
+	self.floatYTween.tween_property(self, "position:y", 4, 0.3).set_delay(0.05)
+	self.floatYTween.set_loops().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_ELASTIC)
+	
+	self.floatTiltTween.tween_property(self, "rotation", -4, 0.5).set_delay(0.4)
+	self.floatTiltTween.tween_property(self, "rotation", 4, 0.5).set_delay(0.8)
+	self.floatTiltTween.set_loops().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_ELASTIC)
+	
+func killLiftingTween() -> void:
+	self.floatXTween.kill()
+	self.floatYTween.kill()
+	self.floatTiltTween.kill()
 
 ## Returns this Furniture back to not being held
 func exitLift() -> void:
@@ -129,6 +144,8 @@ func exitLift() -> void:
 	for i in range(bodies.size()):
 			if (bodies[i].is_in_group("Furniture") || bodies[i].is_in_group("Immovable Object")):
 				canDrop = false
+	
+	self.killLiftingTween()
 	
 	# put down object
 	if (canDrop):

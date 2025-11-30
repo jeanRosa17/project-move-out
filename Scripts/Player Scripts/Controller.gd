@@ -25,10 +25,16 @@ func _process(delta:float) -> void:
 	
 	var prefix:String = "move"
 	
-	if (self.manager.wasPreviousState("Lift")): prefix = "movelift"
-	if (self.manager.wasPreviousState("Push") || self.manager.view.animation.split()[0] == "push"): 
-		prefix = "push"
+	#if (self.manager.wasPreviousState("Lift")): prefix = "movelift"
+	#if (self.manager.wasPreviousState("Push") || self.manager.view.animation.split()[0] == "push"): 
+		#prefix = "push"
 
+	if (self.manager.furniture != null):
+		if (self.manager.furniture.isPushing):
+			prefix = "pushing"
+		if (self.manager.furniture.isLifting):
+			prefix = "movelift"
+		
 	if (Input.is_action_pressed("MoveLeft") or Input.is_action_pressed("MoveRight")):
 		self.manager.view.play(prefix + " side")
 	else:
