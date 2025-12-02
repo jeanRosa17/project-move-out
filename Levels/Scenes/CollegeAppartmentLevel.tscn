@@ -160,7 +160,7 @@ autoplay = true
 
 [node name="Fire Room" type="Node2D" parent="."]
 position = Vector2(1310, 425)
-rotation = 3.1415927
+rotation = 3.14159
 scale = Vector2(2, -2)
 
 [node name="Fire Bed" parent="Fire Room" instance=ExtResource("17_kyk2i")]
@@ -168,24 +168,24 @@ position = Vector2(0, -153.5)
 
 [node name="Table" parent="Fire Room" instance=ExtResource("8_ru6yg")]
 position = Vector2(20.5, -181)
-rotation = 3.1415927
+rotation = 3.14159
 scale = Vector2(0.5, -0.5)
 
 [node name="Wardrobe" parent="Fire Room" instance=ExtResource("21_lr55i")]
 position = Vector2(-2.5, -189)
-rotation = 3.1415927
+rotation = 3.14159
 scale = Vector2(0.5, -0.5)
 
 [node name="Shelf" parent="Fire Room" instance=ExtResource("22_0p0vu")]
 position = Vector2(37, -193)
-rotation = 3.1415927
+rotation = 3.14159
 scale = Vector2(0.5, -0.5)
 
 [node name="Electric Room" type="Node2D" parent="."]
 
 [node name="Electric Bed" parent="Electric Room" instance=ExtResource("17_kyk2i")]
 position = Vector2(1310, 285)
-rotation = 3.1415927
+rotation = 3.14159
 scale = Vector2(2, -2)
 
 [node name="Wardrobe" parent="Electric Room" instance=ExtResource("21_lr55i")]
@@ -201,7 +201,7 @@ position = Vector2(1269, 182)
 
 [node name="Earth Bed" parent="Nature Room" instance=ExtResource("17_kyk2i")]
 position = Vector2(1310, 425)
-rotation = 3.1415927
+rotation = 3.14159
 scale = Vector2(2, -2)
 
 [node name="Wardrobe" parent="Nature Room" instance=ExtResource("21_lr55i")]
@@ -245,7 +245,7 @@ scale = Vector2(-1, 1)
 
 [node name="Ice Bed" parent="Ice Room" instance=ExtResource("17_kyk2i")]
 position = Vector2(1310, 575)
-rotation = 3.1415927
+rotation = 3.14159
 scale = Vector2(2, -2)
 
 [node name="Wardrobe2" parent="Ice Room" instance=ExtResource("21_lr55i")]

@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://cv8mdnilcdg0d" path="res://Levels/Tests/FurnitureAudio.gd" id="3_jnu4o"]
 [ext_resource type="AudioStream" uid="uid://co27kfjleoj27" path="res://Assets/Audio/furniture [game capstone].wav" id="4_eewuc"]
 [ext_resource type="AudioStream" uid="uid://bsbx8bv14ram7" path="res://Assets/Audio/put down noise.wav" id="5_0cgvr"]
-[ext_resource type="AudioStream" uid="uid://cwfmi17ld40fy" path="res://Assets/Audio/pick up noise.wav" id="6_jnu4o"]
+[ext_resource type="AudioStream" uid="uid://dt60bfwm4ccxq" path="res://Assets/Audio/pick up noise magical 1.wav" id="6_jnu4o"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_b3xeb"]
 streams_count = 2
@@ -23,5 +23,5 @@ stream = ExtResource("5_0cgvr")
 
 [node name="Pick Up noise" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_jnu4o")
-volume_db = -6.657
+volume_db = -3.613
 bus = &"Furniture"

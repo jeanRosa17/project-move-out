@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://yaa8cqy3awu1"]
+[gd_scene load_steps=23 format=4 uid="uid://yaa8cqy3awu1"]
 
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Assets/Player/Scenes/Player.tscn" id="1_siuop"]
 [ext_resource type="PackedScene" uid="uid://ip4pm1ex6klr" path="res://Levels/Scenes/Garage.tscn" id="2_b36xl"]
@@ -12,22 +12,15 @@
 [ext_resource type="PackedScene" uid="uid://1xu4q5luy86h" path="res://Assets/Objects/Chairs/Scene/Orange_Chair_Side.tscn" id="10_2fgwj"]
 [ext_resource type="PackedScene" uid="uid://hdlugvlqrl3f" path="res://Assets/Objects/Chairs/Scene/Orange_Chair_Front.tscn" id="11_s7dve"]
 [ext_resource type="PackedScene" uid="uid://brgy71yxn4aj2" path="res://Assets/Objects/Chairs/Scene/Orange_Chair_Back.tscn" id="12_3f2cd"]
-[ext_resource type="AudioStream" uid="uid://ixm05apa3fsb" path="res://Assets/Audio/furniture2 [game capstone].wav" id="13_2fgwj"]
-[ext_resource type="AudioStream" uid="uid://ilbhsc2vwd1n" path="res://Assets/Audio/furniture 1.wav" id="14_s7dve"]
-[ext_resource type="Script" uid="uid://cv8mdnilcdg0d" path="res://Levels/Tests/FurnitureAudio.gd" id="15_3f2cd"]
-[ext_resource type="AudioStream" uid="uid://co27kfjleoj27" path="res://Assets/Audio/furniture [game capstone].wav" id="16_rt88h"]
+[ext_resource type="PackedScene" uid="uid://uacgji4vcg37" path="res://Assets/Audio/push_pull_audio.tscn" id="13_s7dve"]
 [ext_resource type="Script" uid="uid://cyso0emuh7ori" path="res://Levels/Scenes/ice_areas.gd" id="17_s7dve"]
 [ext_resource type="AudioStream" uid="uid://0q4m8jstuh5j" path="res://Assets/Audio/ice slide noise.wav" id="18_3f2cd"]
 [ext_resource type="PackedScene" uid="uid://cew0q8r43cndi" path="res://Assets/Objects/Beds/Scene/Double_BedROTATE.tscn" id="19_rt88h"]
+[ext_resource type="PackedScene" uid="uid://cqt367stu26c2" path="res://Assets/Objects/Table Items/Scenes/Pot.tscn" id="20_452e0"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hedka"]
 normal = Vector2(1.79515e-06, 1)
 distance = -3.99999
-
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_452e0"]
-streams_count = 2
-stream_0/stream = ExtResource("13_2fgwj")
-stream_1/stream = ExtResource("14_s7dve")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2fgwj"]
 size = Vector2(96, 45.5)
@@ -135,11 +128,7 @@ position = Vector2(299, 147)
 [node name="Orange_Chair_Side2" parent="." instance=ExtResource("12_3f2cd")]
 position = Vector2(301, 220)
 
-[node name="Push_Pull Audio" type="AudioStreamPlayer2D" parent="."]
-stream = SubResource("AudioStreamRandomizer_452e0")
-bus = &"Furniture"
-script = ExtResource("15_3f2cd")
-streams = [ExtResource("16_rt88h")]
+[node name="Push_Pull Audio" parent="." instance=ExtResource("13_s7dve")]
 
 [node name="Ice Areas" type="Area2D" parent="." node_paths=PackedStringArray("soundPlayer")]
 audio_bus_name = &"Furniture"
@@ -168,6 +157,9 @@ volume_db = -10.654
 
 [node name="Double Bed" parent="." instance=ExtResource("19_rt88h")]
 position = Vector2(68, 368)
+
+[node name="Pot" parent="." instance=ExtResource("20_452e0")]
+position = Vector2(112, 315)
 
 [connection signal="body_entered" from="Ice Areas" to="Ice Areas" method="_on_body_entered"]
 [connection signal="body_exited" from="Ice Areas" to="Ice Areas" method="_on_body_exited"]
