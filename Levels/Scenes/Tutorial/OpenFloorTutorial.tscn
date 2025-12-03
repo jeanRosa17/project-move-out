@@ -189,7 +189,13 @@ tile_set = ExtResource("3_3j8mk")
 
 [node name="HUD" parent="." instance=ExtResource("24_4alro")]
 unique_name_in_owner = true
+visible = false
+
+[node name="Level Results" parent="HUD" index="1"]
+replayLevelName = &"res://Levels/Scenes/Tutorial/OpenFloorTutorial.tscn"
 
 [node name="Level Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("25_4alro")
 autoplay = true
+
+[editable path="HUD"]
