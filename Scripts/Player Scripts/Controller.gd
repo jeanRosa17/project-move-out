@@ -30,9 +30,9 @@ func _process(delta:float) -> void:
 		#prefix = "push"
 
 	if (self.manager.furniture != null):
-		if (self.manager.furniture.isPushing):
+		if (self.manager.furniture.isPushed):
 			prefix = "pushing"
-		if (self.manager.furniture.isLifting):
+		if (self.manager.furniture.isLifted):
 			prefix = "movelift"
 		
 	if (Input.is_action_pressed("MoveLeft") or Input.is_action_pressed("MoveRight")):
@@ -73,7 +73,7 @@ func handleMovement(_delta:float) -> void:
 ## 3. Furniture node can be lifted 
 func handleLift(_delta:float) -> void:
 	if (Input.is_action_just_pressed("Lift")):
-		if ((self.manager.furniture) and (self.manager.furniture.isLifting)):
+		if ((self.manager.furniture) and (self.manager.furniture.isLifted)):
 			self.manager.changeState("Throw")
 			
 		elif (self.manager.getStateName() != "Lift"): 

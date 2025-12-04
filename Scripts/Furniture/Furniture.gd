@@ -8,17 +8,18 @@ class_name Furniture
 @onready var area_shape: CollisionShape2D = $AreaDetector/CollisionShape2D
 
 @export var canLift:bool = false
-@export var canPush:bool
-@export var canPull:bool
+@export var canPush:bool = false
+@export var canPull:bool = false
+
+var isLifted: bool = false
+var isPushed: bool = false
+
 @export var dialogueTag:DialogueTag = preload("res://Scripts/Dialogue/nullDialogue.tres")
+
 @onready var sprite_2d: Sprite2D = $Sprite2D
-var isGhost: bool = false
+@onready var ghostSprite: Sprite2D = sprite_2d.duplicate()
 
 @export var rotatedVersion:Node2D
-
-
-var isLifting: bool = false
-var isPushing: bool = false
 
 
 var player: CharacterBody2D
@@ -27,83 +28,74 @@ var distanceFromPlayer:float
 
 var objects: Array[Node2D] = []
 var ghostTween:Tween = null
+var placementTween = null
 var floatXTween:Tween = null
 var floatYTween:Tween = null
 var floatTiltTween:Tween = null
 
 @export var liftPosition:Vector2 = Vector2(0, -16)
 
-func _process(_delta: float) -> void:
-	pass
-
 
 func _physics_process(_delta: float) -> void:
-	if (isPushing):
-		var dir:Vector2 = player.velocity.normalized()
-		if (dir.length() > 0.1):
-				update_detector_direction(dir)
+	if (self.isLifted):
+		if (placementTween == null):
+			placementTween = create_tween()
+			if (self.canBeDropped()):
+				placementTween.tween_property(self.ghostSprite, "self_modulate", Color.GREEN, 0.3)
+			else:
+				placementTween.tween_property(self.ghostSprite, "self_modulate", Color.RED, 0.3)
+	else: self.placementTween = null
+	
+	if (self.isPushed):
+		var dir:Vector2 = self.player.velocity.normalized()
+		
+		if (dir.length() > 0.1): self.update_detector_direction(dir)
+
 		if (objects.is_empty()):
 			collision_layer = 0
 			linear_velocity = linear_velocity.lerp(player.velocity, 0.4)
 		else:
 			self.collision_layer = 2;
 			linear_velocity = Vector2.ZERO
+		
 		## check to see if player is detached from object
-		if (position.distance_to(player.position) > 45):
-				exitPush()
+		if (position.distance_to(player.position) > 45): self.exitPush()
+
 
 func update_detector_direction(direction: Vector2) -> void:
 	if (abs(direction.x) > abs(direction.y)):
-		if (direction.x > 0):
-			area_detector.position = Vector2(5, 0)
-		else:
-			area_detector.position = Vector2(-5, 0)
+		if (direction.x > 0): area_detector.position = Vector2(liftPosition.y, 0)
+		else: area_detector.position = liftPosition
+		
 	else:
-		if (direction.y > 0):
-			area_detector.position = Vector2(0, 5)
-		else:
-			area_detector.position = Vector2(0, -5)
+		if (direction.y > 0): area_detector.position = Vector2(0, liftPosition.y)
+		else: area_detector.position = liftPosition
 
-func get_canLift() -> bool:
-	return canLift
-
-## Reparents this Furniture to the given CharacterBody
-func enterLift(body:CharacterBody2D) -> void:
-	
-	self.remove_from_group("Furniture")
-	self.collision_layer = 1;
-	self.collision_mask = 6;
-	#self.top_level = true
-	# lift position is not a real thing right now
-	self.position = body.position + self.liftPosition
-	self.reparent(body)
-	self.isLifting = true
-	self.startLiftingTween()
-
-
-	self.get_node("Collision").disabled = true
-	
-	# create copy of sprite for ghosting display
-	var ghost:Sprite2D = self.get_child(0).duplicate()
+## Ses the Ghost as a Sprite
+func createGhostSprite(body:CharacterBody2D) -> void:
 	var area:Area2D = Area2D.new()
 	var collider:CollisionShape2D = self.get_child(1).duplicate()
-	ghost.add_child(area)
+	self.ghostSprite = sprite_2d.duplicate()
+	ghostSprite.add_child(area)
 	area.add_child(collider)
 	area.collision_layer = 0
-	body.find_child("Detector").get_child(0).add_child(ghost)
-	self.ghostTween = self.get_tree().create_tween()	
-	self.ghostTween.tween_property(ghost, "modulate:a", 0, 1.0).from(1.0).set_delay(0.1)
-	self.ghostTween.tween_property(ghost, "modulate:a", 1.0, 1.0).from(0.0).set_delay(0.1)
-	self.ghostTween.set_loops()
-	#ghost.isGhost = true
+	body.find_child("Detector").get_child(0).add_child(ghostSprite)
 	
-		#play pickup sound
-	audioPlayer.pick_up_noise()
+	self.ghostTween = self.get_tree().create_tween()
+	self.ghostTween.tween_property(ghostSprite, "self_modulate:a", 0, 1.0).from(1.0).set_delay(0.1)
+	self.ghostTween.tween_property(ghostSprite, "self_modulate:a", 1.0, 1.0).from(0.0).set_delay(0.1)
+	self.ghostTween.set_loops()
 
+
+#region Tween Animation
+# Starts the hovering tween animation
 func startLiftingTween() -> void:
+	var tween: Tween = create_tween()
 	self.floatXTween = get_tree().create_tween()
 	self.floatYTween = get_tree().create_tween()
 	self.floatTiltTween = get_tree().create_tween()
+	
+	tween.tween_property(self, "scale", 30, 0.4)
 	
 	self.floatXTween.tween_property(self, "position:x", -8, 0.4).set_delay(0.05)
 	self.floatXTween.tween_property(self, "position:x", 8, 0.3).set_delay(0.05)
@@ -113,109 +105,126 @@ func startLiftingTween() -> void:
 	self.floatYTween.tween_property(self, "position:y", 4, 0.3).set_delay(0.05)
 	self.floatYTween.set_loops().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_ELASTIC)
 	
-	self.floatTiltTween.tween_property(self, "rotation", -4, 0.5).set_delay(0.4)
-	self.floatTiltTween.tween_property(self, "rotation", 4, 0.5).set_delay(0.8)
+	self.floatTiltTween.tween_property(self, "rotation_degrees", -4, 0.5).set_delay(0.4)
+	self.floatTiltTween.tween_property(self, "rotation_degrees", 4, 0.5).set_delay(0.8)
 	self.floatTiltTween.set_loops().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_ELASTIC)
-	
+
+# Stops all lifting tweens
 func killLiftingTween() -> void:
 	self.floatXTween.kill()
 	self.floatYTween.kill()
 	self.floatTiltTween.kill()
+	self.rotation_degrees = 0
 
-## Returns this Furniture back to not being held
+#endregion
+
+#region Lift / Pushing
+
+func enterLift(body:CharacterBody2D) -> void:
+	self.remove_from_group("Furniture")
+	self.collision_layer = 1;
+	self.collision_mask = 6;
+	self.position = body.position + self.liftPosition
+	self.reparent(body)
+	self.isLifted = true
+	self.startLiftingTween()
+	self.get_node("Collision").disabled = true
+	self.createGhostSprite(body)
+
+	audioPlayer.pick_up_noise()
+
 func exitLift() -> void:
-	## check if youll be able to put down the object
-   
 	var body:CharacterBody2D = self.get_parent()
-	
 	
 	var ghost:Node2D = body.find_child("Detector").get_child(0).get_child(0)
 	print("ghost global pos = ", ghost.global_position)
 	var pos:Vector2 = ghost.global_position
-	
-	
-	## this is where the ghosting doesnt line up
 	var col:Area2D = ghost.get_child(0)
-	
 	var bodies:Array[Node2D] = col.get_overlapping_bodies()
 	
-	var canDrop:bool = true;
-	
-	for i in range(bodies.size()):
-			if (bodies[i].is_in_group("Furniture") || bodies[i].is_in_group("Immovable Object")):
-				canDrop = false
-	
-	self.killLiftingTween()
-	
-	# put down object
-	if (canDrop):
-		ghost.queue_free()
+	if (self.canBeDropped()):
+		self.killLiftingTween()
+		
+		self.ghostSprite.queue_free()
 		body.remove_child(self)
 		body.add_sibling(self)
 		self.get_node("Collision").disabled = false
 		self.position = pos
 		self.collision_layer = 2;
 		self.collision_mask = 7;
-		self.isLifting = false
+		self.isLifted = false
 		self.add_to_group("Furniture")
 		audioPlayer.put_down_noise()
+
+func canBeDropped() -> bool:
+	var body:CharacterBody2D = self.get_parent()
 	
+	print("ghost global pos = ", ghostSprite.global_position)
+	var pos:Vector2 = ghostSprite.global_position
+	var col:Area2D = ghostSprite.get_child(0)
+	var bodies:Array[Node2D] = col.get_overlapping_bodies()
+
+	var canDrop:bool = true;
 	
+	for i in range(bodies.size()):
+			if (bodies[i].is_in_group("Furniture") || bodies[i].is_in_group("Immovable Object")):
+				canDrop = false
+	
+	return canDrop
+
 func enterPush(body: CharacterBody2D) -> void:
 	print("entered pushing")
 	self.player = body
 	self.collision_layer = 0
 	audioPlayer.push_sound(self)
 	distanceFromPlayer = position.distance_to(player.position)
-	self.isPushing = true
+	self.isPushed = true
 
 func exitPush()-> void:
 	print("exited pushing")
 	self.player = null
 	self.collision_layer = 2;
-	self.isPushing = false
+	self.isPushed = false
 	self.linear_velocity = Vector2.ZERO
+#endregion
 
+#region Signals
 func againstObject(newObject: Node2D) -> void:
 	objects.append(newObject)
 	print("added object: ")
 	print(newObject.name)
-	pass
 
 func relieveObject(newObject: Node2D) -> void:
 	if (objects.has(newObject)):
 		objects.erase(newObject)
 		print("removed object: ")
 		print(newObject.name)
-	pass
-
-func canPutDown() -> void: #change to be Vector2
-	pass
 
 func _on_area_detector_body_shape_entered(_body_rid: RID, body: Node2D, _body_shape_index: int, _local_shape_index: int) -> void:
-	if (body.is_in_group("World Bounds") && self.isPushing):
+	if (body.is_in_group("World Bounds") && self.isPushed):
 		print("cannot push (wall)")
 		print(body.name)
 		againstObject(body)
-	elif (body.is_in_group("Furniture") && body != self && self.isPushing):
+	elif (body.is_in_group("Furniture") && body != self && self.isPushed):
 		print("cannot push (furniture)")
 		print(body.name)
 		againstObject(body)
 	pass # Replace with function body.
 
 func _on_area_detector_body_shape_exited(_body_rid: RID, body: Node2D, _body_shape_index: int, _local_shape_index: int) -> void:
-	if (body.is_in_group("World Bounds") && self.isPushing):
+	if (body.is_in_group("World Bounds") && self.isPushed):
 		print("can push (off wall)")
 		relieveObject(body)
-	elif(body.is_in_group("Furniture") && body != self && self.isPushing):
+	elif(body.is_in_group("Furniture") && body != self && self.isPushed):
 		print("can push (off furniture)")
 		print(body.name)
 		relieveObject(body)
 	pass # Replace with function body.
+#endregion
 
-func rotateFurniture() -> void:
-	if (rotatedVersion != null):
-		print("rotate")
-		var me = self
-		self.replace_by(rotatedVersion)
-		rotatedVersion = me
+#func rotateFurniture() -> void:
+	#if (rotatedVersion != null):
+		#print("rotate")
+		#var me:Furniture = self
+		#self.replace_by(rotatedVersion)
+		#rotatedVersion = me

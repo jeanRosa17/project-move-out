@@ -6,7 +6,7 @@ extends State
 @export var body:Player
 @onready var backToIdle:Callable = func () -> void : self.manager.changeState.bind("Idle")
 
-@export var isPushing:bool
+@export var isPushed:bool
 
 func canEnter() -> bool:
 	return manager.furniture && manager.furniture.canPush
@@ -19,7 +19,7 @@ func enter() -> void:
 		#manager.view.play("push " + dir)
 		
 	#lock player rotation/flip
-	if (!manager.furniture.isPushing):
+	if (!manager.furniture.isPushed):
 		manager.furniture.enterPush(self.body)
 	else:
 		manager.furniture.exitPush()
