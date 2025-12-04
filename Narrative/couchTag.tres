@@ -4,6 +4,5 @@
 
 [resource]
 script = ExtResource("1_kunor")
-dialogueScriptPath = &"res://Narrative/SampleText.txt"
 dialogueTag = &"couch"
 metadata/_custom_type_script = "uid://bmqryoobj44j2"

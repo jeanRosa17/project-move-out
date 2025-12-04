@@ -19,6 +19,7 @@ var isPushed: bool = false
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var ghostSprite: Sprite2D = sprite_2d.duplicate()
 
+
 @export var rotatedVersion:Node2D
 
 
@@ -38,13 +39,24 @@ var floatTiltTween:Tween = null
 
 func _physics_process(_delta: float) -> void:
 	if (self.isLifted):
-		if (placementTween == null):
-			placementTween = create_tween()
-			if (self.canBeDropped()):
-				placementTween.tween_property(self.ghostSprite, "self_modulate", Color.GREEN, 0.3)
-			else:
-				placementTween.tween_property(self.ghostSprite, "self_modulate", Color.RED, 0.3)
-	else: self.placementTween = null
+		print("canBeDropped ", self.canBeDropped())
+		
+		
+		
+		if (self.canBeDropped()):
+			self.ghostSprite.self_modulate = Color.GREEN
+		else:
+			self.ghostSprite.self_modulate = Color.RED
+		
+		#if (placementTween == null):
+			#placementTween = create_tween()
+		#if (placementTween != null):
+			#print("candrop", self.canBeDropped())
+			#if (self.canBeDropped()):
+				#placementTween.tween_property(self.ghostSprite, "self_modulate", Color.GREEN, 0.3)
+			#else:
+				#placementTween.tween_property(self.ghostSprite, "self_modulate", Color.RED, 0.3)
+	#else: self.placementTween = null
 	
 	if (self.isPushed):
 		var dir:Vector2 = self.player.velocity.normalized()
@@ -95,7 +107,7 @@ func startLiftingTween() -> void:
 	self.floatYTween = get_tree().create_tween()
 	self.floatTiltTween = get_tree().create_tween()
 	
-	tween.tween_property(self, "scale", 30, 0.4)
+	tween.tween_property(self, "scale", Vector2(0.3, 0.3), 0.4)
 	
 	self.floatXTween.tween_property(self, "position:x", -8, 0.4).set_delay(0.05)
 	self.floatXTween.tween_property(self, "position:x", 8, 0.3).set_delay(0.05)
@@ -140,7 +152,6 @@ func exitLift() -> void:
 	print("ghost global pos = ", ghost.global_position)
 	var pos:Vector2 = ghost.global_position
 	var col:Area2D = ghost.get_child(0)
-	var bodies:Array[Node2D] = col.get_overlapping_bodies()
 	
 	if (self.canBeDropped()):
 		self.killLiftingTween()
@@ -159,9 +170,10 @@ func exitLift() -> void:
 func canBeDropped() -> bool:
 	var body:CharacterBody2D = self.get_parent()
 	
-	print("ghost global pos = ", ghostSprite.global_position)
-	var pos:Vector2 = ghostSprite.global_position
-	var col:Area2D = ghostSprite.get_child(0)
+	var ghost:Node2D = body.find_child("Detector").get_child(0).get_child(0)
+	print("ghost global pos = ", ghost.global_position)
+	var pos:Vector2 = ghost.global_position
+	var col:Area2D = ghost.get_child(0)
 	var bodies:Array[Node2D] = col.get_overlapping_bodies()
 
 	var canDrop:bool = true;
