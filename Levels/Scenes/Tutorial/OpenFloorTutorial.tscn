@@ -26,6 +26,7 @@
 
 [sub_resource type="Resource" id="Resource_4alro"]
 script = ExtResource("5_v8k2n")
+dialogueScriptPath = &"res://Narrative/SampleText.txt"
 dialogueTag = &"null"
 metadata/_custom_type_script = "uid://bmqryoobj44j2"
 

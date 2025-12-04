@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://dq8giawgjifnx" path="res://Scripts/LevelManager.gd" id="1_kcee7"]
 
 [node name="FadeToBlackTransition" type="ColorRect"]
-modulate = Color(7.659314e-06, 0, 0, 1)
+modulate = Color(7.65931e-06, 0, 0, 1)
 offset_right = 40.0
 offset_bottom = 40.0
-scale = Vector2(10.040001, 5.5999994)
+scale = Vector2(10.04, 5.6)
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 script = ExtResource("1_kcee7")

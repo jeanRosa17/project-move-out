@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://psh4s5sym8kd"]
+[gd_scene load_steps=5 format=3 uid="uid://psh4s5sym8kd"]
 
 [ext_resource type="Script" uid="uid://cau3mgvyc3sus" path="res://Scripts/Dialogue/Dialogue.gd" id="1_qignm"]
+[ext_resource type="FontFile" uid="uid://c17q41l7sknhq" path="res://Assets/fonts/m5x7.ttf" id="2_5i3yw"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_guw12"]
 content_margin_left = 5.0
@@ -35,5 +36,6 @@ custom_minimum_size = Vector2(192, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 theme = SubResource("Theme_iqcmb")
+theme_override_fonts/font = ExtResource("2_5i3yw")
 text = "wFIEE SJ"
 autowrap_mode = 2

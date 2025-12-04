@@ -1,18 +1,17 @@
-[gd_scene load_steps=26 format=3 uid="uid://cxowcytqevm5r"]
+[gd_scene load_steps=25 format=3 uid="uid://cxowcytqevm5r"]
 
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="1_ieyoq"]
 [ext_resource type="Texture2D" uid="uid://dytgdsg146xfm" path="res://Levels/Level Sketches/Bachelor_pad_test_level.png" id="2_8pl7b"]
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Assets/Player/Scenes/Player.tscn" id="3_0cx80"]
 [ext_resource type="PackedScene" uid="uid://ip4pm1ex6klr" path="res://Levels/Scenes/Garage.tscn" id="4_wn1jt"]
-[ext_resource type="PackedScene" uid="uid://dkssiia1dmwor" path="res://Assets/Objects/Chairs/Scene/Wood_Chair_Side.tscn" id="5_of3nc"]
 [ext_resource type="PackedScene" uid="uid://d26wukook25xb" path="res://Assets/Objects/Dressers & Shelves/Scenes/Table.tscn" id="6_5buyg"]
 [ext_resource type="PackedScene" uid="uid://ce4x5g5hrvxce" path="res://Assets/Objects/Bathroom/Scenes/Bathtub.tscn" id="7_n6jrh"]
 [ext_resource type="PackedScene" uid="uid://bfp82m6exqyhy" path="res://Assets/Objects/Bathroom/Scenes/Sink.tscn" id="8_vuwhr"]
+[ext_resource type="PackedScene" uid="uid://cjgehwl5pt54g" path="res://Assets/Objects/Chairs/Scene/Possessed_wood_Chair_side.tscn" id="9_of3nc"]
 [ext_resource type="PackedScene" uid="uid://c638p25j2md1l" path="res://Assets/Objects/Bathroom/Scenes/Toilet_Back.tscn" id="9_ytwfh"]
 [ext_resource type="PackedScene" uid="uid://diko086yswlr0" path="res://Assets/Objects/Beds/Scene/Twin_Bed_Side.tscn" id="10_2p47e"]
 [ext_resource type="PackedScene" uid="uid://bujcbosiagjri" path="res://Assets/Objects/Dressers & Shelves/Scenes/wooden_shelf_front.tscn" id="11_2ew7u"]
 [ext_resource type="PackedScene" uid="uid://dpyl8x5qojmng" path="res://Assets/Objects/Table Items/Scenes/TV.tscn" id="12_jmsxy"]
-[ext_resource type="PackedScene" uid="uid://cqt367stu26c2" path="res://Assets/Objects/Table Items/Scenes/Pot.tscn" id="13_pe3pk"]
 [ext_resource type="AudioStream" uid="uid://ixm05apa3fsb" path="res://Assets/Audio/furniture2 [game capstone].wav" id="14_5cbu3"]
 [ext_resource type="AudioStream" uid="uid://ilbhsc2vwd1n" path="res://Assets/Audio/furniture 1.wav" id="15_fas05"]
 [ext_resource type="Script" uid="uid://cv8mdnilcdg0d" path="res://Levels/Tests/FurnitureAudio.gd" id="16_4ynr2"]
@@ -99,24 +98,6 @@ limit_bottom = 415
 [node name="Garage" parent="Environment/Y-Sorting" instance=ExtResource("4_wn1jt")]
 position = Vector2(145, 317)
 
-[node name="Wood_Chair_Side4" parent="Environment/Y-Sorting" instance=ExtResource("5_of3nc")]
-position = Vector2(112, 130)
-
-[node name="Wood_Chair_Side5" parent="Environment/Y-Sorting" instance=ExtResource("5_of3nc")]
-position = Vector2(113, 100)
-
-[node name="Wood_Chair_Side6" parent="Environment/Y-Sorting" instance=ExtResource("5_of3nc")]
-position = Vector2(112, 159)
-
-[node name="Wood_Chair_Side3" parent="Environment/Y-Sorting" instance=ExtResource("5_of3nc")]
-position = Vector2(45, 124)
-
-[node name="Wood_Chair_Side" parent="Environment/Y-Sorting" instance=ExtResource("5_of3nc")]
-position = Vector2(46, 94)
-
-[node name="Wood_Chair_Side2" parent="Environment/Y-Sorting" instance=ExtResource("5_of3nc")]
-position = Vector2(45, 153)
-
 [node name="Table" parent="Environment/Y-Sorting" instance=ExtResource("6_5buyg")]
 position = Vector2(76, 134)
 scale = Vector2(0.973214, 1.01571)
@@ -130,6 +111,27 @@ position = Vector2(58, 225)
 [node name="Toilet" parent="Environment/Y-Sorting" instance=ExtResource("9_ytwfh")]
 position = Vector2(90, 221)
 
+[node name="possessed_wood_chair_side" parent="Environment/Y-Sorting" instance=ExtResource("9_of3nc")]
+position = Vector2(40, 150)
+
+[node name="possessed_wood_chair_side4" parent="Environment/Y-Sorting" instance=ExtResource("9_of3nc")]
+position = Vector2(40, 130)
+
+[node name="possessed_wood_chair_side5" parent="Environment/Y-Sorting" instance=ExtResource("9_of3nc")]
+position = Vector2(40, 100)
+
+[node name="possessed_wood_chair_side6" parent="Environment/Y-Sorting" instance=ExtResource("9_of3nc")]
+position = Vector2(100, 150)
+move_offset = Vector2(120, 150)
+
+[node name="possessed_wood_chair_side2" parent="Environment/Y-Sorting" instance=ExtResource("9_of3nc")]
+position = Vector2(100, 130)
+move_offset = Vector2(120, 130)
+
+[node name="possessed_wood_chair_side3" parent="Environment/Y-Sorting" instance=ExtResource("9_of3nc")]
+position = Vector2(100, 100)
+move_offset = Vector2(120, 100)
+
 [node name="Twin_Bed_Side" parent="Environment/Y-Sorting" instance=ExtResource("10_2p47e")]
 position = Vector2(255, 18)
 
@@ -138,9 +140,6 @@ position = Vector2(215, 18)
 
 [node name="Couch" parent="Environment/Y-Sorting" instance=ExtResource("12_jmsxy")]
 position = Vector2(228, 48)
-
-[node name="Pot" parent="Environment/Y-Sorting" instance=ExtResource("13_pe3pk")]
-position = Vector2(261, 57)
 
 [node name="Bathtub2" parent="Environment/Y-Sorting" instance=ExtResource("7_n6jrh")]
 position = Vector2(358, 25)

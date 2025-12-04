@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://rtrhhspwen6a"]
+[gd_scene load_steps=4 format=3 uid="uid://rtrhhspwen6a"]
 
 [ext_resource type="Script" uid="uid://bhcre3gsfa5n3" path="res://UI/TitleScreen.gd" id="1_jpkfb"]
+[ext_resource type="FontFile" uid="uid://c17q41l7sknhq" path="res://Assets/fonts/m5x7.ttf" id="2_fbutq"]
 [ext_resource type="PackedScene" uid="uid://b0xffv4xtxnru" path="res://UI/Scenes/FadeToBlackTransition.tscn" id="2_p1rv5"]
 
 [node name="TitleScreen" type="Node2D"]
@@ -24,11 +25,16 @@ vertical = true
 [node name="Title" type="RichTextLabel" parent="Container/BoxContainer"]
 custom_minimum_size = Vector2(320, 50)
 layout_mode = 2
-theme_override_font_sizes/normal_font_size = 36
-theme_override_font_sizes/bold_font_size = 48
+theme_override_fonts/normal_font = ExtResource("2_fbutq")
+theme_override_fonts/mono_font = ExtResource("2_fbutq")
+theme_override_fonts/italics_font = ExtResource("2_fbutq")
+theme_override_fonts/bold_italics_font = ExtResource("2_fbutq")
+theme_override_fonts/bold_font = ExtResource("2_fbutq")
 theme_override_font_sizes/bold_italics_font_size = 48
 theme_override_font_sizes/italics_font_size = 36
 theme_override_font_sizes/mono_font_size = 48
+theme_override_font_sizes/normal_font_size = 36
+theme_override_font_sizes/bold_font_size = 48
 bbcode_enabled = true
 text = "[i] Mystic [/i] Mover"
 horizontal_alignment = 1
@@ -37,6 +43,7 @@ vertical_alignment = 1
 [node name="Creators" type="RichTextLabel" parent="Container/BoxContainer"]
 custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_fbutq")
 theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
 text = "Created by Ashton, Joel, Juhyun, Luna, & Thomas"
@@ -56,6 +63,7 @@ size_flags_vertical = 4
 custom_minimum_size = Vector2(50, 20)
 layout_mode = 2
 size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_fbutq")
 theme_override_font_sizes/font_size = 8
 text = "Play Tutorial A"
 
@@ -63,6 +71,7 @@ text = "Play Tutorial A"
 custom_minimum_size = Vector2(50, 20)
 layout_mode = 2
 size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_fbutq")
 theme_override_font_sizes/font_size = 8
 text = "Play Tutorial B"
 
@@ -70,6 +79,7 @@ text = "Play Tutorial B"
 custom_minimum_size = Vector2(50, 10)
 layout_mode = 2
 size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_fbutq")
 theme_override_font_sizes/font_size = 8
 text = "Settings (coming soon)"
 

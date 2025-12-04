@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfmb3mmeue8au"]
+[gd_scene load_steps=6 format=3 uid="uid://cfmb3mmeue8au"]
 
 [ext_resource type="Script" uid="uid://j5jhi8fi2uk0" path="res://UI/LevelResults.gd" id="1_4n7mi"]
 [ext_resource type="Script" uid="uid://bea0sp1ppn3e6" path="res://UI/HUDManager.gd" id="1_t2p4a"]
 [ext_resource type="PackedScene" uid="uid://b0xffv4xtxnru" path="res://UI/Scenes/FadeToBlackTransition.tscn" id="1_yixhe"]
 [ext_resource type="PackedScene" uid="uid://psh4s5sym8kd" path="res://UI/Scenes/Textbox.tscn" id="2_ijstf"]
+[ext_resource type="FontFile" uid="uid://c17q41l7sknhq" path="res://Assets/fonts/m5x7.ttf" id="4_6hjip"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_t2p4a")
@@ -12,7 +13,6 @@ script = ExtResource("1_t2p4a")
 modulate = Color(1, 1, 1, 1)
 
 [node name="Level Results" type="CanvasLayer" parent="."]
-visible = false
 script = ExtResource("1_4n7mi")
 
 [node name="Container" type="CenterContainer" parent="Level Results"]
@@ -26,6 +26,11 @@ vertical = true
 [node name="Title" type="RichTextLabel" parent="Level Results/Container/BoxContainer"]
 custom_minimum_size = Vector2(320, 52)
 layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("4_6hjip")
+theme_override_fonts/mono_font = ExtResource("4_6hjip")
+theme_override_fonts/italics_font = ExtResource("4_6hjip")
+theme_override_fonts/bold_italics_font = ExtResource("4_6hjip")
+theme_override_fonts/bold_font = ExtResource("4_6hjip")
 theme_override_font_sizes/bold_italics_font_size = 48
 theme_override_font_sizes/italics_font_size = 36
 theme_override_font_sizes/mono_font_size = 48
@@ -39,6 +44,11 @@ vertical_alignment = 1
 [node name="Score" type="RichTextLabel" parent="Level Results/Container/BoxContainer"]
 custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("4_6hjip")
+theme_override_fonts/mono_font = ExtResource("4_6hjip")
+theme_override_fonts/italics_font = ExtResource("4_6hjip")
+theme_override_fonts/bold_italics_font = ExtResource("4_6hjip")
+theme_override_fonts/bold_font = ExtResource("4_6hjip")
 theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
 text = "Your score is:"
@@ -47,6 +57,11 @@ horizontal_alignment = 1
 [node name="Stars Text" type="RichTextLabel" parent="Level Results/Container/BoxContainer"]
 custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("4_6hjip")
+theme_override_fonts/mono_font = ExtResource("4_6hjip")
+theme_override_fonts/italics_font = ExtResource("4_6hjip")
+theme_override_fonts/bold_italics_font = ExtResource("4_6hjip")
+theme_override_fonts/bold_font = ExtResource("4_6hjip")
 theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
 text = "You earned..."
@@ -66,6 +81,7 @@ alignment = 1
 custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("4_6hjip")
 theme_override_font_sizes/font_size = 16
 text = "Replay"
 
@@ -73,6 +89,7 @@ text = "Replay"
 custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("4_6hjip")
 theme_override_font_sizes/font_size = 16
 text = "Next Level"
 
@@ -80,6 +97,7 @@ text = "Next Level"
 custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("4_6hjip")
 theme_override_font_sizes/font_size = 16
 text = "Quit"
 
