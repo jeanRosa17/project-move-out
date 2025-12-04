@@ -192,6 +192,7 @@ unique_name_in_owner = true
 visible = false
 
 [node name="Level Results" parent="HUD" index="1"]
+nextLevelName = &"res://Levels/Scenes/IceHouse.tscn"
 replayLevelName = &"res://Levels/Scenes/Tutorial/OpenFloorTutorial.tscn"
 
 [node name="Level Music" type="AudioStreamPlayer2D" parent="."]

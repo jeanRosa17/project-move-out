@@ -174,3 +174,8 @@ autoplay = true
 
 [node name="HUD" parent="." instance=ExtResource("19_iglh1")]
 visible = false
+
+[node name="Level Results" parent="HUD" index="1"]
+replayLevelName = &"res://Levels/Scenes/HauntedHouseLevel.tscn"
+
+[editable path="HUD"]

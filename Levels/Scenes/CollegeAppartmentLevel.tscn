@@ -151,9 +151,6 @@ y_sort_enabled = true
 tile_map_data = PackedByteArray("AAArABIABQACAAIAAAArABQABQACAAIAAAArABUABQACAAIAAAAzAAkABQACAAIAAAAUAPz/AgABAAAAAAAUAP//AgAAAAIAAAAUAP3/AgAAAAEAAAAUAP7/AgAAAAEAAAAVAPz/AgACAAAAAAAWAPz/AgACAAAAAAAXAPz/AgACAAAAAAAYAPz/AgAAAAEAAAAYAP3/AgACAAIAAAAXAP3/AgACAAIAAAAWAP3/AgACAAIAAAAVAP3/AgACAAIAAAA=")
 tile_set = ExtResource("2_otbpy")
 
-[node name="HUD" parent="." instance=ExtResource("25_3xhsd")]
-visible = false
-
 [node name="Level Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("26_aituv")
 autoplay = true
@@ -256,3 +253,11 @@ position = Vector2(1220, 504)
 
 [node name="Shelf" parent="Ice Room" instance=ExtResource("22_0p0vu")]
 position = Vector2(1142, 488)
+
+[node name="HUD" parent="." instance=ExtResource("25_3xhsd")]
+visible = false
+
+[node name="Level Results" parent="HUD" index="1"]
+replayLevelName = &"res://Levels/Scenes/CollegeAppartmentLevel.tscn"
+
+[editable path="HUD"]
