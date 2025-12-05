@@ -23,9 +23,6 @@ func enter() -> void:
 func exit() -> void:
 	if (self.manager.furniture):
 		self.manager.furniture.exitLift()
-		
-		var dir:String = self.getManager().view.animation.split(" ")[1].to_lower()
-
 
 	if (self.getManager().view.animation_finished.is_connected(backToIdle)):
 		self.getManager().view.animation_finished.disconnect(backToIdle)
@@ -39,7 +36,9 @@ func physicsUpdate(_delta:float) -> void:
 	pass
 
 func _on_detected_body_entered(_body: Node2D) -> void:
-	self.manager.furniture.canBeDropped = false
+	if (self.manager.furniture != null):
+		self.manager.furniture.canBeDropped = false
 
 func _on_detected_body_exited(_body: Node2D) -> void:
-	self.manager.furniture.canBeDropped = true
+	if (self.manager.furniture != null):
+		self.manager.furniture.canBeDropped = true

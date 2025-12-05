@@ -1,7 +1,7 @@
 extends ColorRect
 class_name LevelManager
 
-var tween = null
+var tween:Tween = null
 @export var duration:float = 1.5
 @export var delay:float = 1.0
 @onready var level_manager: LevelManager = $"."

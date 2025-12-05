@@ -25,8 +25,8 @@
 [ext_resource type="Script" uid="uid://dxpvyml32g27k" path="res://Scripts/States/Interact.gd" id="25_5cp4r"]
 [ext_resource type="AudioStream" uid="uid://cioy74m6lqych" path="res://Assets/Audio/footstep short 1.wav" id="26_jjwbh"]
 [ext_resource type="AudioStream" uid="uid://crnjv43fqkcn" path="res://Assets/Audio/footstep short 2.wav" id="27_bmblf"]
+[ext_resource type="PackedScene" uid="uid://dotpp2gym0w7k" path="res://Assets/Particles/Scenes/walking_particle.tscn" id="27_jjwbh"]
 [ext_resource type="Script" uid="uid://btk3jmqdxo7pv" path="res://Assets/Player/Scenes/WalkSound.gd" id="28_m53rv"]
-[ext_resource type="PackedScene" uid="uid://dotpp2gym0w7k" path="res://particles/walking_particle.tscn" id="29_bmblf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l2ndj"]
 size = Vector2(8, 16)
@@ -1179,7 +1179,7 @@ shape = SubResource("RectangleShape2D_l2ndj")
 y_sort_enabled = true
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_dter7")
-animation = &"movelift up"
+animation = &"idle down"
 autoplay = "idle down"
 
 [node name="Detector" type="Area2D" parent="."]
@@ -1233,8 +1233,10 @@ pitch_scale = 0.94
 bus = &"Walking"
 script = ExtResource("28_m53rv")
 
-[node name="Walking_particle" parent="." instance=ExtResource("29_bmblf")]
-position = Vector2(0, 6)
+[node name="Walking_particle" parent="." instance=ExtResource("27_jjwbh")]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(0, -4.26)
 
 [connection signal="frame_changed" from="NewAnimatedSprite2D" to="StateManager/Move" method="_on_new_animated_sprite_2d_frame_changed"]
 [connection signal="area_entered" from="Detector" to="StateManager" method="_on_area_2d_area_entered"]
