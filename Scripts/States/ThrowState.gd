@@ -5,11 +5,11 @@ extends State
 @onready var backToIdle:Callable = func () -> void : self.manager.changeState("Idle")
 @export var throwDistance:int = 12
 @export var area2D:Area2D
-var hadEmptySpace:bool
+var canDrop:bool
 
 
 func canEnter() -> bool:
-	return self.manager.getStateName() == "Idle" && self.hadEmptySpace
+	return self.manager.getStateName() == "Idle" && self.manager.furniture.canBeDropped
 
 ## The first method called when the state is transitioned into
 func enter() -> void:
@@ -39,7 +39,7 @@ func physicsUpdate(_delta:float) -> void:
 	pass
 
 func _on_detected_body_entered(_body: Node2D) -> void:
-	self.hadEmptySpace = false
+	self.manager.furniture.canBeDropped = false
 
 func _on_detected_body_exited(_body: Node2D) -> void:
-	self.hadEmptySpace = true
+	self.manager.furniture.canBeDropped = true
