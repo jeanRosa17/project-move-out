@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cxowcytqevm5r"]
+[gd_scene load_steps=21 format=3 uid="uid://cxowcytqevm5r"]
 
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="1_ieyoq"]
 [ext_resource type="Texture2D" uid="uid://dytgdsg146xfm" path="res://Levels/Level Sketches/Bachelor_pad_test_level.png" id="2_8pl7b"]
@@ -12,25 +12,17 @@
 [ext_resource type="PackedScene" uid="uid://diko086yswlr0" path="res://Assets/Objects/Beds/Scene/Twin_Bed_Side.tscn" id="10_2p47e"]
 [ext_resource type="PackedScene" uid="uid://bujcbosiagjri" path="res://Assets/Objects/Dressers & Shelves/Scenes/wooden_shelf_front.tscn" id="11_2ew7u"]
 [ext_resource type="PackedScene" uid="uid://dpyl8x5qojmng" path="res://Assets/Objects/Table Items/Scenes/TV.tscn" id="12_jmsxy"]
-[ext_resource type="AudioStream" uid="uid://ixm05apa3fsb" path="res://Assets/Audio/furniture2 [game capstone].wav" id="14_5cbu3"]
-[ext_resource type="AudioStream" uid="uid://ilbhsc2vwd1n" path="res://Assets/Audio/furniture 1.wav" id="15_fas05"]
-[ext_resource type="Script" uid="uid://cv8mdnilcdg0d" path="res://Levels/Tests/FurnitureAudio.gd" id="16_4ynr2"]
-[ext_resource type="AudioStream" uid="uid://co27kfjleoj27" path="res://Assets/Audio/furniture [game capstone].wav" id="17_da7rw"]
 [ext_resource type="AudioStream" uid="uid://dy61bwuip8a27" path="res://Assets/Audio/lvl1.wav" id="18_yb2hw"]
 [ext_resource type="PackedScene" uid="uid://cfmb3mmeue8au" path="res://UI/Scenes/HUD.tscn" id="19_iglh1"]
 [ext_resource type="PackedScene" uid="uid://3y6qm1obo8js" path="res://Assets/Objects/Tables/Scenes/TV_and_desk_side.tscn" id="20_of3nc"]
 [ext_resource type="PackedScene" uid="uid://dupq6esd0r2ps" path="res://Assets/Objects/Tables/Scenes/white_bedside_table.tscn" id="21_5buyg"]
 [ext_resource type="PackedScene" uid="uid://cuho4egtuhmvt" path="res://Assets/Objects/Tables/Scenes/TV_and_desk_front.tscn" id="22_n6jrh"]
+[ext_resource type="PackedScene" uid="uid://uacgji4vcg37" path="res://Assets/Audio/push_pull_audio.tscn" id="23_of3nc"]
 [ext_resource type="PackedScene" uid="uid://bcmy8dq2ef0uc" path="res://Assets/Objects/Tables/Scenes/long_desk_front.tscn" id="23_vuwhr"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iqcmb"]
 normal = Vector2(1.79515e-06, 1)
 distance = -3.99999
-
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_b3xeb"]
-streams_count = 2
-stream_0/stream = ExtResource("14_5cbu3")
-stream_1/stream = ExtResource("15_fas05")
 
 [node name="Main" type="Node2D"]
 y_sort_enabled = true
@@ -113,24 +105,29 @@ position = Vector2(90, 221)
 
 [node name="possessed_wood_chair_side" parent="Environment/Y-Sorting" instance=ExtResource("9_of3nc")]
 position = Vector2(40, 150)
+move_offset = Vector2(-20, 0)
 
 [node name="possessed_wood_chair_side4" parent="Environment/Y-Sorting" instance=ExtResource("9_of3nc")]
 position = Vector2(40, 130)
+move_offset = Vector2(-20, 0)
 
 [node name="possessed_wood_chair_side5" parent="Environment/Y-Sorting" instance=ExtResource("9_of3nc")]
 position = Vector2(40, 100)
+move_offset = Vector2(-20, 0)
 
 [node name="possessed_wood_chair_side6" parent="Environment/Y-Sorting" instance=ExtResource("9_of3nc")]
 position = Vector2(100, 150)
-move_offset = Vector2(120, 150)
+move_offset = Vector2(20, 0)
 
 [node name="possessed_wood_chair_side2" parent="Environment/Y-Sorting" instance=ExtResource("9_of3nc")]
 position = Vector2(100, 130)
-move_offset = Vector2(120, 130)
+move_offset = Vector2(20, 0)
+wait_time = 0.7
 
 [node name="possessed_wood_chair_side3" parent="Environment/Y-Sorting" instance=ExtResource("9_of3nc")]
 position = Vector2(100, 100)
-move_offset = Vector2(120, 100)
+move_offset = Vector2(20, 0)
+wait_time = 1.0
 
 [node name="Twin_Bed_Side" parent="Environment/Y-Sorting" instance=ExtResource("10_2p47e")]
 position = Vector2(255, 18)
@@ -162,12 +159,6 @@ position = Vector2(226, 102)
 [node name="long_desk_front" parent="Environment/Y-Sorting" instance=ExtResource("23_vuwhr")]
 position = Vector2(237, 146)
 
-[node name="Push_Pull Audio" type="AudioStreamPlayer2D" parent="."]
-stream = SubResource("AudioStreamRandomizer_b3xeb")
-bus = &"Furniture"
-script = ExtResource("16_4ynr2")
-streams = [ExtResource("17_da7rw")]
-
 [node name="Level Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("18_yb2hw")
 autoplay = true
@@ -177,5 +168,7 @@ visible = false
 
 [node name="Level Results" parent="HUD" index="1"]
 replayLevelName = &"res://Levels/Scenes/HauntedHouseLevel.tscn"
+
+[node name="Push_Pull Audio" parent="." instance=ExtResource("23_of3nc")]
 
 [editable path="HUD"]

@@ -3,7 +3,7 @@ extends RigidBody2D
 class_name Furniture
 
 ## Update to be $AudioStreamPlayer2D
-@onready var audioPlayer:FurnitureAudio = get_parent().get_node("Push_Pull Audio")
+@onready var audioPlayer: FurnitureAudio = get_tree().root.find_child("Push_Pull Audio", true, false)
 @onready var area_detector: Area2D = $AreaDetector
 @onready var area_shape: CollisionShape2D = $AreaDetector/CollisionShape2D
 
