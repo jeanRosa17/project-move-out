@@ -167,6 +167,7 @@ autoplay = true
 visible = false
 
 [node name="Level Results" parent="HUD" index="1"]
+nextLevelName = &"res://Levels/Scenes/FratHouse.tscn"
 replayLevelName = &"res://Levels/Scenes/HauntedHouseLevel.tscn"
 
 [node name="Push_Pull Audio" parent="." instance=ExtResource("23_of3nc")]

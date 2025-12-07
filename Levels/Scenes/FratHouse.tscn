@@ -31,7 +31,6 @@ load_path = "res://.godot/imported/Frat House Floor 1.png-6dc760f316e63d454e821a
 
 [sub_resource type="Resource" id="Resource_4alro"]
 script = ExtResource("4_h7mup")
-dialogueScriptPath = &"res://Narrative/SampleText.txt"
 dialogueTag = &"null"
 metadata/_custom_type_script = "uid://bmqryoobj44j2"
 
@@ -49,7 +48,6 @@ stream_1/stream = ExtResource("12_medbn")
 
 [sub_resource type="Resource" id="Resource_v8k2n"]
 script = ExtResource("4_h7mup")
-dialogueScriptPath = &"res://Narrative/SampleText.txt"
 dialogueTag = &"null"
 metadata/_custom_type_script = "uid://bmqryoobj44j2"
 
@@ -260,6 +258,7 @@ dialogueTag = SubResource("Resource_v8k2n")
 visible = false
 
 [node name="Level Results" parent="HUD" index="1"]
+nextLevelName = &"res://Levels/Scenes/CollegeAppartmentLevel.tscn"
 replayLevelName = &"res://Levels/Scenes/CollegeAppartmentLevel.tscn"
 
 [node name="Area2D" type="Area2D" parent="."]
