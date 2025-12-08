@@ -44,17 +44,32 @@ func _physics_process(_delta: float) -> void:
 
 	if (self.isPushed):
 		var dir:Vector2 = self.player.velocity.normalized()
-		
-		if (dir.length() > 0.1): 
-			pass
-			#self.update_detector_direction(dir)
 
 		if (objects.is_empty()):
 			collision_layer = 0
 			linear_velocity = linear_velocity.lerp(player.velocity, 0.4)
 		else:
 			self.collision_layer = 2;
-			linear_velocity = Vector2.ZERO
+			if (dir.length() < 0.1): 
+				linear_velocity = Vector2.ZERO
+				return
+			
+			var can_move = true
+			for obj in objects:
+				var to_obj = (obj.global_position - global_position).normalized()
+				
+				print(dir.dot(to_obj))
+				if (dir.dot(to_obj) > 0.5):
+					can_move = false
+					break
+					
+			if can_move:
+				linear_velocity = linear_velocity.lerp(player.velocity, 0.4)
+			else:
+				linear_velocity = Vector2.ZERO
+			print("object blocked")
+
+
 		
 		## check to see if player is detached from object
 		if (position.distance_to(player.position) > 45): self.exitPush()

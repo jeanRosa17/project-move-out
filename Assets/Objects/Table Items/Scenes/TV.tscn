@@ -7,7 +7,7 @@
 size = Vector2(30, 27)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
-size = Vector2(32, 32)
+size = Vector2(32, 33)
 
 [node name="Couch" type="RigidBody2D" groups=["Furniture"]]
 collision_layer = 2
@@ -16,11 +16,8 @@ gravity_scale = 0.0
 can_sleep = false
 lock_rotation = true
 script = ExtResource("1_7doi6")
-canLift = null
 canPush = true
 canPull = true
-dialogueTag = null
-liftPosition = null
 metadata/_custom_type_script = "uid://c2vh27coguldq"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -35,6 +32,7 @@ collision_layer = 2
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector"]
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_ardoa")
 
 [connection signal="body_shape_entered" from="AreaDetector" to="." method="_on_area_detector_body_shape_entered"]
