@@ -116,6 +116,11 @@ func killLiftingTween() -> void:
 	self.floatXTween.kill()
 	self.floatYTween.kill()
 	self.floatTiltTween.kill()
+	
+	self.floatXTween = null
+	self.floatYTween = null
+	self.floatTiltTween = null
+	
 	self.rotation_degrees = 0
 
 #endregion

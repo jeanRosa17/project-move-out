@@ -7,7 +7,77 @@
 [node name="TitleScreen" type="Node2D"]
 script = ExtResource("1_jpkfb")
 
+[node name="Title" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(320, 50)
+offset_top = 31.0
+offset_right = 320.0
+offset_bottom = 81.0
+theme_override_fonts/normal_font = ExtResource("2_fbutq")
+theme_override_fonts/bold_font = ExtResource("2_fbutq")
+theme_override_fonts/bold_italics_font = ExtResource("2_fbutq")
+theme_override_fonts/italics_font = ExtResource("2_fbutq")
+theme_override_fonts/mono_font = ExtResource("2_fbutq")
+theme_override_font_sizes/normal_font_size = 36
+theme_override_font_sizes/bold_font_size = 48
+theme_override_font_sizes/bold_italics_font_size = 48
+theme_override_font_sizes/italics_font_size = 36
+theme_override_font_sizes/mono_font_size = 48
+bbcode_enabled = true
+text = "[i] Mystic [/i] Mover"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Creators" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(100, 30)
+offset_top = 85.0
+offset_right = 320.0
+offset_bottom = 115.0
+size_flags_vertical = 4
+theme_override_fonts/normal_font = ExtResource("2_fbutq")
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "Created by Ashton, Joel, Juhyun, Luna, & Thomas"
+horizontal_alignment = 1
+
+[node name="Play" type="Button" parent="."]
+custom_minimum_size = Vector2(50, 20)
+offset_left = 85.0
+offset_top = 141.0
+offset_right = 235.0
+offset_bottom = 161.0
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_fbutq")
+theme_override_font_sizes/font_size = 8
+text = "Play
+"
+
+[node name="Panel" type="PanelContainer" parent="."]
+visible = false
+custom_minimum_size = Vector2(150, 40)
+offset_left = 85.0
+offset_top = 131.0
+offset_right = 235.0
+offset_bottom = 171.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="LevelManager" parent="." instance=ExtResource("2_p1rv5")]
+z_index = -1
+
+[node name="Settings" type="Button" parent="."]
+visible = false
+custom_minimum_size = Vector2(50, 10)
+offset_left = 85.00001
+offset_top = 150.0
+offset_right = 235.0
+offset_bottom = 165.0
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_fbutq")
+theme_override_font_sizes/font_size = 8
+text = "Settings (coming soon)"
+
 [node name="Container" type="CenterContainer" parent="."]
+visible = false
 custom_minimum_size = Vector2(0, 180)
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,73 +87,4 @@ offset_bottom = 180.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BoxContainer" type="BoxContainer" parent="Container"]
-custom_minimum_size = Vector2(200, 100)
-layout_mode = 2
-vertical = true
-
-[node name="Title" type="RichTextLabel" parent="Container/BoxContainer"]
-custom_minimum_size = Vector2(320, 50)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("2_fbutq")
-theme_override_fonts/mono_font = ExtResource("2_fbutq")
-theme_override_fonts/italics_font = ExtResource("2_fbutq")
-theme_override_fonts/bold_italics_font = ExtResource("2_fbutq")
-theme_override_fonts/bold_font = ExtResource("2_fbutq")
-theme_override_font_sizes/bold_italics_font_size = 48
-theme_override_font_sizes/italics_font_size = 36
-theme_override_font_sizes/mono_font_size = 48
-theme_override_font_sizes/normal_font_size = 36
-theme_override_font_sizes/bold_font_size = 48
-bbcode_enabled = true
-text = "[i] Mystic [/i] Mover"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Creators" type="RichTextLabel" parent="Container/BoxContainer"]
-custom_minimum_size = Vector2(100, 20)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("2_fbutq")
-theme_override_font_sizes/normal_font_size = 12
-bbcode_enabled = true
-text = "Created by Ashton, Joel, Juhyun, Luna, & Thomas"
-horizontal_alignment = 1
-
-[node name="HSeparator" type="HSeparator" parent="Container/BoxContainer"]
-custom_minimum_size = Vector2(0, 28)
-layout_mode = 2
-
-[node name="Panel" type="PanelContainer" parent="Container/BoxContainer"]
-custom_minimum_size = Vector2(200, 70)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="Play Tutorial A" type="Button" parent="Container/BoxContainer/Panel"]
-custom_minimum_size = Vector2(50, 20)
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("2_fbutq")
-theme_override_font_sizes/font_size = 8
-text = "Play Tutorial A"
-
-[node name="Play Tutorial B" type="Button" parent="Container/BoxContainer/Panel"]
-custom_minimum_size = Vector2(50, 20)
-layout_mode = 2
-size_flags_vertical = 4
-theme_override_fonts/font = ExtResource("2_fbutq")
-theme_override_font_sizes/font_size = 8
-text = "Play Tutorial B"
-
-[node name="Settings" type="Button" parent="Container/BoxContainer/Panel"]
-custom_minimum_size = Vector2(50, 10)
-layout_mode = 2
-size_flags_vertical = 8
-theme_override_fonts/font = ExtResource("2_fbutq")
-theme_override_font_sizes/font_size = 8
-text = "Settings (coming soon)"
-
-[node name="LevelManager" parent="." instance=ExtResource("2_p1rv5")]
-
-[connection signal="pressed" from="Container/BoxContainer/Panel/Play Tutorial A" to="." method="_on_play_tutorial_a_pressed"]
-[connection signal="pressed" from="Container/BoxContainer/Panel/Play Tutorial B" to="." method="_on_play_tutorial_b_pressed"]
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
