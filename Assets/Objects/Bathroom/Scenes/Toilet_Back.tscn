@@ -7,7 +7,7 @@
 size = Vector2(14, 23)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
-size = Vector2(20, 28)
+size = Vector2(16, 24)
 
 [node name="Toilet" type="RigidBody2D" groups=["Furniture"]]
 collision_layer = 2
