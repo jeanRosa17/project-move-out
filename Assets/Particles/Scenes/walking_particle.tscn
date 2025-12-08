@@ -11,7 +11,8 @@ particles_anim_loop = true
 
 [sub_resource type="Gradient" id="Gradient_b8g0l"]
 interpolation_mode = 2
-offsets = PackedFloat32Array(0, 0.625)
+interpolation_color_space = 1
+offsets = PackedFloat32Array(0, 0.74038464)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
 
 [node name="Walking_particle" type="Node2D"]
@@ -32,6 +33,7 @@ radial_accel_max = 100.0
 angle_max = 40.0
 scale_amount_min = 0.5
 scale_amount_max = 1.2
+color = Color(0.8598031, 0.9999997, 0.9791252, 1)
 color_ramp = SubResource("Gradient_b8g0l")
 hue_variation_max = 1.0
 anim_speed_min = 1.0

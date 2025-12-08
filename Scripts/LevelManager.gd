@@ -16,5 +16,5 @@ func _ready() -> void:
 func changeSceneTo(filePath:StringName) -> void:
 	tween = null
 	tween = get_tree().create_tween()
-	tween.tween_property(self, "modulate:a", 1.0, duration).from(0.0)
+	tween.tween_property(self, "modulate:a", 1.0, duration).from(0.0).set_delay(0.3)
 	tween.tween_callback(get_tree().change_scene_to_file.bind(filePath))
