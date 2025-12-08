@@ -1,0 +1,97 @@
+[gd_scene load_steps=13 format=3 uid="uid://b8esrtg2o2fn8"]
+
+[ext_resource type="Texture2D" uid="uid://sw8pwxto14nl" path="res://Assets/Garage/Driving Van.png" id="1_74ux1"]
+[ext_resource type="PackedScene" uid="uid://dotpp2gym0w7k" path="res://Assets/Particles/Scenes/walking_particle.tscn" id="2_ewm8d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewm8d"]
+atlas = ExtResource("1_74ux1")
+region = Rect2(0, 0, 111, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5d4tu"]
+atlas = ExtResource("1_74ux1")
+region = Rect2(111, 0, 111, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3ul6"]
+atlas = ExtResource("1_74ux1")
+region = Rect2(222, 0, 111, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56m75"]
+atlas = ExtResource("1_74ux1")
+region = Rect2(333, 0, 111, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3t6yb"]
+atlas = ExtResource("1_74ux1")
+region = Rect2(444, 0, 111, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ytw7b"]
+atlas = ExtResource("1_74ux1")
+region = Rect2(555, 0, 111, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dk7n"]
+atlas = ExtResource("1_74ux1")
+region = Rect2(666, 0, 111, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kiheq"]
+atlas = ExtResource("1_74ux1")
+region = Rect2(777, 0, 111, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4h6is"]
+atlas = ExtResource("1_74ux1")
+region = Rect2(888, 0, 111, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vbaww"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ewm8d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5d4tu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3ul6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_56m75")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3t6yb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ytw7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2dk7n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kiheq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4h6is")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="Moving Van" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vbaww")
+autoplay = "default"
+frame_progress = 0.5586055
+
+[node name="Walking_particle" parent="." instance=ExtResource("2_ewm8d")]
+modulate = Color(0.62967473, 0.62967473, 0.6296747, 1)
+position = Vector2(-46, 19)
+rotation = -3.1415927
+
+[node name="Walking_particle2" parent="." instance=ExtResource("2_ewm8d")]
+modulate = Color(0.62967473, 0.62967473, 0.6296747, 1)
+position = Vector2(-47, 21)
+rotation = -3.1415927
+
+[node name="Walking_particle3" parent="." instance=ExtResource("2_ewm8d")]
+modulate = Color(0.62967473, 0.62967473, 0.6296747, 1)
+position = Vector2(-46, 20)
+rotation = -3.1415927

@@ -5,6 +5,7 @@ extends Node2D
 @onready var title: RichTextLabel = $Title
 @onready var creators: RichTextLabel = $Creators
 @onready var bg: Node2D = $BG
+@onready var moving_van: Node2D = $"Moving Van"
 
 #@onready var floor2: TileMapLayer = $Floor2
 
@@ -30,7 +31,9 @@ func startTweens():
 	var authors = create_tween()
 	var titleText = create_tween()
 	var playButton = create_tween()
+	var van = create_tween()
 	
+	moving_van.position.x = -300
 	creators.modulate.a = 0.0
 	title.modulate.a = 0.0
 	play.modulate.a = 0.0
@@ -38,6 +41,13 @@ func startTweens():
 	authors.tween_property(creators, "modulate:a", 1.0, 0.5).from(0)
 	authors.tween_property(creators, "modulate:a", 0.0, 0.25).set_delay(1.5)
 	
+	van.tween_property(moving_van, "position:x", 160, 2.0).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_BOUNCE)
+
+	van.set_loops()
+	van.tween_property(moving_van, "position:x", 180, 4.0).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_BOUNCE)
+	van.tween_property(moving_van, "position:x", 130, 3.0).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_BOUNCE).set_delay(3)
+
+
 	titleText.tween_property(title, "position:y", 8, 2.0).from(-300).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_BOUNCE)
 	playButton.tween_property(play, "position:y", 152, 2.0).from(300).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_BOUNCE)
 	

@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://brfkiqavvunae"]
+
+[ext_resource type="Texture2D" uid="uid://chmog7easei21" path="res://Assets/Particles/Dust White.png" id="1_fqkh7"]
+[ext_resource type="Script" uid="uid://bwgoahn5brpfe" path="res://Assets/Particles/Script/walking_particle.gd" id="2_f2f58"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_tthwx"]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[sub_resource type="Gradient" id="Gradient_b8g0l"]
+interpolation_mode = 2
+interpolation_color_space = 1
+offsets = PackedFloat32Array(0, 0.74038464)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[node name="Walking_particle" type="Node2D"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_tthwx")
+amount = 21
+texture = ExtResource("1_fqkh7")
+lifetime = 2.0
+speed_scale = 2.5
+lifetime_randomness = 0.18
+fract_delta = false
+spread = 20.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 137.0
+radial_accel_min = -50.0
+radial_accel_max = 100.0
+angle_max = 20.0
+scale_amount_min = 0.5
+scale_amount_max = 1.2
+color = Color(0.83515275, 1.0187511, 0.99480355, 1)
+color_ramp = SubResource("Gradient_b8g0l")
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+anim_speed_min = 1.0
+anim_speed_max = 9.0
+script = ExtResource("2_f2f58")
