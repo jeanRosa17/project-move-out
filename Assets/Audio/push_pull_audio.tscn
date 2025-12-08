@@ -4,7 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://ilbhsc2vwd1n" path="res://Assets/Audio/furniture 1.wav" id="2_0cgvr"]
 [ext_resource type="Script" uid="uid://cv8mdnilcdg0d" path="res://Levels/Tests/FurnitureAudio.gd" id="3_jnu4o"]
 [ext_resource type="AudioStream" uid="uid://co27kfjleoj27" path="res://Assets/Audio/furniture [game capstone].wav" id="4_eewuc"]
-[ext_resource type="AudioStream" uid="uid://bsbx8bv14ram7" path="res://Assets/Audio/put down noise.wav" id="5_0cgvr"]
+[ext_resource type="AudioStream" uid="uid://dr2kfywymswqw" path="res://Assets/Audio/magical put down noise.wav" id="5_jnu4o"]
 [ext_resource type="AudioStream" uid="uid://dt60bfwm4ccxq" path="res://Assets/Audio/pick up noise magical 1.wav" id="6_jnu4o"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_b3xeb"]
@@ -19,7 +19,7 @@ script = ExtResource("3_jnu4o")
 streams = [ExtResource("4_eewuc")]
 
 [node name="Put Down Noise" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_0cgvr")
+stream = ExtResource("5_jnu4o")
 
 [node name="Pick Up noise" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_jnu4o")
