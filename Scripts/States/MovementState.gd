@@ -40,7 +40,7 @@ func exit() -> void:
 	else:
 		self.getManager().view.play("idle " + self.getManager().view.animation.split(" ")[1].to_lower()) 
 
-## Updates the animation's flipping stateww
+## Updates the animation's flipping statew
 func update(_delta:float) -> void:
 	
 	self.getManager().view.flip_h = self.getManager().direction.x < 0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://xdjv122pxc6c"]
+[gd_scene load_steps=26 format=4 uid="uid://xdjv122pxc6c"]
 
 [ext_resource type="Texture2D" uid="uid://dlqlqw0fvr4wp" path="res://Assets/Objects/Carpets/carpet.png" id="2_pebci"]
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="3_3j8mk"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cqt367stu26c2" path="res://Assets/Objects/Table Items/Scenes/Pot.tscn" id="6_v8k2n"]
 [ext_resource type="PackedScene" uid="uid://dpyl8x5qojmng" path="res://Assets/Objects/Table Items/Scenes/TV.tscn" id="7_d4vco"]
 [ext_resource type="PackedScene" uid="uid://d26wukook25xb" path="res://Assets/Objects/Dressers & Shelves/Scenes/Table.tscn" id="7_j8pg1"]
+[ext_resource type="Resource" uid="uid://brwl51b3u5pqg" path="res://Scripts/Dialogue/nullDialogue.tres" id="8_rwqj1"]
 [ext_resource type="PackedScene" uid="uid://c638p25j2md1l" path="res://Assets/Objects/Bathroom/Scenes/Toilet_Back.tscn" id="9_4s3f5"]
 [ext_resource type="PackedScene" uid="uid://dq5dgctxnghmb" path="res://Assets/Objects/Beds/Scene/Double_Bed.tscn" id="11_8inuc"]
 [ext_resource type="PackedScene" uid="uid://nomguund5j25" path="res://Assets/Objects/Couches/Scenes/red_couch_front.tscn" id="12_4s3f5"]
@@ -112,6 +113,9 @@ scale = Vector2(0.973214, 1.01571)
 [node name="TV" parent="Y-Sorting" instance=ExtResource("7_d4vco")]
 position = Vector2(114, 62)
 scale = Vector2(0.973214, 1.01571)
+canLift = false
+dialogueTag = ExtResource("8_rwqj1")
+liftPosition = Vector2(0, -16)
 
 [node name="Bed" parent="Y-Sorting" instance=ExtResource("11_8inuc")]
 position = Vector2(316, 66)

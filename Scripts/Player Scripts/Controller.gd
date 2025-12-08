@@ -20,7 +20,6 @@ func _process(delta:float) -> void:
 		self.handleLift(delta)
 		#self.handlePushPull(delta)
 		self.handleInteract(delta)
-		self.handleRotate(delta)
 	
 	
 	var prefix:String = "move"
@@ -89,12 +88,6 @@ func handleInteract(_delta:float) -> void:
 		if ((self.manager.getStateName() == "Idle") and (not self.manager.wasPreviousState("Lift"))):
 			self.manager.changeState("Interact")
 				
-
-func handleRotate(_delta:float) -> void:
-	if (Input.is_action_just_pressed("Rotate")):
-		
-		if ((self.manager.furniture)):
-			self.manager.furniture.rotateFurniture()
 
 func offControls() -> void:
 	canControl = false

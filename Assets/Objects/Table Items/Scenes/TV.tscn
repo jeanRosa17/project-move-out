@@ -16,8 +16,11 @@ gravity_scale = 0.0
 can_sleep = false
 lock_rotation = true
 script = ExtResource("1_7doi6")
+canLift = null
 canPush = true
 canPull = true
+dialogueTag = null
+liftPosition = null
 metadata/_custom_type_script = "uid://c2vh27coguldq"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

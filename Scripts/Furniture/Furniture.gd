@@ -45,7 +45,9 @@ func _physics_process(_delta: float) -> void:
 	if (self.isPushed):
 		var dir:Vector2 = self.player.velocity.normalized()
 		
-		if (dir.length() > 0.1): self.update_detector_direction(dir)
+		if (dir.length() > 0.1): 
+			pass
+			#self.update_detector_direction(dir)
 
 		if (objects.is_empty()):
 			collision_layer = 0
@@ -82,10 +84,10 @@ func createGhostSprite(body:CharacterBody2D) -> void:
 	area.add_child(collider)
 	#area.collision_layer = 0
 	body.find_child("Detector").get_child(0).add_child(ghostSprite)
-	
+	ghostSprite.position *= Vector2(10, 10)
 	self.ghostTween = self.get_tree().create_tween()
 	self.ghostTween.tween_property(ghostSprite, "self_modulate:a", 0, 1.0).from(1.0).set_delay(0.1)
-	#self.ghostTween.tween_property(ghostSprite, "self_modulate:a", 1.0, 1.0).from(0.0).set_delay(0.1)
+	self.ghostTween.tween_property(ghostSprite, "self_modulate:a", 1.0, 1.0).from(0.0).set_delay(0.1)
 	self.ghostTween.set_loops()
 
 
@@ -107,9 +109,9 @@ func startLiftingTween() -> void:
 	self.floatYTween.tween_property(self, "position:y", 4, 0.3).set_delay(0.05)
 	self.floatYTween.set_loops().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_ELASTIC)
 	
-	self.floatTiltTween.tween_property(self, "rotation_degrees", -4, 0.5).set_delay(0.4)
-	self.floatTiltTween.tween_property(self, "rotation_degrees", 4, 0.5).set_delay(0.8)
-	self.floatTiltTween.set_loops().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_ELASTIC)
+	#self.floatTiltTween.tween_property(self, "rotation_degrees", -4, 0.5).set_delay(0.4)
+	#self.floatTiltTween.tween_property(self, "rotation_degrees", 4, 0.5).set_delay(0.8)
+	#self.floatTiltTween.set_loops().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_ELASTIC)
 
 # Stops all lifting tweens
 func killLiftingTween() -> void:
@@ -208,10 +210,3 @@ func _on_area_detector_body_shape_exited(_body_rid: RID, body: Node2D, _body_sha
 		relieveObject(body)
 	pass # Replace with function body.
 #endregion
-
-#func rotateFurniture() -> void:
-	#if (rotatedVersion != null):
-		#print("rotate")
-		#var me:Furniture = self
-		#self.replace_by(rotatedVersion)
-		#rotatedVersion = me

@@ -6,9 +6,12 @@ extends State
 
 ## Furniture needs to be not null and needs to be lifted.
 func canEnter() -> bool:
-	if (self.manager.furniture && self.manager.furniture.canLift):
-		return true
-	elif (self.manager.furniture && self.manager.furniture.canPush):
+	if (self.manager.furniture == null):
+		return false
+	
+	if (self.manager.furniture.canLift): return true
+	
+	elif (self.manager.furniture.canPush):
 		self.manager.changeState("Push")
 		return false;
 	else:
