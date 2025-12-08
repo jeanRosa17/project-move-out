@@ -31,7 +31,6 @@ load_path = "res://.godot/imported/Frat House Floor 1.png-6dc760f316e63d454e821a
 
 [sub_resource type="Resource" id="Resource_4alro"]
 script = ExtResource("4_h7mup")
-dialogueScriptPath = &"res://Narrative/SampleText.txt"
 dialogueTag = &"null"
 metadata/_custom_type_script = "uid://bmqryoobj44j2"
 
@@ -49,7 +48,6 @@ stream_1/stream = ExtResource("12_medbn")
 
 [sub_resource type="Resource" id="Resource_v8k2n"]
 script = ExtResource("4_h7mup")
-dialogueScriptPath = &"res://Narrative/SampleText.txt"
 dialogueTag = &"null"
 metadata/_custom_type_script = "uid://bmqryoobj44j2"
 
@@ -232,12 +230,12 @@ position = Vector2(57, -86)
 position = Vector2(31, -85)
 scale = Vector2(0.973214, 1.01571)
 
-[node name="Shelf3" parent="." instance=ExtResource("19_jknns")]
-position = Vector2(244, 131)
+[node name="Shelf4" parent="." instance=ExtResource("19_jknns")]
+position = Vector2(208, 132)
 disable_mode = 2
 
-[node name="Shelf" parent="Shelf3" instance=ExtResource("19_jknns")]
-position = Vector2(-36, 1)
+[node name="Shelf3" parent="." instance=ExtResource("19_jknns")]
+position = Vector2(244, 131)
 disable_mode = 2
 
 [node name="Pot3" parent="." instance=ExtResource("3_4c7vy")]
@@ -254,12 +252,12 @@ dialogueTag = SubResource("Resource_4alro")
 position = Vector2(129, 129)
 disable_mode = 2
 
-[node name="Couch2" parent="." instance=ExtResource("15_2md56")]
-position = Vector2(146, 229)
+[node name="Couch3" parent="." instance=ExtResource("15_2md56")]
+position = Vector2(211, 227)
 dialogueTag = SubResource("Resource_v8k2n")
 
-[node name="Couch" parent="Couch2" instance=ExtResource("15_2md56")]
-position = Vector2(65, -2)
+[node name="Couch2" parent="." instance=ExtResource("15_2md56")]
+position = Vector2(146, 229)
 dialogueTag = SubResource("Resource_v8k2n")
 
 [node name="HUD" parent="." instance=ExtResource("24_5ounb")]

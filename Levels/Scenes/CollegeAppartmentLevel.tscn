@@ -71,6 +71,7 @@ tile_map_data = PackedByteArray("AAD//w0ABQAHAAAAAAD//w4ABQAHAAAAAAAAAA0ABQAHAAA
 tile_set = ExtResource("2_otbpy")
 
 [node name="Level Sketch" type="Sprite2D" parent="."]
+visible = false
 z_index = -5
 position = Vector2(746, 119)
 texture = ExtResource("3_6cfkj")
@@ -120,7 +121,7 @@ position = Vector2(296.25, 24)
 shape = SubResource("RectangleShape2D_jeepb")
 
 [node name="Garage" parent="Y-Sorting" instance=ExtResource("12_qdg8e")]
-position = Vector2(100, 300)
+position = Vector2(67, 297)
 rotation = 1.5708
 
 [node name="Push_Pull Audio" type="AudioStreamPlayer2D" parent="Y-Sorting"]
@@ -149,13 +150,13 @@ limit_right = 1468
 limit_bottom = 661
 
 [node name="Sink and Stove" type="TileMapLayer" parent="Y-Sorting"]
-z_index = 1
-tile_map_data = PackedByteArray("AAACAAkAAgAGAAEAAAAXAPz/AgAEAAEAAFAYAPz/AgAEAAAAAFAaAPz/AgAFAAAAAFAZAPz/AgAFAAEAAFAaAP3/AgAGAAAAAFAZAP3/AgAGAAEAAFA=")
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAACAAkAAgAGAAEAAAAXAPz/AgAEAAEAAFAYAPz/AgAEAAAAAFAaAPz/AgAFAAAAAFAZAPz/AgAFAAEAAFA=")
 tile_set = ExtResource("2_otbpy")
 
 [node name="Counter" type="TileMapLayer" parent="Y-Sorting"]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAUAPz/AgABAAAAAAAUAP//AgAAAAIAAAAUAP3/AgAAAAEAAAAUAP7/AgAAAAEAAAAVAPz/AgACAAAAAAAWAPz/AgACAAAAAAAXAPz/AgACAAAAAAAYAPz/AgAAAAEAAAAYAP3/AgACAAIAAAAXAP3/AgACAAIAAAAWAP3/AgACAAIAAAAVAP3/AgACAAIAAAA=")
+tile_map_data = PackedByteArray("AAAUAPz/AgABAAAAAAAUAP//AgAAAAIAAAAUAP3/AgAAAAEAAAAUAP7/AgAAAAEAAAAVAPz/AgACAAAAAAAWAPz/AgACAAAAAAAYAP3/AgACAAIAAAAXAP3/AgACAAIAAAAWAP3/AgACAAIAAAAVAP3/AgACAAIAAAA=")
 tile_set = ExtResource("2_otbpy")
 
 [node name="Level Music" type="AudioStreamPlayer2D" parent="."]
@@ -232,18 +233,16 @@ position = Vector2(383, 14)
 [node name="Table2" parent="Kitchen Area" instance=ExtResource("8_ru6yg")]
 
 [node name="Wood_Chair_Side" parent="Kitchen Area" instance=ExtResource("7_ysqfs")]
-position = Vector2(-26, 7)
+position = Vector2(-26, 14)
 
 [node name="Wood_Chair_Side2" parent="Kitchen Area" instance=ExtResource("7_ysqfs")]
 position = Vector2(-25, -18)
 
 [node name="Wood_Chair_Side3" parent="Kitchen Area" instance=ExtResource("7_ysqfs")]
-position = Vector2(29, -19)
-scale = Vector2(-1, 1)
+position = Vector2(25, -26)
 
 [node name="Wood_Chair_Side4" parent="Kitchen Area" instance=ExtResource("7_ysqfs")]
-position = Vector2(28, 3)
-scale = Vector2(-1, 1)
+position = Vector2(27, 7)
 
 [node name="Ice Room" type="Node2D" parent="."]
 

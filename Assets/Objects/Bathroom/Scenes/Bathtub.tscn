@@ -7,7 +7,7 @@
 size = Vector2(26, 46)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
-size = Vector2(36, 52)
+size = Vector2(31, 52)
 
 [node name="Bathtub" type="RigidBody2D" groups=["Furniture"]]
 collision_layer = 2
@@ -34,7 +34,7 @@ collision_layer = 2
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector"]
-position = Vector2(0, 8)
+position = Vector2(-0.5, 8)
 shape = SubResource("RectangleShape2D_ardoa")
 
 [connection signal="body_shape_entered" from="AreaDetector" to="." method="_on_area_detector_body_shape_entered"]
