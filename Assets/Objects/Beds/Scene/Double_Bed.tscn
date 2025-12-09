@@ -7,7 +7,7 @@
 size = Vector2(26, 42)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
-size = Vector2(36, 52)
+size = Vector2(32, 52)
 
 [node name="Double Bed" type="RigidBody2D" groups=["Furniture"]]
 collision_layer = 2

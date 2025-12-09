@@ -7,7 +7,7 @@
 size = Vector2(44, 28)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
-size = Vector2(57, 51)
+size = Vector2(48, 43)
 
 [node name="redder_couch_front" type="RigidBody2D" groups=["Furniture"]]
 collision_layer = 2
@@ -32,7 +32,7 @@ collision_layer = 2
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector"]
-position = Vector2(-0.5, 2.5)
+position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_ardoa")
 
 [connection signal="body_shape_entered" from="AreaDetector" to="." method="_on_area_detector_body_shape_entered"]

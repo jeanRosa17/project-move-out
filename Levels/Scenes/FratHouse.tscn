@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://b2fj0cyyvoq31"]
+[gd_scene load_steps=33 format=4 uid="uid://b2fj0cyyvoq31"]
 
 [ext_resource type="Texture2D" uid="uid://dlqlqw0fvr4wp" path="res://Assets/Objects/Carpets/carpet.png" id="1_nhc3c"]
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="2_qhrob"]
@@ -9,10 +9,19 @@
 [ext_resource type="Script" uid="uid://cv8mdnilcdg0d" path="res://Levels/Tests/FurnitureAudio.gd" id="13_qn5xu"]
 [ext_resource type="AudioStream" uid="uid://co27kfjleoj27" path="res://Assets/Audio/furniture [game capstone].wav" id="14_1yhro"]
 [ext_resource type="PackedScene" uid="uid://brfkiqavvunae" path="res://Assets/Particles/Scenes/wind_particle.tscn" id="15_nlmik"]
+[ext_resource type="PackedScene" uid="uid://cl3ww3w6r3n1r" path="res://Assets/Objects/Kitchen/Scenes/Fridge.tscn" id="16_diw3d"]
+[ext_resource type="PackedScene" uid="uid://cuho4egtuhmvt" path="res://Assets/Objects/Tables/Scenes/TV_and_desk_front.tscn" id="17_pgdn0"]
+[ext_resource type="PackedScene" uid="uid://nomguund5j25" path="res://Assets/Objects/Couches/Scenes/red_couch_front.tscn" id="18_pgdn0"]
+[ext_resource type="PackedScene" uid="uid://d26wukook25xb" path="res://Assets/Objects/Dressers & Shelves/Scenes/Table.tscn" id="19_2hhvi"]
+[ext_resource type="PackedScene" uid="uid://1xu4q5luy86h" path="res://Assets/Objects/Chairs/Scene/Orange_Chair_Side.tscn" id="20_owxiu"]
 [ext_resource type="Texture2D" uid="uid://b0r0nkq7wuc8b" path="res://Assets/Untitled_Artwork.png" id="20_qjb6p"]
+[ext_resource type="PackedScene" uid="uid://dq5dgctxnghmb" path="res://Assets/Objects/Beds/Scene/Double_Bed.tscn" id="21_owxiu"]
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Assets/Player/Scenes/Player.tscn" id="21_wr5fp"]
+[ext_resource type="PackedScene" uid="uid://byhkf48wxg1gp" path="res://Assets/Objects/Plants/Dino pot.tscn" id="22_qkqmv"]
 [ext_resource type="Script" uid="uid://1ugs6cpgg5xy" path="res://Levels/Scenes/Tutorial/trigger_sensor.gd" id="23_u40ca"]
+[ext_resource type="PackedScene" uid="uid://cqt367stu26c2" path="res://Assets/Objects/Table Items/Scenes/Pot.tscn" id="23_x73vs"]
 [ext_resource type="PackedScene" uid="uid://cfmb3mmeue8au" path="res://UI/Scenes/HUD.tscn" id="24_5ounb"]
+[ext_resource type="PackedScene" uid="uid://fsead8bsqvyr" path="res://Assets/Objects/Couches/Scenes/redder_couch_front.tscn" id="24_bpkrg"]
 [ext_resource type="Script" uid="uid://c3h1qoybxufrj" path="res://Scripts/wind.gd" id="25_g0mxu"]
 [ext_resource type="AudioStream" uid="uid://c8ey07cvvm0ij" path="res://Assets/Audio/frat house.wav" id="26_qhrob"]
 
@@ -43,6 +52,14 @@ size = Vector2(11.75, 57)
 size = Vector2(57, 10)
 
 [node name="Main" type="Node2D"]
+
+[node name="Carpet" type="Sprite2D" parent="."]
+position = Vector2(91, 194)
+texture = ExtResource("1_nhc3c")
+
+[node name="Carpet2" type="Sprite2D" parent="."]
+position = Vector2(197, 192)
+texture = ExtResource("1_nhc3c")
 
 [node name="Tilemap" type="CanvasLayer" parent="."]
 layer = -1
@@ -129,14 +146,6 @@ shape = SubResource("WorldBoundaryShape2D_iqcmb")
 position = Vector2(358, 42)
 rotation = -4.71239
 shape = SubResource("WorldBoundaryShape2D_iqcmb")
-
-[node name="Carpet" type="Sprite2D" parent="."]
-position = Vector2(91, 194)
-texture = ExtResource("1_nhc3c")
-
-[node name="Carpet2" type="Sprite2D" parent="."]
-position = Vector2(197, 192)
-texture = ExtResource("1_nhc3c")
 
 [node name="Garage" parent="." instance=ExtResource("10_ixm0r")]
 position = Vector2(-160, 64)
@@ -344,6 +353,52 @@ shape = SubResource("RectangleShape2D_nlmik")
 position = Vector2(44, 75)
 rotation = -1.5708
 scale = Vector2(0.5, 0.5)
+
+[node name="Fridge" parent="." instance=ExtResource("16_diw3d")]
+position = Vector2(431, -130)
+
+[node name="TV" parent="." instance=ExtResource("17_pgdn0")]
+position = Vector2(57, -126)
+
+[node name="Couch" parent="." instance=ExtResource("18_pgdn0")]
+position = Vector2(55, -59)
+
+[node name="Table" parent="." instance=ExtResource("19_2hhvi")]
+position = Vector2(335, -62)
+
+[node name="Orange Chair" parent="." instance=ExtResource("20_owxiu")]
+position = Vector2(361, -61)
+
+[node name="Orange Chair2" parent="." instance=ExtResource("20_owxiu")]
+position = Vector2(308, -63)
+scale = Vector2(-1, 1)
+
+[node name="Double Bed" parent="." instance=ExtResource("21_owxiu")]
+position = Vector2(190, -112)
+
+[node name="Double Bed2" parent="." instance=ExtResource("21_owxiu")]
+position = Vector2(148, -114)
+
+[node name="Dino Pot" parent="." instance=ExtResource("22_qkqmv")]
+position = Vector2(143, 182)
+canLift = true
+canPush = false
+canPull = false
+
+[node name="Pot" parent="." instance=ExtResource("23_x73vs")]
+position = Vector2(260, 135)
+
+[node name="Pot2" parent="." instance=ExtResource("23_x73vs")]
+position = Vector2(262, 245)
+
+[node name="Pot3" parent="." instance=ExtResource("23_x73vs")]
+position = Vector2(25, 247)
+
+[node name="Redder couch" parent="." instance=ExtResource("24_bpkrg")]
+position = Vector2(112, 129)
+
+[node name="Redder couch 2" parent="." instance=ExtResource("24_bpkrg")]
+position = Vector2(164, 129)
 
 [connection signal="body_entered" from="Node2D/TriggerSensor" to="Node2D/TriggerSensor" method="_on_body_entered"]
 [connection signal="body_entered" from="Wind/Wind_entrence" to="Wind/Wind_entrence" method="_on_body_entered"]
