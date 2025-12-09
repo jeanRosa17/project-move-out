@@ -3,7 +3,6 @@ extends State
 
 @onready var manager:StateManager = self.getManager()
 @onready var backToIdle:Callable = func () -> void : self.manager.changeState("Idle")
-@export var throwDistance:int = 12
 @export var area2D:Area2D
 var canDrop:bool
 
