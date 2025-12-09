@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cg4sm8p6nsaf2"
-path="res://.godot/imported/Glass Table.png-5aa5d37729c1224e0e737cd5b2029d1a.ctex"
+uid="uid://np2lgidnfr8k"
+path="res://.godot/imported/Wind Instruments Sheet.png-fbf5e3327fb4174affbcc36a01e45a7e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/New_Sprites/Glass Table.png"
-dest_files=["res://.godot/imported/Glass Table.png-5aa5d37729c1224e0e737cd5b2029d1a.ctex"]
+source_file="res://Assets/New_Sprites/Wind Instruments Sheet.png"
+dest_files=["res://.godot/imported/Wind Instruments Sheet.png-fbf5e3327fb4174affbcc36a01e45a7e.ctex"]
 
 [params]
 

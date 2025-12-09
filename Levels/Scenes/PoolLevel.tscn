@@ -91,6 +91,11 @@ position = Vector2(474, 250)
 rotation = -4.71239
 shape = SubResource("WorldBoundaryShape2D_iqcmb")
 
+[node name="Garage" parent="." instance=ExtResource("4_h6b8q")]
+z_index = -1
+position = Vector2(365, 405)
+rotation = -1.5707964
+
 [node name="Environment" type="Node2D" parent="."]
 
 [node name="Y-Sorting" type="Node2D" parent="Environment"]
@@ -106,10 +111,6 @@ limit_left = 0
 limit_top = -33
 limit_right = 477
 limit_bottom = 444
-
-[node name="Garage" parent="Environment/Y-Sorting" instance=ExtResource("4_h6b8q")]
-position = Vector2(365, 405)
-rotation = -1.5707964
 
 [node name="Floaties" parent="Environment/Y-Sorting" instance=ExtResource("7_yxchq")]
 position = Vector2(296, 33)
