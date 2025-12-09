@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://dvnkgtm3i14qa"]
+[gd_scene load_steps=21 format=4 uid="uid://dvnkgtm3i14qa"]
 
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="1_d1sx3"]
 [ext_resource type="Shader" uid="uid://fdgkrlk22v5j" path="res://Scripts/Shaders/Water.gdshader" id="2_5siwj"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://nomguund5j25" path="res://Assets/Objects/Couches/Scenes/red_couch_front.tscn" id="5_f55pf"]
 [ext_resource type="Script" uid="uid://bmqryoobj44j2" path="res://Scripts/Dialogue/DialogueTag.gd" id="6_3jiiq"]
 [ext_resource type="AudioStream" uid="uid://ixm05apa3fsb" path="res://Assets/Audio/furniture2 [game capstone].wav" id="7_b1a3g"]
+[ext_resource type="PackedScene" uid="uid://2n1w5yvs61is" path="res://Assets/New_Sprites/Scenes/Floaties.tscn" id="7_yxchq"]
 [ext_resource type="AudioStream" uid="uid://ilbhsc2vwd1n" path="res://Assets/Audio/furniture 1.wav" id="8_yjtvd"]
 [ext_resource type="Script" uid="uid://cv8mdnilcdg0d" path="res://Levels/Tests/FurnitureAudio.gd" id="9_4rsaq"]
 [ext_resource type="AudioStream" uid="uid://co27kfjleoj27" path="res://Assets/Audio/furniture [game capstone].wav" id="10_d20qw"]
@@ -125,6 +126,12 @@ position = Vector2(45, 56)
 canLift = null
 dialogueTag = SubResource("Resource_v8k2n")
 liftPosition = null
+
+[node name="Floaties" parent="Environment/Y-Sorting" instance=ExtResource("7_yxchq")]
+position = Vector2(296, 33)
+
+[node name="Floaties2" parent="Environment/Y-Sorting" instance=ExtResource("7_yxchq")]
+position = Vector2(219, 147)
 
 [node name="Push_Pull Audio" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_b3xeb")

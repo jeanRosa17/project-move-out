@@ -4,12 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://b3iewopdt0ch5" path="res://Assets/New_Sprites/Floaties.png" id="2_4uh8e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
-size = Vector2(14, 17)
+size = Vector2(40, 17)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gifpp"]
-size = Vector2(16, 19)
+size = Vector2(50, 28.375)
 
-[node name="Pot" type="RigidBody2D" groups=["Furniture"]]
+[node name="Floaties" type="RigidBody2D" groups=["Furniture"]]
 y_sort_enabled = true
 collision_layer = 2
 collision_mask = 7
@@ -33,5 +33,5 @@ collision_layer = 2
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector"]
-position = Vector2(0, -5.5)
+position = Vector2(0, -7)
 shape = SubResource("RectangleShape2D_gifpp")
