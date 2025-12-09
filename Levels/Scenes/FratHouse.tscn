@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://b2fj0cyyvoq31"]
+[gd_scene load_steps=24 format=4 uid="uid://b2fj0cyyvoq31"]
 
 [ext_resource type="Texture2D" uid="uid://dlqlqw0fvr4wp" path="res://Assets/Objects/Carpets/carpet.png" id="1_nhc3c"]
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="2_qhrob"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://ilbhsc2vwd1n" path="res://Assets/Audio/furniture 1.wav" id="12_medbn"]
 [ext_resource type="Script" uid="uid://cv8mdnilcdg0d" path="res://Levels/Tests/FurnitureAudio.gd" id="13_qn5xu"]
 [ext_resource type="AudioStream" uid="uid://co27kfjleoj27" path="res://Assets/Audio/furniture [game capstone].wav" id="14_1yhro"]
+[ext_resource type="PackedScene" uid="uid://brfkiqavvunae" path="res://Assets/Particles/Scenes/wind_particle.tscn" id="15_nlmik"]
 [ext_resource type="Texture2D" uid="uid://b0r0nkq7wuc8b" path="res://Assets/Untitled_Artwork.png" id="20_qjb6p"]
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Assets/Player/Scenes/Player.tscn" id="21_wr5fp"]
 [ext_resource type="Script" uid="uid://1ugs6cpgg5xy" path="res://Levels/Scenes/Tutorial/trigger_sensor.gd" id="23_u40ca"]
@@ -29,11 +30,11 @@ stream_1/stream = ExtResource("12_medbn")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fqpg0"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nhc3c"]
-size = Vector2(389, 18.5)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qhrob"]
 size = Vector2(31, 98.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nhc3c"]
+size = Vector2(389, 23.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bjj5s"]
 size = Vector2(11.75, 57)
@@ -42,10 +43,6 @@ size = Vector2(11.75, 57)
 size = Vector2(57, 10)
 
 [node name="Main" type="Node2D"]
-
-[node name="Carpet" type="Sprite2D" parent="."]
-position = Vector2(115, 195)
-texture = ExtResource("1_nhc3c")
 
 [node name="Tilemap" type="CanvasLayer" parent="."]
 layer = -1
@@ -133,6 +130,14 @@ position = Vector2(358, 42)
 rotation = -4.71239
 shape = SubResource("WorldBoundaryShape2D_iqcmb")
 
+[node name="Carpet" type="Sprite2D" parent="."]
+position = Vector2(91, 194)
+texture = ExtResource("1_nhc3c")
+
+[node name="Carpet2" type="Sprite2D" parent="."]
+position = Vector2(197, 192)
+texture = ExtResource("1_nhc3c")
+
 [node name="Garage" parent="." instance=ExtResource("10_ixm0r")]
 position = Vector2(-160, 64)
 
@@ -171,76 +176,187 @@ visible = false
 nextLevelName = &"res://Levels/Scenes/CollegeAppartmentLevel.tscn"
 replayLevelName = &"res://Levels/Scenes/CollegeAppartmentLevel.tscn"
 
-[node name="Wind_hallway" type="Area2D" parent="."]
-position = Vector2(213, 6)
-script = ExtResource("25_g0mxu")
-metadata/Direction = "west"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wind_hallway"]
-position = Vector2(39.5, 2.75)
-shape = SubResource("RectangleShape2D_nhc3c")
-
-[node name="Wind_entrence" type="Area2D" parent="."]
-position = Vector2(42, 121)
-script = ExtResource("25_g0mxu")
-metadata/Direction = "south"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wind_entrence"]
-position = Vector2(-2, 4)
-shape = SubResource("RectangleShape2D_qhrob")
-
-[node name="WindLoopSouth" type="Area2D" parent="."]
-position = Vector2(313, 197)
-script = ExtResource("25_g0mxu")
-metadata/Direction = "south"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WindLoopSouth"]
-position = Vector2(20, -14.5)
-shape = SubResource("RectangleShape2D_bjj5s")
-
-[node name="WindLoopNorth" type="Area2D" parent="."]
-position = Vector2(387, 198)
-script = ExtResource("25_g0mxu")
-metadata/Direction = "north"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WindLoopNorth"]
-position = Vector2(20, -14.5)
-shape = SubResource("RectangleShape2D_bjj5s")
-
-[node name="WindLoopEast" type="Area2D" parent="."]
-position = Vector2(362, 213)
-script = ExtResource("25_g0mxu")
-metadata/Direction = "East"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WindLoopEast"]
-position = Vector2(7.5, 9)
-shape = SubResource("RectangleShape2D_nlmik")
-
-[node name="WindLoopWest" type="Area2D" parent="."]
-position = Vector2(362, 134)
-script = ExtResource("25_g0mxu")
-metadata/Direction = "west"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WindLoopWest"]
-position = Vector2(7.5, 9)
-shape = SubResource("RectangleShape2D_nlmik")
-
 [node name="Level Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("26_qhrob")
 autoplay = true
 
+[node name="Wind" type="Node2D" parent="."]
+
+[node name="Wind_entrence" type="Area2D" parent="Wind"]
+position = Vector2(42, 121)
+script = ExtResource("25_g0mxu")
+metadata/Direction = "south"
+
+[node name="wind1" parent="Wind/Wind_entrence" instance=ExtResource("15_nlmik")]
+position = Vector2(7, -41)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+
+[node name="wind2" parent="Wind/Wind_entrence" instance=ExtResource("15_nlmik")]
+position = Vector2(-9, -40)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+
+[node name="wind3" parent="Wind/Wind_entrence" instance=ExtResource("15_nlmik")]
+position = Vector2(-8, -4)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+
+[node name="wind4" parent="Wind/Wind_entrence" instance=ExtResource("15_nlmik")]
+position = Vector2(7, -3)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wind/Wind_entrence"]
+position = Vector2(-2, 4)
+shape = SubResource("RectangleShape2D_qhrob")
+
+[node name="Wind_hallway" type="Area2D" parent="Wind"]
+position = Vector2(213, 6)
+script = ExtResource("25_g0mxu")
+metadata/Direction = "west"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wind/Wind_hallway"]
+position = Vector2(39.5, 5.25)
+shape = SubResource("RectangleShape2D_nhc3c")
+
+[node name="wind5" parent="Wind/Wind_hallway" instance=ExtResource("15_nlmik")]
+position = Vector2(229, -2)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+
+[node name="wind6" parent="Wind/Wind_hallway" instance=ExtResource("15_nlmik")]
+position = Vector2(229, 12)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+
+[node name="wind7" parent="Wind/Wind_hallway" instance=ExtResource("15_nlmik")]
+position = Vector2(185, -2)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+
+[node name="wind8" parent="Wind/Wind_hallway" instance=ExtResource("15_nlmik")]
+position = Vector2(185, 12)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+
+[node name="wind9" parent="Wind/Wind_hallway" instance=ExtResource("15_nlmik")]
+position = Vector2(127, -3)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+
+[node name="wind10" parent="Wind/Wind_hallway" instance=ExtResource("15_nlmik")]
+position = Vector2(127, 11)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+
+[node name="wind11" parent="Wind/Wind_hallway" instance=ExtResource("15_nlmik")]
+position = Vector2(72, -2)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+
+[node name="wind12" parent="Wind/Wind_hallway" instance=ExtResource("15_nlmik")]
+position = Vector2(72, 12)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+
+[node name="wind13" parent="Wind/Wind_hallway" instance=ExtResource("15_nlmik")]
+position = Vector2(15, -3)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+
+[node name="wind14" parent="Wind/Wind_hallway" instance=ExtResource("15_nlmik")]
+position = Vector2(15, 11)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+
+[node name="wind15" parent="Wind/Wind_hallway" instance=ExtResource("15_nlmik")]
+position = Vector2(-40, -3)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+
+[node name="wind16" parent="Wind/Wind_hallway" instance=ExtResource("15_nlmik")]
+position = Vector2(-40, 11)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+
+[node name="wind17" parent="Wind/Wind_hallway" instance=ExtResource("15_nlmik")]
+position = Vector2(-98, -3)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+
+[node name="wind18" parent="Wind/Wind_hallway" instance=ExtResource("15_nlmik")]
+position = Vector2(-98, 11)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+
+[node name="WindLoopSouth" type="Area2D" parent="Wind"]
+position = Vector2(313, 197)
+script = ExtResource("25_g0mxu")
+metadata/Direction = "south"
+
+[node name="wind5" parent="Wind/WindLoopSouth" instance=ExtResource("15_nlmik")]
+position = Vector2(20, -37)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wind/WindLoopSouth"]
+position = Vector2(20, -14.5)
+shape = SubResource("RectangleShape2D_bjj5s")
+
+[node name="WindLoopNorth" type="Area2D" parent="Wind"]
+position = Vector2(386, 198)
+script = ExtResource("25_g0mxu")
+metadata/Direction = "north"
+
+[node name="wind8" parent="Wind/WindLoopNorth" instance=ExtResource("15_nlmik")]
+position = Vector2(7, -55)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wind/WindLoopNorth"]
+position = Vector2(20, -14.5)
+shape = SubResource("RectangleShape2D_bjj5s")
+
+[node name="WindLoopEast" type="Area2D" parent="Wind"]
+position = Vector2(362, 213)
+script = ExtResource("25_g0mxu")
+metadata/Direction = "East"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wind/WindLoopEast"]
+position = Vector2(7.5, 9)
+shape = SubResource("RectangleShape2D_nlmik")
+
+[node name="wind6" parent="Wind/WindLoopEast" instance=ExtResource("15_nlmik")]
+position = Vector2(-18, 8)
+scale = Vector2(0.5, 0.5)
+
+[node name="WindLoopWest" type="Area2D" parent="Wind"]
+position = Vector2(362, 134)
+script = ExtResource("25_g0mxu")
+metadata/Direction = "west"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wind/WindLoopWest"]
+position = Vector2(7.5, 9)
+shape = SubResource("RectangleShape2D_nlmik")
+
+[node name="wind7" parent="Wind/WindLoopWest" instance=ExtResource("15_nlmik")]
+position = Vector2(44, 75)
+rotation = -1.5708
+scale = Vector2(0.5, 0.5)
+
 [connection signal="body_entered" from="Node2D/TriggerSensor" to="Node2D/TriggerSensor" method="_on_body_entered"]
-[connection signal="body_entered" from="Wind_hallway" to="Wind_hallway" method="_on_body_entered"]
-[connection signal="body_exited" from="Wind_hallway" to="Wind_hallway" method="_on_body_exited"]
-[connection signal="body_entered" from="Wind_entrence" to="Wind_entrence" method="_on_body_entered"]
-[connection signal="body_exited" from="Wind_entrence" to="Wind_entrence" method="_on_body_exited"]
-[connection signal="body_entered" from="WindLoopSouth" to="WindLoopSouth" method="_on_body_entered"]
-[connection signal="body_exited" from="WindLoopSouth" to="WindLoopSouth" method="_on_body_exited"]
-[connection signal="body_entered" from="WindLoopNorth" to="WindLoopNorth" method="_on_body_entered"]
-[connection signal="body_exited" from="WindLoopNorth" to="WindLoopNorth" method="_on_body_exited"]
-[connection signal="body_entered" from="WindLoopEast" to="WindLoopEast" method="_on_body_entered"]
-[connection signal="body_exited" from="WindLoopEast" to="WindLoopEast" method="_on_body_exited"]
-[connection signal="body_entered" from="WindLoopWest" to="WindLoopWest" method="_on_body_entered"]
-[connection signal="body_exited" from="WindLoopWest" to="WindLoopWest" method="_on_body_exited"]
+[connection signal="body_entered" from="Wind/Wind_entrence" to="Wind/Wind_entrence" method="_on_body_entered"]
+[connection signal="body_exited" from="Wind/Wind_entrence" to="Wind/Wind_entrence" method="_on_body_exited"]
+[connection signal="body_entered" from="Wind/Wind_hallway" to="Wind/Wind_hallway" method="_on_body_entered"]
+[connection signal="body_exited" from="Wind/Wind_hallway" to="Wind/Wind_hallway" method="_on_body_exited"]
+[connection signal="body_entered" from="Wind/WindLoopSouth" to="Wind/WindLoopSouth" method="_on_body_entered"]
+[connection signal="body_exited" from="Wind/WindLoopSouth" to="Wind/WindLoopSouth" method="_on_body_exited"]
+[connection signal="body_entered" from="Wind/WindLoopNorth" to="Wind/WindLoopNorth" method="_on_body_entered"]
+[connection signal="body_exited" from="Wind/WindLoopNorth" to="Wind/WindLoopNorth" method="_on_body_exited"]
+[connection signal="body_entered" from="Wind/WindLoopEast" to="Wind/WindLoopEast" method="_on_body_entered"]
+[connection signal="body_exited" from="Wind/WindLoopEast" to="Wind/WindLoopEast" method="_on_body_exited"]
+[connection signal="body_entered" from="Wind/WindLoopWest" to="Wind/WindLoopWest" method="_on_body_entered"]
+[connection signal="body_exited" from="Wind/WindLoopWest" to="Wind/WindLoopWest" method="_on_body_exited"]
 
 [editable path="HUD"]
