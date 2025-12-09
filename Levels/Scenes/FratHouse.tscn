@@ -22,9 +22,9 @@
 [ext_resource type="Texture2D" uid="uid://b0r0nkq7wuc8b" path="res://Assets/Untitled_Artwork.png" id="20_qjb6p"]
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Assets/Player/Scenes/Player.tscn" id="21_wr5fp"]
 [ext_resource type="AudioStream" uid="uid://dy61bwuip8a27" path="res://Assets/Audio/lvl1.wav" id="22_v30d8"]
-[ext_resource type="Script" uid="uid://1ugs6cpgg5xy" path="res://Levels/Scenes/Tutorial/trigger_sensor.gd" id="23_u40ca"]
+[ext_resource type="Script" path="res://Levels/Scenes/Tutorial/trigger_sensor.gd" id="23_u40ca"]
 [ext_resource type="PackedScene" uid="uid://cfmb3mmeue8au" path="res://UI/Scenes/HUD.tscn" id="24_5ounb"]
-[ext_resource type="Script" uid="uid://c3h1qoybxufrj" path="res://Scripts/wind.gd" id="25_g0mxu"]
+[ext_resource type="Script" path="res://Scripts/wind.gd" id="25_g0mxu"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_663r6"]
 load_path = "res://.godot/imported/Frat House Floor 1.png-6dc760f316e63d454e821abca6782a26.ctex"

@@ -10,7 +10,7 @@ func _ready() -> void:
 		
 
 func _process(float) -> void:
-	if (Input.is_action_pressed("Inventory")):
+	if (Input.is_action_just_pressed("Inventory")):
 		var layer:CanvasLayer = self.get_parent()
 		if (layer.visible):
 			layer.visible = false
