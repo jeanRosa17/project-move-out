@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://psh4s5sym8kd" path="res://UI/Scenes/Textbox.tscn" id="6_ussp6"]
 [ext_resource type="PackedScene" uid="uid://dkssiia1dmwor" path="res://Assets/Objects/Chairs/Scene/Wood_Chair_Side.tscn" id="7_ysqfs"]
 [ext_resource type="PackedScene" uid="uid://d26wukook25xb" path="res://Assets/Objects/Dressers & Shelves/Scenes/Table.tscn" id="8_ru6yg"]
-[ext_resource type="PackedScene" uid="uid://dpyl8x5qojmng" path="res://Assets/Objects/Table Items/Scenes/TV.tscn" id="9_2amxq"]
 [ext_resource type="PackedScene" uid="uid://ip4pm1ex6klr" path="res://Levels/Scenes/Garage.tscn" id="12_qdg8e"]
 [ext_resource type="AudioStream" uid="uid://ixm05apa3fsb" path="res://Assets/Audio/furniture2 [game capstone].wav" id="13_d231f"]
 [ext_resource type="AudioStream" uid="uid://ilbhsc2vwd1n" path="res://Assets/Audio/furniture 1.wav" id="14_nus4x"]
@@ -15,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://diko086yswlr0" path="res://Assets/Objects/Beds/Scene/Twin_Bed_Side.tscn" id="17_kyk2i"]
 [ext_resource type="PackedScene" uid="uid://nomguund5j25" path="res://Assets/Objects/Couches/Scenes/red_couch_front.tscn" id="17_x82x2"]
 [ext_resource type="Script" uid="uid://dj52fk0ha628v" path="res://Levels/Scenes/InventoryChecklist.gd" id="21_6oy3m"]
+[ext_resource type="PackedScene" uid="uid://cuho4egtuhmvt" path="res://Assets/Objects/Tables/Scenes/TV_and_desk_front.tscn" id="21_d0wr3"]
 [ext_resource type="PackedScene" uid="uid://b7qk52eapta2s" path="res://Assets/Objects/Dressers & Shelves/Scenes/wooden_wardrobe_front.tscn" id="21_lr55i"]
 [ext_resource type="PackedScene" uid="uid://bujcbosiagjri" path="res://Assets/Objects/Dressers & Shelves/Scenes/wooden_shelf_front.tscn" id="22_0p0vu"]
 [ext_resource type="Texture2D" uid="uid://b0r0nkq7wuc8b" path="res://Assets/Untitled_Artwork.png" id="23_qnbnb"]
@@ -205,9 +205,6 @@ position = Vector2(668, -57)
 modulate = Color(1, 1, 0, 1)
 position = Vector2(617, -56)
 
-[node name="TV" parent="." instance=ExtResource("9_2amxq")]
-position = Vector2(670, 26)
-
 [node name="Table4" parent="." instance=ExtResource("8_ru6yg")]
 position = Vector2(383, 14)
 
@@ -257,5 +254,8 @@ visible = false
 
 [node name="Level Results" parent="HUD" index="1"]
 replayLevelName = &"res://Levels/Scenes/CollegeAppartmentLevel.tscn"
+
+[node name="TV_and_desk_front" parent="." instance=ExtResource("21_d0wr3")]
+position = Vector2(644, 22)
 
 [editable path="HUD"]
