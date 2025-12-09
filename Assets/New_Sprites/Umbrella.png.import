@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cf4kx2ybudgtr"
-path="res://.godot/imported/Strong_John_push_walk_back.png-3f36c79e8b2ca0aebf5ace8e12cd9d8b.ctex"
+uid="uid://2uhs2yb00fpc"
+path="res://.godot/imported/Umbrella.png-95e2b58eda2acd871704592d98cfe49e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Player/Spritesheets v2/Strong_John_push_walk_back.png"
-dest_files=["res://.godot/imported/Strong_John_push_walk_back.png-3f36c79e8b2ca0aebf5ace8e12cd9d8b.ctex"]
+source_file="res://Assets/New_Sprites/Umbrella.png"
+dest_files=["res://.godot/imported/Umbrella.png-95e2b58eda2acd871704592d98cfe49e.ctex"]
 
 [params]
 

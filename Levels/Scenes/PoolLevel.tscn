@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://cpv8uddorqkwy"]
+[gd_scene load_steps=19 format=4 uid="uid://cpv8uddorqkwy"]
 
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="1_d1sx3"]
 [ext_resource type="Shader" uid="uid://fdgkrlk22v5j" path="res://Scripts/Shaders/Water.gdshader" id="2_5siwj"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" path="res://Assets/New_Sprites/Scenes/Floaties.tscn" id="7_yxchq"]
 [ext_resource type="PackedScene" uid="uid://diwhnfkrarfj4" path="res://Assets/New_Sprites/Scenes/Glass table.tscn" id="8_47vj5"]
 [ext_resource type="PackedScene" uid="uid://uacgji4vcg37" path="res://Assets/Audio/push_pull_audio.tscn" id="9_2qwxl"]
+[ext_resource type="PackedScene" uid="uid://bwf3bxxrqqacs" path="res://Assets/New_Sprites/Scenes/Floaties Tower.tscn" id="9_5siwj"]
+[ext_resource type="PackedScene" uid="uid://b57gieinb8e66" path="res://Assets/New_Sprites/Scenes/Umbrella.tscn" id="10_yxchq"]
 [ext_resource type="AudioStream" uid="uid://dy61bwuip8a27" path="res://Assets/Audio/lvl1.wav" id="11_0k1s7"]
 [ext_resource type="PackedScene" uid="uid://cfmb3mmeue8au" path="res://UI/Scenes/HUD.tscn" id="12_3ihav"]
 [ext_resource type="Texture2D" uid="uid://dx6t6t6hm5srq" path="res://Levels/Level Sketches/4b8cae04-10fe-456d-997a-4008dd8d77b6.png" id="13_5siwj"]
@@ -138,12 +140,21 @@ region_rect = Rect2(144, 0, 48, 32)
 
 [node name="Dino Pot" parent="Environment/Y-Sorting" instance=ExtResource("6_5siwj")]
 position = Vector2(358, 81)
+canLift = true
+canPush = false
+canPull = false
 
 [node name="Pool Chair" parent="Environment/Y-Sorting" instance=ExtResource("7_47vj5")]
 position = Vector2(56, 112)
+canLift = false
+canPush = true
+canPull = true
 
 [node name="Pool Chair3" parent="Environment/Y-Sorting" instance=ExtResource("7_47vj5")]
 position = Vector2(358, 189)
+canLift = false
+canPush = true
+canPull = true
 
 [node name="Sprite2D" parent="Environment/Y-Sorting/Pool Chair3" index="0"]
 position = Vector2(1, -3)
@@ -151,6 +162,9 @@ flip_h = true
 
 [node name="Pool Chair4" parent="Environment/Y-Sorting" instance=ExtResource("7_47vj5")]
 position = Vector2(358, 158)
+canLift = false
+canPush = true
+canPull = true
 
 [node name="Sprite2D" parent="Environment/Y-Sorting/Pool Chair4" index="0"]
 position = Vector2(1, -3)
@@ -158,12 +172,27 @@ flip_h = true
 
 [node name="Pool Chair2" parent="Environment/Y-Sorting" instance=ExtResource("7_47vj5")]
 position = Vector2(56, 174)
+canLift = false
+canPush = true
+canPull = true
 
 [node name="Glass Table" parent="Environment/Y-Sorting" instance=ExtResource("8_47vj5")]
 position = Vector2(58, 142)
 
 [node name="Glass Table2" parent="Environment/Y-Sorting" instance=ExtResource("8_47vj5")]
 position = Vector2(359, 142)
+
+[node name="Floaties Tower" parent="Environment/Y-Sorting" instance=ExtResource("9_5siwj")]
+position = Vector2(61, 45)
+
+[node name="Umbrella" parent="Environment/Y-Sorting" instance=ExtResource("10_yxchq")]
+position = Vector2(40, 136)
+
+[node name="Umbrella2" parent="Environment/Y-Sorting" instance=ExtResource("10_yxchq")]
+position = Vector2(130, 35)
+
+[node name="Umbrella3" parent="Environment/Y-Sorting" instance=ExtResource("10_yxchq")]
+position = Vector2(156, 30)
 
 [node name="Push_Pull Audio" parent="." instance=ExtResource("9_2qwxl")]
 

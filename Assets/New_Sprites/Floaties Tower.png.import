@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cf4kx2ybudgtr"
-path="res://.godot/imported/Strong_John_push_walk_back.png-3f36c79e8b2ca0aebf5ace8e12cd9d8b.ctex"
+uid="uid://bn0bwud5qi6xq"
+path="res://.godot/imported/Floaties Tower.png-24cecdf7b66bada6cff65939557ccc98.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Player/Spritesheets v2/Strong_John_push_walk_back.png"
-dest_files=["res://.godot/imported/Strong_John_push_walk_back.png-3f36c79e8b2ca0aebf5ace8e12cd9d8b.ctex"]
+source_file="res://Assets/New_Sprites/Floaties Tower.png"
+dest_files=["res://.godot/imported/Floaties Tower.png-24cecdf7b66bada6cff65939557ccc98.ctex"]
 
 [params]
 
