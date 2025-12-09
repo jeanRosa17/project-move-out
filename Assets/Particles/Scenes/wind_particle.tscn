@@ -12,7 +12,7 @@ particles_anim_loop = true
 [sub_resource type="Gradient" id="Gradient_b8g0l"]
 interpolation_mode = 2
 interpolation_color_space = 1
-offsets = PackedFloat32Array(0, 0.74038464)
+offsets = PackedFloat32Array(0, 0.740385)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
 
 [node name="Walking_particle" type="Node2D"]
@@ -21,20 +21,22 @@ colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
 material = SubResource("CanvasItemMaterial_tthwx")
 amount = 21
 texture = ExtResource("1_fqkh7")
-lifetime = 2.0
-speed_scale = 2.5
+lifetime = 1.5
+speed_scale = 3.0
 lifetime_randomness = 0.18
 fract_delta = false
-spread = 20.0
+emission_shape = 3
+emission_rect_extents = Vector2(1, 8)
+spread = 5.0
 gravity = Vector2(0, 0)
-initial_velocity_min = 50.0
+initial_velocity_min = 90.0
 initial_velocity_max = 137.0
 radial_accel_min = -50.0
 radial_accel_max = 100.0
 angle_max = 20.0
 scale_amount_min = 0.5
 scale_amount_max = 1.2
-color = Color(0.83515275, 1.0187511, 0.99480355, 1)
+color = Color(0.835294, 1.26275, 0.996078, 1)
 color_ramp = SubResource("Gradient_b8g0l")
 hue_variation_min = -1.0
 hue_variation_max = 1.0
