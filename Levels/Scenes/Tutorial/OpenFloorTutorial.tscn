@@ -111,7 +111,7 @@ position = Vector2(304, 272)
 
 [node name="Garage" parent="Y-Sorting" instance=ExtResource("13_ymjk0")]
 position = Vector2(285, 444)
-rotation = -1.5707964
+rotation = -1.5708
 
 [node name="Push_Pull Audio" parent="Y-Sorting" instance=ExtResource("13_rwqj1")]
 
