@@ -130,6 +130,83 @@ texture = ExtResource("23_qnbnb")
 region_enabled = true
 region_rect = Rect2(903, 355, 721, 684)
 
+[node name="Fire Bed" parent="Y-Sorting" instance=ExtResource("17_kyk2i")]
+position = Vector2(1309.9993, 118)
+rotation = 3.14159
+scale = Vector2(2, -2)
+
+[node name="Table5" parent="Y-Sorting" instance=ExtResource("8_ru6yg")]
+position = Vector2(1268.999, 63.00009)
+
+[node name="Wardrobe4" parent="Y-Sorting" instance=ExtResource("21_lr55i")]
+position = Vector2(1314.999, 47)
+
+[node name="Shelf4" parent="Y-Sorting" instance=ExtResource("22_0p0vu")]
+position = Vector2(1235.999, 39.000183)
+
+[node name="Electric Bed" parent="Y-Sorting" instance=ExtResource("17_kyk2i")]
+position = Vector2(1310, 285)
+rotation = 3.14159
+scale = Vector2(2, -2)
+
+[node name="Wardrobe3" parent="Y-Sorting" instance=ExtResource("21_lr55i")]
+position = Vector2(1317, 188)
+
+[node name="Table4" parent="Y-Sorting" instance=ExtResource("8_ru6yg")]
+position = Vector2(1233, 184)
+
+[node name="Shelf3" parent="Y-Sorting" instance=ExtResource("22_0p0vu")]
+position = Vector2(1269, 182)
+
+[node name="Earth Bed" parent="Y-Sorting" instance=ExtResource("17_kyk2i")]
+position = Vector2(1310, 425)
+rotation = 3.14159
+scale = Vector2(2, -2)
+
+[node name="Wardrobe" parent="Y-Sorting" instance=ExtResource("21_lr55i")]
+position = Vector2(1138, 348)
+
+[node name="Table3" parent="Y-Sorting" instance=ExtResource("8_ru6yg")]
+position = Vector2(1186, 358)
+
+[node name="Shelf2" parent="Y-Sorting" instance=ExtResource("22_0p0vu")]
+position = Vector2(1224, 346)
+
+[node name="Couch" parent="Y-Sorting" instance=ExtResource("17_x82x2")]
+position = Vector2(668, -57)
+
+[node name="TV" parent="Y-Sorting" instance=ExtResource("9_2amxq")]
+position = Vector2(670, 26)
+
+[node name="Table2" parent="Y-Sorting" instance=ExtResource("8_ru6yg")]
+position = Vector2(383, 14)
+
+[node name="Wood_Chair_Side" parent="Y-Sorting" instance=ExtResource("7_ysqfs")]
+position = Vector2(357, 28)
+
+[node name="Wood_Chair_Side2" parent="Y-Sorting" instance=ExtResource("7_ysqfs")]
+position = Vector2(358, -4)
+
+[node name="Wood_Chair_Side3" parent="Y-Sorting" instance=ExtResource("7_ysqfs")]
+position = Vector2(408, -12)
+
+[node name="Wood_Chair_Side4" parent="Y-Sorting" instance=ExtResource("7_ysqfs")]
+position = Vector2(410, 21)
+
+[node name="Ice Bed" parent="Y-Sorting" instance=ExtResource("17_kyk2i")]
+position = Vector2(1310, 575)
+rotation = 3.14159
+scale = Vector2(2, -2)
+
+[node name="Wardrobe2" parent="Y-Sorting" instance=ExtResource("21_lr55i")]
+position = Vector2(1096, 494)
+
+[node name="Table" parent="Y-Sorting" instance=ExtResource("8_ru6yg")]
+position = Vector2(1220, 504)
+
+[node name="Shelf" parent="Y-Sorting" instance=ExtResource("22_0p0vu")]
+position = Vector2(1142, 488)
+
 [node name="Player" parent="Y-Sorting" instance=ExtResource("24_xqx0e")]
 position = Vector2(129, 327)
 safe_margin = 1.159
@@ -154,103 +231,6 @@ tile_set = ExtResource("2_otbpy")
 [node name="Level Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("26_aituv")
 autoplay = true
-
-[node name="Fire Room" type="Node2D" parent="."]
-position = Vector2(1310, 425)
-rotation = 3.14159
-scale = Vector2(2, -2)
-
-[node name="Fire Bed" parent="Fire Room" instance=ExtResource("17_kyk2i")]
-position = Vector2(0, -153.5)
-
-[node name="Table" parent="Fire Room" instance=ExtResource("8_ru6yg")]
-position = Vector2(20.5, -181)
-rotation = 3.14159
-scale = Vector2(0.5, -0.5)
-
-[node name="Wardrobe" parent="Fire Room" instance=ExtResource("21_lr55i")]
-position = Vector2(-2.5, -189)
-rotation = 3.14159
-scale = Vector2(0.5, -0.5)
-
-[node name="Shelf" parent="Fire Room" instance=ExtResource("22_0p0vu")]
-position = Vector2(37, -193)
-rotation = 3.14159
-scale = Vector2(0.5, -0.5)
-
-[node name="Electric Room" type="Node2D" parent="."]
-
-[node name="Electric Bed" parent="Electric Room" instance=ExtResource("17_kyk2i")]
-position = Vector2(1310, 285)
-rotation = 3.14159
-scale = Vector2(2, -2)
-
-[node name="Wardrobe" parent="Electric Room" instance=ExtResource("21_lr55i")]
-position = Vector2(1317, 188)
-
-[node name="Table" parent="Electric Room" instance=ExtResource("8_ru6yg")]
-position = Vector2(1233, 184)
-
-[node name="Shelf" parent="Electric Room" instance=ExtResource("22_0p0vu")]
-position = Vector2(1269, 182)
-
-[node name="Nature Room" type="Node2D" parent="."]
-
-[node name="Earth Bed" parent="Nature Room" instance=ExtResource("17_kyk2i")]
-position = Vector2(1310, 425)
-rotation = 3.14159
-scale = Vector2(2, -2)
-
-[node name="Wardrobe" parent="Nature Room" instance=ExtResource("21_lr55i")]
-position = Vector2(1138, 348)
-
-[node name="Table" parent="Nature Room" instance=ExtResource("8_ru6yg")]
-position = Vector2(1186, 358)
-
-[node name="Shelf" parent="Nature Room" instance=ExtResource("22_0p0vu")]
-position = Vector2(1224, 346)
-
-[node name="Living Room" type="Node2D" parent="."]
-position = Vector2(383, 14)
-
-[node name="Couch" parent="Living Room" instance=ExtResource("17_x82x2")]
-position = Vector2(285, -71)
-
-[node name="TV" parent="Living Room" instance=ExtResource("9_2amxq")]
-position = Vector2(287, 12)
-
-[node name="Kitchen Area" type="Node2D" parent="."]
-position = Vector2(383, 14)
-
-[node name="Table2" parent="Kitchen Area" instance=ExtResource("8_ru6yg")]
-
-[node name="Wood_Chair_Side" parent="Kitchen Area" instance=ExtResource("7_ysqfs")]
-position = Vector2(-26, 14)
-
-[node name="Wood_Chair_Side2" parent="Kitchen Area" instance=ExtResource("7_ysqfs")]
-position = Vector2(-25, -18)
-
-[node name="Wood_Chair_Side3" parent="Kitchen Area" instance=ExtResource("7_ysqfs")]
-position = Vector2(25, -26)
-
-[node name="Wood_Chair_Side4" parent="Kitchen Area" instance=ExtResource("7_ysqfs")]
-position = Vector2(27, 7)
-
-[node name="Ice Room" type="Node2D" parent="."]
-
-[node name="Ice Bed" parent="Ice Room" instance=ExtResource("17_kyk2i")]
-position = Vector2(1310, 575)
-rotation = 3.14159
-scale = Vector2(2, -2)
-
-[node name="Wardrobe2" parent="Ice Room" instance=ExtResource("21_lr55i")]
-position = Vector2(1096, 494)
-
-[node name="Table" parent="Ice Room" instance=ExtResource("8_ru6yg")]
-position = Vector2(1220, 504)
-
-[node name="Shelf" parent="Ice Room" instance=ExtResource("22_0p0vu")]
-position = Vector2(1142, 488)
 
 [node name="HUD" parent="." instance=ExtResource("25_3xhsd")]
 visible = false
