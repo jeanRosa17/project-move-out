@@ -16,10 +16,10 @@ func _on_body_entered(body: Node2D) -> void:
 		player = body
 		if(player.canControl):
 			player.offControls()
-			player.manager.changeState("Move")
-			player.manager.direction = Vector2(0, 0)
-			player.manager.direction = _get_direction()
-			sliding = true
+		player.manager.changeState("Move")
+		player.manager.direction = Vector2(0, 0)
+		player.manager.direction = _get_direction()
+		sliding = true
 		
 func _on_body_exited(body: Node2D) -> void:
 	#re-endables control of the player when they exit
