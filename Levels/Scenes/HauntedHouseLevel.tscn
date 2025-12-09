@@ -26,6 +26,7 @@ distance = -3.99999
 
 [node name="Main" type="Node2D"]
 y_sort_enabled = true
+position = Vector2(3, 45)
 
 [node name="World Border" type="StaticBody2D" parent="." groups=["Immovable Object", "World Bounds"]]
 collision_layer = 4
@@ -120,16 +121,16 @@ move_offset = Vector2(-20, 0)
 
 [node name="possessed_wood_chair_side6" parent="Environment/Y-Sorting" instance=ExtResource("9_of3nc")]
 position = Vector2(100, 150)
-move_offset = Vector2(20, 0)
+move_offset = Vector2(70, 0)
 
 [node name="possessed_wood_chair_side2" parent="Environment/Y-Sorting" instance=ExtResource("9_of3nc")]
 position = Vector2(100, 130)
-move_offset = Vector2(20, 0)
+move_offset = Vector2(70, 0)
 wait_time = 0.7
 
 [node name="possessed_wood_chair_side3" parent="Environment/Y-Sorting" instance=ExtResource("9_of3nc")]
 position = Vector2(100, 100)
-move_offset = Vector2(20, 0)
+move_offset = Vector2(70, 0)
 wait_time = 1.0
 
 [node name="Twin_Bed_Side" parent="Environment/Y-Sorting" instance=ExtResource("10_2p47e")]

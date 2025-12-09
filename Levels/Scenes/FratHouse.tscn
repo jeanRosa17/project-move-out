@@ -233,7 +233,7 @@ shape = SubResource("WorldBoundaryShape2D_iqcmb")
 [node name="Garage" parent="." instance=ExtResource("10_ixm0r")]
 position = Vector2(-160, 64)
 
-[node name="Push_Pull Audio2" parent="." instance=ExtResource("20_qhrob")]
+[node name="Push_Pull Audio" parent="." instance=ExtResource("20_qhrob")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false

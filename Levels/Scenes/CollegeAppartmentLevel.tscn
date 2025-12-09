@@ -154,21 +154,21 @@ autoplay = true
 
 [node name="Fire Bed" parent="." instance=ExtResource("17_kyk2i")]
 modulate = Color(1, 0, 0, 1)
-position = Vector2(1309.9993, 118)
+position = Vector2(1310, 118)
 rotation = 3.14159
 scale = Vector2(2, -2)
 
 [node name="Table" parent="." instance=ExtResource("8_ru6yg")]
 modulate = Color(1, 0, 0, 1)
-position = Vector2(1268.999, 63.00009)
+position = Vector2(1269, 63.0001)
 
 [node name="Fire Wardrobe" parent="." instance=ExtResource("21_lr55i")]
 modulate = Color(1, 0, 0, 1)
-position = Vector2(1314.999, 47)
+position = Vector2(1315, 47)
 
 [node name="Fire Shelf" parent="." instance=ExtResource("22_0p0vu")]
 modulate = Color(1, 0, 0, 1)
-position = Vector2(1235.999, 39.000183)
+position = Vector2(1236, 39.0002)
 
 [node name="Electric Bed" parent="." instance=ExtResource("17_kyk2i")]
 position = Vector2(1310, 285)
