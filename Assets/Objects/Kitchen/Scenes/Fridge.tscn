@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://chs0hqnx8dgfj" path="res://Assets/Objects/Kitchen/blue_fridge_1.png" id="2_8hus2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
-size = Vector2(32, 55)
+size = Vector2(32, 51)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gifpp"]
-size = Vector2(24, 55)
+size = Vector2(36, 59)
 
 [node name="Fridge" type="RigidBody2D" groups=["Furniture"]]
 y_sort_enabled = true
@@ -22,7 +22,7 @@ position = Vector2(0, -7.5)
 texture = ExtResource("2_8hus2")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, -11.5)
+position = Vector2(0, -9.5)
 shape = SubResource("RectangleShape2D_xnri0")
 
 [node name="AreaDetector" type="Area2D" parent="." groups=["Furniture"]]
@@ -31,5 +31,5 @@ collision_layer = 2
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector"]
-position = Vector2(0, -10.5)
+position = Vector2(0, -12.5)
 shape = SubResource("RectangleShape2D_gifpp")

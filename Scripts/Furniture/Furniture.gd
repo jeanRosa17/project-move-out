@@ -41,7 +41,10 @@ var floatTiltTween:Tween = null
 func _physics_process(_delta: float) -> void:
 	if (self.ghostSprite != null):
 		self.ghostSprite.self_modulate = (Color.GREEN if (self.canBeDropped) else Color.RED)
-
+		
+		if (self.player):
+			ghostSprite.position = self.player.manager.direction * 20
+		
 	if (self.isPushed):
 		var dir:Vector2 = self.player.velocity.normalized()
 
@@ -74,8 +77,6 @@ func _physics_process(_delta: float) -> void:
 		## check to see if player is detached from object
 		if (position.distance_to(player.position) > 45): self.exitPush()
 
-
-
 func update_detector_direction(direction: Vector2) -> void:
 	if (abs(direction.x) > abs(direction.y)):
 		if (direction.x > 0): area_detector.position = Vector2(liftPosition.y, 0)
@@ -93,13 +94,14 @@ func createGhostSprite(body:CharacterBody2D) -> void:
 	area.body_entered.connect(func () -> void: self.ghostSprite.self_modulate = Color.RED)
 	area.body_exited.connect(func () -> void: self.ghostSprite.self_modulate = Color.GREEN)
 	
-	var collider:CollisionShape2D = self.get_child(1).duplicate()
+	#var collider:CollisionShape2D = self.get_child(1).duplicate()
 	self.ghostSprite = sprite_2d.duplicate()
-	ghostSprite.add_child(area)
-	area.add_child(collider)
+	#ghostSprite.add_child(area)
+	#area.add_child(collider)
 	#area.collision_layer = 0
-	body.find_child("Detector").get_child(0).add_child(ghostSprite)
-	ghostSprite.position *= Vector2(10, 10)
+	#body.find_child("Detector").get_child(0).add_child(ghostSprite)
+	body.add_child(ghostSprite)
+	ghostSprite.position = (body as Player).manager.direction * 12
 	self.ghostTween = self.get_tree().create_tween()
 	self.ghostTween.tween_property(ghostSprite, "self_modulate:a", 0, 1.0).from(1.0).set_delay(0.1)
 	self.ghostTween.tween_property(ghostSprite, "self_modulate:a", 1.0, 1.0).from(0.0).set_delay(0.1)
@@ -163,11 +165,12 @@ func exitLift() -> void:
 	
 	self.killLiftingTween()
 	
-	self.ghostSprite.queue_free()
+	
 	self.player.remove_child(self)
 	self.player.add_sibling(self)
 	self.get_node("Collision").disabled = false
 	self.position = ghostSprite.global_position
+	self.ghostSprite.queue_free()
 	self.collision_layer = 2;
 	self.collision_mask = 7;
 	self.isLifted = false
