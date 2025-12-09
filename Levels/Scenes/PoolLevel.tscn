@@ -1,16 +1,14 @@
-[gd_scene load_steps=21 format=4 uid="uid://cpv8uddorqkwy"]
+[gd_scene load_steps=17 format=4 uid="uid://cpv8uddorqkwy"]
 
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="1_d1sx3"]
 [ext_resource type="Shader" uid="uid://fdgkrlk22v5j" path="res://Scripts/Shaders/Water.gdshader" id="2_5siwj"]
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Assets/Player/Scenes/Player.tscn" id="3_4f1a0"]
 [ext_resource type="PackedScene" uid="uid://ip4pm1ex6klr" path="res://Levels/Scenes/Garage.tscn" id="4_h6b8q"]
-[ext_resource type="PackedScene" uid="uid://nomguund5j25" path="res://Assets/Objects/Couches/Scenes/red_couch_front.tscn" id="5_f55pf"]
-[ext_resource type="Script" uid="uid://bmqryoobj44j2" path="res://Scripts/Dialogue/DialogueTag.gd" id="6_3jiiq"]
-[ext_resource type="AudioStream" uid="uid://ixm05apa3fsb" path="res://Assets/Audio/furniture2 [game capstone].wav" id="7_b1a3g"]
+[ext_resource type="PackedScene" uid="uid://byhkf48wxg1gp" path="res://Assets/Objects/Plants/Dino pot.tscn" id="6_5siwj"]
+[ext_resource type="PackedScene" uid="uid://wqba7qc482s1" path="res://Assets/New_Sprites/Scenes/Pool Chair.tscn" id="7_47vj5"]
 [ext_resource type="PackedScene" path="res://Assets/New_Sprites/Scenes/Floaties.tscn" id="7_yxchq"]
-[ext_resource type="AudioStream" uid="uid://ilbhsc2vwd1n" path="res://Assets/Audio/furniture 1.wav" id="8_yjtvd"]
-[ext_resource type="Script" uid="uid://cv8mdnilcdg0d" path="res://Levels/Tests/FurnitureAudio.gd" id="9_4rsaq"]
-[ext_resource type="AudioStream" uid="uid://co27kfjleoj27" path="res://Assets/Audio/furniture [game capstone].wav" id="10_d20qw"]
+[ext_resource type="PackedScene" uid="uid://diwhnfkrarfj4" path="res://Assets/New_Sprites/Scenes/Glass table.tscn" id="8_47vj5"]
+[ext_resource type="PackedScene" uid="uid://uacgji4vcg37" path="res://Assets/Audio/push_pull_audio.tscn" id="9_2qwxl"]
 [ext_resource type="AudioStream" uid="uid://dy61bwuip8a27" path="res://Assets/Audio/lvl1.wav" id="11_0k1s7"]
 [ext_resource type="PackedScene" uid="uid://cfmb3mmeue8au" path="res://UI/Scenes/HUD.tscn" id="12_3ihav"]
 [ext_resource type="Texture2D" uid="uid://dx6t6t6hm5srq" path="res://Levels/Level Sketches/4b8cae04-10fe-456d-997a-4008dd8d77b6.png" id="13_5siwj"]
@@ -33,16 +31,6 @@ shader_parameter/wave_strength = 0.01
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iqcmb"]
 normal = Vector2(1.79515e-06, 1)
 distance = -3.99999
-
-[sub_resource type="Resource" id="Resource_v8k2n"]
-script = ExtResource("6_3jiiq")
-dialogueTag = &"null"
-metadata/_custom_type_script = "uid://bmqryoobj44j2"
-
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_b3xeb"]
-streams_count = 2
-stream_0/stream = ExtResource("7_b1a3g")
-stream_1/stream = ExtResource("8_yjtvd")
 
 [node name="PoolLevel" type="Node2D"]
 y_sort_enabled = true
@@ -121,23 +109,63 @@ limit_bottom = 444
 position = Vector2(416, 331)
 rotation = 1.5707964
 
-[node name="Couch" parent="Environment/Y-Sorting" instance=ExtResource("5_f55pf")]
-position = Vector2(45, 56)
-canLift = null
-dialogueTag = SubResource("Resource_v8k2n")
-liftPosition = null
-
 [node name="Floaties" parent="Environment/Y-Sorting" instance=ExtResource("7_yxchq")]
 position = Vector2(296, 33)
 
-[node name="Floaties2" parent="Environment/Y-Sorting" instance=ExtResource("7_yxchq")]
-position = Vector2(219, 147)
+[node name="Floaties4" parent="Environment/Y-Sorting" instance=ExtResource("7_yxchq")]
+position = Vector2(249, 39)
 
-[node name="Push_Pull Audio" type="AudioStreamPlayer2D" parent="."]
-stream = SubResource("AudioStreamRandomizer_b3xeb")
-bus = &"Furniture"
-script = ExtResource("9_4rsaq")
-streams = [ExtResource("10_d20qw")]
+[node name="Sprite2D" parent="Environment/Y-Sorting/Floaties4" index="0"]
+region_rect = Rect2(192, 0, 48, 32)
+
+[node name="Floaties5" parent="Environment/Y-Sorting" instance=ExtResource("7_yxchq")]
+position = Vector2(286, 57)
+
+[node name="Sprite2D" parent="Environment/Y-Sorting/Floaties5" index="0"]
+region_rect = Rect2(96, 0, 48, 32)
+
+[node name="Floaties2" parent="Environment/Y-Sorting" instance=ExtResource("7_yxchq")]
+position = Vector2(258, 139)
+
+[node name="Sprite2D" parent="Environment/Y-Sorting/Floaties2" index="0"]
+region_rect = Rect2(48, 0, 48, 32)
+
+[node name="Floaties3" parent="Environment/Y-Sorting" instance=ExtResource("7_yxchq")]
+position = Vector2(143, 182)
+
+[node name="Sprite2D" parent="Environment/Y-Sorting/Floaties3" index="0"]
+region_rect = Rect2(144, 0, 48, 32)
+
+[node name="Dino Pot" parent="Environment/Y-Sorting" instance=ExtResource("6_5siwj")]
+position = Vector2(358, 81)
+
+[node name="Pool Chair" parent="Environment/Y-Sorting" instance=ExtResource("7_47vj5")]
+position = Vector2(56, 112)
+
+[node name="Pool Chair3" parent="Environment/Y-Sorting" instance=ExtResource("7_47vj5")]
+position = Vector2(358, 189)
+
+[node name="Sprite2D" parent="Environment/Y-Sorting/Pool Chair3" index="0"]
+position = Vector2(1, -3)
+flip_h = true
+
+[node name="Pool Chair4" parent="Environment/Y-Sorting" instance=ExtResource("7_47vj5")]
+position = Vector2(358, 158)
+
+[node name="Sprite2D" parent="Environment/Y-Sorting/Pool Chair4" index="0"]
+position = Vector2(1, -3)
+flip_h = true
+
+[node name="Pool Chair2" parent="Environment/Y-Sorting" instance=ExtResource("7_47vj5")]
+position = Vector2(56, 174)
+
+[node name="Glass Table" parent="Environment/Y-Sorting" instance=ExtResource("8_47vj5")]
+position = Vector2(58, 142)
+
+[node name="Glass Table2" parent="Environment/Y-Sorting" instance=ExtResource("8_47vj5")]
+position = Vector2(359, 142)
+
+[node name="Push_Pull Audio" parent="." instance=ExtResource("9_2qwxl")]
 
 [node name="Level Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_0k1s7")
@@ -157,4 +185,10 @@ scale = Vector2(0.28900516, 0.2890053)
 texture = ExtResource("13_5siwj")
 offset = Vector2(850.15717, 604.32855)
 
+[editable path="Environment/Y-Sorting/Floaties4"]
+[editable path="Environment/Y-Sorting/Floaties5"]
+[editable path="Environment/Y-Sorting/Floaties2"]
+[editable path="Environment/Y-Sorting/Floaties3"]
+[editable path="Environment/Y-Sorting/Pool Chair3"]
+[editable path="Environment/Y-Sorting/Pool Chair4"]
 [editable path="HUD"]

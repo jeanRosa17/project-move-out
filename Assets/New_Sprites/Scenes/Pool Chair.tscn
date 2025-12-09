@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://wqba7qc482s1"]
+
+[ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_tlifk"]
+[ext_resource type="Texture2D" uid="uid://dpbbpi8qdod6o" path="res://Assets/New_Sprites/Pool Chair.png" id="2_tlifk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
+size = Vector2(31, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gifpp"]
+size = Vector2(38, 34.09375)
+
+[node name="Pool Chair" type="RigidBody2D" groups=["Furniture"]]
+y_sort_enabled = true
+collision_layer = 2
+collision_mask = 7
+gravity_scale = 0.0
+script = ExtResource("1_tlifk")
+canLift = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -7.5)
+texture = ExtResource("2_tlifk")
+region_rect = Rect2(0, 4, 48, 26)
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_xnri0")
+
+[node name="AreaDetector" type="Area2D" parent="." groups=["Furniture"]]
+position = Vector2(0, -1)
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector"]
+position = Vector2(0, -5.953125)
+shape = SubResource("RectangleShape2D_gifpp")
