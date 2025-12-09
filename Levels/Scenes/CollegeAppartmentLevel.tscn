@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://u3kf42enbqyl"]
+[gd_scene load_steps=25 format=4 uid="uid://u3kf42enbqyl"]
 
 [ext_resource type="Texture2D" uid="uid://dlqlqw0fvr4wp" path="res://Assets/Objects/Carpets/carpet.png" id="1_ykasp"]
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="2_otbpy"]
@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://co27kfjleoj27" path="res://Assets/Audio/furniture [game capstone].wav" id="16_bhxys"]
 [ext_resource type="PackedScene" uid="uid://diko086yswlr0" path="res://Assets/Objects/Beds/Scene/Twin_Bed_Side.tscn" id="17_kyk2i"]
 [ext_resource type="PackedScene" uid="uid://nomguund5j25" path="res://Assets/Objects/Couches/Scenes/red_couch_front.tscn" id="17_x82x2"]
+[ext_resource type="Script" uid="uid://dj52fk0ha628v" path="res://Levels/Scenes/InventoryChecklist.gd" id="21_6oy3m"]
 [ext_resource type="PackedScene" uid="uid://b7qk52eapta2s" path="res://Assets/Objects/Dressers & Shelves/Scenes/wooden_wardrobe_front.tscn" id="21_lr55i"]
 [ext_resource type="PackedScene" uid="uid://bujcbosiagjri" path="res://Assets/Objects/Dressers & Shelves/Scenes/wooden_shelf_front.tscn" id="22_0p0vu"]
 [ext_resource type="Texture2D" uid="uid://b0r0nkq7wuc8b" path="res://Assets/Untitled_Artwork.png" id="23_qnbnb"]
@@ -259,6 +260,15 @@ position = Vector2(1220, 504)
 
 [node name="Shelf" parent="Ice Room" instance=ExtResource("22_0p0vu")]
 position = Vector2(1142, 488)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ItemList" type="ItemList" parent="CanvasLayer" node_paths=PackedStringArray("needed")]
+offset_right = 454.0
+offset_bottom = 305.0
+script = ExtResource("21_6oy3m")
+needed = [NodePath("../../Nature Room/Wardrobe"), NodePath("../../Ice Room/Shelf")]
 
 [node name="HUD" parent="." instance=ExtResource("25_3xhsd")]
 visible = false
