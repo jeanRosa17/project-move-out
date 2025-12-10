@@ -161,7 +161,7 @@ func enterLift(body:CharacterBody2D) -> void:
 	self.player = self.get_parent()
 
 func exitLift() -> void:
-	print("ghost global pos = ", ghostSprite.global_position)
+	#print("ghost global pos = ", ghostSprite.global_position)
 	
 	self.killLiftingTween()
 	

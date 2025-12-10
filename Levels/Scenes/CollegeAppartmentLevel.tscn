@@ -13,7 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://co27kfjleoj27" path="res://Assets/Audio/furniture [game capstone].wav" id="16_bhxys"]
 [ext_resource type="PackedScene" uid="uid://diko086yswlr0" path="res://Assets/Objects/Beds/Scene/Twin_Bed_Side.tscn" id="17_kyk2i"]
 [ext_resource type="PackedScene" uid="uid://nomguund5j25" path="res://Assets/Objects/Couches/Scenes/red_couch_front.tscn" id="17_x82x2"]
-[ext_resource type="Script" path="res://Levels/Scenes/InventoryChecklist.gd" id="21_6oy3m"]
+[ext_resource type="Script" uid="uid://dj52fk0ha628v" path="res://Levels/Scenes/InventoryChecklist.gd" id="21_6oy3m"]
 [ext_resource type="PackedScene" uid="uid://cuho4egtuhmvt" path="res://Assets/Objects/Tables/Scenes/TV_and_desk_front.tscn" id="21_d0wr3"]
 [ext_resource type="PackedScene" uid="uid://b7qk52eapta2s" path="res://Assets/Objects/Dressers & Shelves/Scenes/wooden_wardrobe_front.tscn" id="21_lr55i"]
 [ext_resource type="PackedScene" uid="uid://bujcbosiagjri" path="res://Assets/Objects/Dressers & Shelves/Scenes/wooden_shelf_front.tscn" id="22_0p0vu"]
@@ -261,6 +261,7 @@ unique_name_in_owner = true
 
 [node name="Level Results" parent="HUD" index="1"]
 visible = false
+nextLevelName = &"res://UI/Scenes/TitleScreen.tscn"
 replayLevelName = &"res://Levels/Scenes/CollegeAppartmentLevel.tscn"
 
 [node name="Dialogue" parent="HUD" index="2"]

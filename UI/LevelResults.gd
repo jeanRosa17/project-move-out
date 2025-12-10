@@ -18,9 +18,11 @@ func _on_next_level_pressed() -> void:
 		self.levelManager.changeSceneTo(nextLevelName)
 
 func _on_replay_level_pressed() -> void:
-	if (replayLevelName != null):
-		self.levelManager.changeSceneTo(get_tree().edited_scene_root.filename)
+	var current_scene := get_tree().current_scene
+	if current_scene:
+		var path := current_scene.scene_file_path
+		self.levelManager.changeSceneTo(path)
 
 func _on_exit_game_pressed() -> void:
 	#get_tree().quit()
-	self.levelManager.changeSceneTo("res://UI/TitleScreen.tscn")
+	self.levelManager.changeSceneTo("res://UI/Scenes/TitleScreen.tscn")

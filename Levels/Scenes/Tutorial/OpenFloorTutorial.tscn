@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=4 uid="uid://xdjv122pxc6c"]
 
-[ext_resource type="Texture2D" uid="uid://cr4anobuqxla0" path="res://Assets/Objects/Carpets/carpet.png" id="2_pebci"]
+[ext_resource type="Texture2D" uid="uid://dlqlqw0fvr4wp" path="res://Assets/Objects/Carpets/carpet.png" id="2_pebci"]
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="3_3j8mk"]
 [ext_resource type="Texture2D" uid="uid://dytgdsg146xfm" path="res://Levels/Level Sketches/Bachelor_pad_test_level.png" id="4_odab6"]
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Assets/Player/Scenes/Player.tscn" id="6_4y23e"]
