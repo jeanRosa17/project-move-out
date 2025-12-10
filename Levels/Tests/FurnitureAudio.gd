@@ -14,6 +14,7 @@ func push_sound(furniture:Furniture) -> void:
 		await get_tree().create_timer(.05).timeout
 		stop()
 		
+		if (not furniture): return
 		
 		if (furniture.isPushed):
 			push_sound(furniture)
