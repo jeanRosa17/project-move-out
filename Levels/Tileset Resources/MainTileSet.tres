@@ -1,8 +1,9 @@
-[gd_resource type="TileSet" load_steps=11 format=3 uid="uid://c7j0gyu0tnn1m"]
+[gd_resource type="TileSet" load_steps=13 format=3 uid="uid://c7j0gyu0tnn1m"]
 
 [ext_resource type="Texture2D" uid="uid://ckthm0nlv0cqj" path="res://Assets/background/background_01.png" id="1_civ8i"]
 [ext_resource type="Texture2D" uid="uid://bcy4yuycluqjm" path="res://Assets/Objects/Kitchen/kitchenCounter_1.png" id="1_jbff4"]
 [ext_resource type="Texture2D" uid="uid://c8g5v0hwyh5of" path="res://Assets/background/background_02.png" id="2_cos8y"]
+[ext_resource type="Texture2D" uid="uid://bpd0wwec3qn86" path="res://Assets/tiles/haunted_house_tile.png" id="4_cos8y"]
 [ext_resource type="Texture2D" uid="uid://djbgvclxv2ggx" path="res://Assets/tiles/Support Columns.png" id="5_ia4qr"]
 [ext_resource type="Texture2D" uid="uid://dc6c1fdxyaabr" path="res://Assets/tiles/Walls3.png" id="6_20iwy"]
 
@@ -179,6 +180,13 @@ texture = ExtResource("1_jbff4")
 4:1/0 = 0
 4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v8fek"]
+texture = ExtResource("4_cos8y")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uvj06"]
 texture = ExtResource("5_ia4qr")
 0:0/0 = 0
@@ -341,3 +349,4 @@ sources/5 = SubResource("TileSetAtlasSource_bo1jn")
 sources/2 = SubResource("TileSetAtlasSource_jbff4")
 sources/0 = SubResource("TileSetAtlasSource_m4hcq")
 sources/1 = SubResource("TileSetAtlasSource_koyeg")
+sources/3 = SubResource("TileSetAtlasSource_v8fek")
