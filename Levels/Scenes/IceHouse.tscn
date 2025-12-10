@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=23 format=4 uid="uid://yaa8cqy3awu1"]
+=======
+[gd_scene load_steps=27 format=4 uid="uid://yaa8cqy3awu1"]
+>>>>>>> 1c3839b7e82b899008267d37e3e896cc99284ae2
 
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Assets/Player/Scenes/Player.tscn" id="1_siuop"]
 [ext_resource type="PackedScene" uid="uid://ip4pm1ex6klr" path="res://Levels/Scenes/Garage.tscn" id="2_b36xl"]
@@ -13,11 +17,13 @@
 [ext_resource type="PackedScene" uid="uid://hdlugvlqrl3f" path="res://Assets/Objects/Chairs/Scene/Orange_Chair_Front.tscn" id="11_s7dve"]
 [ext_resource type="PackedScene" uid="uid://brgy71yxn4aj2" path="res://Assets/Objects/Chairs/Scene/Orange_Chair_Back.tscn" id="12_3f2cd"]
 [ext_resource type="PackedScene" uid="uid://uacgji4vcg37" path="res://Assets/Audio/push_pull_audio.tscn" id="13_s7dve"]
-[ext_resource type="Script" uid="uid://cyso0emuh7ori" path="res://Levels/Scenes/ice_areas.gd" id="17_s7dve"]
+[ext_resource type="Script" path="res://Levels/Scenes/ice_areas.gd" id="17_s7dve"]
 [ext_resource type="AudioStream" uid="uid://0q4m8jstuh5j" path="res://Assets/Audio/ice slide noise.wav" id="18_3f2cd"]
 [ext_resource type="PackedScene" uid="uid://cfmb3mmeue8au" path="res://UI/Scenes/HUD.tscn" id="18_rt88h"]
+[ext_resource type="Script" uid="uid://1ugs6cpgg5xy" path="res://Levels/Scenes/Tutorial/trigger_sensor.gd" id="19_452e0"]
 [ext_resource type="PackedScene" uid="uid://cew0q8r43cndi" path="res://Assets/Objects/Beds/Scene/Double_BedROTATE.tscn" id="19_rt88h"]
 [ext_resource type="PackedScene" uid="uid://cqt367stu26c2" path="res://Assets/Objects/Table Items/Scenes/Pot.tscn" id="20_452e0"]
+[ext_resource type="Resource" uid="uid://cslj6cilix8o7" path="res://Narrative/iceEnter.tres" id="20_f0dho"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hedka"]
 normal = Vector2(1.79515e-06, 1)
@@ -32,6 +38,15 @@ size = Vector2(61, 60)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3f2cd"]
 size = Vector2(88.75, 32)
 
+<<<<<<< HEAD
+=======
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rt88h"]
+size = Vector2(32, 98)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h8h55"]
+size = Vector2(6.46545, 976.375)
+
+>>>>>>> 1c3839b7e82b899008267d37e3e896cc99284ae2
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_siuop")]
@@ -161,14 +176,32 @@ position = Vector2(68, 368)
 position = Vector2(112, 315)
 
 [node name="HUD" parent="." instance=ExtResource("18_rt88h")]
-visible = false
+unique_name_in_owner = true
 
 [node name="Level Results" parent="HUD" index="1"]
 visible = false
 nextLevelName = &"res://Levels/Scenes/HauntedHouseLevel.tscn"
 replayLevelName = &"res://Levels/Scenes/IceHouse.tscn"
 
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(136, 256)
+scale = Vector2(0.524795, 0.0439381)
+
+[node name="TriggerSensor" type="Area2D" parent="Node2D"]
+position = Vector2(-215.322, -5029.8)
+collision_layer = 16
+script = ExtResource("19_452e0")
+tag = ExtResource("20_f0dho")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/TriggerSensor"]
+position = Vector2(153.245, 7482.11)
+rotation = -0.0014569
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_h8h55")
+one_way_collision_margin = 0.0
+
 [connection signal="body_entered" from="Ice Areas" to="Ice Areas" method="_on_body_entered"]
 [connection signal="body_exited" from="Ice Areas" to="Ice Areas" method="_on_body_exited"]
+[connection signal="body_entered" from="Node2D/TriggerSensor" to="Node2D/TriggerSensor" method="_on_body_entered"]
 
 [editable path="HUD"]
