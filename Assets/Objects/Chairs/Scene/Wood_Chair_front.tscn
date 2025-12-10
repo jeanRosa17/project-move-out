@@ -22,7 +22,6 @@ metadata/_custom_type_script = "uid://c2vh27coguldq"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_e1xdp")
-flip_h = true
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, 10.75)

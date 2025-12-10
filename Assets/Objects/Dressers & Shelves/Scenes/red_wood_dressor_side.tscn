@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://m5smp1anme4l" path="res://Assets/Objects/Dressers & Shelves/red_wood_dressor_2..png" id="2_uwe8d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
-size = Vector2(32, 28.25)
+size = Vector2(32, 17)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
 size = Vector2(35, 50)
@@ -24,7 +24,7 @@ metadata/_custom_type_script = "uid://c2vh27coguldq"
 texture = ExtResource("2_uwe8d")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 8.875)
+position = Vector2(0, 14.5)
 shape = SubResource("RectangleShape2D_xnri0")
 
 [node name="AreaDetector" type="Area2D" parent="." groups=["Furniture"]]

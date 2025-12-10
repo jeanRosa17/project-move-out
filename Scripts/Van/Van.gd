@@ -17,7 +17,8 @@ func _process(_delta:float)  -> void:
 		print("pressed")
 		clearVan()
 		#display the score with the HUD
-
+		
+	
 func clearVan() -> void:
 	# gets all furniture in van
 	var bodies:Array[Node2D] = self.get_overlapping_bodies()
