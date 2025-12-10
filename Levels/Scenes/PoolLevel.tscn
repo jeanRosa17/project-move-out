@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ip4pm1ex6klr" path="res://Levels/Scenes/Garage.tscn" id="4_h6b8q"]
 [ext_resource type="PackedScene" uid="uid://byhkf48wxg1gp" path="res://Assets/Objects/Plants/Dino pot.tscn" id="6_5siwj"]
 [ext_resource type="PackedScene" uid="uid://wqba7qc482s1" path="res://Assets/New_Sprites/Scenes/Pool Chair.tscn" id="7_47vj5"]
-[ext_resource type="PackedScene" uid="uid://2n1w5yvs61is" path="res://Assets/New_Sprites/Scenes/Floaties.tscn" id="7_yxchq"]
+[ext_resource type="PackedScene" path="res://Assets/New_Sprites/Scenes/Floaties.tscn" id="7_yxchq"]
 [ext_resource type="PackedScene" uid="uid://diwhnfkrarfj4" path="res://Assets/New_Sprites/Scenes/Glass table.tscn" id="8_47vj5"]
 [ext_resource type="PackedScene" uid="uid://uacgji4vcg37" path="res://Assets/Audio/push_pull_audio.tscn" id="9_2qwxl"]
 [ext_resource type="PackedScene" uid="uid://bwf3bxxrqqacs" path="res://Assets/New_Sprites/Scenes/Floaties Tower.tscn" id="9_5siwj"]
@@ -22,9 +22,9 @@
 frequency = 0.001
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yxchq"]
+noise = SubResource("FastNoiseLite_5siwj")
 seamless = true
 seamless_blend_skirt = 1.0
-noise = SubResource("FastNoiseLite_5siwj")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yxchq"]
 shader = ExtResource("2_5siwj")
