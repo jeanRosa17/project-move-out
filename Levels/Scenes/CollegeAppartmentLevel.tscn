@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://u3kf42enbqyl"]
+[gd_scene load_steps=25 format=4 uid="uid://u3kf42enbqyl"]
 
 [ext_resource type="Texture2D" uid="uid://dlqlqw0fvr4wp" path="res://Assets/Objects/Carpets/carpet.png" id="1_ykasp"]
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="2_otbpy"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://cuho4egtuhmvt" path="res://Assets/Objects/Tables/Scenes/TV_and_desk_front.tscn" id="21_d0wr3"]
 [ext_resource type="PackedScene" uid="uid://b7qk52eapta2s" path="res://Assets/Objects/Dressers & Shelves/Scenes/wooden_wardrobe_front.tscn" id="21_lr55i"]
 [ext_resource type="PackedScene" uid="uid://bujcbosiagjri" path="res://Assets/Objects/Dressers & Shelves/Scenes/wooden_shelf_front.tscn" id="22_0p0vu"]
+[ext_resource type="AudioStream" uid="uid://cmje4kqmvovdh" path="res://Assets/Audio/dorm.wav" id="22_d0wr3"]
 [ext_resource type="Texture2D" uid="uid://b0r0nkq7wuc8b" path="res://Assets/Untitled_Artwork.png" id="23_qnbnb"]
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Assets/Player/Scenes/Player.tscn" id="24_xqx0e"]
 [ext_resource type="PackedScene" uid="uid://cfmb3mmeue8au" path="res://UI/Scenes/HUD.tscn" id="25_3xhsd"]
@@ -257,5 +258,9 @@ replayLevelName = &"res://Levels/Scenes/CollegeAppartmentLevel.tscn"
 
 [node name="TV_and_desk_front" parent="." instance=ExtResource("21_d0wr3")]
 position = Vector2(644, 22)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("22_d0wr3")
+autoplay = true
 
 [editable path="HUD"]
