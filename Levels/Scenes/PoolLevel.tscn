@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://cpv8uddorqkwy"]
+[gd_scene load_steps=22 format=4 uid="uid://cpv8uddorqkwy"]
 
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="1_d1sx3"]
 [ext_resource type="Shader" uid="uid://fdgkrlk22v5j" path="res://Scripts/Shaders/Water.gdshader" id="2_5siwj"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ip4pm1ex6klr" path="res://Levels/Scenes/Garage.tscn" id="4_h6b8q"]
 [ext_resource type="PackedScene" uid="uid://byhkf48wxg1gp" path="res://Assets/Objects/Plants/Dino pot.tscn" id="6_5siwj"]
 [ext_resource type="PackedScene" uid="uid://wqba7qc482s1" path="res://Assets/New_Sprites/Scenes/Pool Chair.tscn" id="7_47vj5"]
-[ext_resource type="PackedScene" path="res://Assets/New_Sprites/Scenes/Floaties.tscn" id="7_yxchq"]
+[ext_resource type="PackedScene" uid="uid://2n1w5yvs61is" path="res://Assets/New_Sprites/Scenes/Floaties.tscn" id="7_yxchq"]
 [ext_resource type="PackedScene" uid="uid://diwhnfkrarfj4" path="res://Assets/New_Sprites/Scenes/Glass table.tscn" id="8_47vj5"]
 [ext_resource type="PackedScene" uid="uid://uacgji4vcg37" path="res://Assets/Audio/push_pull_audio.tscn" id="9_2qwxl"]
 [ext_resource type="PackedScene" uid="uid://bwf3bxxrqqacs" path="res://Assets/New_Sprites/Scenes/Floaties Tower.tscn" id="9_5siwj"]
@@ -14,14 +14,16 @@
 [ext_resource type="AudioStream" uid="uid://dy61bwuip8a27" path="res://Assets/Audio/lvl1.wav" id="11_0k1s7"]
 [ext_resource type="PackedScene" uid="uid://cfmb3mmeue8au" path="res://UI/Scenes/HUD.tscn" id="12_3ihav"]
 [ext_resource type="Texture2D" uid="uid://dx6t6t6hm5srq" path="res://Levels/Level Sketches/4b8cae04-10fe-456d-997a-4008dd8d77b6.png" id="13_5siwj"]
+[ext_resource type="Script" uid="uid://1ugs6cpgg5xy" path="res://Levels/Scenes/Tutorial/trigger_sensor.gd" id="15_knmwu"]
+[ext_resource type="Resource" uid="uid://d1jdojhuov1mg" path="res://Narrative/poolEnter.tres" id="16_hj1dr"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_5siwj"]
 frequency = 0.001
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yxchq"]
-noise = SubResource("FastNoiseLite_5siwj")
 seamless = true
 seamless_blend_skirt = 1.0
+noise = SubResource("FastNoiseLite_5siwj")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yxchq"]
 shader = ExtResource("2_5siwj")
@@ -33,6 +35,9 @@ shader_parameter/wave_strength = 0.01
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iqcmb"]
 normal = Vector2(1.79515e-06, 1)
 distance = -3.99999
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_myius"]
+size = Vector2(13.9982, 232.144)
 
 [node name="PoolLevel" type="Node2D"]
 y_sort_enabled = true
@@ -94,7 +99,7 @@ shape = SubResource("WorldBoundaryShape2D_iqcmb")
 [node name="Garage" parent="." instance=ExtResource("4_h6b8q")]
 z_index = -1
 position = Vector2(365, 405)
-rotation = -1.5707964
+rotation = -1.5708
 
 [node name="Environment" type="Node2D" parent="."]
 
@@ -207,13 +212,34 @@ unique_name_in_owner = true
 [node name="Level Results" parent="HUD" index="1"]
 visible = false
 
+[node name="Dialogue" parent="HUD" index="2"]
+visible = true
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
-modulate = Color(1, 1, 1, 0.5411765)
-position = Vector2(0.23001122, 0.20862001)
-scale = Vector2(0.28900516, 0.2890053)
+modulate = Color(1, 1, 1, 0.541176)
+position = Vector2(0.230011, 0.20862)
+scale = Vector2(0.289005, 0.289005)
 texture = ExtResource("13_5siwj")
-offset = Vector2(850.15717, 604.32855)
+offset = Vector2(850.157, 604.329)
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(136, 256)
+scale = Vector2(0.524795, 0.0439381)
+
+[node name="TriggerSensor" type="Area2D" parent="Node2D"]
+collision_layer = 16
+script = ExtResource("15_knmwu")
+tag = ExtResource("16_hj1dr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/TriggerSensor"]
+position = Vector2(118.141, 910.371)
+rotation = -0.0014569
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_myius")
+one_way_collision_margin = 0.0
+
+[connection signal="body_entered" from="Node2D/TriggerSensor" to="Node2D/TriggerSensor" method="_on_body_entered"]
 
 [editable path="Environment/Y-Sorting/Floaties4"]
 [editable path="Environment/Y-Sorting/Floaties5"]
