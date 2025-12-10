@@ -233,6 +233,7 @@ rotation = -4.71239
 shape = SubResource("WorldBoundaryShape2D_iqcmb")
 
 [node name="Garage" parent="." instance=ExtResource("10_ixm0r")]
+z_index = -1
 position = Vector2(-160, 64)
 
 [node name="Push_Pull Audio" parent="." instance=ExtResource("20_qhrob")]

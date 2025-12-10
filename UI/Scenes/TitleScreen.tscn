@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=4 uid="uid://rtrhhspwen6a"]
 
 [ext_resource type="Script" uid="uid://bhcre3gsfa5n3" path="res://UI/TitleScreen.gd" id="1_jpkfb"]
-[ext_resource type="FontFile" uid="uid://ctmjhlci4fpgd" path="res://Assets/fonts/m5x7.ttf" id="2_fbutq"]
+[ext_resource type="FontFile" uid="uid://c17q41l7sknhq" path="res://Assets/fonts/m5x7.ttf" id="2_fbutq"]
 [ext_resource type="PackedScene" uid="uid://b0xffv4xtxnru" path="res://UI/Scenes/FadeToBlackTransition.tscn" id="2_p1rv5"]
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="4_fbutq"]
 [ext_resource type="PackedScene" uid="uid://b8esrtg2o2fn8" path="res://Assets/Garage/moving_van.tscn" id="5_6q2m3"]
