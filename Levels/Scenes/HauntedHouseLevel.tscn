@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://dcqwj1132fkdt" path="res://Assets/Objects/Kitchen/stove_counter_side.png" id="19_cs8ww"]
 [ext_resource type="Texture2D" uid="uid://tq8l7mxma4l7" path="res://Assets/tiles/spider_Web.png" id="20_d4t44"]
 [ext_resource type="Texture2D" uid="uid://c5w0aubqbmcyk" path="res://Assets/Objects/Kitchen/kitchenCounter_2.png" id="20_vnmct"]
-[ext_resource type="AudioStream" uid="uid://dy61bwuip8a27" path="res://Assets/Audio/lvl1.wav" id="21_a5xxv"]
+[ext_resource type="AudioStream" uid="uid://c06vxd1b71qpi" path="res://Assets/Audio/spooky level.mp3" id="22_vuwhr"]
 [ext_resource type="PackedScene" uid="uid://cfmb3mmeue8au" path="res://UI/Scenes/HUD.tscn" id="22_yfbc1"]
 [ext_resource type="PackedScene" uid="uid://2uhivxtpilyw" path="res://Assets/Objects/Dressers & Shelves/Scenes/red_wood_dressor_side.tscn" id="23_c8pmi"]
 [ext_resource type="PackedScene" uid="uid://uacgji4vcg37" path="res://Assets/Audio/push_pull_audio.tscn" id="23_qvndv"]
@@ -203,7 +203,7 @@ script = ExtResource("19_c8pmi")
 
 [node name="Level Music" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-1, 41)
-stream = ExtResource("21_a5xxv")
+stream = ExtResource("22_vuwhr")
 autoplay = true
 
 [node name="Push_Pull Audio" parent="." instance=ExtResource("23_qvndv")]
