@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://u3kf42enbqyl"]
+[gd_scene load_steps=27 format=4 uid="uid://u3kf42enbqyl"]
 
 [ext_resource type="Texture2D" uid="uid://dlqlqw0fvr4wp" path="res://Assets/Objects/Carpets/carpet.png" id="1_ykasp"]
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="2_otbpy"]
@@ -17,6 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://cuho4egtuhmvt" path="res://Assets/Objects/Tables/Scenes/TV_and_desk_front.tscn" id="21_d0wr3"]
 [ext_resource type="PackedScene" uid="uid://b7qk52eapta2s" path="res://Assets/Objects/Dressers & Shelves/Scenes/wooden_wardrobe_front.tscn" id="21_lr55i"]
 [ext_resource type="PackedScene" uid="uid://bujcbosiagjri" path="res://Assets/Objects/Dressers & Shelves/Scenes/wooden_shelf_front.tscn" id="22_0p0vu"]
+[ext_resource type="Script" uid="uid://1ugs6cpgg5xy" path="res://Levels/Scenes/Tutorial/trigger_sensor.gd" id="22_jslvw"]
+[ext_resource type="Resource" uid="uid://b1k2e5uph6bk1" path="res://Narrative/apartmentEnter.tres" id="23_1keux"]
 [ext_resource type="Texture2D" uid="uid://b0r0nkq7wuc8b" path="res://Assets/Untitled_Artwork.png" id="23_qnbnb"]
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Assets/Player/Scenes/Player.tscn" id="24_xqx0e"]
 [ext_resource type="PackedScene" uid="uid://cfmb3mmeue8au" path="res://UI/Scenes/HUD.tscn" id="25_3xhsd"]
@@ -29,6 +31,9 @@ distance = -3.99999
 streams_count = 2
 stream_0/stream = ExtResource("13_d231f")
 stream_1/stream = ExtResource("14_nus4x")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1gam6"]
+size = Vector2(9.33033, 232.147)
 
 [node name="Main" type="Node2D"]
 y_sort_enabled = true
@@ -81,7 +86,6 @@ follow_viewport_enabled = true
 y_sort_enabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Y-Sorting"]
-visible = false
 follow_viewport_scale = 3.0
 
 [node name="Textbox" parent="Y-Sorting/CanvasLayer" instance=ExtResource("6_ussp6")]
@@ -250,12 +254,34 @@ script = ExtResource("21_6oy3m")
 needed = [NodePath("../../Fire Wardrobe"), NodePath("../../Fire Shelf"), NodePath("../../Fire Bed"), NodePath("../../Ice Bed"), NodePath("../../Ice Shelf"), NodePath("../../Ice Wardrobe"), NodePath("../../Fire Chair"), NodePath("../../Ice Chair")]
 
 [node name="HUD" parent="." instance=ExtResource("25_3xhsd")]
-visible = false
+unique_name_in_owner = true
 
 [node name="Level Results" parent="HUD" index="1"]
 replayLevelName = &"res://Levels/Scenes/CollegeAppartmentLevel.tscn"
 
+[node name="Dialogue" parent="HUD" index="2"]
+visible = true
+
 [node name="TV_and_desk_front" parent="." instance=ExtResource("21_d0wr3")]
 position = Vector2(644, 22)
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(136, 256)
+scale = Vector2(0.524795, 0.0439381)
+
+[node name="TriggerSensor" type="Area2D" parent="Node2D"]
+position = Vector2(-215.322, -5029.8)
+collision_layer = 16
+script = ExtResource("22_jslvw")
+tag = ExtResource("23_1keux")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/TriggerSensor"]
+position = Vector2(557.853, 7396.76)
+rotation = -0.0014569
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_1gam6")
+one_way_collision_margin = 0.0
+
+[connection signal="body_entered" from="Node2D/TriggerSensor" to="Node2D/TriggerSensor" method="_on_body_entered"]
 
 [editable path="HUD"]

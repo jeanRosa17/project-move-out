@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://cxowcytqevm5r"]
+[gd_scene load_steps=29 format=4 uid="uid://cxowcytqevm5r"]
 
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="1_ns01m"]
 [ext_resource type="Texture2D" uid="uid://dytgdsg146xfm" path="res://Levels/Level Sketches/Bachelor_pad_test_level.png" id="2_c8pmi"]
@@ -24,10 +24,15 @@
 [ext_resource type="PackedScene" uid="uid://2uhivxtpilyw" path="res://Assets/Objects/Dressers & Shelves/Scenes/red_wood_dressor_side.tscn" id="23_c8pmi"]
 [ext_resource type="PackedScene" uid="uid://uacgji4vcg37" path="res://Assets/Audio/push_pull_audio.tscn" id="23_qvndv"]
 [ext_resource type="PackedScene" uid="uid://cjingj81fm3hm" path="res://Assets/Objects/Dressers & Shelves/Scenes/storage_dresser_front.tscn" id="24_c8pmi"]
+[ext_resource type="Script" uid="uid://1ugs6cpgg5xy" path="res://Levels/Scenes/Tutorial/trigger_sensor.gd" id="25_ll45c"]
+[ext_resource type="Resource" uid="uid://cfslr0citoacp" path="res://Narrative/hauntedEnter.tres" id="26_bvljw"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iqcmb"]
 normal = Vector2(1.79515e-06, 1)
 distance = -3.99999
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mngvi"]
+size = Vector2(48.2026, 232.147)
 
 [node name="Main" type="Node2D"]
 y_sort_enabled = true
@@ -193,7 +198,7 @@ stream = ExtResource("21_a5xxv")
 autoplay = true
 
 [node name="HUD" parent="." instance=ExtResource("22_yfbc1")]
-visible = false
+unique_name_in_owner = true
 
 [node name="Level Results" parent="HUD" index="1"]
 nextLevelName = &"res://Levels/Scenes/FratHouse.tscn"
@@ -204,5 +209,24 @@ visible = false
 
 [node name="Push_Pull Audio" parent="." instance=ExtResource("23_qvndv")]
 position = Vector2(-1, 41)
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(136, 256)
+scale = Vector2(0.524795, 0.0439381)
+
+[node name="TriggerSensor" type="Area2D" parent="Node2D"]
+position = Vector2(-215.322, -5029.8)
+collision_layer = 16
+script = ExtResource("25_ll45c")
+tag = ExtResource("26_bvljw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/TriggerSensor"]
+position = Vector2(319.665, 6577.28)
+rotation = -0.0014569
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_mngvi")
+one_way_collision_margin = 0.0
+
+[connection signal="body_entered" from="Node2D/TriggerSensor" to="Node2D/TriggerSensor" method="_on_body_entered"]
 
 [editable path="HUD"]

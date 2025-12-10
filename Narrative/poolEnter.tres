@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueTag" load_steps=2 format=3 uid="uid://d3xcoph6p0kek"]
+
+[ext_resource type="Script" uid="uid://bmqryoobj44j2" path="res://Scripts/Dialogue/DialogueTag.gd" id="1_r48pm"]
+
+[resource]
+script = ExtResource("1_r48pm")
+dialogueScriptPath = &"res://Narrative/SampleText.txt"
+dialogueTag = &"poolEnter"
+metadata/_custom_type_script = "uid://bmqryoobj44j2"

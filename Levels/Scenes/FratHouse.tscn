@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://b2fj0cyyvoq31"]
+[gd_scene load_steps=37 format=4 uid="uid://b2fj0cyyvoq31"]
 
 [ext_resource type="Texture2D" uid="uid://dlqlqw0fvr4wp" path="res://Assets/Objects/Carpets/carpet.png" id="1_nhc3c"]
 [ext_resource type="Texture2D" uid="uid://bgj8v2kim3dpq" path="res://Assets/New_Sprites/forest_painting.png" id="2_gn8rh"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dk8i6xx6vruis" path="res://Assets/New_Sprites/green_carpet.png" id="3_p3ejp"]
 [ext_resource type="Texture2D" uid="uid://coc80v4j0hq5l" path="res://Assets/New_Sprites/clock.png" id="4_mj0og"]
 [ext_resource type="PackedScene" uid="uid://psh4s5sym8kd" path="res://UI/Scenes/Textbox.tscn" id="5_gn8rh"]
+[ext_resource type="Resource" uid="uid://b0y4f1biydnae" path="res://Scripts/Dialogue/fratEnter.tres" id="8_gn8rh"]
 [ext_resource type="PackedScene" uid="uid://ip4pm1ex6klr" path="res://Levels/Scenes/Garage.tscn" id="10_ixm0r"]
 [ext_resource type="PackedScene" uid="uid://brfkiqavvunae" path="res://Assets/Particles/Scenes/wind_particle.tscn" id="15_nlmik"]
 [ext_resource type="PackedScene" uid="uid://cl3ww3w6r3n1r" path="res://Assets/Objects/Kitchen/Scenes/Fridge.tscn" id="16_diw3d"]
@@ -32,11 +33,12 @@
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_663r6"]
 load_path = "res://.godot/imported/Frat House Floor 1.png-6dc760f316e63d454e821abca6782a26.ctex"
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fqpg0"]
+size = Vector2(6.46545, 232.147)
+
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iqcmb"]
 normal = Vector2(1.79515e-06, 1)
 distance = -96.4999
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fqpg0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qhrob"]
 size = Vector2(31, 98.75)
@@ -129,6 +131,27 @@ visible = false
 follow_viewport_scale = 3.0
 
 [node name="Textbox" parent="CanvasLayer" instance=ExtResource("5_gn8rh")]
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(136, 256)
+scale = Vector2(0.524795, 0.0439381)
+
+[node name="TriggerSensor" type="Area2D" parent="Node2D"]
+position = Vector2(-215.322, -5029.8)
+collision_layer = 16
+script = ExtResource("23_u40ca")
+tag = ExtResource("8_gn8rh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/TriggerSensor"]
+position = Vector2(-25.9067, 330.008)
+rotation = -0.0014569
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_fqpg0")
+one_way_collision_margin = 0.0
+
+[node name="Garage" parent="." instance=ExtResource("10_ixm0r")]
+z_index = -1
+position = Vector2(-160, 64)
 
 [node name="Y-sorting" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -230,9 +253,6 @@ position = Vector2(358, 42)
 rotation = -4.71239
 shape = SubResource("WorldBoundaryShape2D_iqcmb")
 
-[node name="Garage" parent="." instance=ExtResource("10_ixm0r")]
-position = Vector2(-160, 64)
-
 [node name="Push_Pull Audio" parent="." instance=ExtResource("20_qhrob")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -243,27 +263,15 @@ texture = ExtResource("20_qjb6p")
 region_enabled = true
 region_rect = Rect2(903, 355, 721, 684)
 
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(136, 256)
-scale = Vector2(0.524795, 0.0439381)
-
-[node name="TriggerSensor" type="Area2D" parent="Node2D"]
-collision_layer = 16
-script = ExtResource("23_u40ca")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/TriggerSensor"]
-position = Vector2(-167.685, 1137.96)
-rotation = -0.0014569
-scale = Vector2(5, 5)
-shape = SubResource("RectangleShape2D_fqpg0")
-one_way_collision_margin = 0.0
-
 [node name="HUD" parent="." instance=ExtResource("24_5ounb")]
-visible = false
+unique_name_in_owner = true
 
 [node name="Level Results" parent="HUD" index="1"]
 nextLevelName = &"res://Levels/Scenes/CollegeAppartmentLevel.tscn"
 replayLevelName = &"res://Levels/Scenes/CollegeAppartmentLevel.tscn"
+
+[node name="Dialogue" parent="HUD" index="2"]
+visible = true
 
 [node name="Level Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("26_qhrob")

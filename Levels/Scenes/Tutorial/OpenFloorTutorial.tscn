@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://xdjv122pxc6c"]
+[gd_scene load_steps=25 format=4 uid="uid://xdjv122pxc6c"]
 
 [ext_resource type="Texture2D" uid="uid://dlqlqw0fvr4wp" path="res://Assets/Objects/Carpets/carpet.png" id="2_pebci"]
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="3_3j8mk"]
@@ -18,12 +18,17 @@
 [ext_resource type="Resource" uid="uid://c6dysgimf0cue" path="res://Narrative/couchTag.tres" id="18_c0tsg"]
 [ext_resource type="PackedScene" uid="uid://bujcbosiagjri" path="res://Assets/Objects/Dressers & Shelves/Scenes/wooden_shelf_front.tscn" id="19_u0unu"]
 [ext_resource type="PackedScene" uid="uid://cl3ww3w6r3n1r" path="res://Assets/Objects/Kitchen/Scenes/Fridge.tscn" id="19_yn8gu"]
+[ext_resource type="Script" uid="uid://1ugs6cpgg5xy" path="res://Levels/Scenes/Tutorial/trigger_sensor.gd" id="21_yn8gu"]
+[ext_resource type="Resource" uid="uid://8oqkr01obmdh" path="res://Narrative/start.tres" id="22_rwqj1"]
 [ext_resource type="PackedScene" uid="uid://cfmb3mmeue8au" path="res://UI/Scenes/HUD.tscn" id="24_4alro"]
 [ext_resource type="AudioStream" uid="uid://dy61bwuip8a27" path="res://Assets/Audio/lvl1.wav" id="25_4alro"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iqcmb"]
 normal = Vector2(1.79515e-06, 1)
 distance = -3.99999
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8k2n"]
+size = Vector2(29.7457, 100.141)
 
 [node name="Main" type="Node2D"]
 y_sort_enabled = true
@@ -178,5 +183,24 @@ visible = false
 position = Vector2(147.75, 125)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_odab6")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(136, 256)
+scale = Vector2(0.524795, 0.0439381)
+
+[node name="TriggerSensor" type="Area2D" parent="Node2D"]
+position = Vector2(-215.322, -5029.8)
+collision_layer = 16
+script = ExtResource("21_yn8gu")
+tag = ExtResource("22_rwqj1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/TriggerSensor"]
+position = Vector2(307.101, 7009.85)
+rotation = -0.0014569
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_v8k2n")
+one_way_collision_margin = 0.0
+
+[connection signal="body_entered" from="Node2D/TriggerSensor" to="Node2D/TriggerSensor" method="_on_body_entered"]
 
 [editable path="HUD"]

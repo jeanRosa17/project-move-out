@@ -1,6 +1,6 @@
 #start {
 	It’s been a bit since I got to work, but this job should be easy, not many things to fit in my van.
-	I can move with wsad and pick objects up with space, I’ll be done as soon as I move everything on the list I was given.
+	I can move with wsad and pick objects up with space, once I'm done I can hit the lever on my truck to leave.
 }
 
 #enterLivingRoom {
@@ -37,4 +37,29 @@
 
 #null {
 	No problem here.
+}
+
+#fratEnter {
+	Magic may have gotten more advanced, but the yung 'uns shouldn't sling it around willy-nilly.
+	I'll have to work around all the wind. *sigh*
+}
+
+#poolEnter {
+	Why any child would want to come here is beyond me.
+	That's probably why they called me here, come to think of it.
+}
+
+#hauntedEnter {
+	If all the furniture can move itself, why do they need me?!
+	Perhaps it will all calm down if I find the source of the haunting. I should charge extra for this.
+}
+
+#apartmentEnter {
+	It seems not everyone is leaving, so I was given a list of objects to move.
+	Best not to deviate from it, I'll probably be sued for that.
+}
+
+#iceEnter {
+	It's a good thing my cloak is made of good wool, I don't want to know what happened here.
+	I left my spiked boots at home, I'll just deal with the ice.
 }
