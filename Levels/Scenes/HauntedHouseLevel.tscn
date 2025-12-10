@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://cxowcytqevm5r"]
+[gd_scene load_steps=29 format=4 uid="uid://cxowcytqevm5r"]
 
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="1_ns01m"]
 [ext_resource type="Texture2D" uid="uid://dytgdsg146xfm" path="res://Levels/Level Sketches/Bachelor_pad_test_level.png" id="2_c8pmi"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://diko086yswlr0" path="res://Assets/Objects/Beds/Scene/Twin_Bed_Side.tscn" id="11_c1wgv"]
 [ext_resource type="PackedScene" uid="uid://bujcbosiagjri" path="res://Assets/Objects/Dressers & Shelves/Scenes/wooden_shelf_front.tscn" id="12_62cqs"]
 [ext_resource type="PackedScene" uid="uid://dpyl8x5qojmng" path="res://Assets/Objects/Table Items/Scenes/TV.tscn" id="13_khaf7"]
-[ext_resource type="PackedScene" uid="uid://dupq6esd0r2ps" path="res://Assets/Objects/Couches/Scenes/white_bedside_table.tscn" id="14_da6jq"]
 [ext_resource type="PackedScene" uid="uid://outwnejax5mt" path="res://Assets/Objects/Couches/Scenes/redder_couch_side.tscn" id="15_jnqui"]
 [ext_resource type="PackedScene" uid="uid://cuho4egtuhmvt" path="res://Assets/Objects/Tables/Scenes/TV_and_desk_front.tscn" id="16_pesxd"]
 [ext_resource type="PackedScene" uid="uid://bcmy8dq2ef0uc" path="res://Assets/Objects/Tables/Scenes/long_desk_front.tscn" id="17_g60oe"]
@@ -155,17 +154,8 @@ position = Vector2(350, 46)
 [node name="Toilet2" parent="Environment/Y-Sorting" instance=ExtResource("8_b3v6f")]
 position = Vector2(376, 49)
 
-[node name="white_bedside_table3" parent="Environment/Y-Sorting" instance=ExtResource("14_da6jq")]
-position = Vector2(287, 221)
-
-[node name="white_bedside_table2" parent="Environment/Y-Sorting" instance=ExtResource("14_da6jq")]
-position = Vector2(256, 181)
-
 [node name="redder_couch_side" parent="Environment/Y-Sorting" instance=ExtResource("15_jnqui")]
 position = Vector2(348, 137)
-
-[node name="white_bedside_table" parent="Environment/Y-Sorting" instance=ExtResource("14_da6jq")]
-position = Vector2(309, 192)
 
 [node name="TV_and_desk_front" parent="Environment/Y-Sorting" instance=ExtResource("16_pesxd")]
 position = Vector2(260, 90)
@@ -216,20 +206,6 @@ position = Vector2(-1, 41)
 stream = ExtResource("21_a5xxv")
 autoplay = true
 
-[node name="HUD" parent="." instance=ExtResource("22_yfbc1")]
-unique_name_in_owner = true
-
-[node name="Level Results" parent="HUD" index="1"]
-visible = false
-nextLevelName = &"res://Levels/Scenes/FratHouse.tscn"
-replayLevelName = &"res://Levels/Scenes/HauntedHouseLevel.tscn"
-
-[node name="Container" parent="HUD/Level Results" index="0"]
-visible = false
-
-[node name="Dialogue" parent="HUD" index="2"]
-visible = true
-
 [node name="Push_Pull Audio" parent="." instance=ExtResource("23_qvndv")]
 position = Vector2(-1, 41)
 
@@ -248,6 +224,17 @@ rotation = -0.0014569
 scale = Vector2(5, 5)
 shape = SubResource("RectangleShape2D_udrtn")
 one_way_collision_margin = 0.0
+
+[node name="HUD" parent="." instance=ExtResource("22_yfbc1")]
+unique_name_in_owner = true
+
+[node name="Level Results" parent="HUD" index="1"]
+visible = false
+nextLevelName = &"res://Levels/Scenes/FratHouse.tscn"
+replayLevelName = &"res://Levels/Scenes/CollegeAppartmentLevel.tscn"
+
+[node name="Dialogue" parent="HUD" index="2"]
+visible = true
 
 [connection signal="body_entered" from="Node2D/TriggerSensor" to="Node2D/TriggerSensor" method="_on_body_entered"]
 
