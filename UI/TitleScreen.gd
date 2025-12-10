@@ -29,7 +29,7 @@ func _on_play_pressed() -> void:
 
 func startTweens():
 	var authors = create_tween()
-	var titleText = create_tween()
+	#var titleText = create_tween()
 	var playButton = create_tween()
 	var van = create_tween()
 	
@@ -39,7 +39,7 @@ func startTweens():
 	play.modulate.a = 0.0
 	
 	authors.tween_property(creators, "modulate:a", 1.0, 0.5).from(0)
-	authors.tween_property(creators, "modulate:a", 0.0, 0.25).set_delay(1.5)
+	#authors.tween_property(creators, "modulate:a", 0.0, 0.25).set_delay(1.5)
 	
 	van.tween_property(moving_van, "position:x", 160, 2.0).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_BOUNCE)
 
@@ -48,8 +48,8 @@ func startTweens():
 	van.tween_property(moving_van, "position:x", 130, 3.0).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_BOUNCE).set_delay(3)
 
 
-	titleText.tween_property(title, "position:y", 8, 2.0).from(-300).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_BOUNCE)
-	playButton.tween_property(play, "position:y", 152, 2.0).from(300).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_BOUNCE)
+	#titleText.tween_property(title, "position:y", 8, 2.0).from(-300).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_BOUNCE)
+	playButton.tween_property(play, "position:y", 171, 2.0).from(300).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_BOUNCE)
 	
 	title.modulate.a = 1.0
 	play.modulate.a = 1.0
