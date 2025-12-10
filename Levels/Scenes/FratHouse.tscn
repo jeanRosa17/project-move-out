@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://b2fj0cyyvoq31"]
+[gd_scene load_steps=37 format=4 uid="uid://b2fj0cyyvoq31"]
 
 [ext_resource type="Texture2D" uid="uid://dlqlqw0fvr4wp" path="res://Assets/Objects/Carpets/carpet.png" id="1_nhc3c"]
 [ext_resource type="Texture2D" uid="uid://bgj8v2kim3dpq" path="res://Assets/New_Sprites/forest_painting.png" id="2_gn8rh"]
@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://cfmb3mmeue8au" path="res://UI/Scenes/HUD.tscn" id="24_5ounb"]
 [ext_resource type="PackedScene" uid="uid://fsead8bsqvyr" path="res://Assets/Objects/Couches/Scenes/redder_couch_front.tscn" id="24_bpkrg"]
 [ext_resource type="Script" uid="uid://c3h1qoybxufrj" path="res://Scripts/wind.gd" id="25_g0mxu"]
+[ext_resource type="Resource" uid="uid://bw7tpgka1cfco" path="res://Narrative/fratEnter.tres" id="25_gn8rh"]
 [ext_resource type="AudioStream" uid="uid://c8ey07cvvm0ij" path="res://Assets/Audio/frat house.wav" id="26_qhrob"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_663r6"]
@@ -37,6 +38,7 @@ normal = Vector2(1.79515e-06, 1)
 distance = -96.4999
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fqpg0"]
+size = Vector2(6.83993, 232.144)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qhrob"]
 size = Vector2(31, 98.75)
@@ -250,16 +252,17 @@ scale = Vector2(0.524795, 0.0439381)
 [node name="TriggerSensor" type="Area2D" parent="Node2D"]
 collision_layer = 16
 script = ExtResource("23_u40ca")
+tag = ExtResource("25_gn8rh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/TriggerSensor"]
-position = Vector2(-167.685, 1137.96)
+position = Vector2(-245.843, -4699.79)
 rotation = -0.0014569
 scale = Vector2(5, 5)
 shape = SubResource("RectangleShape2D_fqpg0")
 one_way_collision_margin = 0.0
 
 [node name="HUD" parent="." instance=ExtResource("24_5ounb")]
-visible = false
+unique_name_in_owner = true
 
 [node name="Level Results" parent="HUD" index="1"]
 nextLevelName = &"res://Levels/Scenes/CollegeAppartmentLevel.tscn"

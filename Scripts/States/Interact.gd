@@ -1,6 +1,6 @@
 extends State
 
-@onready var hud: HUDManager = $"../../../../HUD"
+@onready var hud: HUDManager = self.get_parent().get_parent().get_node("%HUD")
 @onready var textbox: DialogueManager
 
 func _ready() -> void:
