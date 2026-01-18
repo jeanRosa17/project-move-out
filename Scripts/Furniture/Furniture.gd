@@ -13,7 +13,7 @@ class_name Furniture
 
 var isLifted: bool = false
 var isPushed: bool = false
-var canBeDropped: bool = false
+var canBeDropped: bool = true ## Changed to true so that a player can immediately pick up and drop something
 
 @export var dialogueTag:DialogueTag = preload("res://Scripts/Dialogue/nullDialogue.tres")
 

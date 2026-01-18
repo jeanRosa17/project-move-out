@@ -26,18 +26,13 @@ func exit() -> void:
 	if (self.getManager().view.animation_finished.is_connected(backToIdle)):
 		self.getManager().view.animation_finished.disconnect(backToIdle)
 
-## Constantly checks for input from the user and changes state.
-func update(_delta:float) -> void:
-	pass
-
-## This method runs every _physics_process() frame of the StateManager.
-func physicsUpdate(_delta:float) -> void:
-	pass
-
+## If the Detector is overlapping with something, then the Furniture can't be
+## dropped.
 func _on_detected_body_entered(_body: Node2D) -> void:
 	if (self.manager.hasFurniture):
 		self.manager.furniture.canBeDropped = false
 
+## By default, a Furniture can be dropped, but 
 func _on_detected_body_exited(_body: Node2D) -> void:
 	if (self.manager.hasFurniture):
 		self.manager.furniture.canBeDropped = true

@@ -1208,10 +1208,11 @@ script = ExtResource("21_lch71")
 body = NodePath("../..")
 metadata/_custom_type_script = "uid://u8kdu3je8hxq"
 
-[node name="Move" type="Node" parent="StateManager" node_paths=PackedStringArray("body", "area2DCollision")]
+[node name="Move" type="Node" parent="StateManager" node_paths=PackedStringArray("body", "area2DCollision", "walkSound")]
 script = ExtResource("22_p1eok")
 body = NodePath("../..")
 area2DCollision = NodePath("../../Detector/CollisionShape2D")
+walkSound = NodePath("../../Walk Sound")
 metadata/_custom_type_script = "uid://c2tqhau6vnsm6"
 
 [node name="Throw" type="Node" parent="StateManager" node_paths=PackedStringArray("area2D")]

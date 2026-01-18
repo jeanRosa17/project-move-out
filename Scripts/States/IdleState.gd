@@ -25,5 +25,13 @@ func update(_delta:float) -> void:
 ## This method runs every _physics_process() frame of the StateManager.
 func physicsUpdate(_delta:float) -> void:
 	self.body.velocity = Vector2.ZERO
+	#self.decelerate(_delta)
 	#self.body.move_and_slide()
 	
+## Decreases the player's velocity. This function should only be called after the player
+## stops pressing a direction.
+#func decelerate(delta:float) -> void:
+	#if (not self.body.velocity.is_equal_approx(Vector2i.ZERO)):
+		#var deceleration:float = 40
+		#self.body.velocity.x = move_toward(self.body.velocity.x, 0, deceleration * delta)
+		#self.body.velocity.y = move_toward(self.body.velocity.y, 0, deceleration * delta)
