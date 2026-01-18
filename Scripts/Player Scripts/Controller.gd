@@ -22,11 +22,10 @@ func _process(delta:float) -> void:
 		self.handleInteract(delta)
 	
 	
-	var prefix:String = "move"
 	
-	#if (self.manager.wasPreviousState("Lift")): prefix = "movelift"
-	#if (self.manager.wasPreviousState("Push") || self.manager.view.animation.split()[0] == "push"): 
-		#prefix = "push"
+
+func temp() -> void:
+	var prefix:String = "move"
 
 	if (self.manager.furniture != null):
 		if (self.manager.furniture.isPushed):
@@ -41,8 +40,8 @@ func _process(delta:float) -> void:
 		elif (Input.is_action_pressed("MoveDown")): 
 			self.manager.view.play(prefix + " down")
 
-## Handles the "Move" set of Inputs and moves the character accordingly using
-## its MovementComponent.
+## Handles the "Move" set of Inputs and transfers the state to the "Move" state. Otherwise
+## if the player is not inputting anything, the state defaults to "Idle".
 @warning_ignore("narrowing_conversion")
 func handleMovement(_delta:float) -> void:
 	if (Input.is_action_pressed("MoveLeft") \
@@ -83,15 +82,13 @@ func handlePushPull(_delta:float) -> void:
 	if (Input.is_action_just_pressed("Push-Pull")):
 		if (self.manager.getStateName() != "Push"): self.manager.changeState("Push")
 
+## Handles the "Interact" input. For now, this triggers dialogue.
 func handleInteract(_delta:float) -> void:
 	if (Input.is_action_just_pressed("Interact")):
 		if ((self.manager.getStateName() == "Idle") and (not self.manager.wasPreviousState("Lift"))):
 			self.manager.changeState("Interact")
 				
 
-func offControls() -> void:
-	canControl = false
-
-
-func onControls() -> void:
-	canControl = true
+## Sets the controller to either accept or ignore input.
+func setControls(flag:bool) -> void:
+	self.canControl = flag
