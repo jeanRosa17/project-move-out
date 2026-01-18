@@ -75,7 +75,15 @@ func _physics_process(_delta: float) -> void:
 
 		
 		## check to see if player is detached from object
-		if (position.distance_to(player.position) > 45): self.exitPush()
+		if (position.distance_to(player.position) > 45): 
+			var dir_to_player := (player.position - position).normalized()
+			
+			player.position = position + dir_to_player * 45
+			
+			var away_dir := dir_to_player
+			if player.velocity.dot(away_dir) > 0:
+				player.velocity -= away_dir * player.velocity.dot(away_dir) 
+			#self.exitPush()
 
 func update_detector_direction(direction: Vector2) -> void:
 	if (abs(direction.x) > abs(direction.y)):
