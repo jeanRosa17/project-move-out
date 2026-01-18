@@ -20,7 +20,7 @@ func enter() -> void:
 
 ## The last method called when the state is transitioned out of
 func exit() -> void:
-	if (self.manager.furniture):
+	if (self.manager.hasFurniture):
 		self.manager.furniture.exitLift()
 
 	if (self.getManager().view.animation_finished.is_connected(backToIdle)):
@@ -35,9 +35,9 @@ func physicsUpdate(_delta:float) -> void:
 	pass
 
 func _on_detected_body_entered(_body: Node2D) -> void:
-	if (self.manager.furniture != null):
+	if (self.manager.hasFurniture):
 		self.manager.furniture.canBeDropped = false
 
 func _on_detected_body_exited(_body: Node2D) -> void:
-	if (self.manager.furniture != null):
+	if (self.manager.hasFurniture):
 		self.manager.furniture.canBeDropped = true

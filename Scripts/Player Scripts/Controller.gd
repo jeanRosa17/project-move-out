@@ -21,13 +21,12 @@ func _process(delta:float) -> void:
 		#self.handlePushPull(delta)
 		self.handleInteract(delta)
 	
-	
-	
+	temp()
 
 func temp() -> void:
 	var prefix:String = "move"
 
-	if (self.manager.furniture != null):
+	if (self.manager.hasFurniture):
 		if (self.manager.furniture.isPushed):
 			prefix = "pushing"
 		if (self.manager.furniture.isLifted):
@@ -71,7 +70,7 @@ func handleMovement(_delta:float) -> void:
 ## 3. Furniture node can be lifted 
 func handleLift(_delta:float) -> void:
 	if (Input.is_action_just_pressed("Lift")):
-		if ((self.manager.furniture) and (self.manager.furniture.isLifted)):
+		if ((self.manager.hasFurniture) and (self.manager.furniture.isLifted)):
 			self.manager.changeState("Throw")
 			
 		elif (self.manager.getStateName() != "Lift"): 

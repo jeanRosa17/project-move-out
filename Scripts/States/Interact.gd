@@ -14,7 +14,7 @@ func canEnter() -> bool:
 
 ## The first method called when the state is transitioned into
 func enter() -> void:
-	if (self.getManager().furniture == null or self.getManager().furniture.dialogueTag == null):
+	if ((not self.getManager().hasFurniture) or self.getManager().furniture.dialogueTag == null):
 		self.hud.setDialogueTo(load("res://Scripts/Dialogue/nullDialogue.tres"))
 	else:
 		self.hud.setDialogueTo(self.getManager().furniture.dialogueTag)

@@ -6,8 +6,7 @@ extends State
 
 ## Furniture needs to be not null and needs to be lifted.
 func canEnter() -> bool:
-	if (self.manager.furniture == null):
-		return false
+	if (not self.manager.hasFurniture): return false
 	
 	if (self.manager.furniture.canLift): return true
 	
