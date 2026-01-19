@@ -27,6 +27,7 @@ var canBeDropped: bool = true ## Changed to true so that a player can immediatel
 var player: CharacterBody2D
 
 var distanceFromPlayer:float
+var cantMove:bool
 
 var objects: Array[Node2D] = []
 var ghostTween:Tween = null
@@ -47,12 +48,14 @@ func _physics_process(_delta: float) -> void:
 		
 	if (self.isPushed):
 		var dir:Vector2 = self.player.velocity.normalized()
-
+		
+		# if not touching anything, proceed as normal
 		if (objects.is_empty()):
-			collision_layer = 0
+			self.collision_layer = 0
 			linear_velocity = linear_velocity.lerp(player.velocity, 0.4)
 		else:
 			self.collision_layer = 2;
+			# if player not moving, neither is furniture
 			if (dir.length() < 0.1): 
 				linear_velocity = Vector2.ZERO
 				return
@@ -60,6 +63,7 @@ func _physics_process(_delta: float) -> void:
 			var can_move = true
 			for obj in objects:
 				var to_obj = (obj.global_position - global_position).normalized()
+				print ("to obj = ", to_obj)
 				
 				print(dir.dot(to_obj))
 				if (dir.dot(to_obj) > 0.5):
@@ -75,14 +79,14 @@ func _physics_process(_delta: float) -> void:
 
 		
 		## check to see if player is detached from object
-		if (position.distance_to(player.position) > 45): 
+		if (position.distance_to(player.position) > distanceFromPlayer): 
 			var dir_to_player := (player.position - position).normalized()
 			
-			player.position = position + dir_to_player * 45
+			player.position = position + dir_to_player * distanceFromPlayer
 			
 			var away_dir := dir_to_player
-			if player.velocity.dot(away_dir) > 0:
-				player.velocity -= away_dir * player.velocity.dot(away_dir) 
+			#if player.velocity.dot(away_dir) > 0:
+				#player.velocity -= away_dir * player.velocity.dot(away_dir) 
 			#self.exitPush()
 
 func update_detector_direction(direction: Vector2) -> void:
@@ -206,8 +210,8 @@ func exitPush()-> void:
 #region Signals
 func againstObject(newObject: Node2D) -> void:
 	objects.append(newObject)
-	print("added object: ")
-	print(newObject.name)
+	print("added object: ", newObject.name)
+	
 
 func relieveObject(newObject: Node2D) -> void:
 	if (objects.has(newObject)):

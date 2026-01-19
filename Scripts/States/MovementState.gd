@@ -5,6 +5,8 @@ extends State
 @export var body:CharacterBody2D
 @export var area2DCollision:CollisionShape2D
 
+@onready var manager:StateManager = self.getManager()
+
 @onready var physics:PlayerPhysics
 
 @export var walkSound:Walk_Sound
@@ -45,8 +47,11 @@ func update(_delta:float) -> void:
 	
 ## This method runs every _physics_process() frame of the StateManager.
 func physicsUpdate(_delta:float) -> void:
-	self.accelerate(self.getManager().direction, _delta)
-	self.body.move_and_slide()
+	if (manager.furniture && manager.furniture.isPushed && manager.furniture.cantMove):
+		pass
+	else:
+		self.accelerate(self.getManager().direction, _delta)
+		self.body.move_and_slide()
 	
 ## Sets the player's velocity to increase or decrease based on the given direction (-1 left, 1 right)
 func accelerate(direction:Vector2i, delta:float) -> void:
