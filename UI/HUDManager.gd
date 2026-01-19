@@ -18,6 +18,7 @@ func checkResults(score) -> void:
 	text.text = str("Your score is: ", score)
 	self.level_results.visible = true
 
+## Ensures that the Dialogue Box turns itself off when the dialogue is finished.
 func _process(delta: float) -> void:
 	if (self.textbox.currentTagFinished):
 		self.dialogue.visible = false

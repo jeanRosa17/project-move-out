@@ -19,6 +19,8 @@ func _ready() -> void:
 	if (walkSound == null):
 		walkSound = self.get_parent().get_parent().find_child("Walk Sound")
 
+func enter() -> void:
+	pass
 
 ## The last method called when the state is transitioned out of
 func exit() -> void:

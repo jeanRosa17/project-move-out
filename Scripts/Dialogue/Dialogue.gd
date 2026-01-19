@@ -55,7 +55,7 @@ func setDialogueTo(dTag:DialogueTag) -> void:
 	self.startDialogue()
 
 #region Dialogue Controls (Start, Restart, )
-## Begins the dialogue sequence
+## Begins the dialogue sequence with the dialogueScriptPath and beginning dialogueTag
 func startDialogue() -> void:
 	self.dialogueScript = FileAccess.get_file_as_string(self.dialogueScriptPath)
 	self.label.text = ""
@@ -140,10 +140,10 @@ func nextChar() -> void:
 		self.timer.start(_textSpeed)
 	
 	self.charCounter += 1
-	var _nextChar: String = line.left(charCounter).right(1)
+	var checkForPunct: String = line.left(charCounter).right(1)
 	
-	if (self.punctuationsDelay.has(_nextChar)):
-		nextCharHelper.call(self.punctuationsDelay[_nextChar])
+	if (self.punctuationsDelay.has(checkForPunct)):
+		nextCharHelper.call(self.punctuationsDelay[checkForPunct])
 	else:
 		nextCharHelper.call(self.textSpeed)
 
@@ -184,6 +184,8 @@ func handleJumpTo(line: String) -> void:
 #endregion
 
 #region Dialogue Tag/Script Getters
+
+## Returns the current line that is being parsed out. 
 func getCurrentLine(excludeNameTag:bool = false) -> String:
 	var lines:PackedStringArray = getDialogueFromTag(dialogueTag)
 	if lineCounter < 0 or lineCounter >= lines.size():

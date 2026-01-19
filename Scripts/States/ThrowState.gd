@@ -6,7 +6,8 @@ extends State
 @export var area2D:Area2D
 var canDrop:bool
 
-
+## Furniture can be dropped if the player is standing still and there's a spot to place
+## the furniture (furniture.canBeDropped must be true)
 func canEnter() -> bool:
 	return self.manager.getStateName() == "Idle" && self.manager.furniture.canBeDropped
 
@@ -18,7 +19,8 @@ func enter() -> void:
 	self.getManager().view.play("throw " + dir)
 	self.getManager().view.animation_finished.connect(backToIdle)
 
-## The last method called when the state is transitioned out of
+## Forces the furniture into its exitLift state, alongisde disconnecting the
+## backToIdle method to ensure no errors occurs.
 func exit() -> void:
 	if (self.manager.hasFurniture):
 		self.manager.furniture.exitLift()
@@ -32,7 +34,8 @@ func _on_detected_body_entered(_body: Node2D) -> void:
 	if (self.manager.hasFurniture):
 		self.manager.furniture.canBeDropped = false
 
-## By default, a Furniture can be dropped, but 
+## By default, a Furniture can be dropped, but this signal ensures it returns
+## back to true if the player overlaps with a wall or another furniture
 func _on_detected_body_exited(_body: Node2D) -> void:
 	if (self.manager.hasFurniture):
 		self.manager.furniture.canBeDropped = true
