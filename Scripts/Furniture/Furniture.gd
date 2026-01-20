@@ -11,6 +11,8 @@ class_name Furniture
 @export var canPush:bool = false
 @export var canPull:bool = false
 
+@export var weight:int = 0
+
 var isLifted: bool = false
 var isPushed: bool = false
 var canBeDropped: bool = true ## Changed to true so that a player can immediately pick up and drop something
