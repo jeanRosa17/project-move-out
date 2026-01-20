@@ -76,15 +76,17 @@ func _physics_process(_delta: float) -> void:
 				linear_velocity = linear_velocity.lerp(player.velocity, 0.4)
 			else:
 				linear_velocity = Vector2.ZERO
+				pass
 			print("object blocked")
 
 
 		
 		## check to see if player is detached from object
-		if (position.distance_to(player.position) > distanceFromPlayer): 
+		
+		if (position.distance_to(player.position) > distanceFromPlayer + 5): 
 			var dir_to_player := (player.position - position).normalized()
 			
-			player.position = position + dir_to_player * distanceFromPlayer
+			player.position = position + dir_to_player * (distanceFromPlayer + 5)
 			
 			var away_dir := dir_to_player
 			#if player.velocity.dot(away_dir) > 0:
