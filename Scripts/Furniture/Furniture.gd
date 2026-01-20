@@ -22,6 +22,7 @@ var canBeDropped: bool = true ## Changed to true so that a player can immediatel
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var ghostSprite: Sprite2D = sprite_2d.duplicate()
 
+@onready var collider:CollisionShape2D = $Collision
 
 @export var rotatedVersion:Node2D
 
@@ -37,6 +38,11 @@ var placementTween:Tween = null
 var floatXTween:Tween = null
 var floatYTween:Tween = null
 var floatTiltTween:Tween = null
+
+var canMoveNegativeX:bool = true
+var canMoveNegativeY:bool = true
+var canMovePositiveX:bool = true
+var canMovePositiveY:bool = true
 
 @export var liftPosition:Vector2 = Vector2(0, -16)
 
@@ -54,7 +60,12 @@ func _physics_process(_delta: float) -> void:
 		# if not touching anything, proceed as normal
 		if (objects.is_empty()):
 			self.collision_layer = 0
-			linear_velocity = linear_velocity.lerp(player.velocity, 0.4)
+			linear_velocity = linear_velocity.lerp(player.velocity, 1)
+			
+			canMoveNegativeX = true
+			canMoveNegativeY = true
+			canMovePositiveX = true
+			canMovePositiveY = true
 		else:
 			self.collision_layer = 2;
 			# if player not moving, neither is furniture
@@ -63,15 +74,21 @@ func _physics_process(_delta: float) -> void:
 				return
 			
 			var can_move = true
+			
 			for obj in objects:
-				var to_obj = (obj.global_position - global_position).normalized()
+				var to_obj = (collider.global_position - obj.global_position).normalized()
 				print ("to obj = ", to_obj)
 				
-				print(dir.dot(to_obj))
-				if (dir.dot(to_obj) > 0.5):
-					can_move = false
-					break
+				if (to_obj.x > 0):
+					canMovePositiveX = false
+				if (to_obj.x < 0):
+					canMoveNegativeX = false
 					
+				if (to_obj.y > 0):
+					canMovePositiveY = false
+				if (to_obj.y < 0):
+					canMoveNegativeY = false
+	
 			if can_move:
 				linear_velocity = linear_velocity.lerp(player.velocity, 0.4)
 			else:

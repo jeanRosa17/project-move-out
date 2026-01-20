@@ -47,11 +47,20 @@ func update(_delta:float) -> void:
 	
 ## This method runs every _physics_process() frame of the StateManager.
 func physicsUpdate(_delta:float) -> void:
-	if (manager.furniture && manager.furniture.isPushed && manager.furniture.cantMove):
-		pass
-	else:
-		self.accelerate(self.getManager().direction, _delta)
-		self.body.move_and_slide()
+	if (manager.furniture && manager.furniture.isPushed):
+		if (!manager.furniture.canMovePositiveX && manager.direction.x > 0):
+			manager.direction.x = 0
+		if (!manager.furniture.canMovePositiveY && manager.direction.y > 0):
+			manager.direction.y = 0
+		if (!manager.furniture.canMoveNegativeX && manager.direction.x < 0):
+			manager.direction.x = 0
+		if (!manager.furniture.canMoveNegativeY && manager.direction.y < 0):
+			manager.direction.y = 0
+		
+			
+			
+	self.accelerate(self.getManager().direction, _delta)
+	self.body.move_and_slide()
 	
 ## Sets the player's velocity to increase or decrease based on the given direction (-1 left, 1 right)
 func accelerate(direction:Vector2i, delta:float) -> void:

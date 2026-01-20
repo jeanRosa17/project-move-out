@@ -35,7 +35,7 @@ size = Vector2(94, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h8h55"]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" groups=["World Bounds"]]
 
 [node name="Floors" type="TileMapLayer" parent="."]
 y_sort_enabled = true
