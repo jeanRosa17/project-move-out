@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://xdjv122pxc6c"]
+[gd_scene load_steps=28 format=4 uid="uid://xdjv122pxc6c"]
 
 [ext_resource type="Texture2D" uid="uid://dlqlqw0fvr4wp" path="res://Assets/Objects/Carpets/carpet.png" id="2_pebci"]
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="3_3j8mk"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://doxedqhi3ox7p" path="res://Assets/Objects/Dressers & Shelves/wooden_shelf_1.png" id="16_rwqj1"]
 [ext_resource type="PackedScene" uid="uid://b7qk52eapta2s" path="res://Assets/Objects/Dressers & Shelves/Scenes/wooden_wardrobe_front.tscn" id="18_6pr51"]
 [ext_resource type="Resource" uid="uid://c6dysgimf0cue" path="res://Narrative/couchTag.tres" id="18_c0tsg"]
+[ext_resource type="PackedScene" uid="uid://bujcbosiagjri" path="res://Assets/Objects/Dressers & Shelves/Scenes/wooden_shelf_front.tscn" id="19_rwqj1"]
 [ext_resource type="PackedScene" uid="uid://cl3ww3w6r3n1r" path="res://Assets/Objects/Kitchen/Scenes/Fridge.tscn" id="19_yn8gu"]
 [ext_resource type="PackedScene" uid="uid://cfmb3mmeue8au" path="res://UI/Scenes/HUD.tscn" id="24_4alro"]
 [ext_resource type="AudioStream" uid="uid://dy61bwuip8a27" path="res://Assets/Audio/lvl1.wav" id="25_4alro"]
@@ -166,7 +167,12 @@ position = Vector2(280, 208)
 [node name="Wardrobe" parent="Y-Sorting" instance=ExtResource("18_6pr51")]
 position = Vector2(260, 50)
 
+[node name="wooden_shelf_front" parent="Y-Sorting" instance=ExtResource("19_rwqj1")]
+position = Vector2(191, 103)
+disable_mode = 2
+
 [node name="Shelf" type="RigidBody2D" parent="Y-Sorting" groups=["Furniture"]]
+visible = false
 position = Vector2(191, 103)
 disable_mode = 2
 collision_layer = 2
@@ -245,4 +251,5 @@ texture = ExtResource("4_odab6")
 [connection signal="body_shape_entered" from="Y-Sorting/Shelf/AreaDetector" to="Y-Sorting/Shelf" method="_on_area_detector_body_shape_entered"]
 [connection signal="body_shape_exited" from="Y-Sorting/Shelf/AreaDetector" to="Y-Sorting/Shelf" method="_on_area_detector_body_shape_exited"]
 
+[editable path="Y-Sorting/wooden_shelf_front"]
 [editable path="HUD"]
