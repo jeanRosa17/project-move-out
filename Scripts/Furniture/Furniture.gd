@@ -44,8 +44,73 @@ var canMoveNegativeY:bool = true
 var canMovePositiveX:bool = true
 var canMovePositiveY:bool = true
 
+@onready var areaBot:Area2D = Area2D.new()
+@onready var areaTop:Area2D = Area2D.new()
+@onready var areaRight:Area2D = Area2D.new()
+@onready var areaLeft:Area2D = Area2D.new()
+
 @export var liftPosition:Vector2 = Vector2(0, -16)
 
+
+func _ready() -> void:
+	
+	collider.debug_color = Color.GREEN
+	var shape:Shape2D = collider.shape
+	var rect = shape.get_rect()
+	
+	var shapeBot = CollisionShape2D.new()
+	var shapeBotResource = RectangleShape2D.new()
+	shapeBotResource.size = Vector2(rect.size.x - 2, 1)
+	shapeBot.position = Vector2(collider.position.x, collider.position.y + (rect.size.y / 2))
+	shapeBot.shape = shapeBotResource
+	areaBot.collision_layer = 2
+	areaBot.collision_mask = 7
+	areaBot.name = "Bottom"
+	areaBot.add_child(shapeBot)
+	self.add_child(areaBot)
+
+	areaBot.body_entered.connect(_on_bot_area_entered)
+	
+	
+	var shapeTop = CollisionShape2D.new()
+	var shapeTopResource = RectangleShape2D.new()
+	shapeTopResource.size = Vector2(rect.size.x - 2, 1)
+	shapeTop.position = Vector2(collider.position.x, collider.position.y - (rect.size.y / 2))
+	shapeTop.shape = shapeTopResource
+	areaTop.collision_layer = 2
+	areaTop.collision_mask = 7
+	areaTop.name = "Top"
+	areaTop.add_child(shapeTop)
+	self.add_child(areaTop)
+	
+	areaTop.body_entered.connect(_on_top_area_entered)
+	
+	var shapeRight = CollisionShape2D.new()
+	var shapeRightResource = RectangleShape2D.new()
+	shapeRightResource.size = Vector2(1, rect.size.y - 2)
+	shapeRight.position = Vector2(collider.position.x + (rect.size.x / 2), collider.position.y)
+	shapeRight.shape = shapeRightResource
+	areaRight.collision_layer = 2
+	areaRight.collision_mask = 7
+	areaRight.name = "Right"
+	areaRight.add_child(shapeRight)
+	self.add_child(areaRight)
+	
+	areaRight.body_entered.connect(_on_right_area_entered)
+	
+	var shapeLeft = CollisionShape2D.new()
+	var shapeLeftResource = RectangleShape2D.new()
+	shapeLeftResource.size = Vector2(1, rect.size.y - 2 )
+	shapeLeft.position = Vector2(collider.position.x - (rect.size.x / 2), collider.position.y)
+	shapeLeft.shape = shapeLeftResource
+	areaLeft.collision_layer = 2
+	areaLeft.collision_mask = 7
+	areaLeft.name = "Left"
+	areaLeft.add_child(shapeLeft)
+	self.add_child(areaLeft)
+	
+	areaLeft.body_entered.connect(_on_left_area_entered)
+	
 
 func _physics_process(_delta: float) -> void:
 	if (self.ghostSprite != null):
@@ -55,6 +120,7 @@ func _physics_process(_delta: float) -> void:
 			ghostSprite.position = self.player.manager.direction * 20
 		
 	if (self.isPushed):
+		
 		var dir:Vector2 = self.player.velocity.normalized()
 		
 		# if not touching anything, proceed as normal
@@ -66,35 +132,46 @@ func _physics_process(_delta: float) -> void:
 			canMoveNegativeY = true
 			canMovePositiveX = true
 			canMovePositiveY = true
-		else:
-			self.collision_layer = 2;
-			# if player not moving, neither is furniture
-			if (dir.length() < 0.1): 
-				linear_velocity = Vector2.ZERO
-				return
 			
-			var can_move = true
+		#else:
+			#self.collision_layer = 2;
+			## if player not moving, neither is furniture
+			#if (dir.length() < 0.1): 
+				#linear_velocity = Vector2.ZERO
+				#return
 			
-			for obj in objects:
-				var to_obj = (collider.global_position - obj.global_position).normalized()
-				print ("to obj = ", to_obj)
-				
-				if (to_obj.x > 0):
-					canMovePositiveX = false
-				if (to_obj.x < 0):
-					canMoveNegativeX = false
-					
-				if (to_obj.y > 0):
-					canMovePositiveY = false
-				if (to_obj.y < 0):
-					canMoveNegativeY = false
+			#var can_move = true
+			#
+			#var sum = Vector2.ZERO
+			#print("size +", objects.size())
+			#for obj in objects:
+				#print(obj.global_position)
+				#print("pos: ", (collider.global_position - obj.global_position).normalized())
+				#sum += (collider.global_position - obj.global_position).normalized()
+			#var to_obj = sum / objects.size()
+			#print("sum: ", sum)
+			#print ("to obj = ", to_obj)
+				#
+			#if (to_obj.x > .5):
+				#canMovePositiveX = false
+			#if (to_obj.x < -.5):
+				#canMoveNegativeX = false
+				#
+			#if (to_obj.y < -.5):
+				#canMovePositiveY = false
+			#if (to_obj.y > 0.5):
+				#canMoveNegativeY = false
+					#
+					#
+			#print("can move to the right ", canMovePositiveX)
+			#print("can move to the left ", canMoveNegativeX)
+			#print("can move to the down ", canMovePositiveY)
+			#print("can move to the up ", canMoveNegativeY)
 	
-			if can_move:
-				linear_velocity = linear_velocity.lerp(player.velocity, 0.4)
-			else:
-				linear_velocity = Vector2.ZERO
-				pass
-			print("object blocked")
+
+		linear_velocity = linear_velocity.lerp(player.velocity, 1)
+
+			#print("object blocked")
 
 
 		
@@ -261,3 +338,36 @@ func _on_area_detector_body_shape_exited(_body_rid: RID, body: Node2D, _body_sha
 		relieveObject(body)
 	pass # Replace with function body.
 #endregion
+
+func _on_left_area_entered(body: Node2D) -> void:
+	if (body.is_in_group("World Bounds") && self.isPushed):
+		print("LEFT")
+		canMoveNegativeX = false
+	elif(body.is_in_group("Furniture") && body != self && self.isPushed):
+		print("LEFT")
+		canMoveNegativeX = false
+	
+
+func _on_right_area_entered(body: Node2D) -> void:
+	if (body.is_in_group("World Bounds") && self.isPushed):
+		print("RIGHT")
+		canMovePositiveX = false
+	elif(body.is_in_group("Furniture") && body != self && self.isPushed):
+		print("RIGHT")
+		canMovePositiveX = false
+	
+func _on_top_area_entered(body: Node2D) -> void:
+	if (body.is_in_group("World Bounds") && self.isPushed):
+		print("TOP")
+		canMoveNegativeY = false
+	elif(body.is_in_group("Furniture") && body != self && self.isPushed):
+		print("TOP")
+		canMoveNegativeY = false
+	
+func _on_bot_area_entered(body: Node2D) -> void:
+	if (body.is_in_group("World Bounds") && self.isPushed):
+		print("BOTTOM")
+		canMovePositiveY = false
+	elif(body.is_in_group("Furniture") && body != self && self.isPushed):
+		print("BOTTOM")
+		canMovePositiveY = false
