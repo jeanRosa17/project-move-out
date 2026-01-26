@@ -48,9 +48,9 @@ func _process(float) -> void:
 		_process_input()
 		if (player.velocity.length() < .2 && !player.canControl):
 			player.manager.direction = _get_direction()
-			player.onControls()
+			player.setControls(true)
 		elif (player.canControl):
-			player.offControls()
+			player.setControls(false)
 			_process_input()
 
 # pushes the player if they attempt to move against the wind

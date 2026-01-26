@@ -9,9 +9,9 @@ var velocityCheck:bool = false
 func _process(float) -> void:
 	if (velocityCheck):
 		if (player.velocity.length() < .2 && !player.canControl):
-			player.onControls()
+			player.setControls(true)
 		elif (player.canControl):
-			player.offControls()
+			player.setControls(false)
 
 
 func _on_body_entered(body: Node2D) -> void:
@@ -19,7 +19,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if (body.name == "Player"):
 		player = body
 		if (player.canControl):
-			player.offControls()
+			player.setControls(false)
 			player.manager.changeState("Move")
 			player.velocity = player.manager.direction
 
@@ -32,7 +32,7 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _on_body_exited(body: Node2D) -> void:
 		if (body.name == "Player"):
-			player.onControls()
+			player.setControls(true)
 			soundPlayer.stop()
 			
 			velocityCheck = false
