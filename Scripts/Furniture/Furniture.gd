@@ -111,6 +111,7 @@ func _ready() -> void:
 	
 	areaLeft.body_entered.connect(_on_left_area_entered)
 	
+	self.lock_rotation = true
 
 func _physics_process(_delta: float) -> void:
 	if (self.ghostSprite != null):
