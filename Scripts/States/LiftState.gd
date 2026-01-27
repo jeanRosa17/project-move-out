@@ -27,6 +27,9 @@ func enter() -> void:
 		
 	self.manager.furniture.enterLift(self.body)
 
+func exit() -> void:
+	pass
+
 ## Constantly checks for input from the user and changes state.
 func update(_delta:float) -> void:
 	self.body.move_and_slide()

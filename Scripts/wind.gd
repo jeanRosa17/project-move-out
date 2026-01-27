@@ -1,10 +1,10 @@
 extends Area2D
 
 var player: Player
-var east = Vector2(1, 0)
-var west = Vector2(-1, 0)
-var north = Vector2(0, -1)
-var south = Vector2(0, 1)
+const east:Vector2 = Vector2(1, 0)
+const west:Vector2 = Vector2(-1, 0)
+const north:Vector2 = Vector2(0, -1)
+const south:Vector2 = Vector2(0, 1)
 
 var sliding:bool = false
 var instanceDirection:Vector2 = _get_direction()
@@ -12,10 +12,11 @@ var instanceDirection:Vector2 = _get_direction()
 func _on_body_entered(body: Node2D) -> void:
 	# Sets the player to move in the direction of the shape
 	print(_get_direction())
-	if(body.name == "Player"):
+	
+	if(body is Player):
 		player = body
 		if(player.canControl):
-			player.offControls()
+			player.setControls(false)
 		player.manager.changeState("Move")
 		player.manager.direction = Vector2(0, 0)
 		player.manager.direction = _get_direction()
@@ -23,10 +24,10 @@ func _on_body_entered(body: Node2D) -> void:
 		
 func _on_body_exited(body: Node2D) -> void:
 	#re-endables control of the player when they exit
-	if(body.name == "Player"):
+	if(body is Player):
 		player = body
 		if(!player.canControl):
-			player.onControls()
+			player.setControls(true)
 			sliding = false
 
 func _get_direction() -> Vector2:
@@ -43,7 +44,7 @@ func _get_direction() -> Vector2:
 			return south
 	return Vector2(0, 0)
 	
-func _process(float) -> void:
+func _process(delta:float) -> void:
 	if (sliding):
 		_process_input()
 		if (player.velocity.length() < .2 && !player.canControl):

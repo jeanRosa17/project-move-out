@@ -15,7 +15,7 @@ func _ready() -> void:
 		push_warning("DustParticles: Could not find a player")
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if player == null:
 		return
 	var vel: Vector2 = player.velocity

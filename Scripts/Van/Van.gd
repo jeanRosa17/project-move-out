@@ -22,7 +22,7 @@ func _process(_delta:float)  -> void:
 func clearVan() -> void:
 	# gets all furniture in van
 	var bodies:Array[Node2D] = self.get_overlapping_bodies()
-	var furnitureInVan = bodies.size()
+	var furnitureInVan:int = bodies.size()
 	#print(bodies.size())
 	
 	var totalFurniture:int = furniture.size()

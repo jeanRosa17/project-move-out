@@ -51,7 +51,7 @@ var canMovePositiveY:bool = true
 
 @export var liftPosition:Vector2 = Vector2(0, -16)
 
-
+@warning_ignore("untyped_declaration")
 func _ready() -> void:
 	
 	collider.debug_color = Color.GREEN

@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://b2fj0cyyvoq31"]
+[gd_scene load_steps=36 format=4 uid="uid://b2fj0cyyvoq31"]
 
 [ext_resource type="Texture2D" uid="uid://dlqlqw0fvr4wp" path="res://Assets/Objects/Carpets/carpet.png" id="1_nhc3c"]
 [ext_resource type="Texture2D" uid="uid://bgj8v2kim3dpq" path="res://Assets/New_Sprites/forest_painting.png" id="2_gn8rh"]
@@ -18,7 +18,6 @@
 [ext_resource type="PackedScene" uid="uid://ckcmkju0pxebs" path="res://Assets/Objects/Flute.tscn" id="20_gn8rh"]
 [ext_resource type="PackedScene" uid="uid://1xu4q5luy86h" path="res://Assets/Objects/Chairs/Scene/Orange_Chair_Side.tscn" id="20_owxiu"]
 [ext_resource type="PackedScene" uid="uid://uacgji4vcg37" path="res://Assets/Audio/push_pull_audio.tscn" id="20_qhrob"]
-[ext_resource type="Texture2D" uid="uid://b0r0nkq7wuc8b" path="res://Assets/Untitled_Artwork.png" id="20_qjb6p"]
 [ext_resource type="PackedScene" uid="uid://dq5dgctxnghmb" path="res://Assets/Objects/Beds/Scene/Double_Bed.tscn" id="21_owxiu"]
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Assets/Player/Scenes/Player.tscn" id="21_wr5fp"]
 [ext_resource type="PackedScene" uid="uid://byhkf48wxg1gp" path="res://Assets/Objects/Plants/Dino pot.tscn" id="22_qkqmv"]
@@ -37,9 +36,6 @@ load_path = "res://.godot/imported/Frat House Floor 1.png-6dc760f316e63d454e821a
 normal = Vector2(1.79515e-06, 1)
 distance = -96.4999
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fqpg0"]
-size = Vector2(6.83993, 232.144)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qhrob"]
 size = Vector2(31, 98.75)
 
@@ -52,37 +48,10 @@ size = Vector2(11.75, 57)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlmik"]
 size = Vector2(57, 10)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fqpg0"]
+size = Vector2(6.83993, 232.144)
+
 [node name="Main" type="Node2D"]
-
-[node name="decorations" type="Node2D" parent="."]
-position = Vector2(91, 194)
-
-[node name="Carpet" type="Sprite2D" parent="decorations"]
-texture = ExtResource("1_nhc3c")
-
-[node name="Carpet2" type="Sprite2D" parent="decorations"]
-position = Vector2(106, -2)
-texture = ExtResource("1_nhc3c")
-
-[node name="ForestPainting" type="Sprite2D" parent="decorations"]
-position = Vector2(132, -91)
-texture = ExtResource("2_gn8rh")
-
-[node name="GreenCarpet2" type="Sprite2D" parent="decorations"]
-position = Vector2(58, -150)
-texture = ExtResource("3_p3ejp")
-
-[node name="GreenCarpet3" type="Sprite2D" parent="decorations"]
-position = Vector2(209, -148)
-texture = ExtResource("3_p3ejp")
-
-[node name="GreenCarpet" type="Sprite2D" parent="decorations"]
-position = Vector2(285, -12)
-texture = ExtResource("3_p3ejp")
-
-[node name="Clock" type="Sprite2D" parent="decorations"]
-position = Vector2(19, -348)
-texture = ExtResource("4_mj0og")
 
 [node name="Tilemap" type="CanvasLayer" parent="."]
 layer = -1
@@ -131,6 +100,42 @@ visible = false
 follow_viewport_scale = 3.0
 
 [node name="Textbox" parent="CanvasLayer" instance=ExtResource("5_gn8rh")]
+
+[node name="HUD" parent="." instance=ExtResource("24_5ounb")]
+unique_name_in_owner = true
+visible = false
+
+[node name="Level Results" parent="HUD" index="1"]
+visible = false
+nextLevelName = &"res://Levels/Scenes/PoolLevel.tscn"
+replayLevelName = &"res://Levels/Scenes/CollegeAppartmentLevel.tscn"
+
+[node name="Dialogue" parent="HUD" index="2"]
+visible = true
+
+[node name="World Border" type="StaticBody2D" parent="." groups=["Immovable Object", "World Bounds"]]
+visible = false
+collision_layer = 4
+
+[node name="CollisionShape2D(North)" type="CollisionShape2D" parent="World Border" groups=["World Bounds"]]
+position = Vector2(141, -82)
+shape = SubResource("WorldBoundaryShape2D_iqcmb")
+one_way_collision_margin = 0.0
+
+[node name="CollisionShape2D(West)" type="CollisionShape2D" parent="World Border" groups=["World Bounds"]]
+position = Vector2(-97, 58)
+rotation = 4.71239
+shape = SubResource("WorldBoundaryShape2D_iqcmb")
+
+[node name="CollisionShape2D(South)" type="CollisionShape2D" parent="World Border" groups=["World Bounds"]]
+position = Vector2(154, 160)
+rotation = -3.14159
+shape = SubResource("WorldBoundaryShape2D_iqcmb")
+
+[node name="CollisionShape2D(East)" type="CollisionShape2D" parent="World Border" groups=["World Bounds"]]
+position = Vector2(358, 42)
+rotation = -4.71239
+shape = SubResource("WorldBoundaryShape2D_iqcmb")
 
 [node name="Y-sorting" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -208,74 +213,35 @@ position = Vector2(377, 199)
 [node name="Pot6" parent="Y-sorting" instance=ExtResource("20_gn8rh")]
 position = Vector2(358, 198)
 
-[node name="World Border" type="StaticBody2D" parent="." groups=["Immovable Object", "World Bounds"]]
-visible = false
-collision_layer = 4
+[node name="decorations" type="Node2D" parent="."]
+position = Vector2(91, 194)
 
-[node name="CollisionShape2D(North)" type="CollisionShape2D" parent="World Border" groups=["World Bounds"]]
-position = Vector2(141, -82)
-shape = SubResource("WorldBoundaryShape2D_iqcmb")
-one_way_collision_margin = 0.0
+[node name="Carpet" type="Sprite2D" parent="decorations"]
+texture = ExtResource("1_nhc3c")
 
-[node name="CollisionShape2D(West)" type="CollisionShape2D" parent="World Border" groups=["World Bounds"]]
-position = Vector2(-97, 58)
-rotation = 4.71239
-shape = SubResource("WorldBoundaryShape2D_iqcmb")
+[node name="Carpet2" type="Sprite2D" parent="decorations"]
+position = Vector2(106, -2)
+texture = ExtResource("1_nhc3c")
 
-[node name="CollisionShape2D(South)" type="CollisionShape2D" parent="World Border" groups=["World Bounds"]]
-position = Vector2(154, 160)
-rotation = -3.14159
-shape = SubResource("WorldBoundaryShape2D_iqcmb")
+[node name="ForestPainting" type="Sprite2D" parent="decorations"]
+position = Vector2(132, -91)
+texture = ExtResource("2_gn8rh")
 
-[node name="CollisionShape2D(East)" type="CollisionShape2D" parent="World Border" groups=["World Bounds"]]
-position = Vector2(358, 42)
-rotation = -4.71239
-shape = SubResource("WorldBoundaryShape2D_iqcmb")
+[node name="GreenCarpet2" type="Sprite2D" parent="decorations"]
+position = Vector2(58, -150)
+texture = ExtResource("3_p3ejp")
 
-[node name="Garage" parent="." instance=ExtResource("10_ixm0r")]
-z_index = -1
-position = Vector2(-160, 64)
+[node name="GreenCarpet3" type="Sprite2D" parent="decorations"]
+position = Vector2(209, -148)
+texture = ExtResource("3_p3ejp")
 
-[node name="Push_Pull Audio" parent="." instance=ExtResource("20_qhrob")]
+[node name="GreenCarpet" type="Sprite2D" parent="decorations"]
+position = Vector2(285, -12)
+texture = ExtResource("3_p3ejp")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(244, 124)
-scale = Vector2(0.04, 0.04)
-texture = ExtResource("20_qjb6p")
-region_enabled = true
-region_rect = Rect2(903, 355, 721, 684)
-
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(136, 256)
-scale = Vector2(0.524795, 0.0439381)
-
-[node name="TriggerSensor" type="Area2D" parent="Node2D"]
-collision_layer = 16
-script = ExtResource("23_u40ca")
-tag = ExtResource("25_gn8rh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/TriggerSensor"]
-position = Vector2(-245.843, -4699.79)
-rotation = -0.0014569
-scale = Vector2(5, 5)
-shape = SubResource("RectangleShape2D_fqpg0")
-one_way_collision_margin = 0.0
-
-[node name="HUD" parent="." instance=ExtResource("24_5ounb")]
-unique_name_in_owner = true
-
-[node name="Level Results" parent="HUD" index="1"]
-visible = false
-nextLevelName = &"res://Levels/Scenes/PoolLevel.tscn"
-replayLevelName = &"res://Levels/Scenes/CollegeAppartmentLevel.tscn"
-
-[node name="Dialogue" parent="HUD" index="2"]
-visible = true
-
-[node name="Level Music" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("26_qhrob")
-autoplay = true
+[node name="Clock" type="Sprite2D" parent="decorations"]
+position = Vector2(19, -348)
+texture = ExtResource("4_mj0og")
 
 [node name="Wind" type="Node2D" parent="."]
 
@@ -442,7 +408,32 @@ position = Vector2(44, 75)
 rotation = -1.5708
 scale = Vector2(0.5, 0.5)
 
-[connection signal="body_entered" from="Node2D/TriggerSensor" to="Node2D/TriggerSensor" method="_on_body_entered"]
+[node name="Garage" parent="." instance=ExtResource("10_ixm0r")]
+z_index = -1
+position = Vector2(-160, 64)
+
+[node name="Push_Pull Audio" parent="." instance=ExtResource("20_qhrob")]
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(136, 256)
+scale = Vector2(0.524795, 0.0439381)
+
+[node name="TriggerSensor" type="Area2D" parent="Node2D"]
+collision_layer = 16
+script = ExtResource("23_u40ca")
+tag = ExtResource("25_gn8rh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/TriggerSensor"]
+position = Vector2(-245.843, -4699.79)
+rotation = -0.0014569
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_fqpg0")
+one_way_collision_margin = 0.0
+
+[node name="Level Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("26_qhrob")
+autoplay = true
+
 [connection signal="body_entered" from="Wind/Wind_entrence" to="Wind/Wind_entrence" method="_on_body_entered"]
 [connection signal="body_exited" from="Wind/Wind_entrence" to="Wind/Wind_entrence" method="_on_body_exited"]
 [connection signal="body_entered" from="Wind/Wind_hallway" to="Wind/Wind_hallway" method="_on_body_entered"]
@@ -455,5 +446,6 @@ scale = Vector2(0.5, 0.5)
 [connection signal="body_exited" from="Wind/WindLoopEast" to="Wind/WindLoopEast" method="_on_body_exited"]
 [connection signal="body_entered" from="Wind/WindLoopWest" to="Wind/WindLoopWest" method="_on_body_entered"]
 [connection signal="body_exited" from="Wind/WindLoopWest" to="Wind/WindLoopWest" method="_on_body_exited"]
+[connection signal="body_entered" from="Node2D/TriggerSensor" to="Node2D/TriggerSensor" method="_on_body_entered"]
 
 [editable path="HUD"]
