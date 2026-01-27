@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ux8cislrj28d"
-path="res://.godot/imported/wooden_shelf_2.png-8716ad94be19753bbceb93e16c3ae8eb.ctex"
+uid="uid://vb363q64t42x"
+path="res://.godot/imported/fridges-sheet.png-7286098d315d467bafe2b7dd2d23aaa5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Objects/Dressers & Shelves/wooden_shelf_2.png"
-dest_files=["res://.godot/imported/wooden_shelf_2.png-8716ad94be19753bbceb93e16c3ae8eb.ctex"]
+source_file="res://Assets/Objects/Kitchen/fridges-sheet.png"
+dest_files=["res://.godot/imported/fridges-sheet.png-7286098d315d467bafe2b7dd2d23aaa5.ctex"]
 
 [params]
 

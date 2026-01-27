@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5w0aubqbmcyk"
-path="res://.godot/imported/kitchenCounter_2.png-e50f72745c7df057ace6efe47fd43bed.ctex"
+uid="uid://d3ls4oxtr262i"
+path="res://.godot/imported/wooden_shelf-sheet.png-cbb08856be5a52cc55907a7938155082.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Objects/Kitchen/kitchenCounter_2.png"
-dest_files=["res://.godot/imported/kitchenCounter_2.png-e50f72745c7df057ace6efe47fd43bed.ctex"]
+source_file="res://Assets/Objects/Dressers & Shelves/wooden_shelf-sheet.png"
+dest_files=["res://.godot/imported/wooden_shelf-sheet.png-cbb08856be5a52cc55907a7938155082.ctex"]
 
 [params]
 
