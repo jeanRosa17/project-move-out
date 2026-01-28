@@ -21,8 +21,11 @@ func _on_body_entered(body: Node2D) -> void:
 		if (player.canControl):
 			player.setControls(false)
 			player.manager.changeState("Move")
-			player.velocity = player.manager.direction
-
+			if (player.velocity.length() < .2):
+				player.velocity = player.manager.direction
+			else:
+				print("stuck case")
+				player.velocity = player.manager.direction * 5
 			soundPlayer.play()
 		
 			print("PLAYER ENTERED")
