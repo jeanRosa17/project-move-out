@@ -33,6 +33,12 @@ var distanceFromPlayer:float
 var cantMove:bool
 
 var objects: Array[Node2D] = []
+
+var tObjects: Array[Node2D] = []
+var bObjects: Array[Node2D] = []
+var rObjects: Array[Node2D] = []
+var lObjects: Array[Node2D] = []
+
 var ghostTween:Tween = null
 var placementTween:Tween = null
 var floatXTween:Tween = null
@@ -70,6 +76,7 @@ func _ready() -> void:
 	self.add_child(areaBot)
 
 	areaBot.body_entered.connect(_on_bot_area_entered)
+	areaBot.body_exited.connect(_on_bot_area_exited)
 	
 	
 	var shapeTop = CollisionShape2D.new()
@@ -84,6 +91,7 @@ func _ready() -> void:
 	self.add_child(areaTop)
 	
 	areaTop.body_entered.connect(_on_top_area_entered)
+	areaTop.body_exited.connect(_on_top_area_exited)
 	
 	var shapeRight = CollisionShape2D.new()
 	var shapeRightResource = RectangleShape2D.new()
@@ -97,6 +105,7 @@ func _ready() -> void:
 	self.add_child(areaRight)
 	
 	areaRight.body_entered.connect(_on_right_area_entered)
+	areaRight.body_exited.connect(_on_right_area_exited)
 	
 	var shapeLeft = CollisionShape2D.new()
 	var shapeLeftResource = RectangleShape2D.new()
@@ -110,6 +119,7 @@ func _ready() -> void:
 	self.add_child(areaLeft)
 	
 	areaLeft.body_entered.connect(_on_left_area_entered)
+	areaLeft.body_exited.connect(_on_left_area_exited)
 	
 	self.lock_rotation = true
 
@@ -124,74 +134,22 @@ func _physics_process(_delta: float) -> void:
 		
 		var dir:Vector2 = self.player.velocity.normalized()
 		
-		#print("can move right ", canMovePositiveX)
-		#print("can move left ", canMoveNegativeX)
-		#print("can move down ", canMovePositiveY)
-		#print("can move up ", canMoveNegativeY)
 		
 		# if not touching anything, proceed as normal
-		if (objects.is_empty()):
-			self.collision_layer = 0
-			linear_velocity = linear_velocity.lerp(player.velocity, 1)
-			
-			canMoveNegativeX = true
-			canMoveNegativeY = true
-			canMovePositiveX = true
-			canMovePositiveY = true
-			
-		#else:
-			#self.collision_layer = 2;
-			## if player not moving, neither is furniture
-			#if (dir.length() < 0.1): 
-				#linear_velocity = Vector2.ZERO
-				#return
-			
-			#var can_move = true
+		#if (objects.is_empty()):
+			#self.collision_layer = 0
+			#linear_velocity = linear_velocity.lerp(player.velocity, 1)
 			#
-			#var sum = Vector2.ZERO
-			#print("size +", objects.size())
-			#for obj in objects:
-				#print(obj.global_position)
-				#print("pos: ", (collider.global_position - obj.global_position).normalized())
-				#sum += (collider.global_position - obj.global_position).normalized()
-			#var to_obj = sum / objects.size()
-			#print("sum: ", sum)
-			#print ("to obj = ", to_obj)
-				#
-			#if (to_obj.x > .5):
-				#canMovePositiveX = false
-			#if (to_obj.x < -.5):
-				#canMoveNegativeX = false
-				#
-			#if (to_obj.y < -.5):
-				#canMovePositiveY = false
-			#if (to_obj.y > 0.5):
-				#canMoveNegativeY = false
-					#
-					#
-			#print("can move to the right ", canMovePositiveX)
-			#print("can move to the left ", canMoveNegativeX)
-			#print("can move to the down ", canMovePositiveY)
-			#print("can move to the up ", canMoveNegativeY)
-	
+			#canMoveNegativeX = true
+			#canMoveNegativeY = true
+			#canMovePositiveX = true
+			#canMovePositiveY = true
+			#
+
 
 		linear_velocity = linear_velocity.lerp(player.velocity, 1)
 
-			#print("object blocked")
-
-
 		
-		## check to see if player is detached from object
-		
-		#if (position.distance_to(player.position) > distanceFromPlayer + 5): 
-			#var dir_to_player := (player.position - position).normalized()
-			#
-			#player.position = position + dir_to_player * (distanceFromPlayer + 5)
-			#
-			#var away_dir := dir_to_player
-			##if player.velocity.dot(away_dir) > 0:
-				##player.velocity -= away_dir * player.velocity.dot(away_dir) 
-			##self.exitPush()
 
 func update_detector_direction(direction: Vector2) -> void:
 	if (abs(direction.x) > abs(direction.y)):
@@ -327,21 +285,21 @@ func _on_area_detector_body_shape_entered(_body_rid: RID, body: Node2D, _body_sh
 	if (body.is_in_group("World Bounds") && self.isPushed):
 		print("cannot push (wall)")
 		print(body.name)
-		againstObject(body)
+		#againstObject(body)
 	elif (body.is_in_group("Furniture") && body != self && self.isPushed):
 		print("cannot push (furniture)")
 		print(body.name)
-		againstObject(body)
+		#againstObject(body)
 	pass # Replace with function body.
 
 func _on_area_detector_body_shape_exited(_body_rid: RID, body: Node2D, _body_shape_index: int, _local_shape_index: int) -> void:
 	if (body.is_in_group("World Bounds") && self.isPushed):
 		print("can push (off wall)")
-		relieveObject(body)
+		#relieveObject(body)
 	elif(body.is_in_group("Furniture") && body != self && self.isPushed):
 		print("can push (off furniture)")
 		print(body.name)
-		relieveObject(body)
+		#relieveObject(body)
 	pass # Replace with function body.
 #endregion
 
@@ -349,31 +307,63 @@ func _on_left_area_entered(body: Node2D) -> void:
 	if (body.is_in_group("World Bounds") && self.isPushed):
 		print("LEFT")
 		canMoveNegativeX = false
+		lObjects.append(body)
 	elif(body.is_in_group("Furniture") && body != self && self.isPushed):
 		print("LEFT")
+		lObjects.append(body)
 		canMoveNegativeX = false
 	
 
 func _on_right_area_entered(body: Node2D) -> void:
 	if (body.is_in_group("World Bounds") && self.isPushed):
 		print("RIGHT")
+		rObjects.append(body)
 		canMovePositiveX = false
 	elif(body.is_in_group("Furniture") && body != self && self.isPushed):
 		print("RIGHT")
+		rObjects.append(body)
 		canMovePositiveX = false
 	
 func _on_top_area_entered(body: Node2D) -> void:
 	if (body.is_in_group("World Bounds") && self.isPushed):
 		print("TOP")
+		tObjects.append(body)
 		canMoveNegativeY = false
 	elif(body.is_in_group("Furniture") && body != self && self.isPushed):
 		print("TOP")
+		tObjects.append(body)
 		canMoveNegativeY = false
 	
 func _on_bot_area_entered(body: Node2D) -> void:
 	if (body.is_in_group("World Bounds") && self.isPushed):
 		print("BOTTOM")
+		bObjects.append(body)
 		canMovePositiveY = false
 	elif(body.is_in_group("Furniture") && body != self && self.isPushed):
 		print("BOTTOM")
+		bObjects.append(body)
 		canMovePositiveY = false
+
+func _on_left_area_exited(body: Node2D) -> void:
+	if (lObjects.has(body)):
+		lObjects.erase(body)
+		if (lObjects.is_empty()):
+			canMoveNegativeX = true
+
+func _on_right_area_exited(body: Node2D) -> void:
+	if (rObjects.has(body)):
+		rObjects.erase(body)
+		if (rObjects.is_empty()):
+			canMovePositiveX = true
+
+func _on_top_area_exited(body: Node2D) -> void:
+	if (tObjects.has(body)):
+		tObjects.erase(body)
+		if (tObjects.is_empty()):
+			canMoveNegativeY = true
+
+func _on_bot_area_exited(body: Node2D) -> void:
+	if (bObjects.has(body)):
+		bObjects.erase(body)
+		if (bObjects.is_empty()):
+			canMovePositiveY = true
