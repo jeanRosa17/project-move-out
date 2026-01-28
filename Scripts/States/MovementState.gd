@@ -69,7 +69,6 @@ func physicsUpdate(_delta:float) -> void:
 ## Sets the player's velocity to increase or decrease based on the given direction (-1 left, 1 right)
 func accelerate(direction:Vector2i, delta:float) -> void:
 	if direction != Vector2i.ZERO:
-		print(direction)
 		self.body.velocity.x = move_toward(self.body.velocity.x, direction.x * self.physics.maxSpeed, self.physics.acceleration * delta) 
 		self.body.velocity.y = move_toward(self.body.velocity.y, direction.y * self.physics.maxSpeed, self.physics.acceleration * delta)
 		

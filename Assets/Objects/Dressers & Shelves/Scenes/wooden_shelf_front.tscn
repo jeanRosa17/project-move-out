@@ -1,16 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bujcbosiagjri"]
+[gd_scene load_steps=5 format=3 uid="uid://bujcbosiagjri"]
 
 [ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_5i6bh"]
 [ext_resource type="Texture2D" uid="uid://d3ls4oxtr262i" path="res://Assets/Objects/Dressers & Shelves/wooden_shelf-sheet.png" id="2_8qywr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
 size = Vector2(30, 14)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8qywr"]
-size = Vector2(30, 1)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7r4xi"]
-size = Vector2(1, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
 size = Vector2(34, 42)
@@ -34,22 +28,6 @@ region_rect = Rect2(0, 0, 32, 48)
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, 13)
 shape = SubResource("RectangleShape2D_xnri0")
-
-[node name="Top Collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 6.5)
-shape = SubResource("RectangleShape2D_8qywr")
-
-[node name="Bottom Collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 19.5)
-shape = SubResource("RectangleShape2D_8qywr")
-
-[node name="Left Collision" type="CollisionShape2D" parent="."]
-position = Vector2(-14.5, 13)
-shape = SubResource("RectangleShape2D_7r4xi")
-
-[node name="Right Collision" type="CollisionShape2D" parent="."]
-position = Vector2(14.5, 13)
-shape = SubResource("RectangleShape2D_7r4xi")
 
 [node name="AreaDetector" type="Area2D" parent="." groups=["Furniture"]]
 collision_layer = 2
