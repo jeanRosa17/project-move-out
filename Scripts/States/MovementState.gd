@@ -50,24 +50,29 @@ func physicsUpdate(_delta:float) -> void:
 	if (manager.furniture && manager.furniture.isPushed):
 		if (!manager.furniture.canMovePositiveX && manager.direction.x > 0):
 			manager.direction.x = 0
+			self.body.velocity.x = 0
 		if (!manager.furniture.canMovePositiveY && manager.direction.y > 0):
 			manager.direction.y = 0
+			self.body.velocity.y = 0
 		if (!manager.furniture.canMoveNegativeX && manager.direction.x < 0):
 			manager.direction.x = 0
+			self.body.velocity.x = 0
 		if (!manager.furniture.canMoveNegativeY && manager.direction.y < 0):
 			manager.direction.y = 0
-		
-			
-			
-	self.accelerate(self.getManager().direction, _delta)
+			self.body.velocity.y = 0
+	self.accelerate(manager.direction, _delta)
 	self.body.move_and_slide()
+			
+			
+
 	
 ## Sets the player's velocity to increase or decrease based on the given direction (-1 left, 1 right)
 func accelerate(direction:Vector2i, delta:float) -> void:
 	if direction != Vector2i.ZERO:
+		print(direction)
 		self.body.velocity.x = move_toward(self.body.velocity.x, direction.x * self.physics.maxSpeed, self.physics.acceleration * delta) 
 		self.body.velocity.y = move_toward(self.body.velocity.y, direction.y * self.physics.maxSpeed, self.physics.acceleration * delta)
-		#prints(self.body.velocity, " v")
+		
 
 
 func _on_new_animated_sprite_2d_frame_changed() -> void:

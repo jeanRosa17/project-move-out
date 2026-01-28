@@ -124,6 +124,11 @@ func _physics_process(_delta: float) -> void:
 		
 		var dir:Vector2 = self.player.velocity.normalized()
 		
+		#print("can move right ", canMovePositiveX)
+		#print("can move left ", canMoveNegativeX)
+		#print("can move down ", canMovePositiveY)
+		#print("can move up ", canMoveNegativeY)
+		
 		# if not touching anything, proceed as normal
 		if (objects.is_empty()):
 			self.collision_layer = 0
