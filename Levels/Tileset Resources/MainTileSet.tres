@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" format=3 uid="uid://c7j0gyu0tnn1m"]
+[gd_resource type="TileSet" load_steps=13 format=3 uid="uid://c7j0gyu0tnn1m"]
 
 [ext_resource type="Texture2D" uid="uid://ckthm0nlv0cqj" path="res://Assets/background/background_01.png" id="1_civ8i"]
 [ext_resource type="Texture2D" uid="uid://bcy4yuycluqjm" path="res://Assets/Objects/Kitchen/kitchenCounter_1.png" id="1_jbff4"]
@@ -367,6 +367,7 @@ texture = ExtResource("6_20iwy")
 12:5/0 = 0
 13:4/0 = 0
 13:5/0 = 0
+9:0/0 = 0
 
 [resource]
 physics_layer_0/collision_layer = 4

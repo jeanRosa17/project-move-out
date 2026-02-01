@@ -5,6 +5,7 @@ extends State
 @onready var manager:StateManager = self.getManager()
 @export var body:Player
 @onready var backToIdle:Callable = func () -> void : self.manager.changeState.bind("Idle")
+@onready var move: MovementState = $"../Move"
 
 @export var isPushed:bool
 
@@ -39,3 +40,4 @@ func update(_delta:float) -> void:
 		if (manager.furniture.position.distance_to(self.body.position) > 400):
 			pass
 			#self.exit()
+	
