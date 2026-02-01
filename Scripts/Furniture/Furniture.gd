@@ -24,7 +24,8 @@ var canBeDropped: bool = true ## Changed to true so that a player can immediatel
 
 @onready var collider:CollisionShape2D = $Collision
 
-@export var rotatedVersion:Node2D
+@export var canRotate:bool
+@export var rotatedVersion:Furniture
 
 
 var player: CharacterBody2D
@@ -269,6 +270,23 @@ func exitPush()-> void:
 	self.linear_velocity = Vector2.ZERO
 #endregion
 
+func rotateObj() -> void:
+	if (canRotate):
+		print("rotate")
+		rotatedVersion.reparent(self.get_parent())
+		self.reparent(rotatedVersion)
+		rotatedVersion.visible = true
+		rotatedVersion.collision_layer = 2
+		rotatedVersion.collision_mask = 7
+		
+		self.exitPush()
+		self.visible = false
+		self.collision_layer = 0
+		self.collision_mask = 0
+		
+		#rotatedVersion.enterPush(player)
+		
+
 #region Signals
 func againstObject(newObject: Node2D) -> void:
 	objects.append(newObject)
@@ -304,6 +322,8 @@ func _on_area_detector_body_shape_exited(_body_rid: RID, body: Node2D, _body_sha
 		#relieveObject(body)
 	pass # Replace with function body.
 #endregion
+
+#region collisions
 
 func _on_left_area_entered(body: Node2D) -> void:
 	if (body.is_in_group("World Bounds") && self.isPushed):
@@ -369,3 +389,4 @@ func _on_bot_area_exited(body: Node2D) -> void:
 		bObjects.erase(body)
 		if (bObjects.is_empty()):
 			canMovePositiveY = true
+#endregion
