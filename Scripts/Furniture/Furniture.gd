@@ -293,6 +293,8 @@ func _on_area_detector_body_shape_entered(_body_rid: RID, body: Node2D, _body_sh
 	pass # Replace with function body.
 
 func _on_area_detector_body_shape_exited(_body_rid: RID, body: Node2D, _body_shape_index: int, _local_shape_index: int) -> void:
+	if (body == null):
+		return
 	if (body.is_in_group("World Bounds") && self.isPushed):
 		print("can push (off wall)")
 		#relieveObject(body)
