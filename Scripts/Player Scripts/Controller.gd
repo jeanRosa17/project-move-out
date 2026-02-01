@@ -20,6 +20,7 @@ func _process(delta:float) -> void:
 		self.handleLift(delta)
 		#self.handlePushPull(delta)
 		self.handleInteract(delta)
+		self.handleRotate(delta)
 	
 	temp()
 
@@ -87,6 +88,10 @@ func handleInteract(_delta:float) -> void:
 		if ((self.manager.getStateName() == "Idle") and (not self.manager.wasPreviousState("Lift"))):
 			self.manager.changeState("Interact")
 				
+
+func handleRotate(_delta:float) -> void:
+	if (Input.is_action_just_pressed("Rotate")):
+		self.manager.furniture.rotateObj()
 
 ## Sets the controller to either accept or ignore input.
 func setControls(flag:bool) -> void:
