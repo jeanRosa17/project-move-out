@@ -1,4 +1,4 @@
-[gd_scene load_steps=180 format=3 uid="uid://d0yd01mkkwtji"]
+[gd_scene format=3 uid="uid://d0yd01mkkwtji"]
 
 [ext_resource type="Script" uid="uid://0slq88tkfqsi" path="res://Scripts/Player Scripts/Controller.gd" id="1_f5xin"]
 [ext_resource type="Texture2D" uid="uid://cqguipmcnrdn1" path="res://Assets/Player/Shadow.png" id="2_xgcxo"]
@@ -25,7 +25,7 @@
 [ext_resource type="AudioStream" uid="uid://cioy74m6lqych" path="res://Assets/Audio/footstep short 1.wav" id="26_jjwbh"]
 [ext_resource type="AudioStream" uid="uid://crnjv43fqkcn" path="res://Assets/Audio/footstep short 2.wav" id="27_bmblf"]
 [ext_resource type="PackedScene" uid="uid://dotpp2gym0w7k" path="res://Assets/Particles/Scenes/walking_particle.tscn" id="27_jjwbh"]
-[ext_resource type="Script" uid="uid://btk3jmqdxo7pv" path="res://Assets/Player/Scenes/WalkSound.gd" id="28_m53rv"]
+[ext_resource type="Script" path="res://Assets/Player/Scenes/WalkSound.gd" id="28_m53rv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l2ndj"]
 size = Vector2(8, 16)
@@ -1218,84 +1218,83 @@ streams_count = 2
 stream_0/stream = ExtResource("26_jjwbh")
 stream_1/stream = ExtResource("27_bmblf")
 
-[node name="Body" type="CharacterBody2D"]
+[node name="Body" type="CharacterBody2D" unique_id=1459058704]
 y_sort_enabled = true
 collision_mask = 6
 platform_on_leave = 2
 platform_floor_layers = 4278190080
 script = ExtResource("1_f5xin")
 
-[node name="Shadow" type="Sprite2D" parent="."]
+[node name="Shadow" type="Sprite2D" parent="." unique_id=1648409868]
 self_modulate = Color(1, 1, 1, 0.447059)
 z_index = -1
 z_as_relative = false
 position = Vector2(0, 5)
 texture = ExtResource("2_xgcxo")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=353446213]
 shape = SubResource("RectangleShape2D_l2ndj")
 
-[node name="NewAnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="NewAnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=243817620]
 y_sort_enabled = true
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_dter7")
-animation = &"move up"
+animation = &"move side"
 autoplay = "idle down"
-frame_progress = 0.031087026
 
-[node name="Detector" type="Area2D" parent="."]
+[node name="Detector" type="Area2D" parent="." unique_id=26715929]
 position = Vector2(0, -8)
 collision_layer = 2
 collision_mask = 6
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector" unique_id=1922070348]
 position = Vector2(0, 23)
 shape = SubResource("RectangleShape2D_s1rgi")
 
-[node name="StateManager" type="Node" parent="." node_paths=PackedStringArray("view", "initialState")]
+[node name="StateManager" type="Node" parent="." unique_id=926383464 node_paths=PackedStringArray("view", "initialState")]
 script = ExtResource("19_jigvf")
 view = NodePath("../NewAnimatedSprite2D")
 initialState = NodePath("Idle")
 reportFails = true
 metadata/_custom_type_script = "uid://fn7206me6v1x"
 
-[node name="Idle" type="Node" parent="StateManager" node_paths=PackedStringArray("body")]
+[node name="Idle" type="Node" parent="StateManager" unique_id=228485744 node_paths=PackedStringArray("body")]
 script = ExtResource("20_grkeu")
 body = NodePath("../..")
 metadata/_custom_type_script = "uid://idg0tggjdf4f"
 
-[node name="Lift" type="Node" parent="StateManager" node_paths=PackedStringArray("body")]
+[node name="Lift" type="Node" parent="StateManager" unique_id=1478498404 node_paths=PackedStringArray("body")]
 script = ExtResource("21_lch71")
 body = NodePath("../..")
 metadata/_custom_type_script = "uid://u8kdu3je8hxq"
 
-[node name="Move" type="Node" parent="StateManager" node_paths=PackedStringArray("body", "area2DCollision", "walkSound")]
+[node name="Move" type="Node" parent="StateManager" unique_id=803362562 node_paths=PackedStringArray("body", "area2DCollision", "walkSound")]
 script = ExtResource("22_p1eok")
 body = NodePath("../..")
 area2DCollision = NodePath("../../Detector/CollisionShape2D")
 walkSound = NodePath("../../Walk Sound")
 metadata/_custom_type_script = "uid://c2tqhau6vnsm6"
 
-[node name="Throw" type="Node" parent="StateManager" node_paths=PackedStringArray("area2D")]
+[node name="Throw" type="Node" parent="StateManager" unique_id=2029284255 node_paths=PackedStringArray("area2D")]
 script = ExtResource("23_r7dr2")
 area2D = NodePath("../../Detector")
 metadata/_custom_type_script = "uid://n3x8myoud04l"
 
-[node name="Push" type="Node" parent="StateManager" node_paths=PackedStringArray("body")]
+[node name="Push" type="Node" parent="StateManager" unique_id=957070241 node_paths=PackedStringArray("body")]
 script = ExtResource("24_k1w57")
 body = NodePath("../..")
 
-[node name="Interact" type="Node" parent="StateManager"]
+[node name="Interact" type="Node" parent="StateManager" unique_id=1131971751]
 script = ExtResource("25_5cp4r")
 
-[node name="Walk Sound" type="AudioStreamPlayer2D" parent="."]
+[node name="Walk Sound" type="AudioStreamPlayer2D" parent="." unique_id=1571687373]
 stream = SubResource("AudioStreamRandomizer_77jqo")
 volume_db = -7.11
 pitch_scale = 0.94
 bus = &"Walking"
 script = ExtResource("28_m53rv")
 
-[node name="Walking_particle" parent="." instance=ExtResource("27_jjwbh")]
+[node name="Walking_particle" parent="." unique_id=305676818 instance=ExtResource("27_jjwbh")]
 z_index = -1
 y_sort_enabled = true
 position = Vector2(0, -4.26)
