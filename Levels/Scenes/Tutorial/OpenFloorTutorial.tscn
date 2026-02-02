@@ -208,6 +208,19 @@ region_rect = Rect2(16, 16, 16, 16)
 [node name="wooden_shelf_front" parent="Y-Sorting" instance=ExtResource("19_rwqj1")]
 position = Vector2(186, 99)
 
+[node name="wooden_wardrobe_front" parent="Y-Sorting" node_paths=PackedStringArray("rotatedVersion") instance=ExtResource("18_6pr51")]
+position = Vector2(83, 385)
+canRotate = true
+rotatedVersion = NodePath("wooden_wardrobe_side")
+
+[node name="wooden_wardrobe_side" parent="Y-Sorting/wooden_wardrobe_front" node_paths=PackedStringArray("rotatedVersion") instance=ExtResource("23_rwqj1")]
+visible = false
+position = Vector2(0, 3)
+collision_layer = 0
+collision_mask = 0
+canRotate = true
+rotatedVersion = NodePath("..")
+
 [node name="Garage" parent="." instance=ExtResource("13_ymjk0")]
 position = Vector2(285, 444)
 rotation = -1.5708
@@ -239,17 +252,6 @@ texture = ExtResource("4_odab6")
 [node name="Cup" type="Sprite2D" parent="."]
 position = Vector2(30, 265)
 texture = SubResource("CompressedTexture2D_v8k2n")
-
-[node name="wooden_wardrobe_front" parent="." node_paths=PackedStringArray("rotatedVersion") instance=ExtResource("18_6pr51")]
-position = Vector2(83, 385)
-canRotate = true
-rotatedVersion = NodePath("wooden_wardrobe_side")
-
-[node name="wooden_wardrobe_side" parent="wooden_wardrobe_front" instance=ExtResource("23_rwqj1")]
-visible = false
-position = Vector2(0, 3)
-collision_layer = 0
-collision_mask = 0
 
 [connection signal="body_shape_entered" from="Y-Sorting/Tub/AreaDetector" to="Y-Sorting/Tub" method="_on_area_detector_body_shape_entered"]
 [connection signal="body_shape_exited" from="Y-Sorting/Tub/AreaDetector" to="Y-Sorting/Tub" method="_on_area_detector_body_shape_exited"]

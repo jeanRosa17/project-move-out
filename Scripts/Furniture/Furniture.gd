@@ -257,14 +257,15 @@ func exitLift() -> void:
 func enterPush(body: CharacterBody2D) -> void:
 	print("entered pushing")
 	self.player = body
+	print(player.name)
 	self.collision_layer = 0
 	audioPlayer.push_sound(self)
-	distanceFromPlayer = position.distance_to(player.position)
+	#distanceFromPlayer = position.distance_to(player.position)
 	self.isPushed = true
 
 func exitPush()-> void:
 	print("exited pushing")
-	self.player = null
+	#self.player = null
 	self.collision_layer = 2;
 	self.isPushed = false
 	self.linear_velocity = Vector2.ZERO
@@ -273,6 +274,7 @@ func exitPush()-> void:
 func rotateObj() -> void:
 	if (canRotate):
 		print("rotate")
+	
 		rotatedVersion.reparent(self.get_parent())
 		self.reparent(rotatedVersion)
 		rotatedVersion.visible = true
@@ -284,7 +286,7 @@ func rotateObj() -> void:
 		self.collision_layer = 0
 		self.collision_mask = 0
 		
-		#rotatedVersion.enterPush(player)
+		rotatedVersion.enterPush(player)
 		
 
 #region Signals
