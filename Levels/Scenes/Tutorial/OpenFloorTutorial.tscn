@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
-[gd_scene load_steps=27 format=4 uid="uid://xdjv122pxc6c"]
-=======
-[gd_scene load_steps=31 format=4 uid="uid://xdjv122pxc6c"]
->>>>>>> Stashed changes
+[gd_scene load_steps=28 format=4 uid="uid://pji3ucc8osl6"]
 
 [ext_resource type="Texture2D" uid="uid://dlqlqw0fvr4wp" path="res://Assets/Objects/Carpets/carpet.png" id="2_pebci"]
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="3_3j8mk"]
@@ -18,14 +14,13 @@
 [ext_resource type="PackedScene" uid="uid://uacgji4vcg37" path="res://Assets/Audio/push_pull_audio.tscn" id="13_rwqj1"]
 [ext_resource type="PackedScene" uid="uid://ip4pm1ex6klr" path="res://Levels/Scenes/Garage.tscn" id="13_ymjk0"]
 [ext_resource type="Texture2D" uid="uid://c5oa5arndpcho" path="res://Assets/Objects/Bathroom/tub_1.png" id="13_yn8gu"]
-[ext_resource type="Texture2D" uid="uid://byeei70f2yc5p" path="res://Assets/Objects/Dressers & Shelves/wardrobe-sheet.png" id="14_v8k2n"]
 [ext_resource type="PackedScene" uid="uid://bfp82m6exqyhy" path="res://Assets/Objects/Bathroom/Scenes/Sink.tscn" id="16_heyvs"]
-[ext_resource type="PackedScene" uid="uid://cjingj81fm3hm" path="res://Assets/Objects/Dressers & Shelves/Scenes/storage_dresser_front.tscn" id="18_4alro"]
+[ext_resource type="PackedScene" uid="uid://b7qk52eapta2s" path="res://Assets/Objects/Dressers & Shelves/Scenes/wooden_wardrobe_front.tscn" id="18_6pr51"]
 [ext_resource type="Resource" uid="uid://c6dysgimf0cue" path="res://Narrative/couchTag.tres" id="18_c0tsg"]
-[ext_resource type="PackedScene" uid="uid://dinmyvvjsefj4" path="res://Assets/Objects/Dressers & Shelves/Scenes/storage_dresser_side.tscn" id="19_c0tsg"]
 [ext_resource type="PackedScene" uid="uid://bujcbosiagjri" path="res://Assets/Objects/Dressers & Shelves/Scenes/wooden_shelf_front.tscn" id="19_rwqj1"]
 [ext_resource type="PackedScene" uid="uid://cl3ww3w6r3n1r" path="res://Assets/Objects/Kitchen/Scenes/Fridge.tscn" id="19_yn8gu"]
 [ext_resource type="Texture2D" uid="uid://digo2hq2r3kvr" path="res://Assets/Objects/Table Items/Boxes-Sheet.png" id="20_rwqj1"]
+[ext_resource type="PackedScene" uid="uid://dmkupkplc1pu" path="res://Assets/Objects/Dressers & Shelves/Scenes/wooden_wardrobe_side.tscn" id="23_rwqj1"]
 [ext_resource type="PackedScene" uid="uid://cfmb3mmeue8au" path="res://UI/Scenes/HUD.tscn" id="24_4alro"]
 [ext_resource type="AudioStream" uid="uid://dy61bwuip8a27" path="res://Assets/Audio/lvl1.wav" id="25_4alro"]
 
@@ -38,12 +33,6 @@ size = Vector2(26, 46)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
 size = Vector2(31, 52)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fqpg0"]
-size = Vector2(32, 32)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e43nv"]
-size = Vector2(48, 57)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_v8k2n"]
 
@@ -169,43 +158,9 @@ shape = SubResource("RectangleShape2D_ardoa")
 [node name="Sink" parent="Y-Sorting" instance=ExtResource("16_heyvs")]
 position = Vector2(280, 208)
 
-<<<<<<< Updated upstream
 [node name="Wardrobe" parent="Y-Sorting" instance=ExtResource("18_6pr51")]
-=======
-[node name="Wardrobe" type="RigidBody2D" parent="Y-Sorting" groups=["Furniture"]]
->>>>>>> Stashed changes
 position = Vector2(260, 50)
-collision_layer = 2
-collision_mask = 7
-gravity_scale = 0.0
-can_sleep = false
-lock_rotation = true
-script = ExtResource("12_4jb3v")
-canPush = true
-canPull = true
-metadata/_custom_type_script = "uid://c2vh27coguldq"
 
-<<<<<<< Updated upstream
-=======
-[node name="Sprite2D" type="Sprite2D" parent="Y-Sorting/Wardrobe"]
-texture = ExtResource("14_v8k2n")
-region_enabled = true
-region_rect = Rect2(0, 0, 48, 48)
-
-[node name="Collision" type="CollisionShape2D" parent="Y-Sorting/Wardrobe"]
-position = Vector2(0, 8)
-shape = SubResource("RectangleShape2D_fqpg0")
-
-[node name="AreaDetector" type="Area2D" parent="Y-Sorting/Wardrobe" groups=["Furniture"]]
-position = Vector2(0, -1)
-collision_layer = 2
-collision_mask = 7
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Y-Sorting/Wardrobe/AreaDetector"]
-position = Vector2(0, 2.5)
-shape = SubResource("RectangleShape2D_e43nv")
-
->>>>>>> Stashed changes
 [node name="Player" parent="Y-Sorting" instance=ExtResource("6_4y23e")]
 position = Vector2(160, 392)
 safe_margin = 1.159
@@ -250,21 +205,9 @@ texture = ExtResource("20_rwqj1")
 region_enabled = true
 region_rect = Rect2(16, 16, 16, 16)
 
-<<<<<<< Updated upstream
-=======
-[node name="storage_dresser_front" parent="Y-Sorting" node_paths=PackedStringArray("rotatedVersion") instance=ExtResource("18_4alro")]
-position = Vector2(102, 395)
-canRotate = true
-rotatedVersion = NodePath("storage_dresser_side")
+[node name="wooden_shelf_front" parent="Y-Sorting" instance=ExtResource("19_rwqj1")]
+position = Vector2(186, 99)
 
-[node name="storage_dresser_side" parent="Y-Sorting/storage_dresser_front" node_paths=PackedStringArray("rotatedVersion") instance=ExtResource("19_c0tsg")]
-visible = false
-collision_layer = 0
-collision_mask = 0
-canRotate = true
-rotatedVersion = NodePath("..")
-
->>>>>>> Stashed changes
 [node name="Garage" parent="." instance=ExtResource("13_ymjk0")]
 position = Vector2(285, 444)
 rotation = -1.5708
@@ -297,13 +240,19 @@ texture = ExtResource("4_odab6")
 position = Vector2(30, 265)
 texture = SubResource("CompressedTexture2D_v8k2n")
 
-[node name="wooden_shelf_front" parent="." instance=ExtResource("19_rwqj1")]
-position = Vector2(186, 99)
+[node name="wooden_wardrobe_front" parent="." node_paths=PackedStringArray("rotatedVersion") instance=ExtResource("18_6pr51")]
+position = Vector2(83, 385)
+canRotate = true
+rotatedVersion = NodePath("wooden_wardrobe_side")
+
+[node name="wooden_wardrobe_side" parent="wooden_wardrobe_front" instance=ExtResource("23_rwqj1")]
+visible = false
+position = Vector2(0, 3)
+collision_layer = 0
+collision_mask = 0
 
 [connection signal="body_shape_entered" from="Y-Sorting/Tub/AreaDetector" to="Y-Sorting/Tub" method="_on_area_detector_body_shape_entered"]
 [connection signal="body_shape_exited" from="Y-Sorting/Tub/AreaDetector" to="Y-Sorting/Tub" method="_on_area_detector_body_shape_exited"]
-[connection signal="body_shape_entered" from="Y-Sorting/Wardrobe/AreaDetector" to="Y-Sorting/Wardrobe" method="_on_area_detector_body_shape_entered"]
-[connection signal="body_shape_exited" from="Y-Sorting/Wardrobe/AreaDetector" to="Y-Sorting/Wardrobe" method="_on_area_detector_body_shape_exited"]
 
 [editable path="Garage"]
 [editable path="HUD"]
