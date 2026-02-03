@@ -274,17 +274,22 @@ func exitPush()-> void:
 func rotateObj() -> void:
 	if (canRotate):
 		print("rotate")
-	
-		rotatedVersion.reparent(self.get_parent())
-		self.reparent(rotatedVersion)
-		rotatedVersion.visible = true
-		rotatedVersion.collision_layer = 2
-		rotatedVersion.collision_mask = 7
+		var pos = self.global_position
 		
 		self.exitPush()
 		self.visible = false
 		self.collision_layer = 0
 		self.collision_mask = 0
+		
+		rotatedVersion.global_position = pos
+		rotatedVersion.reparent(self.get_parent())
+
+		self.reparent(rotatedVersion)
+		rotatedVersion.visible = true
+		rotatedVersion.collision_layer = 2
+		rotatedVersion.collision_mask = 7
+		
+
 		
 		rotatedVersion.enterPush(player)
 		
