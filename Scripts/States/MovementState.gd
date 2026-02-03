@@ -61,12 +61,11 @@ func physicsUpdate(_delta:float) -> void:
 		if (!manager.furniture.canMoveNegativeY && manager.direction.y < 0):
 			manager.direction.y = 0
 			self.body.velocity.y = 0
+			
+	manager.update_direction()
 	self.accelerate(manager.direction, _delta)
 	self.body.move_and_slide()
-			
-			
 
-	
 ## Sets the player's velocity to increase or decrease based on the given direction (-1 left, 1 right)
 func accelerate(direction:Vector2i, delta:float) -> void:
 	if direction != Vector2i.ZERO:
