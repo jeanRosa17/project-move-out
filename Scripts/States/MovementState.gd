@@ -62,7 +62,7 @@ func physicsUpdate(_delta:float) -> void:
 			manager.direction.y = 0
 			self.body.velocity.y = 0
 			
-	manager.update_direction()
+
 	self.accelerate(manager.direction, _delta)
 	self.body.move_and_slide()
 

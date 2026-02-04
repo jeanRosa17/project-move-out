@@ -21,6 +21,7 @@ func _process(delta:float) -> void:
 		#self.handlePushPull(delta)
 		self.handleInteract(delta)
 		self.handleRotate(delta)
+		manager.update_direction()
 	
 	temp()
 
