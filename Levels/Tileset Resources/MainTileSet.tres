@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" format=3 uid="uid://c7j0gyu0tnn1m"]
+[gd_resource type="TileSet" load_steps=13 format=3 uid="uid://c7j0gyu0tnn1m"]
 
 [ext_resource type="Texture2D" uid="uid://ckthm0nlv0cqj" path="res://Assets/background/background_01.png" id="1_civ8i"]
 [ext_resource type="Texture2D" uid="uid://bcy4yuycluqjm" path="res://Assets/Objects/Kitchen/kitchenCounter_1.png" id="1_jbff4"]
@@ -279,6 +279,31 @@ texture = ExtResource("5_ia4qr")
 16:2/0 = 0
 16:1/0 = 0
 16:0/0 = 0
+8:0/0 = 0
+8:1/0 = 0
+8:2/0 = 0
+15:0/0 = 0
+14:2/0 = 0
+8:3/0 = 0
+8:4/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+10:4/0 = 0
+10:3/0 = 0
+9:3/0 = 0
+11:4/0 = 0
+11:3/0 = 0
+12:4/0 = 0
+12:3/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+15:3/0 = 0
+15:5/0 = 0
+14:5/0 = 0
+10:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bo1jn"]
 texture = ExtResource("6_20iwy")
@@ -368,6 +393,8 @@ texture = ExtResource("6_20iwy")
 13:4/0 = 0
 13:5/0 = 0
 9:0/0 = 0
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 0.179859, -8, 0.179859)
 
 [resource]
 physics_layer_0/collision_layer = 4
