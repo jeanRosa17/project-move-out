@@ -167,8 +167,8 @@ visible = false
 
 [node name="Level Results" parent="HUD" index="1"]
 visible = false
-nextLevelName = &"res://UI/Scenes/TitleScreen.tscn"
-replayLevelName = &"res://Levels/Scenes/CollegeAppartmentLevel.tscn"
+nextLevelName = &"res://Levels/Scenes/FratHouseAlt.tscn"
+replayLevelName = &"res://Levels/Scenes/apartmentAlt.tscn"
 
 [node name="Dialogue" parent="HUD" index="2"]
 visible = true

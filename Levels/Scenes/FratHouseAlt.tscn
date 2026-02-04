@@ -93,8 +93,8 @@ visible = false
 
 [node name="Level Results" parent="HUD" index="1"]
 visible = false
-nextLevelName = &"res://Levels/Scenes/PoolLevel.tscn"
-replayLevelName = &"res://Levels/Scenes/CollegeAppartmentLevel.tscn"
+nextLevelName = &"res://UI/Scenes/TitleScreen.tscn"
+replayLevelName = &"res://Levels/Scenes/FratHouseAlt.tscn"
 
 [node name="Dialogue" parent="HUD" index="2"]
 visible = true
@@ -366,7 +366,6 @@ metadata/Direction = "south"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wind/Wind_hallway_west2"]
 position = Vector2(-44.7474, 4.05545)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_kmvwb")
 
 [node name="wind11" parent="Wind/Wind_hallway_west2" instance=ExtResource("23_8v8sk")]
@@ -456,7 +455,6 @@ scale = Vector2(0.5, 0.5)
 [node name="WindLoopEastTop" type="Area2D" parent="Wind/WindLoop"]
 position = Vector2(333, 91)
 rotation = -3.13918
-scale = Vector2(1, 1)
 script = ExtResource("22_cv6hb")
 metadata/Direction = "west"
 
@@ -486,7 +484,6 @@ scale = Vector2(0.5, 0.5)
 [node name="WindLoopEastBottom" type="Area2D" parent="Wind/WindLoop"]
 position = Vector2(289, 158)
 rotation = -3.13918
-scale = Vector2(1, 1)
 script = ExtResource("22_cv6hb")
 metadata/Direction = "west"
 

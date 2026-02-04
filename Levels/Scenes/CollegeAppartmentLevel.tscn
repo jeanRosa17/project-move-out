@@ -261,7 +261,7 @@ unique_name_in_owner = true
 
 [node name="Level Results" parent="HUD" index="1"]
 visible = false
-nextLevelName = &"res://UI/Scenes/TitleScreen.tscn"
+nextLevelName = &"res://Levels/Scenes/apartmentAlt.tscn"
 replayLevelName = &"res://Levels/Scenes/CollegeAppartmentLevel.tscn"
 
 [node name="Dialogue" parent="HUD" index="2"]
