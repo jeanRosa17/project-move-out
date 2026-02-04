@@ -1,14 +1,11 @@
-[gd_scene load_steps=24 format=4 uid="uid://6cyov1n0p1t4"]
+[gd_scene load_steps=21 format=4 uid="uid://6cyov1n0p1t4"]
 
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="1_3qy5o"]
 [ext_resource type="PackedScene" uid="uid://ip4pm1ex6klr" path="res://Levels/Scenes/Garage.tscn" id="2_n627j"]
 [ext_resource type="PackedScene" uid="uid://psh4s5sym8kd" path="res://UI/Scenes/Textbox.tscn" id="3_elsed"]
-[ext_resource type="AudioStream" uid="uid://ixm05apa3fsb" path="res://Assets/Audio/furniture2 [game capstone].wav" id="4_allxl"]
-[ext_resource type="AudioStream" uid="uid://ilbhsc2vwd1n" path="res://Assets/Audio/furniture 1.wav" id="5_f23mb"]
-[ext_resource type="Script" uid="uid://cv8mdnilcdg0d" path="res://Levels/Tests/FurnitureAudio.gd" id="6_iaufo"]
-[ext_resource type="AudioStream" uid="uid://co27kfjleoj27" path="res://Assets/Audio/furniture [game capstone].wav" id="7_x3x0i"]
 [ext_resource type="Texture2D" uid="uid://b0r0nkq7wuc8b" path="res://Assets/Untitled_Artwork.png" id="8_toc1w"]
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Assets/Player/Scenes/Player.tscn" id="9_en5i7"]
+[ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="9_f23mb"]
 [ext_resource type="Script" uid="uid://dj52fk0ha628v" path="res://Levels/Scenes/InventoryChecklist.gd" id="10_obgx0"]
 [ext_resource type="AudioStream" uid="uid://dy61bwuip8a27" path="res://Assets/Audio/lvl1.wav" id="10_x3x0i"]
 [ext_resource type="PackedScene" uid="uid://cfmb3mmeue8au" path="res://UI/Scenes/HUD.tscn" id="11_ccy2n"]
@@ -17,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://cmje4kqmvovdh" path="res://Assets/Audio/dorm.wav" id="14_vn673"]
 [ext_resource type="PackedScene" uid="uid://d26wukook25xb" path="res://Assets/Objects/Dressers & Shelves/Scenes/Table.tscn" id="15_iaufo"]
 [ext_resource type="PackedScene" uid="uid://dkssiia1dmwor" path="res://Assets/Objects/Chairs/Scene/Wood_Chair_Side.tscn" id="16_x3x0i"]
+[ext_resource type="PackedScene" uid="uid://uacgji4vcg37" path="res://Assets/Audio/push_pull_audio.tscn" id="17_allxl"]
 [ext_resource type="PackedScene" uid="uid://cl3ww3w6r3n1r" path="res://Assets/Objects/Kitchen/Scenes/Fridge.tscn" id="17_toc1w"]
 [ext_resource type="PackedScene" uid="uid://cuho4egtuhmvt" path="res://Assets/Objects/Tables/Scenes/TV_and_desk_front.tscn" id="18_en5i7"]
 [ext_resource type="PackedScene" uid="uid://nomguund5j25" path="res://Assets/Objects/Couches/Scenes/red_couch_front.tscn" id="19_obgx0"]
@@ -24,11 +22,6 @@
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0g7f6"]
 normal = Vector2(-9.65599e-07, -1)
 distance = -64.0
-
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2wgx8"]
-streams_count = 2
-stream_0/stream = ExtResource("4_allxl")
-stream_1/stream = ExtResource("5_f23mb")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m2aof"]
 size = Vector2(11.6381, 312.94)
@@ -99,12 +92,6 @@ position = Vector2(-11, 238)
 rotation = -4.71239
 shape = SubResource("WorldBoundaryShape2D_0g7f6")
 
-[node name="Push_Pull Audio" type="AudioStreamPlayer2D" parent="Y-Sorting"]
-stream = SubResource("AudioStreamRandomizer_2wgx8")
-bus = &"Furniture"
-script = ExtResource("6_iaufo")
-streams = [ExtResource("7_x3x0i")]
-
 [node name="Sprite2D" type="Sprite2D" parent="Y-Sorting"]
 visible = false
 position = Vector2(245, 87)
@@ -133,6 +120,9 @@ autoplay = true
 
 [node name="Table4" parent="." instance=ExtResource("15_iaufo")]
 position = Vector2(154, 362)
+script = ExtResource("9_f23mb")
+canPush = true
+canPull = true
 
 [node name="Wood_Chair_Side" parent="." instance=ExtResource("16_x3x0i")]
 position = Vector2(128, 376)
@@ -199,6 +189,10 @@ rotation = -0.0014569
 scale = Vector2(5, 5)
 shape = SubResource("RectangleShape2D_m2aof")
 one_way_collision_margin = 0.0
+
+[node name="Push_Pull Audio" parent="." instance=ExtResource("17_allxl")]
+visible = false
+position = Vector2(-47, -309)
 
 [connection signal="body_entered" from="TextTrigger/TriggerSensor" to="TextTrigger/TriggerSensor" method="_on_body_entered"]
 
