@@ -1,8 +1,8 @@
 [gd_resource type="TileSet" load_steps=13 format=3 uid="uid://c7j0gyu0tnn1m"]
 
 [ext_resource type="Texture2D" uid="uid://ckthm0nlv0cqj" path="res://Assets/background/background_01.png" id="1_civ8i"]
-[ext_resource type="Texture2D" uid="uid://bcy4yuycluqjm" path="res://Assets/Objects/Kitchen/kitchenCounter_1.png" id="1_jbff4"]
 [ext_resource type="Texture2D" uid="uid://c8g5v0hwyh5of" path="res://Assets/background/background_02.png" id="2_cos8y"]
+[ext_resource type="Texture2D" uid="uid://1pndgm8ucik4" path="res://Assets/Objects/Kitchen/Kitchen-Sheet.png" id="3_cos8y"]
 [ext_resource type="Texture2D" uid="uid://bpd0wwec3qn86" path="res://Assets/tiles/haunted_house_tile.png" id="4_cos8y"]
 [ext_resource type="Texture2D" uid="uid://djbgvclxv2ggx" path="res://Assets/tiles/Support Columns.png" id="5_ia4qr"]
 [ext_resource type="Texture2D" uid="uid://dc6c1fdxyaabr" path="res://Assets/tiles/Walls3.png" id="6_20iwy"]
@@ -142,7 +142,7 @@ texture = ExtResource("2_cos8y")
 5:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jbff4"]
-texture = ExtResource("1_jbff4")
+texture = ExtResource("3_cos8y")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, 8, 0, 8, 8, -8, 8)
 1:0/0 = 0
@@ -186,6 +186,80 @@ texture = ExtResource("1_jbff4")
 6:0/size_in_atlas = Vector2i(2, 2)
 6:0/0 = 0
 6:0/0/texture_origin = Vector2i(-8, 0)
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+16:0/0 = 0
+17:0/0 = 0
+18:0/0 = 0
+19:0/0 = 0
+20:0/0 = 0
+21:0/0 = 0
+22:0/0 = 0
+23:0/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+16:1/0 = 0
+17:1/0 = 0
+18:1/0 = 0
+19:1/0 = 0
+20:1/0 = 0
+21:1/0 = 0
+22:1/0 = 0
+23:1/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+18:2/0 = 0
+19:2/0 = 0
+20:2/0 = 0
+21:2/0 = 0
+22:2/0 = 0
+23:2/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+16:3/0 = 0
+17:3/0 = 0
+18:3/0 = 0
+19:3/0 = 0
+20:3/0 = 0
+21:3/0 = 0
+22:3/0 = 0
+23:3/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+15:1/0 = 0
+15:0/0 = 0
+14:1/0 = 0
+14:0/0 = 0
+13:0/0 = 0
+12:1/0 = 0
+12:0/0 = 0
+13:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v8fek"]
 texture = ExtResource("4_cos8y")

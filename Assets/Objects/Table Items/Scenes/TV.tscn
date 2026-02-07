@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dpyl8x5qojmng"]
 
 [ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_7doi6"]
-[ext_resource type="Texture2D" uid="uid://ce4ciuntq68ld" path="res://Assets/Objects/Table Items/TV_1.png" id="2_7doi6"]
+[ext_resource type="Texture2D" uid="uid://dnhfepa2ah0ah" path="res://Assets/Objects/Table Items/Monitors-Sheet.png" id="2_h0poq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
 size = Vector2(30, 27)
@@ -21,7 +21,9 @@ canPull = true
 metadata/_custom_type_script = "uid://c2vh27coguldq"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_7doi6")
+texture = ExtResource("2_h0poq")
+region_enabled = true
+region_rect = Rect2(16, 16, 32, 32)
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2.5)

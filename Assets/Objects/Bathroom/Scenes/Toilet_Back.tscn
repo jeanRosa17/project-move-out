@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c638p25j2md1l"]
 
 [ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_n52ri"]
-[ext_resource type="Texture2D" uid="uid://ds4jeoeemxg1q" path="res://Assets/Objects/Bathroom/toilet_back.png" id="2_n52ri"]
+[ext_resource type="Texture2D" uid="uid://dq5pqd6sqwcnf" path="res://Assets/Objects/Bathroom/Toilet-Sheet.png" id="2_gyd13"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
 size = Vector2(14, 23)
@@ -21,7 +21,9 @@ canPull = true
 metadata/_custom_type_script = "uid://c2vh27coguldq"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_n52ri")
+texture = ExtResource("2_gyd13")
+region_enabled = true
+region_rect = Rect2(52, 0, 16, 24)
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.5)

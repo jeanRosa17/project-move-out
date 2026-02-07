@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dq5dgctxnghmb"]
+[gd_scene load_steps=6 format=3 uid="uid://dq5dgctxnghmb"]
 
 [ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_jno4m"]
-[ext_resource type="Texture2D" uid="uid://ws0hxis55nlq" path="res://Assets/Objects/Beds/double_bed_1.png" id="2_ardoa"]
+[ext_resource type="Texture2D" uid="uid://d0isplmwp60m5" path="res://Assets/Objects/Beds/Red Beds-Sheet.png" id="2_h1k57"]
+[ext_resource type="Texture2D" uid="uid://dt4hkvmn5bpqd" path="res://Assets/Objects/Beds/Pillows-Sheet.png" id="3_sa787"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
 size = Vector2(26, 42)
@@ -21,7 +22,15 @@ canPull = true
 metadata/_custom_type_script = "uid://c2vh27coguldq"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_ardoa")
+texture = ExtResource("2_h1k57")
+region_enabled = true
+region_rect = Rect2(16, 134, 32, 58)
+
+[node name="Pillow" type="Sprite2D" parent="."]
+position = Vector2(0, -6)
+texture = ExtResource("3_sa787")
+region_enabled = true
+region_rect = Rect2(1, 6, 22, 12)
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)
