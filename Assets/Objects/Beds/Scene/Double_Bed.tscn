@@ -5,10 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://dt4hkvmn5bpqd" path="res://Assets/Objects/Beds/Pillows-Sheet.png" id="3_sa787"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
-size = Vector2(26, 42)
+size = Vector2(32, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
-size = Vector2(32, 52)
+size = Vector2(48, 64)
 
 [node name="Double Bed" type="RigidBody2D" groups=["Furniture"]]
 collision_layer = 2
@@ -33,7 +33,7 @@ region_enabled = true
 region_rect = Rect2(1, 6, 22, 12)
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
+position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_xnri0")
 
 [node name="AreaDetector" type="Area2D" parent="." groups=["Furniture"]]

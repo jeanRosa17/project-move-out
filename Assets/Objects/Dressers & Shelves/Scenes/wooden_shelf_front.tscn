@@ -4,12 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://d3ls4oxtr262i" path="res://Assets/Objects/Dressers & Shelves/wooden_shelf-sheet.png" id="2_8qywr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
-size = Vector2(30, 14)
+size = Vector2(30, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
-size = Vector2(34, 42)
+size = Vector2(40, 48)
 
-[node name="wooden_shelf_front" type="RigidBody2D" groups=["Furniture"]]
+[node name="Shelf" type="RigidBody2D" groups=["Furniture"]]
 collision_layer = 2
 collision_mask = 7
 gravity_scale = 0.0
@@ -26,7 +26,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 32, 48)
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 13)
+position = Vector2(0, 16)
 shape = SubResource("RectangleShape2D_xnri0")
 
 [node name="AreaDetector" type="Area2D" parent="." groups=["Furniture"]]
@@ -34,6 +34,7 @@ collision_layer = 2
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector"]
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_ardoa")
 
 [connection signal="body_shape_entered" from="AreaDetector" to="." method="_on_area_detector_body_shape_entered"]

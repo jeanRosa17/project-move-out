@@ -23,9 +23,9 @@ func _process(delta:float) -> void:
 		self.handleRotate(delta)
 		manager.update_direction()
 	
-	temp()
+	animations()
 
-func temp() -> void:
+func animations() -> void:
 	var prefix:String = "move"
 
 	if (self.manager.hasFurniture):
@@ -34,20 +34,25 @@ func temp() -> void:
 		if (self.manager.furniture.isLifted):
 			prefix = "movelift"
 		
-	if ((Input.is_action_pressed("MoveLeft") 
-	or Input.is_action_pressed("MoveRight"))
-	and not(Input.is_action_pressed("MoveUp")
-	or Input.is_action_pressed("MoveDown"))):
+	if (Input.is_action_pressed("MoveLeft") or Input.is_action_pressed("MoveRight")):
 		self.manager.view.play(prefix + " side")
-	else:
-		if ((Input.is_action_pressed("MoveUp")
-		and not (Input.is_action_pressed("MoveLeft")
-		or Input.is_action_pressed("MoveRight")))): 
-			self.manager.view.play(prefix + " up")
-		elif ((Input.is_action_pressed("MoveDown")
-		and not (Input.is_action_pressed("MoveLeft")
-		or Input.is_action_pressed("MoveRight")))):
-			self.manager.view.play(prefix + " down")
+		return
+
+	elif (Input.is_action_pressed("MoveUp")):
+		self.manager.view.play(prefix + " up")
+		return
+		
+	elif (Input.is_action_pressed("MoveDown")):
+		self.manager.view.play(prefix + " down")
+		return
+	
+	#if ((Input.is_action_pressed("MoveLeft") or Input.is_action_pressed("MoveRight")) and not (Input.is_action_pressed("MoveUp") or Input.is_action_pressed("MoveDown"))):
+		#self.manager.view.play(prefix + " side")
+	#else:
+		#if ((Input.is_action_pressed("MoveUp") and not (Input.is_action_pressed("MoveLeft") or Input.is_action_pressed("MoveRight")))):
+			#self.manager.view.play(prefix + " up")
+		#elif ((Input.is_action_pressed("MoveDown") and not (Input.is_action_pressed("MoveLeft") or Input.is_action_pressed("MoveRight")))):
+			#self.manager.view.play(prefix + " down")
 
 ## Handles the "Move" set of Inputs and transfers the state to the "Move" state. Otherwise
 ## if the player is not inputting anything, the state defaults to "Idle".

@@ -5,10 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://dcfsp4m1deajw" path="res://Assets/Objects/Table Items/Kitchen Items-Sheet.png" id="3_c3vff"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
-size = Vector2(32, 51)
+size = Vector2(32, 56)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gifpp"]
-size = Vector2(36, 59)
+size = Vector2(48, 72)
 
 [node name="Fridge" type="RigidBody2D" groups=["Furniture"]]
 y_sort_enabled = true
@@ -19,35 +19,35 @@ script = ExtResource("1_c6p5g")
 canLift = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -7.5)
+position = Vector2(0, -17.5)
 texture = ExtResource("2_c3vff")
 region_enabled = true
 region_rect = Rect2(288, 0, 32, 64)
 
 [node name="Cereal Box" type="Sprite2D" parent="."]
 z_index = 1
-position = Vector2(-10, -32.167946)
+position = Vector2(-10, -42.167946)
 texture = ExtResource("3_c3vff")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
 [node name="Cereal Box2" type="Sprite2D" parent="."]
 z_index = 1
-position = Vector2(-7, -32.167946)
+position = Vector2(-7, -42.167946)
 texture = ExtResource("3_c3vff")
 region_enabled = true
 region_rect = Rect2(16, 0, 16, 16)
 
 [node name="Cereal Box3" type="Sprite2D" parent="."]
 z_index = 1
-position = Vector2(-3, -32.167946)
+position = Vector2(-3, -42.167946)
 rotation = -0.26785818
 texture = ExtResource("3_c3vff")
 region_enabled = true
 region_rect = Rect2(32, 0, 16, 16)
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, -9.5)
+position = Vector2(0, -12)
 shape = SubResource("RectangleShape2D_xnri0")
 
 [node name="AreaDetector" type="Area2D" parent="." groups=["Furniture"]]
@@ -56,5 +56,5 @@ collision_layer = 2
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector"]
-position = Vector2(0, -12.5)
+position = Vector2(0, -15)
 shape = SubResource("RectangleShape2D_gifpp")

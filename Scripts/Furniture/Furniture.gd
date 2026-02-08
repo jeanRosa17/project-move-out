@@ -63,10 +63,10 @@ func _ready() -> void:
 	
 	collider.debug_color = Color.GREEN
 	var shape:Shape2D = collider.shape
-	var rect = shape.get_rect()
+	@warning_ignore("untyped_declaration") var rect = shape.get_rect()
 	
-	var shapeBot = CollisionShape2D.new()
-	var shapeBotResource = RectangleShape2D.new()
+	@warning_ignore("untyped_declaration") var shapeBot = CollisionShape2D.new()
+	@warning_ignore("untyped_declaration") var shapeBotResource = RectangleShape2D.new()
 	shapeBotResource.size = Vector2(rect.size.x - 2, 1)
 	shapeBot.position = Vector2(collider.position.x, collider.position.y + (rect.size.y / 2))
 	shapeBot.shape = shapeBotResource
@@ -80,8 +80,8 @@ func _ready() -> void:
 	areaBot.body_exited.connect(_on_bot_area_exited)
 	
 	
-	var shapeTop = CollisionShape2D.new()
-	var shapeTopResource = RectangleShape2D.new()
+	@warning_ignore("untyped_declaration") var shapeTop = CollisionShape2D.new()
+	@warning_ignore("untyped_declaration") var shapeTopResource = RectangleShape2D.new()
 	shapeTopResource.size = Vector2(rect.size.x - 2, 1)
 	shapeTop.position = Vector2(collider.position.x, collider.position.y - (rect.size.y / 2))
 	shapeTop.shape = shapeTopResource
@@ -94,8 +94,8 @@ func _ready() -> void:
 	areaTop.body_entered.connect(_on_top_area_entered)
 	areaTop.body_exited.connect(_on_top_area_exited)
 	
-	var shapeRight = CollisionShape2D.new()
-	var shapeRightResource = RectangleShape2D.new()
+	@warning_ignore("untyped_declaration") var shapeRight = CollisionShape2D.new()
+	@warning_ignore("untyped_declaration") var shapeRightResource = RectangleShape2D.new()
 	shapeRightResource.size = Vector2(1, rect.size.y - 2)
 	shapeRight.position = Vector2(collider.position.x + (rect.size.x / 2), collider.position.y)
 	shapeRight.shape = shapeRightResource
@@ -108,8 +108,9 @@ func _ready() -> void:
 	areaRight.body_entered.connect(_on_right_area_entered)
 	areaRight.body_exited.connect(_on_right_area_exited)
 	
-	var shapeLeft = CollisionShape2D.new()
-	var shapeLeftResource = RectangleShape2D.new()
+	
+	@warning_ignore("untyped_declaration") var shapeLeft = CollisionShape2D.new() 
+	@warning_ignore("untyped_declaration") var shapeLeftResource = RectangleShape2D.new()
 	shapeLeftResource.size = Vector2(1, rect.size.y - 2 )
 	shapeLeft.position = Vector2(collider.position.x - (rect.size.x / 2), collider.position.y)
 	shapeLeft.shape = shapeLeftResource
@@ -133,7 +134,7 @@ func _physics_process(_delta: float) -> void:
 		
 	if (self.isPushed):
 		
-		var dir:Vector2 = self.player.velocity.normalized()
+		#var dir:Vector2 = self.player.velocity.normalized()
 		
 		
 		# if not touching anything, proceed as normal
@@ -150,7 +151,6 @@ func _physics_process(_delta: float) -> void:
 
 		linear_velocity = linear_velocity.lerp(player.velocity, 1)
 
-		
 
 func update_detector_direction(direction: Vector2) -> void:
 	if (abs(direction.x) > abs(direction.y)):
@@ -183,7 +183,7 @@ func createGhostSprite(body:CharacterBody2D) -> void:
 	self.ghostTween.set_loops()
 
 
-#region Tween Animation
+#region Tweens  Animation
 # Starts the hovering tween animation
 func startLiftingTween() -> void:
 	var tween: Tween = create_tween()
@@ -274,7 +274,7 @@ func exitPush()-> void:
 func rotateObj() -> void:
 	if (canRotate):
 		print("rotate")
-		var pos = self.global_position
+		@warning_ignore("untyped_declaration") var pos = self.global_position
 		
 		self.exitPush()
 		self.visible = false
