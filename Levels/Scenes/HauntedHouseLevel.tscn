@@ -89,7 +89,7 @@ tile_set = ExtResource("1_ns01m")
 
 [node name="Garage" parent="Environment" instance=ExtResource("4_ll45c")]
 z_index = -1
-position = Vector2(152, 308)
+position = Vector2(193, 311)
 
 [node name="Y-Sorting" type="Node2D" parent="Environment"]
 y_sort_enabled = true

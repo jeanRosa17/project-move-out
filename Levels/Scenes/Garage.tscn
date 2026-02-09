@@ -25,7 +25,7 @@ b = Vector2(87, -11)
 [node name="Garage" type="Node2D"]
 
 [node name="Placeholder Van" type="Sprite2D" parent="."]
-position = Vector2(47, 34)
+position = Vector2(-1, 0.067840576)
 scale = Vector2(1.73333, 1.62712)
 texture = ExtResource("1_y5pj0")
 
@@ -40,6 +40,7 @@ position = Vector2(0.28846, 0.921873)
 shape = SubResource("RectangleShape2D_wmaxs")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-48, -33.93216)
 collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
@@ -47,12 +48,14 @@ position = Vector2(78, 0)
 shape = SubResource("SegmentShape2D_oj64t")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(-48, -33.93216)
 collision_layer = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
 shape = SubResource("SegmentShape2D_oj64t")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(-48, -33.93216)
 collision_layer = 4
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2"]
@@ -60,6 +63,7 @@ position = Vector2(0, 93)
 shape = SubResource("SegmentShape2D_gxfmd")
 
 [node name="Button Area" type="Area2D" parent="."]
+position = Vector2(-48, -33.93216)
 scale = Vector2(1.00294, 1)
 collision_layer = 2
 collision_mask = 7
