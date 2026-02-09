@@ -14,6 +14,7 @@ func setDialogueTo(dTag:DialogueTag) -> void:
 
 func checkResults(score:float) -> void:
 	## Get score from Van script and display here.
+	print("Gay gay homosexual gay");
 	var text:RichTextLabel = self.level_results.find_child("Score")
 	text.text = str("Your score is: ", score)
 	self.level_results.visible = true
@@ -22,8 +23,8 @@ func checkResults(score:float) -> void:
 func _process(_delta: float) -> void:
 	if (self.textbox.currentTagFinished):
 		self.dialogue.visible = false
-	
-	if (not self.visible):
-		for i in self.get_children():
-			if (i is CanvasLayer):
-				i.visible = self.visible
+	#
+	#if (not self.visible):
+		#for i in self.get_children():
+			#if (i is CanvasLayer):
+				#i.visible = self.visible

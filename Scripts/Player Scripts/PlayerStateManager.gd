@@ -39,14 +39,15 @@ func update_direction() -> void:
 		direction.x = 0
 		direction.y = y
 
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	if (area.get_parent().is_in_group("Furniture")):
-		if (self.hasFurniture && !self.furniture.isPushed && !self.furniture.isLifted):
-			print(furniture.name)
-			self.furniture = area.get_parent()
-		elif (not self.hasFurniture):
-			self.furniture = area.get_parent()
-		self.hasFurniture = true
+
+#func _on_area_2d_area_entered(area: Area2D) -> void:
+	#if (area.get_parent().is_in_group("Furniture")):
+		#if (self.hasFurniture && !self.furniture.isPushed && !self.furniture.isLifted):
+			#print(furniture.name)
+			#self.furniture = area.get_parent()
+		#elif (not self.hasFurniture):
+			#self.furniture = area.get_parent()
+		#self.hasFurniture = true
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	if (area.get_parent().is_in_group("Furniture")):

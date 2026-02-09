@@ -57,8 +57,8 @@ tile_set = ExtResource("1_3qy5o")
 
 [node name="Garage" parent="." instance=ExtResource("2_n627j")]
 z_index = -1
-position = Vector2(96, 56)
-rotation = 1.5708
+position = Vector2(88, 72)
+rotation = 1.56868
 
 [node name="Y-Sorting" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -132,20 +132,17 @@ position = Vector2(129, 344)
 
 [node name="Fire Chair" parent="." instance=ExtResource("16_x3x0i")]
 modulate = Color(1, 0, 0, 1)
-position = Vector2(179, 336)
+position = Vector2(256, 104)
 
 [node name="Ice Chair" parent="." instance=ExtResource("16_x3x0i")]
 modulate = Color(0, 1, 1, 1)
-position = Vector2(181, 369)
+position = Vector2(258, 137)
 
 [node name="Fridge" parent="." instance=ExtResource("17_toc1w")]
 position = Vector2(8, 360)
 
 [node name="TV_and_desk_front" parent="." instance=ExtResource("18_en5i7")]
 position = Vector2(144, 296)
-
-[node name="Couch" parent="." instance=ExtResource("19_obgx0")]
-position = Vector2(179, 224)
 
 [node name="Electric Couch" parent="." instance=ExtResource("19_obgx0")]
 modulate = Color(1, 1, 0, 1)

@@ -37,7 +37,7 @@ func exit() -> void:
 func update(_delta:float) -> void:
 	if (manager.furniture):
 		#print(self.manager.furniture.position.distance_to(self.body.position))
-		if (manager.furniture.position.distance_to(self.body.position) > 400):
+		if (manager.furniture.position.distance_to(self.body.position) > 50):
 			pass
 			#self.exit()
 	

@@ -150,7 +150,13 @@ func _physics_process(_delta: float) -> void:
 
 
 		linear_velocity = linear_velocity.lerp(player.velocity, 1)
-
+	
+	if(self.player):
+		if(self.position.distance_to(self.player.position) > 40):
+			if(self.isPushed):
+				self.exitPush()
+			if(self.isLifted):
+				self.exitLift()
 
 func update_detector_direction(direction: Vector2) -> void:
 	if (abs(direction.x) > abs(direction.y)):

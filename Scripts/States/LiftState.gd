@@ -6,7 +6,9 @@ extends State
 
 ## The Player needs hasFurniture to be true and the furniture needs to be liftable.
 func canEnter() -> bool:
-	if (not self.manager.hasFurniture): return false
+	if (not self.manager.hasFurniture): 
+		print("hasFunriture false")
+		return false
 	
 	if (self.manager.furniture.canLift): return true
 	

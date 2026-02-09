@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://ip4pm1ex6klr"]
+[gd_scene load_steps=10 format=3 uid="uid://ip4pm1ex6klr"]
 
 [ext_resource type="Texture2D" uid="uid://bh2e8ltvpt5g8" path="res://Assets/Garage/truck_back_01.png" id="1_y5pj0"]
 [ext_resource type="Script" uid="uid://bg35t571kh220" path="res://Scripts/Van/Van.gd" id="2_6h86o"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://da21gw6ai8h4v" path="res://Assets/Garage/leaver_01.png" id="4_6h86o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wmaxs"]
-size = Vector2(43.269157, 55.927265)
+size = Vector2(43.2692, 55.9273)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_oj64t"]
 a = Vector2(8, -9)
@@ -22,65 +22,65 @@ b = Vector2(87, -11)
 a = Vector2(7, -11)
 b = Vector2(87, -11)
 
-[node name="Garage" type="Node2D" unique_id=399983216]
+[node name="Garage" type="Node2D"]
 
-[node name="Placeholder Van" type="Sprite2D" parent="." unique_id=1857875010]
+[node name="Placeholder Van" type="Sprite2D" parent="."]
 position = Vector2(47, 34)
 scale = Vector2(1.73333, 1.62712)
 texture = ExtResource("1_y5pj0")
 
-[node name="Area2D" type="Area2D" parent="Placeholder Van" unique_id=2128286603 node_paths=PackedStringArray("vanDoor")]
+[node name="Area2D" type="Area2D" parent="Placeholder Van" node_paths=PackedStringArray("vanDoor")]
 collision_layer = 7
 collision_mask = 7
 script = ExtResource("2_6h86o")
 vanDoor = NodePath("../../Button Area/Door")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Placeholder Van/Area2D" unique_id=801138285]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Placeholder Van/Area2D"]
 position = Vector2(0.28846, 0.921873)
 shape = SubResource("RectangleShape2D_wmaxs")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=576910337]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=367253716]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(78, 0)
 shape = SubResource("SegmentShape2D_oj64t")
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=830754940]
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
 collision_layer = 5
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=623439185]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
 shape = SubResource("SegmentShape2D_oj64t")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=210132124]
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
 collision_layer = 4
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1071160958]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(0, 93)
 shape = SubResource("SegmentShape2D_gxfmd")
 
-[node name="Button Area" type="Area2D" parent="." unique_id=679094609]
+[node name="Button Area" type="Area2D" parent="."]
 scale = Vector2(1.00294, 1)
 collision_layer = 2
 collision_mask = 7
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Button Area" unique_id=1127673106]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button Area"]
 position = Vector2(-3, 57)
 shape = SubResource("RectangleShape2D_5gn37")
 
-[node name="Interactable zone" type="Sprite2D" parent="Button Area" unique_id=730482716]
+[node name="Interactable zone" type="Sprite2D" parent="Button Area"]
 position = Vector2(-3.98827, 58)
 scale = Vector2(0.913981, 2.31355)
 texture = ExtResource("3_qf7y8")
 
-[node name="Lever" type="Sprite2D" parent="Button Area" unique_id=114078357]
+[node name="Lever" type="Sprite2D" parent="Button Area"]
 position = Vector2(-3.7478, 56)
 texture = ExtResource("4_6h86o")
 offset = Vector2(10, 0)
 
-[node name="Door" type="Area2D" parent="Button Area" unique_id=229305053]
+[node name="Door" type="Area2D" parent="Button Area"]
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Button Area/Door" unique_id=1263103978]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Button Area/Door"]
 position = Vector2(0, -1)
 shape = SubResource("SegmentShape2D_o43ih")
 

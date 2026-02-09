@@ -81,7 +81,6 @@ position = Vector2(2, -180)
 tile_set = ExtResource("2_qhrob")
 
 [node name="Decore" type="TileMapLayer" parent="Tilemap"]
-tile_map_data = PackedByteArray("AAACAAgAAgAGAAAAAAACAAkAAgAGAAEAAAA=")
 tile_set = ExtResource("2_qhrob")
 
 [node name="Darkness" type="TileMapLayer" parent="Tilemap"]
@@ -179,9 +178,9 @@ position = Vector2(148, -114)
 
 [node name="Dino Pot" parent="Y-sorting" instance=ExtResource("22_qkqmv")]
 position = Vector2(143, 182)
-canLift = true
 canPush = false
 canPull = false
+canLift = true
 
 [node name="Pot" parent="Y-sorting" instance=ExtResource("23_x73vs")]
 position = Vector2(260, 135)
