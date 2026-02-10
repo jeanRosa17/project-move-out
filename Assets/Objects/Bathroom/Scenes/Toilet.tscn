@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://dq5pqd6sqwcnf" path="res://Assets/Objects/Bathroom/Toilet-Sheet.png" id="2_gyd13"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
-size = Vector2(14, 23)
+size = Vector2(24, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
-size = Vector2(16, 25)
+size = Vector2(32, 32)
 
 [node name="Toilet" type="RigidBody2D" groups=["Furniture"]]
 collision_layer = 2
@@ -21,20 +21,21 @@ canPull = true
 metadata/_custom_type_script = "uid://c2vh27coguldq"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -4)
 texture = ExtResource("2_gyd13")
 region_enabled = true
 region_rect = Rect2(52, 0, 16, 24)
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.5)
+position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_xnri0")
 
 [node name="AreaDetector" type="Area2D" parent="." groups=["Furniture"]]
+position = Vector2(0, -4)
 collision_layer = 2
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector"]
-position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_ardoa")
 
 [connection signal="body_shape_entered" from="AreaDetector" to="." method="_on_area_detector_body_shape_entered"]

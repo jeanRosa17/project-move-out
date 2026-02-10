@@ -7,12 +7,12 @@ class_name Furniture
 @onready var area_detector: Area2D = $AreaDetector
 @onready var area_shape: CollisionShape2D = $AreaDetector/CollisionShape2D
 
+
 @export var canLift:bool = false
 @export var canPush:bool = false
 @export var canPull:bool = false
 
 @export var weight:int = 0
-
 var isLifted: bool = false
 var isPushed: bool = false
 var canBeDropped: bool = true ## Changed to true so that a player can immediately pick up and drop something
@@ -61,6 +61,14 @@ var canMovePositiveY:bool = true
 @warning_ignore("untyped_declaration")
 func _ready() -> void:
 	
+	self.createAdditionalCollisions()
+	
+	areaLeft.body_entered.connect(_on_left_area_entered)
+	areaLeft.body_exited.connect(_on_left_area_exited)
+	
+	self.lock_rotation = true
+
+func createAdditionalCollisions() -> void:
 	collider.debug_color = Color.GREEN
 	var shape:Shape2D = collider.shape
 	@warning_ignore("untyped_declaration") var rect = shape.get_rect()
@@ -119,11 +127,6 @@ func _ready() -> void:
 	areaLeft.name = "Left"
 	areaLeft.add_child(shapeLeft)
 	self.add_child(areaLeft)
-	
-	areaLeft.body_entered.connect(_on_left_area_entered)
-	areaLeft.body_exited.connect(_on_left_area_exited)
-	
-	self.lock_rotation = true
 
 func _physics_process(_delta: float) -> void:
 	if (self.ghostSprite != null):
