@@ -24,7 +24,7 @@ metadata/_custom_type_script = "uid://c2vh27coguldq"
 position = Vector2(0, -4)
 texture = ExtResource("2_gyd13")
 region_enabled = true
-region_rect = Rect2(52, 0, 16, 24)
+region_rect = Rect2(0, 0, 24, 24)
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, -4)

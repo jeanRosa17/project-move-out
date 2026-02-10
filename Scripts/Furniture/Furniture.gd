@@ -11,27 +11,29 @@ class_name Furniture
 @export var canLift:bool = false
 @export var canPush:bool = false
 @export var canPull:bool = false
+@export var canRotate:bool
+@export var rotatedVersion:Furniture
+var rotated: int = 0
 
 @export var weight:int = 0
+@export var dialogueTag:DialogueTag = preload("res://Scripts/Dialogue/nullDialogue.tres")
+@export var liftPosition:Vector2 = Vector2(0, -16)
+
 var isLifted: bool = false
 var isPushed: bool = false
 var canBeDropped: bool = true ## Changed to true so that a player can immediately pick up and drop something
 
-@export var dialogueTag:DialogueTag = preload("res://Scripts/Dialogue/nullDialogue.tres")
+
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var ghostSprite: Sprite2D = sprite_2d.duplicate()
 
 @onready var collider:CollisionShape2D = $Collision
 
-@export var canRotate:bool
-@export var rotatedVersion:Furniture
-
 
 var player: CharacterBody2D
 
 var distanceFromPlayer:float
-var cantMove:bool
 
 var objects: Array[Node2D] = []
 
@@ -55,8 +57,6 @@ var canMovePositiveY:bool = true
 @onready var areaTop:Area2D = Area2D.new()
 @onready var areaRight:Area2D = Area2D.new()
 @onready var areaLeft:Area2D = Area2D.new()
-
-@export var liftPosition:Vector2 = Vector2(0, -16)
 
 @warning_ignore("untyped_declaration")
 func _ready() -> void:
@@ -281,7 +281,18 @@ func exitPush()-> void:
 #endregion
 
 func rotateObj() -> void:
-	if (canRotate):
+	#if (self.canRotate):
+		#print("rotate")
+		#@warning_ignore("untyped_declaration") var pos = self.global_position
+		#if (self.rotated > 2):
+			#self.rotated = 0
+		#else:
+			#self.rotated += 1
+		#
+		#var rect:Rect2 = self.sprite_2d.region_rect
+		#self.sprite_2d.region_rect = Rect2(Vector2(rect.size.x * rotated, rect.position.y), rect.size)
+		
+	if (self.canRotate):
 		print("rotate")
 		@warning_ignore("untyped_declaration") var pos = self.global_position
 		
@@ -297,8 +308,6 @@ func rotateObj() -> void:
 		rotatedVersion.visible = true
 		rotatedVersion.collision_layer = 2
 		rotatedVersion.collision_mask = 7
-		
-
 		
 		rotatedVersion.enterPush(player)
 		
