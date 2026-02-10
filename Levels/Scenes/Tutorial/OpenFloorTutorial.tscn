@@ -252,7 +252,7 @@ position = Vector2(256, 208)
 position = Vector2(260, 50)
 
 [node name="Player" parent="Y-Sorting" instance=ExtResource("6_4y23e")]
-position = Vector2(160, 392)
+position = Vector2(92, 212)
 safe_margin = 1.159
 
 [node name="Camera2D2" type="Camera2D" parent="Y-Sorting/Player"]
@@ -276,6 +276,9 @@ tile_set = ExtResource("3_3j8mk")
 
 [node name="Fridge" parent="Y-Sorting" instance=ExtResource("19_yn8gu")]
 position = Vector2(104, 168)
+
+[node name="Bathtub" parent="Y-Sorting" instance=ExtResource("24_v8k2n")]
+position = Vector2(356, 244)
 
 [node name="wooden_shelf_front" parent="Y-Sorting" instance=ExtResource("19_rwqj1")]
 position = Vector2(184, 80)
@@ -312,9 +315,6 @@ texture = ExtResource("4_odab6")
 [node name="Cup" type="Sprite2D" parent="."]
 position = Vector2(30, 265)
 texture = SubResource("CompressedTexture2D_v8k2n")
-
-[node name="Bathtub" parent="." instance=ExtResource("24_v8k2n")]
-position = Vector2(352, 248)
 
 [connection signal="body_shape_entered" from="Y-Sorting/Microwave/AreaDetector" to="Y-Sorting/Microwave" method="_on_area_detector_body_shape_entered"]
 [connection signal="body_shape_exited" from="Y-Sorting/Microwave/AreaDetector" to="Y-Sorting/Microwave" method="_on_area_detector_body_shape_exited"]
