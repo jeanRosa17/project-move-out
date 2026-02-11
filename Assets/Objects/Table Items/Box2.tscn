@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ctlkntl3tgxpl"]
+[gd_scene format=3 uid="uid://ctlkntl3tgxpl"]
 
 [ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_8g6xl"]
 [ext_resource type="Texture2D" uid="uid://digo2hq2r3kvr" path="res://Assets/Objects/Table Items/Boxes-Sheet.png" id="2_ysw6p"]

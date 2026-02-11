@@ -52,7 +52,7 @@ func lockDirection() -> void:
 		self.manager.direction.x = 0
 		self.manager.direction.y = y
 		
-	print(locked_axis)
+	#print(locked_axis)
 
 func animations() -> void:
 	var prefix:String = "move"

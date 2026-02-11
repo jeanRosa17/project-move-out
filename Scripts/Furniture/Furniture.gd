@@ -151,16 +151,17 @@ func _physics_process(_delta: float) -> void:
 			#canMovePositiveY = true
 			#
 
-
+		#if (self.player.velocity != Vector2.ZERO):
+		print(player.velocity)
 		linear_velocity = linear_velocity.lerp(player.velocity, 1)
 	
-	if(self.player):
-		if(self.position.distance_to(self.player.position) > 40):
+	if (self.player):
+		if(self.position.distance_to(self.player.position) > self.distanceFromPlayer * 1.25):
 			if(self.isPushed):
-				#self.exitPush()
-				pass
-			if(self.isLifted):
-				self.exitLift()
+				self.exitPush()
+				#pass
+			#if(self.isLifted):
+				#self.exitLift()
 
 func update_detector_direction(direction: Vector2) -> void:
 	if (abs(direction.x) > abs(direction.y)):
@@ -270,7 +271,7 @@ func enterPush(body: CharacterBody2D) -> void:
 	print(player.name)
 	self.collision_layer = 0
 	audioPlayer.push_sound(self)
-	#distanceFromPlayer = position.distance_to(player.position)
+	self.distanceFromPlayer = position.distance_to(player.position)
 	self.isPushed = true
 
 func exitPush()-> void:
