@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene format=4 uid="uid://pji3ucc8osl6"]
+=======
+[gd_scene load_steps=26 format=4 uid="uid://pji3ucc8osl6"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Texture2D" uid="uid://dlqlqw0fvr4wp" path="res://Assets/Objects/Carpets/carpet.png" id="2_pebci"]
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="3_3j8mk"]
@@ -8,18 +12,18 @@
 [ext_resource type="PackedScene" uid="uid://dpyl8x5qojmng" path="res://Assets/Objects/Table Items/Scenes/TV.tscn" id="7_d4vco"]
 [ext_resource type="PackedScene" uid="uid://d26wukook25xb" path="res://Assets/Objects/Dressers & Shelves/Scenes/Table.tscn" id="7_j8pg1"]
 [ext_resource type="PackedScene" uid="uid://c638p25j2md1l" path="res://Assets/Objects/Bathroom/Scenes/Toilet.tscn" id="9_4s3f5"]
+[ext_resource type="PackedScene" uid="uid://c63sjbuok03ik" path="res://Assets/Objects/Kitchen/Microwave.tscn" id="10_rwqj1"]
 [ext_resource type="PackedScene" uid="uid://dq5dgctxnghmb" path="res://Assets/Objects/Beds/Scene/Double_Bed.tscn" id="11_8inuc"]
-[ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="12_4jb3v"]
+[ext_resource type="PackedScene" uid="uid://cej1okt6o4xno" path="res://Assets/Objects/Kitchen/Blender.tscn" id="11_rwqj1"]
 [ext_resource type="PackedScene" uid="uid://nomguund5j25" path="res://Assets/Objects/Couches/Scenes/red_couch_front.tscn" id="12_4s3f5"]
+[ext_resource type="PackedScene" uid="uid://cqdp8re40atuh" path="res://Assets/Objects/Table Items/Box.tscn" id="12_v8k2n"]
 [ext_resource type="PackedScene" uid="uid://uacgji4vcg37" path="res://Assets/Audio/push_pull_audio.tscn" id="13_rwqj1"]
-[ext_resource type="Texture2D" uid="uid://1pndgm8ucik4" path="res://Assets/Objects/Kitchen/Kitchen-Sheet.png" id="13_v8k2n"]
+[ext_resource type="PackedScene" uid="uid://ctlkntl3tgxpl" path="res://Assets/Objects/Table Items/Box2.tscn" id="13_v8k2n"]
 [ext_resource type="PackedScene" uid="uid://ip4pm1ex6klr" path="res://Levels/Scenes/Garage.tscn" id="13_ymjk0"]
-[ext_resource type="Texture2D" uid="uid://d4akcfxxhonmq" path="res://Assets/Objects/Table Items/Table Items-Sheet.png" id="14_4alro"]
 [ext_resource type="PackedScene" uid="uid://bfp82m6exqyhy" path="res://Assets/Objects/Bathroom/Scenes/Sink.tscn" id="16_heyvs"]
 [ext_resource type="PackedScene" uid="uid://b7qk52eapta2s" path="res://Assets/Objects/Dressers & Shelves/Scenes/wooden_wardrobe_front.tscn" id="18_6pr51"]
 [ext_resource type="PackedScene" uid="uid://bujcbosiagjri" path="res://Assets/Objects/Dressers & Shelves/Scenes/wooden_shelf_front.tscn" id="19_rwqj1"]
 [ext_resource type="PackedScene" uid="uid://cl3ww3w6r3n1r" path="res://Assets/Objects/Kitchen/Scenes/Fridge.tscn" id="19_yn8gu"]
-[ext_resource type="Texture2D" uid="uid://digo2hq2r3kvr" path="res://Assets/Objects/Table Items/Boxes-Sheet.png" id="20_rwqj1"]
 [ext_resource type="PackedScene" uid="uid://cfmb3mmeue8au" path="res://UI/Scenes/HUD.tscn" id="24_4alro"]
 [ext_resource type="PackedScene" uid="uid://ce4x5g5hrvxce" path="res://Assets/Objects/Bathroom/Scenes/Bathtub.tscn" id="24_v8k2n"]
 [ext_resource type="AudioStream" uid="uid://dy61bwuip8a27" path="res://Assets/Audio/lvl1.wav" id="25_4alro"]
@@ -27,12 +31,6 @@
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iqcmb"]
 normal = Vector2(1.79515e-06, 1)
 distance = -3.99999
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
-size = Vector2(26, 23)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
-size = Vector2(31, 33)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_v8k2n"]
 
@@ -111,14 +109,20 @@ scale = Vector2(0.973214, 1.01571)
 position = Vector2(316, 66)
 collision_layer = 4
 
+<<<<<<< Updated upstream
 [node name="Toilet2" parent="Y-Sorting" unique_id=1317688742 instance=ExtResource("9_4s3f5")]
 position = Vector2(284, 236)
+=======
+[node name="Toilet2" parent="Y-Sorting" instance=ExtResource("9_4s3f5")]
+position = Vector2(284, 216)
+>>>>>>> Stashed changes
 
 [node name="Push_Pull Audio" parent="Y-Sorting" unique_id=143978850 instance=ExtResource("13_rwqj1")]
 
 [node name="Couch" parent="Y-Sorting" unique_id=896235625 instance=ExtResource("12_4s3f5")]
 position = Vector2(45, 56)
 
+<<<<<<< Updated upstream
 [node name="Microwave" type="RigidBody2D" parent="Y-Sorting" unique_id=1568610523 groups=["Furniture"]]
 z_index = 1
 position = Vector2(68, 252)
@@ -152,15 +156,15 @@ shape = SubResource("RectangleShape2D_ardoa")
 
 [node name="Blender" type="RigidBody2D" parent="Y-Sorting" unique_id=498092328 groups=["Furniture"]]
 z_index = 1
-position = Vector2(36, 252)
-collision_layer = 2
-collision_mask = 7
-gravity_scale = 0.0
-can_sleep = false
-lock_rotation = true
-script = ExtResource("12_4jb3v")
-metadata/_custom_type_script = "uid://c2vh27coguldq"
+=======
+[node name="Microwave" parent="Y-Sorting" instance=ExtResource("10_rwqj1")]
+position = Vector2(68, 264)
 
+[node name="Blender" parent="Y-Sorting" instance=ExtResource("11_rwqj1")]
+>>>>>>> Stashed changes
+position = Vector2(36, 252)
+
+<<<<<<< Updated upstream
 [node name="Sprite2D" type="Sprite2D" parent="Y-Sorting/Blender" unique_id=1752319707]
 position = Vector2(0, 9)
 texture = ExtResource("14_4alro")
@@ -241,6 +245,14 @@ collision_mask = 7
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Y-Sorting/Box2/AreaDetector" unique_id=1619150081]
 position = Vector2(-0.5, -1.5)
 shape = SubResource("RectangleShape2D_ardoa")
+=======
+[node name="Box" parent="Y-Sorting" instance=ExtResource("12_v8k2n")]
+position = Vector2(52, 196)
+
+[node name="Box2" parent="Y-Sorting" instance=ExtResource("13_v8k2n")]
+z_index = 1
+position = Vector2(28, 156)
+>>>>>>> Stashed changes
 
 [node name="Sink" parent="Y-Sorting" unique_id=714677562 instance=ExtResource("16_heyvs")]
 position = Vector2(256, 208)
@@ -248,8 +260,13 @@ position = Vector2(256, 208)
 [node name="Wardrobe" parent="Y-Sorting" unique_id=376716857 instance=ExtResource("18_6pr51")]
 position = Vector2(260, 50)
 
+<<<<<<< Updated upstream
 [node name="Player" parent="Y-Sorting" unique_id=1247604616 instance=ExtResource("6_4y23e")]
 position = Vector2(92, 212)
+=======
+[node name="Player" parent="Y-Sorting" instance=ExtResource("6_4y23e")]
+position = Vector2(88, 212)
+>>>>>>> Stashed changes
 safe_margin = 1.159
 
 [node name="Camera2D2" type="Camera2D" parent="Y-Sorting/Player" unique_id=1830689267]
@@ -313,15 +330,6 @@ texture = ExtResource("4_odab6")
 [node name="Cup" type="Sprite2D" parent="." unique_id=1337260706]
 position = Vector2(30, 265)
 texture = SubResource("CompressedTexture2D_v8k2n")
-
-[connection signal="body_shape_entered" from="Y-Sorting/Microwave/AreaDetector" to="Y-Sorting/Microwave" method="_on_area_detector_body_shape_entered"]
-[connection signal="body_shape_exited" from="Y-Sorting/Microwave/AreaDetector" to="Y-Sorting/Microwave" method="_on_area_detector_body_shape_exited"]
-[connection signal="body_shape_entered" from="Y-Sorting/Blender/AreaDetector" to="Y-Sorting/Blender" method="_on_area_detector_body_shape_entered"]
-[connection signal="body_shape_exited" from="Y-Sorting/Blender/AreaDetector" to="Y-Sorting/Blender" method="_on_area_detector_body_shape_exited"]
-[connection signal="body_shape_entered" from="Y-Sorting/Box/AreaDetector" to="Y-Sorting/Box" method="_on_area_detector_body_shape_entered"]
-[connection signal="body_shape_exited" from="Y-Sorting/Box/AreaDetector" to="Y-Sorting/Box" method="_on_area_detector_body_shape_exited"]
-[connection signal="body_shape_entered" from="Y-Sorting/Box2/AreaDetector" to="Y-Sorting/Box2" method="_on_area_detector_body_shape_entered"]
-[connection signal="body_shape_exited" from="Y-Sorting/Box2/AreaDetector" to="Y-Sorting/Box2" method="_on_area_detector_body_shape_exited"]
 
 [editable path="Garage"]
 [editable path="HUD"]

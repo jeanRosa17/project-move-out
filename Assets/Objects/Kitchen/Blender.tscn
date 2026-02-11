@@ -1,38 +1,37 @@
-[gd_scene load_steps=5 format=3 uid="uid://c638p25j2md1l"]
+[gd_scene load_steps=5 format=3 uid="uid://cej1okt6o4xno"]
 
-[ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_n52ri"]
-[ext_resource type="Texture2D" uid="uid://dq5pqd6sqwcnf" path="res://Assets/Objects/Bathroom/Toilet-Sheet.png" id="2_gyd13"]
+[ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_6p50t"]
+[ext_resource type="Texture2D" uid="uid://d4akcfxxhonmq" path="res://Assets/Objects/Table Items/Table Items-Sheet.png" id="2_70cmo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
-size = Vector2(24, 24)
+size = Vector2(8, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
-size = Vector2(32, 32)
+size = Vector2(16, 24)
 
-[node name="Toilet" type="RigidBody2D" groups=["Furniture"]]
+[node name="Blender" type="RigidBody2D" groups=["Furniture"]]
+z_index = 1
 collision_layer = 2
 collision_mask = 7
 gravity_scale = 0.0
 can_sleep = false
 lock_rotation = true
-script = ExtResource("1_n52ri")
-canPush = true
-canPull = true
-canRotate = true
+script = ExtResource("1_6p50t")
+canLift = true
 metadata/_custom_type_script = "uid://c2vh27coguldq"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -4)
-texture = ExtResource("2_gyd13")
+position = Vector2(0, 9)
+texture = ExtResource("2_70cmo")
 region_enabled = true
-region_rect = Rect2(0, 0, 24, 24)
+region_rect = Rect2(127, 100, 10, 18)
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, -4)
+position = Vector2(0, 12)
 shape = SubResource("RectangleShape2D_xnri0")
 
 [node name="AreaDetector" type="Area2D" parent="." groups=["Furniture"]]
-position = Vector2(0, -4)
+position = Vector2(0, 9)
 collision_layer = 2
 collision_mask = 7
 
