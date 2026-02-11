@@ -20,6 +20,7 @@ func enter() -> void:
 		#manager.view.play("push " + dir)
 		
 	#lock player rotation/flip
+	print("furniture = ", manager.furniture.name)
 	if (!manager.furniture.isPushed):
 		manager.furniture.enterPush(self.body)
 	else:

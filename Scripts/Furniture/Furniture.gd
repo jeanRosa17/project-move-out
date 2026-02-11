@@ -157,7 +157,8 @@ func _physics_process(_delta: float) -> void:
 	if(self.player):
 		if(self.position.distance_to(self.player.position) > 40):
 			if(self.isPushed):
-				self.exitPush()
+				#self.exitPush()
+				pass
 			if(self.isLifted):
 				self.exitLift()
 

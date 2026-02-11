@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dq5dgctxnghmb"]
+[gd_scene format=3 uid="uid://dq5dgctxnghmb"]
 
 [ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_jno4m"]
 [ext_resource type="Texture2D" uid="uid://d0isplmwp60m5" path="res://Assets/Objects/Beds/Red Beds-Sheet.png" id="2_h1k57"]
@@ -8,9 +8,9 @@
 size = Vector2(32, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
-size = Vector2(48, 64)
+size = Vector2(48, 66)
 
-[node name="Double Bed" type="RigidBody2D" groups=["Furniture"]]
+[node name="Double Bed" type="RigidBody2D" unique_id=2143953877 groups=["Furniture"]]
 collision_layer = 2
 collision_mask = 7
 gravity_scale = 0.0
@@ -21,26 +21,27 @@ canPush = true
 canPull = true
 metadata/_custom_type_script = "uid://c2vh27coguldq"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1094601945]
 texture = ExtResource("2_h1k57")
 region_enabled = true
 region_rect = Rect2(16, 134, 32, 58)
 
-[node name="Pillow" type="Sprite2D" parent="."]
+[node name="Pillow" type="Sprite2D" parent="." unique_id=468716225]
 position = Vector2(0, -6)
 texture = ExtResource("3_sa787")
 region_enabled = true
 region_rect = Rect2(1, 6, 22, 12)
 
-[node name="Collision" type="CollisionShape2D" parent="."]
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1563899313]
 position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_xnri0")
 
-[node name="AreaDetector" type="Area2D" parent="." groups=["Furniture"]]
+[node name="AreaDetector" type="Area2D" parent="." unique_id=647067123 groups=["Furniture"]]
 collision_layer = 2
 collision_mask = 7
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector" unique_id=823746789]
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_ardoa")
 
 [connection signal="body_shape_entered" from="AreaDetector" to="." method="_on_area_detector_body_shape_entered"]
