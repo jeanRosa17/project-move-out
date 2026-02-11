@@ -5,7 +5,7 @@ extends CharacterBody2D
 @onready var view:AnimatedSprite2D = $NewAnimatedSprite2D
 
 var canControl:bool = true
-
+var locked_axis := "none"
 
 func _ready() -> void:
 	self.manager.start()
@@ -21,9 +21,38 @@ func _process(delta:float) -> void:
 		#self.handlePushPull(delta)
 		self.handleInteract(delta)
 		self.handleRotate(delta)
-		manager.update_direction()
 	
 	animations()
+	lockDirection()
+
+func lockDirection() -> void:
+	locked_axis = "none"
+	var x := int(Input.is_action_pressed("MoveRight")) \
+		- int(Input.is_action_pressed("MoveLeft"))
+	var y := int(Input.is_action_pressed("MoveDown")) \
+		- int(Input.is_action_pressed("MoveUp"))
+		
+	if locked_axis == "horizontal" and x == 0:
+		locked_axis = "none"
+	elif locked_axis == "vertical" and y == 0:
+		locked_axis = "none"
+		
+	if locked_axis == "none":
+		if y != 0:
+			locked_axis = "vertical"
+		elif x != 0:
+			locked_axis = "horizontal"
+		
+	self.manager.direction = Vector2i.ZERO
+	
+	if locked_axis == "horizontal":
+		self.manager.direction.y = 0
+		self.manager.direction.x = x
+	elif locked_axis == "vertical":
+		self.manager.direction.x = 0
+		self.manager.direction.y = y
+		
+	print(locked_axis)
 
 func animations() -> void:
 	var prefix:String = "move"
@@ -33,16 +62,21 @@ func animations() -> void:
 			prefix = "pushing"
 		if (self.manager.furniture.isLifted):
 			prefix = "movelift"
-		
-	if (Input.is_action_pressed("MoveLeft") or Input.is_action_pressed("MoveRight")):
+	
+	if Input.is_action_pressed("MoveLeft") and locked_axis != "vertical":
+		self.view.flip_h = true
+		self.manager.view.play(prefix + " side")
+	
+	elif Input.is_action_pressed("MoveRight") and locked_axis != "vertical":
+		self.view.flip_h = false
 		self.manager.view.play(prefix + " side")
 		return
 
-	elif (Input.is_action_pressed("MoveUp")):
+	elif Input.is_action_pressed("MoveUp") and locked_axis != "horizontal":
 		self.manager.view.play(prefix + " up")
 		return
 		
-	elif (Input.is_action_pressed("MoveDown")):
+	elif Input.is_action_pressed("MoveDown") and locked_axis != "horizontal":
 		self.manager.view.play(prefix + " down")
 		return
 	

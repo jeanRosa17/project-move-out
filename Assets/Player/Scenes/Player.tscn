@@ -1221,6 +1221,7 @@ stream_1/stream = ExtResource("27_bmblf")
 [node name="Body" type="CharacterBody2D"]
 y_sort_enabled = true
 collision_mask = 6
+motion_mode = 1
 platform_on_leave = 2
 platform_floor_layers = 4278190080
 script = ExtResource("1_f5xin")
