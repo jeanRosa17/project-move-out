@@ -31,7 +31,7 @@ func enter() -> void:
 
 ## The last method called when the state is transitioned out of
 func exit() -> void:
-	#manager.furniture.exitPush()
+	# manager.furniture.exitPush()
 	pass
 	
 ## Constantly checks for input from the user and changes state.

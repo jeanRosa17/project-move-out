@@ -194,6 +194,9 @@ volume_db = -10.654
 [node name="HUD" parent="." instance=ExtResource("18_rt88h")]
 unique_name_in_owner = true
 
+[node name="LevelManager" parent="HUD" index="0"]
+visible = false
+
 [node name="Level Results" parent="HUD" index="1"]
 visible = false
 nextLevelName = &"res://Levels/Scenes/HauntedHouseLevel.tscn"

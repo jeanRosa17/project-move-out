@@ -41,7 +41,8 @@ func exit() -> void:
 ## sets the position of Player's Detector's collision shape to always be 
 ## in front of where the player is looking.
 func update(_delta:float) -> void:
-	self.area2DCollision.position = self.getManager().direction * 16
+	if not (self.manager.hasFurniture and self.manager.furniture.isPushed):
+		self.area2DCollision.position = self.getManager().direction * 16
 	
 ## This method runs every _physics_process() frame of the StateManager.
 func physicsUpdate(_delta:float) -> void:
