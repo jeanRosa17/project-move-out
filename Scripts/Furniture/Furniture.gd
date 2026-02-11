@@ -61,6 +61,14 @@ var canMovePositiveY:bool = true
 @warning_ignore("untyped_declaration")
 func _ready() -> void:
 	
+	if (canRotate && rotatedVersion != null):
+		rotatedVersion.visible = false
+		rotatedVersion.collision_layer = 0
+		rotatedVersion.collision_mask = 0
+		#rotatedVersion.rotatedVersion = self
+		rotatedVersion.global_position = self.global_position
+		
+	
 	self.createAdditionalCollisions()
 	
 	areaLeft.body_entered.connect(_on_left_area_entered)
@@ -296,6 +304,7 @@ func rotateObj() -> void:
 		
 	if (self.canRotate):
 		print("rotate")
+		print("rotating: ", self.name)
 		@warning_ignore("untyped_declaration") var pos = self.global_position
 		
 		self.exitPush()
@@ -305,11 +314,16 @@ func rotateObj() -> void:
 		
 		rotatedVersion.global_position = pos
 		rotatedVersion.reparent(self.get_parent())
-
+		
+		rotatedVersion.canRotate = true
+		rotatedVersion.rotatedVersion = self
+		
 		self.reparent(rotatedVersion)
 		rotatedVersion.visible = true
 		rotatedVersion.collision_layer = 2
 		rotatedVersion.collision_mask = 7
+		
+		player.manager.furniture = rotatedVersion
 		
 		rotatedVersion.enterPush(player)
 		

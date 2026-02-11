@@ -6,9 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://dkssiia1dmwor" path="res://Assets/Objects/Chairs/Scene/Wood_Chair_Side.tscn" id="6_u0unu"]
 [ext_resource type="PackedScene" uid="uid://dpyl8x5qojmng" path="res://Assets/Objects/Table Items/Scenes/TV.tscn" id="7_d4vco"]
 [ext_resource type="PackedScene" uid="uid://d26wukook25xb" path="res://Assets/Objects/Dressers & Shelves/Scenes/Table.tscn" id="7_j8pg1"]
+[ext_resource type="PackedScene" uid="uid://b88hxixgay80f" path="res://Assets/Objects/Bathroom/Scenes/Toilet_Side.tscn" id="8_v8k2n"]
 [ext_resource type="PackedScene" uid="uid://c638p25j2md1l" path="res://Assets/Objects/Bathroom/Scenes/Toilet.tscn" id="9_4s3f5"]
 [ext_resource type="PackedScene" uid="uid://dq5dgctxnghmb" path="res://Assets/Objects/Beds/Scene/Double_Bed.tscn" id="11_8inuc"]
-[ext_resource type="PackedScene" uid="uid://co1ahpewxcatg" path="res://Assets/Objects/Kitchen/Blender.tscn" id="11_rwqj1"]
+[ext_resource type="PackedScene" uid="uid://cej1okt6o4xno" path="res://Assets/Objects/Kitchen/Blender.tscn" id="11_rwqj1"]
 [ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="12_4jb3v"]
 [ext_resource type="PackedScene" uid="uid://nomguund5j25" path="res://Assets/Objects/Couches/Scenes/red_couch_front.tscn" id="12_4s3f5"]
 [ext_resource type="PackedScene" uid="uid://cqdp8re40atuh" path="res://Assets/Objects/Table Items/Box.tscn" id="12_v8k2n"]
@@ -110,8 +111,12 @@ scale = Vector2(0.973214, 1.01571)
 position = Vector2(316, 66)
 collision_layer = 4
 
-[node name="Toilet2" parent="Y-Sorting" unique_id=1048882399 instance=ExtResource("9_4s3f5")]
+[node name="Toilet2" parent="Y-Sorting" unique_id=1048882399 node_paths=PackedStringArray("rotatedVersion") instance=ExtResource("9_4s3f5")]
 position = Vector2(284, 216)
+rotatedVersion = NodePath("Toilet_Side")
+
+[node name="Toilet_Side" parent="Y-Sorting/Toilet2" unique_id=1543828467 instance=ExtResource("8_v8k2n")]
+canRotate = true
 
 [node name="Push_Pull Audio" parent="Y-Sorting" unique_id=41309611 instance=ExtResource("13_rwqj1")]
 
