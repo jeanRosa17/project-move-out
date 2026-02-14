@@ -31,7 +31,7 @@ func exit() -> void:
 ## If the Detector is overlapping with something, then the Furniture can't be
 ## dropped.
 func _on_detected_body_entered(_body: Node2D) -> void:
-	if (self.manager.hasFurniture):
+	if(self.manager.hasFurniture):
 		self.manager.furniture.canBeDropped = false
 
 ## By default, a Furniture can be dropped, but this signal ensures it returns

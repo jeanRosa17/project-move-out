@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c6jvhr0ojqfc4" path="res://Assets/Objects/Chairs/Round Base Chair-Sheet.png" id="2_bt5v0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
-size = Vector2(16, 11.5)
+size = Vector2(16, 16.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
 size = Vector2(24, 34)
@@ -26,7 +26,7 @@ region_enabled = true
 region_rect = Rect2(32, 0, 32, 32)
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 10.75)
+position = Vector2(0, 8.25)
 shape = SubResource("RectangleShape2D_xnri0")
 
 [node name="AreaDetector" type="Area2D" parent="." groups=["Furniture"]]
