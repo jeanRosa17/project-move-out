@@ -61,7 +61,7 @@ var canMovePositiveY:bool = true
 @warning_ignore("untyped_declaration")
 func _ready() -> void:
 	
-	if (canRotate && rotatedVersion != null):
+	if (rotatedVersion != null):
 		rotatedVersion.visible = false
 		rotatedVersion.collision_layer = 0
 		rotatedVersion.collision_mask = 0
@@ -302,7 +302,7 @@ func rotateObj() -> void:
 		#var rect:Rect2 = self.sprite_2d.region_rect
 		#self.sprite_2d.region_rect = Rect2(Vector2(rect.size.x * rotated, rect.position.y), rect.size)
 		
-	if (self.canRotate):
+	if (self.rotatedVersion):
 		print("rotate")
 		print("rotating: ", self.name)
 		@warning_ignore("untyped_declaration") var pos = self.global_position
@@ -315,8 +315,9 @@ func rotateObj() -> void:
 		rotatedVersion.global_position = pos
 		rotatedVersion.reparent(self.get_parent())
 		
-		rotatedVersion.canRotate = true
+		#rotatedVersion.canRotate = true
 		rotatedVersion.rotatedVersion = self
+		rotatedVersion.dialogueTag = self.dialogueTag
 		
 		self.reparent(rotatedVersion)
 		rotatedVersion.visible = true
@@ -338,30 +339,7 @@ func relieveObject(newObject: Node2D) -> void:
 	if (objects.has(newObject)):
 		objects.erase(newObject)
 		print("removed object: ")
-		print(newObject.name)
-
-func _on_area_detector_body_shape_entered(_body_rid: RID, body: Node2D, _body_shape_index: int, _local_shape_index: int) -> void:
-	if (body.is_in_group("World Bounds") && self.isPushed):
-		print("cannot push (wall)")
-		print(body.name)
-		#againstObject(body)
-	elif (body.is_in_group("Furniture") && body != self && self.isPushed):
-		print("cannot push (furniture)")
-		print(body.name)
-		#againstObject(body)
-	pass # Replace with function body.
-
-func _on_area_detector_body_shape_exited(_body_rid: RID, body: Node2D, _body_shape_index: int, _local_shape_index: int) -> void:
-	if (body == null):
-		return
-	if (body.is_in_group("World Bounds") && self.isPushed):
-		print("can push (off wall)")
-		#relieveObject(body)
-	elif(body.is_in_group("Furniture") && body != self && self.isPushed):
-		print("can push (off furniture)")
-		print(body.name)
-		#relieveObject(body)
-	pass # Replace with function body.
+		print(newObject.name)            
 #endregion
 
 #region collisions

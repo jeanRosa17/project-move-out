@@ -33,12 +33,3 @@ func enter() -> void:
 func exit() -> void:
 	# manager.furniture.exitPush()
 	pass
-	
-## Constantly checks for input from the user and changes state.
-func update(_delta:float) -> void:
-	if (manager.furniture):
-		#print(self.manager.furniture.position.distance_to(self.body.position))
-		if (manager.furniture.position.distance_to(self.body.position) > 50):
-			pass
-			#self.exit()
-	

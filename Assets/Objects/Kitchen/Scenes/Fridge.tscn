@@ -1,16 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://cl3ww3w6r3n1r"]
+[gd_scene format=3 uid="uid://cl3ww3w6r3n1r"]
 
 [ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_c6p5g"]
 [ext_resource type="Texture2D" uid="uid://1pndgm8ucik4" path="res://Assets/Objects/Kitchen/Kitchen-Sheet.png" id="2_c3vff"]
 [ext_resource type="Texture2D" uid="uid://dcfsp4m1deajw" path="res://Assets/Objects/Table Items/Kitchen Items-Sheet.png" id="3_c3vff"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
-size = Vector2(32, 56)
+size = Vector2(32, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gifpp"]
 size = Vector2(48, 72)
 
-[node name="Fridge" type="RigidBody2D" groups=["Furniture"]]
+[node name="Fridge" type="RigidBody2D" unique_id=1812637953 groups=["Furniture"]]
 y_sort_enabled = true
 collision_layer = 2
 collision_mask = 7
@@ -18,27 +18,27 @@ gravity_scale = 0.0
 script = ExtResource("1_c6p5g")
 canLift = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=640295998]
 position = Vector2(0, -17.5)
 texture = ExtResource("2_c3vff")
 region_enabled = true
 region_rect = Rect2(288, 0, 32, 64)
 
-[node name="Cereal Box" type="Sprite2D" parent="."]
+[node name="Cereal Box" type="Sprite2D" parent="." unique_id=1758443918]
 z_index = 1
 position = Vector2(-10, -42.167946)
 texture = ExtResource("3_c3vff")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
-[node name="Cereal Box2" type="Sprite2D" parent="."]
+[node name="Cereal Box2" type="Sprite2D" parent="." unique_id=1297294988]
 z_index = 1
 position = Vector2(-7, -42.167946)
 texture = ExtResource("3_c3vff")
 region_enabled = true
 region_rect = Rect2(16, 0, 16, 16)
 
-[node name="Cereal Box3" type="Sprite2D" parent="."]
+[node name="Cereal Box3" type="Sprite2D" parent="." unique_id=1289494727]
 z_index = 1
 position = Vector2(-3, -42.167946)
 rotation = -0.26785818
@@ -46,15 +46,15 @@ texture = ExtResource("3_c3vff")
 region_enabled = true
 region_rect = Rect2(32, 0, 16, 16)
 
-[node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, -12)
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=367001879]
+position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_xnri0")
 
-[node name="AreaDetector" type="Area2D" parent="." groups=["Furniture"]]
+[node name="AreaDetector" type="Area2D" parent="." unique_id=38518735 groups=["Furniture"]]
 position = Vector2(0, -1)
 collision_layer = 2
 collision_mask = 7
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector" unique_id=1585952352]
 position = Vector2(0, -15)
 shape = SubResource("RectangleShape2D_gifpp")
