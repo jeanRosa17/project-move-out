@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var manager:StateManager = $StateManager
 @onready var view:AnimatedSprite2D = $NewAnimatedSprite2D
 
-var canControl:bool = true
+@export var canControl:bool = true
 var locked_axis := "none"
 
 func _ready() -> void:

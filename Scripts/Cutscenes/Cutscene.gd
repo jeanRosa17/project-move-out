@@ -7,23 +7,45 @@ var i:int = 0
 
 ## A Dictionary with 
 @export var events:Array[Vector2] = []
-@onready var player: Player = $"../Y-Sorting/Player"
-@onready var camera: Camera2D = $"../Y-Sorting/Player/Camera2D2"
+@onready var player: Player = $Player
+#@onready var camera: Camera2D = $"../Y-Sorting/Player/Camera2D2"
+@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var y_sorting: Node2D = $"../Y-Sorting"
 
+
+var tween:Tween
 
 func _ready() -> void:
-	self.add_child(self.camera)
-	self.position = self.events[0]
+	#self.add_child(self.camera)
+	self.position = self.startPos
 
+func _process(_delta: float) -> void:
+	if (i != events.size()):
+		if (tween == null):
+			tween = create_tween()
+			tween.tween_property(self, "position", self.events[0], 3).from(self.startPos)
+			#tween.play()
+		
+		if (self.position == self.events[i]):
+			if (i < events.size()): i += 1
+			if (i == events.size()): 
+				tween = null
+				self.remove_child(self.player)
+				self.y_sorting.add_child(self.player)
+				self.player.position = Vector2(self.position.x + 64, self.position.y)
+				self.player.visible = true
+				self.player.canControl = true
+				return
+			tween = null
+			tween = create_tween()
+			tween.tween_property(self, "position", self.events[i], 2).from(self.position)
+			#tween.play()
 
-func _process(delta: float) -> void:
-	if (self.position != self.events[i]):
-		self.position.x -= move_toward(self.position.x, self.events[i].x, 0.25)
-		self.position.y -= move_toward(self.position.y, self.events[i].y, 0.25)
-	else:
-		if (i != events.size()):
-			i += 1
-
+	if (i == 1):
+		self.sprite_2d.region_rect = Rect2(128, 0, 64, 48)
+	
+	if (i == 2):
+		self.sprite_2d.region_rect = Rect2(0, 0, 64, 48)
 
 class Event:
 	pass
