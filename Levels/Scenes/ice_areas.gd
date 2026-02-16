@@ -8,7 +8,7 @@ var velocityCheck:bool = false
 
 func _process(float) -> void:
 	if (velocityCheck):
-		if (player.velocity.length() < .2 && !player.canControl):
+		if (player.get_real_velocity().length() < .2 && !player.canControl):
 			player.setControls(true)
 		elif (player.canControl):
 			player.setControls(false)
@@ -27,8 +27,6 @@ func _on_body_entered(body: Node2D) -> void:
 				print("stuck case")
 				player.velocity = player.manager.direction * 5
 			soundPlayer.play()
-		
-			print("PLAYER ENTERED")
 		
 			velocityCheck = true
 
