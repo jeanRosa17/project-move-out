@@ -137,11 +137,11 @@ func createAdditionalCollisions() -> void:
 	self.add_child(areaLeft)
 
 func _physics_process(_delta: float) -> void:
-	if (self.ghostSprite != null):
+	if (self.isLifted and self.ghostSprite != null):
 		self.ghostSprite.self_modulate = (Color.GREEN if (self.canBeDropped) else Color.RED)
 		
-		if (self.player):
-			ghostSprite.position = self.player.manager.direction * 20
+		#if (self.player != null):
+			#ghostSprite.position = self.player.get_node("Detector").get_child(0).position
 		
 	if (self.isPushed):
 		
@@ -165,7 +165,7 @@ func _physics_process(_delta: float) -> void:
 	
 	if (self.player):
 		if(self.position.distance_to(self.player.position) > self.distanceFromPlayer * 1.25):
-			if(self.isPushed):
+			if (self.isPushed):
 				self.exitPush()
 				#pass
 			#if(self.isLifted):
@@ -188,14 +188,10 @@ func createGhostSprite(body:CharacterBody2D) -> void:
 	area.body_entered.connect(func () -> void: self.ghostSprite.self_modulate = Color.RED)
 	area.body_exited.connect(func () -> void: self.ghostSprite.self_modulate = Color.GREEN)
 	
-	#var collider:CollisionShape2D = self.get_child(1).duplicate()
 	self.ghostSprite = sprite_2d.duplicate()
-	#ghostSprite.add_child(area)
-	#area.add_child(collider)
-	#area.collision_layer = 0
-	#body.find_child("Detector").get_child(0).add_child(ghostSprite)
-	body.add_child(ghostSprite)
-	ghostSprite.position = (body as Player).manager.direction * 12
+	
+	body.get_node("Detector").get_child(0).add_child(ghostSprite)
+	ghostSprite.position = Vector2(0, 0)
 	self.ghostTween = self.get_tree().create_tween()
 	self.ghostTween.tween_property(ghostSprite, "self_modulate:a", 0, 1.0).from(1.0).set_delay(0.1)
 	self.ghostTween.tween_property(ghostSprite, "self_modulate:a", 1.0, 1.0).from(0.0).set_delay(0.1)
@@ -226,13 +222,18 @@ func startLiftingTween() -> void:
 
 # Stops all lifting tweens
 func killLiftingTween() -> void:
-	self.floatXTween.kill()
-	self.floatYTween.kill()
-	self.floatTiltTween.kill()
+	if (self.floatXTween):
+		self.floatXTween.kill()
 	
-	self.floatXTween = null
-	self.floatYTween = null
-	self.floatTiltTween = null
+	if (self.floatYTween):
+		self.floatYTween.kill()
+	
+	if (self.floatTiltTween):
+		self.floatTiltTween.kill()
+	
+	#self.floatXTween = null
+	#self.floatYTween = null
+	#self.floatTiltTween = null
 	
 	self.rotation_degrees = 0
 
@@ -241,6 +242,7 @@ func killLiftingTween() -> void:
 #region Lift / Pushing
 
 func enterLift(body:CharacterBody2D) -> void:
+	print("enterLift")
 	self.remove_from_group("Furniture")
 	self.collision_layer = 1;
 	self.collision_mask = 6;
@@ -258,7 +260,6 @@ func exitLift() -> void:
 	#print("ghost global pos = ", ghostSprite.global_position)
 	
 	self.killLiftingTween()
-	
 	
 	self.player.remove_child(self)
 	self.player.add_sibling(self)

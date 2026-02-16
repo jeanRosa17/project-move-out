@@ -7,12 +7,20 @@ extends State
 ## The first method called when the state is transitioned into
 func enter() -> void: 
 	var dir:String = self.getManager().view.animation.split(" ")[1].to_lower()
+	var previousAnimation:String = (self.getManager().view as AnimatedSprite2D).animation
 	
 	self.getManager().view.play("idle " + dir)
 	
-	if (self.getManager().wasPreviousState("Idle")): return
-	if (self.getManager().wasPreviousState("Push")): self.getManager().view.play("push " + dir)
-	if (self.getManager().wasPreviousState("Lift")): self.getManager().view.play("idlelift " + dir)
+	if (previousAnimation.contains("push")):
+		self.getManager().view.play("pushing " + dir)
+		self.getManager().view.stop()
+	if (previousAnimation.contains("lift")):
+		self.getManager().view.play("idlelift " + dir)
+
+	
+	#if (self.getManager().wasPreviousState("Idle")): return
+	#if (self.getManager().wasPreviousState("Push")): self.getManager().view.play("push " + dir)
+	#if (self.getManager().wasPreviousState("Lift")): self.getManager().view.play("idlelift " + dir)
 
 ## The last method called when the state is transitioned out of
 func exit() -> void:

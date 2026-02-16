@@ -26,22 +26,25 @@ func enter() -> void:
 
 ## The last method called when the state is transitioned out of
 func exit() -> void:
-	var dir:String = self.getManager().view.animation.split(" ")[1].to_lower()
-	
-	if (self.getManager().wasPreviousState("Lift")):
-		self.getManager().view.play("idlelift " + dir)
-	
-	elif (self.getManager().wasPreviousState("Push")):
-		self.getManager().view.play("push " + dir) 
-	
-	else:
-		self.getManager().view.play("idle " + dir) 
+	pass
+	#var dir:String = self.getManager().view.animation.split(" ")[1].to_lower()
+	#
+	#if (self.getManager().wasPreviousState("Lift")):
+		#self.getManager().view.play("idlelift " + dir)
+	#
+	#elif (self.getManager().wasPreviousState("Push")):
+		#self.getManager().view.play("push " + dir) 
+	#
+	#else:
+		#self.getManager().view.play("idle " + dir) 
 
 ## Flips the Player's Script when they move left or right. Additionally, it 
 ## sets the position of Player's Detector's collision shape to always be 
 ## in front of where the player is looking.
 func update(_delta:float) -> void:
-	if not (self.manager.hasFurniture and self.manager.furniture.isPushed):
+	var activelyPushing:bool = self.manager.hasFurniture and self.manager.furniture.isPushed
+	
+	if not activelyPushing:
 		self.area2DCollision.position = self.getManager().direction * 16
 	
 ## This method runs every _physics_process() frame of the StateManager.

@@ -26,12 +26,8 @@ func enter() -> void:
 	
 	if not (self.getManager().wasPreviousState("Lift")):
 		self.getManager().view.play("lift " + dir)
-		
-	self.manager.furniture.enterLift(self.body)
+		self.getManager().view.animation_finished.connect(self.manager.furniture.enterLift.bind(self.body))
+	#self.manager.furniture.enterLift(self.body)
 
 func exit() -> void:
-	pass
-
-## Constantly checks for input from the user and changes state.
-func update(_delta:float) -> void:
-	self.body.move_and_slide()
+	self.getManager().view.animation_finished.disconnect(self.manager.furniture.enterLift.bind(self.body))

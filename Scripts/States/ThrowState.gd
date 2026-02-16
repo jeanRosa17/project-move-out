@@ -9,12 +9,12 @@ var canDrop:bool
 ## Furniture can be dropped if the player is standing still and there's a spot to place
 ## the furniture (furniture.canBeDropped must be true)
 func canEnter() -> bool:
-	return self.manager.getStateName() == "Idle" && self.manager.furniture.canBeDropped
+	return (self.manager.getStateName() == "Lift") \
+	or self.manager.getStateName() == "Idle" && self.manager.furniture.canBeDropped
 
 ## The first method called when the state is transitioned into
 func enter() -> void:
 	var dir:String = self.getManager().view.animation.split(" ")[1].to_lower()
-	
 	
 	self.getManager().view.play("throw " + dir)
 	self.getManager().view.animation_finished.connect(backToIdle)
@@ -24,6 +24,8 @@ func enter() -> void:
 func exit() -> void:
 	if (self.manager.hasFurniture):
 		self.manager.furniture.exitLift()
+		self.manager.furniture = null
+		self.manager.hasFurniture = false
 
 	if (self.getManager().view.animation_finished.is_connected(backToIdle)):
 		self.getManager().view.animation_finished.disconnect(backToIdle)
@@ -31,7 +33,7 @@ func exit() -> void:
 ## If the Detector is overlapping with something, then the Furniture can't be
 ## dropped.
 func _on_detected_body_entered(_body: Node2D) -> void:
-	if(self.manager.hasFurniture):
+	if (self.manager.hasFurniture):
 		self.manager.furniture.canBeDropped = false
 
 ## By default, a Furniture can be dropped, but this signal ensures it returns
