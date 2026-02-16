@@ -14,6 +14,7 @@
 [ext_resource type="Resource" uid="uid://dolc7fyuhewi6" path="res://Narrative/apartmentEnter.tres" id="13_uekni"]
 [ext_resource type="PackedScene" uid="uid://diko086yswlr0" path="res://Assets/Objects/Beds/Scene/Twin_Bed_Side.tscn" id="14_uekni"]
 [ext_resource type="AudioStream" uid="uid://cmje4kqmvovdh" path="res://Assets/Audio/dorm.wav" id="14_vn673"]
+[ext_resource type="PackedScene" uid="uid://cqt367stu26c2" path="res://Assets/Objects/Table Items/Scenes/Pot.tscn" id="15_2wgx8"]
 [ext_resource type="PackedScene" uid="uid://d26wukook25xb" path="res://Assets/Objects/Dressers & Shelves/Scenes/Table.tscn" id="15_iaufo"]
 [ext_resource type="PackedScene" uid="uid://b7qk52eapta2s" path="res://Assets/Objects/Dressers & Shelves/Scenes/wooden_wardrobe_front.tscn" id="15_vn673"]
 [ext_resource type="PackedScene" uid="uid://bujcbosiagjri" path="res://Assets/Objects/Dressers & Shelves/Scenes/wooden_shelf_front.tscn" id="16_0g7f6"]
@@ -187,6 +188,9 @@ position = Vector2(376, 455)
 [node name="normalbedroom1" type="Node" parent="Y-Sorting" unique_id=414196284]
 
 [node name="normalbedroom2" type="Node" parent="Y-Sorting" unique_id=19984609]
+
+[node name="Pot" parent="Y-Sorting" unique_id=2030158026 instance=ExtResource("15_2wgx8")]
+position = Vector2(219, 268)
 
 [node name="mechanics" type="Node" parent="." unique_id=1740097292]
 

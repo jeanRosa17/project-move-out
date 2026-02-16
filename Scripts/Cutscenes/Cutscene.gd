@@ -4,6 +4,7 @@ extends Node2D
 @export var startPos:Vector2
 var goTo:Vector2
 var i:int = 0
+@export var skipCutscene:bool = true
 
 ## A Dictionary with 
 @export var events:Array[Vector2] = []
@@ -20,10 +21,12 @@ func _ready() -> void:
 	self.position = self.startPos
 
 func _process(_delta: float) -> void:
+	var speed = 0.1 if (skipCutscene) else 3
+	
 	if (i != events.size()):
 		if (tween == null):
 			tween = create_tween()
-			tween.tween_property(self, "position", self.events[0], 3).from(self.startPos)
+			tween.tween_property(self, "position", self.events[0], speed).from(self.startPos)
 			#tween.play()
 		
 		if (self.position == self.events[i]):
@@ -38,7 +41,7 @@ func _process(_delta: float) -> void:
 				return
 			tween = null
 			tween = create_tween()
-			tween.tween_property(self, "position", self.events[i], 2).from(self.position)
+			tween.tween_property(self, "position", self.events[i], speed).from(self.position)
 			#tween.play()
 
 	if (i == 1):
