@@ -31,3 +31,4 @@ func enter() -> void:
 
 func exit() -> void:
 	self.getManager().view.animation_finished.disconnect(self.manager.furniture.enterLift.bind(self.body))
+	self.body.canControl = true

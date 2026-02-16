@@ -21,6 +21,10 @@ func _ready() -> void:
 	if (walkSound == null):
 		walkSound = self.get_parent().get_parent().find_child("Walk Sound")
 
+func canEnter() -> bool:
+	return (body as Player).canControl
+
+
 func enter() -> void:
 	pass
 

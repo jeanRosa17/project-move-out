@@ -119,6 +119,8 @@ func handleMovement(_delta:float) -> void:
 ## 3. Furniture node can be lifted 
 func handleLift(_delta:float) -> void:
 	if (Input.is_action_just_pressed("Lift")):
+		
+		self.canControl = false
 		if ((self.manager.hasFurniture) and (self.manager.furniture.isLifted)):
 			self.manager.changeState("Throw")
 			
