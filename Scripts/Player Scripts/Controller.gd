@@ -22,8 +22,8 @@ func _process(delta:float) -> void:
 		self.handleInteract(delta)
 		self.handleRotate(delta)
 	
-	animations()
-	lockDirection()
+	#animations()
+	#lockDirection()
 
 func lockDirection() -> void:
 	locked_axis = "none"
@@ -52,7 +52,6 @@ func lockDirection() -> void:
 		self.manager.direction.x = 0
 		self.manager.direction.y = y
 		
-	#print(locked_axis)
 
 func animations() -> void:
 	var prefix:String = "move"
@@ -79,14 +78,6 @@ func animations() -> void:
 	elif Input.is_action_pressed("MoveDown") and locked_axis != "horizontal":
 		self.manager.view.play(prefix + " down")
 		return
-	
-	#if ((Input.is_action_pressed("MoveLeft") or Input.is_action_pressed("MoveRight")) and not (Input.is_action_pressed("MoveUp") or Input.is_action_pressed("MoveDown"))):
-		#self.manager.view.play(prefix + " side")
-	#else:
-		#if ((Input.is_action_pressed("MoveUp") and not (Input.is_action_pressed("MoveLeft") or Input.is_action_pressed("MoveRight")))):
-			#self.manager.view.play(prefix + " up")
-		#elif ((Input.is_action_pressed("MoveDown") and not (Input.is_action_pressed("MoveLeft") or Input.is_action_pressed("MoveRight")))):
-			#self.manager.view.play(prefix + " down")
 
 ## Handles the "Move" set of Inputs and transfers the state to the "Move" state. Otherwise
 ## if the player is not inputting anything, the state defaults to "Idle".
@@ -97,19 +88,18 @@ func handleMovement(_delta:float) -> void:
 	or Input.is_action_pressed("MoveDown")
 	or Input.is_action_pressed("MoveUp")):
 		self.manager.direction = Input.get_vector("MoveLeft", "MoveRight", "MoveUp", "MoveDown", 0.1)                  
-		#print(self.manager.direction)
 		
 		if (self.manager.getStateName() != "Move" && self.manager.getStateName() != "Lift"):
 			self.manager.changeState("Move")
 			
-		if (self.manager.getStateName() == "Lift"):
-			self.manager.changeState("Move")
+		#if (self.manager.getStateName() == "Lift"):
+			#self.manager.changeState("Move")
 			
-		if (self.manager.getStateName() == "Push"):
-			self.manager.changeState("Move")
+		#if (self.manager.getStateName() == "Push"):
+			#self.manager.changeState("Move")
 	
 	else:
-		if (self.manager.getStateName() == "Move" && self.manager.getStateName() != "Lift"):
+		if (self.manager.getStateName() == "Move"):
 			self.manager.changeState("Idle")
 
 
@@ -120,12 +110,15 @@ func handleMovement(_delta:float) -> void:
 func handleLift(_delta:float) -> void:
 	if (Input.is_action_just_pressed("Lift")):
 		
-		self.canControl = false
-		if ((self.manager.hasFurniture) and (self.manager.furniture.isLifted)):
-			self.manager.changeState("Throw")
-			
-		elif (self.manager.getStateName() != "Lift"): 
-			self.manager.changeState("Lift")
+		if (self.manager.getStateName() != "Move"):
+			if ((self.manager.hasFurniture) and (self.manager.furniture.isLifted)):
+				#self.setControls(false)
+				self.manager.changeState("Throw")
+				
+			elif (self.manager.getStateName() != "Lift"): 
+				#self.setControls(false)
+				self.manager.changeState("Lift")
+
 
 ## Handles "Push" and "Pull"
 func handlePushPull(_delta:float) -> void:

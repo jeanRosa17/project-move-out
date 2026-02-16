@@ -160,7 +160,6 @@ func _physics_process(_delta: float) -> void:
 			#
 
 		#if (self.player.velocity != Vector2.ZERO):
-		print(player.velocity)
 		linear_velocity = linear_velocity.lerp(player.velocity, 1)
 	
 	if (self.player):

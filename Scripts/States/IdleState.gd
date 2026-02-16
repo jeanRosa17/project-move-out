@@ -7,15 +7,29 @@ extends State
 ## The first method called when the state is transitioned into
 func enter() -> void: 
 	var dir:String = self.getManager().view.animation.split(" ")[1].to_lower()
-	var previousAnimation:String = (self.getManager().view as AnimatedSprite2D).animation
 	
-	self.getManager().view.play("idle " + dir)
+	if not (self.getManager().hasFurniture):
+		self.getManager().view.play("idle " + dir)
+	else:
+		if (self.getManager().furniture.isPushed):
+			self.getManager().view.play("pushing " + dir)
+			self.getManager().view.stop()
+		elif (self.getManager().furniture.isLifted):
+			self.getManager().view.play("idlelift " + dir)
+		else:
+			self.getManager().view.play("idle " + dir)
+
 	
-	if (previousAnimation.contains("push")):
-		self.getManager().view.play("pushing " + dir)
-		self.getManager().view.stop()
-	if (previousAnimation.contains("lift")):
-		self.getManager().view.play("idlelift " + dir)
+
+	#var previousAnimation:String = (self.getManager().view as AnimatedSprite2D).animation
+	#
+	#self.getManager().view.play("idle " + dir)
+	#
+	#if (previousAnimation.contains("push")):
+		#self.getManager().view.play("pushing " + dir)
+		#self.getManager().view.stop()
+	#if (previousAnimation.contains("lift")):
+		#self.getManager().view.play("idlelift " + dir)
 
 	
 	#if (self.getManager().wasPreviousState("Idle")): return

@@ -37,7 +37,7 @@ func _process(_delta: float) -> void:
 				self.y_sorting.add_child(self.player)
 				self.player.position = Vector2(self.position.x + 64, self.position.y)
 				self.player.visible = true
-				self.player.canControl = true
+				self.player.setControls(true)
 				return
 			tween = null
 			tween = create_tween()

@@ -1,6 +1,7 @@
 class_name ThrowState
 extends State
 
+@onready var body: Player = $"../.."
 @onready var manager:StateManager = self.getManager()
 @onready var backToIdle:Callable = func () -> void : self.manager.changeState("Idle")
 @export var area2D:Area2D
@@ -29,6 +30,10 @@ func exit() -> void:
 
 	if (self.getManager().view.animation_finished.is_connected(backToIdle)):
 		self.getManager().view.animation_finished.disconnect(backToIdle)
+	
+	self.body.setControls(true)
+	
+
 
 ## If the Detector is overlapping with something, then the Furniture can't be
 ## dropped.

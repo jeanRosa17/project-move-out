@@ -28,28 +28,43 @@ func canEnter() -> bool:
 func enter() -> void:
 	pass
 
+
 ## The last method called when the state is transitioned out of
 func exit() -> void:
 	pass
-	#var dir:String = self.getManager().view.animation.split(" ")[1].to_lower()
-	#
-	#if (self.getManager().wasPreviousState("Lift")):
-		#self.getManager().view.play("idlelift " + dir)
-	#
-	#elif (self.getManager().wasPreviousState("Push")):
-		#self.getManager().view.play("push " + dir) 
-	#
-	#else:
-		#self.getManager().view.play("idle " + dir) 
 
 ## Flips the Player's Script when they move left or right. Additionally, it 
 ## sets the position of Player's Detector's collision shape to always be 
 ## in front of where the player is looking.
 func update(_delta:float) -> void:
-	var activelyPushing:bool = self.manager.hasFurniture and self.manager.furniture.isPushed
+	var prefix:String = "move"
+
+	if (self.manager.hasFurniture):
+		if (self.manager.furniture.isPushed):
+			prefix = "pushing"
+		if (self.manager.furniture.isLifted):
+			prefix = "movelift"
 	
-	if not activelyPushing:
-		self.area2DCollision.position = self.getManager().direction * 16
+	if (prefix == "pushing"):
+		var dir:String = (self.manager.view as AnimatedSprite2D).animation.split(" ")[1]
+		self.manager.view.play(prefix + " " + dir)
+	
+	else:
+		if (self.manager.direction == Vector2.DOWN):
+			self.manager.view.play(prefix + " down")
+		
+		if (self.manager.direction == Vector2.RIGHT):
+			self.manager.view.play(prefix + " side")
+			self.manager.view.flip_h = false
+			
+		if (self.manager.direction == Vector2.LEFT):
+			self.manager.view.play(prefix + " side")
+			self.manager.view.flip_h = true
+			
+		if (self.manager.direction == Vector2.UP):
+			self.manager.view.play(prefix + " up")
+	
+		self.area2DCollision.position = self.getManager().direction * 20
 	
 ## This method runs every _physics_process() frame of the StateManager.
 func physicsUpdate(_delta:float) -> void:
