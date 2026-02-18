@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cutb7smcwxehn" path="res://Assets/Player/Spritesheets v2/Strong John 2-Sheet-Move-Idle.png" id="3_jjwbh"]
 [ext_resource type="Texture2D" uid="uid://lbg8jabvtrqa" path="res://Assets/Player/Spritesheets v2/Strong_John_walk_back.png" id="5_bqeds"]
 [ext_resource type="Texture2D" uid="uid://dxtqmd6pw2s1f" path="res://Assets/Player/Spritesheets v2/Strong_John_lift_front.png" id="6_5gdg7"]
+[ext_resource type="Texture2D" uid="uid://bmo5jtekeqmi4" path="res://Assets/Player/Spritesheets v2/Strong John 2-Jump.png" id="8_bmblf"]
 [ext_resource type="Texture2D" uid="uid://ctioirg0i7chs" path="res://Assets/Player/Spritesheets v2/Strong_John_lift_back.png" id="8_jjwbh"]
 [ext_resource type="Texture2D" uid="uid://c8umlc7a0jjmt" path="res://Assets/Player/Spritesheets v2/Strong_John_lift_side.png" id="8_tuwgl"]
 [ext_resource type="Texture2D" uid="uid://cqu20pjmqqntv" path="res://Assets/Player/Spritesheets v2/Strong_John_lift_walk_back.png" id="11_6r58c"]
@@ -16,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://ctxsucy66g020" path="res://Assets/Player/Spritesheets v2/Strong_John_push_walk_front.png" id="14_6r58c"]
 [ext_resource type="Texture2D" uid="uid://cfdmukdkccwq6" path="res://Assets/Player/Spritesheets v2/Strong_John_push_walk_side.png" id="15_jjwbh"]
 [ext_resource type="Texture2D" uid="uid://cf4kx2ybudgtr" path="res://Assets/Player/Spritesheets v2/Strong_John_push_walk_back.png" id="16_bmblf"]
+[ext_resource type="Texture2D" uid="uid://c07cwhy7n80va" path="res://Assets/Player/Spritesheets v2/Strong John 2-Slide.png" id="18_m53rv"]
 [ext_resource type="Script" uid="uid://d0ryul7cekxdv" path="res://Scripts/Player Scripts/PlayerStateManager.gd" id="19_jigvf"]
 [ext_resource type="Script" uid="uid://idg0tggjdf4f" path="res://Scripts/States/IdleState.gd" id="20_grkeu"]
 [ext_resource type="Script" uid="uid://u8kdu3je8hxq" path="res://Scripts/States/LiftState.gd" id="21_lch71"]
@@ -78,6 +80,10 @@ region = Rect2(168, 0, 28, 28)
 [sub_resource type="AtlasTexture" id="AtlasTexture_70whx"]
 atlas = ExtResource("8_jjwbh")
 region = Rect2(168, 0, 28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vpes8"]
+atlas = ExtResource("8_bmblf")
+region = Rect2(0, 0, 28, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5iygv"]
 atlas = ExtResource("6_5gdg7")
@@ -543,6 +549,14 @@ region = Rect2(168, 0, 28, 28)
 atlas = ExtResource("16_bmblf")
 region = Rect2(196, 0, 28, 28)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_kbk53"]
+atlas = ExtResource("18_m53rv")
+region = Rect2(0, 0, 28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xfog2"]
+atlas = ExtResource("18_m53rv")
+region = Rect2(28, 0, 28, 28)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_t3iuo"]
 atlas = ExtResource("6_5gdg7")
 region = Rect2(168, 0, 28, 28)
@@ -705,6 +719,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"idlelift up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vpes8")
+}],
+"loop": true,
+"name": &"jump down",
 "speed": 5.0
 }, {
 "frames": [{
@@ -1132,6 +1154,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_kbk53")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xfog2")
+}],
+"loop": true,
+"name": &"slide down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_t3iuo")
 }, {
 "duration": 1.0,
@@ -1241,7 +1274,7 @@ shape = SubResource("RectangleShape2D_l2ndj")
 y_sort_enabled = true
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_dter7")
-animation = &"pushing down"
+animation = &"idle down"
 autoplay = "idle down"
 
 [node name="Detector" type="Area2D" parent="." unique_id=1829707663]

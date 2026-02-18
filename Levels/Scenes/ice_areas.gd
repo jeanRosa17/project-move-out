@@ -21,6 +21,7 @@ func _on_body_entered(body: Node2D) -> void:
 		if (player.canControl):
 			player.setControls(false)
 			player.manager.changeState("Move")
+			
 			if (player.velocity.length() < .2):
 				player.velocity = player.manager.direction
 			else:
@@ -29,6 +30,8 @@ func _on_body_entered(body: Node2D) -> void:
 			soundPlayer.play()
 		
 			velocityCheck = true
+			
+			
 
 
 func _on_body_exited(body: Node2D) -> void:

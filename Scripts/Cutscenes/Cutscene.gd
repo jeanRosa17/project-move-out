@@ -11,8 +11,7 @@ var i:int = 0
 @onready var player: Player = $Player
 #@onready var camera: Camera2D = $"../Y-Sorting/Player/Camera2D2"
 @onready var sprite_2d: Sprite2D = $Sprite2D
-@onready var y_sorting: Node2D = $"../Y-Sorting"
-
+@onready var y_sorting: Node2D = $".."
 
 var tween:Tween
 
@@ -21,7 +20,7 @@ func _ready() -> void:
 	self.position = self.startPos
 
 func _process(_delta: float) -> void:
-	var speed = 0.1 if (skipCutscene) else 3
+	var speed:float = 0.1 if (skipCutscene) else 3
 	
 	if (i != events.size()):
 		if (tween == null):
@@ -35,9 +34,18 @@ func _process(_delta: float) -> void:
 				tween = null
 				self.remove_child(self.player)
 				self.y_sorting.add_child(self.player)
-				self.player.position = Vector2(self.position.x + 64, self.position.y)
+				
+				self.player.view.play("jump down")
+				self.player.position = Vector2(self.position.x, self.position.y+32)
+				
+				tween = create_tween()
+				tween.tween_property(self.player, "position:y", self.position.y+56, 0.75).from(self.position.y)
 				self.player.visible = true
+				await get_tree().create_timer(0.5).timeout
+				self.player.view.play("idle down")
+				await get_tree().create_timer(0.3).timeout
 				self.player.setControls(true)
+				self.player.manager.getState().enable()
 				return
 			tween = null
 			tween = create_tween()
@@ -49,6 +57,3 @@ func _process(_delta: float) -> void:
 	
 	if (i == 2):
 		self.sprite_2d.region_rect = Rect2(0, 0, 64, 48)
-
-class Event:
-	pass

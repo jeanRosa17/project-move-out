@@ -192,6 +192,31 @@ position = Vector2(376, 455)
 [node name="Pot" parent="Y-Sorting" unique_id=2030158026 instance=ExtResource("15_2wgx8")]
 position = Vector2(219, 268)
 
+[node name="Van" type="Node2D" parent="Y-Sorting" unique_id=1559894428]
+position = Vector2(724, -68)
+script = ExtResource("28_2wgx8")
+startPos = Vector2(724, -68)
+skipCutscene = false
+events = Array[Vector2]([Vector2(155, -68), Vector2(132, 71), Vector2(52, 71)])
+
+[node name="Player" parent="Y-Sorting/Van" unique_id=108052760 instance=ExtResource("9_en5i7")]
+position = Vector2(0, 16)
+safe_margin = 1.159
+canControl = false
+
+[node name="Camera2D2" type="Camera2D" parent="Y-Sorting/Van/Player" unique_id=113227949]
+limit_left = -12
+limit_top = -132
+limit_right = 688
+limit_bottom = 661
+editor_draw_limits = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Y-Sorting/Van" unique_id=1317163636]
+texture = ExtResource("28_0g7f6")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 48)
+
 [node name="mechanics" type="Node" parent="." unique_id=1740097292]
 
 [node name="Wind_entrence" type="Area2D" parent="mechanics" unique_id=1676641853]
@@ -287,30 +312,6 @@ one_way_collision_margin = 0.0
 [node name="Push_Pull Audio" parent="." unique_id=1284986650 instance=ExtResource("17_allxl")]
 visible = false
 position = Vector2(-47, -309)
-
-[node name="Van" type="Node2D" parent="." unique_id=1559894428]
-position = Vector2(724, -68)
-script = ExtResource("28_2wgx8")
-startPos = Vector2(724, -68)
-events = Array[Vector2]([Vector2(161, -68), Vector2(132, 71), Vector2(52, 71)])
-
-[node name="Player" parent="Van" unique_id=108052760 instance=ExtResource("9_en5i7")]
-visible = false
-safe_margin = 1.159
-canControl = false
-
-[node name="Camera2D2" type="Camera2D" parent="Van/Player" unique_id=113227949]
-limit_left = -12
-limit_top = -132
-limit_right = 688
-limit_bottom = 661
-editor_draw_limits = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Van" unique_id=1317163636]
-texture = ExtResource("28_0g7f6")
-flip_h = true
-region_enabled = true
-region_rect = Rect2(0, 0, 64, 48)
 
 [connection signal="body_entered" from="mechanics/Wind_entrence" to="mechanics/Wind_entrence" method="_on_body_entered"]
 [connection signal="body_exited" from="mechanics/Wind_entrence" to="mechanics/Wind_entrence" method="_on_body_exited"]
