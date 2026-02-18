@@ -11,6 +11,7 @@ var hasEmptyDropZone:bool
 
 var hasFurniture:bool
 
+var isSliding:bool = false
 
 func _on_furniture_body_entered(body: Node2D) -> void:
 	if (body.is_in_group("Furniture") && (not self.hasFurniture)):

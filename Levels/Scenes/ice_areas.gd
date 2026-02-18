@@ -30,13 +30,14 @@ func _on_body_entered(body: Node2D) -> void:
 			soundPlayer.play()
 		
 			velocityCheck = true
-			
+			body.manager.isSliding = true
 			
 
 
 func _on_body_exited(body: Node2D) -> void:
 		if (body.name == "Player"):
 			player.setControls(true)
+			body.manager.isSliding = false
 			soundPlayer.stop()
 			
 			velocityCheck = false
