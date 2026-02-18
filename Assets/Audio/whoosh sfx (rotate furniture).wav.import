@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bvavfnx1xj0mj"
+path="res://.godot/imported/whoosh sfx (rotate furniture).wav-b723f5a9529da0ac4e927d02ca8478fa.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/whoosh sfx (rotate furniture).wav"
+dest_files=["res://.godot/imported/whoosh sfx (rotate furniture).wav-b723f5a9529da0ac4e927d02ca8478fa.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

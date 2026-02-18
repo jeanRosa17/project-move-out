@@ -290,18 +290,8 @@ func exitPush()-> void:
 	self.linear_velocity = Vector2.ZERO
 #endregion
 
+# If has a rotated object and rotated version can fit, rotate.
 func rotateObj() -> void:
-	#if (self.canRotate):
-		#print("rotate")
-		#@warning_ignore("untyped_declaration") var pos = self.global_position
-		#if (self.rotated > 2):
-			#self.rotated = 0
-		#else:
-			#self.rotated += 1
-		#
-		#var rect:Rect2 = self.sprite_2d.region_rect
-		#self.sprite_2d.region_rect = Rect2(Vector2(rect.size.x * rotated, rect.position.y), rect.size)
-		
 	if (self.rotatedVersion):
 		if (tryRotate()):
 			print("rotate")
@@ -327,11 +317,14 @@ func rotateObj() -> void:
 			
 			player.manager.furniture = rotatedVersion
 			
+			audioPlayer.rotate_noise()
+			
 			rotatedVersion.enterPush(player)
 		else:
 			print("cant")
 		
 
+#Shapecasts the rotated versions collision shape to see if it will collide with anything.
 func tryRotate() -> bool:
 	var cast = ShapeCast2D.new()
 	cast.add_exception(player)
@@ -350,6 +343,7 @@ func tryRotate() -> bool:
 	if (cast.is_colliding()):
 		print("overlapping bodies")
 		cast.queue_free()
+		audioPlayer.cant_rotate_noise()
 		return false
 	else:
 		print("no overlap")

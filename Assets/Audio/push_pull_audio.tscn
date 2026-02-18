@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://uacgji4vcg37"]
+[gd_scene format=3 uid="uid://uacgji4vcg37"]
 
 [ext_resource type="AudioStream" uid="uid://ixm05apa3fsb" path="res://Assets/Audio/furniture2 [game capstone].wav" id="1_550bs"]
 [ext_resource type="AudioStream" uid="uid://ilbhsc2vwd1n" path="res://Assets/Audio/furniture 1.wav" id="2_0cgvr"]
@@ -6,22 +6,34 @@
 [ext_resource type="AudioStream" uid="uid://co27kfjleoj27" path="res://Assets/Audio/furniture [game capstone].wav" id="4_eewuc"]
 [ext_resource type="AudioStream" uid="uid://dr2kfywymswqw" path="res://Assets/Audio/magical put down noise.wav" id="5_jnu4o"]
 [ext_resource type="AudioStream" uid="uid://dt60bfwm4ccxq" path="res://Assets/Audio/pick up noise magical 1.wav" id="6_jnu4o"]
+[ext_resource type="AudioStream" uid="uid://bvavfnx1xj0mj" path="res://Assets/Audio/whoosh sfx (rotate furniture).wav" id="7_xt7y1"]
+[ext_resource type="AudioStream" uid="uid://di0onrv4nehnv" path="res://Assets/Audio/cant rotate sfx.wav" id="8_s6uqw"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_b3xeb"]
 streams_count = 2
 stream_0/stream = ExtResource("1_550bs")
 stream_1/stream = ExtResource("2_0cgvr")
 
-[node name="Push_Pull Audio" type="AudioStreamPlayer2D"]
+[node name="Push_Pull Audio" type="AudioStreamPlayer2D" unique_id=287833891]
 stream = SubResource("AudioStreamRandomizer_b3xeb")
 bus = &"Furniture"
 script = ExtResource("3_jnu4o")
 streams = [ExtResource("4_eewuc")]
 
-[node name="Put Down Noise" type="AudioStreamPlayer2D" parent="."]
+[node name="Put Down Noise" type="AudioStreamPlayer2D" parent="." unique_id=226472111]
 stream = ExtResource("5_jnu4o")
 
-[node name="Pick Up noise" type="AudioStreamPlayer2D" parent="."]
+[node name="Pick Up noise" type="AudioStreamPlayer2D" parent="." unique_id=868084906]
 stream = ExtResource("6_jnu4o")
 volume_db = -3.613
+bus = &"Furniture"
+
+[node name="Rotate" type="AudioStreamPlayer2D" parent="." unique_id=413451296]
+stream = ExtResource("7_xt7y1")
+volume_db = 0.34
+bus = &"Furniture"
+
+[node name="Cant rotate" type="AudioStreamPlayer2D" parent="." unique_id=258875474]
+stream = ExtResource("8_s6uqw")
+volume_db = 0.34
 bus = &"Furniture"

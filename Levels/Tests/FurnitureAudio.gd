@@ -30,3 +30,11 @@ func put_down_noise() -> void:
 func pick_up_noise() -> void:
 	var player:AudioStreamPlayer2D = self.get_child(1)
 	player.play()
+	
+func rotate_noise() -> void:
+	var player:AudioStreamPlayer2D = self.get_child(2)
+	player.play()
+
+func cant_rotate_noise() -> void:
+	var player:AudioStreamPlayer2D = self.get_child(3)
+	player.play()
