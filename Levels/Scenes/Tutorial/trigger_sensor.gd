@@ -6,6 +6,7 @@ var triggered:bool = false
 func _ready() -> void:
 	pass
 
+@warning_ignore("untyped_declaration")
 func _on_body_entered(body) -> void:
 	if (body.name == 'Player'):
 		if !triggered:

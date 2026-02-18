@@ -112,11 +112,11 @@ func handleLift(_delta:float) -> void:
 		
 		if (self.manager.getStateName() != "Move"):
 			if ((self.manager.hasFurniture) and (self.manager.furniture.isLifted)):
-				#self.setControls(false)
+				self.setControls(false)
 				self.manager.changeState("Throw")
 				
 			elif (self.manager.getStateName() != "Lift"): 
-				#self.setControls(false)
+				self.setControls(false)
 				self.manager.changeState("Lift")
 
 

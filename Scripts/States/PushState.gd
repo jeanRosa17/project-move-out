@@ -40,7 +40,7 @@ func update(_delta:float) -> void:
 		
 		self.manager.changeState("Idle")
 
-func exitAfterAnimationFinish():
+func exitAfterAnimationFinish() -> void:
 	self.animationFinished = true
 #func canExit() -> bool:
 	#return false

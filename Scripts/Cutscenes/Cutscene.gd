@@ -20,7 +20,7 @@ func _ready() -> void:
 	self.position = self.startPos
 
 func _process(_delta: float) -> void:
-	var speed:float = 0.1 if (skipCutscene) else 3
+	var speed:float = 0.1 if (skipCutscene) else 3.0
 	
 	if (i != events.size()):
 		if (tween == null):

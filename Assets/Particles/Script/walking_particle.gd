@@ -1,19 +1,9 @@
-extends CPUParticles2D
+extends Node2D
 
 @export var min_speed: float = 10.0  
 
-var player: CharacterBody2D
-func _ready() -> void:
-	var node: Node = get_parent()
-	while node:
-		if node is CharacterBody2D:
-			player = node
-			break
-		node = node.get_parent()
-
-	if player == null:
-		push_warning("DustParticles: Could not find a player")
-
+@export var player: Player
+@onready var dust: CPUParticles2D = $CPUParticles2D
 
 func _process(_delta: float) -> void:
 	if player == null:
@@ -22,12 +12,12 @@ func _process(_delta: float) -> void:
 	if vel.length() > min_speed:
 		# Player is moving
 		#print("yes")
-		emitting = true
+		dust.emitting = true
 
 		# Point the dust opposite the direction of movement
 		# vel.angle() is direction of movement, +PI flips it
-		global_rotation = vel.angle() + PI
+		dust.global_rotation = vel.angle() + PI
 	else:
 		#print("no")
 		# Player is standing still → no dust
-		emitting = false
+		dust.emitting = false

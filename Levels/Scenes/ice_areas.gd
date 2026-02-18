@@ -6,7 +6,7 @@ var velocityCheck:bool = false
 
 @export var soundPlayer:AudioStreamPlayer2D
 
-func _process(float) -> void:
+func _process(_delta:float) -> void:
 	if (velocityCheck):
 		if (player.get_real_velocity().length() < .2 && !player.canControl):
 			player.setControls(true)
@@ -27,7 +27,7 @@ func _on_body_entered(body: Node2D) -> void:
 			else:
 				print("stuck case")
 				player.velocity = player.manager.direction * 5
-			soundPlayer.play()
+			if (soundPlayer): soundPlayer.play()
 		
 			velocityCheck = true
 			body.manager.isSliding = true

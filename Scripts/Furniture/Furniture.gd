@@ -326,9 +326,9 @@ func rotateObj() -> void:
 
 #Shapecasts the rotated versions collision shape to see if it will collide with anything.
 func tryRotate() -> bool:
-	var cast = ShapeCast2D.new()
+	var cast:ShapeCast2D = ShapeCast2D.new()
 	cast.add_exception(player)
-	var shape = CollisionShape2D.new()
+	var shape:CollisionShape2D = CollisionShape2D.new()
 	shape.shape = rotatedVersion.collider.shape
 	shape.debug_color = Color.RED
 	cast.shape = shape.shape

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dotpp2gym0w7k"]
+[gd_scene format=3 uid="uid://dotpp2gym0w7k"]
 
 [ext_resource type="Texture2D" uid="uid://chmog7easei21" path="res://Assets/Particles/Dust White.png" id="1_b8g0l"]
 [ext_resource type="Script" uid="uid://bwgoahn5brpfe" path="res://Assets/Particles/Script/walking_particle.gd" id="2_b8g0l"]
@@ -15,9 +15,10 @@ interpolation_color_space = 1
 offsets = PackedFloat32Array(0, 0.74038464)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
 
-[node name="Walking_particle" type="Node2D"]
+[node name="Walking_particle" type="Node2D" unique_id=1076106581]
+script = ExtResource("2_b8g0l")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1383264900]
 material = SubResource("CanvasItemMaterial_tthwx")
 amount = 7
 texture = ExtResource("1_b8g0l")
@@ -38,4 +39,3 @@ color_ramp = SubResource("Gradient_b8g0l")
 hue_variation_max = 1.0
 anim_speed_min = 1.0
 anim_speed_max = 1.0
-script = ExtResource("2_b8g0l")
