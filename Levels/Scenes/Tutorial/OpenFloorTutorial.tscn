@@ -35,7 +35,7 @@ size = Vector2(26, 23)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
 size = Vector2(31, 33)
 
-[node name="Main" type="Node2D" unique_id=603132021]
+[node name="Main2" type="Node2D" unique_id=603132021]
 y_sort_enabled = true
 
 [node name="Carpet" type="Sprite2D" parent="." unique_id=505749813]

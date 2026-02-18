@@ -303,31 +303,58 @@ func rotateObj() -> void:
 		#self.sprite_2d.region_rect = Rect2(Vector2(rect.size.x * rotated, rect.position.y), rect.size)
 		
 	if (self.rotatedVersion):
-		print("rotate")
-		print("rotating: ", self.name)
-		@warning_ignore("untyped_declaration") var pos = self.global_position
+		if (tryRotate()):
+			print("rotate")
+			print("rotating: ", self.name)
+			@warning_ignore("untyped_declaration") var pos = self.global_position
+			
+			self.exitPush()
+			self.visible = false
+			self.collision_layer = 0
+			self.collision_mask = 0
+			
+			rotatedVersion.global_position = pos
+			rotatedVersion.reparent(self.get_parent())
+			
+			#rotatedVersion.canRotate = true
+			rotatedVersion.rotatedVersion = self
+			rotatedVersion.dialogueTag = self.dialogueTag
+			
+			self.reparent(rotatedVersion)
+			rotatedVersion.visible = true
+			rotatedVersion.collision_layer = 2
+			rotatedVersion.collision_mask = 7
+			
+			player.manager.furniture = rotatedVersion
+			
+			rotatedVersion.enterPush(player)
+		else:
+			print("cant")
 		
-		self.exitPush()
-		self.visible = false
-		self.collision_layer = 0
-		self.collision_mask = 0
-		
-		rotatedVersion.global_position = pos
-		rotatedVersion.reparent(self.get_parent())
-		
-		#rotatedVersion.canRotate = true
-		rotatedVersion.rotatedVersion = self
-		rotatedVersion.dialogueTag = self.dialogueTag
-		
-		self.reparent(rotatedVersion)
-		rotatedVersion.visible = true
-		rotatedVersion.collision_layer = 2
-		rotatedVersion.collision_mask = 7
-		
-		player.manager.furniture = rotatedVersion
-		
-		rotatedVersion.enterPush(player)
-		
+
+func tryRotate() -> bool:
+	var cast = ShapeCast2D.new()
+	cast.add_exception(player)
+	var shape = CollisionShape2D.new()
+	shape.shape = rotatedVersion.collider.shape
+	shape.debug_color = Color.RED
+	cast.shape = shape.shape
+	cast.collision_mask = 7
+	self.add_child(cast)
+
+
+	
+	cast.target_position = Vector2(0,0)
+	cast.force_shapecast_update()
+	
+	if (cast.is_colliding()):
+		print("overlapping bodies")
+		cast.queue_free()
+		return false
+	else:
+		print("no overlap")
+		cast.queue_free()
+		return true
 
 #region Signals
 func againstObject(newObject: Node2D) -> void:
