@@ -1,8 +1,12 @@
 class_name IdleState
 extends State
 
-
 @export var body:CharacterBody2D = null
+@onready var physics:PlayerPhysics
+
+func _ready() -> void:
+	self.physics = preload("res://Scripts/Resources/DefaultPhysics.tres")
+
 
 ## The first method called when the state is transitioned into
 func enter() -> void: 
@@ -19,23 +23,6 @@ func enter() -> void:
 		else:
 			self.getManager().view.play("idle " + dir)
 
-	
-
-	#var previousAnimation:String = (self.getManager().view as AnimatedSprite2D).animation
-	#
-	#self.getManager().view.play("idle " + dir)
-	#
-	#if (previousAnimation.contains("push")):
-		#self.getManager().view.play("pushing " + dir)
-		#self.getManager().view.stop()
-	#if (previousAnimation.contains("lift")):
-		#self.getManager().view.play("idlelift " + dir)
-
-	
-	#if (self.getManager().wasPreviousState("Idle")): return
-	#if (self.getManager().wasPreviousState("Push")): self.getManager().view.play("push " + dir)
-	#if (self.getManager().wasPreviousState("Lift")): self.getManager().view.play("idlelift " + dir)
-
 ## The last method called when the state is transitioned out of
 func exit() -> void:
 	pass
@@ -45,15 +32,21 @@ func update(_delta:float) -> void:
 	pass
 
 ## This method runs every _physics_process() frame of the StateManager.
-func physicsUpdate(_delta:float) -> void:
+func physicsUpdate(delta:float) -> void:
+	#self.body.velocity.x = lerpf(self.body.velocity.x, 0.0, delta * self.physics.deceleration)
+	#self.body.velocity.y = lerpf(self.body.velocity.y, 0.0, delta * self.physics.deceleration)
+	
 	self.body.velocity = Vector2.ZERO
-	#self.decelerate(_delta)
-	#self.body.move_and_slide()
+	#print(self.body.velocity)
+	#self.decelerate(delta)
+	self.body.move_and_slide()
 	
 ## Decreases the player's velocity. This function should only be called after the player
 ## stops pressing a direction.
-#func decelerate(delta:float) -> void:
-	#if (not self.body.velocity.is_equal_approx(Vector2i.ZERO)):
-		#var deceleration:float = 40
-		#self.body.velocity.x = move_toward(self.body.velocity.x, 0, deceleration * delta)
-		#self.body.velocity.y = move_toward(self.body.velocity.y, 0, deceleration * delta)
+func decelerate(delta:float) -> void:
+	if (not self.body.velocity.is_zero_approx()):
+		var direction = self.getManager().direction
+		self.body.velocity.x -= delta * (move_toward(self.body.velocity.x, -100, self.physics.deceleration * delta)) 
+		self.body.velocity.y -= delta * (move_toward(self.body.velocity.y, -100, self.physics.deceleration * delta))
+	else:
+		self.body.velocity = Vector2.ZERO

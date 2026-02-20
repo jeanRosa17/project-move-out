@@ -87,6 +87,7 @@ func physicsUpdate(_delta:float) -> void:
 			
 
 	self.accelerate(manager.direction, _delta)
+	prints("Vel: ", self.body.velocity)
 	self.body.move_and_slide()
 
 ## Sets the player's velocity to increase or decrease based on the given direction (-1 left, 1 right)
@@ -95,8 +96,23 @@ func accelerate(direction:Vector2i, delta:float) -> void:
 		self.body.velocity.x = move_toward(self.body.velocity.x, direction.x * self.physics.maxSpeed, self.physics.acceleration * delta) 
 		self.body.velocity.y = move_toward(self.body.velocity.y, direction.y * self.physics.maxSpeed, self.physics.acceleration * delta)
 		
-
-
+		#self.body.velocity.x += delta * (move_toward(self.body.velocity.x, direction.x * self.physics.maxSpeed, self.physics.acceleration * delta)) 
+		#self.body.velocity.y += delta * (move_toward(self.body.velocity.y, direction.y * self.physics.maxSpeed, self.physics.acceleration * delta))
+		#
+		
+		#self.body.velocity.x = lerp(self.body.velocity.x, (self.physics.maxSpeed * direction).x, delta)
+		#self.body.velocity.y = lerp(self.body.velocity.y, (self.physics.maxSpeed * direction).y, delta)
+		
+		#if (direction.x > 0):
+			#self.body.velocity.x = clamp(self.body.velocity.x, 0, self.physics.maxSpeed)
+		#elif (direction.x < 0):
+			#self.body.velocity.x = clamp(self.body.velocity.x, -self.physics.maxSpeed, 0)
+		#
+		#if (direction.y > 0):
+			#self.body.velocity.y = clamp(self.body.velocity.y, 0, self.physics.maxSpeed)
+		#elif (direction.y < 0):
+			#self.body.velocity.y = clamp(self.body.velocity.y, -self.physics.maxSpeed, 0)
+		
 func _on_new_animated_sprite_2d_frame_changed() -> void:
 	var frame:int = self.getManager().view.frame
 	if (frame == 3 || frame == 7):
