@@ -52,6 +52,7 @@ theme_override_font_sizes/font_size = 8
 text = "Settings (coming soon)"
 
 [node name="BG" type="Node2D" parent="." unique_id=103568397]
+visible = false
 
 [node name="Floor" type="TileMapLayer" parent="BG" unique_id=400154022]
 z_index = -1
@@ -66,8 +67,10 @@ tile_map_data = PackedByteArray("AAAAAAUABQAAAAYAAAAAAAYABQABAAYAAAAAAAcABQABAAY
 tile_set = ExtResource("4_fbutq")
 
 [node name="Title" type="Sprite2D" parent="." unique_id=405716259]
-position = Vector2(160, 32)
+position = Vector2(197, -1)
+scale = Vector2(0.9943986, 0.99439883)
 texture = ExtResource("6_tb8vy")
+offset = Vector2(-56, 32)
 
 [node name="Moving Van" parent="." unique_id=146394583 instance=ExtResource("5_6q2m3")]
 position = Vector2(160, 82)
