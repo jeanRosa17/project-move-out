@@ -1,67 +1,265 @@
 extends Node2D
 
-var i_tetromino: Array = [
+var one_by_one_tetromino: Array = [
+	#All rotations are the same
+	[{"pos": Vector2i(0, 0), "atlas": Vector2i(0, 1)}],
+	
+	#All rotations are the same
+	[{"pos": Vector2i(0, 0), "atlas": Vector2i(0, 1)}],
+	
+	#All rotations are the same
+	[{"pos": Vector2i(0, 0), "atlas": Vector2i(0, 1)}],
+	
+	#All rotations are the same
+	[{"pos": Vector2i(0, 0), "atlas": Vector2i(0, 1)}],
+]
+
+var two_by_two_tetromino: Array = [
+	#All rotations are the same
+	[{"pos": Vector2i(0, 0), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(1, 0), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(0, 1), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(1, 1), "atlas": Vector2i(0, 1)}
+	],
+	
+	#All rotations are the same
+	[{"pos": Vector2i(0, 0), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(1, 0), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(0, 1), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(1, 1), "atlas": Vector2i(0, 1)}
+	],
+	
+	#All rotations are the same
+	[{"pos": Vector2i(0, 0), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(1, 0), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(0, 1), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(1, 1), "atlas": Vector2i(0, 1)}
+	],
+	
+	#All rotations are the same
+	[{"pos": Vector2i(0, 0), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(1, 0), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(0, 1), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(1, 1), "atlas": Vector2i(0, 1)}
+	],
+]
+
+var three_by_three_tetromino: Array = [
+	#All rotations are the same
+	[{"pos": Vector2i(0, 0), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(1, 0), "atlas": Vector2i(0, 1)},
+	{"pos": Vector2i(2, 0), "atlas": Vector2i(0, 1)},
+	{"pos": Vector2i(0, 1), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(1, 1), "atlas": Vector2i(0, 1)},
+	{"pos": Vector2i(2, 1), "atlas": Vector2i(0, 1)},
+	{"pos": Vector2i(0, 2), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(1, 2), "atlas": Vector2i(0, 1)},
+	{"pos": Vector2i(2, 2), "atlas": Vector2i(0, 1)}
+	],
+	
+	#All rotations are the same
+	[{"pos": Vector2i(0, 0), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(1, 0), "atlas": Vector2i(0, 1)},
+	{"pos": Vector2i(2, 0), "atlas": Vector2i(0, 1)},
+	{"pos": Vector2i(0, 1), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(1, 1), "atlas": Vector2i(0, 1)},
+	{"pos": Vector2i(2, 1), "atlas": Vector2i(0, 1)},
+	{"pos": Vector2i(0, 2), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(1, 2), "atlas": Vector2i(0, 1)},
+	{"pos": Vector2i(2, 2), "atlas": Vector2i(0, 1)}
+	],
+	
+	#All rotations are the same
+	[{"pos": Vector2i(0, 0), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(1, 0), "atlas": Vector2i(0, 1)},
+	{"pos": Vector2i(2, 0), "atlas": Vector2i(0, 1)},
+	{"pos": Vector2i(0, 1), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(1, 1), "atlas": Vector2i(0, 1)},
+	{"pos": Vector2i(2, 1), "atlas": Vector2i(0, 1)},
+	{"pos": Vector2i(0, 2), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(1, 2), "atlas": Vector2i(0, 1)},
+	{"pos": Vector2i(2, 2), "atlas": Vector2i(0, 1)}
+	],
+	
+	#All rotations are the same
+	[{"pos": Vector2i(0, 0), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(1, 0), "atlas": Vector2i(0, 1)},
+	{"pos": Vector2i(2, 0), "atlas": Vector2i(0, 1)},
+	{"pos": Vector2i(0, 1), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(1, 1), "atlas": Vector2i(0, 1)},
+	{"pos": Vector2i(2, 1), "atlas": Vector2i(0, 1)},
+	{"pos": Vector2i(0, 2), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(1, 2), "atlas": Vector2i(0, 1)},
+	{"pos": Vector2i(2, 2), "atlas": Vector2i(0, 1)}
+	],
+]
+
+var two_by_one_tetromino: Array = [
+	#0 degress
+	[{"pos": Vector2i(0, 0), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(1, 0), "atlas": Vector2i(0, 1)}, 
+	],
+	
+	#90 degrees
+	[{"pos": Vector2i(1, 0), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(1, 1), "atlas": Vector2i(0, 1)}, 
+	],
+	
+	#180 degrees
+	[{"pos": Vector2i(0, 1), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(1, 1), "atlas": Vector2i(0, 1)}, 
+	],
+	
+	#270 degrees
+	[{"pos": Vector2i(0, 0), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(0, 1), "atlas": Vector2i(0, 1)}, 
+	],
+]
+
+var three_by_one_tetromino: Array = [
 	#0 degress
 	[{"pos": Vector2i(0, 1), "atlas": Vector2i(0, 1)}, 
 	{"pos": Vector2i(1, 1), "atlas": Vector2i(0, 1)}, 
 	{"pos": Vector2i(2, 1), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(3, 1), "atlas": Vector2i(0, 1)}
 	],
 	
 	#90 degrees
 	[{"pos": Vector2i(2, 0), "atlas": Vector2i(0, 1)}, 
 	{"pos": Vector2i(2, 1), "atlas": Vector2i(0, 1)}, 
 	{"pos": Vector2i(2, 2), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(2, 3), "atlas": Vector2i(0, 1)}
 	],
 	
 	#180 degrees
 	[{"pos": Vector2i(0, 2), "atlas": Vector2i(0, 1)}, 
 	{"pos": Vector2i(1, 2), "atlas": Vector2i(0, 1)}, 
 	{"pos": Vector2i(2, 2), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(3, 2), "atlas": Vector2i(0, 1)}, 
 	],
 	
 	#270 degrees
 	[{"pos": Vector2i(1, 0), "atlas": Vector2i(0, 1)}, 
 	{"pos": Vector2i(1, 1), "atlas": Vector2i(0, 1)}, 
 	{"pos": Vector2i(1, 2), "atlas": Vector2i(0, 1)}, 
+	],
+]
+
+var four_by_two_tetromino: Array = [
+	#0 degrees
+	[{"pos": Vector2i(0, 0), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(1, 0), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(0, 1), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(1, 1), "atlas": Vector2i(0, 1)},
+	{"pos": Vector2i(0, 2), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(1, 2), "atlas": Vector2i(0, 1)},
+	{"pos": Vector2i(0, 3), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(1, 3), "atlas": Vector2i(0, 1)}
+	],
+	
+	#90 degrees
+	[{"pos": Vector2i(0, 2), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(1, 2), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(2, 2), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(3, 2), "atlas": Vector2i(0, 1)},
+	{"pos": Vector2i(0, 3), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(1, 3), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(2, 3), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(3, 3), "atlas": Vector2i(0, 1)}
+	],
+	
+	#180 degrees
+	[{"pos": Vector2i(2, 0), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(3, 0), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(2, 1), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(3, 1), "atlas": Vector2i(0, 1)},
+	{"pos": Vector2i(2, 2), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(3, 2), "atlas": Vector2i(0, 1)},
+	{"pos": Vector2i(2, 3), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(3, 3), "atlas": Vector2i(0, 1)}
+	],
+	
+	#270 degrees
+	[{"pos": Vector2i(0, 0), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(1, 0), "atlas": Vector2i(0, 1)},
+	{"pos": Vector2i(2, 0), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(3, 0), "atlas": Vector2i(0, 1)},  
+	{"pos": Vector2i(0, 1), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(1, 1), "atlas": Vector2i(0, 1)},
+	{"pos": Vector2i(2, 1), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(3, 1), "atlas": Vector2i(0, 1)}
+	],
+]
+
+var four_by_three_tetromino: Array = [
+	#0 degrees
+	[{"pos": Vector2i(0, 0), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(1, 0), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(2, 0), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(0, 1), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(1, 1), "atlas": Vector2i(0, 1)},
+	{"pos": Vector2i(2, 1), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(0, 2), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(1, 2), "atlas": Vector2i(0, 1)},
+	{"pos": Vector2i(2, 2), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(0, 3), "atlas": Vector2i(0, 1)}, 
 	{"pos": Vector2i(1, 3), "atlas": Vector2i(0, 1)},
+	{"pos": Vector2i(2, 3), "atlas": Vector2i(0, 1)}, 
+	],
+	
+	#90 degrees
+	[{"pos": Vector2i(0, 1), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(1, 1), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(2, 1), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(3, 1), "atlas": Vector2i(0, 1)},
+	{"pos": Vector2i(0, 2), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(1, 2), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(2, 2), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(3, 2), "atlas": Vector2i(0, 1)},
+	{"pos": Vector2i(0, 3), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(1, 3), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(2, 3), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(3, 3), "atlas": Vector2i(0, 1)}
+	],
+	
+	#180 degrees
+	[{"pos": Vector2i(1, 0), "atlas": Vector2i(0, 1)},
+	{"pos": Vector2i(2, 0), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(3, 0), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(1, 1), "atlas": Vector2i(0, 1)},
+	{"pos": Vector2i(2, 1), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(3, 1), "atlas": Vector2i(0, 1)},
+	{"pos": Vector2i(1, 2), "atlas": Vector2i(0, 1)},
+	{"pos": Vector2i(2, 2), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(3, 2), "atlas": Vector2i(0, 1)},
+	{"pos": Vector2i(1, 3), "atlas": Vector2i(0, 1)},
+	{"pos": Vector2i(2, 3), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(3, 3), "atlas": Vector2i(0, 1)}
+	],
+	
+	#270 degrees
+	[{"pos": Vector2i(0, 0), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(1, 0), "atlas": Vector2i(0, 1)},
+	{"pos": Vector2i(2, 0), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(3, 0), "atlas": Vector2i(0, 1)},  
+	{"pos": Vector2i(0, 1), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(1, 1), "atlas": Vector2i(0, 1)},
+	{"pos": Vector2i(2, 1), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(3, 1), "atlas": Vector2i(0, 1)},
+	{"pos": Vector2i(0, 2), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(1, 2), "atlas": Vector2i(0, 1)},
+	{"pos": Vector2i(2, 2), "atlas": Vector2i(0, 1)}, 
+	{"pos": Vector2i(3, 2), "atlas": Vector2i(0, 1)}
 	],
 ]
 
-var o_tetromino: Array = [
-	#All rotations are the same
-	[{"pos": Vector2i(0, 0), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 0), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(0, 1), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 1), "atlas": Vector2i(0, 1)}
-	],
+var tetrominoes: Array = [
+	one_by_one_tetromino, 
+	two_by_two_tetromino, 
+	three_by_one_tetromino, 
+	two_by_one_tetromino,
+	three_by_one_tetromino,
+	four_by_two_tetromino,
+	four_by_three_tetromino
+	]
 	
-	#All rotations are the same
-	[{"pos": Vector2i(0, 0), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 0), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(0, 1), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 1), "atlas": Vector2i(0, 1)}
-	],
-	
-	#All rotations are the same
-	[{"pos": Vector2i(0, 0), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 0), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(0, 1), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 1), "atlas": Vector2i(0, 1)}
-	],
-	
-	#All rotations are the same
-	[{"pos": Vector2i(0, 0), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 0), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(0, 1), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 1), "atlas": Vector2i(0, 1)}
-	],
-]
-
-
-var tetrominoes: Array = [i_tetromino, o_tetromino]
 var all_tetrominoes: Array = tetrominoes.duplicate()
 
 const MIN_COL: int = -7
