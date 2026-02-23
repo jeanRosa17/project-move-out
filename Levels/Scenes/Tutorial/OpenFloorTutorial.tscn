@@ -214,10 +214,10 @@ position = Vector2(0.288391, 0.921921)
 [node name="HUD" parent="." unique_id=1842617503 instance=ExtResource("24_4alro")]
 unique_name_in_owner = true
 
-[node name="LevelManager" parent="HUD" index="0"]
+[node name="LevelManager" parent="HUD" index="0" unique_id=2114889924]
 visible = false
 
-[node name="Level Results" parent="HUD" index="1"]
+[node name="Level Results" parent="HUD" index="1" unique_id=720231760]
 visible = false
 nextLevelName = &"res://Levels/Scenes/IceHouse.tscn"
 replayLevelName = &"res://Levels/Scenes/Tutorial/OpenFloorTutorial.tscn"

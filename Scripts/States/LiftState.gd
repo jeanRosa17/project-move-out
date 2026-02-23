@@ -10,6 +10,7 @@ func canEnter() -> bool:
 	
 	if (not self.manager.hasFurniture): 
 		print("hasFunriture false")
+		self.body.setControls(true)
 		return false
 	
 	if (self.manager.furniture.canLift): return true
@@ -20,6 +21,7 @@ func canEnter() -> bool:
 		self.manager.changeState("Push")
 		return false;
 	else:
+		self.body.setControls(true)
 		return false
 
 ## Sets the Lifting animation and sets the Furniture to enter its lift state.
