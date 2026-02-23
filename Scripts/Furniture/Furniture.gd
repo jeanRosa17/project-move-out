@@ -69,7 +69,10 @@ func _ready() -> void:
 		rotatedVersion.global_position = self.global_position
 		
 	
-	self.createAdditionalCollisions()
+	if (self.collider.shape is RectangleShape2D):
+		self.createAdditionalCollisions()
+	elif (self.collider.shape is ConvexPolygonShape2D):
+		self.create_additional_collisions_polygon()
 	
 	areaLeft.body_entered.connect(_on_left_area_entered)
 	areaLeft.body_exited.connect(_on_left_area_exited)
@@ -135,6 +138,9 @@ func createAdditionalCollisions() -> void:
 	areaLeft.name = "Left"
 	areaLeft.add_child(shapeLeft)
 	self.add_child(areaLeft)
+
+func create_additional_collisions_polygon() -> void:
+	pass
 
 func _physics_process(_delta: float) -> void:
 	if (self.isLifted and self.ghostSprite != null):

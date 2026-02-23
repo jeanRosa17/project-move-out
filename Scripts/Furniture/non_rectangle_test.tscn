@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dcp0abymfhfgl"]
+
+[ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_fai1v"]
+[ext_resource type="Texture2D" uid="uid://cpplw5lqrp5qi" path="res://Assets/Objects/Chairs/orange_chair_side.png" id="2_81rke"]
+[ext_resource type="Texture2D" uid="uid://b6o4yg8ovlws0" path="res://Assets/Objects/Beds/bed_2.png" id="3_rplv3"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_ccn6h"]
+points = PackedVector2Array(23, 9, 24, 28, -8, 28, -8, -3, 7, -2, 7, 9)
+
+[node name="RigidBody2D" type="RigidBody2D" unique_id=1985086429]
+script = ExtResource("1_fai1v")
+canPush = true
+canPull = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=483159959]
+texture = ExtResource("2_81rke")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=116079441]
+position = Vector2(8, 16)
+texture = ExtResource("3_rplv3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=960160901]
+shape = SubResource("ConvexPolygonShape2D_ccn6h")
