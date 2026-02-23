@@ -1,29 +1,29 @@
-[gd_scene load_steps=6 format=3 uid="uid://cfmb3mmeue8au"]
+[gd_scene format=3 uid="uid://cfmb3mmeue8au"]
 
 [ext_resource type="Script" uid="uid://j5jhi8fi2uk0" path="res://UI/LevelResults.gd" id="1_4n7mi"]
 [ext_resource type="Script" uid="uid://bea0sp1ppn3e6" path="res://UI/HUDManager.gd" id="1_t2p4a"]
 [ext_resource type="PackedScene" uid="uid://b0xffv4xtxnru" path="res://UI/Scenes/FadeToBlackTransition.tscn" id="1_yixhe"]
 [ext_resource type="PackedScene" uid="uid://psh4s5sym8kd" path="res://UI/Scenes/Textbox.tscn" id="2_ijstf"]
-[ext_resource type="FontFile" uid="uid://c17q41l7sknhq" path="res://Assets/fonts/m5x7.ttf" id="4_6hjip"]
+[ext_resource type="FontFile" uid="uid://c17q41l7sknhq" path="res://Assets/Fonts/m5x7.ttf" id="4_6hjip"]
 
-[node name="HUD" type="CanvasLayer"]
+[node name="HUD" type="CanvasLayer" unique_id=1725586568]
 script = ExtResource("1_t2p4a")
 
-[node name="LevelManager" parent="." instance=ExtResource("1_yixhe")]
+[node name="LevelManager" parent="." unique_id=2114889924 instance=ExtResource("1_yixhe")]
 modulate = Color(1, 1, 1, 1)
 
-[node name="Level Results" type="CanvasLayer" parent="."]
+[node name="Level Results" type="CanvasLayer" parent="." unique_id=720231760]
 script = ExtResource("1_4n7mi")
 
-[node name="Container" type="CenterContainer" parent="Level Results"]
+[node name="Container" type="CenterContainer" parent="Level Results" unique_id=482829432]
 offset_right = 320.0
 offset_bottom = 180.0
 
-[node name="BoxContainer" type="BoxContainer" parent="Level Results/Container"]
+[node name="BoxContainer" type="BoxContainer" parent="Level Results/Container" unique_id=1835812336]
 layout_mode = 2
 vertical = true
 
-[node name="Title" type="RichTextLabel" parent="Level Results/Container/BoxContainer"]
+[node name="Title" type="RichTextLabel" parent="Level Results/Container/BoxContainer" unique_id=1203862278]
 custom_minimum_size = Vector2(320, 52)
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("4_6hjip")
@@ -41,7 +41,7 @@ text = "House Packed!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Score" type="RichTextLabel" parent="Level Results/Container/BoxContainer"]
+[node name="Score" type="RichTextLabel" parent="Level Results/Container/BoxContainer" unique_id=750066112]
 custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("4_6hjip")
@@ -54,7 +54,7 @@ bbcode_enabled = true
 text = "Your score is:"
 horizontal_alignment = 1
 
-[node name="Stars Text" type="RichTextLabel" parent="Level Results/Container/BoxContainer"]
+[node name="Stars Text" type="RichTextLabel" parent="Level Results/Container/BoxContainer" unique_id=1060215766]
 custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("4_6hjip")
@@ -67,17 +67,17 @@ bbcode_enabled = true
 text = "You earned..."
 horizontal_alignment = 1
 
-[node name="Star Box" type="Panel" parent="Level Results/Container/BoxContainer"]
+[node name="Star Box" type="Panel" parent="Level Results/Container/BoxContainer" unique_id=124764439]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 
-[node name="Panel" type="HFlowContainer" parent="Level Results/Container/BoxContainer"]
+[node name="Panel" type="HFlowContainer" parent="Level Results/Container/BoxContainer" unique_id=1877994026]
 custom_minimum_size = Vector2(320, 40)
 layout_mode = 2
 size_flags_horizontal = 0
 alignment = 1
 
-[node name="Replay" type="Button" parent="Level Results/Container/BoxContainer/Panel"]
+[node name="Replay" type="Button" parent="Level Results/Container/BoxContainer/Panel" unique_id=1904150237]
 custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -85,7 +85,7 @@ theme_override_fonts/font = ExtResource("4_6hjip")
 theme_override_font_sizes/font_size = 16
 text = "Replay"
 
-[node name="Next Level" type="Button" parent="Level Results/Container/BoxContainer/Panel"]
+[node name="Next Level" type="Button" parent="Level Results/Container/BoxContainer/Panel" unique_id=219272830]
 custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -93,7 +93,7 @@ theme_override_fonts/font = ExtResource("4_6hjip")
 theme_override_font_sizes/font_size = 16
 text = "Next Level"
 
-[node name="Quit" type="Button" parent="Level Results/Container/BoxContainer/Panel"]
+[node name="Quit" type="Button" parent="Level Results/Container/BoxContainer/Panel" unique_id=722774201]
 custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -101,11 +101,11 @@ theme_override_fonts/font = ExtResource("4_6hjip")
 theme_override_font_sizes/font_size = 16
 text = "Quit"
 
-[node name="Dialogue" type="CanvasLayer" parent="."]
+[node name="Dialogue" type="CanvasLayer" parent="." unique_id=2001474479]
 layer = 2
 visible = false
 
-[node name="Textbox" parent="Dialogue" instance=ExtResource("2_ijstf")]
+[node name="Textbox" parent="Dialogue" unique_id=1851480463 instance=ExtResource("2_ijstf")]
 
 [connection signal="pressed" from="Level Results/Container/BoxContainer/Panel/Replay" to="Level Results" method="_on_replay_level_pressed"]
 [connection signal="pressed" from="Level Results/Container/BoxContainer/Panel/Next Level" to="Level Results" method="_on_next_level_pressed"]
