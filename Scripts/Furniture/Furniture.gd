@@ -74,9 +74,6 @@ func _ready() -> void:
 	elif (self.collider.shape is ConvexPolygonShape2D):
 		self.create_additional_collisions_polygon()
 	
-	areaLeft.body_entered.connect(_on_left_area_entered)
-	areaLeft.body_exited.connect(_on_left_area_exited)
-	
 	self.lock_rotation = true
 
 func createAdditionalCollisions() -> void:
@@ -138,9 +135,32 @@ func createAdditionalCollisions() -> void:
 	areaLeft.name = "Left"
 	areaLeft.add_child(shapeLeft)
 	self.add_child(areaLeft)
+	
+	areaLeft.body_entered.connect(_on_left_area_entered)
+	areaLeft.body_exited.connect(_on_left_area_exited)
 
 func create_additional_collisions_polygon() -> void:
-	pass
+	var shape:ConvexPolygonShape2D = self.collider.shape
+	for point in range(shape.points.size()):
+		var sh:CollisionShape2D = CollisionShape2D.new()
+		sh.debug_color = Color.RED
+		var area:Area2D = Area2D.new()
+		var seg:SegmentShape2D = SegmentShape2D.new()
+		
+		
+		seg.a = shape.points.get(point)
+		
+		# check for overflow
+		seg.b = shape.points.get(point + 1)
+		sh.shape = seg
+		
+		area.collision_layer = 2
+		area.collision_mask = 7
+		
+		# check to see if top bottom or side, connect signal and name
+		
+		area.add_child(sh)
+		self.add_child(area)
 
 func _physics_process(_delta: float) -> void:
 	if (self.isLifted and self.ghostSprite != null):
