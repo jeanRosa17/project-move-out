@@ -22,12 +22,12 @@
 [ext_resource type="PackedScene" uid="uid://uacgji4vcg37" path="res://Assets/Audio/push_pull_audio.tscn" id="17_allxl"]
 [ext_resource type="PackedScene" uid="uid://cl3ww3w6r3n1r" path="res://Assets/Objects/Kitchen/Scenes/Fridge.tscn" id="17_toc1w"]
 [ext_resource type="PackedScene" uid="uid://brfkiqavvunae" path="res://Assets/Particles/Scenes/wind_particle.tscn" id="18_0g7f6"]
+[ext_resource type="Texture2D" uid="uid://sw8pwxto14nl" path="res://Assets/Garage/Driving Van.png" id="18_2wgx8"]
 [ext_resource type="PackedScene" uid="uid://cuho4egtuhmvt" path="res://Assets/Objects/Tables/Scenes/TV_and_desk_front.tscn" id="18_en5i7"]
 [ext_resource type="Script" uid="uid://cyso0emuh7ori" path="res://Levels/Scenes/ice_areas.gd" id="19_2wgx8"]
 [ext_resource type="Script" path="res://Levels/Scenes/wind3.gd" id="19_m2aof"]
 [ext_resource type="PackedScene" uid="uid://nomguund5j25" path="res://Assets/Objects/Couches/Scenes/red_couch_front.tscn" id="19_obgx0"]
 [ext_resource type="AudioStream" uid="uid://0q4m8jstuh5j" path="res://Assets/Audio/ice slide noise.wav" id="20_m2aof"]
-[ext_resource type="Texture2D" uid="uid://cqocbvfbfvtbf" path="res://Assets/Van.png" id="28_0g7f6"]
 [ext_resource type="Script" uid="uid://cr2sqh5ymwl4k" path="res://Scripts/Cutscenes/Cutscene.gd" id="28_2wgx8"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0g7f6"]
@@ -211,10 +211,10 @@ limit_bottom = 661
 editor_draw_limits = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Y-Sorting/Van" unique_id=1385411972]
-texture = ExtResource("28_0g7f6")
+texture = ExtResource("18_2wgx8")
 flip_h = true
 region_enabled = true
-region_rect = Rect2(0, 0, 64, 48)
+region_rect = Rect2(11, 116, 86, 44)
 
 [node name="mechanics" type="Node" parent="." unique_id=1811001710]
 
@@ -283,12 +283,12 @@ needed = [null, null, null, null, null, null, null, null]
 unique_name_in_owner = true
 visible = false
 
-[node name="Level Results" parent="HUD" index="1"]
+[node name="Level Results" parent="HUD" index="1" unique_id=720231760]
 visible = false
 nextLevelName = &"res://Levels/Scenes/FratHouseAlt.tscn"
 replayLevelName = &"res://Levels/Scenes/apartmentAlt.tscn"
 
-[node name="Dialogue" parent="HUD" index="2"]
+[node name="Dialogue" parent="HUD" index="2" unique_id=2001474479]
 visible = true
 
 [node name="TextTrigger" type="Node2D" parent="." unique_id=568340590]
