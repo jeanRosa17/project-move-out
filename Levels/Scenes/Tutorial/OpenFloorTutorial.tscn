@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dlqlqw0fvr4wp" path="res://Assets/Objects/Carpets/carpet.png" id="2_pebci"]
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="3_3j8mk"]
+[ext_resource type="PackedScene" uid="uid://dcp0abymfhfgl" path="res://Scripts/Furniture/non_rectangle_test.tscn" id="3_4alro"]
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Assets/Player/Scenes/Player.tscn" id="6_4y23e"]
 [ext_resource type="PackedScene" uid="uid://dkssiia1dmwor" path="res://Assets/Objects/Chairs/Scene/Wood_Chair_Side.tscn" id="6_u0unu"]
 [ext_resource type="PackedScene" uid="uid://dpyl8x5qojmng" path="res://Assets/Objects/Table Items/Scenes/TV.tscn" id="7_d4vco"]
@@ -95,6 +96,12 @@ shape = SubResource("WorldBoundaryShape2D_iqcmb")
 
 [node name="Y-Sorting" type="Node2D" parent="." unique_id=162271870]
 y_sort_enabled = true
+
+[node name="RigidBody2D" parent="Y-Sorting" unique_id=1985086429 instance=ExtResource("3_4alro")]
+position = Vector2(168, 384)
+collision_layer = 2
+collision_mask = 7
+can_sleep = false
 
 [node name="Chair" parent="Y-Sorting" unique_id=636192129 instance=ExtResource("6_u0unu")]
 position = Vector2(336, 120)
