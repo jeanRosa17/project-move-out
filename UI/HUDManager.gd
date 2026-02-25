@@ -25,7 +25,7 @@ func checkResults() -> void:
 	## enable tetris and have the player play that first
 	
 	print("Gay gay homosexual gay");
-	var text:RichTextLabel = self.level_results.find_child("Score")
+	var _text:RichTextLabel = self.level_results.find_child("Score")
 	self.level_results.visible = true
 
 ## Ensures that the Dialogue Box turns itself off when the dialogue is finished.

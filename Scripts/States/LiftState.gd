@@ -26,12 +26,13 @@ func canEnter() -> bool:
 
 ## Sets the Lifting animation and sets the Furniture to enter its lift state.
 func enter() -> void:
-	animationFinished = false
+	self.animationFinished = false
 	var dir:String = self.getManager().view.animation.split(" ")[1].to_lower()
 	
 	if not (self.getManager().wasPreviousState("Lift")):
 		self.getManager().view.play("lift " + dir)
-		self.getManager().view.animation_finished.connect(exitAfterAnimationFinish)
+		if not (self.getManager().view.animation_finished.is_connected(exitAfterAnimationFinish)):
+			self.getManager().view.animation_finished.connect(exitAfterAnimationFinish)
 
 func update(_delta:float) -> void:
 	if (self.animationFinished):
@@ -42,5 +43,6 @@ func exitAfterAnimationFinish() -> void:
 	self.animationFinished = true
 
 func exit() -> void:
-	self.getManager().view.animation_finished.disconnect(self.manager.furniture.enterLift.bind(self.body))
+	if (self.getManager().view.animation_finished.is_connected(exitAfterAnimationFinish)):
+		self.getManager().view.animation_finished.disconnect(exitAfterAnimationFinish)
 	self.body.setControls(true)

@@ -3,7 +3,7 @@ extends Area2D
 @onready var hud:HUDManager = self.get_parent().get_parent().get_node("%HUD")
 
 var playerInArea:bool
-var player
+var player:Player
 @export var vanDoor:Area2D
 @export var furniture:Array[Node]
 

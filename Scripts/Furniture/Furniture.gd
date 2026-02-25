@@ -165,7 +165,10 @@ func create_additional_collisions_polygon() -> void:
 		area.collision_mask = 7
 		
 		# make segments a little smaller
+		@warning_ignore("untyped_declaration")
 		var sega = seg.a.lerp(seg.b, .05)
+		
+		@warning_ignore("untyped_declaration")
 		var segb = seg.b.lerp(seg.a, .02)
 			
 		seg.a = sega

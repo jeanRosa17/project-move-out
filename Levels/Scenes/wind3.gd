@@ -40,6 +40,9 @@ func _on_body_exited(body: Node2D) -> void:
 func _get_direction() -> Vector2:
 	# Sets objects which enter the area to move in the direction of the area
 	# 1 = east, 2 = west, 3 = north, 4 = south
+	if (not self.has_meta("Direction")):
+		return Vector2(0, 0)
+	
 	match self.get_meta("Direction"):
 		"east":
 			return east

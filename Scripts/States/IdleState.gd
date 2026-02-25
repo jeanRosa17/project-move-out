@@ -32,7 +32,7 @@ func update(_delta:float) -> void:
 	pass
 
 ## This method runs every _physics_process() frame of the StateManager.
-func physicsUpdate(delta:float) -> void:
+func physicsUpdate(_delta:float) -> void:
 	#self.body.velocity.x = lerpf(self.body.velocity.x, 0.0, delta * self.physics.deceleration)
 	#self.body.velocity.y = lerpf(self.body.velocity.y, 0.0, delta * self.physics.deceleration)
 	
@@ -45,7 +45,7 @@ func physicsUpdate(delta:float) -> void:
 ## stops pressing a direction.
 func decelerate(delta:float) -> void:
 	if (not self.body.velocity.is_zero_approx()):
-		var direction = self.getManager().direction
+		var _direction:Vector2 = self.getManager().direction
 		self.body.velocity.x -= delta * (move_toward(self.body.velocity.x, -100, self.physics.deceleration * delta)) 
 		self.body.velocity.y -= delta * (move_toward(self.body.velocity.y, -100, self.physics.deceleration * delta))
 	else:

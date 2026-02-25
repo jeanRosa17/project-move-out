@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://brfkiqavvunae"]
 
-[ext_resource type="Script" uid="uid://cdm6rvoswvv7b" path="res://Assets/Particles/Scenes/wind_particle.gd" id="1_f2f58"]
 [ext_resource type="Texture2D" uid="uid://chmog7easei21" path="res://Assets/Particles/Dust White.png" id="1_fqkh7"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_tthwx"]
@@ -16,7 +15,6 @@ offsets = PackedFloat32Array(0, 0.740385)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
 
 [node name="Walking_particle" type="Node2D" unique_id=144958668]
-script = ExtResource("1_f2f58")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=937536942]
 material = SubResource("CanvasItemMaterial_tthwx")

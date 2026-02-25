@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bh2e8ltvpt5g8" path="res://Assets/Garage/truck_back_01.png" id="1_ntmp6"]
 [ext_resource type="Script" uid="uid://bg35t571kh220" path="res://Scripts/Van/Van.gd" id="2_u5oop"]
 [ext_resource type="Texture2D" uid="uid://cqguipmcnrdn1" path="res://Assets/Player/Shadow.png" id="3_22k4w"]
-[ext_resource type="Script" uid="uid://bmwxnetqmbd3w" path="res://Levels/Scenes/button_trigger.gd" id="3_u5oop"]
+[ext_resource type="Script" path="res://Levels/Scenes/button_trigger.gd" id="3_u5oop"]
 [ext_resource type="Texture2D" uid="uid://da21gw6ai8h4v" path="res://Assets/Garage/leaver_01.png" id="4_fvbdv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8gfoj"]

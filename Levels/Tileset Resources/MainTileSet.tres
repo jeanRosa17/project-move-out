@@ -1,7 +1,7 @@
 [gd_resource type="TileSet" format=3 uid="uid://c7j0gyu0tnn1m"]
 
-[ext_resource type="Texture2D" uid="uid://ckthm0nlv0cqj" path="res://Assets/background/background_01.png" id="1_civ8i"]
-[ext_resource type="Texture2D" uid="uid://c8g5v0hwyh5of" path="res://Assets/background/background_02.png" id="2_cos8y"]
+[ext_resource type="Texture2D" uid="uid://ckthm0nlv0cqj" path="res://Assets/Background/background_01.png" id="1_civ8i"]
+[ext_resource type="Texture2D" uid="uid://c8g5v0hwyh5of" path="res://Assets/Background/background_02.png" id="2_cos8y"]
 [ext_resource type="Texture2D" uid="uid://1pndgm8ucik4" path="res://Assets/Objects/Kitchen/Kitchen-Sheet.png" id="3_cos8y"]
 [ext_resource type="Texture2D" uid="uid://bpd0wwec3qn86" path="res://Assets/tiles/haunted_house_tile.png" id="4_cos8y"]
 [ext_resource type="Texture2D" uid="uid://djbgvclxv2ggx" path="res://Assets/tiles/Support Columns.png" id="5_ia4qr"]
@@ -352,9 +352,6 @@ texture = ExtResource("5_ia4qr")
 14:1/0 = 0
 15:1/0 = 0
 15:2/0 = 0
-16:2/0 = 0
-16:1/0 = 0
-16:0/0 = 0
 8:0/0 = 0
 8:1/0 = 0
 8:2/0 = 0
