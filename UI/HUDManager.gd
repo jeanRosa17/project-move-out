@@ -7,6 +7,10 @@ class_name HUDManager
 @onready var textbox: DialogueManager = $Dialogue/Textbox
 @onready var packedFurniture: Array[String] = []
 
+## ensures dialogue is invisible at the start of the level
+func _ready() ->void:
+	self.dialogue.visible = false
+
 ## Makes the Dialogue layer visible and calls setDialogueTo on the textbox node
 func setDialogueTo(dTag:DialogueTag) -> void:
 	self.dialogue.visible = true

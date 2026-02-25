@@ -18,23 +18,27 @@ var tween:Tween
 func _ready() -> void:
 	#self.add_child(self.camera)
 	self.position = self.startPos
+	self.player.visible = false
 
 func _process(_delta: float) -> void:
 	var speed:float = 0.1 if (skipCutscene) else 3.0
 	
 	if (i != events.size()):
+		self.player.position = self.sprite_2d.position
 		if (tween == null):
 			tween = create_tween()
 			tween.tween_property(self, "position", self.events[0], speed).from(self.startPos)
 			#tween.play()
 		
 		if (self.position == self.events[i]):
-			if (i < events.size()): i += 1
+			if (i < events.size()): 
+				i += 1
 			if (i == events.size()): 
 				tween = null
 				self.remove_child(self.player)
 				self.y_sorting.add_child(self.player)
 				
+				self.player.visible = true
 				self.player.view.play("jump down")
 				self.player.position = Vector2(self.position.x, self.position.y+32)
 				
@@ -52,8 +56,8 @@ func _process(_delta: float) -> void:
 			tween.tween_property(self, "position", self.events[i], speed).from(self.position)
 			#tween.play()
 
-	if (i == 1):
-		self.sprite_2d.region_rect = Rect2(128, 0, 64, 48)
+	# if (i == 1):
+	# 	self.sprite_2d.region_rect = Rect2(128, 0, 64, 48)
 	
-	if (i == 2):
-		self.sprite_2d.region_rect = Rect2(0, 0, 64, 48)
+	# if (i == 2):
+	# 	self.sprite_2d.region_rect = Rect2(0, 0, 64, 48)

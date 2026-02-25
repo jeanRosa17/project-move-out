@@ -202,6 +202,7 @@ position = Vector2(219, 268)
 position = Vector2(724, -68)
 script = ExtResource("28_2wgx8")
 startPos = Vector2(724, -68)
+skipCutscene = false
 events = Array[Vector2]([Vector2(155, -68), Vector2(132, 71), Vector2(52, 71)])
 
 [node name="Player" parent="Y-Sorting/Van" unique_id=2126433676 instance=ExtResource("9_en5i7")]
@@ -291,11 +292,8 @@ visible = false
 
 [node name="Level Results" parent="HUD" index="1" unique_id=720231760]
 visible = false
-nextLevelName = &"res://Levels/Scenes/TitleScreen.tscn"
+nextLevelName = &"res://UI/Scenes/TitleScreen.tscn"
 replayLevelName = &"res://Levels/Scenes/apartmentAlt.tscn"
-
-[node name="Dialogue" parent="HUD" index="2" unique_id=2001474479]
-visible = true
 
 [node name="TextTrigger" type="Node2D" parent="." unique_id=568340590]
 visible = false

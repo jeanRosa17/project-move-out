@@ -190,9 +190,6 @@ visible = false
 nextLevelName = &"res://Levels/Scenes/apartmentAlt.tscn"
 replayLevelName = &"res://Levels/Scenes/TutorialUnit.tscn"
 
-[node name="Dialogue" parent="HUD" index="2" unique_id=2001474479]
-visible = true
-
 [node name="TextTrigger" type="Node2D" parent="." unique_id=828362459]
 visible = false
 position = Vector2(-72, 216)
