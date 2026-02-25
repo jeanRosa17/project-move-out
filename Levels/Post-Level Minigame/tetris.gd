@@ -253,14 +253,13 @@ var four_by_three_tetromino: Array = [
 var tetrominoes: Array = [
 	one_by_one_tetromino, 
 	two_by_two_tetromino, 
-	three_by_one_tetromino, 
+	three_by_three_tetromino, 
 	two_by_one_tetromino,
 	three_by_one_tetromino,
 	four_by_two_tetromino,
 	four_by_three_tetromino
 	]
 	
-var all_tetrominoes: Array = tetrominoes.duplicate()
 
 const MIN_COL: int = -7
 const MAX_COL: int = 6
@@ -321,30 +320,30 @@ func _physics_process(delta: float) -> void:
 		if fall_timer >= current_fall_interval:
 			move_tetromino(Vector2i.DOWN)
 			fall_timer = 0
+	else:
+		#show end screen here
+		pass
 
 func choose_tetromino() -> Array:
 	var selected_tetromino: Array
 	if not tetrominoes.is_empty():
 		tetrominoes.shuffle()
 		selected_tetromino = tetrominoes.pop_front()
-	else:
-		tetrominoes = all_tetrominoes.duplicate()
-		tetrominoes.shuffle()
-		selected_tetromino = tetrominoes.pop_front()
 	return selected_tetromino
 	
 func initialize_tetromino() -> void:
 	current_position = START_POSITION
-	active_tetromino = current_tetromino_type[rotation_index]
-	render_tetromino(active_tetromino, current_position)
-	render_tetromino(next_tetromino_type[0], Vector2i(12, -10))
-	
+	if (!next_tetromino_type.is_empty()):
+		render_tetromino(next_tetromino_type[0], Vector2i(12, -10))
+	if (!current_tetromino_type.is_empty()):
+		active_tetromino = current_tetromino_type[rotation_index]
+		render_tetromino(active_tetromino, current_position)
+
 func render_tetromino(tetromino: Array, position: Vector2i) -> void:
 	for block in tetromino:
 		var block_pos: Vector2i = block["pos"]
 		var block_atlas: Vector2i = block["atlas"] #will need to ensure blcok atlas at location is done correctly for art
 		active_layer.set_cell(position + block_pos, tile_id, block_atlas)
-
 
 func clear_tetromino() -> void:
 	for block in active_tetromino:
@@ -376,6 +375,7 @@ func land_tetromino() -> void:
 	for block in active_tetromino:
 		active_layer.erase_cell(current_position + block["pos"])
 		board_layer.set_cell(current_position + block["pos"], tile_id, block["atlas"])
+		active_tetromino = []
 
 func clear_next_tetromino_preview() -> void:
 	for i in range (11, 16):
@@ -410,8 +410,12 @@ func is_within_bounds(pos: Vector2i) -> bool:
 	return tile_id == -1
 
 func is_game_over() -> void:
-	for block in active_tetromino:
-		if not is_within_bounds(block["pos"] + current_position):
-			land_tetromino()
-			is_game_running = false
-			print("You lose idiot!")
+	if (active_tetromino.is_empty() && next_tetromino_type.is_empty()):
+		print("You win!")
+		is_game_running = false
+	else:
+		for block in active_tetromino:
+			if not is_within_bounds(block["pos"] + current_position):
+				land_tetromino()
+				is_game_running = false
+				print("You lose idiot!")
