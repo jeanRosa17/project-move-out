@@ -143,7 +143,6 @@ func createAdditionalCollisions() -> void:
 func create_additional_collisions_polygon() -> void:
 	var shape:ConvexPolygonShape2D = self.collider.shape
 	var segs:Array[SegmentShape2D] = []
-	var mArea
 	for point in range(shape.points.size()):
 		var sh:CollisionShape2D = CollisionShape2D.new()
 		sh.debug_color = Color.RED
@@ -152,16 +151,25 @@ func create_additional_collisions_polygon() -> void:
 		
 		
 		seg.a = shape.points.get(point)
-		
+		print(seg.a)
 		# check for overflow
 		if (point == shape.points.size() - 1):
 			seg.b = shape.points.get(0)
+			print(seg.b)
 		else:
 			seg.b = shape.points.get(point + 1)
+			
 		sh.shape = seg
 		
 		area.collision_layer = 2
 		area.collision_mask = 7
+		
+		# make segments a little smaller
+		var sega = seg.a.lerp(seg.b, .05)
+		var segb = seg.b.lerp(seg.a, .02)
+			
+		seg.a = sega
+		seg.b = segb
 		
 		area.add_child(sh)
 		self.add_child(area)
@@ -173,6 +181,7 @@ func create_additional_collisions_polygon() -> void:
 		if (abs(seg.a.y - seg.b.y) < 1):
 			## this means its a horizontal edge meaning its either top or bottom
 			#print("horrizontal")
+			
 			ray.position = Vector2((seg.a.x + seg.b.x) /2 , seg.a.y)
 			self.collider.add_child(ray)
 			ray.force_raycast_update()
@@ -194,8 +203,6 @@ func create_additional_collisions_polygon() -> void:
 			ray.target_position = Vector2(-50, 0)
 			ray.force_raycast_update()
 			if (ray.get_collider()):
-				print("collided6")
-				print(ray.get_collider())
 				if(ray.get_collider() == self):
 					area.body_entered.connect(_on_right_area_entered)
 					area.body_exited.connect(_on_right_area_exited)
