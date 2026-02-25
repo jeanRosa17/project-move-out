@@ -2,83 +2,83 @@ extends Node2D
 
 var one_by_one_tetromino: Array = [
 	#All rotations are the same
-	[{"pos": Vector2i(0, 0), "atlas": Vector2i(0, 1)}],
+	[{"pos": Vector2i(0, 0), "atlas": Vector2i(8, 0)}],
 	
 	#All rotations are the same
-	[{"pos": Vector2i(0, 0), "atlas": Vector2i(0, 1)}],
+	[{"pos": Vector2i(0, 0), "atlas": Vector2i(8, 0)}],
 	
 	#All rotations are the same
-	[{"pos": Vector2i(0, 0), "atlas": Vector2i(0, 1)}],
+	[{"pos": Vector2i(0, 0), "atlas": Vector2i(8, 0)}],
 	
 	#All rotations are the same
-	[{"pos": Vector2i(0, 0), "atlas": Vector2i(0, 1)}],
+	[{"pos": Vector2i(0, 0), "atlas": Vector2i(8, 0)}],
 ]
 
 var two_by_two_tetromino: Array = [
 	#All rotations are the same
-	[{"pos": Vector2i(0, 0), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 0), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(0, 1), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 1), "atlas": Vector2i(0, 1)}
+	[{"pos": Vector2i(0, 0), "atlas": Vector2i(5, 0)}, 
+	{"pos": Vector2i(1, 0), "atlas": Vector2i(7, 0)}, 
+	{"pos": Vector2i(0, 1), "atlas": Vector2i(5, 2)}, 
+	{"pos": Vector2i(1, 1), "atlas": Vector2i(7, 2)}
 	],
 	
 	#All rotations are the same
-	[{"pos": Vector2i(0, 0), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 0), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(0, 1), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 1), "atlas": Vector2i(0, 1)}
+	[{"pos": Vector2i(0, 0), "atlas": Vector2i(5, 0)}, 
+	{"pos": Vector2i(1, 0), "atlas": Vector2i(7, 0)}, 
+	{"pos": Vector2i(0, 1), "atlas": Vector2i(5, 2)}, 
+	{"pos": Vector2i(1, 1), "atlas": Vector2i(7, 2)}
 	],
 	
 	#All rotations are the same
-	[{"pos": Vector2i(0, 0), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 0), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(0, 1), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 1), "atlas": Vector2i(0, 1)}
+	[{"pos": Vector2i(0, 0), "atlas": Vector2i(5, 0)}, 
+	{"pos": Vector2i(1, 0), "atlas": Vector2i(7, 0)}, 
+	{"pos": Vector2i(0, 1), "atlas": Vector2i(5, 2)}, 
+	{"pos": Vector2i(1, 1), "atlas": Vector2i(7, 2)}
 	],
 	
 	#All rotations are the same
-	[{"pos": Vector2i(0, 0), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 0), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(0, 1), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 1), "atlas": Vector2i(0, 1)}
+	[{"pos": Vector2i(0, 0), "atlas": Vector2i(5, 0)}, 
+	{"pos": Vector2i(1, 0), "atlas": Vector2i(7, 0)}, 
+	{"pos": Vector2i(0, 1), "atlas": Vector2i(5, 2)}, 
+	{"pos": Vector2i(1, 1), "atlas": Vector2i(7, 2)}
 	],
 ]
 
 var three_by_three_tetromino: Array = [
 	#All rotations are the same
-	[{"pos": Vector2i(0, 0), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 0), "atlas": Vector2i(0, 1)},
-	{"pos": Vector2i(2, 0), "atlas": Vector2i(0, 1)},
-	{"pos": Vector2i(0, 1), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 1), "atlas": Vector2i(0, 1)},
-	{"pos": Vector2i(2, 1), "atlas": Vector2i(0, 1)},
-	{"pos": Vector2i(0, 2), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 2), "atlas": Vector2i(0, 1)},
-	{"pos": Vector2i(2, 2), "atlas": Vector2i(0, 1)}
+	[{"pos": Vector2i(0, 0), "atlas": Vector2i(5, 0)}, 
+	{"pos": Vector2i(1, 0), "atlas": Vector2i(6, 0)},
+	{"pos": Vector2i(2, 0), "atlas": Vector2i(7, 0)},
+	{"pos": Vector2i(0, 1), "atlas": Vector2i(5, 1)}, 
+	{"pos": Vector2i(1, 1), "atlas": Vector2i(6, 1)},
+	{"pos": Vector2i(2, 1), "atlas": Vector2i(7, 1)},
+	{"pos": Vector2i(0, 2), "atlas": Vector2i(5, 2)}, 
+	{"pos": Vector2i(1, 2), "atlas": Vector2i(6, 2)},
+	{"pos": Vector2i(2, 2), "atlas": Vector2i(7, 2)}
 	],
 	
 	#All rotations are the same
-	[{"pos": Vector2i(0, 0), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 0), "atlas": Vector2i(0, 1)},
-	{"pos": Vector2i(2, 0), "atlas": Vector2i(0, 1)},
-	{"pos": Vector2i(0, 1), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 1), "atlas": Vector2i(0, 1)},
-	{"pos": Vector2i(2, 1), "atlas": Vector2i(0, 1)},
-	{"pos": Vector2i(0, 2), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 2), "atlas": Vector2i(0, 1)},
-	{"pos": Vector2i(2, 2), "atlas": Vector2i(0, 1)}
+	[{"pos": Vector2i(0, 0), "atlas": Vector2i(5, 0)}, 
+	{"pos": Vector2i(1, 0), "atlas": Vector2i(6, 0)},
+	{"pos": Vector2i(2, 0), "atlas": Vector2i(7, 0)},
+	{"pos": Vector2i(0, 1), "atlas": Vector2i(5, 1)}, 
+	{"pos": Vector2i(1, 1), "atlas": Vector2i(6, 1)},
+	{"pos": Vector2i(2, 1), "atlas": Vector2i(7, 1)},
+	{"pos": Vector2i(0, 2), "atlas": Vector2i(5, 2)}, 
+	{"pos": Vector2i(1, 2), "atlas": Vector2i(6, 2)},
+	{"pos": Vector2i(2, 2), "atlas": Vector2i(7, 2)}
 	],
 	
 	#All rotations are the same
-	[{"pos": Vector2i(0, 0), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 0), "atlas": Vector2i(0, 1)},
-	{"pos": Vector2i(2, 0), "atlas": Vector2i(0, 1)},
-	{"pos": Vector2i(0, 1), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 1), "atlas": Vector2i(0, 1)},
-	{"pos": Vector2i(2, 1), "atlas": Vector2i(0, 1)},
-	{"pos": Vector2i(0, 2), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 2), "atlas": Vector2i(0, 1)},
-	{"pos": Vector2i(2, 2), "atlas": Vector2i(0, 1)}
+	[{"pos": Vector2i(0, 0), "atlas": Vector2i(5, 0)}, 
+	{"pos": Vector2i(1, 0), "atlas": Vector2i(6, 0)},
+	{"pos": Vector2i(2, 0), "atlas": Vector2i(7, 0)},
+	{"pos": Vector2i(0, 1), "atlas": Vector2i(5, 1)}, 
+	{"pos": Vector2i(1, 1), "atlas": Vector2i(6, 1)},
+	{"pos": Vector2i(2, 1), "atlas": Vector2i(7, 1)},
+	{"pos": Vector2i(0, 2), "atlas": Vector2i(5, 2)}, 
+	{"pos": Vector2i(1, 2), "atlas": Vector2i(6, 2)},
+	{"pos": Vector2i(2, 2), "atlas": Vector2i(7, 2)}
 	],
 	
 	#All rotations are the same
@@ -96,157 +96,157 @@ var three_by_three_tetromino: Array = [
 
 var two_by_one_tetromino: Array = [
 	#0 degress
-	[{"pos": Vector2i(0, 0), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 0), "atlas": Vector2i(0, 1)}, 
+	[{"pos": Vector2i(0, 0), "atlas": Vector2i(5, 3)}, 
+	{"pos": Vector2i(1, 0), "atlas": Vector2i(7, 3)}, 
 	],
 	
 	#90 degrees
-	[{"pos": Vector2i(1, 0), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 1), "atlas": Vector2i(0, 1)}, 
+	[{"pos": Vector2i(1, 0), "atlas": Vector2i(9, 0)}, 
+	{"pos": Vector2i(1, 1), "atlas": Vector2i(9, 2)}, 
 	],
 	
 	#180 degrees
-	[{"pos": Vector2i(0, 1), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 1), "atlas": Vector2i(0, 1)}, 
+	[{"pos": Vector2i(0, 1), "atlas": Vector2i(5, 3)}, 
+	{"pos": Vector2i(1, 1), "atlas": Vector2i(7, 3)}, 
 	],
 	
 	#270 degrees
-	[{"pos": Vector2i(0, 0), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(0, 1), "atlas": Vector2i(0, 1)}, 
+	[{"pos": Vector2i(0, 0), "atlas": Vector2i(9, 0)}, 
+	{"pos": Vector2i(0, 1), "atlas": Vector2i(9, 2)}, 
 	],
 ]
 
 var three_by_one_tetromino: Array = [
 	#0 degress
-	[{"pos": Vector2i(0, 1), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 1), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(2, 1), "atlas": Vector2i(0, 1)}, 
+	[{"pos": Vector2i(0, 1), "atlas": Vector2i(5, 3)}, 
+	{"pos": Vector2i(1, 1), "atlas": Vector2i(6, 3)}, 
+	{"pos": Vector2i(2, 1), "atlas": Vector2i(7, 3)}, 
 	],
 	
 	#90 degrees
-	[{"pos": Vector2i(2, 0), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(2, 1), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(2, 2), "atlas": Vector2i(0, 1)}, 
+	[{"pos": Vector2i(2, 0), "atlas": Vector2i(9, 0)}, 
+	{"pos": Vector2i(2, 1), "atlas": Vector2i(9, 1)}, 
+	{"pos": Vector2i(2, 2), "atlas": Vector2i(9, 2)}, 
 	],
 	
 	#180 degrees
-	[{"pos": Vector2i(0, 2), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 2), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(2, 2), "atlas": Vector2i(0, 1)}, 
+	[{"pos": Vector2i(0, 2), "atlas": Vector2i(5, 3)}, 
+	{"pos": Vector2i(1, 2), "atlas": Vector2i(6, 3)}, 
+	{"pos": Vector2i(2, 2), "atlas": Vector2i(7, 3)}, 
 	],
 	
 	#270 degrees
-	[{"pos": Vector2i(1, 0), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 1), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 2), "atlas": Vector2i(0, 1)}, 
+	[{"pos": Vector2i(1, 0), "atlas": Vector2i(9, 0)}, 
+	{"pos": Vector2i(1, 1), "atlas": Vector2i(9, 1)}, 
+	{"pos": Vector2i(1, 2), "atlas": Vector2i(9, 2)}, 
 	],
 ]
 
 var four_by_two_tetromino: Array = [
 	#0 degrees
-	[{"pos": Vector2i(0, 0), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 0), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(0, 1), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 1), "atlas": Vector2i(0, 1)},
-	{"pos": Vector2i(0, 2), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 2), "atlas": Vector2i(0, 1)},
-	{"pos": Vector2i(0, 3), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 3), "atlas": Vector2i(0, 1)}
+	[{"pos": Vector2i(0, 0), "atlas": Vector2i(5, 0)}, 
+	{"pos": Vector2i(1, 0), "atlas": Vector2i(7, 0)}, 
+	{"pos": Vector2i(0, 1), "atlas": Vector2i(5, 1)}, 
+	{"pos": Vector2i(1, 1), "atlas": Vector2i(7, 1)},
+	{"pos": Vector2i(0, 2), "atlas": Vector2i(5, 1)}, 
+	{"pos": Vector2i(1, 2), "atlas": Vector2i(7, 1)},
+	{"pos": Vector2i(0, 3), "atlas": Vector2i(5, 2)}, 
+	{"pos": Vector2i(1, 3), "atlas": Vector2i(7, 2)}
 	],
 	
 	#90 degrees
-	[{"pos": Vector2i(0, 2), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 2), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(2, 2), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(3, 2), "atlas": Vector2i(0, 1)},
-	{"pos": Vector2i(0, 3), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 3), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(2, 3), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(3, 3), "atlas": Vector2i(0, 1)}
+	[{"pos": Vector2i(0, 2), "atlas": Vector2i(5, 0)}, 
+	{"pos": Vector2i(1, 2), "atlas": Vector2i(8, 1)}, 
+	{"pos": Vector2i(2, 2), "atlas": Vector2i(8, 1)}, 
+	{"pos": Vector2i(3, 2), "atlas": Vector2i(7, 0)},
+	{"pos": Vector2i(0, 3), "atlas": Vector2i(5, 2)}, 
+	{"pos": Vector2i(1, 3), "atlas": Vector2i(8, 2)}, 
+	{"pos": Vector2i(2, 3), "atlas": Vector2i(8, 2)}, 
+	{"pos": Vector2i(3, 3), "atlas": Vector2i(7, 2)}
 	],
 	
 	#180 degrees
-	[{"pos": Vector2i(2, 0), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(3, 0), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(2, 1), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(3, 1), "atlas": Vector2i(0, 1)},
-	{"pos": Vector2i(2, 2), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(3, 2), "atlas": Vector2i(0, 1)},
-	{"pos": Vector2i(2, 3), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(3, 3), "atlas": Vector2i(0, 1)}
+	[{"pos": Vector2i(2, 0), "atlas": Vector2i(5, 0)}, 
+	{"pos": Vector2i(3, 0), "atlas": Vector2i(7, 0)}, 
+	{"pos": Vector2i(2, 1), "atlas": Vector2i(5, 1)}, 
+	{"pos": Vector2i(3, 1), "atlas": Vector2i(7, 1)},
+	{"pos": Vector2i(2, 2), "atlas": Vector2i(5, 1)}, 
+	{"pos": Vector2i(3, 2), "atlas": Vector2i(7, 1)},
+	{"pos": Vector2i(2, 3), "atlas": Vector2i(5, 2)}, 
+	{"pos": Vector2i(3, 3), "atlas": Vector2i(7, 2)}
 	],
 	
 	#270 degrees
-	[{"pos": Vector2i(0, 0), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 0), "atlas": Vector2i(0, 1)},
-	{"pos": Vector2i(2, 0), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(3, 0), "atlas": Vector2i(0, 1)},  
-	{"pos": Vector2i(0, 1), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 1), "atlas": Vector2i(0, 1)},
-	{"pos": Vector2i(2, 1), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(3, 1), "atlas": Vector2i(0, 1)}
+	[{"pos": Vector2i(0, 0), "atlas": Vector2i(5, 0)}, 
+	{"pos": Vector2i(1, 0), "atlas": Vector2i(8, 1)},
+	{"pos": Vector2i(2, 0), "atlas": Vector2i(8, 1)}, 
+	{"pos": Vector2i(3, 0), "atlas": Vector2i(7, 0)},  
+	{"pos": Vector2i(0, 1), "atlas": Vector2i(5, 2)}, 
+	{"pos": Vector2i(1, 1), "atlas": Vector2i(8, 2)},
+	{"pos": Vector2i(2, 1), "atlas": Vector2i(8, 2)}, 
+	{"pos": Vector2i(3, 1), "atlas": Vector2i(7, 2)}
 	],
 ]
 
 var four_by_three_tetromino: Array = [
 	#0 degrees
-	[{"pos": Vector2i(0, 0), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 0), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(2, 0), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(0, 1), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 1), "atlas": Vector2i(0, 1)},
-	{"pos": Vector2i(2, 1), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(0, 2), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 2), "atlas": Vector2i(0, 1)},
-	{"pos": Vector2i(2, 2), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(0, 3), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 3), "atlas": Vector2i(0, 1)},
-	{"pos": Vector2i(2, 3), "atlas": Vector2i(0, 1)}, 
+	[{"pos": Vector2i(0, 0), "atlas": Vector2i(5, 0)}, 
+	{"pos": Vector2i(1, 0), "atlas": Vector2i(6, 0)}, 
+	{"pos": Vector2i(2, 0), "atlas": Vector2i(7, 0)}, 
+	{"pos": Vector2i(0, 1), "atlas": Vector2i(5, 1)}, 
+	{"pos": Vector2i(1, 1), "atlas": Vector2i(6, 1)},
+	{"pos": Vector2i(2, 1), "atlas": Vector2i(7, 1)}, 
+	{"pos": Vector2i(0, 2), "atlas": Vector2i(5, 1)}, 
+	{"pos": Vector2i(1, 2), "atlas": Vector2i(6, 1)},
+	{"pos": Vector2i(2, 2), "atlas": Vector2i(7, 1)}, 
+	{"pos": Vector2i(0, 3), "atlas": Vector2i(5, 2)}, 
+	{"pos": Vector2i(1, 3), "atlas": Vector2i(6, 2)},
+	{"pos": Vector2i(2, 3), "atlas": Vector2i(7, 2)}, 
 	],
 	
 	#90 degrees
-	[{"pos": Vector2i(0, 1), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 1), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(2, 1), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(3, 1), "atlas": Vector2i(0, 1)},
-	{"pos": Vector2i(0, 2), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 2), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(2, 2), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(3, 2), "atlas": Vector2i(0, 1)},
-	{"pos": Vector2i(0, 3), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 3), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(2, 3), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(3, 3), "atlas": Vector2i(0, 1)}
+	[{"pos": Vector2i(0, 1), "atlas": Vector2i(5, 0)}, 
+	{"pos": Vector2i(1, 1), "atlas": Vector2i(8, 1)}, 
+	{"pos": Vector2i(2, 1), "atlas": Vector2i(8, 1)}, 
+	{"pos": Vector2i(3, 1), "atlas": Vector2i(7, 0)},
+	{"pos": Vector2i(0, 2), "atlas": Vector2i(5, 1)}, 
+	{"pos": Vector2i(1, 2), "atlas": Vector2i(6, 1)}, #replace this tile
+	{"pos": Vector2i(2, 2), "atlas": Vector2i(6, 1)}, #replace this tile
+	{"pos": Vector2i(3, 2), "atlas": Vector2i(7, 1)},
+	{"pos": Vector2i(0, 3), "atlas": Vector2i(5, 2)}, 
+	{"pos": Vector2i(1, 3), "atlas": Vector2i(8, 2)}, 
+	{"pos": Vector2i(2, 3), "atlas": Vector2i(8, 2)}, 
+	{"pos": Vector2i(3, 3), "atlas": Vector2i(7, 2)}
 	],
 	
 	#180 degrees
-	[{"pos": Vector2i(1, 0), "atlas": Vector2i(0, 1)},
-	{"pos": Vector2i(2, 0), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(3, 0), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 1), "atlas": Vector2i(0, 1)},
-	{"pos": Vector2i(2, 1), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(3, 1), "atlas": Vector2i(0, 1)},
-	{"pos": Vector2i(1, 2), "atlas": Vector2i(0, 1)},
-	{"pos": Vector2i(2, 2), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(3, 2), "atlas": Vector2i(0, 1)},
-	{"pos": Vector2i(1, 3), "atlas": Vector2i(0, 1)},
-	{"pos": Vector2i(2, 3), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(3, 3), "atlas": Vector2i(0, 1)}
+	[{"pos": Vector2i(1, 0), "atlas": Vector2i(5, 0)},
+	{"pos": Vector2i(2, 0), "atlas": Vector2i(6, 0)}, 
+	{"pos": Vector2i(3, 0), "atlas": Vector2i(7, 0)}, 
+	{"pos": Vector2i(1, 1), "atlas": Vector2i(5, 1)},
+	{"pos": Vector2i(2, 1), "atlas": Vector2i(6, 1)}, 
+	{"pos": Vector2i(3, 1), "atlas": Vector2i(7, 1)},
+	{"pos": Vector2i(1, 2), "atlas": Vector2i(5, 1)},
+	{"pos": Vector2i(2, 2), "atlas": Vector2i(6, 1)}, 
+	{"pos": Vector2i(3, 2), "atlas": Vector2i(7, 1)},
+	{"pos": Vector2i(1, 3), "atlas": Vector2i(5, 2)},
+	{"pos": Vector2i(2, 3), "atlas": Vector2i(6, 2)}, 
+	{"pos": Vector2i(3, 3), "atlas": Vector2i(7, 2)}
 	],
 	
 	#270 degrees
-	[{"pos": Vector2i(0, 0), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 0), "atlas": Vector2i(0, 1)},
-	{"pos": Vector2i(2, 0), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(3, 0), "atlas": Vector2i(0, 1)},  
-	{"pos": Vector2i(0, 1), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 1), "atlas": Vector2i(0, 1)},
-	{"pos": Vector2i(2, 1), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(3, 1), "atlas": Vector2i(0, 1)},
-	{"pos": Vector2i(0, 2), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 2), "atlas": Vector2i(0, 1)},
-	{"pos": Vector2i(2, 2), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(3, 2), "atlas": Vector2i(0, 1)}
+	[{"pos": Vector2i(0, 0), "atlas": Vector2i(5, 0)}, 
+	{"pos": Vector2i(1, 0), "atlas": Vector2i(8, 1)},
+	{"pos": Vector2i(2, 0), "atlas": Vector2i(8, 1)}, 
+	{"pos": Vector2i(3, 0), "atlas": Vector2i(7, 0)},  
+	{"pos": Vector2i(0, 1), "atlas": Vector2i(5, 1)}, 
+	{"pos": Vector2i(1, 1), "atlas": Vector2i(6, 1)}, #replace this tile
+	{"pos": Vector2i(2, 1), "atlas": Vector2i(6, 1)}, #replace this tile
+	{"pos": Vector2i(3, 1), "atlas": Vector2i(7, 1)},
+	{"pos": Vector2i(0, 2), "atlas": Vector2i(5, 2)}, 
+	{"pos": Vector2i(1, 2), "atlas": Vector2i(8, 2)},
+	{"pos": Vector2i(2, 2), "atlas": Vector2i(8, 2)}, 
+	{"pos": Vector2i(3, 2), "atlas": Vector2i(7, 2)}
 	],
 ]
 
@@ -280,7 +280,7 @@ var active_tetromino: Array = []
 
 var is_game_running: bool
 
-var tile_id: int = 0
+var tile_id: int = 1
 var next_piece_atlas: Vector2i
 
 @onready var board_layer: TileMapLayer = $Board
