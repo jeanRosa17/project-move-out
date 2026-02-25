@@ -72,7 +72,7 @@ func _ready() -> void:
 	
 	if (self.collider.shape is RectangleShape2D):
 		self.createAdditionalCollisions()
-	elif (self.collider.shape is ConvexPolygonShape2D):
+	elif (self.collider.shape is ConcavePolygonShape2D):
 		self.create_additional_collisions_polygon()
 	
 	self.lock_rotation = true
@@ -141,23 +141,23 @@ func createAdditionalCollisions() -> void:
 	areaLeft.body_exited.connect(_on_left_area_exited)
 
 func create_additional_collisions_polygon() -> void:
-	var shape:ConvexPolygonShape2D = self.collider.shape
+	var shape:ConcavePolygonShape2D = self.collider.shape
 	var segs:Array[SegmentShape2D] = []
-	for point in range(shape.points.size()):
+	for point in range(shape.segments.size()):
 		var sh:CollisionShape2D = CollisionShape2D.new()
 		sh.debug_color = Color.RED
 		var area:Area2D = Area2D.new()
 		var seg:SegmentShape2D = SegmentShape2D.new()
 		
 		
-		seg.a = shape.points.get(point)
+		seg.a = shape.segments.get(point)
 		print(seg.a)
 		# check for overflow
-		if (point == shape.points.size() - 1):
-			seg.b = shape.points.get(0)
+		if (point == shape.segments.size() - 1):
+			seg.b = shape.segments.get(0)
 			print(seg.b)
 		else:
-			seg.b = shape.points.get(point + 1)
+			seg.b = shape.segments.get(point + 1)
 			
 		sh.shape = seg
 		
