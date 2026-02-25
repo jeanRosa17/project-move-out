@@ -215,7 +215,7 @@ z_index = -1
 position = Vector2(312, 396)
 rotation = -1.5708
 
-[node name="CollisionShape2D" parent="Garage/Placeholder Van/Area2D" index="0"]
+[node name="CollisionShape2D" parent="Garage/Placeholder Van/Area2D" parent_id_path=PackedInt32Array(220656495, 1383845503) index="0" unique_id=15569]
 position = Vector2(0.288391, 0.921921)
 
 [node name="HUD" parent="." unique_id=1842617503 instance=ExtResource("24_4alro")]
