@@ -25,7 +25,7 @@ func _process(_delta) -> void:
 
 func _on_play_pressed() -> void:
 	self.levelManager.z_index = 1
-	self.levelManager.changeSceneTo("res://Levels/Scenes/Tutorial/OpenFloorTutorial.tscn")
+	self.levelManager.changeSceneTo("res://Levels/Scenes/TutorialUnit.tscn")
 
 func startTweens() -> void:
 	var authors:Tween = create_tween()

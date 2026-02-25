@@ -13,6 +13,7 @@ class_name Furniture
 @export var canPull:bool = false
 @export var canRotate:bool
 @export var rotatedVersion:Furniture
+@export var tetroShape:String = "placeholder"
 var rotated: int = 0
 
 @export var weight:int = 0
@@ -499,3 +500,7 @@ func _on_bot_area_exited(body: Node2D) -> void:
 		if (bObjects.is_empty()):
 			canMovePositiveY = true
 #endregion
+
+func getShape() -> String:
+	# gives the tetro shape of the furniture
+	return tetroShape

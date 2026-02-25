@@ -1,0 +1,4 @@
+#start {
+	My first job in a while, lucky me they just hired me to empty this old storage unit
+	I should use WSAD to move and space to pick up objects. I can take them to the loading zone, and press space on the pad next to it when it's time to go.
+}

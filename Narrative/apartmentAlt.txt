@@ -1,0 +1,4 @@
+#start {
+	This is a pretty large apartment, thankfully half the occupants are already moved out.
+	I wish they hadn't left a few hazards, irresponsible kids!
+}

@@ -87,7 +87,6 @@ func physicsUpdate(_delta:float) -> void:
 			
 
 	self.accelerate(manager.direction, _delta)
-	prints("Vel: ", self.body.velocity)
 	self.body.move_and_slide()
 
 ## Sets the player's velocity to increase or decrease based on the given direction (-1 left, 1 right)

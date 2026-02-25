@@ -5,18 +5,23 @@ class_name HUDManager
 @onready var level_results: CanvasLayer = $"Level Results"
 @onready var dialogue: CanvasLayer = $Dialogue
 @onready var textbox: DialogueManager = $Dialogue/Textbox
-
+@onready var packedFurniture: Array[String] = []
 
 ## Makes the Dialogue layer visible and calls setDialogueTo on the textbox node
 func setDialogueTo(dTag:DialogueTag) -> void:
 	self.dialogue.visible = true
 	self.textbox.setDialogueTo(dTag)
 
-func checkResults(score:float) -> void:
+func addPackedFurniture(newFurniture:String) -> void:
+	packedFurniture.append(newFurniture)
+	print("new tetro: " + packedFurniture[-1])
+
+func checkResults() -> void:
 	## Get score from Van script and display here.
+	## enable tetris and have the player play that first
+	
 	print("Gay gay homosexual gay");
 	var text:RichTextLabel = self.level_results.find_child("Score")
-	text.text = str("Your score is: ", score)
 	self.level_results.visible = true
 
 ## Ensures that the Dialogue Box turns itself off when the dialogue is finished.
