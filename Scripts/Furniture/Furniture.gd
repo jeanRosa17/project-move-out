@@ -239,14 +239,17 @@ func _physics_process(_delta: float) -> void:
 			#canMovePositiveY = true
 			#
 
-		#if (self.player.velocity != Vector2.ZERO):
-		linear_velocity = linear_velocity.lerp(player.velocity, 1)
+		if (self.player.get_real_velocity().length() > .2):
+			#print(player.get_real_velocity().length())
+			linear_velocity = linear_velocity.lerp(player.velocity, 1)
+		else:
+			linear_velocity = linear_velocity.lerp(Vector2.ZERO, 1)
 	
 	if (self.player):
 		if(self.position.distance_to(self.player.position) > self.distanceFromPlayer * 1.25):
 			if (self.isPushed):
 				self.exitPush()
-				#pass
+				pass
 			#if(self.isLifted):
 				#self.exitLift()
 
