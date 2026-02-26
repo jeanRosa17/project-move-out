@@ -244,7 +244,7 @@ func _physics_process(_delta: float) -> void:
 			#linear_velocity = linear_velocity.lerp(player.velocity, 1)
 		#else:
 			#linear_velocity = linear_velocity.lerp(Vector2.ZERO, 1)
-		linear_velocity = linear_velocity.lerp(player.get_real_velocity(), 1)
+		linear_velocity = player.get_real_velocity()
 	
 	if (self.player):
 		if(self.position.distance_to(self.player.position) > self.distanceFromPlayer * 1.25):

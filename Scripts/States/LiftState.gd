@@ -46,3 +46,4 @@ func exit() -> void:
 	if (self.getManager().view.animation_finished.is_connected(exitAfterAnimationFinish)):
 		self.getManager().view.animation_finished.disconnect(exitAfterAnimationFinish)
 	self.body.setControls(true)
+	self.getManager().item_detector.visible = false

@@ -36,6 +36,7 @@ func _on_body_exited(body: Node2D) -> void:
 			player.setControls(true)
 		sliding = false
 		active = false
+		self.player.manager.isSliding = false
 
 func _get_direction() -> Vector2:
 	# Sets objects which enter the area to move in the direction of the area
@@ -78,13 +79,17 @@ func _process_input() -> void:
 	match self.get_meta("Direction"):
 		"east":
 			if((lastPosition - player.position).x < 5):
+				self.player.manager.isSliding = true
 				sliding = true
 		"west": 
 			if((lastPosition - player.position).x > 5):
+				self.player.manager.isSliding = true
 				sliding = true
 		"north":
 			if((lastPosition - player.position).y < 5):
+				self.player.manager.isSliding = true
 				sliding = true
 		"south":
 			if((lastPosition - player.position).y > 5):
+				self.player.manager.isSliding = true
 				sliding = true

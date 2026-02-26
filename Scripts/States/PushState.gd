@@ -17,6 +17,7 @@ func canEnter() -> bool:
 		manager.furniture.exitPush()
 		self.body.setControls(true)
 		self.manager.changeState("Idle")
+		self.getManager().item_detector.visible = true
 		return false
 
 	
@@ -48,5 +49,6 @@ func exitAfterAnimationFinish() -> void:
 ## The last method called when the state is transitioned out of
 func exit() -> void:
 	self.body.setControls(true)
+	self.getManager().item_detector.visible = false
 	# manager.furniture.exitPush()
 	pass

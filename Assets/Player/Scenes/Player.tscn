@@ -29,6 +29,7 @@
 [ext_resource type="AudioStream" uid="uid://crnjv43fqkcn" path="res://Assets/Audio/footstep short 2.wav" id="27_bmblf"]
 [ext_resource type="PackedScene" uid="uid://dotpp2gym0w7k" path="res://Assets/Particles/Scenes/walking_particle.tscn" id="27_jjwbh"]
 [ext_resource type="Script" uid="uid://btk3jmqdxo7pv" path="res://Assets/Player/Scenes/WalkSound.gd" id="28_m53rv"]
+[ext_resource type="Texture2D" uid="uid://cy7y5m4780d5n" path="res://Assets/UI/Exclamation.png" id="30_m53rv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l2ndj"]
 size = Vector2(8, 11)
@@ -1005,7 +1006,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"push down",
-"speed": 12.0
+"speed": 24.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1034,7 +1035,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"push side",
-"speed": 12.0
+"speed": 24.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1063,7 +1064,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"push up",
-"speed": 12.0
+"speed": 24.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1243,7 +1244,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1rgi"]
-size = Vector2(2, 2)
+size = Vector2(4, 4)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_77jqo"]
 playback_mode = 1
@@ -1251,6 +1252,43 @@ random_pitch = 1.3
 streams_count = 2
 stream_0/stream = ExtResource("26_jjwbh")
 stream_1/stream = ExtResource("27_bmblf")
+
+[sub_resource type="Animation" id="Animation_m53rv"]
+resource_name = "Bounce"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.46666667, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-26.0, -28.775, -25.285]
+}
+
+[sub_resource type="Animation" id="Animation_77jqo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [-26.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bqeds"]
+_data = {
+&"Bounce": SubResource("Animation_m53rv"),
+&"RESET": SubResource("Animation_77jqo")
+}
 
 [node name="Body" type="CharacterBody2D" unique_id=1761221807]
 y_sort_enabled = true
@@ -1275,7 +1313,7 @@ shape = SubResource("RectangleShape2D_l2ndj")
 y_sort_enabled = true
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_dter7")
-animation = &"idle down"
+animation = &"push down"
 autoplay = "idle down"
 
 [node name="Detector" type="Area2D" parent="." unique_id=1216050002]
@@ -1284,7 +1322,7 @@ collision_layer = 2
 collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector" unique_id=422314971]
-position = Vector2(0, 28)
+position = Vector2(0, 20)
 shape = SubResource("RectangleShape2D_s1rgi")
 
 [node name="StateManager" type="Node" parent="." unique_id=1398973869 node_paths=PackedStringArray("view", "initialState")]
@@ -1335,6 +1373,17 @@ z_index = -1
 y_sort_enabled = true
 position = Vector2(0, -4.26)
 player = NodePath("..")
+
+[node name="ItemDetector" type="Sprite2D" parent="." unique_id=1939361969]
+visible = false
+modulate = Color(1.4369954, 1.4369954, 1.4369954, 1)
+z_index = 10
+position = Vector2(2, -26)
+texture = ExtResource("30_m53rv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ItemDetector" unique_id=505000751]
+libraries/ = SubResource("AnimationLibrary_bqeds")
+autoplay = &"Bounce"
 
 [connection signal="frame_changed" from="NewAnimatedSprite2D" to="StateManager/Move" method="_on_new_animated_sprite_2d_frame_changed"]
 [connection signal="area_entered" from="Detector" to="StateManager" method="_on_area_2d_area_entered"]
