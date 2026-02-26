@@ -19,6 +19,9 @@ func _ready() -> void:
 	#self.add_child(self.camera)
 	self.position = self.startPos
 	self.player.visible = false
+	self.position = self.startPos
+	self.view.play("side")
+	self.skew = 0
 
 func _process(_delta: float) -> void:
 	var speed:float = 0.1 if (skipCutscene) else 3.0

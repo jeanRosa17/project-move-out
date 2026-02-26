@@ -23,7 +23,7 @@ func _process(delta:float) -> void:
 		self.handleRotate(delta)
 	
 	#animations()
-	#lockDirection()
+	lockDirection()
 
 func lockDirection() -> void:
 	locked_axis = "none"
@@ -88,7 +88,7 @@ func handleMovement(_delta:float) -> void:
 	or Input.is_action_pressed("MoveDown")
 	or Input.is_action_pressed("MoveUp")):
 		self.manager.direction = Input.get_vector("MoveLeft", "MoveRight", "MoveUp", "MoveDown", 0.1)                  
-		
+		lockDirection()
 		if (self.manager.getStateName() != "Move" && self.manager.getStateName() != "Lift"):
 			self.manager.changeState("Move")
 			

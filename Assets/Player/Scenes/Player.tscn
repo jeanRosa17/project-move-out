@@ -31,7 +31,7 @@
 [ext_resource type="Script" uid="uid://btk3jmqdxo7pv" path="res://Assets/Player/Scenes/WalkSound.gd" id="28_m53rv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l2ndj"]
-size = Vector2(8, 16)
+size = Vector2(8, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qwf1c"]
 atlas = ExtResource("3_jjwbh")
@@ -1268,6 +1268,7 @@ position = Vector2(0, 5)
 texture = ExtResource("2_xgcxo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=553704849]
+position = Vector2(0, -2.5)
 shape = SubResource("RectangleShape2D_l2ndj")
 
 [node name="NewAnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=96857792]
@@ -1283,7 +1284,7 @@ collision_layer = 2
 collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector" unique_id=422314971]
-position = Vector2(0, 23)
+position = Vector2(0, 28)
 shape = SubResource("RectangleShape2D_s1rgi")
 
 [node name="StateManager" type="Node" parent="." unique_id=1398973869 node_paths=PackedStringArray("view", "initialState")]
