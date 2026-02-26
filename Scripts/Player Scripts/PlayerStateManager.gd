@@ -25,7 +25,8 @@ var isSliding:bool = false
 func _on_furniture_body_entered(body: Node2D) -> void:
 	if (body.is_in_group("Furniture") && (not self.hasFurniture)):
 		self.furniture = body as Furniture
-		self.item_detector.visible = true
+		if not (self.furniture.canLift == false && self.furniture.canPush == false && self.furniture.canPull == false):
+			self.item_detector.visible = true
 		
 
 func _on_furniture_body_exited(body: Node2D) -> void:

@@ -8,8 +8,7 @@ var animationFinished:bool = false
 ## The Player needs hasFurniture to be true and the furniture needs to be liftable.
 func canEnter() -> bool:
 	
-	if (not self.manager.hasFurniture): 
-		print("hasFunriture false")
+	if (not self.manager.hasFurniture):
 		self.body.setControls(true)
 		return false
 	
