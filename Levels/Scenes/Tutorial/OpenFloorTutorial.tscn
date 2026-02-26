@@ -22,7 +22,6 @@
 [ext_resource type="PackedScene" uid="uid://b7qk52eapta2s" path="res://Assets/Objects/Dressers & Shelves/Scenes/wooden_wardrobe_front.tscn" id="18_6pr51"]
 [ext_resource type="PackedScene" uid="uid://bujcbosiagjri" path="res://Assets/Objects/Dressers & Shelves/Scenes/wooden_shelf_front.tscn" id="19_rwqj1"]
 [ext_resource type="PackedScene" uid="uid://cl3ww3w6r3n1r" path="res://Assets/Objects/Kitchen/Scenes/Fridge.tscn" id="19_yn8gu"]
-[ext_resource type="PackedScene" uid="uid://cfmb3mmeue8au" path="res://UI/Scenes/HUD.tscn" id="24_4alro"]
 [ext_resource type="PackedScene" uid="uid://ce4x5g5hrvxce" path="res://Assets/Objects/Bathroom/Scenes/Bathtub.tscn" id="24_v8k2n"]
 [ext_resource type="AudioStream" uid="uid://dy61bwuip8a27" path="res://Assets/Audio/lvl1.wav" id="25_4alro"]
 
@@ -218,23 +217,13 @@ rotation = -1.5708
 [node name="CollisionShape2D" parent="Garage/Placeholder Van/Area2D" parent_id_path=PackedInt32Array(220656495, 1383845503) index="0" unique_id=15569]
 position = Vector2(0.288391, 0.921921)
 
-[node name="HUD" parent="." unique_id=1842617503 instance=ExtResource("24_4alro")]
-unique_name_in_owner = true
-
-[node name="LevelManager" parent="HUD" index="0" unique_id=2114889924]
-visible = false
-
-[node name="Level Results" parent="HUD" index="1" unique_id=720231760]
-visible = false
-nextLevelName = &"res://Levels/Scenes/IceHouse.tscn"
-replayLevelName = &"res://Levels/Scenes/Tutorial/OpenFloorTutorial.tscn"
-
 [node name="Level Music" type="AudioStreamPlayer2D" parent="." unique_id=977723130]
 stream = ExtResource("25_4alro")
 autoplay = true
+
+[node name="Push_Pull Audio" parent="." unique_id=287833891 instance=ExtResource("13_rwqj1")]
 
 [connection signal="body_shape_entered" from="Y-Sorting/Microwave/AreaDetector" to="Y-Sorting/Microwave" method="_on_area_detector_body_shape_entered"]
 [connection signal="body_shape_exited" from="Y-Sorting/Microwave/AreaDetector" to="Y-Sorting/Microwave" method="_on_area_detector_body_shape_exited"]
 
 [editable path="Garage"]
-[editable path="HUD"]

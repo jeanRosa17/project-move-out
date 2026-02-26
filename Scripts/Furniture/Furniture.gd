@@ -44,7 +44,6 @@ var rObjects: Array[Node2D] = []
 var lObjects: Array[Node2D] = []
 
 var ghostTween:Tween = null
-var placementTween:Tween = null
 var floatXTween:Tween = null
 var floatYTween:Tween = null
 var floatTiltTween:Tween = null
@@ -271,29 +270,33 @@ func createGhostSprite(body:CharacterBody2D) -> void:
 	
 	body.get_node("Detector").get_child(0).add_child(ghostSprite)
 	ghostSprite.position = Vector2(0, 0)
-	self.ghostTween = self.get_tree().create_tween()
+	
+	if (self.ghostTween):
+		self.ghostTween.kill()
+	self.ghostTween = get_tree().create_tween()
 	self.ghostTween.tween_property(ghostSprite, "self_modulate:a", 0, 1.0).from(1.0).set_delay(0.1)
 	self.ghostTween.tween_property(ghostSprite, "self_modulate:a", 1.0, 1.0).from(0.0).set_delay(0.1)
-	self.ghostTween.set_loops()
+	self.ghostTween.set_loops(100000000000000)
 
 
 #region Tweens  Animation
 # Starts the hovering tween animation
 func startLiftingTween() -> void:
-	var tween: Tween = create_tween()
+	self.killLiftingTween()
+	var tween: Tween = get_tree().create_tween()
 	self.floatXTween = get_tree().create_tween()
 	self.floatYTween = get_tree().create_tween()
 	self.floatTiltTween = get_tree().create_tween()
 	
 	tween.tween_property(self, "scale", Vector2(0.3, 0.3), 0.4)
 	
-	self.floatXTween.tween_property(self, "position:x", -8, 0.4).set_delay(0.05)
-	self.floatXTween.tween_property(self, "position:x", 8, 0.3).set_delay(0.05)
-	self.floatXTween.set_loops().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_ELASTIC)
+	self.floatXTween.tween_property(self, "position:x", -8, 0.4).set_delay(0.1)
+	self.floatXTween.tween_property(self, "position:x", 8, 0.3).set_delay(0.1)
+	self.floatXTween.set_loops(100000000000000).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_ELASTIC)
 	
-	self.floatYTween.tween_property(self, "position:y", -8, 0.2).set_delay(0.05)
-	self.floatYTween.tween_property(self, "position:y", 4, 0.3).set_delay(0.05)
-	self.floatYTween.set_loops().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_ELASTIC)
+	self.floatYTween.tween_property(self, "position:y", -8, 0.2).set_delay(0.1)
+	self.floatYTween.tween_property(self, "position:y", 4, 0.3).set_delay(0.1)
+	self.floatYTween.set_loops(100000000000000).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_ELASTIC)
 	
 	#self.floatTiltTween.tween_property(self, "rotation_degrees", -4, 0.5).set_delay(0.4)
 	#self.floatTiltTween.tween_property(self, "rotation_degrees", 4, 0.5).set_delay(0.8)
