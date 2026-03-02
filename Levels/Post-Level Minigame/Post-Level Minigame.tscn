@@ -286,7 +286,7 @@ sources/2 = SubResource("TileSetAtlasSource_aehea")
 [node name="PostLevelMinigame" type="Node2D" unique_id=762999373]
 script = ExtResource("1_c8yme")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=840978758]
+[node name="TetrisCamera" type="Camera2D" parent="." unique_id=840978758]
 zoom = Vector2(0.5, 0.5)
 
 [node name="Background" type="TileMapLayer" parent="." unique_id=1267728485]

@@ -14,13 +14,16 @@ func _process(_delta:float)  -> void:
 	pass
 
 func clearVan() -> void:
-	# gets all furniture in van
-	var bodies:Array[Node2D] = self.get_overlapping_bodies()
-	
-	for i in range(bodies.size()):
-		if bodies[i].is_in_group("Furniture"):
-			hud.addPackedFurniture(bodies[i].getShape())
-			bodies[i].queue_free()
+	if (!hud.levelFinished):
+		# gets all furniture in van
+		var bodies:Array[Node2D] = self.get_overlapping_bodies()
+		
+		for i in range(bodies.size()):
+			if bodies[i].is_in_group("Furniture"):
+				hud.addPackedFurniture(bodies[i].getShape())
+				bodies[i].queue_free()
+		
+		hud.runTetris()
 
 # tracks if the player is in the truck
 func _on_body_entered(body: Node2D) -> void:
