@@ -10,7 +10,9 @@ func _process(_delta:float) -> void:
 	if (velocityCheck):
 		if (player.get_real_velocity().length() < .2 && !player.canControl):
 			player.setControls(true)
+			soundPlayer.stop()
 		elif (player.canControl):
+			soundPlayer.play()
 			player.setControls(false)
 
 
@@ -31,7 +33,7 @@ func _on_body_entered(body: Node2D) -> void:
 		
 			velocityCheck = true
 			body.manager.isSliding = true
-			
+		
 
 
 func _on_body_exited(body: Node2D) -> void:

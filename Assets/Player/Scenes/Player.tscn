@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://cfdmukdkccwq6" path="res://Assets/Player/Spritesheets v2/Strong_John_push_walk_side.png" id="15_jjwbh"]
 [ext_resource type="Texture2D" uid="uid://cf4kx2ybudgtr" path="res://Assets/Player/Spritesheets v2/Strong_John_push_walk_back.png" id="16_bmblf"]
 [ext_resource type="Texture2D" uid="uid://c07cwhy7n80va" path="res://Assets/Player/Spritesheets v2/Strong John 2-Slide.png" id="18_m53rv"]
+[ext_resource type="Texture2D" uid="uid://bg1rhs1ev8lk3" path="res://Assets/Player/Strong John 2-Sheet.png" id="19_77jqo"]
 [ext_resource type="Script" uid="uid://d0ryul7cekxdv" path="res://Scripts/Player Scripts/PlayerStateManager.gd" id="19_jigvf"]
 [ext_resource type="Script" uid="uid://idg0tggjdf4f" path="res://Scripts/States/IdleState.gd" id="20_grkeu"]
 [ext_resource type="Script" uid="uid://u8kdu3je8hxq" path="res://Scripts/States/LiftState.gd" id="21_lch71"]
@@ -557,6 +558,22 @@ region = Rect2(0, 0, 28, 28)
 [sub_resource type="AtlasTexture" id="AtlasTexture_xfog2"]
 atlas = ExtResource("18_m53rv")
 region = Rect2(28, 0, 28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwsyl"]
+atlas = ExtResource("19_77jqo")
+region = Rect2(0, 196, 28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4c6g"]
+atlas = ExtResource("19_77jqo")
+region = Rect2(28, 196, 28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8wce5"]
+atlas = ExtResource("19_77jqo")
+region = Rect2(0, 168, 28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgyy0"]
+atlas = ExtResource("19_77jqo")
+region = Rect2(28, 168, 28, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t3iuo"]
 atlas = ExtResource("6_5gdg7")
@@ -1166,6 +1183,28 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_bwsyl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4c6g")
+}],
+"loop": true,
+"name": &"slide side",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8wce5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fgyy0")
+}],
+"loop": true,
+"name": &"slide up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_t3iuo")
 }, {
 "duration": 1.0,
@@ -1313,7 +1352,7 @@ shape = SubResource("RectangleShape2D_l2ndj")
 y_sort_enabled = true
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_dter7")
-animation = &"push down"
+animation = &"slide up"
 autoplay = "idle down"
 
 [node name="Detector" type="Area2D" parent="." unique_id=1216050002]

@@ -50,11 +50,11 @@ func update(_delta:float) -> void:
 		self.manager.view.play(prefix + " " + dir)
 	
 	else:
+		if (self.manager.isSliding):
+			prefix = "slide"
+		
 		if (self.manager.direction == Vector2.DOWN):
-			if (self.manager.isSliding):
-				self.manager.view.play("slide down")
-			else:
-				self.manager.view.play(prefix + " down")
+			self.manager.view.play(prefix + " down")
 		
 		if (self.manager.direction == Vector2.RIGHT):
 			self.manager.view.play(prefix + " side")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8g5v0hwyh5of"
-path="res://.godot/imported/background_02.png-3b2d0a33e521c6487e89a163aec9200b.ctex"
+uid="uid://bg1rhs1ev8lk3"
+path="res://.godot/imported/Strong John 2-Sheet.png-931fc8783a83eb2f71568d947de77183.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Background/background_02.png"
-dest_files=["res://.godot/imported/background_02.png-3b2d0a33e521c6487e89a163aec9200b.ctex"]
+source_file="res://Assets/Player/Strong John 2-Sheet.png"
+dest_files=["res://.godot/imported/Strong John 2-Sheet.png-931fc8783a83eb2f71568d947de77183.ctex"]
 
 [params]
 
