@@ -23,7 +23,7 @@ func _process(delta:float) -> void:
 		self.handleRotate(delta)
 	
 	#animations()
-	lockDirection()
+	#lockDirection()
 
 func lockDirection() -> void:
 	locked_axis = "none"
