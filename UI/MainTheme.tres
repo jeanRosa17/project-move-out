@@ -9,16 +9,19 @@ texture = ExtResource("2_eapfb")
 texture_margin_left = 8.0
 texture_margin_top = 8.0
 texture_margin_right = 8.0
-texture_margin_bottom = 8.0
+texture_margin_bottom = 12.0
+modulate_color = Color(0.6313726, 0.7490196, 0.7607843, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g6qqc"]
 texture = ExtResource("2_eapfb")
 texture_margin_left = 8.0
 texture_margin_top = 8.0
 texture_margin_right = 8.0
-texture_margin_bottom = 8.0
+texture_margin_bottom = 12.0
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eapfb"]
 
 [resource]
 default_font = ExtResource("1_ttu11")
@@ -26,11 +29,11 @@ default_font_size = 8
 Button/colors/font_color = Color(0, 0.59607846, 0.8627451, 1)
 Button/colors/font_hover_color = Color(0, 0.29803923, 0.9019608, 1)
 Button/colors/font_outline_color = Color(0, 0, 0, 1)
-Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 0)
 Button/constants/outline_size = 8
 Button/font_sizes/font_size = 16
 Button/fonts/font = ExtResource("1_lu26r")
 Button/styles/focus = null
 Button/styles/hover = SubResource("StyleBoxTexture_eapfb")
 Button/styles/normal = SubResource("StyleBoxTexture_g6qqc")
-Button/styles/pressed = null
+Button/styles/pressed = SubResource("StyleBoxEmpty_eapfb")

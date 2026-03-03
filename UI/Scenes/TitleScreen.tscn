@@ -12,21 +12,11 @@
 [node name="TitleScreen" type="Node2D" unique_id=1724196829]
 script = ExtResource("1_jpkfb")
 
-[node name="Control" type="BoxContainer" parent="." unique_id=1392509671]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 159.0
-offset_right = 320.0
-offset_bottom = 202.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-vertical = true
-
-[node name="Creators" type="RichTextLabel" parent="Control" unique_id=913260950]
+[node name="Creators" type="RichTextLabel" parent="." unique_id=913260950]
 custom_minimum_size = Vector2(320, 0)
-layout_mode = 2
+offset_top = 151.0
+offset_right = 320.0
+offset_bottom = 160.0
 size_flags_vertical = 4
 theme = ExtResource("2_saprj")
 bbcode_enabled = true
@@ -34,12 +24,19 @@ text = "Created by Ashton, Joel, Juhyun, Luna, & Thomas"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Play" type="Button" parent="Control" unique_id=68869072]
-custom_minimum_size = Vector2(96, 32)
-layout_mode = 2
+[node name="Play" type="Button" parent="." unique_id=68869072]
+custom_minimum_size = Vector2(64, 24)
+offset_left = 128.0
+offset_top = 164.0
+offset_right = 192.0
+offset_bottom = 192.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("2_saprj")
+theme_override_font_sizes/font_size = 12
 text = "Play
 "
 
@@ -85,4 +82,4 @@ autoplay = true
 position = Vector2(160, 38)
 texture = ExtResource("6_tb8vy")
 
-[connection signal="pressed" from="Control/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
