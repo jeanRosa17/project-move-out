@@ -38,6 +38,7 @@ func runTetris() -> void:
 	if (!levelFinished && !packedFurniture.is_empty()):
 		# switch controls
 		player.setControls(false)
+		player.manager.changeState("Idle")
 		print(player.canControl)
 		# set camera to tetris
 		tetris_camera.enabled = true
