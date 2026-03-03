@@ -18,15 +18,16 @@ func _on_body_entered(body: Node2D) -> void:
 	
 	if(body is Player):
 		player = body
-		if(player.canControl):
-			player.setControls(false)
+		player.manager.isSliding = true
 		player.manager.changeState("Move")
+		player.manager.currentState.update(0)
 		player.manager.direction = Vector2(0, 0)
-		player.manager.direction = _get_direction()
+		player.manager.direction = self._get_direction()
 		lastPosition = player.position
 		sliding = true
 		active = true
 		stopped = false
+		if (player.canControl): player.setControls(false)
 		
 func _on_body_exited(body: Node2D) -> void:
 	#re-endables control of the player when they exit
@@ -36,7 +37,7 @@ func _on_body_exited(body: Node2D) -> void:
 			player.setControls(true)
 		sliding = false
 		active = false
-		self.player.manager.isSliding = false
+		player.manager.isSliding = false
 
 func _get_direction() -> Vector2:
 	# Sets objects which enter the area to move in the direction of the area

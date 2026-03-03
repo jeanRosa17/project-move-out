@@ -138,4 +138,5 @@ func handleRotate(_delta:float) -> void:
 
 ## Sets the controller to either accept or ignore input.
 func setControls(flag:bool) -> void:
+	self.set_process_input(flag)
 	self.canControl = flag
