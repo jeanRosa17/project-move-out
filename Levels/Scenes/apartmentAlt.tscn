@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://d3rjdvbwh7auh" path="res://Levels/Scenes/Garadge2.tscn" id="2_m2aof"]
 [ext_resource type="PackedScene" uid="uid://psh4s5sym8kd" path="res://UI/Scenes/Textbox.tscn" id="3_elsed"]
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Assets/Player/Scenes/Player.tscn" id="9_en5i7"]
-[ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="9_f23mb"]
 [ext_resource type="Script" uid="uid://dj52fk0ha628v" path="res://Levels/Scenes/InventoryChecklist.gd" id="10_obgx0"]
 [ext_resource type="AudioStream" uid="uid://dy61bwuip8a27" path="res://Assets/Audio/lvl1.wav" id="10_x3x0i"]
 [ext_resource type="PackedScene" uid="uid://cfmb3mmeue8au" path="res://UI/Scenes/HUD.tscn" id="11_ccy2n"]
@@ -114,7 +113,6 @@ position = Vector2(128, 225)
 
 [node name="Table4" parent="Y-Sorting/Kitchen" unique_id=782823571 instance=ExtResource("15_iaufo")]
 position = Vector2(159, 357)
-script = ExtResource("9_f23mb")
 
 [node name="Couch" parent="Y-Sorting/Kitchen" unique_id=1241280827 instance=ExtResource("19_obgx0")]
 position = Vector2(180, 225)
@@ -167,7 +165,6 @@ position = Vector2(347, 69)
 [node name="Ice Table" parent="Y-Sorting/Icebedroom" unique_id=2124681338 instance=ExtResource("15_iaufo")]
 modulate = Color(0, 1, 1, 1)
 position = Vector2(523, 78)
-script = ExtResource("9_f23mb")
 
 [node name="Ice Shelf" parent="Y-Sorting/Icebedroom" unique_id=1156303158 instance=ExtResource("16_0g7f6")]
 modulate = Color(0, 1, 1, 1)
