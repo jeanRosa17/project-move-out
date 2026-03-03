@@ -49,8 +49,8 @@ func startTweens() -> void:
 
 
 	#titleText.tween_property(title, "position:y", 8, 2.0).from(-300).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_BOUNCE)
-	playButton.tween_property(play, "position:y", 171, 2.0).from(300).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_BOUNCE)
-	titleTween.tween_property(title, "position:y", 32, 2.0).from(-128).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_BOUNCE)
+	playButton.tween_property(play, "position:y", 160, 2.0).from(300).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_BOUNCE)
+	titleTween.tween_property(title, "position:y", 36, 2.0).from(-128).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_BOUNCE)
 	
 	play.modulate.a = 1.0
 	
