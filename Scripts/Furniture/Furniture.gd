@@ -406,7 +406,6 @@ func rotateObj() -> void:
 			rotatedVersion.enterPush(player)
 		else:
 			print("cant")
-		
 
 #Shapecasts the rotated versions collision shape to see if it will collide with anything.
 func tryRotate() -> bool:
@@ -518,3 +517,8 @@ func _on_bot_area_exited(body: Node2D) -> void:
 func getShape() -> String:
 	# gives the tetro shape of the furniture
 	return tetroShape
+
+## Plays the pack up animation when the Furniture is in the loading zone. 
+## This Furniture will be destroyed afterwards.
+func packInBox() -> void:
+	pass

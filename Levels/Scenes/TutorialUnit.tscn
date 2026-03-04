@@ -67,44 +67,88 @@ y_sort_enabled = true
 
 [node name="Table4" parent="Y-Sorting" unique_id=867510733 instance=ExtResource("12_tbr1m")]
 position = Vector2(192, 88)
+canLift = null
 canPush = true
 canPull = true
+canRotate = null
 tetroShape = "two_by_two_tetromino"
+weight = null
+dialogueTag = null
+liftPosition = null
 
 [node name="Wood_Chair_Side" parent="Y-Sorting" unique_id=354563284 instance=ExtResource("13_dfo7i")]
 position = Vector2(208, 48)
+canLift = null
+canRotate = null
 tetroShape = "one_by_one_tetromino"
+weight = null
+dialogueTag = null
+liftPosition = null
 
 [node name="Wood_Chair_Side2" parent="Y-Sorting" unique_id=382659746 instance=ExtResource("13_dfo7i")]
 position = Vector2(184, 16)
+canLift = null
+canRotate = null
 tetroShape = "one_by_one_tetromino"
+weight = null
+dialogueTag = null
+liftPosition = null
 
 [node name="Fire Chair" parent="Y-Sorting" unique_id=1174961556 instance=ExtResource("13_dfo7i")]
 modulate = Color(1, 0, 0, 1)
 position = Vector2(208, 16)
+canLift = null
+canRotate = null
 tetroShape = "one_by_one_tetromino"
+weight = null
+dialogueTag = null
+liftPosition = null
 
 [node name="Ice Chair" parent="Y-Sorting" unique_id=1664317152 instance=ExtResource("13_dfo7i")]
 modulate = Color(0, 1, 1, 1)
 position = Vector2(184, 48)
+canLift = null
+canRotate = null
 tetroShape = "one_by_one_tetromino"
+weight = null
+dialogueTag = null
+liftPosition = null
 
 [node name="Fridge" parent="Y-Sorting" unique_id=1320968529 instance=ExtResource("14_pbpou")]
 position = Vector2(32, 24)
+canPush = null
+canPull = null
+canRotate = null
 tetroShape = "four_by_two_tetromino"
+weight = null
+dialogueTag = null
+liftPosition = null
 
 [node name="TV_and_desk_front" parent="Y-Sorting" unique_id=434159217 instance=ExtResource("15_j4700")]
 position = Vector2(128, 16)
+canLift = null
+canRotate = null
 tetroShape = "three_by_four_tetromino"
+weight = null
+dialogueTag = null
+liftPosition = null
 
 [node name="Couch" parent="Y-Sorting" unique_id=1526639236 instance=ExtResource("16_i8bjg")]
 position = Vector2(296, 24)
+canLift = null
 tetroShape = "two_by_two_tetromino"
+weight = null
+dialogueTag = null
+liftPosition = null
 
 [node name="Electric Couch" parent="Y-Sorting" unique_id=1040593927 instance=ExtResource("16_i8bjg")]
 modulate = Color(1, 1, 0, 1)
 position = Vector2(296, 56)
+canLift = null
 tetroShape = "two_by_two_tetromino"
+weight = null
+dialogueTag = null
+liftPosition = null
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Y-Sorting" unique_id=611553643]
 visible = false

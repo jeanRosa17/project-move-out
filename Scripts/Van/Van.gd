@@ -17,10 +17,12 @@ func clearVan() -> void:
 	# gets all furniture in van
 	var bodies:Array[Node2D] = self.get_overlapping_bodies()
 	
+	#assert(bodies.all(func (x) -> bool: return x is Furniture))
+	
 	for i in range(bodies.size()):
 		if bodies[i].is_in_group("Furniture"):
 			hud.addPackedFurniture(bodies[i].getShape())
-			bodies[i].queue_free()
+			bodies[i].packInBox()
 
 # tracks if the player is in the truck
 func _on_body_entered(body: Node2D) -> void:

@@ -10,6 +10,9 @@ extends State
 @export var isPushed:bool
 var animationFinished:bool = false
 
+func _ready() -> void:
+	self.manager.view.animation_finished.connect(exitAfterAnimationFinish)
+
 func canEnter() -> bool:
 	if (not self.manager.hasFurniture): return false
 	
@@ -30,8 +33,6 @@ func enter() -> void:
 	
 	#if not (manager.wasPreviousState("push")):
 	self.manager.view.play("push " + dir)
-	
-	self.manager.view.animation_finished.connect(exitAfterAnimationFinish)
 
 func update(_delta:float) -> void:
 	if (self.animationFinished):
@@ -42,7 +43,8 @@ func update(_delta:float) -> void:
 		self.manager.changeState("Idle")
 
 func exitAfterAnimationFinish() -> void:
-	self.animationFinished = true
+	if (self.manager.view.animation == "push " + manager.view.animation.split(" ")[1].to_lower()):
+		self.animationFinished = true
 #func canExit() -> bool:
 	#return false
 
