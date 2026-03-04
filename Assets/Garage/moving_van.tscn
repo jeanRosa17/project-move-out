@@ -7,7 +7,7 @@
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=497863614]
 sprite_frames = ExtResource("1_ewm8d")
-animation = &"title"
+animation = &"side-no-john"
 autoplay = "title"
 
 [node name="Walking_particle" parent="." unique_id=1136958223 instance=ExtResource("2_ewm8d")]
