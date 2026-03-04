@@ -16,7 +16,7 @@ func _ready() -> void:
 	
 ## Signal function that is emited by the LevelManager while the new Level is being loaded. 
 ## newValue is a float 0.0-1.0
-func _on_progress_changed(newValue:float) -> void:
+func _on_progress_changed(_newValue:float) -> void:
 	pass # Leaving it blank for now
 
 ## Signal function that is emited by the LevelManger when the LevelManger finishes loading a Level.

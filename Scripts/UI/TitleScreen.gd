@@ -2,7 +2,6 @@ extends Node2D
 
 @onready var play: Button = $Play
 @onready var title: Sprite2D = $Title
-@onready var levelManager: LevelManager = $LevelManager
 @onready var creators: RichTextLabel = $Creators
 @onready var bg: Node2D = $BG
 @onready var moving_van: Node2D = $"Moving Van"
@@ -17,7 +16,7 @@ func _ready() -> void:
 	self.startTweens()
 	self.loopBackground()
 
-func _process(_delta) -> void:
+func _process(_delta:float) -> void:
 	if (bg.position.x < -912):
 		$BG/Floor.position.x += (912*2)
 	
@@ -56,7 +55,7 @@ func startTweens() -> void:
 	play.modulate.a = 1.0
 	
 func loopBackground() -> void:
-	var floorT1 = create_tween()
+	var floorT1:Tween = create_tween()
 	
 	
 	floorT1.tween_property(bg, "position:x", -912.0, bgSpeed).from(0)

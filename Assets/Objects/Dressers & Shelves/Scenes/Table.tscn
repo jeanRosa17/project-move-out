@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_ms1eq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
-size = Vector2(26, 29)
+size = Vector2(34, 34)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m2862"]
 size = Vector2(24, 28)
@@ -16,14 +16,17 @@ gravity_scale = 0.0
 script = ExtResource("1_ms1eq")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=394920035]
+position = Vector2(0, 10.5)
 texture = ExtResource("1_3hms5")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 43)
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1612712423]
-position = Vector2(0, -6.5)
+position = Vector2(0, 6.5)
 shape = SubResource("RectangleShape2D_xnri0")
 
 [node name="AreaDetector" type="Area2D" parent="." unique_id=1134988323 groups=["Furniture"]]
-position = Vector2(0, -1)
+position = Vector2(0, 9.5)
 collision_layer = 2
 collision_mask = 7
 

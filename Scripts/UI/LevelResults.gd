@@ -3,7 +3,6 @@ extends CanvasLayer
 @onready var nextLevel: Button = $"Container/BoxContainer/Panel/Next Level"
 @onready var replayLevel: Button = $Container/BoxContainer/Panel/Replay
 @onready var exitLevel: Button = $Container/BoxContainer/Panel/Quit
-@onready var levelManager: LevelManager = $"../LevelManager"
 
 @export var nextLevelName: StringName
 @export var replayLevelName: StringName
