@@ -2,15 +2,11 @@
 
 [ext_resource type="Script" uid="uid://j5jhi8fi2uk0" path="res://UI/LevelResults.gd" id="1_4n7mi"]
 [ext_resource type="Script" uid="uid://bea0sp1ppn3e6" path="res://UI/HUDManager.gd" id="1_t2p4a"]
-[ext_resource type="PackedScene" uid="uid://b0xffv4xtxnru" path="res://UI/Scenes/FadeToBlackTransition.tscn" id="1_yixhe"]
 [ext_resource type="PackedScene" uid="uid://psh4s5sym8kd" path="res://UI/Scenes/Textbox.tscn" id="2_ijstf"]
 [ext_resource type="FontFile" uid="uid://c17q41l7sknhq" path="res://Assets/Fonts/m5x7.ttf" id="4_6hjip"]
 
 [node name="HUD" type="CanvasLayer" unique_id=1725586568]
 script = ExtResource("1_t2p4a")
-
-[node name="LevelManager" parent="." unique_id=2114889924 instance=ExtResource("1_yixhe")]
-modulate = Color(1, 1, 1, 1)
 
 [node name="Level Results" type="CanvasLayer" parent="." unique_id=720231760]
 script = ExtResource("1_4n7mi")
@@ -103,7 +99,6 @@ text = "Quit"
 
 [node name="Dialogue" type="CanvasLayer" parent="." unique_id=2001474479]
 layer = 2
-visible = false
 
 [node name="Textbox" parent="Dialogue" unique_id=1851480463 instance=ExtResource("2_ijstf")]
 
