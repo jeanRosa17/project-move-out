@@ -1,5 +1,4 @@
 extends ColorRect
-class_name LevelManager
 
 var tween:Tween = null
 @export var duration:float = 1.5

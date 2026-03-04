@@ -23,6 +23,10 @@ config/icon="res://icon.svg"
 
 buses/default_bus_layout="uid://ccdgfuqa82f45"
 
+[autoload]
+
+LevelManager="*uid://dq8giawgjifnx"
+
 [debug]
 
 gdscript/warnings/untyped_declaration=1
