@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://psh4s5sym8kd"]
+
+[ext_resource type="Script" uid="uid://cau3mgvyc3sus" path="res://Scripts/Dialogue/Dialogue.gd" id="1_qignm"]
+[ext_resource type="Theme" uid="uid://bxr4bn083148b" path="res://Scripts/UI/Resources/MainTheme.tres" id="1_vi8ii"]
+
+[sub_resource type="Theme" id="Theme_iqcmb"]
+default_font_size = 10
+
+[node name="DialogueManager" type="Control" unique_id=1856526182]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_vi8ii")
+script = ExtResource("1_qignm")
+
+[node name="Textbox" type="PanelContainer" parent="." unique_id=1333792365]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.17500001
+anchor_top = 0.68700004
+anchor_right = 0.82500005
+anchor_bottom = 0.93700004
+offset_top = -1.904007
+offset_bottom = 0.09599304
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Textbox" unique_id=36547876]
+custom_minimum_size = Vector2(192, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_iqcmb")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 7
+text = "Hello World! This is Strong John."
+autowrap_mode = 2

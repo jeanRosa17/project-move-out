@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://cu8vdr57jtklp"]
+[gd_scene format=4 uid="uid://cu8vdr57jtklp"]
 
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="1_v5pbb"]
 [ext_resource type="AudioStream" uid="uid://ctpwnw3uhcggp" path="res://Assets/Audio/frost.wav" id="2_mhp6w"]
@@ -16,9 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://d26wukook25xb" path="res://Assets/Objects/Dressers & Shelves/Scenes/Table.tscn" id="14_dt2xx"]
 [ext_resource type="Script" uid="uid://cyso0emuh7ori" path="res://Levels/Scenes/ice_areas.gd" id="15_ksh5o"]
 [ext_resource type="AudioStream" uid="uid://0q4m8jstuh5j" path="res://Assets/Audio/ice slide noise.wav" id="16_fgj00"]
-[ext_resource type="PackedScene" uid="uid://cfmb3mmeue8au" path="res://UI/Scenes/HUD.tscn" id="17_g1622"]
+[ext_resource type="PackedScene" uid="uid://cfmb3mmeue8au" path="res://Scripts/UI/Scenes/HUD.tscn" id="17_g1622"]
 [ext_resource type="Script" uid="uid://1ugs6cpgg5xy" path="res://Levels/Scenes/Tutorial/trigger_sensor.gd" id="18_n5h8n"]
-[ext_resource type="Resource" uid="uid://cslj6cilix8o7" path="res://Narrative/iceEnter.tres" id="19_3ogvl"]
+[ext_resource type="Resource" path="res://Narrative/iceEnter.tres" id="19_3ogvl"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8wbq7"]
 normal = Vector2(1.79515e-06, 1)

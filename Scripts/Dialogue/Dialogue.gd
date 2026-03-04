@@ -1,7 +1,7 @@
 class_name DialogueManager
-extends Panel
+extends Control
 
-@onready var label:Label = $PanelContainer/Label
+@onready var label:Label = $Textbox/Label
 #@export var 
 
 ## File path to the Dialogue script

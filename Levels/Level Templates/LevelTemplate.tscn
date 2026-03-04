@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://byke2d0wuhcl2"]
+[gd_scene format=3 uid="uid://byke2d0wuhcl2"]
 
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="2_vagkd"]
 [ext_resource type="Texture2D" uid="uid://dytgdsg146xfm" path="res://Levels/Level Sketches/Bachelor_pad_test_level.png" id="3_0cyft"]
@@ -10,7 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://co27kfjleoj27" path="res://Assets/Audio/furniture [game capstone].wav" id="16_wncvl"]
 [ext_resource type="PackedScene" uid="uid://nomguund5j25" path="res://Assets/Objects/Couches/Scenes/red_couch_front.tscn" id="17_5ua7j"]
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Assets/Player/Scenes/Player.tscn" id="23_e5ftu"]
-[ext_resource type="PackedScene" uid="uid://cfmb3mmeue8au" path="res://UI/Scenes/HUD.tscn" id="24_4b2ox"]
+[ext_resource type="PackedScene" uid="uid://cfmb3mmeue8au" path="res://Scripts/UI/Scenes/HUD.tscn" id="24_4b2ox"]
 [ext_resource type="AudioStream" uid="uid://dy61bwuip8a27" path="res://Assets/Audio/lvl1.wav" id="24_5eo33"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iqcmb"]

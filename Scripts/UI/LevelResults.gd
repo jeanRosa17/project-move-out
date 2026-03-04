@@ -15,14 +15,14 @@ extends CanvasLayer
 
 func _on_next_level_pressed() -> void:
 	if (nextLevelName != null):
-		self.levelManager.changeSceneTo(nextLevelName)
+		LevelManager.loadScene(nextLevelName)
 
 func _on_replay_level_pressed() -> void:
 	var current_scene := get_tree().current_scene
 	if current_scene:
 		var path := current_scene.scene_file_path
-		self.levelManager.changeSceneTo(path)
+		LevelManager.loadScene(path)
 
 func _on_exit_game_pressed() -> void:
 	#get_tree().quit()
-	self.levelManager.changeSceneTo("res://UI/Scenes/TitleScreen.tscn")
+	LevelManager.loadScene("res://Scripts/UI/Scenes/TitleScreen.tscn")

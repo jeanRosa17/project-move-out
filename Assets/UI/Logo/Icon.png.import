@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://buoglykd5btow"
-path="res://.godot/imported/Icon.png-ea7df9ba6ac6fdecc2e8b747f10131af.ctex"
+path="res://.godot/imported/Icon.png-d1248e9d58b8b67db6c87ef8830ef9d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/Icon.png"
-dest_files=["res://.godot/imported/Icon.png-ea7df9ba6ac6fdecc2e8b747f10131af.ctex"]
+source_file="res://Assets/UI/Logo/Icon.png"
+dest_files=["res://.godot/imported/Icon.png-d1248e9d58b8b67db6c87ef8830ef9d2.ctex"]
 
 [params]
 

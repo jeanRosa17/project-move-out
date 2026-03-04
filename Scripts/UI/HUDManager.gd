@@ -5,6 +5,8 @@ class_name HUDManager
 @onready var level_results: CanvasLayer = $"Level Results"
 @onready var dialogue: CanvasLayer = $Dialogue
 @onready var textbox: DialogueManager = $Dialogue/Textbox
+@onready var ap: AnimationPlayer = $"Level Results/Node2D/AnimationPlayer"
+
 @onready var packedFurniture: Array[String] = []
 
 ## ensures dialogue is invisible at the start of the level
@@ -26,6 +28,9 @@ func checkResults() -> void:
 	
 	print("Gay gay homosexual gay");
 	var _text:RichTextLabel = self.level_results.find_child("Score")
+	self.dialogue.visible = false
+	await get_tree().create_timer(0.3).timeout
+	ap.play("Complete")
 	self.level_results.visible = true
 
 ## Ensures that the Dialogue Box turns itself off when the dialogue is finished.

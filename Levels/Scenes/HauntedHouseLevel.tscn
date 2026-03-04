@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://cxowcytqevm5r"]
+[gd_scene format=4 uid="uid://cxowcytqevm5r"]
 
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="1_ns01m"]
 [ext_resource type="Texture2D" uid="uid://dytgdsg146xfm" path="res://Levels/Level Sketches/Bachelor_pad_test_level.png" id="2_c8pmi"]
@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://dcqwj1132fkdt" path="res://Assets/Objects/Kitchen/stove_counter_side.png" id="19_cs8ww"]
 [ext_resource type="Texture2D" uid="uid://tq8l7mxma4l7" path="res://Assets/tiles/spider_Web.png" id="20_d4t44"]
 [ext_resource type="AudioStream" uid="uid://c06vxd1b71qpi" path="res://Assets/Audio/spooky level.mp3" id="22_vuwhr"]
-[ext_resource type="PackedScene" uid="uid://cfmb3mmeue8au" path="res://UI/Scenes/HUD.tscn" id="22_yfbc1"]
+[ext_resource type="PackedScene" uid="uid://cfmb3mmeue8au" path="res://Scripts/UI/Scenes/HUD.tscn" id="22_yfbc1"]
 [ext_resource type="PackedScene" uid="uid://2uhivxtpilyw" path="res://Assets/Objects/Dressers & Shelves/Scenes/red_wood_dressor_side.tscn" id="23_c8pmi"]
 [ext_resource type="PackedScene" uid="uid://uacgji4vcg37" path="res://Assets/Audio/push_pull_audio.tscn" id="23_qvndv"]
 [ext_resource type="PackedScene" uid="uid://cjingj81fm3hm" path="res://Assets/Objects/Dressers & Shelves/Scenes/storage_dresser_front.tscn" id="24_c8pmi"]
