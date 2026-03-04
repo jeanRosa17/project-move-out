@@ -7,6 +7,8 @@ extends Node2D
 @onready var bg: Node2D = $BG
 @onready var moving_van: Node2D = $"Moving Van"
 
+@export var firstLevel:String = "res://Levels/Scenes/TutorialUnit.tscn"
+
 #@onready var floor2: TileMapLayer = $Floor2
 
 var bgSpeed: float = 8.0
@@ -24,8 +26,7 @@ func _process(_delta) -> void:
 		self.bg.position.x = 0
 
 func _on_play_pressed() -> void:
-	self.levelManager.z_index = 1
-	self.levelManager.changeSceneTo("res://Levels/Scenes/TutorialUnit.tscn")
+	LevelManager.loadScene(self.firstLevel, LevelManager.Transitions.CIRCLE)
 
 func startTweens() -> void:
 	var authors:Tween = create_tween()

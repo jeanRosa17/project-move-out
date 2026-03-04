@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://dnx65kt5siyol"]
+
+[ext_resource type="Script" uid="uid://cn0wc25u3o5oy" path="res://Scripts/Camera/LevelTransition.gd" id="1_erpsv"]
+[ext_resource type="Texture2D" uid="uid://8fyg1w3ystub" path="res://Assets/Transitions/Shapes.png" id="2_qyqso"]
+
+[sub_resource type="Animation" id="Animation_yab68"]
+resource_name = "Fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(10, 10), Vector2(0.1, 0.1)]
+}
+
+[sub_resource type="Animation" id="Animation_tpu5y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gdhu6"]
+_data = {
+&"Fade": SubResource("Animation_yab68"),
+&"RESET": SubResource("Animation_tpu5y")
+}
+
+[node name="LevelTransition" type="CanvasLayer" unique_id=1160375655]
+script = ExtResource("1_erpsv")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1023572518]
+modulate = Color(0.97881764, 0.97881764, 0.97881764, 1)
+position = Vector2(160, 96)
+texture = ExtResource("2_qyqso")
+region_enabled = true
+region_rect = Rect2(0, 0, 3200, 1920)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1749723432]
+libraries/ = SubResource("AnimationLibrary_gdhu6")
+autoplay = &"Fade"
