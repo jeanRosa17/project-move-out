@@ -17,11 +17,15 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 config/name="Project Move Out"
 run/main_scene="uid://rtrhhspwen6a"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://buoglykd5btow"
 
 [audio]
 
 buses/default_bus_layout="uid://ccdgfuqa82f45"
+
+[autoload]
+
+LevelManager="*uid://dq8giawgjifnx"
 
 [debug]
 
