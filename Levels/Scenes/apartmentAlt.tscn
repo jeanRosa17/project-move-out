@@ -111,7 +111,6 @@ tetroShape = "two_by_three_tetromino"
 
 [node name="TV_and_desk_front" parent="Y-Sorting/Kitchen" unique_id=62354660 instance=ExtResource("18_en5i7")]
 position = Vector2(144, 296)
-tetroShape = "four_by_three_tetromino"
 
 [node name="Electric Couch" parent="Y-Sorting/Kitchen" unique_id=571092678 instance=ExtResource("19_obgx0")]
 modulate = Color(1, 1, 0, 1)
@@ -315,7 +314,7 @@ needed = [NodePath("../../../Y-Sorting/Kitchen/Wood_Chair_Side"), NodePath("../.
 
 [node name="Level Results" parent="HUD" index="1" unique_id=720231760]
 visible = false
-nextLevelName = &"res://UI/Scenes/TitleScreen.tscn"
+nextLevelName = &"res://Scripts/UI/Scenes/TitleScreen.tscn"
 replayLevelName = &"res://Levels/Scenes/apartmentAlt.tscn"
 
 [node name="TextTrigger" type="Node2D" parent="." unique_id=568340590]
