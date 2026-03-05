@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://d3rjdvbwh7auh" path="res://Levels/Scenes/Garadge2.tscn" id="18_xns8l"]
 [ext_resource type="Script" uid="uid://1ugs6cpgg5xy" path="res://Levels/Scenes/Tutorial/trigger_sensor.gd" id="19_eonwm"]
 [ext_resource type="Script" uid="uid://bmqryoobj44j2" path="res://Scripts/Dialogue/DialogueTag.gd" id="19_jeajl"]
+[ext_resource type="PackedScene" uid="uid://5bnbyjpgb5kx" path="res://Levels/Post-Level Minigame/Post-Level Minigame.tscn" id="19_lcmnl"]
 [ext_resource type="Resource" uid="uid://dolc7fyuhewi6" path="res://Narrative/apartmentEnter.tres" id="20_jrk7u"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wembw"]
@@ -268,6 +269,9 @@ rotation = -0.0014569
 scale = Vector2(5, 35.952915)
 shape = SubResource("RectangleShape2D_lcmnl")
 one_way_collision_margin = 0.0
+
+[node name="PostLevelMinigame" parent="." unique_id=762999373 instance=ExtResource("19_lcmnl")]
+position = Vector2(688, 128)
 
 [connection signal="body_entered" from="TextTrigger/TriggerSensor" to="TextTrigger/TriggerSensor" method="_on_body_entered"]
 [connection signal="body_entered" from="Text triggers/TriggerSensor" to="Text triggers/TriggerSensor" method="_on_body_entered"]

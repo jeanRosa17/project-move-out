@@ -29,6 +29,7 @@
 [ext_resource type="Script" uid="uid://1ugs6cpgg5xy" path="res://Levels/Scenes/Tutorial/trigger_sensor.gd" id="26_d3wmj"]
 [ext_resource type="Resource" uid="uid://bw7tpgka1cfco" path="res://Narrative/fratEnter.tres" id="27_tv3y6"]
 [ext_resource type="AudioStream" uid="uid://c8ey07cvvm0ij" path="res://Assets/Audio/frat house.wav" id="28_ecbn1"]
+[ext_resource type="PackedScene" uid="uid://5bnbyjpgb5kx" path="res://Levels/Post-Level Minigame/Post-Level Minigame.tscn" id="30_jdgei"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_sq7bx"]
 normal = Vector2(1.79515e-06, 1)
@@ -568,6 +569,9 @@ one_way_collision_margin = 0.0
 [node name="Level Music" type="AudioStreamPlayer2D" parent="." unique_id=1059859005]
 stream = ExtResource("28_ecbn1")
 autoplay = true
+
+[node name="PostLevelMinigame" parent="." unique_id=762999373 instance=ExtResource("30_jdgei")]
+position = Vector2(1152, 192)
 
 [connection signal="body_entered" from="Wind/Wind_hallway_west" to="Wind/Wind_hallway_west" method="_on_body_entered"]
 [connection signal="body_exited" from="Wind/Wind_hallway_west" to="Wind/Wind_hallway_west" method="_on_body_exited"]
