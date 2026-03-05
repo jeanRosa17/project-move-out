@@ -23,7 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://brfkiqavvunae" path="res://Assets/Particles/Scenes/wind_particle.tscn" id="18_0g7f6"]
 [ext_resource type="PackedScene" uid="uid://cuho4egtuhmvt" path="res://Assets/Objects/Tables/Scenes/TV_and_desk_front.tscn" id="18_en5i7"]
 [ext_resource type="Script" uid="uid://cyso0emuh7ori" path="res://Levels/Scenes/ice_areas.gd" id="19_2wgx8"]
-[ext_resource type="Script" uid="uid://dh2bamxv7dbwg" path="res://Levels/Scenes/wind.gd" id="19_m2aof"]
+[ext_resource type="Script" path="res://Levels/Scenes/wind.gd" id="19_m2aof"]
 [ext_resource type="PackedScene" uid="uid://nomguund5j25" path="res://Assets/Objects/Couches/Scenes/red_couch_front.tscn" id="19_obgx0"]
 [ext_resource type="SpriteFrames" uid="uid://bj4hy5y5yiady" path="res://Scripts/Resources/VanFrames.tres" id="19_srnyy"]
 [ext_resource type="AudioStream" uid="uid://0q4m8jstuh5j" path="res://Assets/Audio/ice slide noise.wav" id="20_m2aof"]
@@ -206,7 +206,7 @@ position = Vector2(0, 6)
 safe_margin = 1.159
 canControl = false
 
-[node name="Camera2D2" type="Camera2D" parent="Y-Sorting/Van/Player" unique_id=642789955]
+[node name="PlayerCamera" type="Camera2D" parent="Y-Sorting/Van/Player" unique_id=642789955]
 limit_left = -12
 limit_top = -132
 limit_right = 688

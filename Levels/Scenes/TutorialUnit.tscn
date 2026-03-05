@@ -192,7 +192,7 @@ region_rect = Rect2(903, 355, 721, 684)
 position = Vector2(160, 288)
 safe_margin = 1.159
 
-[node name="Camera2D2" type="Camera2D" parent="Y-Sorting/Player" unique_id=584349676]
+[node name="PlayerCamera" type="Camera2D" parent="Y-Sorting/Player" unique_id=584349676]
 limit_left = -12
 limit_top = -132
 limit_right = 1468
