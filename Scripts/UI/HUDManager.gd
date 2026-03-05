@@ -4,6 +4,7 @@ class_name HUDManager
 
 @onready var level_results: CanvasLayer = $"Level Results"
 @onready var dialogue: CanvasLayer = $Dialogue
+@onready var list: CanvasLayer = $ListHUD
 @onready var textbox: DialogueManager = $Dialogue/Textbox
 @onready var ap: AnimationPlayer = $"Level Results/Node2D/AnimationPlayer"
 

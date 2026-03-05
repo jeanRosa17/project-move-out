@@ -4,16 +4,19 @@ extends ItemList
 
 var isPressed:bool = false
 
-#func _ready() -> void:
-	#for i in range(needed.size()):
-		#self.add_item(needed[i].name, needed[i].sprite_2d.texture)
-		#
-#
-#func _process(float) -> void:
-	#if (Input.is_action_just_pressed("Inventory")):
-		#var layer:CanvasLayer = self.get_parent()
-		#if (layer.visible):
-			#layer.visible = false
-		#else:
-			#layer.visible = true
-	#
+func _ready() -> void:
+	for i in range(needed.size()):
+		var atlas := AtlasTexture.new()
+		atlas.atlas = needed[i].sprite_2d.texture
+		atlas.region = needed[i].sprite_2d.region_rect
+		self.add_item(needed[i].name, atlas)
+		
+
+func _process(float) -> void:
+	if (Input.is_action_just_pressed("Inventory")):
+		var layer:CanvasLayer = self.get_parent()
+		if (layer.visible):
+			layer.visible = false
+		else:
+			layer.visible = true
+	

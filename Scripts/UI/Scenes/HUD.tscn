@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://j5jhi8fi2uk0" path="res://Scripts/UI/LevelResults.gd" id="1_4n7mi"]
 [ext_resource type="Script" uid="uid://bea0sp1ppn3e6" path="res://Scripts/UI/HUDManager.gd" id="1_t2p4a"]
 [ext_resource type="PackedScene" uid="uid://psh4s5sym8kd" path="res://Scripts/UI/Scenes/Textbox.tscn" id="2_ijstf"]
+[ext_resource type="Script" uid="uid://dj52fk0ha628v" path="res://Levels/Scenes/InventoryChecklist.gd" id="2_nu68y"]
 [ext_resource type="Texture2D" uid="uid://clksc0wyxfgal" path="res://Assets/UI/Level Finish Text.png" id="3_nu68y"]
 [ext_resource type="Theme" uid="uid://bxr4bn083148b" path="res://Scripts/UI/Resources/MainTheme.tres" id="3_s414o"]
 
@@ -92,6 +93,15 @@ _data = {
 
 [node name="HUD" type="CanvasLayer" unique_id=1725586568]
 script = ExtResource("1_t2p4a")
+
+[node name="ListHUD" type="CanvasLayer" parent="." unique_id=1378780322]
+
+[node name="ItemList" type="ItemList" parent="ListHUD" unique_id=478689423 node_paths=PackedStringArray("needed")]
+offset_right = 320.0
+offset_bottom = 190.0
+auto_width = true
+script = ExtResource("2_nu68y")
+needed = [NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath("")]
 
 [node name="Level Results" type="CanvasLayer" parent="." unique_id=720231760]
 script = ExtResource("1_4n7mi")

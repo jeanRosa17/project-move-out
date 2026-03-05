@@ -227,7 +227,8 @@ position = Vector2(408, -12)
 
 [node name="Ice Chair" parent="." unique_id=1480016801 instance=ExtResource("7_ysqfs")]
 modulate = Color(0, 1, 1, 1)
-position = Vector2(410, 21)
+position = Vector2(428, 17)
+canRotate = true
 
 [node name="Ice Bed" parent="." unique_id=2068796251 instance=ExtResource("17_kyk2i")]
 modulate = Color(0, 1, 1, 1)
@@ -247,24 +248,26 @@ position = Vector2(1220, 504)
 modulate = Color(0, 1, 1, 1)
 position = Vector2(1142, 488)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1177491654]
+[node name="ItemListHUD" type="CanvasLayer" parent="." unique_id=1177491654]
 
-[node name="ItemList" type="ItemList" parent="CanvasLayer" unique_id=2019097563 node_paths=PackedStringArray("needed")]
+[node name="ItemList" type="ItemList" parent="ItemListHUD" unique_id=2019097563]
 offset_right = 320.0
 offset_bottom = 190.0
 auto_width = true
 script = ExtResource("21_6oy3m")
-needed = [NodePath("../../Fire Wardrobe"), NodePath("../../Fire Shelf"), NodePath("../../Fire Bed"), NodePath("../../Ice Bed"), NodePath("../../Ice Shelf"), NodePath("../../Ice Wardrobe"), NodePath("../../Fire Chair"), NodePath("../../Ice Chair")]
 
 [node name="HUD" parent="." unique_id=893925408 instance=ExtResource("25_3xhsd")]
 unique_name_in_owner = true
 
-[node name="Level Results" parent="HUD" index="1"]
+[node name="ItemList" parent="HUD/ListHUD" parent_id_path=PackedInt32Array(893925408, 1378780322) index="0" unique_id=478689423 node_paths=PackedStringArray("needed")]
+needed = [NodePath("../../../Ice Chair")]
+
+[node name="Level Results" parent="HUD" index="1" unique_id=720231760]
 visible = false
 nextLevelName = &"res://Levels/Scenes/FratHouseAlt.tscn"
 replayLevelName = &"res://Levels/Scenes/CollegeAppartmentLevel.tscn"
 
-[node name="Dialogue" parent="HUD" index="2"]
+[node name="Dialogue" parent="HUD" index="2" unique_id=2001474479]
 visible = true
 
 [node name="TV_and_desk_front" parent="." unique_id=1513347586 instance=ExtResource("21_d0wr3")]
