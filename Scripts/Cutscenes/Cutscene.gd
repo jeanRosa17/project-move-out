@@ -8,7 +8,7 @@ var i:int = 0
 
 ## A Dictionary with 
 @export var events:Array[Vector2] = []
-@onready var player: Player = $Player
+@onready var player: Player = $"../Player"
 #@onready var camera: Camera2D = $"../Y-Sorting/Player/Camera2D2"
 @onready var view: AnimatedSprite2D = $AnimatedSprite2D
 @onready var y_sorting: Node2D = $".."

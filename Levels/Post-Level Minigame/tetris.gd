@@ -289,7 +289,8 @@ var four_by_three_tetromino: Array = [
 ]
 
 var tetrominoes: Array = []
-	
+
+var score: int = 0
 
 const MIN_COL: int = -7
 const MAX_COL: int = 6
@@ -308,24 +309,38 @@ var rotation_index: int = 0
 var active_tetromino: Array = []
 
 var is_game_running: bool
+var is_game_stopped: bool = true
+var game_over: bool
+
 
 var tile_id: int = 1
 var next_piece_atlas: Vector2i
 
 @onready var board_layer: TileMapLayer = $Board
 @onready var active_layer: TileMapLayer = $Active
+@onready var hud:HUDManager = %HUD
 
 func _ready() -> void:
 	start_new_game()
 	
 func start_new_game() -> void:
-	is_game_running = true
 	clear_tetromino()
 	clear_board()
 	clear_next_tetromino_preview()
+
+func intialize_game(furniture_list: Array) -> void:
+	for furniture in furniture_list:
+		add_tetrominos(furniture)
+	
+	is_game_running = true
+	is_game_stopped = false
 	current_tetromino_type = choose_tetromino()
 	next_tetromino_type = choose_tetromino()
 	initialize_tetromino()
+	
+func pause_game()-> void:
+	is_game_running = false
+	is_game_stopped = true
 	
 func _physics_process(delta: float) -> void:
 	if is_game_running:
@@ -352,7 +367,28 @@ func _physics_process(delta: float) -> void:
 			fall_timer = 0
 	else:
 		#show end screen here
+		if (!is_game_stopped):
+			pause_game()
+			hud.stopTetris(score)
 		pass
+
+func add_tetrominos(tetromino: String) -> void:
+	if (tetromino == "one_by_one_tetromino"):
+		tetrominoes.append(one_by_one_tetromino)
+	elif (tetromino == "two_by_two_tetromino"):
+		tetrominoes.append(two_by_two_tetromino)
+	elif (tetromino == "two_by_one_tetromino"):
+		tetrominoes.append(two_by_one_tetromino)
+	elif (tetromino == "three_by_one_tetromino"):
+		tetrominoes.append(three_by_one_tetromino)
+	elif (tetromino == "three_by_three_tetromino"):
+		tetrominoes.append(three_by_three_tetromino)
+	elif (tetromino == "four_by_two_tetromino"):
+		tetrominoes.append(four_by_two_tetromino)
+	elif (tetromino == "four_by_three_tetromino"):
+		tetrominoes.append(four_by_three_tetromino)
+	else:
+		print("Incorrectly named tetromino")
 
 func choose_tetromino() -> Array:
 	var selected_tetromino: Array
@@ -406,6 +442,7 @@ func land_tetromino() -> void:
 		active_layer.erase_cell(current_position + block["pos"])
 		board_layer.set_cell(current_position + block["pos"], tile_id, block["atlas"])
 		active_tetromino = []
+		score += 1
 
 func clear_next_tetromino_preview() -> void:
 	for i in range (11, 16):
@@ -441,6 +478,7 @@ func is_within_bounds(pos: Vector2i) -> bool:
 
 func is_game_over() -> void:
 	if (active_tetromino.is_empty() && next_tetromino_type.is_empty()):
+		#check to see if we finish putting all furniture in level
 		print("You win!")
 		is_game_running = false
 	else:
@@ -449,3 +487,4 @@ func is_game_over() -> void:
 				land_tetromino()
 				is_game_running = false
 				print("You lose idiot!")
+				game_over = true

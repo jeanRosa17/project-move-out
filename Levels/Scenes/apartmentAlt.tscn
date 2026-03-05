@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://d3rjdvbwh7auh" path="res://Levels/Scenes/Garadge2.tscn" id="2_m2aof"]
 [ext_resource type="PackedScene" uid="uid://psh4s5sym8kd" path="res://Scripts/UI/Scenes/Textbox.tscn" id="3_elsed"]
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Assets/Player/Scenes/Player.tscn" id="9_en5i7"]
-[ext_resource type="Script" uid="uid://dj52fk0ha628v" path="res://Levels/Scenes/InventoryChecklist.gd" id="10_obgx0"]
 [ext_resource type="AudioStream" uid="uid://dy61bwuip8a27" path="res://Assets/Audio/lvl1.wav" id="10_x3x0i"]
 [ext_resource type="PackedScene" uid="uid://cfmb3mmeue8au" path="res://Scripts/UI/Scenes/HUD.tscn" id="11_ccy2n"]
 [ext_resource type="PackedScene" uid="uid://c638p25j2md1l" path="res://Assets/Objects/Bathroom/Scenes/Toilet.tscn" id="11_obgx0"]
@@ -24,7 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://cuho4egtuhmvt" path="res://Assets/Objects/Tables/Scenes/TV_and_desk_front.tscn" id="18_en5i7"]
 [ext_resource type="PackedScene" uid="uid://5bnbyjpgb5kx" path="res://Levels/Post-Level Minigame/Post-Level Minigame.tscn" id="18_m2aof"]
 [ext_resource type="Script" uid="uid://cyso0emuh7ori" path="res://Levels/Scenes/ice_areas.gd" id="19_2wgx8"]
-[ext_resource type="Script" path="res://Levels/Scenes/wind.gd" id="19_m2aof"]
+[ext_resource type="Script" uid="uid://dh2bamxv7dbwg" path="res://Levels/Scenes/wind.gd" id="19_m2aof"]
 [ext_resource type="PackedScene" uid="uid://nomguund5j25" path="res://Assets/Objects/Couches/Scenes/red_couch_front.tscn" id="19_obgx0"]
 [ext_resource type="SpriteFrames" uid="uid://bj4hy5y5yiady" path="res://Scripts/Resources/VanFrames.tres" id="19_srnyy"]
 [ext_resource type="AudioStream" uid="uid://0q4m8jstuh5j" path="res://Assets/Audio/ice slide noise.wav" id="20_m2aof"]
@@ -226,23 +225,23 @@ tetroShape = "three_by_two_tetromino"
 position = Vector2(219, 268)
 tetroShape = "one_by_one_tetromino"
 
-[node name="Van" type="Node2D" parent="Y-Sorting" unique_id=1716992437]
-position = Vector2(121, -68)
-script = ExtResource("28_2wgx8")
-startPos = Vector2(724, -68)
-events = Array[Vector2]([Vector2(128, -68), Vector2(128, 71), Vector2(52, 71)])
-
-[node name="Player" parent="Y-Sorting/Van" unique_id=2126433676 instance=ExtResource("9_en5i7")]
-position = Vector2(0, 6)
+[node name="Player" parent="Y-Sorting" unique_id=2126433676 instance=ExtResource("9_en5i7")]
+position = Vector2(121, -62)
 safe_margin = 1.159
 canControl = false
 
-[node name="PlayerCamera" type="Camera2D" parent="Y-Sorting/Van/Player" unique_id=642789955]
+[node name="PlayerCamera" type="Camera2D" parent="Y-Sorting/Player" unique_id=642789955]
 limit_left = -12
 limit_top = -132
 limit_right = 688
 limit_bottom = 661
 editor_draw_limits = true
+
+[node name="Van" type="Node2D" parent="Y-Sorting" unique_id=1716992437]
+position = Vector2(121, -68)
+script = ExtResource("28_2wgx8")
+startPos = Vector2(724, -68)
+events = Array[Vector2]([Vector2(128, -68), Vector2(128, 71), Vector2(52, 71)])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Y-Sorting/Van" unique_id=2011634438]
 sprite_frames = ExtResource("19_srnyy")
@@ -304,21 +303,17 @@ autoplay = true
 stream = ExtResource("14_vn673")
 autoplay = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1090192692]
-visible = false
-
-[node name="ItemList" type="ItemList" parent="CanvasLayer" unique_id=1045855490 node_paths=PackedStringArray("needed")]
-offset_right = 320.0
-offset_bottom = 190.0
-auto_width = true
-script = ExtResource("10_obgx0")
-needed = [null, null, null, null, null, null, null, null]
-
 [node name="HUD" parent="." unique_id=58846247 instance=ExtResource("11_ccy2n")]
 unique_name_in_owner = true
 visible = false
 
-[node name="Level Results" parent="HUD" index="0" unique_id=720231760]
+[node name="ListHUD" parent="HUD" index="0" unique_id=1378780322]
+visible = false
+
+[node name="ItemList" parent="HUD/ListHUD" index="0" unique_id=478689423 node_paths=PackedStringArray("needed")]
+needed = [NodePath("../../../Y-Sorting/Kitchen/Wood_Chair_Side"), NodePath("../../../Y-Sorting/Kitchen/Wood_Chair_Side2"), NodePath("../../../Y-Sorting/Kitchen/Fire Chair"), NodePath("../../../Y-Sorting/Kitchen/Ice Chair"), NodePath("../../../Y-Sorting/Kitchen/Fridge"), NodePath("../../../Y-Sorting/Kitchen/TV_and_desk_front"), NodePath("../../../Y-Sorting/Kitchen/Electric Couch"), NodePath("../../../Y-Sorting/Kitchen/Table4"), NodePath("../../../Y-Sorting/Kitchen/Couch"), NodePath("../../../Y-Sorting/Icebedroom/Ice Bed"), NodePath("../../../Y-Sorting/Icebedroom/Ice Wardrobe"), NodePath("../../../Y-Sorting/Icebedroom/Ice Table"), NodePath("../../../Y-Sorting/Icebedroom/Ice Shelf"), NodePath("../../../Y-Sorting/Firebedroom/Fire Bed"), NodePath("../../../Y-Sorting/Firebedroom/Table"), NodePath("../../../Y-Sorting/Firebedroom/Fire Wardrobe"), NodePath("../../../Y-Sorting/Firebedroom/Fire Shelf")]
+
+[node name="Level Results" parent="HUD" index="1" unique_id=720231760]
 visible = false
 nextLevelName = &"res://UI/Scenes/TitleScreen.tscn"
 replayLevelName = &"res://Levels/Scenes/apartmentAlt.tscn"

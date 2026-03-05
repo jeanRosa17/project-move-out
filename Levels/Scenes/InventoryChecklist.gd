@@ -6,6 +6,8 @@ var isPressed:bool = false
 
 func _ready() -> void:
 	for i in range(needed.size()):
+		if needed[i] == null:
+			continue
 		var atlas := AtlasTexture.new()
 		atlas.atlas = needed[i].sprite_2d.texture
 		atlas.region = needed[i].sprite_2d.region_rect

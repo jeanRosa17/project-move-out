@@ -9,10 +9,10 @@ class_name HUDManager
 @onready var ap: AnimationPlayer = $"Level Results/Node2D/AnimationPlayer"
 
 @onready var packedFurniture: Array[String] = []
-@onready var player: Player = $"../Y-Sorting/Van/Player"
+@onready var player: Player = $"../Y-Sorting/Player"
 @onready var tetris = $"../PostLevelMinigame"
 @onready var tetris_camera: Camera2D = $"../PostLevelMinigame/TetrisCamera"
-@onready var player_camera: Camera2D = $"../Y-Sorting/Van/Player/PlayerCamera"
+@onready var player_camera: Camera2D = $"../Y-Sorting/Player/PlayerCamera"
 
 var levelFinished: bool = false
 var allFurniture: Array
@@ -28,8 +28,8 @@ func get_all_furniture(startNode: Node, result: Array) -> void:
 	if startNode is Furniture:
 		if (startNode.canLift || (startNode.canPush && startNode.canPull)):
 			result.push_back(startNode)
-		for child in startNode.get_children():
-			get_all_furniture(child, result)
+	for child in startNode.get_children():
+		get_all_furniture(child, result)
 func get_max_score() -> float:
 	# calculates the maximum score available in the level
 	# NOT FULLY IMPLEMENTED

@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://cuho4egtuhmvt" path="res://Assets/Objects/Tables/Scenes/TV_and_desk_front.tscn" id="15_j4700"]
 [ext_resource type="PackedScene" uid="uid://nomguund5j25" path="res://Assets/Objects/Couches/Scenes/red_couch_front.tscn" id="16_i8bjg"]
 [ext_resource type="PackedScene" uid="uid://uacgji4vcg37" path="res://Assets/Audio/push_pull_audio.tscn" id="17_i2y81"]
-[ext_resource type="Script" uid="uid://dj52fk0ha628v" path="res://Levels/Scenes/InventoryChecklist.gd" id="17_vi6w6"]
 [ext_resource type="PackedScene" uid="uid://cfmb3mmeue8au" path="res://Scripts/UI/Scenes/HUD.tscn" id="18_0tmxq"]
 [ext_resource type="PackedScene" uid="uid://d3rjdvbwh7auh" path="res://Levels/Scenes/Garadge2.tscn" id="18_xns8l"]
 [ext_resource type="Script" uid="uid://1ugs6cpgg5xy" path="res://Levels/Scenes/Tutorial/trigger_sensor.gd" id="19_eonwm"]
@@ -129,7 +128,7 @@ liftPosition = null
 position = Vector2(128, 16)
 canLift = null
 canRotate = null
-tetroShape = "three_by_four_tetromino"
+tetroShape = "four_by_three_tetromino"
 weight = null
 dialogueTag = null
 liftPosition = null
@@ -212,21 +211,17 @@ autoplay = true
 stream = ExtResource("11_6hffk")
 autoplay = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1051879686]
-visible = false
-
-[node name="ItemList" type="ItemList" parent="CanvasLayer" unique_id=2145354784 node_paths=PackedStringArray("needed")]
-offset_right = 320.0
-offset_bottom = 190.0
-auto_width = true
-script = ExtResource("17_vi6w6")
-needed = [null, null, null, null, null, null, null, null]
-
 [node name="HUD" parent="." unique_id=1896256897 instance=ExtResource("18_0tmxq")]
 unique_name_in_owner = true
 visible = false
 
-[node name="Level Results" parent="HUD" index="0" unique_id=720231760]
+[node name="ListHUD" parent="HUD" index="0" unique_id=1378780322]
+visible = false
+
+[node name="ItemList" parent="HUD/ListHUD" index="0" unique_id=478689423 node_paths=PackedStringArray("needed")]
+needed = [NodePath("../../../Y-Sorting/Table4"), NodePath("../../../Y-Sorting/Wood_Chair_Side"), NodePath("../../../Y-Sorting/Wood_Chair_Side2"), NodePath("../../../Y-Sorting/Fire Chair"), NodePath("../../../Y-Sorting/Ice Chair"), NodePath("../../../Y-Sorting/Fridge"), NodePath("../../../Y-Sorting/TV_and_desk_front"), NodePath("../../../Y-Sorting/Couch"), NodePath("../../../Y-Sorting/Electric Couch")]
+
+[node name="Level Results" parent="HUD" index="1" unique_id=720231760]
 visible = false
 nextLevelName = &"res://Levels/Scenes/apartmentAlt.tscn"
 replayLevelName = &"res://Levels/Scenes/TutorialUnit.tscn"
