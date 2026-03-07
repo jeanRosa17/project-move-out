@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://rtrhhspwen6a"]
 
 [ext_resource type="Script" uid="uid://bhcre3gsfa5n3" path="res://Scripts/UI/TitleScreen.gd" id="1_jpkfb"]
-[ext_resource type="FontFile" uid="uid://c17q41l7sknhq" path="res://Assets/Fonts/m5x7.ttf" id="2_fbutq"]
+[ext_resource type="FontFile" uid="uid://c17q41l7sknhq" path="res://Assets/fonts/m5x7.ttf" id="2_fbutq"]
 [ext_resource type="Theme" uid="uid://bxr4bn083148b" path="res://Scripts/UI/Resources/MainTheme.tres" id="2_saprj"]
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="4_fbutq"]
 [ext_resource type="AudioStream" uid="uid://dmf4fmne560ip" path="res://Assets/Audio/title screen.wav" id="6_2s4f7"]
