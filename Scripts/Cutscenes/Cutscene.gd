@@ -8,7 +8,7 @@ var i:int = 0
 
 ## A Dictionary with 
 @export var events:Array[Vector2] = []
-@onready var player: Player = $"../Player"
+@export var player: Player
 #@onready var camera: Camera2D = $"../Y-Sorting/Player/Camera2D2"
 @onready var view: AnimatedSprite2D = $AnimatedSprite2D
 @onready var y_sorting: Node2D = $".."
@@ -31,6 +31,8 @@ func _process(_delta: float) -> void:
 		if (tween == null):
 			tween = create_tween()
 			tween.tween_property(self, "position", self.events[0], speed).from(self.startPos)
+			self.add_child(self.player)
+			self.player.position = Vector2.ZERO
 			#tween.play()
 		
 		if (self.position == self.events[i]):
@@ -38,8 +40,8 @@ func _process(_delta: float) -> void:
 				i += 1
 			if (i == events.size()): 
 				tween = null
-				self.remove_child(self.player)
-				self.y_sorting.add_child(self.player)
+				#self.remove_child(self.player)
+				#self.y_sorting.add_child(self.player)
 				
 				self.player.visible = true
 				self.player.view.play("jump down")

@@ -44,6 +44,7 @@ var rObjects: Array[Node2D] = []
 var lObjects: Array[Node2D] = []
 
 var ghostTween:Tween = null
+var followTween:Tween = null
 var placementTween:Tween = null
 var floatXTween:Tween = null
 var floatYTween:Tween = null
@@ -218,7 +219,15 @@ func create_additional_collisions_polygon() -> void:
 
 func _physics_process(_delta: float) -> void:
 	if (self.isLifted and self.ghostSprite != null):
+		print(self.ghostSprite.global_position)
 		self.ghostSprite.self_modulate = (Color.GREEN if (self.canBeDropped) else Color.RED)
+		if (self.followTween == null):
+			self.followTween = get_tree().create_tween()
+			self.followTween.tween_property(ghostSprite, "position", self.player.manager.direction * 32 , 0.2).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+		if (not self.followTween.is_running()):
+			self.followTween.kill()
+			self.followTween = create_tween()
+			self.followTween.tween_property(ghostSprite, "position", self.player.manager.direction * 32 , 0.2).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
 		
 		#if (self.player != null):
 			#ghostSprite.position = self.player.get_node("Detector").get_child(0).position
@@ -273,12 +282,16 @@ func createGhostSprite(body:CharacterBody2D) -> void:
 	
 	self.ghostSprite = sprite_2d.duplicate()
 	
-	body.get_node("Detector").get_child(0).add_child(ghostSprite)
-	ghostSprite.position = Vector2(0, 0)
+	#body.get_node("Detector").get_child(0).add_child(ghostSprite)
+	body.add_child(self.ghostSprite)
+	self.ghostSprite.z_index = 10
+	self.ghostSprite.position = Vector2(0, 0)
 	self.ghostTween = self.get_tree().create_tween()
-	self.ghostTween.tween_property(ghostSprite, "self_modulate:a", 0, 1.0).from(1.0).set_delay(0.1)
-	self.ghostTween.tween_property(ghostSprite, "self_modulate:a", 1.0, 1.0).from(0.0).set_delay(0.1)
+	self.ghostTween.tween_property(ghostSprite, "self_modulate:a", 0, 1.0).set_delay(0.2)
+	self.ghostTween.tween_property(ghostSprite, "self_modulate:a", 1.0, 1.0).set_delay(0.2)
+	self.ghostTween.set_
 	self.ghostTween.set_loops()
+	#self.followTween.set_loops()
 
 
 #region Tweens  Animation
@@ -334,18 +347,17 @@ func enterLift(body:CharacterBody2D) -> void:
 	self.isLifted = true
 	self.startLiftingTween()
 	self.get_node("Collision").disabled = true
+	self.player = self.get_parent()
 	self.createGhostSprite(body)
 
 	audioPlayer.pick_up_noise()
-	self.player = self.get_parent()
+	
 
 func exitLift() -> void:
 	#print("ghost global pos = ", ghostSprite.global_position)
-	
+	print("exitLift for Furniture")
 	self.killLiftingTween()
 	
-	self.player.remove_child(self)
-	self.player.add_sibling(self)
 	self.get_node("Collision").disabled = false
 	self.position = ghostSprite.global_position
 	self.ghostSprite.queue_free()

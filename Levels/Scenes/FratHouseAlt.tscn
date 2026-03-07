@@ -22,7 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://bm3q8cgkv4be4" path="res://Assets/Objects/Chairs/Scene/Wood_Chair_front.tscn" id="19_tibvx"]
 [ext_resource type="PackedScene" uid="uid://b11xr2or1rqq1" path="res://Assets/Objects/Trumpet.tscn" id="20_efhh6"]
 [ext_resource type="PackedScene" uid="uid://ckcmkju0pxebs" path="res://Assets/Objects/Flute.tscn" id="21_v02ti"]
-[ext_resource type="Script" uid="uid://dh2bamxv7dbwg" path="res://Levels/Scenes/wind.gd" id="22_37hmr"]
+[ext_resource type="Script" uid="uid://dh2bamxv7dbwg" path="res://Scripts/wind.gd" id="22_37hmr"]
 [ext_resource type="PackedScene" uid="uid://brfkiqavvunae" path="res://Assets/Particles/Scenes/wind_particle.tscn" id="23_8v8sk"]
 [ext_resource type="PackedScene" uid="uid://bfp82m6exqyhy" path="res://Assets/Objects/Bathroom/Scenes/Sink.tscn" id="23_nrmq8"]
 [ext_resource type="PackedScene" uid="uid://ce4x5g5hrvxce" path="res://Assets/Objects/Bathroom/Scenes/Bathtub.tscn" id="24_f4y48"]

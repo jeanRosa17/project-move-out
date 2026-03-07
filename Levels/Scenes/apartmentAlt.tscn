@@ -23,7 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://cuho4egtuhmvt" path="res://Assets/Objects/Tables/Scenes/TV_and_desk_front.tscn" id="18_en5i7"]
 [ext_resource type="PackedScene" uid="uid://5bnbyjpgb5kx" path="res://Levels/Post-Level Minigame/Post-Level Minigame.tscn" id="18_m2aof"]
 [ext_resource type="Script" uid="uid://cyso0emuh7ori" path="res://Levels/Scenes/ice_areas.gd" id="19_2wgx8"]
-[ext_resource type="Script" uid="uid://dh2bamxv7dbwg" path="res://Levels/Scenes/wind.gd" id="19_m2aof"]
+[ext_resource type="Script" uid="uid://dh2bamxv7dbwg" path="res://Scripts/wind.gd" id="19_m2aof"]
 [ext_resource type="PackedScene" uid="uid://nomguund5j25" path="res://Assets/Objects/Couches/Scenes/red_couch_front.tscn" id="19_obgx0"]
 [ext_resource type="SpriteFrames" uid="uid://bj4hy5y5yiady" path="res://Scripts/Resources/VanFrames.tres" id="19_srnyy"]
 [ext_resource type="AudioStream" uid="uid://0q4m8jstuh5j" path="res://Assets/Audio/ice slide noise.wav" id="20_m2aof"]
@@ -224,18 +224,18 @@ limit_right = 688
 limit_bottom = 661
 editor_draw_limits = true
 
-[node name="Van" type="Node2D" parent="Y-Sorting" unique_id=1716992437]
+[node name="Van" type="Node2D" parent="Y-Sorting" unique_id=1716992437 node_paths=PackedStringArray("player")]
 position = Vector2(121, -68)
 script = ExtResource("28_2wgx8")
 startPos = Vector2(724, -68)
+skipCutscene = false
 events = Array[Vector2]([Vector2(128, -68), Vector2(128, 71), Vector2(52, 71)])
+player = NodePath("../Player")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Y-Sorting/Van" unique_id=2011634438]
 sprite_frames = ExtResource("19_srnyy")
-animation = &"side"
-autoplay = "side"
-frame = 8
-flip_h = true
+animation = &"right-no-john"
+autoplay = "right"
 
 [node name="mechanics" type="Node" parent="." unique_id=1811001710]
 

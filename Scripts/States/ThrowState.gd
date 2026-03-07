@@ -1,9 +1,8 @@
 class_name ThrowState
 extends State
 
-@onready var body: Player = $"../.."
+@onready var player: Player = $"../.."
 @onready var manager:StateManager = self.getManager()
-@onready var backToIdle:Callable = func () -> void : self.manager.changeState("Idle")
 @export var area2D:Area2D
 var canDrop:bool
 
@@ -18,20 +17,19 @@ func enter() -> void:
 	var dir:String = self.getManager().view.animation.split(" ")[1].to_lower()
 	
 	self.getManager().view.play("throw " + dir)
-	self.getManager().view.animation_finished.connect(backToIdle)
+	await self.getManager().view.animation_finished
+	self.manager.changeState("Idle")
 
 ## Forces the furniture into its exitLift state, alongisde disconnecting the
 ## backToIdle method to ensure no errors occurs.
 func exit() -> void:
 	if (self.manager.hasFurniture):
+		self.player.remove_child(self.manager.furniture)
+		self.player.add_sibling(self.manager.furniture)
 		self.manager.furniture.exitLift()
 		self.manager.furniture = null
-		self.manager.hasFurniture = false
-
-	if (self.getManager().view.animation_finished.is_connected(backToIdle)):
-		self.getManager().view.animation_finished.disconnect(backToIdle)
 	
-	self.body.setControls(true)
+	self.player.setControls(true)
 	
 
 

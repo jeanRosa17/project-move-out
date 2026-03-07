@@ -1352,7 +1352,7 @@ shape = SubResource("RectangleShape2D_l2ndj")
 y_sort_enabled = true
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_dter7")
-animation = &"slide up"
+animation = &"idle down"
 autoplay = "idle down"
 
 [node name="Detector" type="Area2D" parent="." unique_id=1216050002]
