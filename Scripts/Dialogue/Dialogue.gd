@@ -2,7 +2,7 @@ class_name DialogueManager
 extends Control
 
 @onready var label:Label = $Textbox/Label
-#@export var 
+@onready var audioPlayer:FurnitureAudio = get_tree().root.find_child("Push_Pull Audio", true, false)
 
 ## File path to the Dialogue script
 @export var dialogueScriptPath: StringName = "res://Narrative/SampleText.txt"
@@ -139,6 +139,7 @@ func nextChar() -> void:
 		self.label.text = line.left(charCounter)
 		self.timer.start(_textSpeed)
 	
+	audioPlayer.dialogue()
 	self.charCounter += 1
 	var checkForPunct: String = line.left(charCounter).right(1)
 	

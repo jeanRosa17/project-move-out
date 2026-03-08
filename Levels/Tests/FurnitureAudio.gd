@@ -38,3 +38,7 @@ func rotate_noise() -> void:
 func cant_rotate_noise() -> void:
 	var player:AudioStreamPlayer2D = self.get_child(3)
 	player.play()
+	
+func dialogue() -> void:
+	var player:AudioStreamPlayer2D = self.get_child(4)
+	player.play()
