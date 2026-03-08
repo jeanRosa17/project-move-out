@@ -8,6 +8,7 @@ extends Node2D
 
 @export var firstLevel:String = "res://Levels/Scenes/TutorialUnit.tscn"
 
+
 #@onready var floor2: TileMapLayer = $Floor2
 
 var bgSpeed: float = 8.0
@@ -25,6 +26,8 @@ func _process(_delta:float) -> void:
 		self.bg.position.x = 0
 
 func _on_play_pressed() -> void:
+	var player:AudioStreamPlayer2D = self.find_child("Transition SFX")
+	player.play()
 	LevelManager.loadScene(self.firstLevel, LevelManager.Transitions.CIRCLE)
 
 func startTweens() -> void:

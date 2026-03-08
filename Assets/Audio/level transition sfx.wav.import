@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b0cvmwsqex4x2"
+path="res://.godot/imported/level transition sfx.wav-8dcb4efe7a4c0cb9a540296ee0d02d7c.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/level transition sfx.wav"
+dest_files=["res://.godot/imported/level transition sfx.wav-8dcb4efe7a4c0cb9a540296ee0d02d7c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
