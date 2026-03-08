@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://clksc0wyxfgal" path="res://Assets/UI/Level Finish Text.png" id="3_nu68y"]
 [ext_resource type="Theme" uid="uid://bxr4bn083148b" path="res://Scripts/UI/Resources/MainTheme.tres" id="3_s414o"]
 [ext_resource type="PackedScene" uid="uid://dochgtqsf34" path="res://Assets/Audio/button_sound_down_up.tscn" id="6_s3vaa"]
+[ext_resource type="AudioStream" uid="uid://b0cvmwsqex4x2" path="res://Assets/Audio/level transition sfx.wav" id="8_1q8va"]
 
 [sub_resource type="Animation" id="Animation_s414o"]
 resource_name = "Complete"
@@ -114,6 +115,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.34117648)
+
+[node name="Level Transition Audio" type="AudioStreamPlayer2D" parent="Level Results" unique_id=1404975707]
+stream = ExtResource("8_1q8va")
 
 [node name="Node2D" type="Node2D" parent="Level Results" unique_id=1374108181]
 position = Vector2(150, 56)
