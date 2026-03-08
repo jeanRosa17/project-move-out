@@ -5,6 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://dwq7a4tm5ylcp" path="res://Assets/Garage/truck_back.png" id="2_aehea"]
 [ext_resource type="Texture2D" uid="uid://digo2hq2r3kvr" path="res://Assets/Objects/Table Items/Boxes-Sheet.png" id="3_g7ucr"]
 [ext_resource type="Texture2D" uid="uid://b3ie640jo5njv" path="res://Assets/Garage/Van Border.png" id="4_00yoc"]
+[ext_resource type="AudioStream" uid="uid://de7tvpqomd55s" path="res://Assets/Audio/tetris landing thunk.wav" id="6_cntxc"]
+[ext_resource type="Script" uid="uid://fsccwseysgnw" path="res://Levels/Post-Level Minigame/TetrisAudio.gd" id="6_uh4k2"]
+[ext_resource type="AudioStream" uid="uid://bxq71pwdt1ist" path="res://Assets/Audio/tetris tick.wav" id="8_cntxc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ctx31"]
 texture = ExtResource("2_aehea")
@@ -283,6 +286,15 @@ sources/0 = SubResource("TileSetAtlasSource_c8yme")
 sources/1 = SubResource("TileSetAtlasSource_00yoc")
 sources/2 = SubResource("TileSetAtlasSource_aehea")
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ctx31"]
+random_pitch = 1.0999337
+streams_count = 1
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ir2mp"]
+random_pitch = 1.2987136
+streams_count = 1
+stream_0/stream = ExtResource("8_cntxc")
+
 [node name="PostLevelMinigame" type="Node2D" unique_id=762999373]
 script = ExtResource("1_c8yme")
 
@@ -299,3 +311,16 @@ tile_set = SubResource("TileSet_00yoc")
 [node name="Board" type="TileMapLayer" parent="." unique_id=1068667642]
 tile_map_data = PackedByteArray("AAD5//T/AgAAAAAAAAD5//X/AgAAAAIAAAD5//b/AgAAAAIAAAD5//f/AgAAAAIAAAD5//j/AgAAAAIAAAD5//n/AgAAAAIAAAD5//r/AgAAAAIAAAD5//v/AgAAAAIAAAD5//z/AgAAAAIAAAD5//3/AgAAAAIAAAD5//7/AgAAAAIAAAD5////AgAAAAIAAAD5/wAAAgAAAAIAAAD5/wEAAgAAAAIAAAD5/wIAAgAAAAIAAAD5/wMAAgAAAAIAAAD5/wQAAgAAAAIAAAD5/wUAAgAAAAIAAAD5/wYAAgAAAAIAAAD5/wcAAgAAAAIAAAD5/wgAAgAAAAIAAAD5/wkAAgAAAAIAAAD5/woAAgAAAAIAAAD5/wsAAgAAAAMAAAD6/wsAAgACAAMAAAD7/wsAAgACAAMAAAD8/wsAAgACAAMAAAD9/wsAAgACAAMAAAD+/wsAAgACAAMAAAD//wsAAgACAAMAAAAAAAsAAgACAAMAAAABAAsAAgACAAMAAAACAAsAAgACAAMAAAADAAsAAgACAAMAAAAEAAsAAgACAAMAAAAFAAsAAgACAAMAAAAGAPT/AgADAAAAAAAGAAsAAgADAAMAAAAGAPX/AgADAAEAAAAGAPb/AgADAAEAAAAGAPf/AgADAAEAAAAGAPj/AgADAAEAAAAGAPn/AgADAAEAAAAGAPr/AgADAAEAAAAGAPv/AgADAAEAAAAGAPz/AgADAAEAAAAGAP3/AgADAAEAAAAGAP7/AgADAAEAAAAGAP//AgADAAEAAAAGAAAAAgADAAEAAAAGAAEAAgADAAEAAAAGAAIAAgADAAEAAAAGAAMAAgADAAEAAAAGAAQAAgADAAEAAAAGAAUAAgADAAEAAAAGAAYAAgADAAEAAAAGAAcAAgADAAEAAAAGAAgAAgADAAEAAAAGAAkAAgADAAEAAAAGAAoAAgADAAEAAAD6//T/AgABAAAAAAD7//T/AgABAAAAAAD8//T/AgABAAAAAAD9//T/AgABAAAAAAD+//T/AgABAAAAAAD///T/AgABAAAAAAAAAPT/AgABAAAAAAABAPT/AgABAAAAAAADAPT/AgABAAAAAAAEAPT/AgABAAAAAAACAPT/AgABAAAAAAAFAPT/AgABAAAAAAAMAPX/AgACAAAAAAANAPX/AgACAAAAAAAMAPr/AgABAAMAAAANAPr/AgABAAMAAAALAPb/AgAAAAEAAAALAPf/AgAAAAEAAAALAPj/AgAAAAEAAAALAPn/AgAAAAEAAAAOAPX/AgACAAAAAAAPAPX/AgACAAAAAAAOAPr/AgABAAMAAAAPAPr/AgABAAMAAAAQAPb/AgADAAIAAAAQAPf/AgADAAIAAAAQAPj/AgADAAIAAAAQAPn/AgADAAIAAAAQAPX/AgADAAAAAAAQAPr/AgADAAMAAAALAPr/AgAAAAMAAAALAPX/AgAAAAAAAAA=")
 tile_set = SubResource("TileSet_g7ucr")
+
+[node name="Tetris Audio" type="AudioStreamPlayer2D" parent="." unique_id=1369337591]
+stream = ExtResource("6_cntxc")
+volume_db = 6.5
+script = ExtResource("6_uh4k2")
+
+[node name="Rotate" type="AudioStreamPlayer2D" parent="Tetris Audio" unique_id=246082633]
+stream = SubResource("AudioStreamRandomizer_ctx31")
+volume_db = 1.054
+
+[node name="Tick" type="AudioStreamPlayer2D" parent="Tetris Audio" unique_id=1390507106]
+stream = SubResource("AudioStreamRandomizer_ir2mp")
+volume_db = -5.35

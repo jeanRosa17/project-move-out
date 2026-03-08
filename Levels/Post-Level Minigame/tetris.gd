@@ -1,4 +1,5 @@
 extends Node2D
+#region Tetronimo arrays
 
 var one_by_one_tetromino: Array = [
 	#All rotations are the same
@@ -287,6 +288,7 @@ var four_by_three_tetromino: Array = [
 	{"pos": Vector2i(3, 2), "atlas": Vector2i(7, 2)}
 	],
 ]
+#endregion
 
 var tetrominoes: Array = []
 
@@ -320,8 +322,11 @@ var next_piece_atlas: Vector2i
 @onready var active_layer: TileMapLayer = $Active
 @onready var hud:HUDManager = %HUD
 
+var audio_player:TetrisAudio
+
 func _ready() -> void:
 	start_new_game()
+	audio_player = self.find_child("Tetris Audio")
 	
 func start_new_game() -> void:
 	clear_tetromino()
@@ -421,6 +426,7 @@ func rotate_tetromino() -> void:
 		rotation_index = (rotation_index - 1) % 4
 		active_tetromino = current_tetromino_type[rotation_index]
 		render_tetromino(active_tetromino, current_position)
+		audio_player.rotateSound()
 		
 
 func move_tetromino(direction: Vector2i) -> void:
@@ -436,6 +442,7 @@ func move_tetromino(direction: Vector2i) -> void:
 			clear_next_tetromino_preview()
 			initialize_tetromino()
 			is_game_over()
+	audio_player.tick()
 
 func land_tetromino() -> void:
 	for block in active_tetromino:
@@ -443,6 +450,8 @@ func land_tetromino() -> void:
 		board_layer.set_cell(current_position + block["pos"], tile_id, block["atlas"])
 		active_tetromino = []
 		score += 1
+		
+		audio_player.landing()
 
 func clear_next_tetromino_preview() -> void:
 	for i in range (11, 16):

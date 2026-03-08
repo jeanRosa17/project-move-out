@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bf0fvqr0xj5n6"
+path="res://.godot/imported/tetris rotate sweep.wav-ec14dd38c8ff7add68febadc7f5ed169.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/tetris rotate sweep.wav"
+dest_files=["res://.godot/imported/tetris rotate sweep.wav-ec14dd38c8ff7add68febadc7f5ed169.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
