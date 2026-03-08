@@ -75,16 +75,19 @@ func physicsUpdate(_delta:float) -> void:
 		if (!manager.furniture.canMovePositiveX && manager.direction.x > 0):
 			manager.direction.x = 0
 			self.body.velocity.x = 0
+			self.manager.furniture.linear_velocity.x = 0
 		if (!manager.furniture.canMovePositiveY && manager.direction.y > 0):
 			manager.direction.y = 0
 			self.body.velocity.y = 0
+			self.manager.furniture.linear_velocity.y = 0
 		if (!manager.furniture.canMoveNegativeX && manager.direction.x < 0):
 			manager.direction.x = 0
 			self.body.velocity.x = 0
+			self.manager.furniture.linear_velocity.x = 0
 		if (!manager.furniture.canMoveNegativeY && manager.direction.y < 0):
 			manager.direction.y = 0
 			self.body.velocity.y = 0
-			
+			self.manager.furniture.linear_velocity.y = 0
 
 	self.accelerate(manager.direction, _delta)
 	self.body.move_and_slide()
@@ -95,6 +98,9 @@ func accelerate(direction:Vector2i, delta:float) -> void:
 		self.body.velocity.x = move_toward(self.body.velocity.x, direction.x * self.physics.maxSpeed, self.physics.acceleration * delta) 
 		self.body.velocity.y = move_toward(self.body.velocity.y, direction.y * self.physics.maxSpeed, self.physics.acceleration * delta)
 		
+		if(self.manager.furniture && self.manager.furniture.isPushed):
+			self.manager.furniture.linear_velocity.x = move_toward(self.body.velocity.x, direction.x * self.physics.maxSpeed, self.physics.acceleration * delta) 
+			self.manager.furniture.linear_velocity.y = move_toward(self.body.velocity.y, direction.y * self.physics.maxSpeed, self.physics.acceleration * delta)
 		#self.body.velocity.x += delta * (move_toward(self.body.velocity.x, direction.x * self.physics.maxSpeed, self.physics.acceleration * delta)) 
 		#self.body.velocity.y += delta * (move_toward(self.body.velocity.y, direction.y * self.physics.maxSpeed, self.physics.acceleration * delta))
 		#

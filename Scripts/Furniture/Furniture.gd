@@ -232,28 +232,28 @@ func _physics_process(_delta: float) -> void:
 		#if (self.player != null):
 			#ghostSprite.position = self.player.get_node("Detector").get_child(0).position
 		
-	if (self.isPushed):
-		
-		#var dir:Vector2 = self.player.velocity.normalized()
-		
-		
-		# if not touching anything, proceed as normal
-		#if (objects.is_empty()):
-			#self.collision_layer = 0
-			#linear_velocity = linear_velocity.lerp(player.velocity, 1)
-			#
-			#canMoveNegativeX = true
-			#canMoveNegativeY = true
-			#canMovePositiveX = true
-			#canMovePositiveY = true
-			#
-
-		#if (self.player.get_real_velocity().length() > .2):
-			##print(player.get_real_velocity().length())
-			#linear_velocity = linear_velocity.lerp(player.velocity, 1)
-		#else:
-			#linear_velocity = linear_velocity.lerp(Vector2.ZERO, 1)
-		linear_velocity = player.get_real_velocity()
+	#if (self.isPushed):
+		#
+		##var dir:Vector2 = self.player.velocity.normalized()
+		#
+		#
+		## if not touching anything, proceed as normal
+		##if (objects.is_empty()):
+			##self.collision_layer = 0
+			##linear_velocity = linear_velocity.lerp(player.velocity, 1)
+			##
+			##canMoveNegativeX = true
+			##canMoveNegativeY = true
+			##canMovePositiveX = true
+			##canMovePositiveY = true
+			##
+#
+		##if (self.player.get_real_velocity().length() > .2):
+			###print(player.get_real_velocity().length())
+			##linear_velocity = linear_velocity.lerp(player.velocity, 1)
+		##else:
+			##linear_velocity = linear_velocity.lerp(Vector2.ZERO, 1)
+		#linear_velocity = player.velocity
 	
 	if (self.player):
 		if(self.position.distance_to(self.player.position) > self.distanceFromPlayer * 1.25):
