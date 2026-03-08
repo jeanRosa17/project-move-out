@@ -232,7 +232,7 @@ func _physics_process(_delta: float) -> void:
 		#if (self.player != null):
 			#ghostSprite.position = self.player.get_node("Detector").get_child(0).position
 		
-	#if (self.isPushed):
+	if (self.isPushed):
 		#
 		##var dir:Vector2 = self.player.velocity.normalized()
 		#
@@ -247,18 +247,19 @@ func _physics_process(_delta: float) -> void:
 			##canMovePositiveX = true
 			##canMovePositiveY = true
 			##
-#
-		##if (self.player.get_real_velocity().length() > .2):
-			###print(player.get_real_velocity().length())
-			##linear_velocity = linear_velocity.lerp(player.velocity, 1)
+		print(player.get_real_velocity().length())
+		if (self.player.get_real_velocity().length() < 5):
+			###
+			linear_velocity = Vector2.ZERO
 		##else:
 			##linear_velocity = linear_velocity.lerp(Vector2.ZERO, 1)
 		#linear_velocity = player.velocity
 	
 	if (self.player):
-		if(self.position.distance_to(self.player.position) > self.distanceFromPlayer * 1.25):
+		if(self.position.distance_to(self.player.position) > self.distanceFromPlayer * 1):
 			if (self.isPushed):
-				#self.exitPush()
+				print("TOO FAR")
+				player.global_position = player.global_position.move_toward(self.global_position, _delta)
 				pass
 			#if(self.isLifted):
 				#self.exitLift()
