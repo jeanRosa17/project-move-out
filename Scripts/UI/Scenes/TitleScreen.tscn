@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bhcre3gsfa5n3" path="res://Scripts/UI/TitleScreen.gd" id="1_jpkfb"]
 [ext_resource type="FontFile" uid="uid://c17q41l7sknhq" path="res://Assets/fonts/m5x7.ttf" id="2_fbutq"]
 [ext_resource type="Theme" uid="uid://bxr4bn083148b" path="res://Scripts/UI/Resources/MainTheme.tres" id="2_saprj"]
+[ext_resource type="PackedScene" uid="uid://d3lck2qquf5sx" path="res://Assets/Audio/play.tscn" id="3_n4klw"]
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="4_fbutq"]
 [ext_resource type="AudioStream" uid="uid://dmf4fmne560ip" path="res://Assets/Audio/title screen.wav" id="6_2s4f7"]
 [ext_resource type="Texture2D" uid="uid://cce7iv1h3r63q" path="res://Assets/UI/Logo/Title.png" id="6_tb8vy"]
@@ -23,21 +24,7 @@ text = "Created by Ashton, Joel, Juhyun, Luna, & Thomas"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Play" type="Button" parent="." unique_id=68869072]
-custom_minimum_size = Vector2(64, 24)
-offset_left = 128.0
-offset_top = 160.0
-offset_right = 192.0
-offset_bottom = 193.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset_ratio = Vector2(0.5, 0.5)
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = ExtResource("2_saprj")
-theme_override_font_sizes/font_size = 12
-text = "Play
-"
+[node name="Play" parent="." unique_id=1036700336 instance=ExtResource("3_n4klw")]
 
 [node name="Settings" type="Button" parent="." unique_id=1827306916]
 visible = false

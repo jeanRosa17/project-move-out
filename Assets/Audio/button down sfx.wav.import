@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dv4lnx8a37d0o"
+path="res://.godot/imported/button down sfx.wav-e3ce10fb2c5da6916c0276132a68735f.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/button down sfx.wav"
+dest_files=["res://.godot/imported/button down sfx.wav-e3ce10fb2c5da6916c0276132a68735f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
