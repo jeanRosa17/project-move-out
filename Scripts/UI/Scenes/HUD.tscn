@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://dj52fk0ha628v" path="res://Levels/Scenes/InventoryChecklist.gd" id="2_nu68y"]
 [ext_resource type="Texture2D" uid="uid://clksc0wyxfgal" path="res://Assets/UI/Level Finish Text.png" id="3_nu68y"]
 [ext_resource type="Theme" uid="uid://bxr4bn083148b" path="res://Scripts/UI/Resources/MainTheme.tres" id="3_s414o"]
+[ext_resource type="PackedScene" uid="uid://dochgtqsf34" path="res://Assets/Audio/button_sound_down_up.tscn" id="6_s3vaa"]
 
 [sub_resource type="Animation" id="Animation_s414o"]
 resource_name = "Complete"
@@ -101,7 +102,7 @@ offset_right = 320.0
 offset_bottom = 190.0
 auto_width = true
 script = ExtResource("2_nu68y")
-needed = [NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath("")]
+needed = [null, null, null, null, null, null, null, null]
 
 [node name="Level Results" type="CanvasLayer" parent="." unique_id=720231760]
 script = ExtResource("1_4n7mi")
@@ -188,12 +189,16 @@ size_flags_vertical = 4
 theme_override_font_sizes/font_size = 10
 text = "Replay"
 
+[node name="ButtonSound DownUp" parent="Level Results/Container/BoxContainer/Panel/Replay" unique_id=195620157 instance=ExtResource("6_s3vaa")]
+
 [node name="Next Level" type="Button" parent="Level Results/Container/BoxContainer/Panel" unique_id=219272830]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 10
 text = "Next Level"
+
+[node name="ButtonSound DownUp" parent="Level Results/Container/BoxContainer/Panel/Next Level" unique_id=1258649347 instance=ExtResource("6_s3vaa")]
 
 [node name="Quit" type="Button" parent="Level Results/Container/BoxContainer/Panel" unique_id=722774201]
 custom_minimum_size = Vector2(100, 0)
@@ -202,12 +207,20 @@ size_flags_vertical = 4
 theme_override_font_sizes/font_size = 10
 text = "Quit"
 
+[node name="ButtonSound DownUp" parent="Level Results/Container/BoxContainer/Panel/Quit" unique_id=478437252 instance=ExtResource("6_s3vaa")]
+
 [node name="Dialogue" type="CanvasLayer" parent="." unique_id=2001474479]
 layer = 2
 visible = false
 
 [node name="Textbox" parent="Dialogue" unique_id=1851480463 instance=ExtResource("2_ijstf")]
 
+[connection signal="button_down" from="Level Results/Container/BoxContainer/Panel/Replay" to="Level Results/Container/BoxContainer/Panel/Replay/ButtonSound DownUp" method="_on_play_button_down"]
+[connection signal="button_up" from="Level Results/Container/BoxContainer/Panel/Replay" to="Level Results/Container/BoxContainer/Panel/Replay/ButtonSound DownUp" method="_on_play_button_up"]
 [connection signal="pressed" from="Level Results/Container/BoxContainer/Panel/Replay" to="Level Results" method="_on_replay_level_pressed"]
+[connection signal="button_down" from="Level Results/Container/BoxContainer/Panel/Next Level" to="Level Results/Container/BoxContainer/Panel/Next Level/ButtonSound DownUp" method="_on_play_button_down"]
+[connection signal="button_up" from="Level Results/Container/BoxContainer/Panel/Next Level" to="Level Results/Container/BoxContainer/Panel/Next Level/ButtonSound DownUp" method="_on_play_button_up"]
 [connection signal="pressed" from="Level Results/Container/BoxContainer/Panel/Next Level" to="Level Results" method="_on_next_level_pressed"]
+[connection signal="button_down" from="Level Results/Container/BoxContainer/Panel/Quit" to="Level Results/Container/BoxContainer/Panel/Quit/ButtonSound DownUp" method="_on_play_button_down"]
+[connection signal="button_up" from="Level Results/Container/BoxContainer/Panel/Quit" to="Level Results/Container/BoxContainer/Panel/Quit/ButtonSound DownUp" method="_on_play_button_up"]
 [connection signal="pressed" from="Level Results/Container/BoxContainer/Panel/Quit" to="Level Results" method="_on_exit_game_pressed"]

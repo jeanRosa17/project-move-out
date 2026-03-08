@@ -289,7 +289,7 @@ func createGhostSprite(body:CharacterBody2D) -> void:
 	self.ghostTween = self.get_tree().create_tween()
 	self.ghostTween.tween_property(ghostSprite, "self_modulate:a", 0, 1.0).set_delay(0.2)
 	self.ghostTween.tween_property(ghostSprite, "self_modulate:a", 1.0, 1.0).set_delay(0.2)
-	self.ghostTween.set_
+	#self.ghostTween.set_
 	self.ghostTween.set_loops()
 	#self.followTween.set_loops()
 

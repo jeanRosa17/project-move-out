@@ -2,7 +2,6 @@ extends AudioStreamPlayer2D
 
 
 func _on_play_button_down() -> void:
-	print("PLAY")
 	self.play()
 
 
