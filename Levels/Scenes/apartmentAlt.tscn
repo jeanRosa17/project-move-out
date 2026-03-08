@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://d3rjdvbwh7auh" path="res://Levels/Scenes/Garadge2.tscn" id="2_m2aof"]
 [ext_resource type="PackedScene" uid="uid://psh4s5sym8kd" path="res://Scripts/UI/Scenes/Textbox.tscn" id="3_elsed"]
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Assets/Player/Scenes/Player.tscn" id="9_en5i7"]
-[ext_resource type="AudioStream" uid="uid://dy61bwuip8a27" path="res://Assets/Audio/lvl1.wav" id="10_x3x0i"]
 [ext_resource type="PackedScene" uid="uid://cfmb3mmeue8au" path="res://Scripts/UI/Scenes/HUD.tscn" id="11_ccy2n"]
 [ext_resource type="PackedScene" uid="uid://c638p25j2md1l" path="res://Assets/Objects/Bathroom/Scenes/Toilet.tscn" id="11_obgx0"]
 [ext_resource type="Script" uid="uid://1ugs6cpgg5xy" path="res://Levels/Scenes/Tutorial/trigger_sensor.gd" id="12_bx8a8"]
@@ -283,7 +282,7 @@ stream = ExtResource("20_m2aof")
 volume_db = -10.654
 
 [node name="Level Music" type="AudioStreamPlayer2D" parent="." unique_id=1291795456]
-stream = ExtResource("10_x3x0i")
+stream = ExtResource("14_vn673")
 autoplay = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2111961736]
