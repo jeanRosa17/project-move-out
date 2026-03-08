@@ -247,7 +247,6 @@ func _physics_process(_delta: float) -> void:
 			##canMovePositiveX = true
 			##canMovePositiveY = true
 			##
-		print(player.get_real_velocity().length())
 		if (self.player.get_real_velocity().length() < 5):
 			###
 			linear_velocity = Vector2.ZERO
@@ -256,10 +255,10 @@ func _physics_process(_delta: float) -> void:
 		#linear_velocity = player.velocity
 	
 	if (self.player):
-		if(self.position.distance_to(self.player.position) > self.distanceFromPlayer * 1):
+		if(self.position.distance_to(self.player.position) > self.distanceFromPlayer * 1.1):
 			if (self.isPushed):
 				print("TOO FAR")
-				player.global_position = player.global_position.move_toward(self.global_position, _delta)
+				player.global_position = player.global_position.move_toward(self.global_position, .9)
 				pass
 			#if(self.isLifted):
 				#self.exitLift()
