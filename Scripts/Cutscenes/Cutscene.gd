@@ -40,6 +40,7 @@ func _process(_delta: float) -> void:
 				i += 1
 			if (i == events.size()): 
 				tween = null
+				self.view.play("left-no-john")
 				#self.remove_child(self.player)
 				#self.y_sorting.add_child(self.player)
 				
@@ -65,4 +66,4 @@ func _process(_delta: float) -> void:
 			self.view.play("down")
 		
 		if (i == 2):
-			self.view.play("side")
+			self.view.play("left")

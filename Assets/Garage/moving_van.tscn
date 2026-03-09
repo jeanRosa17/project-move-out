@@ -7,23 +7,26 @@
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=497863614]
 sprite_frames = ExtResource("1_ewm8d")
-animation = &"side-no-john"
+animation = &"title"
 autoplay = "title"
 
 [node name="Walking_particle" parent="." unique_id=1136958223 instance=ExtResource("2_ewm8d")]
 modulate = Color(0.62967473, 0.62967473, 0.6296747, 1)
 z_index = -1
-position = Vector2(-42, 28)
+position = Vector2(-42, 9)
 rotation = -3.1415927
+min_speed = null
 
 [node name="Walking_particle2" parent="." unique_id=610914892 instance=ExtResource("2_ewm8d")]
 modulate = Color(0.62967473, 0.62967473, 0.6296747, 1)
 z_index = -1
-position = Vector2(-43, 30)
+position = Vector2(-43, 11)
 rotation = -3.1415927
+min_speed = null
 
 [node name="Walking_particle3" parent="." unique_id=1466630262 instance=ExtResource("2_ewm8d")]
 modulate = Color(0.62967473, 0.62967473, 0.6296747, 1)
 z_index = -1
-position = Vector2(-42, 29)
+position = Vector2(-42, 10)
 rotation = -3.1415927
+min_speed = null

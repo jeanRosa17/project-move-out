@@ -233,7 +233,7 @@ player = NodePath("../Player")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Y-Sorting/Moving Van" unique_id=2011634438]
 sprite_frames = ExtResource("19_srnyy")
-animation = &"up"
+animation = &"left"
 autoplay = "left"
 
 [node name="mechanics" type="Node" parent="." unique_id=1811001710]
