@@ -12,6 +12,8 @@ var i:int = 0
 #@onready var camera: Camera2D = $"../Y-Sorting/Player/Camera2D2"
 @onready var view: AnimatedSprite2D = $AnimatedSprite2D
 @onready var y_sorting: Node2D = $".."
+@onready var cutscene_camera: Camera2D = $"Cutscene Camera"
+
 
 var tween:Tween
 
@@ -22,6 +24,7 @@ func _ready() -> void:
 	self.position = self.startPos
 	self.view.play("left")
 	self.skew = 0
+	self.cutscene_camera.make_current()
 
 func _process(_delta: float) -> void:
 	var speed:float = 0.1 if (skipCutscene) else 3.0
@@ -57,6 +60,7 @@ func _process(_delta: float) -> void:
 				await get_tree().create_timer(0.3).timeout
 				self.player.setControls(true)
 				self.player.manager.getState().enable()
+				self.player.get_node("PlayerCamera").make_current()
 				return
 			tween = null
 			tween = create_tween()

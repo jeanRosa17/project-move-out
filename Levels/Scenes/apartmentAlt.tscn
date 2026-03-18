@@ -227,7 +227,6 @@ editor_draw_limits = true
 position = Vector2(121, -68)
 script = ExtResource("28_2wgx8")
 startPos = Vector2(724, -68)
-skipCutscene = false
 events = Array[Vector2]([Vector2(128, -68), Vector2(128, 71), Vector2(52, 71)])
 player = NodePath("../Player")
 
@@ -235,6 +234,8 @@ player = NodePath("../Player")
 sprite_frames = ExtResource("19_srnyy")
 animation = &"up"
 autoplay = "left"
+
+[node name="Cutscene Camera" type="Camera2D" parent="Y-Sorting/Moving Van" unique_id=1822193397]
 
 [node name="mechanics" type="Node" parent="." unique_id=1811001710]
 

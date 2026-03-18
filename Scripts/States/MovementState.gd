@@ -95,14 +95,18 @@ func physicsUpdate(_delta:float) -> void:
 ## Sets the player's velocity to increase or decrease based on the given direction (-1 left, 1 right)
 func accelerate(direction:Vector2i, delta:float) -> void:
 	if direction != Vector2i.ZERO:
-		self.body.velocity.x = move_toward(self.body.velocity.x, direction.x * self.physics.maxSpeed, self.physics.acceleration * delta) 
-		self.body.velocity.y = move_toward(self.body.velocity.y, direction.y * self.physics.maxSpeed, self.physics.acceleration * delta)
+		self.body.velocity.x = lerp(self.body.velocity.x, (self.physics.maxSpeed * direction).x, self.physics.acceleration * delta)
+		self.body.velocity.y = lerp(self.body.velocity.y, (self.physics.maxSpeed * direction).y, self.physics.acceleration * delta)
+		
+		
+		#self.body.velocity.x = move_toward(self.body.velocity.x, direction.x * self.physics.maxSpeed, self.physics.acceleration * delta) 
+		#self.body.velocity.y = move_toward(self.body.velocity.y, direction.y * self.physics.maxSpeed, self.physics.acceleration * delta)
 		
 		if(self.manager.furniture && self.manager.furniture.isPushed):
 			self.manager.furniture.linear_velocity.x = move_toward(self.body.velocity.x, direction.x * self.physics.maxSpeed, self.physics.acceleration * delta) 
 			self.manager.furniture.linear_velocity.y = move_toward(self.body.velocity.y, direction.y * self.physics.maxSpeed, self.physics.acceleration * delta)
-		#self.body.velocity.x += delta * (move_toward(self.body.velocity.x, direction.x * self.physics.maxSpeed, self.physics.acceleration * delta)) 
-		#self.body.velocity.y += delta * (move_toward(self.body.velocity.y, direction.y * self.physics.maxSpeed, self.physics.acceleration * delta))
+			#self.body.velocity.x += delta * (move_toward(self.body.velocity.x, direction.x * self.physics.maxSpeed, self.physics.acceleration * delta)) 
+			#self.body.velocity.y += delta * (move_toward(self.body.velocity.y, direction.y * self.physics.maxSpeed, self.physics.acceleration * delta))
 		#
 		
 		#self.body.velocity.x = lerp(self.body.velocity.x, (self.physics.maxSpeed * direction).x, delta)
