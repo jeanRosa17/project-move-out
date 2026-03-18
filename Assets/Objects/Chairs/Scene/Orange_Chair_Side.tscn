@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://1xu4q5luy86h"]
+[gd_scene format=3 uid="uid://1xu4q5luy86h"]
 
 [ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_gapxu"]
 [ext_resource type="Texture2D" uid="uid://cpplw5lqrp5qi" path="res://Assets/Objects/Chairs/orange_chair_side.png" id="2_gapxu"]

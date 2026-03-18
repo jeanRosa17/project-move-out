@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://drxly74dpb0p2"]
+
+[ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_1hgbn"]
+[ext_resource type="Texture2D" uid="uid://cpplw5lqrp5qi" path="res://Assets/Objects/Chairs/orange_chair_side.png" id="2_m7tpn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
+size = Vector2(16, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
+size = Vector2(18, 29)
+
+[node name="Orange_Chair_Side" type="RigidBody2D" unique_id=487447112 groups=["Furniture"]]
+collision_layer = 2
+collision_mask = 7
+gravity_scale = 0.0
+can_sleep = false
+lock_rotation = true
+script = ExtResource("1_1hgbn")
+canPush = true
+canPull = true
+metadata/_custom_type_script = "uid://c2vh27coguldq"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=870341277]
+texture = ExtResource("2_m7tpn")
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1796299810]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_xnri0")
+
+[node name="AreaDetector" type="Area2D" parent="." unique_id=16917673 groups=["Furniture"]]
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector" unique_id=969380522]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_ardoa")
+
+[connection signal="body_shape_entered" from="AreaDetector" to="." method="_on_area_detector_body_shape_entered"]
+[connection signal="body_shape_exited" from="AreaDetector" to="." method="_on_area_detector_body_shape_exited"]

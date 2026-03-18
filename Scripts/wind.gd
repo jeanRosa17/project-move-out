@@ -82,15 +82,27 @@ func _process_input() -> void:
 			if((lastPosition - player.position).x < 5):
 				self.player.manager.isSliding = true
 				sliding = true
+			elif((lastPosition - player.position).x > 5):
+				self.player.manager.isSliding = true
+				sliding = true
 		"west": 
 			if((lastPosition - player.position).x > 5):
+				self.player.manager.isSliding = true
+				sliding = true
+			elif((lastPosition - player.position).x < 5):
 				self.player.manager.isSliding = true
 				sliding = true
 		"north":
 			if((lastPosition - player.position).y < 5):
 				self.player.manager.isSliding = true
 				sliding = true
+			elif((lastPosition - player.position).y > 5):
+				self.player.manager.isSliding = true
+				sliding = true
 		"south":
 			if((lastPosition - player.position).y > 5):
+				self.player.manager.isSliding = true
+				sliding = true
+			elif((lastPosition - player.position).y < 5):
 				self.player.manager.isSliding = true
 				sliding = true

@@ -300,7 +300,7 @@ func startLiftingTween() -> void:
 	var tween: Tween = create_tween()
 	self.floatXTween = get_tree().create_tween()
 	self.floatYTween = get_tree().create_tween()
-	self.floatTiltTween = get_tree().create_tween()
+	# self.floatTiltTween = get_tree().create_tween()
 	
 	tween.tween_property(self, "scale", Vector2(0.3, 0.3), 0.4)
 	
@@ -326,6 +326,9 @@ func killLiftingTween() -> void:
 	
 	if (self.floatTiltTween):
 		self.floatTiltTween.kill()
+		
+	if (self.ghostTween):
+		self.ghostTween.kill()
 	
 	#self.floatXTween = null
 	#self.floatYTween = null

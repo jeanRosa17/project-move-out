@@ -83,15 +83,15 @@ var three_by_three_tetromino: Array = [
 	],
 	
 	#All rotations are the same
-	[{"pos": Vector2i(0, 0), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 0), "atlas": Vector2i(0, 1)},
-	{"pos": Vector2i(2, 0), "atlas": Vector2i(0, 1)},
-	{"pos": Vector2i(0, 1), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 1), "atlas": Vector2i(0, 1)},
-	{"pos": Vector2i(2, 1), "atlas": Vector2i(0, 1)},
-	{"pos": Vector2i(0, 2), "atlas": Vector2i(0, 1)}, 
-	{"pos": Vector2i(1, 2), "atlas": Vector2i(0, 1)},
-	{"pos": Vector2i(2, 2), "atlas": Vector2i(0, 1)}
+	[{"pos": Vector2i(0, 0), "atlas": Vector2i(5, 0)}, 
+	{"pos": Vector2i(1, 0), "atlas": Vector2i(6, 0)},
+	{"pos": Vector2i(2, 0), "atlas": Vector2i(7, 0)},
+	{"pos": Vector2i(0, 1), "atlas": Vector2i(5, 1)}, 
+	{"pos": Vector2i(1, 1), "atlas": Vector2i(6, 1)},
+	{"pos": Vector2i(2, 1), "atlas": Vector2i(7, 1)},
+	{"pos": Vector2i(0, 2), "atlas": Vector2i(5, 2)}, 
+	{"pos": Vector2i(1, 2), "atlas": Vector2i(6, 2)},
+	{"pos": Vector2i(2, 2), "atlas": Vector2i(7, 2)}
 	],
 ]
 
@@ -386,6 +386,8 @@ func add_tetrominos(tetromino: String) -> void:
 		tetrominoes.append(two_by_one_tetromino)
 	elif (tetromino == "three_by_one_tetromino"):
 		tetrominoes.append(three_by_one_tetromino)
+	elif (tetromino == "three_by_two_tetromino"):
+		tetrominoes.append(three_by_two_tetromino)
 	elif (tetromino == "three_by_three_tetromino"):
 		tetrominoes.append(three_by_three_tetromino)
 	elif (tetromino == "four_by_two_tetromino"):

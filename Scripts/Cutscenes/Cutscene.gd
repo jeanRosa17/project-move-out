@@ -20,7 +20,7 @@ func _ready() -> void:
 	self.position = self.startPos
 	self.player.visible = false
 	self.position = self.startPos
-	self.view.play("side")
+	self.view.play("left")
 	self.skew = 0
 
 func _process(_delta: float) -> void:
@@ -49,6 +49,7 @@ func _process(_delta: float) -> void:
 				self.player.position = Vector2(self.position.x, self.position.y+32)
 				
 				tween = create_tween()
+				self.view.play("left-no-john")
 				tween.tween_property(self.player, "position:y", self.position.y+56, 0.75).from(self.position.y)
 				self.player.visible = true
 				await get_tree().create_timer(0.5).timeout

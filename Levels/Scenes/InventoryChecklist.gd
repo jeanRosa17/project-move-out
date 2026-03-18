@@ -8,6 +8,7 @@ func _ready() -> void:
 	for i in range(needed.size()):
 		if needed[i] == null:
 			continue
+			print("null item")
 		var atlas := AtlasTexture.new()
 		atlas.atlas = needed[i].sprite_2d.texture
 		atlas.region = needed[i].sprite_2d.region_rect

@@ -66,6 +66,7 @@ func stopTetris(score: int) -> void:
 ## Makes the Dialogue layer visible and calls setDialogueTo on the textbox node
 func setDialogueTo(dTag:DialogueTag) -> void:
 	self.dialogue.visible = true
+	print(self.dialogue.visible)
 	self.textbox.setDialogueTo(dTag)
 
 func addPackedFurniture(newFurniture:String) -> void:
