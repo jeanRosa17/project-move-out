@@ -25,7 +25,7 @@ func _ready() ->void:
 func get_all_furniture(startNode: Node, result: Array) -> void:
 	# puts all furniture currently in the selected node into the array
 	# for our level design, this should always be y_sorting
-	if startNode is Furniture:
+	if startNode is Furniture && startNode.visible:
 		if (startNode.canLift || (startNode.canPush && startNode.canPull)):
 			result.push_back(startNode)
 	for child in startNode.get_children():
