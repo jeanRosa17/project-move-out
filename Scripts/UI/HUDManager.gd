@@ -20,7 +20,10 @@ var score: int
 
 ## ensures dialogue is invisible at the start of the level
 func _ready() ->void:
-	self.dialogue.visible = false
+	pass
+	#self.dialogue.visible = false
+
+
 
 func get_all_furniture(startNode: Node, result: Array) -> void:
 	# puts all furniture currently in the selected node into the array
@@ -86,11 +89,9 @@ func checkResults() -> void:
 
 ## Ensures that the Dialogue Box turns itself off when the dialogue is finished.
 func _process(_delta: float) -> void:
-	#player_camera.make_current()
 	if (self.textbox.currentTagFinished):
 		self.dialogue.visible = false
-	#
-	#if (not self.visible):
-		#for i in self.get_children():
-			#if (i is CanvasLayer):
-				#i.visible = self.visible
+	if (not self.visible):
+		for i in self.get_children():
+			if (i is CanvasLayer):
+				i.visible = self.visible

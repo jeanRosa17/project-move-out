@@ -1,3 +1,4 @@
+@icon("res://Assets/UI/Logo/Icon.png")
 class_name Player
 extends CharacterBody2D
 

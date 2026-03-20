@@ -1,41 +1,58 @@
-[gd_scene format=3 uid="uid://bjyjc8mdpa2ey"]
+[gd_scene format=4 uid="uid://bjyjc8mdpa2ey"]
 
+[ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="1_ersrp"]
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Assets/Player/Scenes/Player.tscn" id="1_t4nej"]
-[ext_resource type="Script" uid="uid://cr2sqh5ymwl4k" path="res://Scripts/Cutscenes/Cutscene.gd" id="2_ersrp"]
-[ext_resource type="SpriteFrames" uid="uid://bj4hy5y5yiady" path="res://Scripts/Resources/VanFrames.tres" id="3_kv2lc"]
 [ext_resource type="AudioStream" uid="uid://cmje4kqmvovdh" path="res://Assets/Audio/dorm.wav" id="4_6ghb1"]
+[ext_resource type="PackedScene" uid="uid://cfmb3mmeue8au" path="res://Scripts/UI/Scenes/HUD.tscn" id="5_kv2lc"]
 [ext_resource type="PackedScene" uid="uid://uacgji4vcg37" path="res://Assets/Audio/push_pull_audio.tscn" id="5_vjhoh"]
-[ext_resource type="PackedScene" uid="uid://cfmb3mmeue8au" path="res://Scripts/UI/Scenes/HUD.tscn" id="6_g8k58"]
+[ext_resource type="PackedScene" uid="uid://5bnbyjpgb5kx" path="res://Levels/Post-Level Minigame/Post-Level Minigame.tscn" id="6_6ghb1"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6ghb1"]
+normal = Vector2(0.02307078, -0.99973387)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vjhoh"]
+normal = Vector2(0.02307078, -0.99973387)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g8k58"]
+normal = Vector2(0.02307078, -0.99973387)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ersrp"]
+normal = Vector2(0.02307078, -0.99973387)
 
 [node name="LevelTemplate" type="Node2D" unique_id=319947790]
+
+[node name="HUD" parent="." unique_id=1725586568 instance=ExtResource("5_kv2lc")]
+unique_name_in_owner = true
+visible = false
+
+[node name="Walls" type="TileMapLayer" parent="." unique_id=216456263]
+tile_set = ExtResource("1_ersrp")
+
+[node name="Floor" type="TileMapLayer" parent="." unique_id=1062169826]
+z_index = -1
+tile_map_data = PackedByteArray("AAAFAAEABwADAAYAAAAFAAIABwADAAYAAAAFAAMABwADAAYAAAAFAAQABwADAAYAAAAFAAUABwADAAYAAAAFAAYABwADAAYAAAAFAAcABwADAAYAAAAFAAgABwADAAYAAAAFAAkABwADAAYAAAAFAAoABwADAAYAAAAFAAsABwADAAYAAAAGAAEABwADAAYAAAAGAAIABwADAAYAAAAGAAMABwADAAYAAAAGAAQABwADAAYAAAAGAAUABwADAAYAAAAGAAYABwADAAYAAAAGAAcABwADAAYAAAAGAAgABwADAAYAAAAGAAkABwADAAYAAAAGAAoABwADAAYAAAAGAAsABwADAAYAAAAHAAEABwADAAYAAAAHAAIABwADAAYAAAAHAAMABwADAAYAAAAHAAQABwADAAYAAAAHAAUABwADAAYAAAAHAAYABwADAAYAAAAHAAcABwADAAYAAAAHAAgABwADAAYAAAAHAAkABwADAAYAAAAHAAoABwADAAYAAAAHAAsABwADAAYAAAAIAAEABwADAAYAAAAIAAIABwADAAYAAAAIAAMABwADAAYAAAAIAAQABwADAAYAAAAIAAUABwADAAYAAAAIAAYABwADAAYAAAAIAAcABwADAAYAAAAIAAgABwADAAYAAAAIAAkABwADAAYAAAAIAAoABwADAAYAAAAIAAsABwADAAYAAAAJAAEABwADAAYAAAAJAAIABwADAAYAAAAJAAMABwADAAYAAAAJAAQABwADAAYAAAAJAAUABwADAAYAAAAJAAYABwADAAYAAAAJAAcABwADAAYAAAAJAAgABwADAAYAAAAJAAkABwADAAYAAAAJAAoABwADAAYAAAAJAAsABwADAAYAAAAKAAEABwADAAYAAAAKAAIABwADAAYAAAAKAAMABwADAAYAAAAKAAQABwADAAYAAAAKAAUABwADAAYAAAAKAAYABwADAAYAAAAKAAcABwADAAYAAAAKAAgABwADAAYAAAAKAAkABwADAAYAAAAKAAoABwADAAYAAAAKAAsABwADAAYAAAALAAEABwADAAYAAAALAAIABwADAAYAAAALAAMABwADAAYAAAALAAQABwADAAYAAAALAAUABwADAAYAAAALAAYABwADAAYAAAALAAcABwADAAYAAAALAAgABwADAAYAAAALAAkABwADAAYAAAALAAoABwADAAYAAAALAAsABwADAAYAAAAMAAEABwADAAYAAAAMAAIABwADAAYAAAAMAAMABwADAAYAAAAMAAQABwADAAYAAAAMAAUABwADAAYAAAAMAAYABwADAAYAAAAMAAcABwADAAYAAAAMAAgABwADAAYAAAAMAAkABwADAAYAAAAMAAoABwADAAYAAAAMAAsABwADAAYAAAANAAEABwADAAYAAAANAAIABwADAAYAAAANAAMABwADAAYAAAANAAQABwADAAYAAAANAAUABwADAAYAAAANAAYABwADAAYAAAANAAcABwADAAYAAAANAAgABwADAAYAAAANAAkABwADAAYAAAANAAoABwADAAYAAAANAAsABwADAAYAAAAOAAEABwADAAYAAAAOAAIABwADAAYAAAAOAAMABwADAAYAAAAOAAQABwADAAYAAAAOAAUABwADAAYAAAAOAAYABwADAAYAAAAOAAcABwADAAYAAAAOAAgABwADAAYAAAAOAAkABwADAAYAAAAOAAoABwADAAYAAAAOAAsABwADAAYAAAAPAAEABwADAAYAAAAPAAIABwADAAYAAAAPAAMABwADAAYAAAAPAAQABwADAAYAAAAPAAUABwADAAYAAAAPAAYABwADAAYAAAAPAAcABwADAAYAAAAPAAgABwADAAYAAAAPAAkABwADAAYAAAAPAAoABwADAAYAAAAPAAsABwADAAYAAAAQAAEABwADAAYAAAAQAAIABwADAAYAAAAQAAMABwADAAYAAAAQAAQABwADAAYAAAAQAAUABwADAAYAAAAQAAYABwADAAYAAAAQAAcABwADAAYAAAAQAAgABwADAAYAAAAQAAkABwADAAYAAAAQAAoABwADAAYAAAAQAAsABwADAAYAAAARAAEABwADAAYAAAARAAIABwADAAYAAAARAAMABwADAAYAAAARAAQABwADAAYAAAARAAUABwADAAYAAAARAAYABwADAAYAAAARAAcABwADAAYAAAARAAgABwADAAYAAAARAAkABwADAAYAAAARAAoABwADAAYAAAARAAsABwADAAYAAAASAAEABwADAAYAAAASAAIABwADAAYAAAASAAMABwADAAYAAAASAAQABwADAAYAAAASAAUABwADAAYAAAASAAYABwADAAYAAAASAAcABwADAAYAAAASAAgABwADAAYAAAASAAkABwADAAYAAAASAAoABwADAAYAAAASAAsABwADAAYAAAATAAEABwADAAYAAAATAAIABwADAAYAAAATAAMABwADAAYAAAATAAQABwADAAYAAAATAAUABwADAAYAAAATAAYABwADAAYAAAATAAcABwADAAYAAAATAAgABwADAAYAAAATAAkABwADAAYAAAATAAoABwADAAYAAAATAAsABwADAAYAAAAAAAAABwADAAYAAAAAAAEABwADAAYAAAAAAAIABwADAAYAAAAAAAMABwADAAYAAAAAAAQABwADAAYAAAAAAAUABwADAAYAAAAAAAYABwADAAYAAAAAAAcABwADAAYAAAAAAAgABwADAAYAAAAAAAkABwADAAYAAAAAAAoABwADAAYAAAAAAAsABwADAAYAAAABAAAABwADAAYAAAABAAEABwADAAYAAAABAAIABwADAAYAAAABAAMABwADAAYAAAABAAQABwADAAYAAAABAAUABwADAAYAAAABAAYABwADAAYAAAABAAcABwADAAYAAAABAAgABwADAAYAAAABAAkABwADAAYAAAABAAoABwADAAYAAAABAAsABwADAAYAAAACAAAABwADAAYAAAACAAEABwADAAYAAAACAAIABwADAAYAAAACAAMABwADAAYAAAACAAQABwADAAYAAAACAAUABwADAAYAAAACAAYABwADAAYAAAACAAcABwADAAYAAAACAAgABwADAAYAAAACAAkABwADAAYAAAACAAoABwADAAYAAAACAAsABwADAAYAAAADAAAABwADAAYAAAADAAEABwADAAYAAAADAAIABwADAAYAAAADAAMABwADAAYAAAADAAQABwADAAYAAAADAAUABwADAAYAAAADAAYABwADAAYAAAADAAcABwADAAYAAAADAAgABwADAAYAAAADAAkABwADAAYAAAADAAoABwADAAYAAAADAAsABwADAAYAAAAEAAAABwADAAYAAAAEAAEABwADAAYAAAAEAAIABwADAAYAAAAEAAMABwADAAYAAAAEAAQABwADAAYAAAAEAAUABwADAAYAAAAEAAYABwADAAYAAAAEAAcABwADAAYAAAAEAAgABwADAAYAAAAEAAkABwADAAYAAAAEAAoABwADAAYAAAAEAAsABwADAAYAAAAFAAAABwADAAYAAAAGAAAABwADAAYAAAAHAAAABwADAAYAAAAIAAAABwADAAYAAAAJAAAABwADAAYAAAAKAAAABwADAAYAAAALAAAABwADAAYAAAAMAAAABwADAAYAAAANAAAABwADAAYAAAAOAAAABwADAAYAAAAPAAAABwADAAYAAAAQAAAABwADAAYAAAARAAAABwADAAYAAAASAAAABwADAAYAAAATAAAABwADAAYAAAA=")
+tile_set = ExtResource("1_ersrp")
+
+[node name="Outside" type="TileMapLayer" parent="." unique_id=989792713]
+z_index = -2
+tile_set = ExtResource("1_ersrp")
+
+[node name="Support Beams" type="TileMapLayer" parent="." unique_id=1902440675]
+z_index = 2
+position = Vector2(0, -4)
+tile_set = ExtResource("1_ersrp")
+
+[node name="Wall Collisions" type="TileMapLayer" parent="." unique_id=890800813 groups=["World Bounds"]]
+z_index = 1
+position = Vector2(0, -4)
+tile_set = ExtResource("1_ersrp")
 
 [node name="Y-Sorting" type="Node2D" parent="." unique_id=8786395]
 y_sort_enabled = true
 
 [node name="Player" parent="Y-Sorting" unique_id=1761221807 instance=ExtResource("1_t4nej")]
-position = Vector2(121, -62)
+position = Vector2(162, 113)
 safe_margin = 1.159
-canControl = false
-
-[node name="PlayerCamera" type="Camera2D" parent="Y-Sorting/Player" unique_id=919526758]
-limit_left = -12
-limit_top = -132
-limit_right = 688
-limit_bottom = 661
-editor_draw_limits = true
-
-[node name="Moving Van" type="Node2D" parent="Y-Sorting" unique_id=1870062955 node_paths=PackedStringArray("player")]
-position = Vector2(121, -68)
-script = ExtResource("2_ersrp")
-startPos = Vector2(724, -68)
-skipCutscene = false
-events = Array[Vector2]([Vector2(128, -68), Vector2(128, 71), Vector2(52, 71)])
-player = NodePath("../Player")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Y-Sorting/Moving Van" unique_id=90124399]
-sprite_frames = ExtResource("3_kv2lc")
-animation = &"up"
-autoplay = "left"
 
 [node name="Level Music" type="AudioStreamPlayer2D" parent="." unique_id=1340222311]
 stream = ExtResource("4_6ghb1")
@@ -45,19 +62,28 @@ autoplay = true
 visible = false
 position = Vector2(-47, -309)
 
-[node name="HUD" parent="." unique_id=1725586568 instance=ExtResource("6_g8k58")]
-unique_name_in_owner = true
-visible = false
+[node name="World Border" type="StaticBody2D" parent="." unique_id=1282742655 groups=["Immovable Object", "World Bounds"]]
+collision_layer = 4
 
-[node name="ListHUD" parent="HUD" index="0" unique_id=1378780322]
-visible = false
+[node name="CollisionShape2D(South)" type="CollisionShape2D" parent="World Border" unique_id=1840740475 groups=["World Bounds"]]
+position = Vector2(160, 192)
+shape = SubResource("WorldBoundaryShape2D_6ghb1")
+one_way_collision_margin = 0.0
 
-[node name="ItemList" parent="HUD/ListHUD" index="0" unique_id=478689423 node_paths=PackedStringArray("needed")]
-needed = [NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath("")]
+[node name="CollisionShape2D(West)" type="CollisionShape2D" parent="World Border" unique_id=836218577 groups=["World Bounds"]]
+position = Vector2(320, 96)
+rotation = 4.71239
+shape = SubResource("WorldBoundaryShape2D_vjhoh")
 
-[node name="Level Results" parent="HUD" index="1" unique_id=720231760]
-visible = false
-nextLevelName = &"res://Scripts/UI/Scenes/TitleScreen.tscn"
-replayLevelName = &"res://Levels/Scenes/apartmentAlt.tscn"
+[node name="CollisionShape2D(North)" type="CollisionShape2D" parent="World Border" unique_id=527989806 groups=["World Bounds"]]
+position = Vector2(160, 1)
+rotation = -3.14159
+shape = SubResource("WorldBoundaryShape2D_g8k58")
 
-[editable path="HUD"]
+[node name="CollisionShape2D(East)" type="CollisionShape2D" parent="World Border" unique_id=1405646958 groups=["World Bounds"]]
+position = Vector2(0, 96)
+rotation = -4.71239
+shape = SubResource("WorldBoundaryShape2D_ersrp")
+
+[node name="PostLevelMinigame" parent="." unique_id=762999373 instance=ExtResource("6_6ghb1")]
+position = Vector2(1008, 0)
