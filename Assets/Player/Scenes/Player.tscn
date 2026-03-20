@@ -24,6 +24,7 @@
 [ext_resource type="Script" uid="uid://u8kdu3je8hxq" path="res://Scripts/States/LiftState.gd" id="21_lch71"]
 [ext_resource type="Script" uid="uid://kbl6mj8r1fd" path="res://Scripts/States/MovementState.gd" id="22_p1eok"]
 [ext_resource type="Script" uid="uid://n3x8myoud04l" path="res://Scripts/States/ThrowState.gd" id="23_r7dr2"]
+[ext_resource type="Resource" uid="uid://d0cpypyslsqyo" path="res://Scripts/Resources/DefaultPhysics.tres" id="24_bqeds"]
 [ext_resource type="Script" uid="uid://bx82iq4syv1q6" path="res://Scripts/States/PushState.gd" id="24_k1w57"]
 [ext_resource type="Script" uid="uid://dxpvyml32g27k" path="res://Scripts/States/Interact.gd" id="25_5cp4r"]
 [ext_resource type="AudioStream" uid="uid://cioy74m6lqych" path="res://Assets/Audio/footstep short 1.wav" id="26_jjwbh"]
@@ -1385,6 +1386,7 @@ metadata/_custom_type_script = "uid://u8kdu3je8hxq"
 script = ExtResource("22_p1eok")
 body = NodePath("../..")
 area2DCollision = NodePath("../../Detector/CollisionShape2D")
+physics = ExtResource("24_bqeds")
 walkSound = NodePath("../../Walk Sound")
 metadata/_custom_type_script = "uid://c2tqhau6vnsm6"
 

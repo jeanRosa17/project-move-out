@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_gbmgp")
-maxSpeed = 100.0
-acceleration = 5.0
+maxSpeed = 125.0
+acceleration = 75.0
 metadata/_custom_type_script = "uid://daxp253b2rvub"

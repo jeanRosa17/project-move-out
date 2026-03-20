@@ -7,7 +7,7 @@ extends State
 
 @onready var manager:StateManager = self.getManager()
 
-@onready var physics:PlayerPhysics
+@export var physics:PlayerPhysics
 
 @export var walkSound:Walk_Sound
 
@@ -97,8 +97,8 @@ func physicsUpdate(_delta:float) -> void:
 func accelerate(direction:Vector2, delta:float) -> void:
 	if direction != Vector2.ZERO:
 		#self.body.velocity = lerp(self.body.velocity, (self.physics.maxSpeed * direction), self.physics.acceleration * delta)
-		self.body.velocity.x = lerpf(self.body.velocity.x, (self.physics.maxSpeed * direction).x, self.physics.acceleration * delta)
-		self.body.velocity.y = lerpf(self.body.velocity.y, (self.physics.maxSpeed * direction).y, self.physics.acceleration * delta)
+		self.body.velocity.x = lerpf(self.body.velocity.x, (self.physics.maxSpeed * direction).x, (self.physics.acceleration * 0.1) * delta)
+		self.body.velocity.y = lerpf(self.body.velocity.y, (self.physics.maxSpeed * direction).y, (self.physics.acceleration * 0.1) * delta)
 		
 		
 		#self.body.velocity.x = move_toward(self.body.velocity.x, direction.x * self.physics.maxSpeed, self.physics.acceleration * delta) 
@@ -114,15 +114,15 @@ func accelerate(direction:Vector2, delta:float) -> void:
 		#self.body.velocity.x = lerp(self.body.velocity.x, (self.physics.maxSpeed * direction).x, delta)
 		#self.body.velocity.y = lerp(self.body.velocity.y, (self.physics.maxSpeed * direction).y, delta)
 		
-		#if (direction.x > 0):
-			#self.body.velocity.x = clamp(self.body.velocity.x, 0, self.physics.maxSpeed)
-		#elif (direction.x < 0):
-			#self.body.velocity.x = clamp(self.body.velocity.x, -self.physics.maxSpeed, 0)
-		#
-		#if (direction.y > 0):
-			#self.body.velocity.y = clamp(self.body.velocity.y, 0, self.physics.maxSpeed)
-		#elif (direction.y < 0):
-			#self.body.velocity.y = clamp(self.body.velocity.y, -self.physics.maxSpeed, 0)
+		if (direction.x > 0):
+			self.body.velocity.x = clamp(self.body.velocity.x, 0, self.physics.maxSpeed)
+		elif (direction.x < 0):
+			self.body.velocity.x = clamp(self.body.velocity.x, -self.physics.maxSpeed, 0)
+		
+		if (direction.y > 0):
+			self.body.velocity.y = clamp(self.body.velocity.y, 0, self.physics.maxSpeed)
+		elif (direction.y < 0):
+			self.body.velocity.y = clamp(self.body.velocity.y, -self.physics.maxSpeed, 0)
 		
 func _on_new_animated_sprite_2d_frame_changed() -> void:
 	var frame:int = self.getManager().view.frame

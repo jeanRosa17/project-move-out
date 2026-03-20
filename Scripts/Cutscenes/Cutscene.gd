@@ -60,7 +60,7 @@ func _process(_delta: float) -> void:
 				await get_tree().create_timer(0.3).timeout
 				self.player.setControls(true)
 				self.player.manager.getState().enable()
-				self.player.get_node("PlayerCamera").make_current()
+				self.player.getCamera().make_current()
 				return
 			tween = null
 			tween = create_tween()
