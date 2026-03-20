@@ -49,6 +49,7 @@ func runTetris() -> void:
 		# tetris's output/total possible score
 		if (!tetris.game_over):
 			tetris.intialize_game(packedFurniture)
+
 func stopTetris(score: int) -> void:
 	packedFurniture.clear()
 	# check if the furniture list is empty
