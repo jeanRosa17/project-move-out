@@ -6,8 +6,6 @@ extends Node2D
 @onready var bg: Node2D = $BG
 @onready var moving_van: Node2D = $"Moving Van"
 
-@export var firstLevel:String = "res://Levels/Scenes/TutorialUnit.tscn"
-
 
 #@onready var floor2: TileMapLayer = $Floor2
 
@@ -28,7 +26,7 @@ func _process(_delta:float) -> void:
 func _on_play_pressed() -> void:
 	var player:AudioStreamPlayer2D = self.find_child("Transition SFX")
 	player.play()
-	LevelManager.loadScene(self.firstLevel, LevelManager.Transitions.CIRCLE)
+	LevelManager.loadScene(Data.Levels[0], LevelManager.Transitions.CIRCLE)
 
 func startTweens() -> void:
 	var authors:Tween = create_tween()

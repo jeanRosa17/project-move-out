@@ -2,17 +2,17 @@ extends CanvasLayer
 
 class_name HUDManager
 
-@onready var level_results: CanvasLayer = $"Level Results"
-@onready var dialogue: CanvasLayer = $Dialogue
-@onready var list: CanvasLayer = $ListHUD
-@onready var textbox: DialogueManager = $Dialogue/Textbox
-@onready var ap: AnimationPlayer = $"Level Results/Node2D/AnimationPlayer"
+@export var level_results: CanvasLayer
+@export var dialogue: CanvasLayer 
+@export var list: CanvasLayer 
+@export var textbox: DialogueManager 
+@export var ap: AnimationPlayer 
 
-@onready var packedFurniture: Array[String] = []
-@onready var player: Player = $"../Y-Sorting/Player"
-@onready var tetris = $"../PostLevelMinigame"
-@onready var tetris_camera: Camera2D = $"../PostLevelMinigame/TetrisCamera"
-@onready var player_camera: Camera2D = $"../Y-Sorting/Player/PlayerCamera"
+@export var packedFurniture: Array[String] = []
+@export var player: Player
+@export var tetris:Tetris
+var tetris_camera: Camera2D 
+var player_camera: Camera2D 
 
 var levelFinished: bool = false
 var allFurniture: Array
@@ -25,6 +25,15 @@ func _ready() ->void:
 		if (i is CanvasLayer):
 			i.visible = self.visible
 	#self.dialogue.visible = false
+	
+	await get_tree().process_frame
+	
+	if (not self.player_camera):
+		await self.player.ready
+		self.player_camera = self.player.getCamera()
+	if (not self.tetris_camera):
+		await self.tetris.ready
+		self.tetris_camera = self.tetris.getCamera()
 
 
 
@@ -36,11 +45,13 @@ func get_all_furniture(startNode: Node, result: Array) -> void:
 			result.push_back(startNode)
 	for child in startNode.get_children():
 		get_all_furniture(child, result)
+		
 func get_max_score() -> float:
 	# calculates the maximum score available in the level
 	# NOT FULLY IMPLEMENTED
 	get_all_furniture($"../Y-Sorting", allFurniture)
 	return 1
+	
 ##runs tetris if the level is not over
 func runTetris() -> void:
 	if (!levelFinished && !packedFurniture.is_empty()):
@@ -55,6 +66,7 @@ func runTetris() -> void:
 		# tetris's output/total possible score
 		if (!tetris.game_over):
 			tetris.intialize_game(packedFurniture)
+
 func stopTetris(score: int) -> void:
 	packedFurniture.clear()
 	# check if the furniture list is empty

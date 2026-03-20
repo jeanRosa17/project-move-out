@@ -1,3 +1,5 @@
+class_name Tetris
+
 extends Node2D
 #region Tetronimo arrays
 
@@ -376,6 +378,9 @@ func _physics_process(delta: float) -> void:
 			pause_game()
 			hud.stopTetris(score)
 		pass
+
+func getCamera() -> Camera2D:
+	return $TetrisCamera
 
 func add_tetrominos(tetromino: String) -> void:
 	if (tetromino == "one_by_one_tetromino"):

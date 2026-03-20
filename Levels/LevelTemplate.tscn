@@ -21,10 +21,6 @@ normal = Vector2(0.02307078, -0.99973387)
 
 [node name="LevelTemplate" type="Node2D" unique_id=319947790]
 
-[node name="HUD" parent="." unique_id=1725586568 instance=ExtResource("5_kv2lc")]
-unique_name_in_owner = true
-visible = false
-
 [node name="Walls" type="TileMapLayer" parent="." unique_id=216456263]
 tile_set = ExtResource("1_ersrp")
 
@@ -51,6 +47,7 @@ tile_set = ExtResource("1_ersrp")
 y_sort_enabled = true
 
 [node name="Player" parent="Y-Sorting" unique_id=1761221807 instance=ExtResource("1_t4nej")]
+unique_name_in_owner = true
 position = Vector2(162, 113)
 safe_margin = 1.159
 
@@ -85,5 +82,12 @@ position = Vector2(0, 96)
 rotation = -4.71239
 shape = SubResource("WorldBoundaryShape2D_ersrp")
 
-[node name="PostLevelMinigame" parent="." unique_id=762999373 instance=ExtResource("6_6ghb1")]
+[node name="Tetris" parent="." unique_id=762999373 instance=ExtResource("6_6ghb1")]
+unique_name_in_owner = true
 position = Vector2(1008, 0)
+
+[node name="HUD" parent="." unique_id=1725586568 node_paths=PackedStringArray("player", "tetris") instance=ExtResource("5_kv2lc")]
+unique_name_in_owner = true
+visible = false
+player = NodePath("../Y-Sorting/Player")
+tetris = NodePath("../Tetris")

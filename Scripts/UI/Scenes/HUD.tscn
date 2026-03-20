@@ -93,8 +93,12 @@ _data = {
 &"RESET": SubResource("Animation_nu68y")
 }
 
-[node name="HUD" type="CanvasLayer" unique_id=1725586568]
+[node name="HUD" type="CanvasLayer" unique_id=1725586568 node_paths=PackedStringArray("level_results", "dialogue", "list", "textbox")]
 script = ExtResource("1_t2p4a")
+level_results = NodePath("Level Results")
+dialogue = NodePath("Dialogue")
+list = NodePath("ListHUD")
+textbox = NodePath("Dialogue/Textbox")
 
 [node name="ListHUD" type="CanvasLayer" parent="." unique_id=1378780322]
 

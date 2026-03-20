@@ -220,7 +220,7 @@ scale = Vector2(5, 35.952915)
 shape = SubResource("RectangleShape2D_lcmnl")
 one_way_collision_margin = 0.0
 
-[node name="PostLevelMinigame" parent="." unique_id=762999373 instance=ExtResource("19_lcmnl")]
+[node name="Tetris" parent="." unique_id=762999373 instance=ExtResource("19_lcmnl")]
 position = Vector2(896, 192)
 
 [connection signal="body_entered" from="TextTrigger/TriggerSensor" to="TextTrigger/TriggerSensor" method="_on_body_entered"]
