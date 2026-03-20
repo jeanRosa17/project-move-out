@@ -35,3 +35,14 @@ func _on_furniture_body_exited(body: Node2D) -> void:
 		self.furniture = null
 		self.item_detector.visible = false
 		
+## Snaps the current direction to face one of the 4 cardinal directions.
+func snapDirection() -> void:
+	if (self.direction != Vector2.ZERO):
+		if (Input.is_action_pressed("MoveLeft")):
+			self.direction = Vector2.LEFT
+		elif (Input.is_action_pressed("MoveRight")):
+			self.direction = Vector2.RIGHT
+		elif (Input.is_action_pressed("MoveDown")):
+			self.direction = Vector2.DOWN
+		elif (Input.is_action_pressed("MoveUp")):
+			self.direction = Vector2.UP

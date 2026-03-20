@@ -22,6 +22,7 @@ func _on_body_entered(body: Node2D) -> void:
 		player = body
 		if (player.canControl):
 			player.setControls(false)
+			player.manager.snapDirection()
 			player.manager.changeState("Move")
 			
 			if (player.velocity.length() < .2):
