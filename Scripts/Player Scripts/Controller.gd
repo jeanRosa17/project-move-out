@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 @onready var manager:StateManager = $StateManager
 @onready var view:AnimatedSprite2D = $NewAnimatedSprite2D
+@onready var camera_2d: Camera2D = $Camera2D
 
 @export var canControl:bool = true
 var locked_axis := "none"
@@ -24,6 +25,9 @@ func _process(delta:float) -> void:
 	
 	#animations()
 	#lockDirection()
+
+func getCamera() -> Camera2D:
+	return self.camera_2d
 
 func lockDirection() -> void:
 	locked_axis = "none"
@@ -88,7 +92,7 @@ func handleMovement(_delta:float) -> void:
 	or Input.is_action_pressed("MoveDown")
 	or Input.is_action_pressed("MoveUp")):
 		self.manager.direction = Input.get_vector("MoveLeft", "MoveRight", "MoveUp", "MoveDown", 0.1)                  
-		lockDirection()
+		#lockDirection()
 		if (self.manager.getStateName() != "Move" && self.manager.getStateName() != "Lift"):
 			self.manager.changeState("Move")
 			

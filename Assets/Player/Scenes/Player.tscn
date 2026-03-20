@@ -1424,6 +1424,8 @@ texture = ExtResource("30_m53rv")
 libraries/ = SubResource("AnimationLibrary_bqeds")
 autoplay = &"Bounce"
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=28337110]
+
 [connection signal="frame_changed" from="NewAnimatedSprite2D" to="StateManager/Move" method="_on_new_animated_sprite_2d_frame_changed"]
 [connection signal="area_entered" from="Detector" to="StateManager" method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="Detector" to="StateManager/Push" method="_on_area_2d_area_entered"]

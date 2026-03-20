@@ -67,7 +67,7 @@ func update(_delta:float) -> void:
 		if (self.manager.direction == Vector2.UP):
 			self.manager.view.play(prefix + " up")
 	
-		self.area2DCollision.position = self.getManager().direction * 20
+		self.area2DCollision.position = self.getManager().direction * 20 
 	
 ## This method runs every _physics_process() frame of the StateManager.
 func physicsUpdate(_delta:float) -> void:
