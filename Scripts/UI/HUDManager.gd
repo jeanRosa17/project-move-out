@@ -20,7 +20,10 @@ var score: int
 
 ## ensures dialogue is invisible at the start of the level
 func _ready() ->void:
-	pass
+	#self.vis = false
+	for i in self.get_children():
+		if (i is CanvasLayer):
+			i.visible = self.visible
 	#self.dialogue.visible = false
 
 
@@ -89,9 +92,6 @@ func checkResults() -> void:
 
 ## Ensures that the Dialogue Box turns itself off when the dialogue is finished.
 func _process(_delta: float) -> void:
-	if (self.textbox.currentTagFinished):
-		self.dialogue.visible = false
-	if (not self.visible):
-		for i in self.get_children():
-			if (i is CanvasLayer):
-				i.visible = self.visible
+	if (self.textbox):
+		if (self.textbox.currentTagFinished):
+			self.dialogue.visible = false
