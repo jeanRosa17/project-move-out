@@ -91,7 +91,8 @@ func handleMovement(_delta:float) -> void:
 	or Input.is_action_pressed("MoveRight")
 	or Input.is_action_pressed("MoveDown")
 	or Input.is_action_pressed("MoveUp")):
-		self.manager.direction = Input.get_vector("MoveLeft", "MoveRight", "MoveUp", "MoveDown", 0.1)                  
+		self.manager.direction = Input.get_vector("MoveLeft", "MoveRight", "MoveUp", "MoveDown", 0.1)
+		print(self.manager.direction)
 		#lockDirection()
 		if (self.manager.getStateName() != "Move" && self.manager.getStateName() != "Lift"):
 			self.manager.changeState("Move")

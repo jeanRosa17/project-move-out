@@ -90,13 +90,15 @@ func physicsUpdate(_delta:float) -> void:
 			self.manager.furniture.linear_velocity.y = 0
 
 	self.accelerate(manager.direction, _delta)
+	#self.body.velocity = self.physics.maxSpeed * manager.direction
 	self.body.move_and_slide()
 
 ## Sets the player's velocity to increase or decrease based on the given direction (-1 left, 1 right)
-func accelerate(direction:Vector2i, delta:float) -> void:
-	if direction != Vector2i.ZERO:
-		self.body.velocity.x = lerp(self.body.velocity.x, (self.physics.maxSpeed * direction).x, self.physics.acceleration * delta)
-		self.body.velocity.y = lerp(self.body.velocity.y, (self.physics.maxSpeed * direction).y, self.physics.acceleration * delta)
+func accelerate(direction:Vector2, delta:float) -> void:
+	if direction != Vector2.ZERO:
+		#self.body.velocity = lerp(self.body.velocity, (self.physics.maxSpeed * direction), self.physics.acceleration * delta)
+		self.body.velocity.x = lerpf(self.body.velocity.x, (self.physics.maxSpeed * direction).x, self.physics.acceleration * delta)
+		self.body.velocity.y = lerpf(self.body.velocity.y, (self.physics.maxSpeed * direction).y, self.physics.acceleration * delta)
 		
 		
 		#self.body.velocity.x = move_toward(self.body.velocity.x, direction.x * self.physics.maxSpeed, self.physics.acceleration * delta) 
