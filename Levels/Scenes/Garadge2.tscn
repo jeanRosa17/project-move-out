@@ -65,11 +65,9 @@ shape = SubResource("RectangleShape2D_8gfoj")
 
 [node name="Moving Van" parent="." unique_id=1838349624 instance=ExtResource("6_fvbdv")]
 position = Vector2(-65, 0)
-rotation = -3.1415925
-scale = Vector2(1.00294, -1)
 
 [node name="AnimatedSprite2D" parent="Moving Van" index="0" unique_id=497863614]
-animation = &"right-no-john"
+animation = &"left-no-john"
 
 [node name="Leave Area" type="Area2D" parent="." unique_id=632129231]
 position = Vector2(-64, 8)
