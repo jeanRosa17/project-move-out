@@ -1,68 +1,93 @@
 [gd_scene format=3 uid="uid://d3rjdvbwh7auh"]
 
-[ext_resource type="Texture2D" uid="uid://bh2e8ltvpt5g8" path="res://Assets/Garage/truck_back_01.png" id="1_ntmp6"]
+[ext_resource type="Texture2D" uid="uid://5eiab6xn0erk" path="res://Assets/Objects/Carpets/Flying Carpet Side.png" id="1_22k4w"]
 [ext_resource type="Script" uid="uid://bg35t571kh220" path="res://Scripts/Van/Van.gd" id="2_u5oop"]
-[ext_resource type="Texture2D" uid="uid://cqguipmcnrdn1" path="res://Assets/Player/Shadow.png" id="3_22k4w"]
-[ext_resource type="Script" path="res://Levels/Scenes/button_trigger.gd" id="3_u5oop"]
-[ext_resource type="Texture2D" uid="uid://da21gw6ai8h4v" path="res://Assets/Garage/leaver_01.png" id="4_fvbdv"]
+[ext_resource type="Script" uid="uid://bmwxnetqmbd3w" path="res://Levels/Scenes/button_trigger.gd" id="3_u5oop"]
+[ext_resource type="PackedScene" uid="uid://b8esrtg2o2fn8" path="res://Assets/Garage/CutsceneVan.tscn" id="6_fvbdv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8gfoj"]
-size = Vector2(43.2692, 55.9273)
+size = Vector2(56, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0705a"]
-size = Vector2(32.90326, 32)
+size = Vector2(21.935509, 36)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_dvo4s"]
-a = Vector2(7, -11)
-b = Vector2(87, -11)
+[sub_resource type="Animation" id="Animation_u5oop"]
+resource_name = "Floating"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Loading Carpet:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.66, 1.32),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -2), Vector2(0, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_22k4w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Loading Carpet:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_22k4w"]
+_data = {
+&"Floating": SubResource("Animation_u5oop"),
+&"RESET": SubResource("Animation_22k4w")
+}
 
 [node name="Garadge2" type="Node2D" unique_id=726660232]
 
-[node name="Placeholder Van" type="Sprite2D" parent="." unique_id=1540208415]
-visible = false
-position = Vector2(-1, 0.067840576)
-scale = Vector2(1.73333, 1.62712)
-texture = ExtResource("1_ntmp6")
+[node name="Loading Carpet" type="Sprite2D" parent="." unique_id=1540208415]
+z_index = -1
+texture = ExtResource("1_22k4w")
 
-[node name="Area2D" type="Area2D" parent="Placeholder Van" unique_id=456820073]
+[node name="Area2D" type="Area2D" parent="Loading Carpet" unique_id=456820073]
 collision_layer = 7
 collision_mask = 7
 script = ExtResource("2_u5oop")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Placeholder Van/Area2D" unique_id=1326014504]
-position = Vector2(0.28846, 0.921873)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Loading Carpet/Area2D" unique_id=1326014504]
 shape = SubResource("RectangleShape2D_8gfoj")
 
-[node name="Button Area" type="Area2D" parent="." unique_id=632129231]
-position = Vector2(-65, -33)
+[node name="Moving Van" parent="." unique_id=1838349624 instance=ExtResource("6_fvbdv")]
+position = Vector2(-65, 0)
+rotation = -3.1415925
+scale = Vector2(1.00294, -1)
+
+[node name="AnimatedSprite2D" parent="Moving Van" index="0" unique_id=497863614]
+animation = &"right-no-john"
+
+[node name="Leave Area" type="Area2D" parent="." unique_id=632129231]
+position = Vector2(-64, 8)
 scale = Vector2(1.00294, 1)
 collision_layer = 2
 collision_mask = 7
 script = ExtResource("3_u5oop")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Button Area" unique_id=1864252806]
-position = Vector2(-4.486809, 57.93216)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Leave Area" unique_id=1864252806]
 shape = SubResource("RectangleShape2D_0705a")
 
-[node name="Interactable zone" type="Sprite2D" parent="Button Area" unique_id=1720625845]
-position = Vector2(-3.98827, 58)
-scale = Vector2(1.4605953, 3.2361693)
-texture = ExtResource("3_22k4w")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2078876963]
+libraries/ = SubResource("AnimationLibrary_22k4w")
+autoplay = &"Floating"
 
-[node name="Lever" type="Sprite2D" parent="Button Area" unique_id=1557676258]
-visible = false
-position = Vector2(-3.7478, 56)
-texture = ExtResource("4_fvbdv")
-offset = Vector2(10, 0)
+[connection signal="body_entered" from="Loading Carpet/Area2D" to="Loading Carpet/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Loading Carpet/Area2D" to="Loading Carpet/Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="Leave Area" to="Leave Area" method="_on_body_entered"]
+[connection signal="body_exited" from="Leave Area" to="Leave Area" method="_on_body_exited"]
 
-[node name="Door" type="Area2D" parent="Button Area" unique_id=1717265832]
-position = Vector2(15.953097, 0)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Button Area/Door" unique_id=833483681]
-position = Vector2(0, -1)
-shape = SubResource("SegmentShape2D_dvo4s")
-
-[connection signal="body_entered" from="Placeholder Van/Area2D" to="Placeholder Van/Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="Placeholder Van/Area2D" to="Placeholder Van/Area2D" method="_on_body_exited"]
-[connection signal="body_entered" from="Button Area" to="Button Area" method="_on_body_entered"]
-[connection signal="body_exited" from="Button Area" to="Button Area" method="_on_body_exited"]
+[editable path="Moving Van"]

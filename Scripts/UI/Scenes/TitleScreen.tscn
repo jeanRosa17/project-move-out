@@ -10,7 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://d3clrypoknn20" path="res://Assets/Audio/button up sfx.wav" id="5_7jtd7"]
 [ext_resource type="AudioStream" uid="uid://dmf4fmne560ip" path="res://Assets/Audio/title screen.wav" id="6_2s4f7"]
 [ext_resource type="Texture2D" uid="uid://cce7iv1h3r63q" path="res://Assets/UI/Logo/Title.png" id="6_tb8vy"]
-[ext_resource type="PackedScene" uid="uid://b8esrtg2o2fn8" path="res://Assets/Garage/moving_van.tscn" id="7_d0ymk"]
+[ext_resource type="PackedScene" uid="uid://b8esrtg2o2fn8" path="res://Assets/Garage/CutsceneVan.tscn" id="7_d0ymk"]
 [ext_resource type="AudioStream" uid="uid://b0cvmwsqex4x2" path="res://Assets/Audio/level transition sfx.wav" id="12_7jtd7"]
 
 [node name="TitleScreen" type="Node2D" unique_id=1724196829]

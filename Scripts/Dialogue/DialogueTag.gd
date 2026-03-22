@@ -7,3 +7,10 @@ extends Resource
 @export var dialogueScriptPath: StringName = "res://Narrative/SampleText.txt"
 ## The tag of text within the dialogueScript
 @export var dialogueTag: StringName = "start"
+
+func create(scriptPath:String, tag:String) -> DialogueTag:
+	self.dialogueScriptPath = scriptPath
+	self.dialogueTag = tag
+	
+	return self
+	

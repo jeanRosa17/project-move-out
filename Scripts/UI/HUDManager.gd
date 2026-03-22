@@ -1,12 +1,11 @@
 extends CanvasLayer
-
 class_name HUDManager
 
 @export var level_results: CanvasLayer
 @export var dialogue: CanvasLayer 
 @export var list: CanvasLayer 
 @export var textbox: DialogueManager 
-@export var ap: AnimationPlayer 
+@onready var ap: AnimationPlayer = $"Level Results/Node2D/AnimationPlayer"
 
 @export var packedFurniture: Array[String] = []
 @export var player: Player
@@ -24,16 +23,8 @@ func _ready() ->void:
 	for i in self.get_children():
 		if (i is CanvasLayer):
 			i.visible = self.visible
-	#self.dialogue.visible = false
-	
-	await get_tree().process_frame
-	
-	if (not self.player_camera):
-		await self.player.ready
-		self.player_camera = self.player.getCamera()
-	if (not self.tetris_camera):
-		await self.tetris.ready
-		self.tetris_camera = self.tetris.getCamera()
+	#self.dialogue.visible = false	
+
 
 
 
@@ -54,6 +45,13 @@ func get_max_score() -> float:
 	
 ##runs tetris if the level is not over
 func runTetris() -> void:
+	if (not self.player_camera):
+		await self.player.ready
+		self.player_camera = self.player.getCamera()
+	if (not self.tetris_camera):
+		await self.tetris.ready
+		self.tetris_camera = self.tetris.getCamera()
+	
 	if (!levelFinished && !packedFurniture.is_empty()):
 		# switch controls
 		player.setControls(false)
@@ -95,6 +93,7 @@ func checkResults() -> void:
 	## Get score from Van script and display here.
 	## enable tetris and have the player play that first
 	
+	self.player.setControls(false)
 	print("Gay gay homosexual gay");
 	var _text:RichTextLabel = self.level_results.find_child("Score")
 	self.dialogue.visible = false

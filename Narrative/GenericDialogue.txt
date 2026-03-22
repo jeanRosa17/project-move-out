@@ -1,0 +1,7 @@
+#null {
+	No problem here.
+}
+
+#endLevel {
+	Do you wish to end the level and pack up?
+}

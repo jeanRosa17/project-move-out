@@ -1,32 +1,41 @@
 [gd_scene format=3 uid="uid://b8esrtg2o2fn8"]
 
+[ext_resource type="Script" uid="uid://bkyjc4fp4tycb" path="res://Assets/Garage/Cutscene Van.gd" id="1_5d4tu"]
 [ext_resource type="SpriteFrames" uid="uid://bj4hy5y5yiady" path="res://Scripts/Resources/VanFrames.tres" id="1_ewm8d"]
 [ext_resource type="PackedScene" uid="uid://dotpp2gym0w7k" path="res://Assets/Particles/Scenes/walking_particle.tscn" id="2_ewm8d"]
 
-[node name="Moving Van" type="Node2D" unique_id=1838349624]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ewm8d"]
+size = Vector2(67.80066, 32)
+
+[node name="CutsceneVan" type="StaticBody2D" unique_id=469672315]
+collision_layer = 2
+script = ExtResource("1_5d4tu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=497863614]
 sprite_frames = ExtResource("1_ewm8d")
 animation = &"title"
-autoplay = "title"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=158715948]
+position = Vector2(-2.9911995, 0)
+shape = SubResource("RectangleShape2D_ewm8d")
 
 [node name="Walking_particle" parent="." unique_id=1136958223 instance=ExtResource("2_ewm8d")]
 modulate = Color(0.62967473, 0.62967473, 0.6296747, 1)
 z_index = -1
 position = Vector2(-42, 9)
-rotation = -3.1415927
+rotation = 3.1415925
 min_speed = null
 
 [node name="Walking_particle2" parent="." unique_id=610914892 instance=ExtResource("2_ewm8d")]
 modulate = Color(0.62967473, 0.62967473, 0.6296747, 1)
 z_index = -1
 position = Vector2(-43, 11)
-rotation = -3.1415927
+rotation = 3.1415925
 min_speed = null
 
 [node name="Walking_particle3" parent="." unique_id=1466630262 instance=ExtResource("2_ewm8d")]
 modulate = Color(0.62967473, 0.62967473, 0.6296747, 1)
 z_index = -1
 position = Vector2(-42, 10)
-rotation = -3.1415927
+rotation = 3.1415925
 min_speed = null

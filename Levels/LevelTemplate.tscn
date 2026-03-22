@@ -2,6 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="1_ersrp"]
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Assets/Player/Scenes/Player.tscn" id="1_t4nej"]
+[ext_resource type="PackedScene" uid="uid://d3rjdvbwh7auh" path="res://Levels/Scenes/Garadge2.tscn" id="3_vjhoh"]
 [ext_resource type="AudioStream" uid="uid://cmje4kqmvovdh" path="res://Assets/Audio/dorm.wav" id="4_6ghb1"]
 [ext_resource type="PackedScene" uid="uid://cfmb3mmeue8au" path="res://Scripts/UI/Scenes/HUD.tscn" id="5_kv2lc"]
 [ext_resource type="PackedScene" uid="uid://uacgji4vcg37" path="res://Assets/Audio/push_pull_audio.tscn" id="5_vjhoh"]
@@ -50,6 +51,9 @@ y_sort_enabled = true
 unique_name_in_owner = true
 position = Vector2(162, 113)
 safe_margin = 1.159
+
+[node name="Storage Van" parent="Y-Sorting" unique_id=726660232 instance=ExtResource("3_vjhoh")]
+position = Vector2(115, 34)
 
 [node name="Level Music" type="AudioStreamPlayer2D" parent="." unique_id=1340222311]
 stream = ExtResource("4_6ghb1")

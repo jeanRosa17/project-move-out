@@ -4,7 +4,7 @@ extends Node2D
 @onready var title: Sprite2D = $Title
 @onready var creators: RichTextLabel = $Creators
 @onready var bg: Node2D = $BG
-@onready var moving_van: Node2D = $"Moving Van"
+@onready var moving_van: CutsceneVan = $"Moving Van"
 
 
 #@onready var floor2: TileMapLayer = $Floor2
@@ -14,6 +14,7 @@ var bgSpeed: float = 8.0
 func _ready() -> void:
 	self.startTweens()
 	self.loopBackground()
+	self.moving_van.sprite.play("title")
 
 func _process(_delta:float) -> void:
 	if (bg.position.x < -912):

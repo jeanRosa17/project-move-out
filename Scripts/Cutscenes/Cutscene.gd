@@ -34,7 +34,7 @@ func _process(_delta: float) -> void:
 		if (tween == null):
 			tween = create_tween()
 			tween.tween_property(self, "position", self.events[0], speed).from(self.startPos)
-			self.add_child(self.player)
+			#self.add_child(self.player)
 			self.player.position = Vector2.ZERO
 			#tween.play()
 		
