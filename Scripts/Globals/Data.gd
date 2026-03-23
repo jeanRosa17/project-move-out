@@ -6,3 +6,10 @@ const Levels:Array[String] = \
 	"uid://6cyov1n0p1t4"]
 
 var levelNum:int = 0
+
+enum Direction {
+	UP,
+	LEFT,
+	RIGHT,
+	DOWN
+}

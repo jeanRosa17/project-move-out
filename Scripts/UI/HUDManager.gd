@@ -112,6 +112,7 @@ func _process(_delta: float) -> void:
 		if (self.textbox):
 			if (self.textbox.currentTagFinished):
 				self.dialogue.visible = false
-		
+	
+	## When run in the editor
 	if Engine.is_editor_hint():
 		self.setAllOff()

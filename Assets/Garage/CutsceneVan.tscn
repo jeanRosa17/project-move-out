@@ -3,39 +3,64 @@
 [ext_resource type="Script" uid="uid://bkyjc4fp4tycb" path="res://Assets/Garage/Cutscene Van.gd" id="1_5d4tu"]
 [ext_resource type="SpriteFrames" uid="uid://bj4hy5y5yiady" path="res://Scripts/Resources/VanFrames.tres" id="1_ewm8d"]
 [ext_resource type="PackedScene" uid="uid://dotpp2gym0w7k" path="res://Assets/Particles/Scenes/walking_particle.tscn" id="2_ewm8d"]
+[ext_resource type="Script" uid="uid://drlsddc6kr7gy" path="res://Assets/Garage/RotatableCollisionShape2D.gd" id="3_k1l4a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ewm8d"]
-size = Vector2(67.80066, 32)
+size = Vector2(80, 32)
 
-[node name="CutsceneVan" type="StaticBody2D" unique_id=469672315]
+[node name="CutsceneVan" type="StaticBody2D" unique_id=469672315 node_paths=PackedStringArray("smokeMarkers")]
 collision_layer = 2
 script = ExtResource("1_5d4tu")
+keyIn = true
+smokeMarkers = [NodePath("Smoke/Up-Pos"), NodePath("Smoke/Left-Pos"), NodePath("Smoke/Right-Pos"), NodePath("Smoke/Down-Pos")]
+direction = 0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=497863614]
 sprite_frames = ExtResource("1_ewm8d")
-animation = &"title"
+animation = &"up"
+frame_progress = 0.3785994
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=158715948]
-position = Vector2(-2.9911995, 0)
 shape = SubResource("RectangleShape2D_ewm8d")
+script = ExtResource("3_k1l4a")
+shapes = Array[Shape2D]([SubResource("RectangleShape2D_ewm8d")])
 
-[node name="Walking_particle" parent="." unique_id=1136958223 instance=ExtResource("2_ewm8d")]
+[node name="Smoke" type="Node2D" parent="." unique_id=1550305189]
+position = Vector2(15, 37)
+rotation = 4.712389
+
+[node name="Left-Pos" type="Marker2D" parent="Smoke" unique_id=321538755]
+top_level = true
+position = Vector2(41, 11)
+
+[node name="Right-Pos" type="Marker2D" parent="Smoke" unique_id=750202598]
+top_level = true
+position = Vector2(-41, 11)
+
+[node name="Up-Pos" type="Marker2D" parent="Smoke" unique_id=186333863]
+top_level = true
+position = Vector2(15, 37)
+
+[node name="Down-Pos" type="Marker2D" parent="Smoke" unique_id=2136809644]
+top_level = true
+position = Vector2(-13, -30)
+
+[node name="Walking_particle" parent="Smoke" unique_id=1136958223 instance=ExtResource("2_ewm8d")]
 modulate = Color(0.62967473, 0.62967473, 0.6296747, 1)
 z_index = -1
-position = Vector2(-42, 9)
+position = Vector2(0, -1)
 rotation = 3.1415925
 min_speed = null
 
-[node name="Walking_particle2" parent="." unique_id=610914892 instance=ExtResource("2_ewm8d")]
+[node name="Walking_particle2" parent="Smoke" unique_id=610914892 instance=ExtResource("2_ewm8d")]
 modulate = Color(0.62967473, 0.62967473, 0.6296747, 1)
 z_index = -1
-position = Vector2(-43, 11)
+position = Vector2(-1, 1)
 rotation = 3.1415925
 min_speed = null
 
-[node name="Walking_particle3" parent="." unique_id=1466630262 instance=ExtResource("2_ewm8d")]
+[node name="Walking_particle3" parent="Smoke" unique_id=1466630262 instance=ExtResource("2_ewm8d")]
 modulate = Color(0.62967473, 0.62967473, 0.6296747, 1)
 z_index = -1
-position = Vector2(-42, 10)
 rotation = 3.1415925
 min_speed = null

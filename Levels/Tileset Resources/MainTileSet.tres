@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dc6c1fdxyaabr" path="res://Assets/tiles/Walls3.png" id="6_20iwy"]
 [ext_resource type="Texture2D" uid="uid://bo121scx8dqt3" path="res://Assets/tiles/Wall4-Sheet.png" id="7_m4hcq"]
 [ext_resource type="Texture2D" uid="uid://dhlrq4hpploif" path="res://Assets/tiles/Floor Tiles-Sheet.png" id="8_koyeg"]
+[ext_resource type="Texture2D" uid="uid://hpajd5eaiga1" path="res://Assets/tiles/Wall-Collisions.png" id="9_v8fek"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m4hcq"]
 texture = ExtResource("1_civ8i")
@@ -562,6 +563,15 @@ texture = ExtResource("8_koyeg")
 3:6/0 = 0
 0:7/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ia4qr"]
+texture = ExtResource("9_v8fek")
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2, -8, -2)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -6, -8, -6)
+
 [resource]
 physics_layer_0/collision_layer = 4
 physics_layer_0/collision_mask = 7
@@ -578,3 +588,4 @@ sources/1 = SubResource("TileSetAtlasSource_koyeg")
 sources/3 = SubResource("TileSetAtlasSource_v8fek")
 sources/6 = SubResource("TileSetAtlasSource_r2dd7")
 sources/7 = SubResource("TileSetAtlasSource_jt3ic")
+sources/9 = SubResource("TileSetAtlasSource_ia4qr")

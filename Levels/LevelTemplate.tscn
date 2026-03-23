@@ -92,6 +92,5 @@ position = Vector2(1008, 0)
 
 [node name="HUD" parent="." unique_id=1725586568 node_paths=PackedStringArray("player", "tetris") instance=ExtResource("5_kv2lc")]
 unique_name_in_owner = true
-visible = false
 player = NodePath("../Y-Sorting/Player")
 tetris = NodePath("../Tetris")

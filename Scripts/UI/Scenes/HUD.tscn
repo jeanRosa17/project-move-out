@@ -219,7 +219,6 @@ text = "Quit"
 
 [node name="Dialogue" type="CanvasLayer" parent="." unique_id=2001474479]
 layer = 2
-visible = false
 
 [node name="Textbox" parent="Dialogue" unique_id=1851480463 instance=ExtResource("2_ijstf")]
 
