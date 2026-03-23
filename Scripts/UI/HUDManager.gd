@@ -1,3 +1,4 @@
+@tool
 extends CanvasLayer
 class_name HUDManager
 
@@ -20,12 +21,16 @@ var score: int
 ## ensures dialogue is invisible at the start of the level
 func _ready() ->void:
 	#self.vis = false
+	if not Engine.is_editor_hint():
+		self.setAllOff()
+	#self.dialogue.visible = false
+	
+## Helper function that makes all other CanvasLayers of the Hud turn off when
+## the root HUD node is set invisible
+func setAllOff() -> void:
 	for i in self.get_children():
-		if (i is CanvasLayer):
-			i.visible = self.visible
-	#self.dialogue.visible = false	
-
-
+			if (i is CanvasLayer):
+				i.visible = self.visible
 
 
 func get_all_furniture(startNode: Node, result: Array) -> void:
@@ -103,6 +108,10 @@ func checkResults() -> void:
 
 ## Ensures that the Dialogue Box turns itself off when the dialogue is finished.
 func _process(_delta: float) -> void:
-	if (self.textbox):
-		if (self.textbox.currentTagFinished):
-			self.dialogue.visible = false
+	if not Engine.is_editor_hint():
+		if (self.textbox):
+			if (self.textbox.currentTagFinished):
+				self.dialogue.visible = false
+		
+	if Engine.is_editor_hint():
+		self.setAllOff()
