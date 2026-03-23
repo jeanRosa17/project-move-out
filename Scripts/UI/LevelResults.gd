@@ -17,7 +17,8 @@ var transition_audio:AudioStreamPlayer2D
 func _on_next_level_pressed() -> void:
 	transition_audio = find_child("Level Transition Audio")
 	if (nextLevelName != null):
-		LevelManager.loadScene(nextLevelName)
+		Data.levelNum += 1
+		LevelManager.loadScene(Data.Levels[Data.levelNum])
 		transition_audio.play()
 
 func _on_replay_level_pressed() -> void:

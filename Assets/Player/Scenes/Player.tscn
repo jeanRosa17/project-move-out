@@ -1358,8 +1358,8 @@ autoplay = "idle down"
 
 [node name="Detector" type="Area2D" parent="." unique_id=1216050002]
 position = Vector2(0, -8)
-collision_layer = 2
-collision_mask = 6
+collision_layer = 10
+collision_mask = 14
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector" unique_id=422314971]
 position = Vector2(0, 20)
@@ -1430,6 +1430,7 @@ autoplay = &"Bounce"
 
 [connection signal="frame_changed" from="NewAnimatedSprite2D" to="StateManager/Move" method="_on_new_animated_sprite_2d_frame_changed"]
 [connection signal="area_entered" from="Detector" to="StateManager" method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="Detector" to="StateManager" method="_on_leave_area_entered"]
 [connection signal="area_entered" from="Detector" to="StateManager/Push" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Detector" to="StateManager" method="_on_area_2d_area_exited"]
 [connection signal="area_exited" from="Detector" to="StateManager/Push" method="_on_area_2d_area_exited"]

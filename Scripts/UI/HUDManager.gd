@@ -50,12 +50,8 @@ func get_max_score() -> float:
 	
 ##runs tetris if the level is not over
 func runTetris() -> void:
-	if (not self.player_camera):
-		await self.player.ready
-		self.player_camera = self.player.getCamera()
-	if (not self.tetris_camera):
-		await self.tetris.ready
-		self.tetris_camera = self.tetris.getCamera()
+	if (not self.player_camera): self.player_camera = self.player.getCamera()
+	if (not self.tetris_camera): self.tetris_camera = self.tetris.getCamera()
 	
 	if (!levelFinished && !packedFurniture.is_empty()):
 		# switch controls

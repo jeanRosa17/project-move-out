@@ -3,12 +3,13 @@ class_name RotatableCollisionShape2D
 extends CollisionShape2D
 
 ## A container for alterative Collision shapes for this CollisionShape2D.
-@export var shapes:Array[Shape2D] = []
-@export var index:int = 0
+@export var left:Shape2D
+@export var right:Shape2D
+@export var up:Shape2D
+@export var down:Shape2D
+
 
 
 func _process(delta: float) -> void:
-	if (index > shapes.size()):
-		index = shapes.size()
-	
+	pass
  

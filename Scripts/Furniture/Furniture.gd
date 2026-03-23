@@ -7,6 +7,7 @@ class_name Furniture
 @onready var area_detector: Area2D = $AreaDetector
 @onready var area_shape: CollisionShape2D = $AreaDetector/CollisionShape2D
 
+const PACK_UP_BOX = preload("uid://k0rgciqs0uce")
 
 @export var canLift:bool = false
 @export var canPush:bool = false
@@ -536,4 +537,31 @@ func getShape() -> String:
 ## Plays the pack up animation when the Furniture is in the loading zone. 
 ## This Furniture will be destroyed afterwards.
 func packInBox() -> void:
-	pass
+	print("pack in")
+	var child = PACK_UP_BOX.instantiate()
+	var t:Tween
+	
+	
+	self.add_sibling(child)
+	
+	t = create_tween()
+	#child.marker_2d.add_child(self)
+	await get_tree().process_frame
+	self.collision_mask = -1
+	self.collision_layer = -1
+	child.ap.play("Open")
+	child.position = self.position
+	#self.reparent(child.marker_2d)
+	
+	#t.set_parallel(false)
+	t.tween_property(self, "position:y", -8, 0.2).from(0).set_delay(0.33)
+	#t.tween_property(self, "position:y", 8, 0.2).from(0).set_delay(0.33)
+	t.parallel()
+	t.tween_property(self, "scale", Vector2(0, 0), 0.2).from(Vector2(1, 1)).set_delay(0.33)
+	t.tween_callback(func () -> void: self.queue_free()).set_delay(0.3)
+	
+	#child.marker_2d.reparent(self)
+
+	
+	
+	

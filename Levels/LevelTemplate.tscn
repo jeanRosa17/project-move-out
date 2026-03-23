@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://bjyjc8mdpa2ey"]
 
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="1_ersrp"]
+[ext_resource type="Script" uid="uid://df3mxrpvelh25" path="res://Levels/Level.gd" id="1_g8k58"]
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Assets/Player/Scenes/Player.tscn" id="1_t4nej"]
 [ext_resource type="PackedScene" uid="uid://d3rjdvbwh7auh" path="res://Levels/Scenes/Garadge2.tscn" id="3_vjhoh"]
 [ext_resource type="AudioStream" uid="uid://cmje4kqmvovdh" path="res://Assets/Audio/dorm.wav" id="4_6ghb1"]
@@ -9,18 +10,15 @@
 [ext_resource type="PackedScene" uid="uid://5bnbyjpgb5kx" path="res://Levels/Post-Level Minigame/Post-Level Minigame.tscn" id="6_6ghb1"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6ghb1"]
-normal = Vector2(0.02307078, -0.99973387)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vjhoh"]
-normal = Vector2(0.02307078, -0.99973387)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g8k58"]
-normal = Vector2(0.02307078, -0.99973387)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ersrp"]
-normal = Vector2(0.02307078, -0.99973387)
 
 [node name="LevelTemplate" type="Node2D" unique_id=319947790]
+script = ExtResource("1_g8k58")
 
 [node name="Walls" type="TileMapLayer" parent="." unique_id=216456263]
 tile_set = ExtResource("1_ersrp")

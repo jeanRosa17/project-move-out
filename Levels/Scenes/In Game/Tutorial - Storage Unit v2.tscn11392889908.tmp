@@ -33,46 +33,55 @@ tile_map_data = PackedByteArray("AAAHAAAACQACAAAAAAAHAAEACQACAAAAAAAHAAIACQACAAA
 [node name="Player" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="0" unique_id=1761221807]
 position = Vector2(264, 372)
 
-[node name="Storage Van" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="1" unique_id=726660232]
+[node name="CutsceneVan" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="1" unique_id=469672315 instance=ExtResource("2_1yrtn")]
+position = Vector2(389, 242)
+
+[node name="Storage Van" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="2" unique_id=726660232]
 position = Vector2(198, 282)
 
-[node name="Table4" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="2" unique_id=382743384 instance=ExtResource("3_uof60")]
+[node name="Loading Carpet" parent="Y-Sorting/Storage Van" index="0" unique_id=1540208415]
+offset = Vector2(0, 0)
+
+[node name="Moving Van" parent="Y-Sorting/Storage Van" index="1" unique_id=1838349624]
+collision_mask = 0
+
+[node name="Leave Area" parent="Y-Sorting/Storage Van" index="2" unique_id=632129231]
+collision_layer = 0
+
+[node name="Table4" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="3" unique_id=382743384 instance=ExtResource("3_uof60")]
 position = Vector2(304, 127)
 canPush = true
 canPull = true
 tetroShape = "two_by_two_tetromino"
 
-[node name="Wood_Chair_Side" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="3" unique_id=540031061 instance=ExtResource("4_wk5xv")]
+[node name="Wood_Chair_Side" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="4" unique_id=540031061 instance=ExtResource("4_wk5xv")]
 position = Vector2(320, 87)
 tetroShape = "one_by_one_tetromino"
 
-[node name="Wood_Chair_Side2" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="4" unique_id=1926436679 instance=ExtResource("4_wk5xv")]
+[node name="Wood_Chair_Side2" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="5" unique_id=1926436679 instance=ExtResource("4_wk5xv")]
 position = Vector2(296, 55)
 tetroShape = "one_by_one_tetromino"
 
-[node name="Fire Chair" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="5" unique_id=1558873868 instance=ExtResource("4_wk5xv")]
+[node name="Fire Chair" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="6" unique_id=1558873868 instance=ExtResource("4_wk5xv")]
 modulate = Color(1, 0, 0, 1)
 position = Vector2(320, 55)
 tetroShape = "one_by_one_tetromino"
 
-[node name="Ice Chair" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="6" unique_id=938827923 instance=ExtResource("4_wk5xv")]
+[node name="Ice Chair" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="7" unique_id=938827923 instance=ExtResource("4_wk5xv")]
 modulate = Color(0, 1, 1, 1)
 position = Vector2(296, 87)
 tetroShape = "one_by_one_tetromino"
 
-[node name="Fridge" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="7" unique_id=1812637953 instance=ExtResource("5_6g0q4")]
+[node name="Fridge" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="8" unique_id=1812637953 instance=ExtResource("5_6g0q4")]
 position = Vector2(144, 63)
 tetroShape = "four_by_two_tetromino"
 
-[node name="TV_and_desk_front" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="8" unique_id=472159025 instance=ExtResource("6_qbcyv")]
+[node name="TV_and_desk_front" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="9" unique_id=472159025 instance=ExtResource("6_qbcyv")]
 position = Vector2(240, 55)
 
-[node name="Couch" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="9" unique_id=741030412 instance=ExtResource("7_5g5vi")]
+[node name="Couch" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="10" unique_id=741030412 instance=ExtResource("7_5g5vi")]
 position = Vector2(408, 63)
 tetroShape = "two_by_two_tetromino"
-
-[node name="Van" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="10" unique_id=469672315 instance=ExtResource("2_1yrtn")]
-position = Vector2(389, 242)
 
 [node name="Electric Couch" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="11" unique_id=1376933625 instance=ExtResource("7_5g5vi")]
 modulate = Color(1, 1, 0, 1)
@@ -113,4 +122,5 @@ one_way_collision_margin = 0.0
 
 [connection signal="body_entered" from="TriggerSensor" to="TriggerSensor" method="_on_body_entered"]
 
+[editable path="Y-Sorting/Storage Van"]
 [editable path="HUD"]

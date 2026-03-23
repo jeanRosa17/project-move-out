@@ -21,11 +21,12 @@ func clearVan() -> void:
 		for i in range(bodies.size()):
 			if bodies[i].is_in_group("Furniture"):
 				hud.addPackedFurniture(bodies[i].getShape())
-				bodies[i].queue_free()
+				bodies[i].packInBox()
+				#bodies[i].queue_free()
 		
 		hud.runTetris()
 
-# tracks if the player is in the truck
+# tracks if the player is on the carpet.
 func _on_body_entered(body: Node2D) -> void:
 	if (body is Player):
 		playerInArea = true;

@@ -74,6 +74,9 @@ texture = ExtResource("6_tb8vy")
 
 [node name="Moving Van" parent="." unique_id=1838349624 instance=ExtResource("7_d0ymk")]
 position = Vector2(160, 115)
+hasJohn = true
+keyIn = true
+direction = 2
 
 [node name="Transition SFX" type="AudioStreamPlayer2D" parent="." unique_id=1438993492]
 stream = ExtResource("12_7jtd7")

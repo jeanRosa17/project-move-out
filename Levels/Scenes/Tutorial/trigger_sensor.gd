@@ -1,6 +1,6 @@
 extends Area2D
 var triggered:bool = false
-@onready var hud: HUDManager = self.get_parent().get_parent().get_node("%HUD")
+@onready var hud: HUDManager = %HUD
 @export var tag: DialogueTag
 
 func _ready() -> void:
