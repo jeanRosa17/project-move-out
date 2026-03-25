@@ -53,21 +53,17 @@ position = Vector2(79, 96)
 
 [node name="Wood_Chair_Side" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="3" unique_id=797205660 instance=ExtResource("2_lv43d")]
 position = Vector2(128, 376)
-tetroShape = 5
 
 [node name="Wood_Chair_Side2" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="4" unique_id=1857191033 instance=ExtResource("2_lv43d")]
 position = Vector2(129, 344)
-tetroShape = 5
 
 [node name="Fire Chair" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="5" unique_id=734943200 instance=ExtResource("2_lv43d")]
 modulate = Color(1, 0, 0, 1)
 position = Vector2(190, 341)
-tetroShape = 5
 
 [node name="Ice Chair" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="6" unique_id=1435261916 instance=ExtResource("2_lv43d")]
 modulate = Color(0, 1, 1, 1)
 position = Vector2(190, 376)
-tetroShape = 5
 
 [node name="Fridge" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="7" unique_id=1812637953 instance=ExtResource("3_kpihc")]
 position = Vector2(19, 360)
@@ -75,28 +71,28 @@ tetroShape = 5
 
 [node name="TV_and_desk_front" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="8" unique_id=472159025 instance=ExtResource("4_ar4rx")]
 position = Vector2(144, 296)
-tetroShape = 5
+tetroShape = 6
 
 [node name="Electric Couch" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="9" unique_id=741030412 instance=ExtResource("5_32b00")]
 modulate = Color(1, 1, 0, 1)
 position = Vector2(128, 225)
-tetroShape = 5
+tetroShape = 2
 
 [node name="Table4" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="10" unique_id=382743384 instance=ExtResource("6_1noel")]
 position = Vector2(159, 357)
 canPush = true
 canPull = true
-tetroShape = 5
+tetroShape = 1
 
 [node name="Couch" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="11" unique_id=2116921844 instance=ExtResource("5_32b00")]
 position = Vector2(180, 225)
-tetroShape = 5
+tetroShape = 2
 
 [node name="Bathtub" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="12" unique_id=1637260061 instance=ExtResource("9_s77ne")]
 position = Vector2(400, 392)
 canPush = false
 canPull = false
-tetroShape = 5
+tetroShape = 6
 
 [node name="Ice Bed" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="13" unique_id=188610600 instance=ExtResource("10_te8i2")]
 modulate = Color(0, 1, 1, 1)
@@ -106,14 +102,14 @@ tetroShape = 5
 [node name="Ice Wardrobe" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="14" unique_id=1459330375 instance=ExtResource("11_8k0qu")]
 modulate = Color(0, 1, 1, 1)
 position = Vector2(347, 69)
-tetroShape = 5
+tetroShape = 2
 
 [node name="Ice Table" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="15" unique_id=487739937 instance=ExtResource("6_1noel")]
 modulate = Color(0, 1, 1, 1)
 position = Vector2(523, 78)
 canPush = true
 canPull = true
-tetroShape = 5
+tetroShape = 1
 
 [node name="Ice Shelf" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="16" unique_id=1973851103 instance=ExtResource("12_rvsks")]
 modulate = Color(0, 1, 1, 1)
@@ -130,12 +126,12 @@ modulate = Color(1, 0, 0, 1)
 position = Vector2(464, 376)
 canPush = true
 canPull = true
-tetroShape = 5
+tetroShape = 1
 
 [node name="Fire Wardrobe" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="19" unique_id=1903104380 instance=ExtResource("11_8k0qu")]
 modulate = Color(1, 0, 0, 1)
 position = Vector2(472, 218)
-tetroShape = 5
+tetroShape = 2
 
 [node name="Fire Shelf" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="20" unique_id=1519652287 instance=ExtResource("12_rvsks")]
 modulate = Color(1, 0, 0, 1)
@@ -144,17 +140,15 @@ tetroShape = 5
 
 [node name="Pot" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="21" unique_id=1176267150 instance=ExtResource("13_m46ep")]
 position = Vector2(88, 232)
-tetroShape = 5
 
 [node name="Toilet_Side" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="22" unique_id=1404211309 instance=ExtResource("14_s77ne")]
 position = Vector2(400, 320)
 canPush = false
 canPull = false
-tetroShape = 5
+tetroShape = 1
 
 [node name="Sink_Side" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="23" unique_id=1426637549 instance=ExtResource("15_te8i2")]
 position = Vector2(312, 320)
-tetroShape = 5
 
 [node name="Mechanics" type="Node" parent="." index="8" unique_id=1636108149]
 

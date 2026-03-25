@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://b7qk52eapta2s" path="res://Assets/Objects/Dressers & Shelves/Scenes/wooden_wardrobe_front.tscn" id="18_6pr51"]
 [ext_resource type="PackedScene" uid="uid://bujcbosiagjri" path="res://Assets/Objects/Dressers & Shelves/Scenes/wooden_shelf_front.tscn" id="19_rwqj1"]
 [ext_resource type="PackedScene" uid="uid://cl3ww3w6r3n1r" path="res://Assets/Objects/Kitchen/Scenes/Fridge.tscn" id="19_yn8gu"]
+[ext_resource type="PackedScene" uid="uid://cew0q8r43cndi" path="res://Assets/Objects/Beds/Scene/Double_BedROTATE.tscn" id="23_4alro"]
 [ext_resource type="PackedScene" uid="uid://ce4x5g5hrvxce" path="res://Assets/Objects/Bathroom/Scenes/Bathtub.tscn" id="24_v8k2n"]
 [ext_resource type="AudioStream" uid="uid://dy61bwuip8a27" path="res://Assets/Audio/lvl1.wav" id="25_4alro"]
 
@@ -204,6 +205,11 @@ position = Vector2(356, 244)
 
 [node name="Shelf" parent="Y-Sorting" unique_id=868092663 instance=ExtResource("19_rwqj1")]
 position = Vector2(184, 80)
+
+[node name="Double Bed" parent="." unique_id=424148122 instance=ExtResource("23_4alro")]
+position = Vector2(80, 431)
+rotation = -1.5708
+scale = Vector2(1.73333, 1.62712)
 
 [node name="Garage" parent="." unique_id=220656495 instance=ExtResource("13_ymjk0")]
 z_index = -1
