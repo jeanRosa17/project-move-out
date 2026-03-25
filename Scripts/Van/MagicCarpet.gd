@@ -24,7 +24,7 @@ func clearVan() -> void:
 				bodies[i].packInBox()
 				#bodies[i].queue_free()
 		
-		hud.runTetris()
+		# hud.runTetris()
 
 # tracks if the player is on the carpet.
 func _on_body_entered(body: Node2D) -> void:

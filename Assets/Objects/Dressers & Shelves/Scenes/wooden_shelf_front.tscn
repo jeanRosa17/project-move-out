@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d3ls4oxtr262i" path="res://Assets/Objects/Dressers & Shelves/wooden_shelf-sheet.png" id="2_8qywr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
-size = Vector2(30, 16)
+size = Vector2(30, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
 size = Vector2(40, 48)
@@ -27,7 +27,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 32, 48)
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=2122759420]
-position = Vector2(0, 16)
+position = Vector2(0, 12)
 shape = SubResource("RectangleShape2D_xnri0")
 
 [node name="AreaDetector" type="Area2D" parent="." unique_id=942609934 groups=["Furniture"]]
