@@ -38,7 +38,8 @@ func physicsUpdate(_delta:float) -> void:
 	
 	self.body.velocity = Vector2.ZERO
 	if (self.getManager().furniture && self.getManager().furniture.isPushed):
-		self.getManager().furniture.linear_velocity = Vector2.ZERO
+		pass
+		#self.getManager().furniture.linear_velocity = Vector2.ZERO
 	#print(self.body.velocity)
 	#self.decelerate(delta)
 	self.body.move_and_slide()

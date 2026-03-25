@@ -9,6 +9,7 @@ var i:int = 0
 ## A Dictionary with 
 @export var events:Array[Vector2] = []
 @onready var player: Player = %Player
+@export var van:StorageVan
 #@onready var camera: Camera2D = $"../Y-Sorting/Player/Camera2D2"
 @onready var view: AnimatedSprite2D = $AnimatedSprite2D
 @onready var y_sorting: Node2D = $".."
@@ -61,6 +62,9 @@ func _process(_delta: float) -> void:
 				self.player.setControls(true)
 				self.player.manager.getState().enable()
 				self.player.getCamera().make_current()
+				#self.view.pause()
+				self.van.visible = true
+				self.queue_free()
 				return
 			tween = null
 			tween = create_tween()
