@@ -263,7 +263,7 @@ func _physics_process(_delta: float) -> void:
 	
 				#player.global_position = player.global_position.move_toward(self.global_position, .9)
 				#self.global_position = self.global_position.move_toward(player.global_position, 1)
-				self.global_position = self.global_position.move_toward(self.position + self.anchorPoint, 1)
+				self.global_position = self.global_position.move_toward(self.position + self.anchorPoint, 0.5)
 		
 			
 				pass
