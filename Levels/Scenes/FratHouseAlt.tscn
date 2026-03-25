@@ -289,8 +289,12 @@ position = Vector2(256, 592)
 rotation = 1.5740001
 scale = Vector2(0.8402588, 0.8401288)
 
-[node name="HUD" parent="." unique_id=720819547 instance=ExtResource("3_jdgei")]
+[node name="HUD" parent="." unique_id=720819547 node_paths=PackedStringArray("ap", "player", "tetris") instance=ExtResource("3_jdgei")]
 unique_name_in_owner = true
+visible = false
+ap = NodePath("Level Results/Node2D/AnimationPlayer")
+player = NodePath("../Y-Sorting/Player")
+tetris = NodePath("../PostLevelMinigame")
 
 [node name="ListHUD" parent="HUD" index="0" unique_id=1378780322]
 visible = false
