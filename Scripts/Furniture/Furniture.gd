@@ -530,7 +530,7 @@ func _on_bot_area_exited(body: Node2D) -> void:
 			canMovePositiveY = true
 #endregion
 
-func getShape() -> String:
+func getShape() -> Data.Tetronimo:
 	# gives the tetro shape of the furniture
 	return tetroShape
 

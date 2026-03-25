@@ -382,25 +382,25 @@ func _physics_process(delta: float) -> void:
 func getCamera() -> Camera2D:
 	return $TetrisCamera
 
-func add_tetrominos(tetromino: String) -> void:
-	if (tetromino == "one_by_one_tetromino"):
+func add_tetrominos(tetromino: Data.Tetronimo) -> void:
+	if (tetromino == Data.Tetronimo.one_by_one):
 		tetrominoes.append(one_by_one_tetromino)
-	elif (tetromino == "two_by_two_tetromino"):
+	elif (tetromino == Data.Tetronimo.two_by_two):
 		tetrominoes.append(two_by_two_tetromino)
-	elif (tetromino == "two_by_one_tetromino"):
+	elif (tetromino == Data.Tetronimo.two_by_one):
 		tetrominoes.append(two_by_one_tetromino)
-	elif (tetromino == "three_by_one_tetromino"):
+	elif (tetromino == Data.Tetronimo.three_by_one):
 		tetrominoes.append(three_by_one_tetromino)
-	elif (tetromino == "three_by_two_tetromino"):
+	elif (tetromino == Data.Tetronimo.three_by_two):
 		tetrominoes.append(three_by_two_tetromino)
-	elif (tetromino == "three_by_three_tetromino"):
+	elif (tetromino == Data.Tetronimo.three_by_three):
 		tetrominoes.append(three_by_three_tetromino)
-	elif (tetromino == "four_by_two_tetromino"):
+	elif (tetromino == Data.Tetronimo.four_by_two):
 		tetrominoes.append(four_by_two_tetromino)
-	elif (tetromino == "four_by_three_tetromino"):
+	elif (tetromino == Data.Tetronimo.four_by_three):
 		tetrominoes.append(four_by_three_tetromino)
 	else:
-		print("Incorrectly named tetromino")
+		print("Incorrect tetronimo assignment")
 
 func choose_tetromino() -> Array:
 	var selected_tetromino: Array
