@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://bhgqgyxirlph2"]
+
+[ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_0qre2"]
+[ext_resource type="Texture2D" uid="uid://krxola7m7r80" path="res://Assets/Objects/Dressers & Shelves/red_wood_Dressor_1.png" id="2_ebmuv"]
+[ext_resource type="Texture2D" uid="uid://m5smp1anme4l" path="res://Assets/Objects/Dressers & Shelves/red_wood_dressor_2..png" id="3_gact8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
+size = Vector2(48, 24.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
+size = Vector2(52, 52)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxx50"]
+size = Vector2(32, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v6yix"]
+size = Vector2(35, 50)
+
+[node name="red_wood_dressor_front_ROTATE" type="RigidBody2D" unique_id=157903360 node_paths=PackedStringArray("rotatedVersion") groups=["Furniture"]]
+collision_layer = 2
+collision_mask = 7
+gravity_scale = 0.0
+can_sleep = false
+lock_rotation = true
+script = ExtResource("1_0qre2")
+canPush = true
+canPull = true
+canRotate = true
+rotatedVersion = NodePath("red_wood_dressor_side")
+metadata/_custom_type_script = "uid://c2vh27coguldq"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1058969184]
+texture = ExtResource("2_ebmuv")
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=612241086]
+position = Vector2(0, 10.25)
+shape = SubResource("RectangleShape2D_xnri0")
+
+[node name="AreaDetector" type="Area2D" parent="." unique_id=339774805 groups=["Furniture"]]
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector" unique_id=1446257221]
+visible = false
+shape = SubResource("RectangleShape2D_ardoa")
+
+[node name="red_wood_dressor_side" type="RigidBody2D" parent="." unique_id=2037034484 groups=["Furniture"]]
+position = Vector2(0, 1)
+collision_layer = 2
+collision_mask = 7
+gravity_scale = 0.0
+can_sleep = false
+lock_rotation = true
+script = ExtResource("1_0qre2")
+canPush = true
+canPull = true
+metadata/_custom_type_script = "uid://c2vh27coguldq"
+
+[node name="Sprite2D" type="Sprite2D" parent="red_wood_dressor_side" unique_id=1639943907]
+texture = ExtResource("3_gact8")
+
+[node name="Collision" type="CollisionShape2D" parent="red_wood_dressor_side" unique_id=62788690]
+position = Vector2(0, 14.5)
+shape = SubResource("RectangleShape2D_mxx50")
+
+[node name="AreaDetector" type="Area2D" parent="red_wood_dressor_side" unique_id=564324661 groups=["Furniture"]]
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="red_wood_dressor_side/AreaDetector" unique_id=1388823933]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_v6yix")
+
+[connection signal="body_shape_entered" from="AreaDetector" to="." method="_on_area_detector_body_shape_entered"]
+[connection signal="body_shape_exited" from="AreaDetector" to="." method="_on_area_detector_body_shape_exited"]
+[connection signal="body_shape_entered" from="red_wood_dressor_side/AreaDetector" to="red_wood_dressor_side" method="_on_area_detector_body_shape_entered"]
+[connection signal="body_shape_exited" from="red_wood_dressor_side/AreaDetector" to="red_wood_dressor_side" method="_on_area_detector_body_shape_exited"]
