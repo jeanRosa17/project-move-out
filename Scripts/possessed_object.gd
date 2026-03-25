@@ -10,7 +10,6 @@ extends Node2D
 
 @export var regular_chair_scene: PackedScene
 
-
 var _start_position: Vector2
 var _end_position: Vector2
 var _state: String = "moving_to_end"
@@ -78,14 +77,11 @@ func unpossess_and_replace() -> void:
 		var parent = get_parent()
 		parent.add_child(new_chair)
 
-		new_chair.global_position = global_position
-		new_chair.global_rotation = global_rotation
-		new_chair.global_scale = global_scale
+		new_chair.global_position = self.global_position
+		new_chair.global_rotation = self.global_rotation
+		new_chair.global_scale = self.global_scale
 
-		for g in get_groups():
-			if g != "PossessedFurniture":
-				new_chair.add_to_group(g)
 	else:
-		push_warning("regular_chair_scene is not assigned on PossessedChair!")
+		push_warning("chair has alreayd been replaced and unpossessed")
 
 	queue_free()

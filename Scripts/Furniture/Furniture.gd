@@ -14,7 +14,7 @@ const PACK_UP_BOX = preload("uid://k0rgciqs0uce")
 @export var canPull:bool = false
 @export var canRotate:bool
 @export var rotatedVersion:Furniture
-@export var tetroShape:String = "placeholder"
+@export var tetroShape:Data.Tetronimo = Data.Tetronimo.one_by_one
 var rotated: int = 0
 
 @export var weight:int = 0
@@ -530,7 +530,7 @@ func _on_bot_area_exited(body: Node2D) -> void:
 			canMovePositiveY = true
 #endregion
 
-func getShape() -> String:
+func getShape() -> Data.Tetronimo:
 	# gives the tetro shape of the furniture
 	return tetroShape
 

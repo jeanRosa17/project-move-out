@@ -4,12 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://cpplw5lqrp5qi" path="res://Assets/Objects/Chairs/orange_chair_side.png" id="2_gapxu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
-size = Vector2(16, 12)
+size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
 size = Vector2(18, 29)
 
-[node name="Orange_Chair_Side" type="RigidBody2D" groups=["Furniture"]]
+[node name="Orange_Chair_Side" type="RigidBody2D" unique_id=1059308004 groups=["Furniture"]]
 collision_layer = 2
 collision_mask = 7
 gravity_scale = 0.0
@@ -20,19 +20,19 @@ canPush = true
 canPull = true
 metadata/_custom_type_script = "uid://c2vh27coguldq"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1909643502]
 texture = ExtResource("2_gapxu")
 flip_h = true
 
-[node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4)
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=309060913]
+position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_xnri0")
 
-[node name="AreaDetector" type="Area2D" parent="." groups=["Furniture"]]
+[node name="AreaDetector" type="Area2D" parent="." unique_id=597852463 groups=["Furniture"]]
 collision_layer = 2
 collision_mask = 7
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector" unique_id=1556798310]
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_ardoa")
 

@@ -54,6 +54,7 @@ Furniture="This is where the objects should be in in terms of moving them"
 player_collision="This is the player's collision box"
 "Immovable Object"="These are objects that are not movable/static"
 "World Bounds"="Boundaries of the world"
+"Possessed Item"="This is if the object is a possessed furniture item that we plan on reverting once unpossessed"
 
 [input]
 

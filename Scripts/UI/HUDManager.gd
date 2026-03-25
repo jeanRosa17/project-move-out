@@ -8,7 +8,7 @@ class_name HUDManager
 @export var textbox: DialogueManager 
 @onready var ap: AnimationPlayer = $"Level Results/Node2D/AnimationPlayer"
 
-@export var packedFurniture: Array[String] = []
+@export var packedFurniture: Array[Data.Tetronimo] = []
 @export var player: Player
 @export var tetris:Tetris
 var tetris_camera: Camera2D 
@@ -86,9 +86,9 @@ func setDialogueTo(dTag:DialogueTag) -> void:
 	print(self.dialogue.visible)
 	self.textbox.setDialogueTo(dTag)
 
-func addPackedFurniture(newFurniture:String) -> void:
+func addPackedFurniture(newFurniture:Data.Tetronimo) -> void:
 	packedFurniture.append(newFurniture)
-	print("new tetro: " + packedFurniture[-1])
+	#print("new tetro: " + packedFurniture[-1])
 
 func checkResults() -> void:
 	## Get score from Van script and display here.

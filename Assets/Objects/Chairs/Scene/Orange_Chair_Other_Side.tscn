@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cpplw5lqrp5qi" path="res://Assets/Objects/Chairs/orange_chair_side.png" id="2_m7tpn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
-size = Vector2(16, 12)
+size = Vector2(16, 17)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
 size = Vector2(18, 29)
@@ -24,7 +24,7 @@ metadata/_custom_type_script = "uid://c2vh27coguldq"
 texture = ExtResource("2_m7tpn")
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1796299810]
-position = Vector2(0, 4)
+position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_xnri0")
 
 [node name="AreaDetector" type="Area2D" parent="." unique_id=16917673 groups=["Furniture"]]

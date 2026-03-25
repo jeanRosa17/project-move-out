@@ -13,3 +13,14 @@ enum Direction {
 	RIGHT,
 	DOWN
 }
+
+enum Tetronimo {
+	one_by_one,
+	two_by_two,
+	three_by_three,
+	two_by_one,
+	three_by_one,
+	three_by_two,
+	four_by_two,
+	four_by_three
+}

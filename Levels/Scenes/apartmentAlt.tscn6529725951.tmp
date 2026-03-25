@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://xroywmkyatmt"]
+[gd_scene format=4 uid="uid://6cyov1n0p1t4"]
 
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="1_3qy5o"]
 [ext_resource type="PackedScene" uid="uid://d3rjdvbwh7auh" path="res://Levels/Scenes/Garadge2.tscn" id="2_m2aof"]
@@ -84,44 +84,43 @@ follow_viewport_scale = 3.0
 
 [node name="Wood_Chair_Side" parent="Y-Sorting" unique_id=131325281 instance=ExtResource("16_x3x0i")]
 position = Vector2(128, 376)
-tetroShape = 5
+tetroShape = "one_by_one_tetromino"
 
 [node name="Wood_Chair_Side2" parent="Y-Sorting" unique_id=916656151 instance=ExtResource("16_x3x0i")]
 position = Vector2(129, 344)
-tetroShape = 5
+tetroShape = "one_by_one_tetromino"
 
 [node name="Fire Chair" parent="Y-Sorting" unique_id=1911597522 instance=ExtResource("16_x3x0i")]
 modulate = Color(1, 0, 0, 1)
 position = Vector2(190, 341)
-tetroShape = 5
+tetroShape = "one_by_one_tetromino"
 
 [node name="Ice Chair" parent="Y-Sorting" unique_id=652729025 instance=ExtResource("16_x3x0i")]
 modulate = Color(0, 1, 1, 1)
 position = Vector2(190, 376)
-tetroShape = 5
+tetroShape = "one_by_one_tetromino"
 
 [node name="Fridge" parent="Y-Sorting" unique_id=842518211 instance=ExtResource("17_toc1w")]
 position = Vector2(19, 360)
-tetroShape = 5
+tetroShape = "three_by_two_tetromino"
 
 [node name="TV_and_desk_front" parent="Y-Sorting" unique_id=62354660 instance=ExtResource("18_en5i7")]
 position = Vector2(144, 296)
-tetroShape = 5
 
 [node name="Electric Couch" parent="Y-Sorting" unique_id=571092678 instance=ExtResource("19_obgx0")]
 modulate = Color(1, 1, 0, 1)
 position = Vector2(128, 225)
-tetroShape = 5
+tetroShape = "three_by_three_tetromino"
 
 [node name="Table4" parent="Y-Sorting" unique_id=782823571 instance=ExtResource("15_iaufo")]
 position = Vector2(159, 357)
 canPush = true
 canPull = true
-tetroShape = 5
+tetroShape = "two_by_two_tetromino"
 
 [node name="Couch" parent="Y-Sorting" unique_id=1241280827 instance=ExtResource("19_obgx0")]
 position = Vector2(180, 225)
-tetroShape = 5
+tetroShape = "three_by_three_tetromino"
 
 [node name="World Border" type="StaticBody2D" parent="Y-Sorting" unique_id=1070276336 groups=["Immovable Object", "World Bounds"]]
 visible = false
@@ -160,58 +159,67 @@ position = Vector2(401, 307)
 position = Vector2(320, 393)
 canPush = false
 canPull = false
+tetroShape = "four_by_two_tetromino"
 
 [node name="Ice Bed" parent="Y-Sorting" unique_id=270086506 instance=ExtResource("14_uekni")]
 modulate = Color(0, 1, 1, 1)
 position = Vector2(512, 151)
+tetroShape = "three_by_two_tetromino"
 
 [node name="Ice Wardrobe" parent="Y-Sorting" unique_id=582048577 instance=ExtResource("15_vn673")]
 modulate = Color(0, 1, 1, 1)
 position = Vector2(347, 69)
+tetroShape = "three_by_three_tetromino"
 
 [node name="Ice Table" parent="Y-Sorting" unique_id=2124681338 instance=ExtResource("15_iaufo")]
 modulate = Color(0, 1, 1, 1)
 position = Vector2(523, 78)
 canPush = true
 canPull = true
+tetroShape = "two_by_two_tetromino"
 
 [node name="Ice Shelf" parent="Y-Sorting" unique_id=1156303158 instance=ExtResource("16_0g7f6")]
 modulate = Color(0, 1, 1, 1)
 position = Vector2(399, 69)
+tetroShape = "three_by_two_tetromino"
 
 [node name="Fire Bed" parent="Y-Sorting" unique_id=400182896 instance=ExtResource("14_uekni")]
 modulate = Color(1, 0, 0, 1)
 position = Vector2(512, 501)
+tetroShape = "three_by_two_tetromino"
 
 [node name="Table" parent="Y-Sorting" unique_id=823164094 instance=ExtResource("15_iaufo")]
 modulate = Color(1, 0, 0, 1)
 position = Vector2(439, 508)
 canPush = true
 canPull = true
+tetroShape = "two_by_two_tetromino"
 
 [node name="Fire Wardrobe" parent="Y-Sorting" unique_id=1276144949 instance=ExtResource("15_vn673")]
 modulate = Color(1, 0, 0, 1)
 position = Vector2(330, 457)
+tetroShape = "three_by_three_tetromino"
 
 [node name="Fire Shelf" parent="Y-Sorting" unique_id=373180689 instance=ExtResource("16_0g7f6")]
 modulate = Color(1, 0, 0, 1)
 position = Vector2(376, 455)
+tetroShape = "three_by_two_tetromino"
 
 [node name="Pot" parent="Y-Sorting" unique_id=170532912 instance=ExtResource("15_2wgx8")]
 position = Vector2(219, 268)
+tetroShape = "one_by_one_tetromino"
 
 [node name="Player" parent="Y-Sorting" unique_id=2126433676 instance=ExtResource("9_en5i7")]
 position = Vector2(121, -62)
 safe_margin = 1.159
 canControl = false
 
-[node name="Moving Van" type="Node2D" parent="Y-Sorting" unique_id=1716992437 node_paths=PackedStringArray("player")]
+[node name="Moving Van" type="Node2D" parent="Y-Sorting" unique_id=1716992437]
 position = Vector2(121, -68)
 script = ExtResource("28_2wgx8")
 startPos = Vector2(724, -68)
 skipCutscene = false
 events = Array[Vector2]([Vector2(128, -68), Vector2(128, 96), Vector2(52, 96)])
-player = NodePath("../Player")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Y-Sorting/Moving Van" unique_id=2011634438]
 sprite_frames = ExtResource("19_srnyy")
