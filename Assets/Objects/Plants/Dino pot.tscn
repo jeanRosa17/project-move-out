@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://byhkf48wxg1gp"]
+[gd_scene format=3 uid="uid://byhkf48wxg1gp"]
 
 [ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_j5gua"]
 [ext_resource type="Texture2D" uid="uid://ifsk0jrgnlgr" path="res://Assets/Objects/Plants/dino_tree_pot_1.png" id="2_jb3vy"]
@@ -9,7 +9,7 @@ size = Vector2(30, 54)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gifpp"]
 size = Vector2(38, 72)
 
-[node name="Dino Pot" type="RigidBody2D" groups=["Furniture"]]
+[node name="Dino Pot" type="RigidBody2D" unique_id=2016765540 groups=["Furniture"]]
 y_sort_enabled = true
 collision_layer = 2
 collision_mask = 7
@@ -17,20 +17,21 @@ gravity_scale = 0.0
 script = ExtResource("1_j5gua")
 canPush = true
 canPull = true
+tetroShape = 6
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1454923752]
 position = Vector2(0, -7.5)
 texture = ExtResource("2_jb3vy")
 region_rect = Rect2(29, 28, 14, 15)
 
-[node name="Collision" type="CollisionShape2D" parent="."]
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=2072667887]
 shape = SubResource("RectangleShape2D_xnri0")
 
-[node name="AreaDetector" type="Area2D" parent="." groups=["Furniture"]]
+[node name="AreaDetector" type="Area2D" parent="." unique_id=1041668334 groups=["Furniture"]]
 position = Vector2(0, -1)
 collision_layer = 2
 collision_mask = 7
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector" unique_id=597835594]
 position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_gifpp")

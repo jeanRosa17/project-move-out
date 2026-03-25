@@ -19,6 +19,7 @@ script = ExtResource("1_jcvgw")
 canPush = true
 canPull = true
 canRotate = true
+tetroShape = 2
 metadata/_custom_type_script = "uid://c2vh27coguldq"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1572514591]

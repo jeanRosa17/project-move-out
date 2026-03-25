@@ -9,7 +9,7 @@ size = Vector2(32, 24)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
 size = Vector2(40, 31.5)
 
-[node name="Microwave" type="RigidBody2D" groups=["Furniture"]]
+[node name="Microwave" type="RigidBody2D" unique_id=1875261672 groups=["Furniture"]]
 z_index = 1
 collision_layer = 2
 collision_mask = 7
@@ -18,24 +18,25 @@ can_sleep = false
 lock_rotation = true
 script = ExtResource("1_q7omh")
 canLift = true
+tetroShape = 1
 metadata/_custom_type_script = "uid://c2vh27coguldq"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=328722197]
 position = Vector2(0, -4)
 texture = ExtResource("2_ysc8m")
 region_enabled = true
 region_rect = Rect2(192, 0, 32, 32)
 
-[node name="Collision" type="CollisionShape2D" parent="."]
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1637004814]
 position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_xnri0")
 
-[node name="AreaDetector" type="Area2D" parent="." groups=["Furniture"]]
+[node name="AreaDetector" type="Area2D" parent="." unique_id=373421302 groups=["Furniture"]]
 position = Vector2(0, -4)
 collision_layer = 2
 collision_mask = 7
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector" unique_id=1977979234]
 shape = SubResource("RectangleShape2D_ardoa")
 
 [connection signal="body_shape_entered" from="AreaDetector" to="." method="_on_area_detector_body_shape_entered"]

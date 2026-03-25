@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bfp82m6exqyhy"]
+[gd_scene format=3 uid="uid://bfp82m6exqyhy"]
 
 [ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_04rml"]
 [ext_resource type="Texture2D" uid="uid://c8v71s7tilgg5" path="res://Assets/Objects/Bathroom/Bathroom Sink-Sheet.png" id="2_q2dll"]
@@ -9,29 +9,30 @@ size = Vector2(28, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
 size = Vector2(30, 32)
 
-[node name="Sink" type="RigidBody2D" groups=["Furniture"]]
+[node name="Sink" type="RigidBody2D" unique_id=1155474016 groups=["Furniture"]]
 collision_layer = 2
 collision_mask = 7
 gravity_scale = 0.0
 can_sleep = false
 lock_rotation = true
 script = ExtResource("1_04rml")
+tetroShape = 3
 metadata/_custom_type_script = "uid://c2vh27coguldq"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2079446877]
 texture = ExtResource("2_q2dll")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
 
-[node name="Collision" type="CollisionShape2D" parent="."]
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=418146570]
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_xnri0")
 
-[node name="AreaDetector" type="Area2D" parent="." groups=["Furniture"]]
+[node name="AreaDetector" type="Area2D" parent="." unique_id=2117915108 groups=["Furniture"]]
 collision_layer = 2
 collision_mask = 7
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector" unique_id=1305643417]
 shape = SubResource("RectangleShape2D_ardoa")
 
 [connection signal="body_shape_entered" from="AreaDetector" to="." method="_on_area_detector_body_shape_entered"]

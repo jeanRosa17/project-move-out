@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://brjqfn8q76oca"]
+[gd_scene format=3 uid="uid://brbibr7jawoax"]
 
 [ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_wceh0"]
 [ext_resource type="Texture2D" uid="uid://ckshi0keqqhq2" path="res://Assets/Objects/Couches/Couch-Sheet.png" id="2_ddi0d"]
@@ -27,6 +27,7 @@ canPush = true
 canPull = true
 canRotate = true
 rotatedVersion = NodePath("red_couch_side")
+tetroShape = 2
 metadata/_custom_type_script = "uid://c2vh27coguldq"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=272678443]

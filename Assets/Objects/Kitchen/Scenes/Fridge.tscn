@@ -17,6 +17,7 @@ collision_mask = 7
 gravity_scale = 0.0
 script = ExtResource("1_c6p5g")
 canLift = true
+tetroShape = 6
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=640295998]
 position = Vector2(0, -17.5)

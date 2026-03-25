@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ds1nqvgtuae71"]
+[gd_scene format=3 uid="uid://ds1nqvgtuae71"]
 
 [ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_wwlxk"]
 [ext_resource type="Texture2D" uid="uid://bh1tj50gjc856" path="res://Assets/Objects/Tables/wooden_table_1.png" id="2_wwlxk"]
@@ -9,7 +9,7 @@ size = Vector2(32, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
 size = Vector2(36, 50)
 
-[node name="wooden_table" type="RigidBody2D" groups=["Furniture"]]
+[node name="wooden_table" type="RigidBody2D" unique_id=1327416278 groups=["Furniture"]]
 collision_layer = 2
 collision_mask = 7
 gravity_scale = 0.0
@@ -18,21 +18,22 @@ lock_rotation = true
 script = ExtResource("1_wwlxk")
 canPush = true
 canPull = true
+tetroShape = 1
 metadata/_custom_type_script = "uid://c2vh27coguldq"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1076306922]
 texture = ExtResource("2_wwlxk")
 
-[node name="Collision" type="CollisionShape2D" parent="."]
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1051376536]
 position = Vector2(0, 6)
 shape = SubResource("RectangleShape2D_xnri0")
 
-[node name="AreaDetector" type="Area2D" parent="." groups=["Furniture"]]
+[node name="AreaDetector" type="Area2D" parent="." unique_id=73151564 groups=["Furniture"]]
 position = Vector2(0, -1)
 collision_layer = 2
 collision_mask = 7
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector" unique_id=1497628791]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_ardoa")
 

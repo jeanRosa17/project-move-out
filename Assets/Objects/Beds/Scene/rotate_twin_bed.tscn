@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dp0j6m3pxibyo"]
+[gd_scene format=3 uid="uid://di76aevxf5v36"]
 
 [ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_m1nfn"]
 [ext_resource type="Texture2D" uid="uid://c7mdlrt7tr8sm" path="res://Assets/Objects/Beds/bed_1.png" id="2_dv08c"]
@@ -21,6 +21,7 @@ canPush = true
 canPull = true
 canRotate = true
 rotatedVersion = NodePath("Twin_Bed_Side")
+tetroShape = 5
 metadata/_custom_type_script = "uid://c2vh27coguldq"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=216424484]

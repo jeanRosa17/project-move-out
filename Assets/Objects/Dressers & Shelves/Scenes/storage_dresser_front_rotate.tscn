@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://d3gtl41k58um7"]
+[gd_scene format=3 uid="uid://c6bu0hbwpu6kr"]
 
 [ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_tlwap"]
 [ext_resource type="Texture2D" uid="uid://dlpy2hrdysfqq" path="res://Assets/Objects/Dressers & Shelves/storage_dresser_front.png" id="2_lk6mh"]
@@ -27,6 +27,7 @@ canPush = true
 canPull = true
 canRotate = true
 rotatedVersion = NodePath("storage_dresser_side")
+tetroShape = 2
 metadata/_custom_type_script = "uid://c2vh27coguldq"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1308037397]
@@ -55,6 +56,7 @@ lock_rotation = true
 script = ExtResource("1_tlwap")
 canPush = true
 canPull = true
+tetroShape = 2
 metadata/_custom_type_script = "uid://c2vh27coguldq"
 
 [node name="Sprite2D" type="Sprite2D" parent="storage_dresser_side" unique_id=2104531141]
