@@ -156,30 +156,30 @@ var three_by_two_tetromino: Array = [
 	],
 	
 	#90 degrees
-	[{"pos": Vector2i(0, 2), "atlas": Vector2i(5, 0)}, 
-	{"pos": Vector2i(1, 2), "atlas": Vector2i(8, 1)}, 
-	{"pos": Vector2i(2, 2), "atlas": Vector2i(7, 0)}, 
-	{"pos": Vector2i(0, 3), "atlas": Vector2i(5, 2)}, 
-	{"pos": Vector2i(1, 3), "atlas": Vector2i(8, 2)}, 
-	{"pos": Vector2i(2, 3), "atlas": Vector2i(7, 2)}, 
-	],
-	
-	#180 degrees
-	[{"pos": Vector2i(2, 0), "atlas": Vector2i(5, 0)}, 
-	{"pos": Vector2i(3, 0), "atlas": Vector2i(7, 0)}, 
-	{"pos": Vector2i(2, 1), "atlas": Vector2i(5, 1)}, 
-	{"pos": Vector2i(3, 1), "atlas": Vector2i(7, 1)},
-	{"pos": Vector2i(2, 2), "atlas": Vector2i(5, 2)}, 
-	{"pos": Vector2i(3, 2), "atlas": Vector2i(7, 2)}
-	],
-	
-	#270 degrees
 	[{"pos": Vector2i(0, 0), "atlas": Vector2i(5, 0)}, 
 	{"pos": Vector2i(1, 0), "atlas": Vector2i(8, 1)},
 	{"pos": Vector2i(2, 0), "atlas": Vector2i(7, 0)}, 
 	{"pos": Vector2i(0, 1), "atlas": Vector2i(5, 2)}, 
 	{"pos": Vector2i(1, 1), "atlas": Vector2i(8, 2)},
 	{"pos": Vector2i(2, 1), "atlas": Vector2i(7, 2)}, 
+	],
+	
+	#180 degrees
+	[{"pos": Vector2i(1, 0), "atlas": Vector2i(5, 0)}, 
+	{"pos": Vector2i(2, 0), "atlas": Vector2i(7, 0)}, 
+	{"pos": Vector2i(1, 1), "atlas": Vector2i(5, 1)}, 
+	{"pos": Vector2i(2, 1), "atlas": Vector2i(7, 1)},
+	{"pos": Vector2i(1, 2), "atlas": Vector2i(5, 2)}, 
+	{"pos": Vector2i(2, 2), "atlas": Vector2i(7, 2)}
+	],
+	
+	#270 degrees
+	[{"pos": Vector2i(0, 1), "atlas": Vector2i(5, 0)}, 
+	{"pos": Vector2i(1, 1), "atlas": Vector2i(8, 1)}, 
+	{"pos": Vector2i(2, 1), "atlas": Vector2i(7, 0)}, 
+	{"pos": Vector2i(0, 2), "atlas": Vector2i(5, 2)}, 
+	{"pos": Vector2i(1, 2), "atlas": Vector2i(8, 2)}, 
+	{"pos": Vector2i(2, 2), "atlas": Vector2i(7, 2)}, 
 	],
 ]
 
@@ -430,7 +430,7 @@ func clear_tetromino() -> void:
 func rotate_tetromino() -> void:
 	if is_valid_rotation():
 		clear_tetromino()
-		rotation_index = (rotation_index - 1) % 4
+		rotation_index = (rotation_index + 1) % 4
 		active_tetromino = current_tetromino_type[rotation_index]
 		render_tetromino(active_tetromino, current_position)
 		audio_player.rotateSound()
