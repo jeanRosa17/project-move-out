@@ -1334,6 +1334,7 @@ _data = {
 y_sort_enabled = true
 collision_mask = 6
 motion_mode = 1
+wall_min_slide_angle = 3.1415927
 platform_on_leave = 2
 platform_floor_layers = 4278190080
 script = ExtResource("1_f5xin")

@@ -71,6 +71,7 @@ func update(_delta:float) -> void:
 	
 ## This method runs every _physics_process() frame of the StateManager.
 func physicsUpdate(_delta:float) -> void:
+	print(self.body.velocity)
 	if (manager.furniture && manager.furniture.isPushed):
 		if (!manager.furniture.canMovePositiveX && manager.direction.x > 0):
 			manager.direction.x = 0
@@ -104,13 +105,6 @@ func accelerate(direction:Vector2, delta:float) -> void:
 		#self.body.velocity.x = move_toward(self.body.velocity.x, direction.x * self.physics.maxSpeed, self.physics.acceleration * delta) 
 		#self.body.velocity.y = move_toward(self.body.velocity.y, direction.y * self.physics.maxSpeed, self.physics.acceleration * delta)
 		
-		if(self.manager.furniture && self.manager.furniture.isPushed):
-			self.manager.furniture.linear_velocity.x = move_toward(self.body.velocity.x, direction.x * self.physics.maxSpeed, self.physics.acceleration * delta) 
-			self.manager.furniture.linear_velocity.y = move_toward(self.body.velocity.y, direction.y * self.physics.maxSpeed, self.physics.acceleration * delta)
-			##self.body.velocity.x += delta * (move_toward(self.body.velocity.x, direction.x * self.physics.maxSpeed, self.physics.acceleration * delta)) 
-			##self.body.velocity.y += delta * (move_toward(self.body.velocity.y, direction.y * self.physics.maxSpeed, self.physics.acceleration * delta))
-		#
-		
 		#self.body.velocity.x = lerp(self.body.velocity.x, (self.physics.maxSpeed * direction).x, delta)
 		#self.body.velocity.y = lerp(self.body.velocity.y, (self.physics.maxSpeed * direction).y, delta)
 		
@@ -123,6 +117,14 @@ func accelerate(direction:Vector2, delta:float) -> void:
 			self.body.velocity.y = clamp(self.body.velocity.y, 0, self.physics.maxSpeed)
 		elif (direction.y < 0):
 			self.body.velocity.y = clamp(self.body.velocity.y, -self.physics.maxSpeed, 0)
+			
+		if (self.manager.furniture && self.manager.furniture.isPushed):
+			self.manager.furniture.linear_velocity.x = self.body.velocity.x
+			self.manager.furniture.linear_velocity.y = self.body.velocity.y
+			###self.body.velocity.x += delta * (move_toward(self.body.velocity.x, direction.x * self.physics.maxSpeed, self.physics.acceleration * delta)) 
+			###self.body.velocity.y += delta * (move_toward(self.body.velocity.y, direction.y * self.physics.maxSpeed, self.physics.acceleration * delta))
+		##
+		
 		
 func _on_new_animated_sprite_2d_frame_changed() -> void:
 	var frame:int = self.getManager().view.frame

@@ -36,6 +36,7 @@ var canBeDropped: bool = true ## Changed to true so that a player can immediatel
 var player: CharacterBody2D
 
 var distanceFromPlayer:float
+var anchorPoint:Vector2
 
 var objects: Array[Node2D] = []
 
@@ -256,10 +257,15 @@ func _physics_process(_delta: float) -> void:
 		#linear_velocity = player.velocity
 	
 	if (self.player):
-		if(self.position.distance_to(self.player.position) > self.distanceFromPlayer * 1.1):
+		if (self.position.distance_to(self.player.position) > self.distanceFromPlayer + 2):
 			if (self.isPushed):
 				print("TOO FAR")
-				player.global_position = player.global_position.move_toward(self.global_position, .9)
+	
+				#player.global_position = player.global_position.move_toward(self.global_position, .9)
+				#self.global_position = self.global_position.move_toward(player.global_position, 1)
+				self.global_position = self.global_position.move_toward(self.position + self.anchorPoint, 1)
+		
+			
 				pass
 			#if(self.isLifted):
 				#self.exitLift()
@@ -377,15 +383,18 @@ func enterPush(body: CharacterBody2D) -> void:
 	print("entered pushing")
 	self.player = body
 	print(player.name)
-	self.collision_layer = 0
+	self.collision_layer = 1
+	self.collision_mask = 6
 	audioPlayer.push_sound(self)
 	self.distanceFromPlayer = position.distance_to(player.position)
+	self.anchorPoint = player.position - self.position
 	self.isPushed = true
 
 func exitPush()-> void:
 	print("exited pushing")
 	#self.player = null
-	self.collision_layer = 2;
+	self.collision_layer = 2
+	self.collision_mask = 7
 	self.isPushed = false
 	self.linear_velocity = Vector2.ZERO
 #endregion
