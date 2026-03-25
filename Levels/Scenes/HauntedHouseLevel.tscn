@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://cuho4egtuhmvt" path="res://Assets/Objects/Tables/Scenes/TV_and_desk_front.tscn" id="16_pesxd"]
 [ext_resource type="PackedScene" uid="uid://bcmy8dq2ef0uc" path="res://Assets/Objects/Tables/Scenes/long_desk_front.tscn" id="17_g60oe"]
 [ext_resource type="PackedScene" uid="uid://xh1tw7gq575d" path="res://Assets/Objects/Table Items/Scenes/haunted_doll.tscn" id="18_ggsbu"]
-[ext_resource type="Script" uid="uid://bver5klf3qji7" path="res://Scripts/haunted_doll.gd" id="19_c8pmi"]
 [ext_resource type="Texture2D" uid="uid://dcqwj1132fkdt" path="res://Assets/Objects/Kitchen/stove_counter_side.png" id="19_cs8ww"]
 [ext_resource type="Texture2D" uid="uid://tq8l7mxma4l7" path="res://Assets/tiles/spider_Web.png" id="20_d4t44"]
 [ext_resource type="AudioStream" uid="uid://c06vxd1b71qpi" path="res://Assets/Audio/spooky level.mp3" id="22_vuwhr"]
@@ -122,18 +121,15 @@ position = Vector2(65, 271)
 
 [node name="possessed_wood_chair_side8" parent="Environment/Y-Sorting" unique_id=1550876919 instance=ExtResource("10_jj3me")]
 position = Vector2(56, 111)
-move_offset = Vector2(100, 0)
-move_speed = 90.0
-wait_time = 0.9
+script = null
 
 [node name="possessed_wood_chair_side7" parent="Environment/Y-Sorting" unique_id=443621311 instance=ExtResource("10_jj3me")]
 position = Vector2(58, 76)
-move_offset = Vector2(100, 0)
+script = null
 
 [node name="possessed_wood_chair_side9" parent="Environment/Y-Sorting" unique_id=944770110 instance=ExtResource("10_jj3me")]
 position = Vector2(56, 47)
-move_offset = Vector2(100, 0)
-wait_time = 0.7
+script = null
 
 [node name="Twin_Bed_Side" parent="Environment/Y-Sorting" unique_id=92000684 instance=ExtResource("11_c1wgv")]
 position = Vector2(223, 7)
@@ -158,6 +154,7 @@ position = Vector2(348, 137)
 
 [node name="TV_and_desk_front" parent="Environment/Y-Sorting" unique_id=1103448855 instance=ExtResource("16_pesxd")]
 position = Vector2(260, 90)
+tetroShape = 0
 
 [node name="long_desk_front" parent="Environment/Y-Sorting" unique_id=965517562 instance=ExtResource("17_g60oe")]
 position = Vector2(264, 141)
@@ -194,10 +191,7 @@ texture = ExtResource("20_d4t44")
 
 [node name="Haunted_doll" parent="Environment/Y-Sorting" unique_id=987969373 instance=ExtResource("18_ggsbu")]
 position = Vector2(267, 26)
-
-[node name="spirit" type="Node2D" parent="Environment/Y-Sorting/Haunted_doll" unique_id=1457884713]
-position = Vector2(1, 0)
-script = ExtResource("19_c8pmi")
+tetroShape = 0
 
 [node name="Level Music" type="AudioStreamPlayer2D" parent="." unique_id=398850562]
 position = Vector2(-1, 41)
