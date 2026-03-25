@@ -558,7 +558,10 @@ func packInBox() -> void:
 	#t.tween_property(self, "position:y", 8, 0.2).from(0).set_delay(0.33)
 	t.parallel()
 	t.tween_property(self, "scale", Vector2(0, 0), 0.2).from(Vector2(1, 1)).set_delay(0.33)
-	t.tween_callback(func () -> void: self.queue_free()).set_delay(0.3)
+	t.tween_callback(func () -> void: 
+		self.queue_free()
+		self.player.manager.furniture = null
+		).set_delay(0.3)
 	
 	#child.marker_2d.reparent(self)
 
