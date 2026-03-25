@@ -40,36 +40,33 @@ position = Vector2(198, 282)
 position = Vector2(304, 127)
 canPush = true
 canPull = true
-tetroShape = "two_by_two_tetromino"
+tetroShape = 1
 
 [node name="Wood_Chair_Side" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="3" unique_id=540031061 instance=ExtResource("4_wk5xv")]
 position = Vector2(320, 87)
-tetroShape = "one_by_one_tetromino"
 
 [node name="Wood_Chair_Side2" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="4" unique_id=1926436679 instance=ExtResource("4_wk5xv")]
 position = Vector2(296, 55)
-tetroShape = "one_by_one_tetromino"
 
 [node name="Fire Chair" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="5" unique_id=1558873868 instance=ExtResource("4_wk5xv")]
 modulate = Color(1, 0, 0, 1)
 position = Vector2(320, 55)
-tetroShape = "one_by_one_tetromino"
 
 [node name="Ice Chair" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="6" unique_id=938827923 instance=ExtResource("4_wk5xv")]
 modulate = Color(0, 1, 1, 1)
 position = Vector2(296, 87)
-tetroShape = "one_by_one_tetromino"
 
 [node name="Fridge" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="7" unique_id=1812637953 instance=ExtResource("5_6g0q4")]
 position = Vector2(144, 63)
-tetroShape = "four_by_two_tetromino"
+tetroShape = 5
 
 [node name="TV_and_desk_front" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="8" unique_id=472159025 instance=ExtResource("6_qbcyv")]
 position = Vector2(240, 55)
+tetroShape = 6
 
 [node name="Couch" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="9" unique_id=741030412 instance=ExtResource("7_5g5vi")]
 position = Vector2(408, 63)
-tetroShape = "two_by_two_tetromino"
+tetroShape = 5
 
 [node name="Van" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="10" unique_id=469672315 instance=ExtResource("2_1yrtn")]
 position = Vector2(389, 242)
@@ -77,7 +74,7 @@ position = Vector2(389, 242)
 [node name="Electric Couch" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="11" unique_id=1376933625 instance=ExtResource("7_5g5vi")]
 modulate = Color(1, 1, 0, 1)
 position = Vector2(408, 95)
-tetroShape = "two_by_two_tetromino"
+tetroShape = 5
 
 [node name="CollisionShape2D(South)" parent="World Border" parent_id_path=PackedInt32Array(1282742655) index="0" unique_id=1840740475]
 position = Vector2(160, 400)
