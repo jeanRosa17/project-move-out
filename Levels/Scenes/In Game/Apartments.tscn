@@ -48,6 +48,9 @@ autoplay = "left"
 
 [node name="Cutscene Camera" type="Camera2D" parent="Y-Sorting/Moving Van" index="1" unique_id=920944779]
 
+[node name="Player" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="1" unique_id=1761221807]
+safe_margin = 0.001
+
 [node name="Storage Van" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="2" unique_id=726660232]
 position = Vector2(79, 96)
 
