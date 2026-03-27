@@ -71,7 +71,6 @@ position = Vector2(190, 376)
 [node name="Fridge" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="7" unique_id=1812637953 instance=ExtResource("3_kpihc")]
 position = Vector2(19, 360)
 tetroShape = 5
-liftPosition = Vector2(0, -64)
 
 [node name="TV_and_desk_front" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="8" unique_id=472159025 instance=ExtResource("4_ar4rx")]
 position = Vector2(144, 296)

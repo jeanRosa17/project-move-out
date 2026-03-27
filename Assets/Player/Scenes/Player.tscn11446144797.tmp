@@ -32,6 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://dotpp2gym0w7k" path="res://Assets/Particles/Scenes/walking_particle.tscn" id="27_jjwbh"]
 [ext_resource type="Script" uid="uid://btk3jmqdxo7pv" path="res://Assets/Player/Scenes/WalkSound.gd" id="28_m53rv"]
 [ext_resource type="Texture2D" uid="uid://cy7y5m4780d5n" path="res://Assets/UI/Exclamation.png" id="30_m53rv"]
+[ext_resource type="PackedScene" uid="uid://b7qk52eapta2s" path="res://Assets/Objects/Dressers & Shelves/Scenes/wooden_wardrobe_front.tscn" id="33_5gdg7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l2ndj"]
 size = Vector2(8, 11)
@@ -1348,22 +1349,23 @@ position = Vector2(0, 5)
 texture = ExtResource("2_xgcxo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=553704849]
-position = Vector2(0, -0.5)
+position = Vector2(0, -2.5)
 shape = SubResource("RectangleShape2D_l2ndj")
 
 [node name="NewAnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=96857792]
 y_sort_enabled = true
-position = Vector2(0, -6)
+position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_dter7")
 animation = &"idle down"
 autoplay = "idle down"
 
 [node name="Detector" type="Area2D" parent="." unique_id=1216050002]
-position = Vector2(0, 16)
+position = Vector2(0, -8)
 collision_layer = 10
 collision_mask = 14
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector" unique_id=422314971]
+position = Vector2(0, 20)
 shape = SubResource("RectangleShape2D_s1rgi")
 
 [node name="StateManager" type="Node" parent="." unique_id=1398973869 node_paths=PackedStringArray("view", "initialState")]
@@ -1383,9 +1385,10 @@ script = ExtResource("21_lch71")
 body = NodePath("../..")
 metadata/_custom_type_script = "uid://u8kdu3je8hxq"
 
-[node name="Move" type="Node" parent="StateManager" unique_id=1752054821 node_paths=PackedStringArray("body", "walkSound")]
+[node name="Move" type="Node" parent="StateManager" unique_id=1752054821 node_paths=PackedStringArray("body", "area2DCollision", "walkSound")]
 script = ExtResource("22_p1eok")
 body = NodePath("../..")
+area2DCollision = NodePath("../../Detector/CollisionShape2D")
 physics = ExtResource("24_bqeds")
 walkSound = NodePath("../../Walk Sound")
 metadata/_custom_type_script = "uid://c2tqhau6vnsm6"
@@ -1427,6 +1430,15 @@ libraries/ = SubResource("AnimationLibrary_bqeds")
 autoplay = &"Bounce"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=28337110]
+
+[node name="wooden_wardrobe_front" parent="." unique_id=70521902 instance=ExtResource("33_5gdg7")]
+position = Vector2(0, 34)
+canLift = null
+canRotate = null
+tetroShape = null
+weight = null
+dialogueTag = null
+liftPosition = null
 
 [connection signal="frame_changed" from="NewAnimatedSprite2D" to="StateManager/Move" method="_on_new_animated_sprite_2d_frame_changed"]
 [connection signal="area_entered" from="Detector" to="StateManager" method="_on_area_2d_area_entered"]

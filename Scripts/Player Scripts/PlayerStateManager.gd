@@ -5,6 +5,7 @@ class_name PlayerManager
 
 ## The Player's animated sprite 2D. Used so that the states can set animations.
 @export var view:AnimatedSprite2D
+@onready var detector: Area2D = $"../Detector"
 
 ## Holds a reference to the furniture the player is looking at. When no Furniture is referenced,
 ## this value should be nulled. This variable has a custom set function that makes hasFurniture

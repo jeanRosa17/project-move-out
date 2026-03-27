@@ -3,7 +3,7 @@ extends RigidBody2D
 class_name Furniture
 
 ## Update to be $AudioStreamPlayer2D
-@onready var audioPlayer: FurnitureAudio = get_tree().root.find_child("Push_Pull Audio", true, false)
+@onready var audioPlayer: FurnitureAudio = %"Push_Pull Audio"
 @onready var area_detector: Area2D = $AreaDetector
 @onready var area_shape: CollisionShape2D = $AreaDetector/CollisionShape2D
 
@@ -221,55 +221,35 @@ func create_additional_collisions_polygon() -> void:
 
 func _physics_process(_delta: float) -> void:
 	if (self.isLifted and self.ghostSprite != null):
-		print(self.ghostSprite.global_position)
+		#print(self.ghostSprite.global_position)
 		self.ghostSprite.self_modulate = (Color.GREEN if (self.canBeDropped) else Color.RED)
+		#var offset:int = 32
+		var offset:int = 1
+		var pos:Vector2 = self.player.manager.detector.position
+		
+		self.ghostSprite.z_index = 0 if (self.player.manager.direction == Vector2.UP) else 10
+		
+		
+		
+		#print(self.player.manager.direction)
 		if (self.followTween == null):
 			self.followTween = get_tree().create_tween()
-			self.followTween.tween_property(ghostSprite, "position", self.player.manager.direction * 32 , 0.2).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+			self.followTween.tween_property(ghostSprite, "position", pos * offset , 0.2).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
 		if (not self.followTween.is_running()):
 			self.followTween.kill()
 			self.followTween = create_tween()
-			self.followTween.tween_property(ghostSprite, "position", self.player.manager.direction * 32 , 0.2).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
-		
-		#if (self.player != null):
-			#ghostSprite.position = self.player.get_node("Detector").get_child(0).position
-		
-	if (self.isPushed):
-		#
-		##var dir:Vector2 = self.player.velocity.normalized()
-		#
-		#
-		## if not touching anything, proceed as normal
-		##if (objects.is_empty()):
-			##self.collision_layer = 0
-			##linear_velocity = linear_velocity.lerp(player.velocity, 1)
-			##
-			##canMoveNegativeX = true
-			##canMoveNegativeY = true
-			##canMovePositiveX = true
-			##canMovePositiveY = true
-			##
-		if (self.player.get_real_velocity().length() < 5):
-			###
-			linear_velocity = Vector2.ZERO
-		##else:
-			##linear_velocity = linear_velocity.lerp(Vector2.ZERO, 1)
-		#linear_velocity = player.velocity
+			self.followTween.tween_property(ghostSprite, "position", pos * offset , 0.2).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
 	
-	if (self.player):
+	if (self.isPushed and self.player):
+		if (self.player.get_real_velocity().length() < 1): linear_velocity = Vector2.ZERO
+		
 		if (self.position.distance_to(self.player.position) > self.distanceFromPlayer + 2):
-			if (self.isPushed):
-				print("TOO FAR")
+			print("TOO FAR")
 	
-				#player.global_position = player.global_position.move_toward(self.global_position, .9)
-				#self.global_position = self.global_position.move_toward(player.global_position, 1)
-				self.global_position = self.global_position.move_toward(self.position + self.anchorPoint, 0.5)
-		
-			
-				pass
-			#if(self.isLifted):
-				#self.exitLift()
-
+			#player.global_position = player.global_position.move_toward(self.global_position, .9)
+			#self.global_position = self.global_position.move_toward(player.global_position, 1)
+			self.global_position = self.global_position.move_toward(self.position + self.anchorPoint, 0.5)
+	
 func update_detector_direction(direction: Vector2) -> void:
 	if (abs(direction.x) > abs(direction.y)):
 		if (direction.x > 0): area_detector.position = Vector2(liftPosition.y, 0)
@@ -281,6 +261,7 @@ func update_detector_direction(direction: Vector2) -> void:
 
 ## Ses the Ghost as a Sprite
 func createGhostSprite(body:CharacterBody2D) -> void:
+	assert(body is Player)
 	var area:Area2D = Area2D.new()
 	area.collision_layer = self.collision_layer
 	area.collision_mask = self.collision_mask
@@ -290,6 +271,7 @@ func createGhostSprite(body:CharacterBody2D) -> void:
 	self.ghostSprite = sprite_2d.duplicate()
 	
 	#body.get_node("Detector").get_child(0).add_child(ghostSprite)
+	#body.area2DCollision.add_child(self.ghostSprite)
 	body.add_child(self.ghostSprite)
 	self.ghostSprite.z_index = 10
 	self.ghostSprite.position = Vector2(0, 0)
@@ -315,8 +297,8 @@ func startLiftingTween() -> void:
 	self.floatXTween.tween_property(self, "position:x", 8, 0.3).set_delay(0.05)
 	self.floatXTween.set_loops().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_ELASTIC)
 	
-	self.floatYTween.tween_property(self, "position:y", -8, 0.2).set_delay(0.05)
-	self.floatYTween.tween_property(self, "position:y", 4, 0.3).set_delay(0.05)
+	self.floatYTween.tween_property(self, "position:y", self.liftPosition.y -8, 0.2).set_delay(0.05)
+	self.floatYTween.tween_property(self, "position:y", self.liftPosition.y + 4, 0.3).set_delay(0.05)
 	self.floatYTween.set_loops().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_ELASTIC)
 	
 	#self.floatTiltTween.tween_property(self, "rotation_degrees", -4, 0.5).set_delay(0.4)
@@ -352,8 +334,8 @@ func enterLift(body:CharacterBody2D) -> void:
 	self.remove_from_group("Furniture")
 	self.collision_layer = 1;
 	self.collision_mask = 6;
-	self.position = body.position + self.liftPosition
 	self.reparent(body)
+	self.position = self.liftPosition
 	self.isLifted = true
 	self.startLiftingTween()
 	self.get_node("Collision").disabled = true
@@ -369,7 +351,7 @@ func exitLift() -> void:
 	self.killLiftingTween()
 	
 	self.get_node("Collision").disabled = false
-	self.position = ghostSprite.global_position
+	self.position = self.player.manager.detector.global_position
 	self.ghostSprite.queue_free()
 	self.collision_layer = 2;
 	self.collision_mask = 7;
@@ -539,6 +521,7 @@ func _on_bot_area_exited(body: Node2D) -> void:
 			canMovePositiveY = true
 #endregion
 
+## Returns this Furniture's Tetronimo shape
 func getShape() -> Data.Tetronimo:
 	# gives the tetro shape of the furniture
 	return tetroShape
@@ -574,7 +557,3 @@ func packInBox() -> void:
 		).set_delay(0.3)
 	
 	#child.marker_2d.reparent(self)
-
-	
-	
-	

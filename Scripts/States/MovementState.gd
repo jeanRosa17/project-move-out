@@ -3,7 +3,6 @@ extends State
 
 
 @export var body:CharacterBody2D
-@export var area2DCollision:CollisionShape2D
 
 @onready var manager:StateManager = self.getManager()
 
@@ -38,7 +37,9 @@ func exit() -> void:
 ## in front of where the player is looking.
 func update(_delta:float) -> void:
 	var prefix:String = "move"
-
+	
+	self.manager.detector.position = self.getManager().direction * 16
+	
 	if (self.manager.hasFurniture):
 		if (self.manager.furniture.isPushed):
 			prefix = "pushing"
@@ -67,11 +68,9 @@ func update(_delta:float) -> void:
 		if (self.manager.direction == Vector2.UP):
 			self.manager.view.play(prefix + " up")
 	
-		self.area2DCollision.position = self.getManager().direction * 20 
-	
 ## This method runs every _physics_process() frame of the StateManager.
 func physicsUpdate(_delta:float) -> void:
-	print(self.body.velocity)
+	#print(self.body.velocity)
 	if (manager.furniture && manager.furniture.isPushed):
 		if (!manager.furniture.canMovePositiveX && manager.direction.x > 0):
 			manager.direction.x = 0

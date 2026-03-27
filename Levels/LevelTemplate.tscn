@@ -58,7 +58,7 @@ stream = ExtResource("4_6ghb1")
 autoplay = true
 
 [node name="Push_Pull Audio" parent="." unique_id=287833891 instance=ExtResource("5_vjhoh")]
-visible = false
+unique_name_in_owner = true
 position = Vector2(-47, -309)
 
 [node name="World Border" type="StaticBody2D" parent="." unique_id=1282742655 groups=["Immovable Object", "World Bounds"]]

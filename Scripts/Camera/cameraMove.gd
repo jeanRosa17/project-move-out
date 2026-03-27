@@ -12,4 +12,4 @@ func _physics_process(delta: float) -> void:
 func update_position() -> void:
 	var current_position: Vector2 = Vector2(player.global_position) / size
 	global_position = current_position.floor() * size
-	print(global_position)
+	#print(global_position)
