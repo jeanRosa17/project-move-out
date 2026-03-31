@@ -296,10 +296,11 @@ var tetrominoes: Array = []
 
 var score: int = 0
 
-const MIN_COL: int = -7
-const MAX_COL: int = 6
-const MIN_ROW: int = -12
-const MAX_ROW: int = 11
+# editable values for when tetris board wants to be re-drawn/reconfigured in future level
+@export var MIN_COL: int = -7    #left value of tetris board
+@export var MAX_COL: int = 6     #right value of tetris board
+@export var MIN_ROW: int = -12   #top value of tetris board
+@export var MAX_ROW: int = 11    #bottom value of tetris board
 
 const START_POSITION: Vector2i = Vector2i(-1, -11)
 var current_position: Vector2i
@@ -316,6 +317,7 @@ var is_game_running: bool
 var is_game_stopped: bool = true
 var game_over: bool
 
+var initial_empty_cells: int = 0
 
 var tile_id: int = 1
 var next_piece_atlas: Vector2i
@@ -334,6 +336,7 @@ func start_new_game() -> void:
 	clear_tetromino()
 	clear_board()
 	clear_next_tetromino_preview()
+	get_total_cells()
 
 func intialize_game(furniture_list: Array) -> void:
 	for furniture in furniture_list:
@@ -495,7 +498,11 @@ func is_within_bounds(pos: Vector2i) -> bool:
 func is_game_over() -> void:
 	if (active_tetromino.is_empty() && next_tetromino_type.is_empty()):
 		#check to see if we finish putting all furniture in level
-		print("You win!")
+		if (hud.levelFinished):
+			print("You win!")
+			var multiplier = score_multiplier()
+			score = int(score * multiplier)
+		
 		is_game_running = false
 	else:
 		for block in active_tetromino:
@@ -504,3 +511,39 @@ func is_game_over() -> void:
 				is_game_running = false
 				print("You lose idiot!")
 				game_over = true
+
+func get_total_cells() -> void:
+	initial_empty_cells = 0
+	
+	for y in range(MIN_ROW, MAX_ROW):
+		for x in range (MIN_COL, MAX_COL):
+			var pos = Vector2i(x, y)
+			
+			#valid tetronimo place space (for not perfect boards)
+			if board_layer.get_cell_source_id(pos) == -1:
+				initial_empty_cells += 1
+
+func count_remaining_cells() -> int:
+	var count := 0
+	
+	for y in range (MIN_ROW, MAX_ROW):
+		for x in range (MIN_COL, MAX_COL):
+			var pos = Vector2i(x, y)
+			#no tetronimo occupying cell
+			if board_layer.get_cell_source_id(pos) == -1:
+				count += 1
+	
+	return count
+
+func packing_efficiency() -> float:
+	var remaining = count_remaining_cells()
+	var filled = initial_empty_cells - remaining
+	
+	if (initial_empty_cells == 0):
+		return 1.0
+	
+	return float(filled) / float(initial_empty_cells)
+
+func score_multiplier() -> float:
+	var efficiency = packing_efficiency()
+	return 1.0 + efficiency * 2.0
