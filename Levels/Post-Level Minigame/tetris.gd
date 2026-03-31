@@ -495,6 +495,9 @@ func is_within_bounds(pos: Vector2i) -> bool:
 	var tile_id = board_layer.get_cell_source_id(pos)
 	return tile_id == -1
 
+func is_within_border(pos: Vector2i) -> bool:
+	return pos.x > MIN_COL and pos.x < MAX_COL and pos.y > MIN_ROW and pos.y < MAX_ROW
+
 func is_game_over() -> void:
 	if (active_tetromino.is_empty() && next_tetromino_type.is_empty()):
 		#check to see if we finish putting all furniture in level
@@ -524,14 +527,32 @@ func get_total_cells() -> void:
 				initial_empty_cells += 1
 
 func count_remaining_cells() -> int:
+	var visited := {}
+	
+	var queue := []
+	
+	queue.append(START_POSITION)
+	visited[START_POSITION]
+	visited[START_POSITION] = true
+	
 	var count := 0
 	
-	for y in range (MIN_ROW, MAX_ROW):
-		for x in range (MIN_COL, MAX_COL):
-			var pos = Vector2i(x, y)
-			#no tetronimo occupying cell
-			if board_layer.get_cell_source_id(pos) == -1:
-				count += 1
+	while queue.size() > 0:
+		var current = queue.pop_front()
+		
+		if not is_within_border(current):
+			continue
+		
+		if board_layer.get_cell_source_id(current) != -1:
+			continue
+		
+		count += 1
+		
+		for dir in [Vector2i.LEFT, Vector2i.RIGHT, Vector2i.UP, Vector2i.DOWN]:
+			var next = current + dir
+			if not visited.has(next):
+				visited[next] = true
+				queue.append(next)
 	
 	return count
 
