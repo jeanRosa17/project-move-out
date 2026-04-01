@@ -35,3 +35,7 @@ func _on_body_exited(body: Node2D) -> void:
 		playerIn = false
 		
 		body.manager.item_detector.visible = false
+
+
+func _on_end_level() -> void:
+	pass # Replace with function body.

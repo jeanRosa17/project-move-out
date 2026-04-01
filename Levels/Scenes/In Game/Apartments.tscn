@@ -153,3 +153,16 @@ position = Vector2(592, 96)
 
 [node name="HUD" parent="." index="11" unique_id=1725586568]
 visible = false
+
+[node name="ListHUD" parent="HUD" index="0" unique_id=1378780322]
+visible = false
+
+[node name="Level Results" parent="HUD" index="1" unique_id=720231760]
+visible = false
+nextLevelName = &"res://Levels/Scenes/FratHouseAlt.tscn"
+replayLevelName = &"res://Levels/Scenes/In Game/Apartments.tscn"
+
+[node name="Dialogue" parent="HUD" index="2" unique_id=2001474479]
+visible = false
+
+[editable path="HUD"]
