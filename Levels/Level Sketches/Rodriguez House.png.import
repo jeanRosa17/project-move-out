@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbnrqrxdmjxsu"
-path="res://.godot/imported/end.png-1497a101b05c1f66a3b971b59fd630cb.ctex"
+uid="uid://crrrxjnccca1r"
+path="res://.godot/imported/Rodriguez House.png-ef5017898019ee43cdabd802bcebd254.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Fonts/end.png"
-dest_files=["res://.godot/imported/end.png-1497a101b05c1f66a3b971b59fd630cb.ctex"]
+source_file="res://Levels/Level Sketches/Rodriguez House.png"
+dest_files=["res://.godot/imported/Rodriguez House.png-ef5017898019ee43cdabd802bcebd254.ctex"]
 
 [params]
 
