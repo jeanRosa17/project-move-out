@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://ombsd650f300"]
 
 [ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_w5d8f"]
-[ext_resource type="Texture2D" uid="uid://2vpj71hb8vlk" path="res://Assets/Objects/Tables/bedside_table_1.png" id="2_po3u2"]
+[ext_resource type="Texture2D" uid="uid://67gk0nv7ww20" path="res://Assets/Objects/Dressers & Shelves/Dressers-Sheet.png" id="2_po3u2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
-size = Vector2(16, 16)
+size = Vector2(24, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
-size = Vector2(18, 26)
+size = Vector2(32, 40)
 
 [node name="bedside_table" type="RigidBody2D" unique_id=962155086 groups=["Furniture"]]
 collision_layer = 2
@@ -24,6 +24,8 @@ metadata/_custom_type_script = "uid://c2vh27coguldq"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=204191189]
 texture = ExtResource("2_po3u2")
+region_enabled = true
+region_rect = Rect2(156, 4, 24, 35)
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=495142719]
 position = Vector2(0, 3)
