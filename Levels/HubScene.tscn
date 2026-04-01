@@ -61,8 +61,7 @@ tile_set = ExtResource("2_ejuf2")
 y_sort_enabled = true
 
 [node name="Bed" parent="Y-Sorting" unique_id=777692504 instance=ExtResource("3_ct18u")]
-position = Vector2(1001.00006, 131)
-scale = Vector2(1.5, 1.5)
+position = Vector2(996, 136)
 
 [node name="Player" parent="Y-Sorting" unique_id=1761221807 instance=ExtResource("3_q2qwu")]
 unique_name_in_owner = true
