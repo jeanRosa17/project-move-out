@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dpyl8x5qojmng" path="res://Assets/Objects/Table Items/Scenes/TV.tscn" id="13_unfai"]
 [ext_resource type="PackedScene" uid="uid://dns4vnk3a35fb" path="res://Assets/Objects/Couches/Scenes/red_couch_side.tscn" id="14_x7fdx"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ptb8a"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k1l4a"]
 size = Vector2(80, 32)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6ghb1"]
@@ -99,7 +99,7 @@ position = Vector2(1096, 8)
 visible = false
 
 [node name="CollisionShape2D" parent="Y-Sorting/Storage Van/Leave Area" parent_id_path=PackedInt32Array(726660232, 632129231) index="4" unique_id=1864252806]
-shape = SubResource("RectangleShape2D_ptb8a")
+shape = SubResource("RectangleShape2D_k1l4a")
 
 [node name="Level Music" type="AudioStreamPlayer2D" parent="." unique_id=1340222311]
 stream = ExtResource("5_1fjhn")
