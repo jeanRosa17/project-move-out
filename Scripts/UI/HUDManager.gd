@@ -97,6 +97,7 @@ func checkResults() -> void:
 	self.player.setControls(false)
 	print("Gay gay homosexual gay");
 	var _text:RichTextLabel = self.level_results.find_child("Score")
+	_text.text = "Your score is: " + str(score)
 	self.dialogue.visible = false
 	await get_tree().create_timer(0.3).timeout
 	ap.play("Complete")
