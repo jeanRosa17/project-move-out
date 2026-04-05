@@ -4,7 +4,6 @@
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="2_ejuf2"]
 [ext_resource type="PackedScene" uid="uid://diko086yswlr0" path="res://Assets/Objects/Beds/Scene/Twin_Bed_Side.tscn" id="3_ct18u"]
 [ext_resource type="PackedScene" uid="uid://d0yd01mkkwtji" path="res://Assets/Player/Scenes/Player.tscn" id="3_q2qwu"]
-[ext_resource type="AudioStream" uid="uid://cmje4kqmvovdh" path="res://Assets/Audio/dorm.wav" id="5_1fjhn"]
 [ext_resource type="PackedScene" uid="uid://bof0wxapyclor" path="res://Assets/Objects/Chairs/Scene/Stool.tscn" id="6_ejuf2"]
 [ext_resource type="PackedScene" uid="uid://uacgji4vcg37" path="res://Assets/Audio/push_pull_audio.tscn" id="6_s5o2l"]
 [ext_resource type="PackedScene" uid="uid://b7qk52eapta2s" path="res://Assets/Objects/Dressers & Shelves/Scenes/wooden_wardrobe_front.tscn" id="7_kgb2b"]
@@ -13,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cl3ww3w6r3n1r" path="res://Assets/Objects/Kitchen/Scenes/Fridge.tscn" id="9_1fjhn"]
 [ext_resource type="PackedScene" uid="uid://ds1nqvgtuae71" path="res://Assets/Objects/Tables/Scenes/wooden_table.tscn" id="10_ra6hx"]
 [ext_resource type="PackedScene" uid="uid://d3rjdvbwh7auh" path="res://Levels/Scenes/Garadge2.tscn" id="12_87idw"]
+[ext_resource type="AudioStream" uid="uid://qeb7u2p7xni4" path="res://Assets/Audio/johns place.wav" id="13_87idw"]
 [ext_resource type="PackedScene" uid="uid://dpyl8x5qojmng" path="res://Assets/Objects/Table Items/Scenes/TV.tscn" id="13_unfai"]
 [ext_resource type="PackedScene" uid="uid://dns4vnk3a35fb" path="res://Assets/Objects/Couches/Scenes/red_couch_side.tscn" id="14_x7fdx"]
 
@@ -102,7 +102,7 @@ visible = false
 shape = SubResource("RectangleShape2D_k1l4a")
 
 [node name="Level Music" type="AudioStreamPlayer2D" parent="." unique_id=1340222311]
-stream = ExtResource("5_1fjhn")
+stream = ExtResource("13_87idw")
 autoplay = true
 
 [node name="Push_Pull Audio" parent="." unique_id=287833891 instance=ExtResource("6_s5o2l")]
