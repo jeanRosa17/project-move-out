@@ -255,7 +255,7 @@ position = Vector2(0, -2)
 [node name="Door" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="21" unique_id=1545158925 instance=ExtResource("20_n5378")]
 position = Vector2(88, 200)
 
-[node name="ColorRect" parent="Y-Sorting/Door" index="5" unique_id=1441941952]
+[node name="ColorRect" parent="Y-Sorting/Door" index="6" unique_id=1441941952]
 offset_left = -56.0
 offset_top = -12.0
 offset_right = 28.0
@@ -275,7 +275,7 @@ animation = &"big"
 [node name="Frame" parent="Y-Sorting/Door2" index="3" unique_id=1808264747]
 region_rect = Rect2(119, 10, 34, 32)
 
-[node name="ColorRect" parent="Y-Sorting/Door2" index="5" unique_id=1441941952]
+[node name="ColorRect" parent="Y-Sorting/Door2" index="6" unique_id=1441941952]
 offset_left = -16.0
 offset_top = -128.0
 offset_right = 112.0
@@ -297,7 +297,7 @@ visible = true
 [node name="Frame" parent="Y-Sorting/Door3" index="3" unique_id=1808264747]
 region_rect = Rect2(59, 8, 42, 34)
 
-[node name="ColorRect" parent="Y-Sorting/Door3" index="5" unique_id=1441941952]
+[node name="ColorRect" parent="Y-Sorting/Door3" index="6" unique_id=1441941952]
 offset_left = -104.0
 offset_top = -224.0
 offset_right = 96.0
