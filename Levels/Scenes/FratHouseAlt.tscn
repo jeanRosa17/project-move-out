@@ -33,8 +33,10 @@
 [ext_resource type="Script" uid="uid://1ugs6cpgg5xy" path="res://Levels/Scenes/Tutorial/trigger_sensor.gd" id="26_d3wmj"]
 [ext_resource type="PackedScene" uid="uid://d3rjdvbwh7auh" path="res://Levels/Scenes/Garadge2.tscn" id="27_f4y48"]
 [ext_resource type="Resource" uid="uid://bw7tpgka1cfco" path="res://Narrative/fratEnter.tres" id="27_tv3y6"]
-[ext_resource type="AudioStream" uid="uid://c8ey07cvvm0ij" path="res://Assets/Audio/frat house.wav" id="28_ecbn1"]
 [ext_resource type="PackedScene" uid="uid://5bnbyjpgb5kx" path="res://Levels/Post-Level Minigame/Post-Level Minigame.tscn" id="30_jdgei"]
+[ext_resource type="AudioStream" uid="uid://dsckxieyb5eah" path="res://Assets/Audio/frat house 2 head.wav" id="34_7f3y0"]
+[ext_resource type="Script" uid="uid://dd0dqcxwjwhbu" path="res://Levels/Scenes/level_music.gd" id="35_x3cvq"]
+[ext_resource type="AudioStream" uid="uid://cma3yncq2pogm" path="res://Assets/Audio/frat house 2 body.wav" id="36_buuam"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_sq7bx"]
 normal = Vector2(1.79515e-06, 1)
@@ -581,8 +583,13 @@ shape = SubResource("RectangleShape2D_r8bs4")
 one_way_collision_margin = 0.0
 
 [node name="Level Music" type="AudioStreamPlayer2D" parent="." unique_id=1059859005]
-stream = ExtResource("28_ecbn1")
+stream = ExtResource("34_7f3y0")
 autoplay = true
+panning_strength = 0.0
+script = ExtResource("35_x3cvq")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Level Music" unique_id=725764544]
+stream = ExtResource("36_buuam")
 
 [node name="PostLevelMinigame" parent="." unique_id=762999373 instance=ExtResource("30_jdgei")]
 position = Vector2(1152, 192)
@@ -606,5 +613,6 @@ position = Vector2(1152, 192)
 [connection signal="body_entered" from="Wind/WindLoop/WindLoopEastBottom" to="Wind/WindLoop/WindLoopEastBottom" method="_on_body_entered"]
 [connection signal="body_exited" from="Wind/WindLoop/WindLoopEastBottom" to="Wind/WindLoop/WindLoopEastBottom" method="_on_body_exited"]
 [connection signal="body_entered" from="Node2D/TriggerSensor" to="Node2D/TriggerSensor" method="_on_body_entered"]
+[connection signal="finished" from="Level Music" to="Level Music" method="_on_finished"]
 
 [editable path="HUD"]

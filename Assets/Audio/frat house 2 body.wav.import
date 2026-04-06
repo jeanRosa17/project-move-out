@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cma3yncq2pogm"
+path="res://.godot/imported/frat house 2 body.wav-e89b9f7b7ee798eaef6374136e6897e3.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/frat house 2 body.wav"
+dest_files=["res://.godot/imported/frat house 2 body.wav-e89b9f7b7ee798eaef6374136e6897e3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
