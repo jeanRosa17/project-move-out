@@ -33,6 +33,7 @@ enum Frame {
 	TWO_BY_ONE,
 	TWO_BY_TWO,
 	DOUBLE_DOOR
+	
 }
 
 
