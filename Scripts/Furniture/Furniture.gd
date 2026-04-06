@@ -28,7 +28,7 @@ var canBeDropped: bool = true ## Changed to true so that a player can immediatel
 
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
-@onready var ghostSprite: Sprite2D = sprite_2d.duplicate()
+@onready var ghostSprite: Sprite2D
 
 @onready var collider:CollisionShape2D = $Collision
 

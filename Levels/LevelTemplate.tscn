@@ -39,7 +39,6 @@ tile_set = ExtResource("1_ersrp")
 
 [node name="Wall Collisions" type="TileMapLayer" parent="." unique_id=890800813 groups=["World Bounds"]]
 z_index = 1
-position = Vector2(0, -4)
 tile_set = ExtResource("1_ersrp")
 
 [node name="Y-Sorting" type="Node2D" parent="." unique_id=8786395]
