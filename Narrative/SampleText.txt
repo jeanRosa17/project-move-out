@@ -63,3 +63,7 @@
 	It's a good thing my cloak is made of good wool, I don't want to know what happened here.
 	I left my spiked boots at home, I'll just deal with the ice.
 }
+
+#door {
+	You openned the door!
+}

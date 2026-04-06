@@ -1,0 +1,215 @@
+[gd_scene format=3 uid="uid://pr8g204x513g"]
+
+[ext_resource type="Script" uid="uid://i86wf8yvmhfs" path="res://Scripts/Door.gd" id="1_wllpb"]
+[ext_resource type="Texture2D" uid="uid://g4t7b204owxc" path="res://Assets/tiles/Doorways-Sheet.png" id="2_1x77j"]
+[ext_resource type="Script" uid="uid://bmqryoobj44j2" path="res://Scripts/Dialogue/DialogueTag.gd" id="2_mnxhr"]
+[ext_resource type="Texture2D" uid="uid://cnu64jt5uykha" path="res://Assets/tiles/Doorways-Shadow-Sheet.png" id="2_tghek"]
+[ext_resource type="Texture2D" uid="uid://k7cgusegy00m" path="res://Assets/tiles/Door-Sheet.png" id="3_tghek"]
+
+[sub_resource type="Resource" id="Resource_dlac0"]
+script = ExtResource("2_mnxhr")
+dialogueTag = &"door"
+metadata/_custom_type_script = "uid://bmqryoobj44j2"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wllpb"]
+atlas = ExtResource("3_tghek")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1x77j"]
+atlas = ExtResource("3_tghek")
+region = Rect2(48, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tghek"]
+atlas = ExtResource("3_tghek")
+region = Rect2(96, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnxhr"]
+atlas = ExtResource("3_tghek")
+region = Rect2(144, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwnr4"]
+atlas = ExtResource("3_tghek")
+region = Rect2(192, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bq8e6"]
+atlas = ExtResource("3_tghek")
+region = Rect2(240, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlac0"]
+atlas = ExtResource("3_tghek")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wyop"]
+atlas = ExtResource("3_tghek")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_28y33"]
+atlas = ExtResource("3_tghek")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xs5eh"]
+atlas = ExtResource("3_tghek")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6wys"]
+atlas = ExtResource("3_tghek")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0413"]
+atlas = ExtResource("3_tghek")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rwnr4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wllpb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1x77j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tghek")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mnxhr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwnr4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bq8e6")
+}],
+"loop": false,
+"name": &"big",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dlac0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wyop")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_28y33")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xs5eh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6wys")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s0413")
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1x77j"]
+
+[sub_resource type="Animation" id="Animation_1x77j"]
+resource_name = "Fade"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_tghek"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_mnxhr"]
+resource_name = "debug"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.21568628)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mnxhr"]
+_data = {
+&"Fade": SubResource("Animation_1x77j"),
+&"RESET": SubResource("Animation_tghek"),
+&"debug": SubResource("Animation_mnxhr")
+}
+
+[node name="Door" type="Node2D" unique_id=1545158925]
+script = ExtResource("1_wllpb")
+tag = SubResource("Resource_dlac0")
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=1076252513]
+position = Vector2(0, 8)
+texture = ExtResource("2_tghek")
+region_enabled = true
+region_rect = Rect2(16, 23, 16, 25)
+
+[node name="DoorTexture" type="AnimatedSprite2D" parent="." unique_id=663038554]
+sprite_frames = SubResource("SpriteFrames_rwnr4")
+
+[node name="DoorTexture2" type="AnimatedSprite2D" parent="." unique_id=1156574819]
+visible = false
+position = Vector2(9, 0)
+sprite_frames = SubResource("SpriteFrames_rwnr4")
+flip_h = true
+
+[node name="Frame" type="Sprite2D" parent="." unique_id=1808264747]
+texture = ExtResource("2_1x77j")
+region_enabled = true
+region_rect = Rect2(11, 8, 26, 34)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=812913739]
+collision_layer = 3
+collision_mask = 0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=2095548162]
+shape = SubResource("RectangleShape2D_1x77j")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=558460721]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1028303267]
+shape = SubResource("RectangleShape2D_1x77j")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1441941952]
+offset_left = -24.0
+offset_top = 16.0
+offset_right = 24.0
+offset_bottom = 56.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2043855515]
+libraries/ = SubResource("AnimationLibrary_mnxhr")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_player_detector_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_player_detector_exited"]

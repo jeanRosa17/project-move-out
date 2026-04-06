@@ -20,7 +20,7 @@ canPush = true
 canPull = true
 metadata/_custom_type_script = "uid://c2vh27coguldq"
 
-[node name="WoodenChair2" type="Sprite2D" parent="." unique_id=1942142751]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1942142751]
 position = Vector2(-1, 0)
 texture = ExtResource("2_bt5v0")
 flip_h = true
