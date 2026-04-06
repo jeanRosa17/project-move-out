@@ -3,11 +3,13 @@
 [ext_resource type="Script" uid="uid://bj5ror74qqu40" path="res://Scripts/Teleporter.gd" id="1_xabru"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xabru"]
+size = Vector2(16, 16)
 
 [node name="Teleporter" type="Area2D" unique_id=2024774758]
 script = ExtResource("1_xabru")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1012349937]
 shape = SubResource("RectangleShape2D_xabru")
+debug_color = Color(0.76645124, 0.1670982, 0.99999994, 0.41960785)
 
 [connection signal="body_entered" from="." to="." method="_on_teleported"]
