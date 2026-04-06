@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://ombsd650f300" path="res://Assets/Objects/Tables/Scenes/bedside_table.tscn" id="16_6mn4f"]
 [ext_resource type="PackedScene" uid="uid://cwxdgur52wxsm" path="res://Assets/Objects/Tables/Scenes/long_desk_side.tscn" id="17_ujnot"]
 [ext_resource type="PackedScene" uid="uid://c0a0h2j2xhek7" path="res://Assets/Objects/Tables/Scenes/selfcare_table.tscn" id="18_mubds"]
+[ext_resource type="AudioStream" uid="uid://c06vxd1b71qpi" path="res://Assets/Audio/spooky level.mp3" id="20_c2chp"]
 [ext_resource type="PackedScene" uid="uid://ds1nqvgtuae71" path="res://Assets/Objects/Tables/Scenes/wooden_table.tscn" id="20_laxmf"]
 [ext_resource type="PackedScene" uid="uid://cl3ww3w6r3n1r" path="res://Assets/Objects/Kitchen/Scenes/Fridge.tscn" id="23_aj1a0"]
 [ext_resource type="PackedScene" uid="uid://di7f7h2xfyshs" path="res://Assets/Objects/Chairs/Scene/Wood_Chair_front2.tscn" id="23_c2chp"]
@@ -165,6 +166,9 @@ position = Vector2(304, 480)
 
 [node name="Storage Van" parent="Y-Sorting" index="19" unique_id=726660232]
 position = Vector2(288, 520)
+
+[node name="Level Music" parent="." index="6" unique_id=1340222311]
+stream = ExtResource("20_c2chp")
 
 [node name="CollisionShape2D(South)" parent="World Border" parent_id_path=PackedInt32Array(1282742655) index="0" unique_id=1840740475]
 position = Vector2(160, 576)
