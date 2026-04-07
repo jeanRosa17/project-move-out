@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://dq55gnm4jut7k"
-path="res://.godot/imported/Lunatix Bold.otf-4bb4eb260e8f966755f65df1fa77b475.fontdata"
+path="res://.godot/imported/Lunatix Bold.otf-d1838fe185ca060571548f24fe729720.fontdata"
 
 [deps]
 
-source_file="res://Assets/Fonts/Lunatix Bold.otf"
-dest_files=["res://.godot/imported/Lunatix Bold.otf-4bb4eb260e8f966755f65df1fa77b475.fontdata"]
+source_file="res://Assets/fonts/Lunatix Bold.otf"
+dest_files=["res://.godot/imported/Lunatix Bold.otf-d1838fe185ca060571548f24fe729720.fontdata"]
 
 [params]
 
