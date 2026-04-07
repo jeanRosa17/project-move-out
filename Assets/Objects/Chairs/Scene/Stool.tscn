@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bof0wxapyclor"]
+[gd_scene format=3 uid="uid://bof0wxapyclor"]
 
 [ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_ga2qs"]
-[ext_resource type="Texture2D" uid="uid://dhejhshpr3yy5" path="res://Assets/Objects/Chairs/stool_1.png" id="2_ga2qs"]
+[ext_resource type="Texture2D" uid="uid://t01fcfxbftut" path="res://Assets/Objects/Chairs/Stool-Sheet.png" id="2_ga2qs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
 size = Vector2(16, 13)
@@ -9,7 +9,7 @@ size = Vector2(16, 13)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
 size = Vector2(24, 34)
 
-[node name="Stool" type="RigidBody2D" groups=["Furniture"]]
+[node name="Stool" type="RigidBody2D" unique_id=1659266552 groups=["Furniture"]]
 collision_layer = 2
 collision_mask = 7
 gravity_scale = 0.0
@@ -20,19 +20,21 @@ canPush = true
 canPull = true
 metadata/_custom_type_script = "uid://c2vh27coguldq"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=698676050]
 texture = ExtResource("2_ga2qs")
 flip_h = true
+region_enabled = true
+region_rect = Rect2(8, 8, 16, 16)
 
-[node name="Collision" type="CollisionShape2D" parent="."]
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1593684611]
 position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_xnri0")
 
-[node name="AreaDetector" type="Area2D" parent="." groups=["Furniture"]]
+[node name="AreaDetector" type="Area2D" parent="." unique_id=2089939779 groups=["Furniture"]]
 collision_layer = 2
 collision_mask = 7
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector" unique_id=52970339]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_ardoa")
 
