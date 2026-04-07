@@ -64,7 +64,7 @@ var canMovePositiveY:bool = true
 
 @warning_ignore("untyped_declaration")
 func _ready() -> void:
-	
+	self.freeze = true
 	if (rotatedVersion != null):
 		rotatedVersion.visible = false
 		rotatedVersion.collision_layer = 0
@@ -371,6 +371,7 @@ func enterPush(body: CharacterBody2D) -> void:
 	self.distanceFromPlayer = position.distance_to(player.position)
 	self.anchorPoint = player.position - self.position
 	self.isPushed = true
+	self.freeze = true
 
 func exitPush()-> void:
 	print("exited pushing")
@@ -378,6 +379,7 @@ func exitPush()-> void:
 	self.collision_layer = 2
 	self.collision_mask = 7
 	self.isPushed = false
+	self.freeze = false
 	self.linear_velocity = Vector2.ZERO
 #endregion
 
