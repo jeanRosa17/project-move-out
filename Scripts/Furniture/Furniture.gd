@@ -358,6 +358,7 @@ func exitLift() -> void:
 	self.isLifted = false
 	
 	self.player = null
+	self.scale = Vector2(1, 1)
 	self.add_to_group("Furniture")
 	audioPlayer.put_down_noise()
 
@@ -371,7 +372,7 @@ func enterPush(body: CharacterBody2D) -> void:
 	self.distanceFromPlayer = position.distance_to(player.position)
 	self.anchorPoint = player.position - self.position
 	self.isPushed = true
-	self.freeze = true
+	self.freeze = false
 
 func exitPush()-> void:
 	print("exited pushing")
@@ -379,7 +380,7 @@ func exitPush()-> void:
 	self.collision_layer = 2
 	self.collision_mask = 7
 	self.isPushed = false
-	self.freeze = false
+	self.freeze = true
 	self.linear_velocity = Vector2.ZERO
 #endregion
 

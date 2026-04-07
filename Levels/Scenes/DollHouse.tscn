@@ -5,8 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://bof0wxapyclor" path="res://Assets/Objects/Chairs/Scene/Stool.tscn" id="2_kqdxf"]
 [ext_resource type="Script" path="res://Scripts/haunted_doll.gd" id="2_meg7m"]
 [ext_resource type="Texture2D" uid="uid://mj83eila38sg" path="res://Assets/Objects/Table Items/haunted_doll.png" id="3_57lwi"]
-[ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="4_5fgsy"]
-[ext_resource type="Texture2D" uid="uid://ws0hxis55nlq" path="res://Assets/Objects/Beds/double_bed_1.png" id="5_nismo"]
 [ext_resource type="PackedScene" uid="uid://cmwh2w2blwcsq" path="res://Assets/Objects/Beds/Scene/Twin_Bed.tscn" id="6_swgb5"]
 [ext_resource type="PackedScene" uid="uid://c1m5u3p8uir82" path="res://Levels/Prefabs/Teleporter.tscn" id="7_iu4ja"]
 [ext_resource type="PackedScene" uid="uid://outwnejax5mt" path="res://Assets/Objects/Couches/Scenes/redder_couch_side.tscn" id="8_d57al"]
@@ -34,19 +32,13 @@ size = Vector2(16, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
 size = Vector2(18, 18)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ql12h"]
-size = Vector2(26, 42)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2wor3"]
-size = Vector2(36, 52)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5evq6"]
 size = Vector2(20, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bbw8h"]
 size = Vector2(24, 32)
 
-[node name="LevelTemplate" unique_id=319947790 instance=ExtResource("1_56vba")]
+[node name="DollHouse" unique_id=319947790 instance=ExtResource("1_56vba")]
 
 [node name="Walls" parent="." index="0" unique_id=216456263]
 z_index = -1
@@ -147,35 +139,14 @@ collision_mask = 7
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Y-Sorting/Haunted_doll/AreaDetector" index="0" unique_id=397292190]
 shape = SubResource("RectangleShape2D_ardoa")
 
-[node name="Double Bed" type="RigidBody2D" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="17" unique_id=2123895444 node_paths=PackedStringArray("rotatedVersion") groups=["Furniture"]]
-position = Vector2(96, 80)
-collision_layer = 2
-collision_mask = 7
-gravity_scale = 0.0
-can_sleep = false
-lock_rotation = true
-script = ExtResource("4_5fgsy")
-canPush = true
-canPull = true
-rotatedVersion = NodePath("Twin_Bed")
-tetroShape = 6
-metadata/_custom_type_script = "uid://c2vh27coguldq"
+[node name="Twin_Bed" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="17" unique_id=932381668 instance=ExtResource("6_swgb5")]
+position = Vector2(100, 72)
 
-[node name="Sprite2D" type="Sprite2D" parent="Y-Sorting/Double Bed" index="0" unique_id=121146298]
-texture = ExtResource("5_nismo")
+[node name="Sprite2D" parent="Y-Sorting/Twin_Bed" index="0" unique_id=2129338941]
+region_rect = Rect2(3, 2, 58, 62)
 
-[node name="Collision" type="CollisionShape2D" parent="Y-Sorting/Double Bed" index="1" unique_id=1755016032]
-position = Vector2(0, 3)
-shape = SubResource("RectangleShape2D_ql12h")
-
-[node name="AreaDetector" type="Area2D" parent="Y-Sorting/Double Bed" index="2" unique_id=159031122 groups=["Furniture"]]
-collision_layer = 2
-collision_mask = 7
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Y-Sorting/Double Bed/AreaDetector" index="0" unique_id=1262477190]
-shape = SubResource("RectangleShape2D_2wor3")
-
-[node name="Twin_Bed" parent="Y-Sorting/Double Bed" index="3" unique_id=932381668 instance=ExtResource("6_swgb5")]
+[node name="Collision" parent="Y-Sorting/Twin_Bed" index="1" unique_id=2082596102]
+position = Vector2(0, 2)
 
 [node name="Player" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="18" unique_id=1761221807]
 position = Vector2(304, 480)
@@ -299,9 +270,8 @@ goTo = NodePath("../ToSecondFloor")
 
 [connection signal="body_shape_entered" from="Y-Sorting/Haunted_doll/AreaDetector" to="Y-Sorting/Haunted_doll" method="_on_area_detector_body_shape_entered"]
 [connection signal="body_shape_exited" from="Y-Sorting/Haunted_doll/AreaDetector" to="Y-Sorting/Haunted_doll" method="_on_area_detector_body_shape_exited"]
-[connection signal="body_shape_entered" from="Y-Sorting/Double Bed/AreaDetector" to="Y-Sorting/Double Bed" method="_on_area_detector_body_shape_entered"]
-[connection signal="body_shape_exited" from="Y-Sorting/Double Bed/AreaDetector" to="Y-Sorting/Double Bed" method="_on_area_detector_body_shape_exited"]
 
+[editable path="Y-Sorting/Twin_Bed"]
 [editable path="Y-Sorting/KitchenDoor"]
 [editable path="Y-Sorting/LivingRoomDoor"]
 [editable path="Y-Sorting/MainDoor"]
