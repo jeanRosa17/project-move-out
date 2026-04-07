@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://djoxbl8cpf6q1"]
+
+[ext_resource type="Script" uid="uid://d3b20g1bmb2e5" path="res://Scripts/UI/Scenes/timer.gd" id="1_x5wvt"]
+
+[node name="Timer UI" type="CanvasLayer" unique_id=1373912813]
+
+[node name="Timer" type="Node2D" parent="." unique_id=1311272654]
+script = ExtResource("1_x5wvt")
+
+[node name="Label" type="Label" parent="Timer" unique_id=661449751]
+offset_left = 138.0
+offset_right = 180.0
+offset_bottom = 23.0
+text = "00:00"
+
+[node name="Timer" type="Timer" parent="Timer" unique_id=476436189]
+wait_time = 300.0
+one_shot = true
+autostart = true
