@@ -20,7 +20,17 @@
 [ext_resource type="PackedScene" uid="uid://b7qk52eapta2s" path="res://Assets/Objects/Dressers & Shelves/Scenes/wooden_wardrobe_front.tscn" id="17_lts4y"]
 [ext_resource type="PackedScene" uid="uid://dq5dgctxnghmb" path="res://Assets/Objects/Beds/Scene/Double_Bed.tscn" id="18_3ipja"]
 [ext_resource type="PackedScene" uid="uid://ombsd650f300" path="res://Assets/Objects/Tables/Scenes/bedside_table.tscn" id="19_rteq5"]
-[ext_resource type="PackedScene" uid="uid://pr8g204x513g" path="res://Levels/Prefabs/Door.tscn" id="20_n5378"]
+[ext_resource type="PackedScene" path="res://Levels/Prefabs/Door.tscn" id="20_n5378"]
+[ext_resource type="AudioStream" uid="uid://dujg6iy7hs4b5" path="res://Assets/Audio/rodriguez house.wav" id="21_8y6ju"]
+[ext_resource type="AudioStream" uid="uid://b1gx2u1temfdh" path="res://Assets/Audio/rodriguez restauaraunt.wav" id="22_5sow2"]
+[ext_resource type="Script" uid="uid://d0ca3o034njdg" path="res://Levels/level_music_sync.gd" id="23_4utxa"]
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_hsjr8"]
+stream_count = 2
+stream_0/stream = ExtResource("21_8y6ju")
+stream_0/volume = -60.0
+stream_1/stream = ExtResource("22_5sow2")
+stream_1/volume = 0.0
 
 [node name="Rodriguez House" unique_id=319947790 instance=ExtResource("1_qwrhc")]
 
@@ -301,6 +311,10 @@ offset_top = -224.0
 offset_right = 96.0
 offset_bottom = -32.0
 
+[node name="Level Music" parent="." index="13" unique_id=1340222311]
+stream = SubResource("AudioStreamSynchronized_hsjr8")
+script = ExtResource("23_4utxa")
+
 [node name="CollisionShape2D(South)" parent="World Border" parent_id_path=PackedInt32Array(1282742655) index="0" unique_id=1840740475]
 position = Vector2(160, 755)
 
@@ -329,6 +343,9 @@ goTo = NodePath("../ToFirstFloor")
 [node name="ToFirstFloor" parent="." index="19" unique_id=1310353777 node_paths=PackedStringArray("goTo") instance=ExtResource("5_qujg8")]
 position = Vector2(144, 232)
 goTo = NodePath("../ToSecondFloor")
+
+[connection signal="body_entered" from="ToSecondFloor" to="Level Music" method="_on_to_second_floor_body_entered"]
+[connection signal="body_entered" from="ToFirstFloor" to="Level Music" method="_on_to_first_floor_body_entered"]
 
 [editable path="Y-Sorting/Player"]
 [editable path="Y-Sorting/Couch"]
