@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ce4x5g5hrvxce" path="res://Assets/Objects/Bathroom/Scenes/Bathtub.tscn" id="6_mngvi"]
 [ext_resource type="PackedScene" uid="uid://bfp82m6exqyhy" path="res://Assets/Objects/Bathroom/Scenes/Sink.tscn" id="7_udrtn"]
 [ext_resource type="PackedScene" uid="uid://c638p25j2md1l" path="res://Assets/Objects/Bathroom/Scenes/Toilet.tscn" id="8_b3v6f"]
+[ext_resource type="PackedScene" uid="uid://dkssiia1dmwor" path="res://Assets/Objects/Chairs/Scene/Wood_Chair_Side.tscn" id="9_n6jrh"]
 [ext_resource type="PackedScene" uid="uid://tlg5nuhh7uvu" path="res://Assets/Objects/Chairs/Scene/Possessed_wood_Chair_side2.tscn" id="10_jj3me"]
 [ext_resource type="PackedScene" uid="uid://diko086yswlr0" path="res://Assets/Objects/Beds/Scene/Twin_Bed_Side.tscn" id="11_c1wgv"]
 [ext_resource type="PackedScene" uid="uid://bujcbosiagjri" path="res://Assets/Objects/Dressers & Shelves/Scenes/wooden_shelf_front.tscn" id="12_62cqs"]
@@ -28,6 +29,8 @@
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iqcmb"]
 normal = Vector2(1.79515e-06, 1)
 distance = -3.99999
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_n6jrh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_udrtn"]
 size = Vector2(40.7114, 232.144)
@@ -121,15 +124,18 @@ position = Vector2(65, 271)
 
 [node name="possessed_wood_chair_side8" parent="Environment/Y-Sorting" unique_id=1550876919 instance=ExtResource("10_jj3me")]
 position = Vector2(56, 111)
-script = null
+physics_material_override = SubResource("PhysicsMaterial_n6jrh")
+regular_chair_scene = ExtResource("9_n6jrh")
 
 [node name="possessed_wood_chair_side7" parent="Environment/Y-Sorting" unique_id=443621311 instance=ExtResource("10_jj3me")]
 position = Vector2(58, 76)
-script = null
+physics_material_override = SubResource("PhysicsMaterial_n6jrh")
+regular_chair_scene = ExtResource("9_n6jrh")
 
 [node name="possessed_wood_chair_side9" parent="Environment/Y-Sorting" unique_id=944770110 instance=ExtResource("10_jj3me")]
 position = Vector2(56, 47)
-script = null
+physics_material_override = SubResource("PhysicsMaterial_n6jrh")
+regular_chair_scene = ExtResource("9_n6jrh")
 
 [node name="Twin_Bed_Side" parent="Environment/Y-Sorting" unique_id=92000684 instance=ExtResource("11_c1wgv")]
 position = Vector2(223, 7)
