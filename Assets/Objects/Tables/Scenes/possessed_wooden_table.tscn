@@ -16,6 +16,7 @@ physics_material_override = SubResource("PhysicsMaterial_0mkld")
 gravity_scale = 0.0
 can_sleep = false
 lock_rotation = true
+freeze = true
 script = ExtResource("1_flt3y")
 regular_furniture_scene = ExtResource("2_braga")
 
