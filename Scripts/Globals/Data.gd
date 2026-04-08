@@ -3,12 +3,15 @@ extends Node
 ## Stores a UID reference to the levels.
 const Levels:Array[String] = \
 	["uid://crm2fqqeyg12f",
+	"uid://n31v0le4dxeh",
 	"uid://cdnij7booxhs4",
+	"uid://dlp1pmhousfx7",
 	"uid://cduod51ifksbg",
+	"uid://djbnodthq7xxo",
 	"uid://bb3dywxtdya3a",
+	"uid://c766m53y8wrk4",
 	"uid://n31v0le4dxeh"
 	]
-
 var levelNum:int = 0
 
 enum Direction {

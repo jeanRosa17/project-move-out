@@ -23,7 +23,7 @@ func _ready() ->void:
 	#self.vis = false
 	if not Engine.is_editor_hint():
 		self.setAllOff()
-	#self.dialogue.visible = false
+	#self.dialogue.visible = false  
 	
 ## Helper function that makes all other CanvasLayers of the Hud turn off when
 ## the root HUD node is set invisible
@@ -50,6 +50,10 @@ func get_max_score() -> float:
 	
 ##runs tetris if the level is not over
 func runTetris() -> void:
+	var current_scene = get_tree().current_scene  
+	print("Current Scene: ", current_scene.name)
+	if(current_scene.name == "HubScene"):
+		return;
 	if (not self.player_camera): self.player_camera = self.player.getCamera()
 	if (not self.tetris_camera): self.tetris_camera = self.tetris.getCamera()
 	

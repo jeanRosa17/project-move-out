@@ -62,4 +62,5 @@ func _on_end_level() -> void:
 
 ## Triggered when the player leaves the Carpet's area2D
 func _trigger_tetris(body: Node2D) -> void:
+	await(get_tree().create_timer(1).timeout)
 	%HUD.runTetris()
