@@ -125,17 +125,17 @@ position = Vector2(65, 271)
 [node name="possessed_wood_chair_side8" parent="Environment/Y-Sorting" unique_id=1550876919 instance=ExtResource("10_jj3me")]
 position = Vector2(56, 111)
 physics_material_override = SubResource("PhysicsMaterial_n6jrh")
-regular_chair_scene = ExtResource("9_n6jrh")
+regular_furniture_scene = ExtResource("9_n6jrh")
 
 [node name="possessed_wood_chair_side7" parent="Environment/Y-Sorting" unique_id=443621311 instance=ExtResource("10_jj3me")]
 position = Vector2(58, 76)
 physics_material_override = SubResource("PhysicsMaterial_n6jrh")
-regular_chair_scene = ExtResource("9_n6jrh")
+regular_furniture_scene = ExtResource("9_n6jrh")
 
 [node name="possessed_wood_chair_side9" parent="Environment/Y-Sorting" unique_id=944770110 instance=ExtResource("10_jj3me")]
 position = Vector2(56, 47)
 physics_material_override = SubResource("PhysicsMaterial_n6jrh")
-regular_chair_scene = ExtResource("9_n6jrh")
+regular_furniture_scene = ExtResource("9_n6jrh")
 
 [node name="Twin_Bed_Side" parent="Environment/Y-Sorting" unique_id=92000684 instance=ExtResource("11_c1wgv")]
 position = Vector2(223, 7)

@@ -8,7 +8,7 @@ extends Node2D
 @export var wait_time: float = 0.5
 # How long (in seconds) the chair waits at each end
 
-@export var regular_chair_scene: PackedScene
+@export var regular_furniture_scene: PackedScene
 
 var _start_position: Vector2
 var _end_position: Vector2
@@ -71,8 +71,8 @@ func unpossess_and_replace() -> void:
 		return
 	_has_been_replaced = true
 
-	if regular_chair_scene:
-		var new_chair = regular_chair_scene.instantiate()
+	if regular_furniture_scene:
+		var new_chair = regular_furniture_scene.instantiate()
 
 		var parent = get_parent()
 		parent.add_child(new_chair)

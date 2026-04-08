@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://f656n3gp8b6h"]
+
+[ext_resource type="Script" uid="uid://c7i48trgjg4xm" path="res://Scripts/possessed_object.gd" id="1_flt3y"]
+[ext_resource type="PackedScene" uid="uid://ds1nqvgtuae71" path="res://Assets/Objects/Tables/Scenes/wooden_table.tscn" id="2_braga"]
+[ext_resource type="Texture2D" uid="uid://bh1tj50gjc856" path="res://Assets/Objects/Tables/wooden_table_1.png" id="2_flt3y"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0mkld"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
+size = Vector2(32, 32)
+
+[node name="possessed_wooden_table" type="RigidBody2D" unique_id=1580606587 groups=["Possessed Item"]]
+collision_layer = 2
+collision_mask = 7
+physics_material_override = SubResource("PhysicsMaterial_0mkld")
+gravity_scale = 0.0
+can_sleep = false
+lock_rotation = true
+script = ExtResource("1_flt3y")
+regular_furniture_scene = ExtResource("2_braga")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1648410504]
+texture = ExtResource("2_flt3y")
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=999354557]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_xnri0")

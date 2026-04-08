@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://c4t28bigi1yhq"]
+
+[ext_resource type="Script" uid="uid://c7i48trgjg4xm" path="res://Scripts/possessed_object.gd" id="1_s3xay"]
+[ext_resource type="PackedScene" uid="uid://cqt367stu26c2" path="res://Assets/Objects/Table Items/Scenes/Pot.tscn" id="2_l1ya5"]
+[ext_resource type="Texture2D" uid="uid://d3eu5wmu40kyf" path="res://Assets/Objects/Table Items/Pots & Vases-Sheet.png" id="3_bjn5i"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_njcqw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
+size = Vector2(8, 8)
+
+[node name="Possessed_Pot" type="RigidBody2D" unique_id=165898543 groups=["Possessed Item"]]
+y_sort_enabled = true
+collision_layer = 2
+collision_mask = 7
+physics_material_override = SubResource("PhysicsMaterial_njcqw")
+gravity_scale = 0.0
+script = ExtResource("1_s3xay")
+regular_furniture_scene = ExtResource("2_l1ya5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1553793455]
+texture = ExtResource("3_bjn5i")
+offset = Vector2(0, -7)
+region_enabled = true
+region_rect = Rect2(29, 28, 14, 15)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=476514307]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_xnri0")
