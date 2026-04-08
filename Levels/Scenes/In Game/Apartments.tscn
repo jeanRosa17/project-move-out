@@ -44,6 +44,7 @@ tile_set = ExtResource("2_8k0qu")
 position = Vector2(121, -68)
 script = ExtResource("2_s77ne")
 startPos = Vector2(724, -68)
+skipCutscene = false
 events = Array[Vector2]([Vector2(128, -68), Vector2(128, 96), Vector2(52, 96)])
 van = NodePath("../Storage Van")
 
@@ -177,6 +178,7 @@ replayLevelName = &"res://Levels/Scenes/In Game/Apartments.tscn"
 [node name="Dialogue" parent="HUD" index="2" unique_id=2001474479]
 visible = false
 
+[editable path="Y-Sorting/Storage Van"]
 [editable path="Y-Sorting/Wood_Chair_Side"]
 [editable path="Y-Sorting/Wood_Chair_Side2"]
 [editable path="HUD"]

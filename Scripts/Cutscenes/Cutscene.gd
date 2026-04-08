@@ -14,7 +14,7 @@ var i:int = 0
 @onready var view: AnimatedSprite2D = $AnimatedSprite2D
 @onready var y_sorting: Node2D = $".."
 @onready var cutscene_camera: Camera2D = $"Cutscene Camera"
-
+@onready var moving_van: StorageVan = $"../Storage Van"
 
 var tween:Tween
 
@@ -26,6 +26,7 @@ func _ready() -> void:
 	self.view.play("left")
 	self.skew = 0
 	self.cutscene_camera.make_current()
+	self.moving_van.visible = false
 
 func _process(_delta: float) -> void:
 	var speed:float = 0.1 if (skipCutscene) else 3.0
@@ -48,6 +49,7 @@ func _process(_delta: float) -> void:
 				#self.remove_child(self.player)
 				#self.y_sorting.add_child(self.player)
 				
+				self.moving_van.visible = true
 				self.player.visible = true
 				self.player.view.play("jump down")
 				self.player.position = Vector2(self.position.x, self.position.y+32)

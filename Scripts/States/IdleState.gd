@@ -12,7 +12,8 @@ func _ready() -> void:
 func enter() -> void: 
 	var dir:String = self.getManager().view.animation.split(" ")[1].to_lower()
 	
-	if not (self.getManager().hasFurniture):
+	if (not self.getManager().hasFurniture or (self.getManager().furniture == null or self.getManager().furniture.is_queued_for_deletion())):
+	#if not (self.getManager().hasFurniture):
 		self.getManager().view.play("idle " + dir)
 	else:
 		if (self.getManager().furniture.isPushed):

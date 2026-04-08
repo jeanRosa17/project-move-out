@@ -141,7 +141,7 @@ func handleInteract(_delta:float) -> void:
 				
 
 func handleRotate(_delta:float) -> void:
-	if (Input.is_action_just_pressed("Rotate")):
+	if (Input.is_action_just_pressed("Rotate") and self.manager.hasFurniture and self.manager.furniture.isPushed):
 		self.manager.furniture.rotateObj()
 
 ## Sets the controller to either accept or ignore input.

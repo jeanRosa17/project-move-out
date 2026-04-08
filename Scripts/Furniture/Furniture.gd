@@ -246,10 +246,10 @@ func _physics_process(_delta: float) -> void:
 		if (self.position.distance_to(self.player.position) > self.distanceFromPlayer + 2):
 			print("TOO FAR")
 	
-			#player.global_position = player.global_position.move_toward(self.global_position, .9)
+			player.global_position = player.global_position.move_toward(self.global_position, .9)
 			#self.global_position = self.global_position.move_toward(player.global_position, 1)
-			self.global_position = self.global_position.move_toward(self.position + self.anchorPoint, 0.5)
-	
+			#self.global_position = self.global_position.move_toward(self.position + self.anchorPoint, 0.5)
+#	
 func update_detector_direction(direction: Vector2) -> void:
 	if (abs(direction.x) > abs(direction.y)):
 		if (direction.x > 0): area_detector.position = Vector2(liftPosition.y, 0)
@@ -376,12 +376,15 @@ func enterPush(body: CharacterBody2D) -> void:
 
 func exitPush()-> void:
 	print("exited pushing")
-	#self.player = null
+	self.player.manager.item_detector.visible = false
+	self.player.manager.furniture = null
+	self.player = null
 	self.collision_layer = 2
 	self.collision_mask = 7
 	self.isPushed = false
 	self.freeze = true
 	self.linear_velocity = Vector2.ZERO
+	
 #endregion
 
 # If has a rotated object and rotated version can fit, rotate.
@@ -533,6 +536,7 @@ func getShape() -> Data.Tetronimo:
 ## This Furniture will be destroyed afterwards.
 func packInBox() -> void:
 	print("pack in")
+
 	var child = PACK_UP_BOX.instantiate()
 	var t:Tween
 	
@@ -553,10 +557,7 @@ func packInBox() -> void:
 	#t.tween_property(self, "position:y", 8, 0.2).from(0).set_delay(0.33)
 	t.parallel()
 	t.tween_property(self, "scale", Vector2(0, 0), 0.2).from(Vector2(1, 1)).set_delay(0.33)
-	t.tween_callback(func () -> void: 
-		self.queue_free()
-		if(self.player != null):
-			self.player.manager.furniture = null
-		).set_delay(0.3)
+	t.tween_callback(func () -> void:
+		self.queue_free()).set_delay(0.3)
 	
 	#child.marker_2d.reparent(self)
