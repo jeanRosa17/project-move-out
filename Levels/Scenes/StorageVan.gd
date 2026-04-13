@@ -28,11 +28,11 @@ var spawnNewObject: bool = false
 
 func _process(_delta:float) -> void:
 	#ONLY IN HUB LEVEL (Object Spawner) broken as of right now
-	#var scene_path = get_tree().current_scene.filename
-	#if scene_path == "res://Levels/HubScene.tscn" && !spawnNewObject:
-		##get item that we provide from previous scene and spawn it
-		#print("Spawning object")
-		#spawnNewObject = true
+	
+	if get_parent().get_parent().name == "HubScene" && !spawnNewObject:
+		#get item that we provide from previous scene and spawn it
+		print("Spawning object")
+		spawnNewObject = true
 	
 	self.moving_van.direction = self.direction
 	self.collision_shape_2d.shape = self.moving_van.collision_shape_2d.shape
