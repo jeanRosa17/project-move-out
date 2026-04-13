@@ -23,8 +23,17 @@ extends Node2D
 @onready var leave_area: Area2D = $"Leave Area"
 @onready var collision_shape_2d: CollisionShape2D = $"Leave Area/CollisionShape2D"
 
+var spawnNewObject: bool = false
+
 
 func _process(_delta:float) -> void:
+	#ONLY IN HUB LEVEL (Object Spawner) broken as of right now
+	#var scene_path = get_tree().current_scene.filename
+	#if scene_path == "res://Levels/HubScene.tscn" && !spawnNewObject:
+		##get item that we provide from previous scene and spawn it
+		#print("Spawning object")
+		#spawnNewObject = true
+	
 	self.moving_van.direction = self.direction
 	self.collision_shape_2d.shape = self.moving_van.collision_shape_2d.shape
 	#self.collision_shape_2d.shape.size = self.moving_van.collision_shape_2d.shape.size * 1.25
