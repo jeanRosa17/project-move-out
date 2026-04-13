@@ -77,14 +77,17 @@ position = Vector2(440, 216)
 [node name="Possessed_Pot" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="2" unique_id=165898543 instance=ExtResource("4_d57al")]
 position = Vector2(288, 128)
 move_offset = Vector2(35, 0)
+regular_furniture_scene = null
 
 [node name="Possessed_Pot2" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="3" unique_id=1795586457 instance=ExtResource("4_d57al")]
 position = Vector2(320, 216)
 move_offset = Vector2(-35, 0)
+regular_furniture_scene = null
 
 [node name="Possessed_Pot3" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="4" unique_id=816272811 instance=ExtResource("4_d57al")]
 position = Vector2(288, 256)
 move_offset = Vector2(35, 0)
+regular_furniture_scene = null
 
 [node name="wooden_wardrobe_front" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="5" unique_id=2060248601 instance=ExtResource("14_s8jsb")]
 position = Vector2(184, 48)
@@ -238,10 +241,12 @@ position = Vector2(528, 400)
 [node name="possessed_wood_chair_side3" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="28" unique_id=387435298 instance=ExtResource("23_5evq6")]
 position = Vector2(321, 161)
 move_offset = Vector2(-35, 0)
+regular_furniture_scene = ExtResource("24_d57al")
 
 [node name="possessed_wood_chair_side2" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="29" unique_id=293202521 instance=ExtResource("23_5evq6")]
 position = Vector2(288, 287)
 move_offset = Vector2(35, 0)
+regular_furniture_scene = ExtResource("24_d57al")
 
 [node name="Chair" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="30" unique_id=2098710632 instance=ExtResource("24_d57al")]
 position = Vector2(216, 144)

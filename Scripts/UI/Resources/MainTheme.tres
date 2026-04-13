@@ -1,6 +1,6 @@
 [gd_resource type="Theme" format=3 uid="uid://bxr4bn083148b"]
 
-[ext_resource type="FontFile" uid="uid://d307q4t4nwsnf" path="res://Assets/Fonts/CooperBlack-Std.otf" id="1_ygmi4"]
+[ext_resource type="FontFile" uid="uid://d307q4t4nwsnf" path="res://Assets/fonts/CooperBlack-Std.otf" id="1_ygmi4"]
 [ext_resource type="Texture2D" uid="uid://bwh0ffs6kltgt" path="res://Assets/UI/White-NineBox.png" id="2_lcboo"]
 [ext_resource type="StyleBox" uid="uid://dm8ykbmvomsga" path="res://Scripts/UI/Resources/WhiteStyleBox.tres" id="3_a84wc"]
 
