@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bof0wxapyclor" path="res://Assets/Objects/Chairs/Scene/Stool.tscn" id="6_ejuf2"]
 [ext_resource type="PackedScene" uid="uid://uacgji4vcg37" path="res://Assets/Audio/push_pull_audio.tscn" id="6_s5o2l"]
 [ext_resource type="PackedScene" uid="uid://b7qk52eapta2s" path="res://Assets/Objects/Dressers & Shelves/Scenes/wooden_wardrobe_front.tscn" id="7_kgb2b"]
+[ext_resource type="Script" uid="uid://ccvklwo6vymal" path="res://Levels/HubLocker.gd" id="7_ptb8a"]
 [ext_resource type="PackedScene" uid="uid://bujcbosiagjri" path="res://Assets/Objects/Dressers & Shelves/Scenes/wooden_shelf_front.tscn" id="8_1fjhn"]
 [ext_resource type="PackedScene" uid="uid://cfmb3mmeue8au" path="res://Scripts/UI/Scenes/HUD.tscn" id="8_87idw"]
 [ext_resource type="PackedScene" uid="uid://cl3ww3w6r3n1r" path="res://Assets/Objects/Kitchen/Scenes/Fridge.tscn" id="9_1fjhn"]
@@ -15,6 +16,9 @@
 [ext_resource type="AudioStream" uid="uid://qeb7u2p7xni4" path="res://Assets/Audio/johns place.wav" id="13_87idw"]
 [ext_resource type="PackedScene" uid="uid://dpyl8x5qojmng" path="res://Assets/Objects/Table Items/Scenes/TV.tscn" id="13_unfai"]
 [ext_resource type="PackedScene" uid="uid://dns4vnk3a35fb" path="res://Assets/Objects/Couches/Scenes/red_couch_side.tscn" id="14_x7fdx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ra6hx"]
+size = Vector2(48, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k1l4a"]
 size = Vector2(80, 32)
@@ -71,8 +75,17 @@ safe_margin = 1.159
 [node name="Stool" parent="Y-Sorting" unique_id=509688860 instance=ExtResource("6_ejuf2")]
 position = Vector2(985, 194)
 
-[node name="wooden_wardrobe_front" parent="Y-Sorting" unique_id=2060248601 instance=ExtResource("7_kgb2b")]
+[node name="LOCKER" parent="Y-Sorting" unique_id=2060248601 instance=ExtResource("7_kgb2b")]
 position = Vector2(1080, 144)
+
+[node name="Area2D" type="Area2D" parent="Y-Sorting/LOCKER" unique_id=1817835064]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Y-Sorting/LOCKER/Area2D" unique_id=1307198222]
+position = Vector2(0, 40)
+shape = SubResource("RectangleShape2D_ra6hx")
+
+[node name="ItemSpawnLocation" type="Node2D" parent="Y-Sorting/LOCKER" unique_id=482101751]
+position = Vector2(-50, 28)
 
 [node name="Shelf3" parent="Y-Sorting" unique_id=1973851103 instance=ExtResource("8_1fjhn")]
 position = Vector2(860, -8)
@@ -133,6 +146,19 @@ position = Vector2(798.5, 64)
 rotation = -4.71239
 shape = SubResource("WorldBoundaryShape2D_ersrp")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=159038990]
+
+[node name="ItemList2" type="ItemList" parent="CanvasLayer" unique_id=379288082 node_paths=PackedStringArray("spawn_location", "y_sort")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+auto_width = true
+script = ExtResource("7_ptb8a")
+spawn_location = NodePath("../../Y-Sorting/LOCKER/ItemSpawnLocation")
+y_sort = NodePath("../../Y-Sorting")
+
 [node name="HUD" parent="." unique_id=1725586568 node_paths=PackedStringArray("player") instance=ExtResource("8_87idw")]
 unique_name_in_owner = true
 visible = false
@@ -148,6 +174,10 @@ replayLevelName = &"res://Levels/HubScene.tscn"
 
 [node name="Dialogue" parent="HUD" index="2" unique_id=2001474479]
 visible = false
+
+[connection signal="body_entered" from="Y-Sorting/LOCKER/Area2D" to="CanvasLayer/ItemList2" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Y-Sorting/LOCKER/Area2D" to="CanvasLayer/ItemList2" method="_on_area_2d_body_exited"]
+[connection signal="item_clicked" from="CanvasLayer/ItemList2" to="CanvasLayer/ItemList2" method="_on_item_clicked"]
 
 [editable path="Y-Sorting/Storage Van"]
 [editable path="HUD"]
