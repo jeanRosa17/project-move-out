@@ -6,6 +6,7 @@ class_name Furniture
 @onready var audioPlayer: FurnitureAudio = %"Push_Pull Audio"
 @onready var area_detector: Area2D = $AreaDetector
 @onready var area_shape: CollisionShape2D = $AreaDetector/CollisionShape2D
+@onready var hud: HUDManager = %HUD
 
 const PACK_UP_BOX = preload("uid://k0rgciqs0uce")
 
@@ -18,14 +19,14 @@ const PACK_UP_BOX = preload("uid://k0rgciqs0uce")
 var rotated: int = 0
 
 @export var weight:int = 0
-@export var dialogueTag:DialogueTag = preload("res://Scripts/Dialogue/nullDialogue.tres")
+@export var dialogueTag:DialogueTag
 @export var liftPosition:Vector2 = Vector2(0, -16)
 
 var isLifted: bool = false
 var isPushed: bool = false
 var canBeDropped: bool = true ## Changed to true so that a player can immediately pick up and drop something
 
-
+@export var dialogueTriggered: bool = false;
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var ghostSprite: Sprite2D
@@ -331,6 +332,9 @@ func killLiftingTween() -> void:
 
 func enterLift(body:CharacterBody2D) -> void:
 	print("enterLift")
+	if(self.dialogueTag != null && !dialogueTriggered):
+		self.hud.setDialogueTo(dialogueTag)
+		dialogueTriggered = true;
 	self.remove_from_group("Furniture")
 	self.collision_layer = 1;
 	self.collision_mask = 6;
@@ -364,6 +368,9 @@ func exitLift() -> void:
 
 func enterPush(body: CharacterBody2D) -> void:
 	print("entered pushing")
+	if(self.dialogueTag != null && !dialogueTriggered):
+		self.hud.setDialogueTo(dialogueTag)
+		dialogueTriggered = true;
 	self.player = body
 	print(player.name)
 	self.collision_layer = 1

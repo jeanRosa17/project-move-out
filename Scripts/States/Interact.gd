@@ -5,10 +5,11 @@ extends State
 
 ## The first method called when the state is transitioned into
 func enter() -> void:
-	if ((not self.getManager().hasFurniture) or self.getManager().furniture.dialogueTag == null):
-		self.hud.setDialogueTo(load("res://Scripts/Dialogue/nullDialogue.tres"))
-	else:
-		self.hud.setDialogueTo(self.getManager().furniture.dialogueTag)
+#	if ((not self.getManager().hasFurniture) or self.getManager().furniture.dialogueTag == null):
+#		self.hud.setDialogueTo(load("res://Scripts/Dialogue/nullDialogue.tres"))
+#	else:
+#		self.hud.setDialogueTo(self.getManager().furniture.dialogueTag)
+	return
 
 func exit() -> void:
 	pass
