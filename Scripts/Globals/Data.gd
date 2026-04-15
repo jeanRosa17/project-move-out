@@ -4,7 +4,7 @@ extends Node
 ## play it from any scene since it is linear progression, so be aware
 const Levels:Array[String] = \
 	["uid://crm2fqqeyg12f", #Tutorial - Storage Unit v2
-	"uid://0k2e5nxgnweq", #HubScene
+	"uid://jre5761gc8o1", #HubScene
 	"uid://cdnij7booxhs4", #Apartments
 	"uid://dlp1pmhousfx7", #poolAlt
 	"uid://cduod51ifksbg", #RodriguezHouse

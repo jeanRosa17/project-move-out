@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://0k2e5nxgnweq"]
+[gd_scene format=4 uid="uid://jre5761gc8o1"]
 
 [ext_resource type="Script" uid="uid://df3mxrpvelh25" path="res://Levels/Level.gd" id="1_0bbru"]
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="2_6mo3h"]
@@ -436,6 +436,7 @@ size_flags_vertical = 4
 alignment = 1
 
 [node name="YesOption" type="Button" parent="HUD/Dialogue/Textbox/Panel" unique_id=2123070961]
+visible = false
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_vertical = 4
@@ -445,6 +446,7 @@ text = "Yes"
 [node name="ButtonSound DownUp" parent="HUD/Dialogue/Textbox/Panel/YesOption" unique_id=204606457 instance=ExtResource("23_wia7a")]
 
 [node name="NoOption" type="Button" parent="HUD/Dialogue/Textbox/Panel" unique_id=1877668014]
+visible = false
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_vertical = 4
