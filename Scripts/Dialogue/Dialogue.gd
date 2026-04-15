@@ -1,6 +1,8 @@
 class_name DialogueManager
 extends Control
 
+signal dialogue_finished
+
 @onready var label:Label = $Textbox/Label
 @onready var audioPlayer:FurnitureAudio = get_tree().root.find_child("Push_Pull Audio", true, false)
 
@@ -156,6 +158,7 @@ func nextLine(lineTimer: Timer) -> void:
 	if (self.lineCounter + 1 >= lines.size()):
 		print("Reached end of dialogue for tag: ", self.dialogueTag)
 		self.currentTagFinished = true
+		self.dialogue_finished.emit()
 		return
 	
 	self.lineCounter += 1
