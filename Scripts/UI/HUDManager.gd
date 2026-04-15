@@ -100,16 +100,16 @@ func checkResults() -> void:
 	## enable tetris and have the player play that first
 	
 	self.player.setControls(false)
-<<<<<<< Updated upstream
+
 	print("Gay gay homosexual gay");
 	var current_scene = get_tree().current_scene
 	if (current_scene.name != "HubScene"):
 		var _text:RichTextLabel = self.level_results.find_child("Score")
 		_text.text = "Your score is: " + str(score)
-=======
+
 	var _text:RichTextLabel = self.level_results.find_child("Score")
 	_text.text = "Your score is: " + str(score)
->>>>>>> Stashed changes
+
 	self.dialogue.visible = false
 	await get_tree().create_timer(0.3).timeout
 	if (current_scene.name != "HubScene"):
