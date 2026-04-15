@@ -15,9 +15,16 @@
 [ext_resource type="AudioStream" uid="uid://qeb7u2p7xni4" path="res://Assets/Audio/johns place.wav" id="13_fmfjn"]
 [ext_resource type="PackedScene" uid="uid://uacgji4vcg37" path="res://Assets/Audio/push_pull_audio.tscn" id="14_wia7a"]
 [ext_resource type="Script" uid="uid://ccvklwo6vymal" path="res://Levels/HubLocker.gd" id="15_bri6e"]
-[ext_resource type="PackedScene" uid="uid://cfmb3mmeue8au" path="res://Scripts/UI/Scenes/HUD.tscn" id="16_cn3ag"]
+[ext_resource type="Script" uid="uid://bea0sp1ppn3e6" path="res://Scripts/UI/HUDManager.gd" id="17_43m6m"]
 [ext_resource type="Script" uid="uid://1ugs6cpgg5xy" path="res://Levels/Scenes/Tutorial/trigger_sensor.gd" id="17_pjx07"]
+[ext_resource type="Script" uid="uid://dj52fk0ha628v" path="res://Levels/Scenes/InventoryChecklist.gd" id="18_f2w0t"]
 [ext_resource type="Script" uid="uid://bmqryoobj44j2" path="res://Scripts/Dialogue/DialogueTag.gd" id="18_w68un"]
+[ext_resource type="Script" uid="uid://j5jhi8fi2uk0" path="res://Scripts/UI/LevelResults.gd" id="19_sjlcf"]
+[ext_resource type="AudioStream" uid="uid://b0cvmwsqex4x2" path="res://Assets/Audio/level transition sfx.wav" id="20_6renj"]
+[ext_resource type="Texture2D" uid="uid://clksc0wyxfgal" path="res://Assets/UI/Level Finish Text.png" id="21_gx1wu"]
+[ext_resource type="Theme" uid="uid://bxr4bn083148b" path="res://Scripts/UI/Resources/MainTheme.tres" id="22_fmfjn"]
+[ext_resource type="PackedScene" uid="uid://dochgtqsf34" path="res://Assets/Audio/button_sound_down_up.tscn" id="23_wia7a"]
+[ext_resource type="PackedScene" uid="uid://psh4s5sym8kd" path="res://Scripts/UI/Scenes/Textbox.tscn" id="24_bri6e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ra6hx"]
 size = Vector2(48, 20)
@@ -56,6 +63,90 @@ size = Vector2(80, 32)
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g8k58"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ersrp"]
+
+[sub_resource type="Animation" id="Animation_s414o"]
+resource_name = "Complete"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Node2D/Level:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.72),
+"transitions": PackedFloat32Array(0.05831501, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Node2D/Complete:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.53333336, 1),
+"transitions": PackedFloat32Array(0.12940809, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Node2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.033333335),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_nu68y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Node2D/Level:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Node2D/Complete:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Node2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s3vaa"]
+_data = {
+&"Complete": SubResource("Animation_s414o"),
+&"RESET": SubResource("Animation_nu68y")
+}
 
 [sub_resource type="Resource" id="Resource_sqgtv"]
 script = ExtResource("18_w68un")
@@ -197,21 +288,137 @@ script = ExtResource("15_bri6e")
 spawn_location = NodePath("../../Y-Sorting/LOCKER/ItemSpawnLocation")
 y_sort = NodePath("../../Y-Sorting")
 
-[node name="HUD" parent="." unique_id=1725586568 node_paths=PackedStringArray("player") instance=ExtResource("16_cn3ag")]
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1725586568 node_paths=PackedStringArray("level_results", "dialogue", "list", "textbox", "player")]
 unique_name_in_owner = true
-visible = false
+script = ExtResource("17_43m6m")
+level_results = NodePath("Level Results")
+dialogue = NodePath("Dialogue")
+list = NodePath("ListHUD")
+textbox = NodePath("Dialogue/Textbox")
 player = NodePath("../Y-Sorting/Player")
 
-[node name="ListHUD" parent="HUD" index="0" unique_id=1378780322]
-visible = false
+[node name="ListHUD" type="CanvasLayer" parent="HUD" unique_id=1378780322]
 
-[node name="Level Results" parent="HUD" index="1" unique_id=720231760]
-visible = false
-nextLevelName = &"res://Levels/Scenes/In Game/Tutorial - Storage Unit v2.tscn"
-replayLevelName = &"res://Levels/HubScene.tscn"
+[node name="ItemList" type="ItemList" parent="HUD/ListHUD" unique_id=478689423 node_paths=PackedStringArray("needed")]
+offset_right = 320.0
+offset_bottom = 190.0
+auto_width = true
+script = ExtResource("18_f2w0t")
+needed = [null, null, null, null, null, null, null, null]
 
-[node name="Dialogue" parent="HUD" index="2" unique_id=2001474479]
-visible = false
+[node name="Level Results" type="CanvasLayer" parent="HUD" unique_id=720231760]
+script = ExtResource("19_sjlcf")
+
+[node name="ColorRect" type="ColorRect" parent="HUD/Level Results" unique_id=1276998284]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.34117648)
+
+[node name="Level Transition Audio" type="AudioStreamPlayer2D" parent="HUD/Level Results" unique_id=1404975707]
+stream = ExtResource("20_6renj")
+
+[node name="Node2D" type="Node2D" parent="HUD/Level Results" unique_id=1374108181]
+position = Vector2(150, 56)
+scale = Vector2(0.75, 0.75)
+
+[node name="Level" type="Sprite2D" parent="HUD/Level Results/Node2D" unique_id=1814714830]
+position = Vector2(-11, -43)
+texture = ExtResource("21_gx1wu")
+region_enabled = true
+region_rect = Rect2(52, 10, 108, 54)
+
+[node name="Complete" type="Sprite2D" parent="HUD/Level Results/Node2D" unique_id=1458894290]
+texture = ExtResource("21_gx1wu")
+region_enabled = true
+region_rect = Rect2(239, 44, 226, 69)
+region_filter_clip_enabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HUD/Level Results/Node2D" unique_id=911706019]
+root_node = NodePath("../../Container")
+libraries/ = SubResource("AnimationLibrary_s3vaa")
+
+[node name="Container" type="CenterContainer" parent="HUD/Level Results" unique_id=482829432]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -160.0
+offset_top = -123.0
+offset_right = 160.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("22_fmfjn")
+
+[node name="BoxContainer" type="BoxContainer" parent="HUD/Level Results/Container" unique_id=1835812336]
+layout_mode = 2
+vertical = true
+
+[node name="Stars Text" type="RichTextLabel" parent="HUD/Level Results/Container/BoxContainer" unique_id=1060215766]
+custom_minimum_size = Vector2(100, 15)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "You earned..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Star Box" type="Panel" parent="HUD/Level Results/Container/BoxContainer" unique_id=124764439]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="Score" type="RichTextLabel" parent="HUD/Level Results/Container/BoxContainer" unique_id=750066112]
+custom_minimum_size = Vector2(100, 10)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "Your score is:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="HFlowContainer" parent="HUD/Level Results/Container/BoxContainer" unique_id=1877994026]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Replay" type="Button" parent="HUD/Level Results/Container/BoxContainer/Panel" unique_id=1904150237]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 10
+text = "Replay"
+
+[node name="ButtonSound DownUp" parent="HUD/Level Results/Container/BoxContainer/Panel/Replay" unique_id=195620157 instance=ExtResource("23_wia7a")]
+
+[node name="Next Level" type="Button" parent="HUD/Level Results/Container/BoxContainer/Panel" unique_id=219272830]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 10
+text = "Next Level"
+
+[node name="ButtonSound DownUp" parent="HUD/Level Results/Container/BoxContainer/Panel/Next Level" unique_id=1258649347 instance=ExtResource("23_wia7a")]
+
+[node name="Quit" type="Button" parent="HUD/Level Results/Container/BoxContainer/Panel" unique_id=722774201]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 10
+text = "Quit"
+
+[node name="ButtonSound DownUp" parent="HUD/Level Results/Container/BoxContainer/Panel/Quit" unique_id=478437252 instance=ExtResource("23_wia7a")]
+
+[node name="Dialogue" type="CanvasLayer" parent="HUD" unique_id=2001474479]
+layer = 2
+
+[node name="Textbox" parent="HUD/Dialogue" unique_id=1851480463 instance=ExtResource("24_bri6e")]
+dialogueScriptPath = null
 
 [node name="TriggerSensor" type="Area2D" parent="." unique_id=752638362]
 position = Vector2(872, 80)
@@ -227,7 +434,15 @@ one_way_collision_margin = 0.0
 [connection signal="body_entered" from="Y-Sorting/LOCKER/Area2D" to="CanvasLayer/ItemList2" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Y-Sorting/LOCKER/Area2D" to="CanvasLayer/ItemList2" method="_on_area_2d_body_exited"]
 [connection signal="item_clicked" from="CanvasLayer/ItemList2" to="CanvasLayer/ItemList2" method="_on_item_clicked"]
+[connection signal="button_down" from="HUD/Level Results/Container/BoxContainer/Panel/Replay" to="HUD/Level Results/Container/BoxContainer/Panel/Replay/ButtonSound DownUp" method="_on_play_button_down"]
+[connection signal="button_up" from="HUD/Level Results/Container/BoxContainer/Panel/Replay" to="HUD/Level Results/Container/BoxContainer/Panel/Replay/ButtonSound DownUp" method="_on_play_button_up"]
+[connection signal="pressed" from="HUD/Level Results/Container/BoxContainer/Panel/Replay" to="HUD/Level Results" method="_on_replay_level_pressed"]
+[connection signal="button_down" from="HUD/Level Results/Container/BoxContainer/Panel/Next Level" to="HUD/Level Results/Container/BoxContainer/Panel/Next Level/ButtonSound DownUp" method="_on_play_button_down"]
+[connection signal="button_up" from="HUD/Level Results/Container/BoxContainer/Panel/Next Level" to="HUD/Level Results/Container/BoxContainer/Panel/Next Level/ButtonSound DownUp" method="_on_play_button_up"]
+[connection signal="pressed" from="HUD/Level Results/Container/BoxContainer/Panel/Next Level" to="HUD/Level Results" method="_on_next_level_pressed"]
+[connection signal="button_down" from="HUD/Level Results/Container/BoxContainer/Panel/Quit" to="HUD/Level Results/Container/BoxContainer/Panel/Quit/ButtonSound DownUp" method="_on_play_button_down"]
+[connection signal="button_up" from="HUD/Level Results/Container/BoxContainer/Panel/Quit" to="HUD/Level Results/Container/BoxContainer/Panel/Quit/ButtonSound DownUp" method="_on_play_button_up"]
+[connection signal="pressed" from="HUD/Level Results/Container/BoxContainer/Panel/Quit" to="HUD/Level Results" method="_on_exit_game_pressed"]
 [connection signal="body_entered" from="TriggerSensor" to="TriggerSensor" method="_on_body_entered"]
 
 [editable path="Y-Sorting/Storage Van"]
-[editable path="HUD"]
