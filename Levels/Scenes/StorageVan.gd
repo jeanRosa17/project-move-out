@@ -65,10 +65,13 @@ func _process(_delta:float) -> void:
 
 
 func _on_end_level() -> void:
-	%HUD.setDialogueTo(DialogueTag.new().create("res://Narrative/GenericDialogue.txt", "endLevel"))
-	await %HUD.textbox.dialogue_finished
-	%HUD.checkResults()
-
+	var current_scene = %HUD.get_tree().current_scene
+	if (current_scene.name != "HubScene"):
+		%HUD.checkResults()
+	else:
+		%HUD.setDialogueTo(DialogueTag.new().create("res://Narrative/GenericDialogue.txt", "endLevel"))
+		await %HUD.textbox.dialogue_finished
+	
 
 ## Triggered when the player leaves the Carpet's area2D
 func _trigger_tetris(body: Node2D) -> void:

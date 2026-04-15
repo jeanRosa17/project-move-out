@@ -29,6 +29,7 @@ const punctuationsDelay = {
 @warning_ignore("untyped_declaration")
 var jumpToTag = null
 var currentTagFinished: bool
+var hasOptions:bool = false
 var quitting: bool = false
 
 ## Immediately begins dialogue if the self.dialogueScriptPath is valid.
@@ -64,6 +65,7 @@ func startDialogue() -> void:
 	self.lineCounter = 0
 	self.charCounter = 0
 	self.currentTagFinished = false
+	self.hasOptions = false
 	self.parseCommandsInLine()
 
 ## Restarts dialogue back to the very beginning of the current script tag.
@@ -87,11 +89,10 @@ func parseCommandsInLine() -> void:
 		var options = current_line.split("$option ")[1]
 		
 		assert(options.length() != 0, "error options should be atleast one")
+		self.hasOptions = true
 		
-		$"Panel/Next Level".text = options[0]
-		$Panel/Quit.text = options[1]
-		
-		
+		$"Panel/YesOption".text = options.split(" ")[0]
+		$Panel/NoOption.text = options.split(" ")[1]
 		
 		
 	if (self.isLineQuit(current_line)):

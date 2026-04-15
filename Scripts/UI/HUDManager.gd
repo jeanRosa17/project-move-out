@@ -122,11 +122,23 @@ func _process(_delta: float) -> void:
 		if (self.textbox):
 			if (self.textbox.currentTagFinished):
 				self.dialogue.visible = false
-	
+			
+				if (self.textbox.hasOptions):
+					self.dialogue.visible = true
+					if (self.textbox.get_child_count() > 0):
+						$Dialogue/Textbox/Panel/YesOption.visible = self.textbox.hasOptions
+						$Dialogue/Textbox/Panel/NoOption.visible = self.textbox.hasOptions
+			
+				
+				
 	## When run in the editor
 	if Engine.is_editor_hint():
 		self.setAllOff()
 
 
-func _on_quit_button_down() -> void:
+func _on_no_leave_level_button_down() -> void:
 	self.visible = false
+	self.textbox.currentTagFinished = true
+	self.textbox.hasOptions = false
+	$Dialogue/Textbox/Panel/YesOption.visible = self.textbox.hasOptions
+	$Dialogue/Textbox/Panel/NoOption.visible = self.textbox.hasOptions

@@ -276,8 +276,10 @@ rotation = -4.71239
 shape = SubResource("WorldBoundaryShape2D_ersrp")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=159038990]
+visible = false
 
 [node name="ItemList2" type="ItemList" parent="CanvasLayer" unique_id=379288082 node_paths=PackedStringArray("spawn_location", "y_sort")]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -290,6 +292,7 @@ y_sort = NodePath("../../Y-Sorting")
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1725586568 node_paths=PackedStringArray("level_results", "dialogue", "list", "textbox", "player")]
 unique_name_in_owner = true
+visible = false
 script = ExtResource("17_43m6m")
 level_results = NodePath("Level Results")
 dialogue = NodePath("Dialogue")
@@ -298,6 +301,7 @@ textbox = NodePath("Dialogue/Textbox")
 player = NodePath("../Y-Sorting/Player")
 
 [node name="ListHUD" type="CanvasLayer" parent="HUD" unique_id=1378780322]
+visible = false
 
 [node name="ItemList" type="ItemList" parent="HUD/ListHUD" unique_id=478689423 node_paths=PackedStringArray("needed")]
 offset_right = 320.0
@@ -307,6 +311,7 @@ script = ExtResource("18_f2w0t")
 needed = [null, null, null, null, null, null, null, null]
 
 [node name="Level Results" type="CanvasLayer" parent="HUD" unique_id=720231760]
+visible = false
 script = ExtResource("19_sjlcf")
 
 [node name="ColorRect" type="ColorRect" parent="HUD/Level Results" unique_id=1276998284]
@@ -416,17 +421,17 @@ text = "Quit"
 
 [node name="Dialogue" type="CanvasLayer" parent="HUD" unique_id=2001474479]
 layer = 2
+visible = false
 
 [node name="Textbox" parent="HUD/Dialogue" unique_id=1851480463 instance=ExtResource("24_bri6e")]
-dialogueScriptPath = null
 
 [node name="Panel" type="HFlowContainer" parent="HUD/Dialogue/Textbox" unique_id=1881727037]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 0
 offset_left = 60.0
-offset_top = 143.0
+offset_top = 149.0
 offset_right = 260.0
-offset_bottom = 174.0
+offset_bottom = 180.0
 size_flags_vertical = 4
 alignment = 1
 
@@ -471,8 +476,10 @@ one_way_collision_margin = 0.0
 [connection signal="button_down" from="HUD/Level Results/Container/BoxContainer/Panel/Quit" to="HUD/Level Results/Container/BoxContainer/Panel/Quit/ButtonSound DownUp" method="_on_play_button_down"]
 [connection signal="button_up" from="HUD/Level Results/Container/BoxContainer/Panel/Quit" to="HUD/Level Results/Container/BoxContainer/Panel/Quit/ButtonSound DownUp" method="_on_play_button_up"]
 [connection signal="pressed" from="HUD/Level Results/Container/BoxContainer/Panel/Quit" to="HUD/Level Results" method="_on_exit_game_pressed"]
+[connection signal="button_down" from="HUD/Dialogue/Textbox/Panel/YesOption" to="HUD/Level Results" method="_on_next_level_pressed"]
 [connection signal="button_down" from="HUD/Dialogue/Textbox/Panel/YesOption" to="HUD/Dialogue/Textbox/Panel/YesOption/ButtonSound DownUp" method="_on_play_button_down"]
 [connection signal="button_up" from="HUD/Dialogue/Textbox/Panel/YesOption" to="HUD/Dialogue/Textbox/Panel/YesOption/ButtonSound DownUp" method="_on_play_button_up"]
+[connection signal="button_down" from="HUD/Dialogue/Textbox/Panel/NoOption" to="HUD" method="_on_no_leave_level_button_down"]
 [connection signal="button_down" from="HUD/Dialogue/Textbox/Panel/NoOption" to="HUD/Dialogue/Textbox/Panel/NoOption/ButtonSound DownUp" method="_on_play_button_down"]
 [connection signal="button_up" from="HUD/Dialogue/Textbox/Panel/NoOption" to="HUD/Dialogue/Textbox/Panel/NoOption/ButtonSound DownUp" method="_on_play_button_up"]
 [connection signal="body_entered" from="TriggerSensor" to="TriggerSensor" method="_on_body_entered"]
