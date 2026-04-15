@@ -1,6 +1,7 @@
 extends Node
 
-## Stores a UID reference to the levels.
+## Stores a UID reference to the levels. It will always start from 0 when you
+## play it from any scene since it is linear progression, so be aware
 const Levels:Array[String] = \
 	["uid://crm2fqqeyg12f", #Tutorial - Storage Unit v2
 	"uid://n31v0le4dxeh", #HubScene
