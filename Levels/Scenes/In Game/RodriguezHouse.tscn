@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://cduod51ifksbg"]
+[gd_scene format=4 uid="uid://cfcephiffwtxg"]
 
 [ext_resource type="PackedScene" uid="uid://bjyjc8mdpa2ey" path="res://Levels/LevelTemplate.tscn" id="1_q107y"]
 [ext_resource type="Texture2D" uid="uid://crrrxjnccca1r" path="res://Levels/Level Sketches/Rodriguez House.png" id="2_nyy3e"]

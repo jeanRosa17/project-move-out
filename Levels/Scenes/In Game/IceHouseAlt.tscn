@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://djbnodthq7xxo"]
+[gd_scene format=4 uid="uid://ukppsp2bdvbg"]
 
 [ext_resource type="PackedScene" uid="uid://bjyjc8mdpa2ey" path="res://Levels/LevelTemplate.tscn" id="1_yejfy"]
 [ext_resource type="PackedScene" uid="uid://dns4vnk3a35fb" path="res://Assets/Objects/Couches/Scenes/red_couch_side.tscn" id="2_13qr0"]

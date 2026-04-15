@@ -100,11 +100,14 @@ func checkResults() -> void:
 	
 	self.player.setControls(false)
 	print("Gay gay homosexual gay");
-	var _text:RichTextLabel = self.level_results.find_child("Score")
-	_text.text = "Your score is: " + str(score)
+	var current_scene = get_tree().current_scene
+	if (current_scene.name != "HubScene"):
+		var _text:RichTextLabel = self.level_results.find_child("Score")
+		_text.text = "Your score is: " + str(score)
 	self.dialogue.visible = false
 	await get_tree().create_timer(0.3).timeout
-	ap.play("Complete")
+	if (current_scene.name != "HubScene"):
+		ap.play("Complete")
 	self.level_results.visible = true
 
 ## Ensures that the Dialogue Box turns itself off when the dialogue is finished.
