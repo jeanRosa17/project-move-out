@@ -174,14 +174,9 @@ tag = SubResource("Resource_unfai")
 
 [node name="HUD" parent="." unique_id=1725586568 node_paths=PackedStringArray("player") instance=ExtResource("8_87idw")]
 unique_name_in_owner = true
-visible = false
 player = NodePath("../Y-Sorting/Player")
 
-[node name="ListHUD" parent="HUD" index="0" unique_id=1378780322]
-visible = false
-
 [node name="Level Results" parent="HUD" index="1" unique_id=720231760]
-visible = false
 nextLevelName = &"res://Levels/Scenes/In Game/Tutorial - Storage Unit v2.tscn"
 replayLevelName = &"res://Levels/HubScene.tscn"
 
@@ -200,13 +195,10 @@ visible = false
 [node name="Score" parent="HUD/Level Results/Container/BoxContainer" parent_id_path=PackedInt32Array(1725586568, 1835812336) index="2" unique_id=750066112]
 visible = false
 
-[node name="Replay" parent="HUD/Level Results/Container/BoxContainer/Panel" parent_id_path=PackedInt32Array(1725586568, 1877994026) index="0" unique_id=1904150237]
+[node name="ButtonSound DownUp" parent="HUD/Level Results/Container/BoxContainer/Panel/Replay" parent_id_path=PackedInt32Array(1725586568, 1904150237) index="0" unique_id=195620157]
 visible = false
 
-[node name="ButtonSound DownUp" parent="HUD/Level Results/Container/BoxContainer/Panel/Replay" index="0" unique_id=195620157]
-visible = false
-
-[node name="Dialogue" parent="HUD" index="2" unique_id=2001474479]
+[node name="Quit" parent="HUD/Level Results/Container/BoxContainer/Panel" parent_id_path=PackedInt32Array(1725586568, 1877994026) index="2" unique_id=722774201]
 visible = false
 
 [connection signal="body_entered" from="Y-Sorting/LOCKER/Area2D" to="CanvasLayer/ItemList2" method="_on_area_2d_body_entered"]
