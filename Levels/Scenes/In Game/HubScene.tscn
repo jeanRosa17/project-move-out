@@ -420,6 +420,34 @@ layer = 2
 [node name="Textbox" parent="HUD/Dialogue" unique_id=1851480463 instance=ExtResource("24_bri6e")]
 dialogueScriptPath = null
 
+[node name="Panel" type="HFlowContainer" parent="HUD/Dialogue/Textbox" unique_id=1881727037]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 0
+offset_left = 60.0
+offset_top = 143.0
+offset_right = 260.0
+offset_bottom = 174.0
+size_flags_vertical = 4
+alignment = 1
+
+[node name="YesOption" type="Button" parent="HUD/Dialogue/Textbox/Panel" unique_id=2123070961]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 10
+text = "Yes"
+
+[node name="ButtonSound DownUp" parent="HUD/Dialogue/Textbox/Panel/YesOption" unique_id=204606457 instance=ExtResource("23_wia7a")]
+
+[node name="NoOption" type="Button" parent="HUD/Dialogue/Textbox/Panel" unique_id=1877668014]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 10
+text = "Nope"
+
+[node name="ButtonSound DownUp" parent="HUD/Dialogue/Textbox/Panel/NoOption" unique_id=1192123409 instance=ExtResource("23_wia7a")]
+
 [node name="TriggerSensor" type="Area2D" parent="." unique_id=752638362]
 position = Vector2(872, 80)
 scale = Vector2(0.524795, 0.0439381)
@@ -443,6 +471,10 @@ one_way_collision_margin = 0.0
 [connection signal="button_down" from="HUD/Level Results/Container/BoxContainer/Panel/Quit" to="HUD/Level Results/Container/BoxContainer/Panel/Quit/ButtonSound DownUp" method="_on_play_button_down"]
 [connection signal="button_up" from="HUD/Level Results/Container/BoxContainer/Panel/Quit" to="HUD/Level Results/Container/BoxContainer/Panel/Quit/ButtonSound DownUp" method="_on_play_button_up"]
 [connection signal="pressed" from="HUD/Level Results/Container/BoxContainer/Panel/Quit" to="HUD/Level Results" method="_on_exit_game_pressed"]
+[connection signal="button_down" from="HUD/Dialogue/Textbox/Panel/YesOption" to="HUD/Dialogue/Textbox/Panel/YesOption/ButtonSound DownUp" method="_on_play_button_down"]
+[connection signal="button_up" from="HUD/Dialogue/Textbox/Panel/YesOption" to="HUD/Dialogue/Textbox/Panel/YesOption/ButtonSound DownUp" method="_on_play_button_up"]
+[connection signal="button_down" from="HUD/Dialogue/Textbox/Panel/NoOption" to="HUD/Dialogue/Textbox/Panel/NoOption/ButtonSound DownUp" method="_on_play_button_down"]
+[connection signal="button_up" from="HUD/Dialogue/Textbox/Panel/NoOption" to="HUD/Dialogue/Textbox/Panel/NoOption/ButtonSound DownUp" method="_on_play_button_up"]
 [connection signal="body_entered" from="TriggerSensor" to="TriggerSensor" method="_on_body_entered"]
 
 [editable path="Y-Sorting/Storage Van"]
