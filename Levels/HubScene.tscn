@@ -185,6 +185,27 @@ visible = false
 nextLevelName = &"res://Levels/Scenes/In Game/Tutorial - Storage Unit v2.tscn"
 replayLevelName = &"res://Levels/HubScene.tscn"
 
+[node name="Level" parent="HUD/Level Results/Node2D" parent_id_path=PackedInt32Array(1725586568, 1374108181) index="0" unique_id=1814714830]
+visible = false
+
+[node name="Complete" parent="HUD/Level Results/Node2D" parent_id_path=PackedInt32Array(1725586568, 1374108181) index="1" unique_id=1458894290]
+visible = false
+
+[node name="Stars Text" parent="HUD/Level Results/Container/BoxContainer" parent_id_path=PackedInt32Array(1725586568, 1835812336) index="0" unique_id=1060215766]
+visible = false
+
+[node name="Star Box" parent="HUD/Level Results/Container/BoxContainer" parent_id_path=PackedInt32Array(1725586568, 1835812336) index="1" unique_id=124764439]
+visible = false
+
+[node name="Score" parent="HUD/Level Results/Container/BoxContainer" parent_id_path=PackedInt32Array(1725586568, 1835812336) index="2" unique_id=750066112]
+visible = false
+
+[node name="Replay" parent="HUD/Level Results/Container/BoxContainer/Panel" parent_id_path=PackedInt32Array(1725586568, 1877994026) index="0" unique_id=1904150237]
+visible = false
+
+[node name="ButtonSound DownUp" parent="HUD/Level Results/Container/BoxContainer/Panel/Replay" index="0" unique_id=195620157]
+visible = false
+
 [node name="Dialogue" parent="HUD" index="2" unique_id=2001474479]
 visible = false
 

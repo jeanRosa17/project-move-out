@@ -66,7 +66,7 @@ func _process(_delta:float) -> void:
 
 func _on_end_level() -> void:
 	%HUD.setDialogueTo(DialogueTag.new().create("res://Narrative/GenericDialogue.txt", "endLevel"))
-	await %HUD.texbox.currentTagFinished == true 
+	await %HUD.textbox.dialogue_finished
 	%HUD.checkResults()
 
 

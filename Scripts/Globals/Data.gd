@@ -2,15 +2,15 @@ extends Node
 
 ## Stores a UID reference to the levels.
 const Levels:Array[String] = \
-	["uid://crm2fqqeyg12f",
-	"uid://n31v0le4dxeh",
-	"uid://cdnij7booxhs4",
-	"uid://dlp1pmhousfx7",
-	"uid://cduod51ifksbg",
+	["uid://crm2fqqeyg12f", #Tutorial - Storage Unit v2
+	"uid://n31v0le4dxeh", #HubScene
+	"uid://cdnij7booxhs4", #Apartments
+	"uid://dlp1pmhousfx7", #poolAlt
+	"uid://cduod51ifksbg", #RodriguezHouse
 	"uid://djbnodthq7xxo",
 	"uid://bb3dywxtdya3a",
-	"uid://n31v0le4dxeh",
-	"uid://c766m53y8wrk4"
+	"uid://n31v0le4dxeh", #HubScene
+	"uid://c766m53y8wrk4" #FratHouseAlt
 	]
 var levelNum:int = 0
 
