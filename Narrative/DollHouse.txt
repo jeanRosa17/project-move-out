@@ -1,0 +1,34 @@
+#start {
+	Something looks wrong here, I wonder if the client left somethin out
+}
+
+#enter {
+	LEAVE THIS PLACE AT ONCE OR FACE MY WRATH!!
+	...
+	What was that? Is this place haunted?!
+	I'm demanding a pay raise.
+}
+
+#basement {
+	What in tarnation is all this down here?
+	Maybe I can get rid of tha't ghost!
+}
+
+#doll {
+	UNHAND ME MOrTAL!!
+	I WIlL CURsE You, This humiliatiON will not stand!
+	Raaah!
+}
+
+#bed {
+	A trapdoor under the bed, not what I expected.
+}
+
+#fridge {
+	Did this place copy the magnets on my fridge?
+	Or are ahll fridges like that?
+}
+
+#junk {
+	It tried to barracade itself, this is such a pain!
+}

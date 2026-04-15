@@ -9,8 +9,8 @@ const Levels:Array[String] = \
 	"uid://cduod51ifksbg",
 	"uid://djbnodthq7xxo",
 	"uid://bb3dywxtdya3a",
-	"uid://c766m53y8wrk4",
-	"uid://n31v0le4dxeh"
+	"uid://n31v0le4dxeh",
+	"uid://c766m53y8wrk4"
 	]
 var levelNum:int = 0
 

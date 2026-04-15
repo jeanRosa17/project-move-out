@@ -1,0 +1,22 @@
+#start {
+	Ah was warned, but by golly is this out of hand.
+	I should have brought my spiked boots, and a thicker robe, drat it!
+}
+
+#shelves {
+	Lots of shelves, all of them filled with...what are those?
+	Statues? They all got big eyes and are doing poses.
+}
+
+#smalltable {
+	After sliding around, I could be convinced this glass looks like ice.
+}
+
+#largetable {
+	Not the most inviting kitchen, though Ah suppose the whole house isn't invitin at the moment.
+}
+
+#stool {
+	Ah wasn't going to be too fancy with my own place, but...
+	My study should be a bit more comfortable than this.
+}

@@ -17,6 +17,49 @@
 [ext_resource type="PackedScene" uid="uid://bh0p10hhemt1" path="res://Assets/Objects/Bathroom/Scenes/Toilet_Side2.tscn" id="14_s77ne"]
 [ext_resource type="PackedScene" uid="uid://dlj0g6t453wk6" path="res://Assets/Objects/Bathroom/Scenes/Sink_Side.tscn" id="15_te8i2"]
 [ext_resource type="PackedScene" uid="uid://c63sjbuok03ik" path="res://Assets/Objects/Kitchen/Microwave.tscn" id="16_te8i2"]
+[ext_resource type="Script" uid="uid://1ugs6cpgg5xy" path="res://Levels/Scenes/Tutorial/trigger_sensor.gd" id="18_m46ep"]
+[ext_resource type="Script" uid="uid://bmqryoobj44j2" path="res://Scripts/Dialogue/DialogueTag.gd" id="19_82rdr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k1l4a"]
+size = Vector2(80, 32)
+
+[sub_resource type="Resource" id="Resource_m46ep"]
+script = ExtResource("19_82rdr")
+dialogueScriptPath = &"res://Narrative/Apartment.txt"
+dialogueTag = &"tv"
+metadata/_custom_type_script = "uid://bmqryoobj44j2"
+
+[sub_resource type="Resource" id="Resource_82rdr"]
+script = ExtResource("19_82rdr")
+dialogueScriptPath = &"res://Narrative/Apartment.txt"
+dialogueTag = &"firebed"
+metadata/_custom_type_script = "uid://bmqryoobj44j2"
+
+[sub_resource type="Resource" id="Resource_2h8g0"]
+script = ExtResource("19_82rdr")
+dialogueScriptPath = &"res://Narrative/Apartment.txt"
+dialogueTag = &"pot"
+metadata/_custom_type_script = "uid://bmqryoobj44j2"
+
+[sub_resource type="Resource" id="Resource_xsn4a"]
+script = ExtResource("19_82rdr")
+dialogueScriptPath = &"res://Narrative/Apartment.txt"
+dialogueTag = &"toilet"
+metadata/_custom_type_script = "uid://bmqryoobj44j2"
+
+[sub_resource type="Resource" id="Resource_y64yo"]
+script = ExtResource("19_82rdr")
+dialogueScriptPath = &"res://Narrative/Apartment.txt"
+metadata/_custom_type_script = "uid://bmqryoobj44j2"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2h8g0"]
+size = Vector2(91.46428, 637.2596)
+
+[sub_resource type="Resource" id="Resource_g6aub"]
+script = ExtResource("19_82rdr")
+dialogueScriptPath = &"res://Narrative/Apartment.txt"
+dialogueTag = &"iceroom"
+metadata/_custom_type_script = "uid://bmqryoobj44j2"
 
 [node name="Apartments" unique_id=319947790 instance=ExtResource("1_iflhq")]
 
@@ -61,6 +104,9 @@ safe_margin = 0.001
 [node name="Storage Van" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="2" unique_id=726660232]
 position = Vector2(79, 96)
 
+[node name="CollisionShape2D" parent="Y-Sorting/Storage Van/Leave Area" parent_id_path=PackedInt32Array(726660232, 632129231) index="4" unique_id=1864252806]
+shape = SubResource("RectangleShape2D_k1l4a")
+
 [node name="Wood_Chair_Side" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="3" unique_id=797205660 instance=ExtResource("2_lv43d")]
 position = Vector2(128, 376)
 
@@ -82,6 +128,7 @@ liftPosition = Vector2(0, -64)
 
 [node name="TV_and_desk_front" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="8" unique_id=472159025 instance=ExtResource("4_ar4rx")]
 position = Vector2(144, 296)
+dialogueTag = SubResource("Resource_m46ep")
 
 [node name="Electric Couch" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="9" unique_id=741030412 instance=ExtResource("5_32b00")]
 modulate = Color(1, 1, 0, 1)
@@ -122,6 +169,7 @@ tetroShape = 5
 [node name="Fire Bed" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="17" unique_id=1949176184 instance=ExtResource("10_te8i2")]
 modulate = Color(1, 0, 0, 1)
 position = Vector2(512, 392)
+dialogueTag = SubResource("Resource_82rdr")
 
 [node name="Table" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="18" unique_id=796782947 instance=ExtResource("6_1noel")]
 modulate = Color(1, 0, 0, 1)
@@ -139,13 +187,15 @@ position = Vector2(494, 211)
 tetroShape = 5
 
 [node name="Pot" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="21" unique_id=1176267150 instance=ExtResource("13_m46ep")]
-position = Vector2(64, 308)
+position = Vector2(64, 320)
+dialogueTag = SubResource("Resource_2h8g0")
 
 [node name="Toilet_Side" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="22" unique_id=1404211309 instance=ExtResource("14_s77ne")]
 position = Vector2(400, 312)
 canPush = false
 canPull = false
 tetroShape = 1
+dialogueTag = SubResource("Resource_xsn4a")
 
 [node name="Sink_Side" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="23" unique_id=1426637549 instance=ExtResource("15_te8i2")]
 position = Vector2(312, 296)
@@ -177,6 +227,31 @@ replayLevelName = &"res://Levels/Scenes/In Game/Apartments.tscn"
 
 [node name="Dialogue" parent="HUD" index="2" unique_id=2001474479]
 visible = false
+
+[node name="TriggerSensor" type="Area2D" parent="." index="13" unique_id=409281390]
+position = Vector2(264, 208)
+scale = Vector2(0.524795, 0.0439381)
+collision_layer = 16
+script = ExtResource("18_m46ep")
+tag = SubResource("Resource_y64yo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerSensor" index="0" unique_id=1223638862]
+shape = SubResource("RectangleShape2D_2h8g0")
+one_way_collision_margin = 0.0
+
+[node name="TriggerSensor2" type="Area2D" parent="." index="14" unique_id=1957930483]
+position = Vector2(352.00003, 200.00002)
+scale = Vector2(0.524795, 0.0439381)
+collision_layer = 16
+script = ExtResource("18_m46ep")
+tag = SubResource("Resource_g6aub")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerSensor2" index="0" unique_id=1587536959]
+shape = SubResource("RectangleShape2D_2h8g0")
+one_way_collision_margin = 0.0
+
+[connection signal="body_entered" from="TriggerSensor" to="TriggerSensor" method="_on_body_entered"]
+[connection signal="body_entered" from="TriggerSensor2" to="TriggerSensor2" method="_on_body_entered"]
 
 [editable path="Y-Sorting/Storage Van"]
 [editable path="Y-Sorting/Wood_Chair_Side"]

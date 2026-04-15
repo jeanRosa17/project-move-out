@@ -21,9 +21,9 @@
 [ext_resource type="PackedScene" uid="uid://bof0wxapyclor" path="res://Assets/Objects/Chairs/Scene/Stool.tscn" id="18_y143b"]
 [ext_resource type="PackedScene" uid="uid://dpndcptmieu5n" path="res://Assets/Objects/Dressers & Shelves/Scenes/storage_dresser_back.tscn" id="19_jdgei"]
 [ext_resource type="PackedScene" uid="uid://bm3q8cgkv4be4" path="res://Assets/Objects/Chairs/Scene/Wood_Chair_front.tscn" id="19_tibvx"]
-[ext_resource type="PackedScene" uid="uid://b11xr2or1rqq1" path="res://Assets/Objects/Trumpet.tscn" id="20_efhh6"]
-[ext_resource type="PackedScene" uid="uid://ckcmkju0pxebs" path="res://Assets/Objects/Flute.tscn" id="21_v02ti"]
-[ext_resource type="Script" path="res://Scripts/wind.gd" id="22_37hmr"]
+[ext_resource type="PackedScene" uid="uid://c65jltonpqnks" path="res://Assets/Objects/Trumpet.tscn" id="20_efhh6"]
+[ext_resource type="PackedScene" uid="uid://buqr47fqowd45" path="res://Assets/Objects/Flute.tscn" id="21_v02ti"]
+[ext_resource type="Script" uid="uid://dh2bamxv7dbwg" path="res://Scripts/wind.gd" id="22_37hmr"]
 [ext_resource type="PackedScene" uid="uid://brfkiqavvunae" path="res://Assets/Particles/Scenes/wind_particle.tscn" id="23_8v8sk"]
 [ext_resource type="PackedScene" uid="uid://bfp82m6exqyhy" path="res://Assets/Objects/Bathroom/Scenes/Sink.tscn" id="23_nrmq8"]
 [ext_resource type="PackedScene" uid="uid://ce4x5g5hrvxce" path="res://Assets/Objects/Bathroom/Scenes/Bathtub.tscn" id="24_f4y48"]
@@ -32,15 +32,45 @@
 [ext_resource type="PackedScene" uid="uid://b88hxixgay80f" path="res://Assets/Objects/Bathroom/Scenes/Toilet_Side.tscn" id="26_3vpjm"]
 [ext_resource type="Script" uid="uid://1ugs6cpgg5xy" path="res://Levels/Scenes/Tutorial/trigger_sensor.gd" id="26_d3wmj"]
 [ext_resource type="PackedScene" uid="uid://d3rjdvbwh7auh" path="res://Levels/Scenes/Garadge2.tscn" id="27_f4y48"]
-[ext_resource type="Resource" uid="uid://bw7tpgka1cfco" path="res://Narrative/fratEnter.tres" id="27_tv3y6"]
 [ext_resource type="PackedScene" uid="uid://5bnbyjpgb5kx" path="res://Levels/Post-Level Minigame/Post-Level Minigame.tscn" id="30_jdgei"]
+[ext_resource type="Script" uid="uid://bmqryoobj44j2" path="res://Scripts/Dialogue/DialogueTag.gd" id="33_7f3y0"]
 [ext_resource type="AudioStream" uid="uid://dsckxieyb5eah" path="res://Assets/Audio/frat house 2 head.wav" id="34_7f3y0"]
-[ext_resource type="Script" path="res://Levels/Scenes/level_music.gd" id="35_x3cvq"]
+[ext_resource type="Script" uid="uid://dd0dqcxwjwhbu" path="res://Levels/Scenes/level_music.gd" id="35_x3cvq"]
 [ext_resource type="AudioStream" uid="uid://cma3yncq2pogm" path="res://Assets/Audio/frat house 2 body.wav" id="36_buuam"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_sq7bx"]
 normal = Vector2(1.79515e-06, 1)
 distance = -96.4999
+
+[sub_resource type="Resource" id="Resource_7f3y0"]
+script = ExtResource("33_7f3y0")
+dialogueScriptPath = &"res://Narrative/FratHouse.txt"
+dialogueTag = &"tv"
+metadata/_custom_type_script = "uid://bmqryoobj44j2"
+
+[sub_resource type="Resource" id="Resource_buuam"]
+script = ExtResource("33_7f3y0")
+dialogueScriptPath = &"res://Narrative/FratHouse.txt"
+dialogueTag = &"couch"
+metadata/_custom_type_script = "uid://bmqryoobj44j2"
+
+[sub_resource type="Resource" id="Resource_kjc3n"]
+script = ExtResource("33_7f3y0")
+dialogueScriptPath = &"res://Narrative/FratHouse.txt"
+dialogueTag = &"trumpet"
+metadata/_custom_type_script = "uid://bmqryoobj44j2"
+
+[sub_resource type="Resource" id="Resource_rbbwn"]
+script = ExtResource("33_7f3y0")
+dialogueScriptPath = &"res://Narrative/FratHouse.txt"
+dialogueTag = &"trumpet"
+metadata/_custom_type_script = "uid://bmqryoobj44j2"
+
+[sub_resource type="Resource" id="Resource_b8fme"]
+script = ExtResource("33_7f3y0")
+dialogueScriptPath = &"res://Narrative/FratHouse.txt"
+dialogueTag = &"flute"
+metadata/_custom_type_script = "uid://bmqryoobj44j2"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kmvwb"]
 size = Vector2(264.253, 23.5)
@@ -51,8 +81,25 @@ size = Vector2(11.75, 57)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oc51o"]
 size = Vector2(27, 10)
 
+[sub_resource type="Resource" id="Resource_x3cvq"]
+script = ExtResource("33_7f3y0")
+dialogueScriptPath = &"res://Narrative/FratHouse.txt"
+metadata/_custom_type_script = "uid://bmqryoobj44j2"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r8bs4"]
 size = Vector2(28.9504, 136.556)
+
+[sub_resource type="Resource" id="Resource_c7m5r"]
+script = ExtResource("33_7f3y0")
+dialogueScriptPath = &"res://Narrative/FratHouse.txt"
+dialogueTag = &"windblown"
+metadata/_custom_type_script = "uid://bmqryoobj44j2"
+
+[sub_resource type="Resource" id="Resource_ujhl6"]
+script = ExtResource("33_7f3y0")
+dialogueScriptPath = &"res://Narrative/FratHouse.txt"
+dialogueTag = &"kitchen"
+metadata/_custom_type_script = "uid://bmqryoobj44j2"
 
 [node name="FratHouseAlt" type="Node2D" unique_id=604133399]
 
@@ -164,6 +211,7 @@ tetroShape = 0
 
 [node name="TV" parent="Y-Sorting" unique_id=2119566157 instance=ExtResource("10_7f3y0")]
 position = Vector2(245, 50)
+dialogueTag = SubResource("Resource_7f3y0")
 
 [node name="Couch" parent="Y-Sorting" unique_id=207425752 instance=ExtResource("11_x3cvq")]
 position = Vector2(243, 210)
@@ -220,6 +268,7 @@ position = Vector2(646, 243)
 
 [node name="Redder couch 2" parent="Y-Sorting" unique_id=1229890886 instance=ExtResource("17_ujhl6")]
 position = Vector2(412, 51)
+dialogueTag = SubResource("Resource_buuam")
 
 [node name="storage_dresser_back" parent="Y-Sorting" unique_id=1195170610 instance=ExtResource("19_jdgei")]
 position = Vector2(233, 387)
@@ -237,15 +286,18 @@ position = Vector2(514, 331)
 
 [node name="Trumpet2" parent="Y-Sorting" unique_id=1781450710 instance=ExtResource("20_efhh6")]
 position = Vector2(317, 106)
+dialogueTag = SubResource("Resource_kjc3n")
 
 [node name="Trumpet1" parent="Y-Sorting" unique_id=488246626 instance=ExtResource("20_efhh6")]
 position = Vector2(335, 127)
+dialogueTag = SubResource("Resource_rbbwn")
 
 [node name="Orange_Chair_Side3" parent="Y-Sorting" unique_id=1746117775 instance=ExtResource("6_pvbcm")]
 position = Vector2(464, 360)
 
 [node name="Flute" parent="Y-Sorting" unique_id=2002382503 instance=ExtResource("21_v02ti")]
 position = Vector2(316, 126)
+dialogueTag = SubResource("Resource_b8fme")
 
 [node name="Sink" parent="Y-Sorting" unique_id=417318744 instance=ExtResource("23_nrmq8")]
 position = Vector2(172, 48)
@@ -574,7 +626,7 @@ scale = Vector2(0.524795, 0.0439381)
 position = Vector2(764.108, 4597.38)
 collision_layer = 16
 script = ExtResource("26_d3wmj")
-tag = ExtResource("27_tv3y6")
+tag = SubResource("Resource_x3cvq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/TriggerSensor" unique_id=1439442206]
 position = Vector2(-32.3606, -751.06)
@@ -594,6 +646,34 @@ stream = ExtResource("36_buuam")
 
 [node name="PostLevelMinigame" parent="." unique_id=762999373 instance=ExtResource("30_jdgei")]
 position = Vector2(1152, 192)
+
+[node name="TriggerSensor2" type="Area2D" parent="." unique_id=1759353843]
+position = Vector2(64.00003, 351.99997)
+scale = Vector2(0.524795, 0.0439381)
+collision_layer = 16
+script = ExtResource("26_d3wmj")
+tag = SubResource("Resource_c7m5r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerSensor2" unique_id=1510437159]
+position = Vector2(-32.3606, -751.06)
+rotation = -0.0014569
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_r8bs4")
+one_way_collision_margin = 0.0
+
+[node name="TriggerSensor3" type="Area2D" parent="." unique_id=1000910208]
+position = Vector2(528, 136)
+scale = Vector2(0.524795, 0.0439381)
+collision_layer = 16
+script = ExtResource("26_d3wmj")
+tag = SubResource("Resource_ujhl6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerSensor3" unique_id=47868305]
+position = Vector2(-32.3606, -751.06)
+rotation = -0.0014569
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_r8bs4")
+one_way_collision_margin = 0.0
 
 [connection signal="body_entered" from="Wind/Wind_hallway_west" to="Wind/Wind_hallway_west" method="_on_body_entered"]
 [connection signal="body_exited" from="Wind/Wind_hallway_west" to="Wind/Wind_hallway_west" method="_on_body_exited"]
@@ -615,5 +695,7 @@ position = Vector2(1152, 192)
 [connection signal="body_exited" from="Wind/WindLoop/WindLoopEastBottom" to="Wind/WindLoop/WindLoopEastBottom" method="_on_body_exited"]
 [connection signal="body_entered" from="Node2D/TriggerSensor" to="Node2D/TriggerSensor" method="_on_body_entered"]
 [connection signal="finished" from="Level Music" to="Level Music" method="_on_finished"]
+[connection signal="body_entered" from="TriggerSensor2" to="TriggerSensor2" method="_on_body_entered"]
+[connection signal="body_entered" from="TriggerSensor3" to="TriggerSensor3" method="_on_body_entered"]
 
 [editable path="HUD"]

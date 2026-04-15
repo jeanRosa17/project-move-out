@@ -1,0 +1,35 @@
+#start {
+	This is sure to be a hassle, it looks like those irresponsible college kids
+	really let off a malestorm in here. What a mess.
+}
+
+#trumpet {
+	This couldn't be the culpret.
+	After all it's not a woodWind.
+}
+
+#flute {
+	Looks like the source of this foolishness.
+}
+
+#dinoplant {
+	What an odd, fragrent plant.
+}
+
+#windblown {
+	Rough getting in here, and Ah just ironed these robes!
+}
+
+#kitchen {
+	Looks like the hungry yung uns still cleaned out the food, 
+	even being literally blown out of the place.
+}
+
+#tv {
+	Watching this device is probably how this whole disaster was caused.
+}
+
+#couch {
+	Ah know exactly what frat mages get up to!
+	I bet this couch is filthy with spilled mana potion, can't get any purer than what the provide in college.
+}

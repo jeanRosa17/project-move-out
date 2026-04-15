@@ -1,0 +1,32 @@
+#start {
+	This home has an upstairs as well.
+	Thank goodness for my magic, Ah can feel my back bending without it.
+}
+
+#fridge {
+	This is a new model of fridge.
+	Ah suppose that makes the job a slight bit more interesting.
+}
+
+#couch {
+	Trying to relax so close to a huge hole sounds unbearable.
+}
+
+#shelf {
+	Shame they allready moved their food, Ah could have asked for some as a tip.
+}
+
+#hiddenroom {
+	Almost missed this one.
+	...what's it for?
+}
+
+#view {
+	What a nice view.
+	Reminds me of how my apartment has no windows.
+}
+
+#bed {
+	A bit cramped in here, isn't it?
+	Only having to lay down makes it practical, Ah suppose.
+}

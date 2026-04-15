@@ -1,0 +1,9 @@
+#start {
+	Why any child would want to come here is beyond me.
+	That's probably why they called me here, come to think of it.
+	Oh, but Ah'm on a time limit, time to hurry John!
+}
+
+#why {
+	No time to be gawking!
+}

@@ -1,0 +1,20 @@
+#start {
+	It's a good thing I had the funds to rent an apartment.
+	It doesn't really need to be decorated, Ah'll just hop in my van when I'm ready to go.
+}
+
+#shelf {
+	There's not much to put here, at the moment.
+}
+
+#tv {
+	Now this 's a real TV!
+}
+
+#couch {
+	It's quite comfortable, the only furniture I couldn't stand to leave behind when moving.
+}
+
+#fridge {
+	Ah genuinely do not know why this fridge came with decorations.
+}

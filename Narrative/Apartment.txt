@@ -1,0 +1,29 @@
+#start {
+	I s'pose this place is a bit larger.
+	Since it's a rental the clients gave me a list of what all needs to go.
+	(Press tab to see the item list)
+}
+
+#firebed {
+	Why'd they make their bed red? Do they use fire magic?
+	Ah'll never understand the taste of some people.
+}
+
+#tv {
+	Ah didn't notice at my last job, but these new TV models fill a room.
+	I'm a bit worried it'll damage my eyes.
+}
+
+#toilet {
+	No, ah'm not moving their plumbing.
+	I'm a mover, not a plumber!
+}
+
+#pot {
+	What do people put in these anyways?
+	....gross.
+}
+
+#iceroom {
+	Ah don't know which of these rooms would be worse to wake up to.
+}

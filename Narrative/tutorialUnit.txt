@@ -1,4 +1,20 @@
 #start {
-	My first job in a while, lucky me they just hired me to empty this old storage unit
-	I should use WSAD to move and space to pick up objects. I can take them to the loading zone, and press space on the pad next to it when it's time to go.
+	My first job in a while, lucky me they just hired me to empty this old storage unit.
+	(use WSAD to move, and space to pick up and push objects)
+	The space magic on my carpet should be able to handle everything here easily, 'f I pack it well.'
+}
+
+#shelf {
+	This shelf is close to not fitting through the door, let me hold it from ahnother angle.
+	(rotate objects with 'R')
+}
+
+#fridge {
+	Poor fridge has been here so long the magnets lost their glow spell.
+}
+
+#table {
+	The client tried to get me into a conversation before the job started.
+	I told them to table it for later.
+	....*cough*
 }
