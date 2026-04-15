@@ -6,11 +6,13 @@
 [ext_resource type="Script" uid="uid://cr2sqh5ymwl4k" path="res://Scripts/Cutscenes/Cutscene.gd" id="2_s77ne"]
 [ext_resource type="PackedScene" uid="uid://cl3ww3w6r3n1r" path="res://Assets/Objects/Kitchen/Scenes/Fridge.tscn" id="3_kpihc"]
 [ext_resource type="SpriteFrames" uid="uid://bj4hy5y5yiady" path="res://Scripts/Resources/VanFrames.tres" id="3_te8i2"]
-[ext_resource type="PackedScene" uid="uid://cuho4egtuhmvt" path="res://Assets/Objects/Tables/Scenes/TV_and_desk_front.tscn" id="4_ar4rx"]
 [ext_resource type="PackedScene" uid="uid://nomguund5j25" path="res://Assets/Objects/Couches/Scenes/red_couch_front.tscn" id="5_32b00"]
 [ext_resource type="PackedScene" uid="uid://d26wukook25xb" path="res://Assets/Objects/Dressers & Shelves/Scenes/Table.tscn" id="6_1noel"]
+[ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="7_y64yo"]
+[ext_resource type="Texture2D" uid="uid://b4ibf7urtrqja" path="res://Assets/Objects/Tables/TV_and_desk_front.png" id="9_2h8g0"]
 [ext_resource type="PackedScene" uid="uid://ce4x5g5hrvxce" path="res://Assets/Objects/Bathroom/Scenes/Bathtub.tscn" id="9_s77ne"]
 [ext_resource type="PackedScene" uid="uid://diko086yswlr0" path="res://Assets/Objects/Beds/Scene/Twin_Bed_Side.tscn" id="10_te8i2"]
+[ext_resource type="Texture2D" uid="uid://dbwg58xoehpib" path="res://Assets/Objects/Tables/TV_and_desk_side.png" id="10_y64yo"]
 [ext_resource type="PackedScene" uid="uid://b7qk52eapta2s" path="res://Assets/Objects/Dressers & Shelves/Scenes/wooden_wardrobe_front.tscn" id="11_8k0qu"]
 [ext_resource type="PackedScene" uid="uid://bujcbosiagjri" path="res://Assets/Objects/Dressers & Shelves/Scenes/wooden_shelf_front.tscn" id="12_rvsks"]
 [ext_resource type="PackedScene" uid="uid://cqt367stu26c2" path="res://Assets/Objects/Table Items/Scenes/Pot.tscn" id="13_m46ep"]
@@ -28,6 +30,24 @@ script = ExtResource("19_82rdr")
 dialogueScriptPath = &"res://Narrative/Apartment.txt"
 dialogueTag = &"tv"
 metadata/_custom_type_script = "uid://bmqryoobj44j2"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
+size = Vector2(64, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
+size = Vector2(69, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xsn4a"]
+size = Vector2(64, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g6aub"]
+size = Vector2(69, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vi04n"]
+size = Vector2(16, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y1103"]
+size = Vector2(20, 80)
 
 [sub_resource type="Resource" id="Resource_82rdr"]
 script = ExtResource("19_82rdr")
@@ -126,81 +146,163 @@ position = Vector2(32, 228)
 tetroShape = 5
 liftPosition = Vector2(0, -64)
 
-[node name="TV_and_desk_front" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="8" unique_id=472159025 instance=ExtResource("4_ar4rx")]
+[node name="TV_and_desk_front" type="RigidBody2D" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="8" unique_id=472159025 groups=["Furniture"]]
 position = Vector2(144, 296)
+collision_layer = 2
+collision_mask = 7
+gravity_scale = 0.0
+can_sleep = false
+lock_rotation = true
+script = ExtResource("7_y64yo")
+canPush = true
+canPull = true
+tetroShape = 6
 dialogueTag = SubResource("Resource_m46ep")
+metadata/_custom_type_script = "uid://c2vh27coguldq"
 
-[node name="Electric Couch" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="9" unique_id=741030412 instance=ExtResource("5_32b00")]
+[node name="Sprite2D" type="Sprite2D" parent="Y-Sorting/TV_and_desk_front" index="0" unique_id=1858359844]
+texture = ExtResource("9_2h8g0")
+
+[node name="Collision" type="CollisionShape2D" parent="Y-Sorting/TV_and_desk_front" index="1" unique_id=445537357]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_xnri0")
+
+[node name="AreaDetector" type="Area2D" parent="Y-Sorting/TV_and_desk_front" index="2" unique_id=22840679 groups=["Furniture"]]
+position = Vector2(0, -1)
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Y-Sorting/TV_and_desk_front/AreaDetector" index="0" unique_id=1093782882]
+position = Vector2(0.5, 3.5)
+shape = SubResource("RectangleShape2D_ardoa")
+
+[node name="TV_and_desk_front2" type="RigidBody2D" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="9" unique_id=1842367767 groups=["Furniture"]]
+position = Vector2(232, 296)
+collision_layer = 2
+collision_mask = 7
+gravity_scale = 0.0
+can_sleep = false
+script = ExtResource("7_y64yo")
+canPush = true
+canPull = true
+tetroShape = 6
+metadata/_custom_type_script = "uid://c2vh27coguldq"
+
+[node name="Sprite2D" type="Sprite2D" parent="Y-Sorting/TV_and_desk_front2" index="0" unique_id=900374347]
+texture = ExtResource("9_2h8g0")
+
+[node name="Collision" type="CollisionShape2D" parent="Y-Sorting/TV_and_desk_front2" index="1" unique_id=1550249000]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_xsn4a")
+
+[node name="AreaDetector" type="Area2D" parent="Y-Sorting/TV_and_desk_front2" index="2" unique_id=155511783 groups=["Furniture"]]
+position = Vector2(0, -1)
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Y-Sorting/TV_and_desk_front2/AreaDetector" index="0" unique_id=1830852003]
+position = Vector2(0.5, 3.5)
+shape = SubResource("RectangleShape2D_g6aub")
+
+[node name="TV_and_desk_side" type="RigidBody2D" parent="Y-Sorting/TV_and_desk_front2" index="3" unique_id=1576853896 groups=["Furniture"]]
+visible = false
+collision_layer = 2
+collision_mask = 7
+gravity_scale = 0.0
+can_sleep = false
+script = ExtResource("7_y64yo")
+canPush = true
+canPull = true
+tetroShape = 6
+metadata/_custom_type_script = "uid://c2vh27coguldq"
+
+[node name="Sprite2D" type="Sprite2D" parent="Y-Sorting/TV_and_desk_front2/TV_and_desk_side" index="0" unique_id=2128468314]
+texture = ExtResource("10_y64yo")
+
+[node name="Collision" type="CollisionShape2D" parent="Y-Sorting/TV_and_desk_front2/TV_and_desk_side" index="1" unique_id=1211745920]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_vi04n")
+
+[node name="AreaDetector" type="Area2D" parent="Y-Sorting/TV_and_desk_front2/TV_and_desk_side" index="2" unique_id=1077459425 groups=["Furniture"]]
+position = Vector2(0, -1)
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Y-Sorting/TV_and_desk_front2/TV_and_desk_side/AreaDetector" index="0" unique_id=906462788]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_y1103")
+
+[node name="Electric Couch" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="10" unique_id=741030412 instance=ExtResource("5_32b00")]
 modulate = Color(1, 1, 0, 1)
 position = Vector2(128, 225)
 
-[node name="Table4" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="10" unique_id=382743384 instance=ExtResource("6_1noel")]
+[node name="Table4" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="11" unique_id=382743384 instance=ExtResource("6_1noel")]
 position = Vector2(159, 357)
 canPush = true
 canPull = true
 
-[node name="Couch" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="11" unique_id=2116921844 instance=ExtResource("5_32b00")]
+[node name="Couch" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="12" unique_id=2116921844 instance=ExtResource("5_32b00")]
 position = Vector2(180, 225)
 
-[node name="Bathtub" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="12" unique_id=1637260061 instance=ExtResource("9_s77ne")]
+[node name="Bathtub" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="13" unique_id=1637260061 instance=ExtResource("9_s77ne")]
 position = Vector2(400, 392)
 canPush = false
 canPull = false
 
-[node name="Ice Bed" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="13" unique_id=188610600 instance=ExtResource("10_te8i2")]
+[node name="Ice Bed" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="14" unique_id=188610600 instance=ExtResource("10_te8i2")]
 modulate = Color(0, 1, 1, 1)
 position = Vector2(512, 144)
 
-[node name="Ice Wardrobe" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="14" unique_id=1459330375 instance=ExtResource("11_8k0qu")]
+[node name="Ice Wardrobe" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="15" unique_id=1459330375 instance=ExtResource("11_8k0qu")]
 modulate = Color(0, 1, 1, 1)
 position = Vector2(352, 64)
 
-[node name="Ice Table" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="15" unique_id=487739937 instance=ExtResource("6_1noel")]
+[node name="Ice Table" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="16" unique_id=487739937 instance=ExtResource("6_1noel")]
 modulate = Color(0, 1, 1, 1)
 position = Vector2(504, 80)
 canPush = true
 canPull = true
 
-[node name="Ice Shelf" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="16" unique_id=1973851103 instance=ExtResource("12_rvsks")]
+[node name="Ice Shelf" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="17" unique_id=1973851103 instance=ExtResource("12_rvsks")]
 modulate = Color(0, 1, 1, 1)
 position = Vector2(408, 64)
 tetroShape = 5
 
-[node name="Fire Bed" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="17" unique_id=1949176184 instance=ExtResource("10_te8i2")]
+[node name="Fire Bed" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="18" unique_id=1949176184 instance=ExtResource("10_te8i2")]
 modulate = Color(1, 0, 0, 1)
 position = Vector2(512, 392)
 dialogueTag = SubResource("Resource_82rdr")
 
-[node name="Table" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="18" unique_id=796782947 instance=ExtResource("6_1noel")]
+[node name="Table" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="19" unique_id=796782947 instance=ExtResource("6_1noel")]
 modulate = Color(1, 0, 0, 1)
 position = Vector2(456, 376)
 canPush = true
 canPull = true
 
-[node name="Fire Wardrobe" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="19" unique_id=1903104380 instance=ExtResource("11_8k0qu")]
+[node name="Fire Wardrobe" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="20" unique_id=1903104380 instance=ExtResource("11_8k0qu")]
 modulate = Color(1, 0, 0, 1)
 position = Vector2(448, 213)
 
-[node name="Fire Shelf" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="20" unique_id=1519652287 instance=ExtResource("12_rvsks")]
+[node name="Fire Shelf" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="21" unique_id=1519652287 instance=ExtResource("12_rvsks")]
 modulate = Color(1, 0, 0, 1)
 position = Vector2(494, 211)
 tetroShape = 5
 
-[node name="Pot" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="21" unique_id=1176267150 instance=ExtResource("13_m46ep")]
+[node name="Pot" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="22" unique_id=1176267150 instance=ExtResource("13_m46ep")]
 position = Vector2(64, 320)
 dialogueTag = SubResource("Resource_2h8g0")
 
-[node name="Toilet_Side" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="22" unique_id=1404211309 instance=ExtResource("14_s77ne")]
+[node name="Toilet_Side" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="23" unique_id=1404211309 instance=ExtResource("14_s77ne")]
 position = Vector2(400, 312)
 canPush = false
 canPull = false
 tetroShape = 1
 dialogueTag = SubResource("Resource_xsn4a")
 
-[node name="Sink_Side" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="23" unique_id=1426637549 instance=ExtResource("15_te8i2")]
+[node name="Sink_Side" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="24" unique_id=1426637549 instance=ExtResource("15_te8i2")]
 position = Vector2(312, 296)
 
-[node name="Microwave" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="24" unique_id=1875261672 instance=ExtResource("16_te8i2")]
+[node name="Microwave" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="25" unique_id=1875261672 instance=ExtResource("16_te8i2")]
 position = Vector2(64, 228)
 
 [node name="Mechanics" type="Node" parent="." index="9" unique_id=1636108149]
@@ -222,8 +324,6 @@ visible = false
 
 [node name="Level Results" parent="HUD" index="1" unique_id=720231760]
 visible = false
-nextLevelName = &"res://Levels/Scenes/FratHouseAlt.tscn"
-replayLevelName = &"res://Levels/Scenes/In Game/Apartments.tscn"
 
 [node name="Dialogue" parent="HUD" index="2" unique_id=2001474479]
 visible = false
@@ -250,6 +350,12 @@ tag = SubResource("Resource_g6aub")
 shape = SubResource("RectangleShape2D_2h8g0")
 one_way_collision_margin = 0.0
 
+[connection signal="body_shape_entered" from="Y-Sorting/TV_and_desk_front/AreaDetector" to="Y-Sorting/TV_and_desk_front" method="_on_area_detector_body_shape_entered"]
+[connection signal="body_shape_exited" from="Y-Sorting/TV_and_desk_front/AreaDetector" to="Y-Sorting/TV_and_desk_front" method="_on_area_detector_body_shape_exited"]
+[connection signal="body_shape_entered" from="Y-Sorting/TV_and_desk_front2/AreaDetector" to="Y-Sorting/TV_and_desk_front2" method="_on_area_detector_body_shape_entered"]
+[connection signal="body_shape_exited" from="Y-Sorting/TV_and_desk_front2/AreaDetector" to="Y-Sorting/TV_and_desk_front2" method="_on_area_detector_body_shape_exited"]
+[connection signal="body_shape_entered" from="Y-Sorting/TV_and_desk_front2/TV_and_desk_side/AreaDetector" to="Y-Sorting/TV_and_desk_front2/TV_and_desk_side" method="_on_area_detector_body_shape_entered"]
+[connection signal="body_shape_exited" from="Y-Sorting/TV_and_desk_front2/TV_and_desk_side/AreaDetector" to="Y-Sorting/TV_and_desk_front2/TV_and_desk_side" method="_on_area_detector_body_shape_exited"]
 [connection signal="body_entered" from="TriggerSensor" to="TriggerSensor" method="_on_body_entered"]
 [connection signal="body_entered" from="TriggerSensor2" to="TriggerSensor2" method="_on_body_entered"]
 

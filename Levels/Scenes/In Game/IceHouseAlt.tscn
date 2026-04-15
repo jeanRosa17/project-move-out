@@ -285,6 +285,9 @@ visible = false
 [node name="ListHUD" parent="HUD" index="0" unique_id=1378780322]
 visible = false
 
+[node name="ItemList" parent="HUD/ListHUD" index="0" unique_id=478689423 node_paths=PackedStringArray("needed")]
+needed = [NodePath("../../../Y-Sorting/red_couch_side"), NodePath("../../../Y-Sorting/Double Bed"), NodePath("../../../Y-Sorting/Double Bed2"), NodePath("../../../Y-Sorting/TV_and_desk_side"), NodePath("../../../Y-Sorting/bedside_table2"), NodePath("../../../Y-Sorting/redder_couch_front"), NodePath("../../../Y-Sorting/Table"), NodePath("../../../Y-Sorting/Shelf"), NodePath("../../../Y-Sorting/Shelf3"), NodePath("../../../Y-Sorting/Shelf4"), NodePath("../../../Y-Sorting/Shelf2"), NodePath("../../../Y-Sorting/bedside_table"), NodePath("../../../Y-Sorting/wooden_table"), NodePath("../../../Y-Sorting/Glass Table"), NodePath("../../../Y-Sorting/Stool"), NodePath("../../../Y-Sorting/Stool2"), NodePath("../../../Y-Sorting/Glass Table2")]
+
 [node name="Level Results" parent="HUD" index="1" unique_id=720231760]
 visible = false
 

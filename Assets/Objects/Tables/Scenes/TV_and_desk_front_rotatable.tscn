@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://dq40nni5jbwa2"]
+
+[ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_crd3h"]
+[ext_resource type="Texture2D" uid="uid://b4ibf7urtrqja" path="res://Assets/Objects/Tables/TV_and_desk_front.png" id="2_kggqm"]
+[ext_resource type="Texture2D" uid="uid://dbwg58xoehpib" path="res://Assets/Objects/Tables/TV_and_desk_side.png" id="3_kggqm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xsn4a"]
+size = Vector2(64, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g6aub"]
+size = Vector2(69, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vi04n"]
+size = Vector2(16, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y1103"]
+size = Vector2(20, 80)
+
+[node name="TV_and_desk_front" type="RigidBody2D" unique_id=472159025 groups=["Furniture"]]
+collision_layer = 2
+collision_mask = 7
+gravity_scale = 0.0
+can_sleep = false
+script = ExtResource("1_crd3h")
+canPush = true
+canPull = true
+tetroShape = 6
+metadata/_custom_type_script = "uid://c2vh27coguldq"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1858359844]
+texture = ExtResource("2_kggqm")
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=445537357]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_xsn4a")
+
+[node name="AreaDetector" type="Area2D" parent="." unique_id=22840679 groups=["Furniture"]]
+position = Vector2(0, -1)
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector" unique_id=1093782882]
+position = Vector2(0.5, 3.5)
+shape = SubResource("RectangleShape2D_g6aub")
+
+[node name="TV_and_desk_side" type="RigidBody2D" parent="." unique_id=1576853896 groups=["Furniture"]]
+collision_layer = 2
+collision_mask = 7
+gravity_scale = 0.0
+can_sleep = false
+script = ExtResource("1_crd3h")
+canPush = true
+canPull = true
+tetroShape = 6
+metadata/_custom_type_script = "uid://c2vh27coguldq"
+
+[node name="Sprite2D" type="Sprite2D" parent="TV_and_desk_side" unique_id=2128468314]
+texture = ExtResource("3_kggqm")
+
+[node name="Collision" type="CollisionShape2D" parent="TV_and_desk_side" unique_id=1211745920]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_vi04n")
+
+[node name="AreaDetector" type="Area2D" parent="TV_and_desk_side" unique_id=1077459425 groups=["Furniture"]]
+position = Vector2(0, -1)
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TV_and_desk_side/AreaDetector" unique_id=906462788]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_y1103")
+
+[connection signal="body_shape_entered" from="AreaDetector" to="." method="_on_area_detector_body_shape_entered"]
+[connection signal="body_shape_exited" from="AreaDetector" to="." method="_on_area_detector_body_shape_exited"]
+[connection signal="body_shape_entered" from="TV_and_desk_side/AreaDetector" to="TV_and_desk_side" method="_on_area_detector_body_shape_entered"]
+[connection signal="body_shape_exited" from="TV_and_desk_side/AreaDetector" to="TV_and_desk_side" method="_on_area_detector_body_shape_exited"]

@@ -74,9 +74,9 @@ region_rect = Rect2(144, 0, 48, 32)
 
 [node name="Dino Pot" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="7" unique_id=2016765540 instance=ExtResource("3_2ot10")]
 position = Vector2(496, 96)
-canLift = true
 canPush = false
 canPull = false
+canLift = true
 
 [node name="Pool Chair" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="8" unique_id=1634053611 instance=ExtResource("4_mka3y")]
 position = Vector2(152, 176)
@@ -166,6 +166,9 @@ visible = false
 
 [node name="ListHUD" parent="HUD" index="0" unique_id=1378780322]
 visible = false
+
+[node name="ItemList" parent="HUD/ListHUD" index="0" unique_id=478689423 node_paths=PackedStringArray("needed")]
+needed = [NodePath("../../../Y-Sorting/Floaties"), NodePath("../../../Y-Sorting/Floaties4"), NodePath("../../../Y-Sorting/Floaties5"), NodePath("../../../Y-Sorting/Floaties2"), NodePath("../../../Y-Sorting/Floaties3"), NodePath("../../../Y-Sorting/Dino Pot"), NodePath("../../../Y-Sorting/Pool Chair"), NodePath("../../../Y-Sorting/Pool Chair3"), NodePath("../../../Y-Sorting/Pool Chair4"), NodePath("../../../Y-Sorting/Pool Chair2"), NodePath("../../../Y-Sorting/Glass Table"), NodePath("../../../Y-Sorting/Glass Table2"), NodePath("../../../Y-Sorting/Floaties Tower"), NodePath("../../../Y-Sorting/Umbrella"), NodePath("../../../Y-Sorting/Umbrella2"), NodePath("../../../Y-Sorting/Umbrella3")]
 
 [node name="Level Results" parent="HUD" index="1" unique_id=720231760]
 visible = false

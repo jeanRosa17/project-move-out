@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://cjree04v3e5qj"]
+[gd_scene format=4 uid="uid://bb3dywxtdya3a"]
 
 [ext_resource type="PackedScene" uid="uid://bjyjc8mdpa2ey" path="res://Levels/LevelTemplate.tscn" id="1_l4mxs"]
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="2_yowof"]
@@ -34,12 +34,6 @@
 script = ExtResource("11_d1u5m")
 dialogueScriptPath = &"res://Narrative/DollHouse.txt"
 dialogueTag = &"fridge"
-metadata/_custom_type_script = "uid://bmqryoobj44j2"
-
-[sub_resource type="Resource" id="Resource_u4sel"]
-script = ExtResource("11_d1u5m")
-dialogueScriptPath = &"res://Narrative/DollHouse.txt"
-dialogueTag = &"doll"
 metadata/_custom_type_script = "uid://bmqryoobj44j2"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
@@ -168,9 +162,6 @@ gravity_scale = 0.0
 can_sleep = false
 lock_rotation = true
 script = ExtResource("16_563mr")
-canPush = true
-canPull = true
-dialogueTag = SubResource("Resource_u4sel")
 metadata/_custom_type_script = "uid://c2vh27coguldq"
 
 [node name="Sprite2D" type="Sprite2D" parent="Y-Sorting/Haunted_doll" index="0" unique_id=105909264]
@@ -316,6 +307,18 @@ position = Vector2(-96, 104)
 [node name="HUD" parent="." index="11" unique_id=1725586568]
 visible = false
 
+[node name="ListHUD" parent="HUD" index="0" unique_id=1378780322]
+visible = false
+
+[node name="ItemList" parent="HUD/ListHUD" index="0" unique_id=478689423 node_paths=PackedStringArray("needed")]
+needed = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+
+[node name="Level Results" parent="HUD" index="1" unique_id=720231760]
+visible = false
+
+[node name="Dialogue" parent="HUD" index="2" unique_id=2001474479]
+visible = false
+
 [node name="ToSecondFloor" parent="." index="12" unique_id=2024774758 node_paths=PackedStringArray("goTo") instance=ExtResource("28_qwbf5")]
 position = Vector2(96, 80)
 goTo = NodePath("../ToFirstFloor")
@@ -369,3 +372,4 @@ one_way_collision_margin = 0.0
 [editable path="Y-Sorting/LivingRoomDoor"]
 [editable path="Y-Sorting/MainDoor"]
 [editable path="Y-Sorting/TV"]
+[editable path="HUD"]
