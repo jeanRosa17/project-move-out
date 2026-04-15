@@ -52,7 +52,8 @@ func get_max_score() -> float:
 func runTetris() -> void:
 	var current_scene = get_tree().current_scene  
 	print("Current Scene: ", current_scene.name)
-	if(current_scene.name == "HubScene"):
+	
+	if (current_scene.name == "HubScene"):
 		return;
 	if (not self.player_camera): self.player_camera = self.player.getCamera()
 	if (not self.tetris_camera): self.tetris_camera = self.tetris.getCamera()
@@ -99,11 +100,16 @@ func checkResults() -> void:
 	## enable tetris and have the player play that first
 	
 	self.player.setControls(false)
+<<<<<<< Updated upstream
 	print("Gay gay homosexual gay");
 	var current_scene = get_tree().current_scene
 	if (current_scene.name != "HubScene"):
 		var _text:RichTextLabel = self.level_results.find_child("Score")
 		_text.text = "Your score is: " + str(score)
+=======
+	var _text:RichTextLabel = self.level_results.find_child("Score")
+	_text.text = "Your score is: " + str(score)
+>>>>>>> Stashed changes
 	self.dialogue.visible = false
 	await get_tree().create_timer(0.3).timeout
 	if (current_scene.name != "HubScene"):
@@ -120,3 +126,7 @@ func _process(_delta: float) -> void:
 	## When run in the editor
 	if Engine.is_editor_hint():
 		self.setAllOff()
+
+
+func _on_quit_button_down() -> void:
+	self.visible = false

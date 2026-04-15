@@ -81,6 +81,19 @@ func parseCommandsInLine() -> void:
 	if current_line == "":
 		assert(false, "Current line is empty.")
 	
+	if (current_line.contains("$option ")):
+		if (self.get_child_count() == 0): return
+		
+		var options = current_line.split("$option ")[1]
+		
+		assert(options.length() != 0, "error options should be atleast one")
+		
+		$"Panel/Next Level".text = options[0]
+		$Panel/Quit.text = options[1]
+		
+		
+		
+		
 	if (self.isLineQuit(current_line)):
 		self.quitting = true
 	
@@ -94,6 +107,11 @@ func parseCommandsInLine() -> void:
 
 func removeAllCommandsFromCurLine() -> String:
 	var result: String = self.getCurrentLine(true)
+	
+	if (result.contains("$option ")): 
+		var options:String = result.split("$option ")[1]
+		result = result.replace("$option " + options, "")
+
 	
 	if (self.isLineQuit(result)): result = result.replace("$quit", "")
 	

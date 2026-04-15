@@ -221,6 +221,7 @@ text = "Quit"
 layer = 2
 
 [node name="Textbox" parent="Dialogue" unique_id=1851480463 instance=ExtResource("2_ijstf")]
+dialogueScriptPath = null
 
 [connection signal="button_down" from="Level Results/Container/BoxContainer/Panel/Replay" to="Level Results/Container/BoxContainer/Panel/Replay/ButtonSound DownUp" method="_on_play_button_down"]
 [connection signal="button_up" from="Level Results/Container/BoxContainer/Panel/Replay" to="Level Results/Container/BoxContainer/Panel/Replay/ButtonSound DownUp" method="_on_play_button_up"]

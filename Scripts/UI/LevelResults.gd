@@ -4,9 +4,6 @@ extends CanvasLayer
 @onready var replayLevel: Button = $Container/BoxContainer/Panel/Replay
 @onready var exitLevel: Button = $Container/BoxContainer/Panel/Quit
 
-@export var nextLevelName: StringName
-@export var replayLevelName: StringName
-
 @export var oneStarCompletion: float = 0.25
 @export var twoStarCompletion: float = 0.50
 @export var threeStarCompletion: float = 1
@@ -16,10 +13,9 @@ var transition_audio:AudioStreamPlayer2D
 
 func _on_next_level_pressed() -> void:
 	transition_audio = find_child("Level Transition Audio")
-	if (nextLevelName != null):
-		Data.levelNum += 1
-		LevelManager.loadScene(Data.Levels[Data.levelNum])
-		transition_audio.play()
+	Data.levelNum += 1
+	LevelManager.loadScene(Data.Levels[Data.levelNum])
+	transition_audio.play()
 
 func _on_replay_level_pressed() -> void:
 	var current_scene := get_tree().current_scene

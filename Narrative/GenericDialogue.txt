@@ -18,5 +18,5 @@
 }
 
 #endLevel {
-	Do you wish to end the level and pack up?
+	Do you wish to end the level and pack up? $option Yes No
 }
