@@ -322,8 +322,6 @@ var initial_empty_cells: int = 0
 var tile_id: int = 1
 var next_piece_atlas: Vector2i
 
-var last_drawn_block: Array = []
-
 @onready var board_layer: TileMapLayer = $Board
 @onready var active_layer: TileMapLayer = $Active
 @onready var hud:HUDManager = %HUD
@@ -377,6 +375,10 @@ func _physics_process(delta: float) -> void:
 		if fall_timer >= current_fall_interval:
 			move_tetromino(Vector2i.DOWN)
 			fall_timer = 0
+		
+		clear_tetromino()
+		render_tetromino(active_tetromino, current_position)
+
 	else:
 		#show end screen here
 		if (!is_game_stopped):
@@ -423,16 +425,13 @@ func initialize_tetromino() -> void:
 		render_tetromino(active_tetromino, current_position)
 
 func render_tetromino(tetromino: Array, position: Vector2i) -> void:
-	last_drawn_block.clear()
 	for block in tetromino:
 		var world_pos = position + block["pos"]
-		var block_pos: Vector2i = block["pos"]
 		var block_atlas: Vector2i = block["atlas"] #will need to ensure blcok atlas at location is done correctly for art
-		active_layer.set_cell(position + block_pos, tile_id, block_atlas)
-		last_drawn_block.append(world_pos)
+		active_layer.set_cell(world_pos, tile_id, block_atlas)
 
 func clear_tetromino() -> void:
-	for pos in last_drawn_block:
+	for pos in active_layer.get_used_cells():
 		active_layer.erase_cell(pos)
 
 func rotate_tetromino() -> void:
@@ -445,10 +444,10 @@ func rotate_tetromino() -> void:
 		
 
 func move_tetromino(direction: Vector2i) -> void:
+	clear_tetromino()
+	
 	if is_valid_move(direction):
-		clear_tetromino()
-		current_position += direction
-		render_tetromino(active_tetromino, current_position)
+		current_position += direction		
 	else: 
 		if direction == Vector2i.DOWN:
 			land_tetromino()
@@ -457,6 +456,7 @@ func move_tetromino(direction: Vector2i) -> void:
 			clear_next_tetromino_preview()
 			initialize_tetromino()
 			is_game_over()
+	
 	audio_player.tick()
 
 func land_tetromino() -> void:
@@ -494,7 +494,7 @@ func is_valid_rotation() -> bool:
 	return true
 
 func is_within_bounds(pos: Vector2i) -> bool:
-	if pos.x <= MIN_COL or pos.x >= MAX_COL or pos.y <= MIN_ROW or pos.y >= MAX_ROW:
+	if pos.x < MIN_COL or pos.x > MAX_COL or pos.y < MIN_ROW or pos.y > MAX_ROW:
 		return false
 	
 	var tile_id = board_layer.get_cell_source_id(pos)
