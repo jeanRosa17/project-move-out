@@ -16,6 +16,8 @@
 [ext_resource type="AudioStream" uid="uid://qeb7u2p7xni4" path="res://Assets/Audio/johns place.wav" id="13_87idw"]
 [ext_resource type="PackedScene" uid="uid://dpyl8x5qojmng" path="res://Assets/Objects/Table Items/Scenes/TV.tscn" id="13_unfai"]
 [ext_resource type="PackedScene" uid="uid://dns4vnk3a35fb" path="res://Assets/Objects/Couches/Scenes/red_couch_side.tscn" id="14_x7fdx"]
+[ext_resource type="PackedScene" uid="uid://mcsayjbeibp3" path="res://dialogueTrigger.tscn" id="16_u4iui"]
+[ext_resource type="Script" uid="uid://bmqryoobj44j2" path="res://Scripts/Dialogue/DialogueTag.gd" id="17_7cof8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ra6hx"]
 size = Vector2(48, 20)
@@ -30,6 +32,11 @@ size = Vector2(80, 32)
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g8k58"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ersrp"]
+
+[sub_resource type="Resource" id="Resource_unfai"]
+script = ExtResource("17_7cof8")
+dialogueScriptPath = &"res://Narrative/GenericDialogue.txt"
+metadata/_custom_type_script = "uid://bmqryoobj44j2"
 
 [node name="HubScene" type="Node2D" unique_id=319947790]
 script = ExtResource("1_hpngi")
@@ -147,6 +154,7 @@ rotation = -4.71239
 shape = SubResource("WorldBoundaryShape2D_ersrp")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=159038990]
+visible = false
 
 [node name="ItemList2" type="ItemList" parent="CanvasLayer" unique_id=379288082 node_paths=PackedStringArray("spawn_location", "y_sort")]
 anchors_preset = 15
@@ -158,6 +166,11 @@ auto_width = true
 script = ExtResource("7_ptb8a")
 spawn_location = NodePath("../../Y-Sorting/LOCKER/ItemSpawnLocation")
 y_sort = NodePath("../../Y-Sorting")
+
+[node name="TriggerSensor" parent="CanvasLayer" unique_id=884119486 instance=ExtResource("16_u4iui")]
+position = Vector2(920, 120)
+scale = Vector2(0.225, 2.76)
+tag = SubResource("Resource_unfai")
 
 [node name="HUD" parent="." unique_id=1725586568 node_paths=PackedStringArray("player") instance=ExtResource("8_87idw")]
 unique_name_in_owner = true

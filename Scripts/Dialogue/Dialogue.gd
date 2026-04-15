@@ -161,7 +161,7 @@ func nextLine(lineTimer: Timer) -> void:
 	self.lineCounter += 1
 	self.charCounter = 0
 	if not (self.timer.is_connected("timeout", self.parseCommandsInLine)):
-		self.timer.timeout.connect(self.parseCommandsInLine)
+		self.timer.timeout.connect(self.parseCommandsInLine, CONNECT_ONE_SHOT)
 	self.timer.start(self.endOfLineDelay)
 	
 	if (lineTimer != null):
