@@ -1,43 +1,43 @@
-[gd_scene format=4 uid="uid://bb3dywxtdya3a"]
+[gd_scene format=4 uid="uid://cjree04v3e5qj"]
 
-[ext_resource type="PackedScene" uid="uid://bjyjc8mdpa2ey" path="res://Levels/LevelTemplate.tscn" id="1_u4sel"]
-[ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="2_0xq8f"]
-[ext_resource type="PackedScene" uid="uid://bof0wxapyclor" path="res://Assets/Objects/Chairs/Scene/Stool.tscn" id="3_7l3w7"]
-[ext_resource type="PackedScene" uid="uid://c4t28bigi1yhq" path="res://Assets/Objects/Table Items/Scenes/possessed_pot.tscn" id="4_4b72v"]
-[ext_resource type="PackedScene" uid="uid://b7qk52eapta2s" path="res://Assets/Objects/Dressers & Shelves/Scenes/wooden_wardrobe_front.tscn" id="5_ljmeb"]
-[ext_resource type="PackedScene" uid="uid://cjingj81fm3hm" path="res://Assets/Objects/Dressers & Shelves/Scenes/storage_dresser_front.tscn" id="6_c0dqx"]
-[ext_resource type="PackedScene" uid="uid://ombsd650f300" path="res://Assets/Objects/Tables/Scenes/bedside_table.tscn" id="7_wmuuj"]
-[ext_resource type="PackedScene" uid="uid://cwxdgur52wxsm" path="res://Assets/Objects/Tables/Scenes/long_desk_side.tscn" id="8_y481b"]
-[ext_resource type="PackedScene" uid="uid://c0a0h2j2xhek7" path="res://Assets/Objects/Tables/Scenes/selfcare_table.tscn" id="9_awddx"]
-[ext_resource type="PackedScene" uid="uid://cl3ww3w6r3n1r" path="res://Assets/Objects/Kitchen/Scenes/Fridge.tscn" id="10_gdw5g"]
-[ext_resource type="Script" uid="uid://bmqryoobj44j2" path="res://Scripts/Dialogue/DialogueTag.gd" id="11_itlnk"]
-[ext_resource type="PackedScene" uid="uid://outwnejax5mt" path="res://Assets/Objects/Couches/Scenes/redder_couch_side.tscn" id="12_teehw"]
-[ext_resource type="PackedScene" uid="uid://ce4x5g5hrvxce" path="res://Assets/Objects/Bathroom/Scenes/Bathtub.tscn" id="13_d5mvn"]
-[ext_resource type="PackedScene" uid="uid://bfp82m6exqyhy" path="res://Assets/Objects/Bathroom/Scenes/Sink.tscn" id="14_roxi4"]
-[ext_resource type="PackedScene" uid="uid://c638p25j2md1l" path="res://Assets/Objects/Bathroom/Scenes/Toilet.tscn" id="15_rhbln"]
-[ext_resource type="Script" uid="uid://bver5klf3qji7" path="res://Scripts/haunted_doll.gd" id="16_tu5k8"]
-[ext_resource type="Texture2D" uid="uid://mj83eila38sg" path="res://Assets/Objects/Table Items/haunted_doll.png" id="17_ukpp8"]
-[ext_resource type="PackedScene" uid="uid://cmwh2w2blwcsq" path="res://Assets/Objects/Beds/Scene/Twin_Bed.tscn" id="18_tcw3l"]
-[ext_resource type="PackedScene" uid="uid://pr8g204x513g" path="res://Levels/Prefabs/Door.tscn" id="19_70hmx"]
-[ext_resource type="PackedScene" uid="uid://dpyl8x5qojmng" path="res://Assets/Objects/Table Items/Scenes/TV.tscn" id="20_ac7ml"]
-[ext_resource type="PackedScene" uid="uid://cuho4egtuhmvt" path="res://Assets/Objects/Tables/Scenes/TV_and_desk_front.tscn" id="21_g1rm7"]
-[ext_resource type="PackedScene" uid="uid://ds1nqvgtuae71" path="res://Assets/Objects/Tables/Scenes/wooden_table.tscn" id="22_jd3hm"]
-[ext_resource type="PackedScene" uid="uid://di7f7h2xfyshs" path="res://Assets/Objects/Chairs/Scene/Wood_Chair_front2.tscn" id="23_btvew"]
-[ext_resource type="PackedScene" uid="uid://tlg5nuhh7uvu" path="res://Assets/Objects/Chairs/Scene/Possessed_wood_Chair_side2.tscn" id="24_v4qba"]
-[ext_resource type="PackedScene" uid="uid://dkssiia1dmwor" path="res://Assets/Objects/Chairs/Scene/Wood_Chair_Side.tscn" id="25_luhxc"]
-[ext_resource type="PackedScene" uid="uid://f656n3gp8b6h" path="res://Assets/Objects/Tables/Scenes/possessed_wooden_table.tscn" id="26_8or0i"]
-[ext_resource type="AudioStream" uid="uid://c06vxd1b71qpi" path="res://Assets/Audio/spooky level.mp3" id="27_8qinn"]
-[ext_resource type="PackedScene" uid="uid://c1m5u3p8uir82" path="res://Levels/Prefabs/Teleporter.tscn" id="28_h1y3c"]
-[ext_resource type="Script" uid="uid://1ugs6cpgg5xy" path="res://Levels/Scenes/Tutorial/trigger_sensor.gd" id="29_0io1b"]
+[ext_resource type="PackedScene" uid="uid://bjyjc8mdpa2ey" path="res://Levels/LevelTemplate.tscn" id="1_l4mxs"]
+[ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="2_yowof"]
+[ext_resource type="PackedScene" uid="uid://bof0wxapyclor" path="res://Assets/Objects/Chairs/Scene/Stool.tscn" id="3_jw4ej"]
+[ext_resource type="PackedScene" uid="uid://c4t28bigi1yhq" path="res://Assets/Objects/Table Items/Scenes/possessed_pot.tscn" id="4_ybsv3"]
+[ext_resource type="PackedScene" uid="uid://b7qk52eapta2s" path="res://Assets/Objects/Dressers & Shelves/Scenes/wooden_wardrobe_front.tscn" id="5_ymwvh"]
+[ext_resource type="PackedScene" uid="uid://cjingj81fm3hm" path="res://Assets/Objects/Dressers & Shelves/Scenes/storage_dresser_front.tscn" id="6_xodi7"]
+[ext_resource type="PackedScene" uid="uid://ombsd650f300" path="res://Assets/Objects/Tables/Scenes/bedside_table.tscn" id="7_1jn5r"]
+[ext_resource type="PackedScene" uid="uid://cwxdgur52wxsm" path="res://Assets/Objects/Tables/Scenes/long_desk_side.tscn" id="8_74ehi"]
+[ext_resource type="PackedScene" uid="uid://c0a0h2j2xhek7" path="res://Assets/Objects/Tables/Scenes/selfcare_table.tscn" id="9_4uyrw"]
+[ext_resource type="PackedScene" uid="uid://cl3ww3w6r3n1r" path="res://Assets/Objects/Kitchen/Scenes/Fridge.tscn" id="10_6k4ek"]
+[ext_resource type="Script" uid="uid://bmqryoobj44j2" path="res://Scripts/Dialogue/DialogueTag.gd" id="11_d1u5m"]
+[ext_resource type="PackedScene" uid="uid://outwnejax5mt" path="res://Assets/Objects/Couches/Scenes/redder_couch_side.tscn" id="12_3bdis"]
+[ext_resource type="PackedScene" uid="uid://ce4x5g5hrvxce" path="res://Assets/Objects/Bathroom/Scenes/Bathtub.tscn" id="13_mkhci"]
+[ext_resource type="PackedScene" uid="uid://bfp82m6exqyhy" path="res://Assets/Objects/Bathroom/Scenes/Sink.tscn" id="14_3f1pg"]
+[ext_resource type="PackedScene" uid="uid://c638p25j2md1l" path="res://Assets/Objects/Bathroom/Scenes/Toilet.tscn" id="15_x7e06"]
+[ext_resource type="Script" uid="uid://bver5klf3qji7" path="res://Scripts/haunted_doll.gd" id="16_563mr"]
+[ext_resource type="Texture2D" uid="uid://mj83eila38sg" path="res://Assets/Objects/Table Items/haunted_doll.png" id="17_1k0rp"]
+[ext_resource type="PackedScene" uid="uid://cmwh2w2blwcsq" path="res://Assets/Objects/Beds/Scene/Twin_Bed.tscn" id="18_q1x3y"]
+[ext_resource type="PackedScene" uid="uid://pr8g204x513g" path="res://Levels/Prefabs/Door.tscn" id="19_e1n6s"]
+[ext_resource type="PackedScene" uid="uid://dpyl8x5qojmng" path="res://Assets/Objects/Table Items/Scenes/TV.tscn" id="20_s3cd3"]
+[ext_resource type="PackedScene" uid="uid://cuho4egtuhmvt" path="res://Assets/Objects/Tables/Scenes/TV_and_desk_front.tscn" id="21_yi2pw"]
+[ext_resource type="PackedScene" uid="uid://ds1nqvgtuae71" path="res://Assets/Objects/Tables/Scenes/wooden_table.tscn" id="22_jcmax"]
+[ext_resource type="PackedScene" uid="uid://di7f7h2xfyshs" path="res://Assets/Objects/Chairs/Scene/Wood_Chair_front2.tscn" id="23_62lw8"]
+[ext_resource type="PackedScene" uid="uid://tlg5nuhh7uvu" path="res://Assets/Objects/Chairs/Scene/Possessed_wood_Chair_side2.tscn" id="24_6su35"]
+[ext_resource type="PackedScene" uid="uid://dkssiia1dmwor" path="res://Assets/Objects/Chairs/Scene/Wood_Chair_Side.tscn" id="25_16ivx"]
+[ext_resource type="PackedScene" uid="uid://f656n3gp8b6h" path="res://Assets/Objects/Tables/Scenes/possessed_wooden_table.tscn" id="26_ma0s0"]
+[ext_resource type="AudioStream" uid="uid://c06vxd1b71qpi" path="res://Assets/Audio/spooky level.mp3" id="27_63j4e"]
+[ext_resource type="PackedScene" uid="uid://c1m5u3p8uir82" path="res://Levels/Prefabs/Teleporter.tscn" id="28_qwbf5"]
+[ext_resource type="Script" uid="uid://1ugs6cpgg5xy" path="res://Levels/Scenes/Tutorial/trigger_sensor.gd" id="29_qnshs"]
 
 [sub_resource type="Resource" id="Resource_fuwlr"]
-script = ExtResource("11_itlnk")
+script = ExtResource("11_d1u5m")
 dialogueScriptPath = &"res://Narrative/DollHouse.txt"
 dialogueTag = &"fridge"
 metadata/_custom_type_script = "uid://bmqryoobj44j2"
 
 [sub_resource type="Resource" id="Resource_u4sel"]
-script = ExtResource("11_itlnk")
+script = ExtResource("11_d1u5m")
 dialogueScriptPath = &"res://Narrative/DollHouse.txt"
 dialogueTag = &"doll"
 metadata/_custom_type_script = "uid://bmqryoobj44j2"
@@ -49,7 +49,7 @@ size = Vector2(16, 16)
 size = Vector2(18, 18)
 
 [sub_resource type="Resource" id="Resource_6dw3n"]
-script = ExtResource("11_itlnk")
+script = ExtResource("11_d1u5m")
 dialogueScriptPath = &"res://Narrative/DollHouse.txt"
 dialogueTag = &"bed"
 metadata/_custom_type_script = "uid://bmqryoobj44j2"
@@ -61,7 +61,7 @@ size = Vector2(20, 32)
 size = Vector2(24, 32)
 
 [sub_resource type="Resource" id="Resource_gb87b"]
-script = ExtResource("11_itlnk")
+script = ExtResource("11_d1u5m")
 dialogueScriptPath = &"res://Narrative/DollHouse.txt"
 metadata/_custom_type_script = "uid://bmqryoobj44j2"
 
@@ -69,18 +69,18 @@ metadata/_custom_type_script = "uid://bmqryoobj44j2"
 size = Vector2(396.3452, 637.2596)
 
 [sub_resource type="Resource" id="Resource_vrncr"]
-script = ExtResource("11_itlnk")
+script = ExtResource("11_d1u5m")
 dialogueScriptPath = &"res://Narrative/DollHouse.txt"
 dialogueTag = &"enter"
 metadata/_custom_type_script = "uid://bmqryoobj44j2"
 
 [sub_resource type="Resource" id="Resource_qs07m"]
-script = ExtResource("11_itlnk")
+script = ExtResource("11_d1u5m")
 dialogueScriptPath = &"res://Narrative/DollHouse.txt"
 dialogueTag = &"basement"
 metadata/_custom_type_script = "uid://bmqryoobj44j2"
 
-[node name="DollHouse" unique_id=319947790 instance=ExtResource("1_u4sel")]
+[node name="DollHouse" unique_id=319947790 instance=ExtResource("1_l4mxs")]
 
 [node name="Walls" parent="." index="0" unique_id=216456263]
 z_index = -1
@@ -102,62 +102,62 @@ tile_map_data = PackedByteArray("AAABAAAABAAAAAMAAAACAAAABAABAAMAAAADAAAABAABAAM
 [node name="Doorframes" type="TileMapLayer" parent="." index="4" unique_id=1746009549]
 z_index = 2
 tile_map_data = PackedByteArray("AAASABoABgAEAAkAAAATABoABgAEAAkAAAA=")
-tile_set = ExtResource("2_0xq8f")
+tile_set = ExtResource("2_yowof")
 
 [node name="Wall Collisions" parent="." index="5" unique_id=890800813]
 visible = false
 tile_map_data = PackedByteArray("AAAQAA4ACQACAAAAAAABAA4ACQACAAAAAAAQAAYACQACAAAAAAAQAAcACQACAAAAAAAQAAgACQACAAAAAAAQAAkACQACAAAAAAAQAAoACQACAAAAAAAQAAsACQACAAAAAAAQAAwACQACAAAAAAAQAA0ACQACAAAAAAAQAA8ACQACAAAAAAAQABAACQACAAAAAAAQABEACQACAAAAAAAQABIACQACAAAAAAAQABMACQACAAAAAAAVAAYACQACAAAAAAAVAAcACQACAAAAAAAVAAgACQACAAAAAAAVAAkACQACAAAAAAAVAAoACQACAAAAAAAVAAsACQACAAAAAAAVAAwACQACAAAAAAAVAA0ACQACAAAAAAAVAA4ACQACAAAAAAAVAA8ACQACAAAAAAAVABAACQACAAAAAAAVABEACQACAAAAAAAVABIACQACAAAAAAAVABMACQACAAAAAAAZABEACQACAAAAAAAaABEACQACAAAAAAAbABEACQACAAAAAAAcABEACQACAAAAAAAdABEACQACAAAAAAAeABEACQACAAAAAAAfABEACQACAAAAAAAgABEACQACAAAAAAAhABEACQACAAAAAAAiABEACQACAAAAAAAWABEACQACAAAAAAAWAAYACQACAAAAAAAZAAYACQACAAAAAAAaAAYACQACAAAAAAAbAAYACQACAAAAAAAcAAYACQACAAAAAAAdAAYACQACAAAAAAAeAAYACQACAAAAAAAfAAYACQACAAAAAAAgAAYACQACAAAAAAAhAAYACQACAAAAAAAiAAYACQACAAAAAAAiAAAACQACAAAAAAAiAAEACQACAAAAAAAiAAIACQACAAAAAAAiAAMACQACAAAAAAAiAAQACQACAAAAAAAiAAUACQACAAAAAAAiAAcACQACAAAAAAAiAAgACQACAAAAAAAiAAkACQACAAAAAAAiAAoACQACAAAAAAAiAAsACQACAAAAAAAiAAwACQACAAAAAAAiAA0ACQACAAAAAAAiAA4ACQACAAAAAAAiAA8ACQACAAAAAAAiABAACQACAAAAAAAiABIACQACAAAAAAAiABMACQACAAAAAAAiABQACQACAAAAAAAiABUACQACAAAAAAAiABYACQACAAAAAAAiABcACQACAAAAAAAiABgACQACAAAAAAAiABkACQACAAAAAAAiABoACQACAAAAAAABAAAACQACAAAAAAACAAAACQACAAAAAAADAAAACQACAAAAAAAEAAAACQACAAAAAAAFAAAACQACAAAAAAAGAAAACQACAAAAAAAHAAAACQACAAAAAAAIAAAACQACAAAAAAAJAAAACQACAAAAAAAKAAAACQACAAAAAAALAAAACQACAAAAAAAMAAAACQACAAAAAAANAAAACQACAAAAAAAOAAAACQACAAAAAAAPAAAACQACAAAAAAAQAAAACQACAAAAAAARAAAACQACAAAAAAASAAAACQACAAAAAAATAAAACQACAAAAAAAUAAAACQACAAAAAAAVAAAACQACAAAAAAAWAAAACQACAAAAAAAXAAAACQACAAAAAAAYAAAACQACAAAAAAAZAAAACQACAAAAAAAaAAAACQACAAAAAAAbAAAACQACAAAAAAAcAAAACQACAAAAAAAdAAAACQACAAAAAAAeAAAACQACAAAAAAAfAAAACQACAAAAAAAgAAAACQACAAAAAAAhAAAACQACAAAAAAABAAEACQACAAAAAAACAAEACQACAAAAAAADAAEACQACAAAAAAAEAAEACQACAAAAAAAFAAEACQACAAAAAAAGAAEACQACAAAAAAAHAAEACQACAAAAAAAIAAEACQACAAAAAAAJAAEACQACAAAAAAAKAAEACQACAAAAAAALAAEACQACAAAAAAAMAAEACQACAAAAAAANAAEACQACAAAAAAAOAAEACQACAAAAAAAPAAEACQACAAAAAAAQAAEACQACAAAAAAARAAEACQACAAAAAAASAAEACQACAAAAAAATAAEACQACAAAAAAAUAAEACQACAAAAAAAVAAEACQACAAAAAAAWAAEACQACAAAAAAAXAAEACQACAAAAAAAYAAEACQACAAAAAAAZAAEACQACAAAAAAAaAAEACQACAAAAAAAbAAEACQACAAAAAAAcAAEACQACAAAAAAAdAAEACQACAAAAAAAeAAEACQACAAAAAAAfAAEACQACAAAAAAAgAAEACQACAAAAAAAhAAEACQACAAAAAAD8/yMACQACAAAAAAD9/yMACQADAAAAADD+/yMACQADAAAAADD//yMACQADAAAAADAAACMACQADAAAAADABACMACQADAAAAADACACMACQADAAAAADADACMACQADAAAAADAEACMACQADAAAAADAFACMACQADAAAAADAGACMACQADAAAAADAHACMACQADAAAAADAIACMACQADAAAAADAJACMACQADAAAAADAKACMACQADAAAAADALACMACQADAAAAADAMACMACQADAAAAADANACMACQADAAAAADAOACMACQADAAAAADAPACMACQADAAAAADAQACMACQADAAAAADARACMACQADAAAAADASACMACQADAAAAADATACMACQADAAAAADAUACMACQADAAAAADAVACMACQADAAAAADAWACMACQADAAAAADAXACMACQADAAAAADAYACMACQADAAAAADAZACMACQADAAAAADAaACMACQADAAAAADAbACMACQADAAAAADAcACMACQADAAAAADAdACMACQADAAAAADAeACMACQADAAAAADAfACMACQADAAAAADAgACMACQADAAAAADAhACMACQADAAAAADAiACMACQADAAAAADAjACMACQADAAAAADAkACMACQADAAAAADAlACMACQADAAAAADAmACMACQACAAAAAAAmAPr/CQACAAAAAAD8//r/CQACAAAAAAD9//r/CQADAAAAAAD+//r/CQADAAAAAAD///r/CQADAAAAAAAAAPr/CQADAAAAAAABAPr/CQADAAAAAAACAPr/CQADAAAAAAADAPr/CQADAAAAAAAEAPr/CQADAAAAAAAFAPr/CQADAAAAAAAGAPr/CQADAAAAAAAHAPr/CQADAAAAAAAIAPr/CQADAAAAAAAJAPr/CQADAAAAAAAKAPr/CQADAAAAAAALAPr/CQADAAAAAAAMAPr/CQADAAAAAAANAPr/CQADAAAAAAAOAPr/CQADAAAAAAAPAPr/CQADAAAAAAAQAPr/CQADAAAAAAARAPr/CQADAAAAAAASAPr/CQADAAAAAAATAPr/CQADAAAAAAAUAPr/CQADAAAAAAAVAPr/CQADAAAAAAAWAPr/CQADAAAAAAAXAPr/CQADAAAAAAAYAPr/CQADAAAAAAAZAPr/CQADAAAAAAAaAPr/CQADAAAAAAAbAPr/CQADAAAAAAAcAPr/CQADAAAAAAAdAPr/CQADAAAAAAAeAPr/CQADAAAAAAAfAPr/CQADAAAAAAAgAPr/CQADAAAAAAAhAPr/CQADAAAAAAAiAPr/CQADAAAAAAAjAPr/CQADAAAAAAAkAPr/CQADAAAAAAAlAPr/CQADAAAAAAAmAPv/CQADAAAAAFAmAPz/CQADAAAAAFAmAP3/CQADAAAAAFAmAP7/CQADAAAAAFAmAP//CQADAAAAAFAmAAAACQADAAAAAFAmAAEACQADAAAAAFAmAAIACQADAAAAAFAmAAMACQADAAAAAFAmAAQACQADAAAAAFAmAAUACQADAAAAAFAmAAYACQADAAAAAFAmAAcACQADAAAAAFAmAAgACQADAAAAAFAmAAkACQADAAAAAFAmAAoACQADAAAAAFAmAAsACQADAAAAAFAmAAwACQADAAAAAFAmAA0ACQADAAAAAFAmAA4ACQADAAAAAFAmAA8ACQADAAAAAFAmABAACQADAAAAAFAmABEACQADAAAAAFAmABIACQADAAAAAFAmABMACQADAAAAAFAmABQACQADAAAAAFAmABUACQADAAAAAFAmABYACQADAAAAAFAmABcACQADAAAAAFAmABgACQADAAAAAFAmABkACQADAAAAAFAmABoACQADAAAAAFAmABsACQADAAAAAFAmABwACQADAAAAAFAmAB0ACQADAAAAAFAmAB4ACQADAAAAAFAmAB8ACQADAAAAAFAmACAACQADAAAAAFAmACEACQADAAAAAFAmACIACQADAAAAAFD8/yIACQADAAAAAGD8/yEACQADAAAAAGD8/yAACQADAAAAAGD8/x8ACQADAAAAAGD8/x4ACQADAAAAAGD8/x0ACQADAAAAAGD8/xwACQADAAAAAGD8/xsACQADAAAAAGD8/xoACQADAAAAAGD8/xkACQADAAAAAGD8/xgACQADAAAAAGD8/xcACQADAAAAAGD8/xYACQADAAAAAGD8/xUACQADAAAAAGD8/xQACQADAAAAAGD8/xMACQADAAAAAGD8/xIACQADAAAAAGD8/xEACQADAAAAAGD8/xAACQADAAAAAGD8/w8ACQADAAAAAGD8/w4ACQADAAAAAGD8/w0ACQADAAAAAGD8/wwACQADAAAAAGD8/wsACQADAAAAAGD8/woACQADAAAAAGD8/wkACQADAAAAAGD8/wgACQADAAAAAGD8/wcACQADAAAAAGD8/wYACQADAAAAAGD8/wUACQADAAAAAGD8/wQACQADAAAAAGD8/wMACQADAAAAAGD8/wIACQADAAAAAGD8/wEACQADAAAAAGD8/wAACQADAAAAAGD8////CQADAAAAAGD8//7/CQADAAAAAGD8//3/CQADAAAAAGD8//z/CQADAAAAAGD8//v/CQADAAAAAGAVABgACQACAAAAAAAVABkACQACAAAAAAAVABoACQACAAAAAAAQABgACQACAAAAAAAQABkACQACAAAAAAAQABoACQACAAAAAAAGAA0ACQACAAAAAAAHAA0ACQACAAAAAAAIAA0ACQACAAAAAAAJAA0ACQACAAAAAAAKAA0ACQACAAAAAAALAA0ACQACAAAAAAAMAA0ACQACAAAAAAANAA0ACQACAAAAAAAOAA0ACQACAAAAAAAPAA0ACQACAAAAAAABAA0ACQACAAAAAAAZABAACQADAAAAADAaABAACQADAAAAADAbABAACQADAAAAADAcABAACQADAAAAADAdABAACQADAAAAADAeABAACQADAAAAADAfABAACQADAAAAADAgABAACQADAAAAADAhABAACQADAAAAADAWABAACQADAAAAADAZABIACQACAAAAAAAaABIACQACAAAAAAAbABIACQACAAAAAAAcABIACQACAAAAAAAdABIACQACAAAAAAAeABIACQACAAAAAAAfABIACQACAAAAAAAgABIACQACAAAAAAAhABIACQACAAAAAAAWABIACQACAAAAAAABAA8ACQACAAAAAAABAAIACQACAAAAAAACAAIACQACAAAAAAADAAIACQACAAAAAAAEAAIACQACAAAAAAAFAAIACQACAAAAAAAGAAIACQACAAAAAAAHAAIACQACAAAAAAAIAAIACQACAAAAAAAJAAIACQACAAAAAAAKAAIACQACAAAAAAALAAIACQACAAAAAAAMAAIACQACAAAAAAANAAIACQACAAAAAAAOAAIACQACAAAAAAAPAAIACQACAAAAAAAQAAIACQACAAAAAAARAAIACQACAAAAAAASAAIACQACAAAAAAATAAIACQACAAAAAAAUAAIACQACAAAAAAAVAAIACQACAAAAAAAWAAIACQACAAAAAAAXAAIACQACAAAAAAAYAAIACQACAAAAAAAZAAIACQACAAAAAAAaAAIACQACAAAAAAAbAAIACQACAAAAAAAcAAIACQACAAAAAAAdAAIACQACAAAAAAAeAAIACQACAAAAAAAfAAIACQACAAAAAAAgAAIACQACAAAAAAAhAAIACQACAAAAAAABABoACQACAAAAAAACABoACQADAAAAADADABoACQADAAAAADAEABoACQADAAAAADAFABoACQADAAAAADAGABoACQADAAAAADAHABoACQADAAAAADAIABoACQADAAAAADAJABoACQADAAAAADAKABoACQADAAAAADALABoACQADAAAAADAMABoACQADAAAAADANABoACQADAAAAADAOABoACQADAAAAADAPABoACQADAAAAADAWABoACQADAAAAADAXABoACQADAAAAADAYABoACQADAAAAADAZABoACQADAAAAADAaABoACQADAAAAADAbABoACQADAAAAADAcABoACQADAAAAADAdABoACQADAAAAADAeABoACQADAAAAADAfABoACQADAAAAADAgABoACQADAAAAADAhABoACQADAAAAADAZAAcACQACAAAAAAAaAAcACQACAAAAAAAbAAcACQACAAAAAAAcAAcACQACAAAAAAAdAAcACQACAAAAAAAeAAcACQACAAAAAAAfAAcACQACAAAAAAAgAAcACQACAAAAAAAhAAcACQACAAAAAAAWAAcACQACAAAAAAAZAAUACQADAAAAADAaAAUACQADAAAAADAbAAUACQADAAAAADAcAAUACQADAAAAADAdAAUACQADAAAAADAeAAUACQADAAAAADAfAAUACQADAAAAADAgAAUACQADAAAAADAhAAUACQADAAAAADAEABYACQACAAAAAAAFABYACQACAAAAAAADABIACQACAAAAAAAEABIACQACAAAAAAAFABIACQACAAAAAAALABMACQACAAAAAAALABQACQACAAAAAAALABIACQACAAAAAAAJABgACQACAAAAAAAKABgACQACAAAAAAALABgACQACAAAAAAACANb/CQACAAAAAAACANf/CQACAAAAAAACANj/CQACAAAAAAADANb/CQACAAAAAAADANf/CQACAAAAAAADANj/CQACAAAAAAAEANb/CQACAAAAAAAEANf/CQACAAAAAAAEANj/CQACAAAAAAAFANb/CQACAAAAAAAFANf/CQACAAAAAAAFANj/CQACAAAAAAAGANb/CQACAAAAAAAGANf/CQACAAAAAAAGANj/CQACAAAAAAAHANb/CQACAAAAAAAHANf/CQACAAAAAAAHANj/CQACAAAAAAAIANb/CQACAAAAAAAIANf/CQACAAAAAAAIANj/CQACAAAAAAAJANb/CQACAAAAAAAJANf/CQACAAAAAAAJANj/CQACAAAAAAAKANb/CQACAAAAAAAKANf/CQACAAAAAAAKANj/CQACAAAAAAALANb/CQACAAAAAAALANf/CQACAAAAAAALANj/CQACAAAAAAAMANb/CQACAAAAAAAMANf/CQACAAAAAAAMANj/CQACAAAAAAANANb/CQACAAAAAAANANf/CQACAAAAAAANANj/CQACAAAAAAAOANb/CQACAAAAAAAOANf/CQACAAAAAAAOANj/CQACAAAAAAAPANb/CQACAAAAAAAPANf/CQACAAAAAAAPANj/CQACAAAAAAAQANb/CQACAAAAAAAQANf/CQACAAAAAAAQANj/CQACAAAAAAARAO7/CQACAAAAAAARAO//CQACAAAAAAARAPD/CQACAAAAAAARAOv/CQACAAAAAAARAOz/CQACAAAAAAARAO3/CQACAAAAAAARAOj/CQACAAAAAAARAOn/CQACAAAAAAARAOr/CQACAAAAAAARAOX/CQACAAAAAAARAOb/CQACAAAAAAARAOf/CQACAAAAAAARAOL/CQACAAAAAAARAOP/CQACAAAAAAARAOT/CQACAAAAAAARAN//CQACAAAAAAARAOD/CQACAAAAAAARAOH/CQACAAAAAAARANz/CQACAAAAAAARAN3/CQACAAAAAAARAN7/CQACAAAAAAARANn/CQACAAAAAAARANr/CQACAAAAAAARANv/CQACAAAAAAARANb/CQACAAAAAAARANf/CQACAAAAAAARANj/CQACAAAAAAAFANv/CQADAAAAACANANv/CQADAAAAACAOANv/CQADAAAAACAFAOL/CQADAAAAACANAOL/CQADAAAAACAOAOL/CQADAAAAACAFAOn/CQADAAAAACANAOn/CQADAAAAACAOAOn/CQADAAAAACAFAN3/CQACAAAAAAAFANz/CQACAAAAAAANANz/CQACAAAAAAANAN3/CQACAAAAAAAOAN3/CQACAAAAAAAOANz/CQACAAAAAAAFAOT/CQACAAAAAAAFAOP/CQACAAAAAAANAOP/CQACAAAAAAANAOT/CQACAAAAAAAOAOT/CQACAAAAAAAOAOP/CQACAAAAAAAFAOv/CQACAAAAAAAFAOr/CQACAAAAAAANAOr/CQACAAAAAAANAOv/CQACAAAAAAAOAOv/CQACAAAAAAAOAOr/CQACAAAAAAACAPD/CQACAAAAAAADAPD/CQACAAAAAAAEAPD/CQACAAAAAAAFAPD/CQACAAAAAAAGAPD/CQACAAAAAAAHAPD/CQACAAAAAAAIAPD/CQACAAAAAAAJAPD/CQACAAAAAAAKAPD/CQACAAAAAAALAPD/CQACAAAAAAAMAPD/CQACAAAAAAANAPD/CQACAAAAAAAOAPD/CQACAAAAAAAPAPD/CQACAAAAAAAQAPD/CQACAAAAAAABABsACQACAAAAAAACABsACQACAAAAAAADABsACQACAAAAAAAEABsACQACAAAAAAAFABsACQACAAAAAAAGABsACQACAAAAAAAHABsACQACAAAAAAAIABsACQACAAAAAAAJABsACQACAAAAAAAKABsACQACAAAAAAALABsACQACAAAAAAAMABsACQACAAAAAAANABsACQACAAAAAAAOABsACQACAAAAAAAPABsACQACAAAAAAAWABsACQACAAAAAAAXABsACQACAAAAAAAYABsACQACAAAAAAAZABsACQACAAAAAAAaABsACQACAAAAAAAbABsACQACAAAAAAAcABsACQACAAAAAAAdABsACQACAAAAAAAeABsACQACAAAAAAAfABsACQACAAAAAAAgABsACQACAAAAAAAhABsACQACAAAAAAAiABsACQACAAAAAAAVABsACQACAAAAAAAQABsACQACAAAAAAABABwACQACAAAAAAACABwACQACAAAAAAADABwACQACAAAAAAAEABwACQACAAAAAAAFABwACQACAAAAAAAGABwACQACAAAAAAAHABwACQACAAAAAAAIABwACQACAAAAAAAJABwACQACAAAAAAAKABwACQACAAAAAAALABwACQACAAAAAAAMABwACQACAAAAAAANABwACQACAAAAAAAOABwACQACAAAAAAAPABwACQACAAAAAAAQABwACQACAAAAAAAVABwACQACAAAAAAAWABwACQACAAAAAAAXABwACQACAAAAAAAYABwACQACAAAAAAAZABwACQACAAAAAAAaABwACQACAAAAAAAbABwACQACAAAAAAAcABwACQACAAAAAAAdABwACQACAAAAAAAeABwACQACAAAAAAAfABwACQACAAAAAAAgABwACQACAAAAAAAhABwACQACAAAAAAAiABwACQACAAAAAAABAAMACQACAAAAAAABAAQACQACAAAAAAABAAUACQACAAAAAAABAAYACQACAAAAAAABAAcACQACAAAAAAABAAgACQACAAAAAAABAAkACQACAAAAAAABAAoACQACAAAAAAABAAsACQACAAAAAAABAAwACQACAAAAAAABABAACQACAAAAAAABABEACQACAAAAAAABABIACQACAAAAAAABABMACQACAAAAAAABABQACQACAAAAAAABABUACQACAAAAAAABABYACQACAAAAAAABABcACQACAAAAAAABABgACQACAAAAAAABABkACQACAAAAAAAGAAsACQADAAAAADAGAAwACQACAAAAAAAHAAsACQADAAAAADAHAAwACQACAAAAAAAIAAsACQADAAAAADAIAAwACQACAAAAAAAJAAsACQADAAAAADAJAAwACQACAAAAAAAKAAsACQADAAAAADAKAAwACQACAAAAAAALAAsACQADAAAAADALAAwACQACAAAAAAAMAAsACQADAAAAADAMAAwACQACAAAAAAANAAsACQADAAAAADANAAwACQACAAAAAAAOAAsACQADAAAAADAOAAwACQACAAAAAAAPAAsACQADAAAAADAPAAwACQACAAAAAAACAAsACQADAAAAADACAAwACQACAAAAAAACAA0ACQACAAAAAAACANn/CQACAAAAAAACANr/CQACAAAAAAACANv/CQACAAAAAAACANz/CQACAAAAAAACAN3/CQACAAAAAAACAN7/CQACAAAAAAACAN//CQACAAAAAAACAOD/CQACAAAAAAACAOH/CQACAAAAAAACAOL/CQACAAAAAAACAOP/CQACAAAAAAACAOT/CQACAAAAAAACAOX/CQACAAAAAAACAOb/CQACAAAAAAACAOf/CQACAAAAAAACAOj/CQACAAAAAAACAOn/CQACAAAAAAACAOr/CQACAAAAAAACAOv/CQACAAAAAAACAOz/CQACAAAAAAACAO3/CQACAAAAAAACAO7/CQACAAAAAAACAO//CQACAAAAAAAGANv/CQADAAAAACAGANz/CQACAAAAAAAGAN3/CQACAAAAAAAGAOL/CQADAAAAACAGAOP/CQACAAAAAAAGAOT/CQACAAAAAAAGAOn/CQADAAAAACAGAOr/CQACAAAAAAAGAOv/CQACAAAAAAARABsACQACAAAAAAARABwACQACAAAAAAAUABsACQACAAAAAAAUABwACQACAAAAAAARABoACQACAAAAAAAUABoACQACAAAAAAAVABcACQACAAAAAAAQABcACQACAAAAAAAQABQACQAEAAAAAAAVABQACQAEAAAAAAAVAAUACQACAAAAAAAWAAUACQACAAAAAAAQAAUACQACAAAAAAA=")
 
-[node name="Stool" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="0" unique_id=952689698 instance=ExtResource("3_7l3w7")]
+[node name="Stool" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="0" unique_id=952689698 instance=ExtResource("3_jw4ej")]
 position = Vector2(440, 168)
 
-[node name="Stool2" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="1" unique_id=938136810 instance=ExtResource("3_7l3w7")]
+[node name="Stool2" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="1" unique_id=938136810 instance=ExtResource("3_jw4ej")]
 position = Vector2(440, 216)
 
-[node name="Possessed_Pot" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="2" unique_id=165898543 instance=ExtResource("4_4b72v")]
+[node name="Possessed_Pot" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="2" unique_id=165898543 instance=ExtResource("4_ybsv3")]
 position = Vector2(288, 128)
 move_offset = Vector2(35, 0)
 regular_furniture_scene = null
 
-[node name="Possessed_Pot2" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="3" unique_id=1795586457 instance=ExtResource("4_4b72v")]
+[node name="Possessed_Pot2" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="3" unique_id=1795586457 instance=ExtResource("4_ybsv3")]
 position = Vector2(320, 216)
 move_offset = Vector2(-35, 0)
 regular_furniture_scene = null
 
-[node name="Possessed_Pot3" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="4" unique_id=816272811 instance=ExtResource("4_4b72v")]
+[node name="Possessed_Pot3" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="4" unique_id=816272811 instance=ExtResource("4_ybsv3")]
 position = Vector2(288, 256)
 move_offset = Vector2(35, 0)
 regular_furniture_scene = null
 
-[node name="wooden_wardrobe_front" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="5" unique_id=2060248601 instance=ExtResource("5_ljmeb")]
+[node name="wooden_wardrobe_front" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="5" unique_id=2060248601 instance=ExtResource("5_ymwvh")]
 position = Vector2(184, 48)
 
-[node name="storage_dresser_front" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="6" unique_id=585338204 instance=ExtResource("6_c0dqx")]
+[node name="storage_dresser_front" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="6" unique_id=585338204 instance=ExtResource("6_xodi7")]
 position = Vector2(136, 48)
 
-[node name="bedside_table" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="7" unique_id=962155086 instance=ExtResource("7_wmuuj")]
+[node name="bedside_table" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="7" unique_id=962155086 instance=ExtResource("7_1jn5r")]
 position = Vector2(56, 56)
 
-[node name="long_desk_side" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="8" unique_id=1061349882 instance=ExtResource("8_y481b")]
+[node name="long_desk_side" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="8" unique_id=1061349882 instance=ExtResource("8_74ehi")]
 position = Vector2(480, 192)
 
-[node name="selfcare_table" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="9" unique_id=1682356519 instance=ExtResource("9_awddx")]
+[node name="selfcare_table" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="9" unique_id=1682356519 instance=ExtResource("9_4uyrw")]
 position = Vector2(240, 144)
 
-[node name="Fridge" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="10" unique_id=1812637953 instance=ExtResource("10_gdw5g")]
+[node name="Fridge" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="10" unique_id=1812637953 instance=ExtResource("10_6k4ek")]
 position = Vector2(424, 312)
 dialogueTag = SubResource("Resource_fuwlr")
 
-[node name="redder_couch_side2" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="11" unique_id=1482918896 instance=ExtResource("12_teehw")]
+[node name="redder_couch_side2" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="11" unique_id=1482918896 instance=ExtResource("12_3bdis")]
 position = Vector2(520, 184)
 
-[node name="Bathtub" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="12" unique_id=1637260061 instance=ExtResource("13_d5mvn")]
+[node name="Bathtub" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="12" unique_id=1637260061 instance=ExtResource("13_mkhci")]
 position = Vector2(528, 64)
 
-[node name="Sink" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="13" unique_id=1155474016 instance=ExtResource("14_roxi4")]
+[node name="Sink" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="13" unique_id=1155474016 instance=ExtResource("14_3f1pg")]
 position = Vector2(416, 48)
 
-[node name="Toilet" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="14" unique_id=785602798 instance=ExtResource("15_rhbln")]
+[node name="Toilet" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="14" unique_id=785602798 instance=ExtResource("15_x7e06")]
 position = Vector2(472, 56)
 
 [node name="Haunted_doll" type="RigidBody2D" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="15" unique_id=1243734904 groups=["Furniture", "Possessed Item"]]
@@ -167,14 +167,14 @@ collision_mask = 7
 gravity_scale = 0.0
 can_sleep = false
 lock_rotation = true
-script = ExtResource("16_tu5k8")
+script = ExtResource("16_563mr")
 canPush = true
 canPull = true
 dialogueTag = SubResource("Resource_u4sel")
 metadata/_custom_type_script = "uid://c2vh27coguldq"
 
 [node name="Sprite2D" type="Sprite2D" parent="Y-Sorting/Haunted_doll" index="0" unique_id=105909264]
-texture = ExtResource("17_ukpp8")
+texture = ExtResource("17_1k0rp")
 
 [node name="Collision" type="CollisionShape2D" parent="Y-Sorting/Haunted_doll" index="1" unique_id=971950706]
 shape = SubResource("RectangleShape2D_xnri0")
@@ -186,7 +186,7 @@ collision_mask = 7
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Y-Sorting/Haunted_doll/AreaDetector" index="0" unique_id=397292190]
 shape = SubResource("RectangleShape2D_ardoa")
 
-[node name="Twin_Bed" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="16" unique_id=932381668 instance=ExtResource("18_tcw3l")]
+[node name="Twin_Bed" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="16" unique_id=932381668 instance=ExtResource("18_q1x3y")]
 position = Vector2(100, 72)
 dialogueTag = SubResource("Resource_6dw3n")
 
@@ -202,7 +202,7 @@ position = Vector2(304, 480)
 [node name="Storage Van" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="18" unique_id=726660232]
 position = Vector2(288, 520)
 
-[node name="KitchenDoor" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="19" unique_id=1082613154 instance=ExtResource("19_70hmx")]
+[node name="KitchenDoor" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="19" unique_id=1082613154 instance=ExtResource("19_e1n6s")]
 position = Vector2(344, 348)
 
 [node name="DoorTexture" parent="Y-Sorting/KitchenDoor" index="1" unique_id=663038554]
@@ -220,7 +220,7 @@ offset_top = -96.0
 offset_right = 200.0
 offset_bottom = 60.0
 
-[node name="LivingRoomDoor" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="20" unique_id=1545158925 instance=ExtResource("19_70hmx")]
+[node name="LivingRoomDoor" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="20" unique_id=1545158925 instance=ExtResource("19_e1n6s")]
 position = Vector2(264, 348)
 
 [node name="DoorTexture" parent="Y-Sorting/LivingRoomDoor" index="1" unique_id=663038554]
@@ -238,7 +238,7 @@ offset_top = -168.0
 offset_right = -8.0
 offset_bottom = 60.0
 
-[node name="MainDoor" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="21" unique_id=879966424 instance=ExtResource("19_70hmx")]
+[node name="MainDoor" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="21" unique_id=879966424 instance=ExtResource("19_e1n6s")]
 position = Vector2(304, 440)
 doorType = 2
 
@@ -260,46 +260,46 @@ offset_top = -432.0
 offset_right = 32.0
 offset_bottom = -32.0
 
-[node name="redder_couch_side" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="22" unique_id=62813022 instance=ExtResource("12_teehw")]
+[node name="redder_couch_side" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="22" unique_id=62813022 instance=ExtResource("12_3bdis")]
 position = Vector2(224, 288)
 
-[node name="TV" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="23" unique_id=1942874015 instance=ExtResource("20_ac7ml")]
+[node name="TV" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="23" unique_id=1942874015 instance=ExtResource("20_s3cd3")]
 position = Vector2(152, -280)
 
 [node name="Sprite2D" parent="Y-Sorting/TV" index="0" unique_id=901274326]
 region_rect = Rect2(144, 14, 32, 34)
 
-[node name="TV_and_desk_front" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="24" unique_id=472159025 instance=ExtResource("21_g1rm7")]
+[node name="TV_and_desk_front" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="24" unique_id=472159025 instance=ExtResource("21_yi2pw")]
 position = Vector2(136, 288)
 
-[node name="wooden_table2" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="25" unique_id=575947596 instance=ExtResource("22_jd3hm")]
+[node name="wooden_table2" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="25" unique_id=575947596 instance=ExtResource("22_jcmax")]
 position = Vector2(528, 360)
 
-[node name="Wood_Chair_Front" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="26" unique_id=539172559 instance=ExtResource("23_btvew")]
+[node name="Wood_Chair_Front" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="26" unique_id=539172559 instance=ExtResource("23_62lw8")]
 position = Vector2(528, 320)
 
-[node name="Wood_Chair_Front2" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="27" unique_id=627148627 instance=ExtResource("23_btvew")]
+[node name="Wood_Chair_Front2" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="27" unique_id=627148627 instance=ExtResource("23_62lw8")]
 position = Vector2(528, 400)
 
-[node name="possessed_wood_chair_side3" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="28" unique_id=387435298 instance=ExtResource("24_v4qba")]
+[node name="possessed_wood_chair_side3" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="28" unique_id=387435298 instance=ExtResource("24_6su35")]
 position = Vector2(321, 161)
 move_offset = Vector2(-35, 0)
-regular_furniture_scene = ExtResource("25_luhxc")
+regular_furniture_scene = ExtResource("25_16ivx")
 
-[node name="possessed_wood_chair_side2" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="29" unique_id=293202521 instance=ExtResource("24_v4qba")]
+[node name="possessed_wood_chair_side2" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="29" unique_id=293202521 instance=ExtResource("24_6su35")]
 position = Vector2(288, 287)
 move_offset = Vector2(35, 0)
-regular_furniture_scene = ExtResource("25_luhxc")
+regular_furniture_scene = ExtResource("25_16ivx")
 
-[node name="Chair" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="30" unique_id=2098710632 instance=ExtResource("25_luhxc")]
+[node name="Chair" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="30" unique_id=2098710632 instance=ExtResource("25_16ivx")]
 position = Vector2(216, 144)
 
-[node name="possessed_wooden_table" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="31" unique_id=161064614 instance=ExtResource("26_8or0i")]
+[node name="possessed_wooden_table" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="31" unique_id=161064614 instance=ExtResource("26_ma0s0")]
 position = Vector2(131, 354)
 move_offset = Vector2(80, 0)
 
 [node name="Level Music" parent="." index="7" unique_id=1340222311]
-stream = ExtResource("27_8qinn")
+stream = ExtResource("27_63j4e")
 
 [node name="CollisionShape2D(South)" parent="World Border" parent_id_path=PackedInt32Array(1282742655) index="0" unique_id=1840740475]
 position = Vector2(160, 576)
@@ -316,11 +316,11 @@ position = Vector2(-96, 104)
 [node name="HUD" parent="." index="11" unique_id=1725586568]
 visible = false
 
-[node name="ToSecondFloor" parent="." index="12" unique_id=2024774758 node_paths=PackedStringArray("goTo") instance=ExtResource("28_h1y3c")]
+[node name="ToSecondFloor" parent="." index="12" unique_id=2024774758 node_paths=PackedStringArray("goTo") instance=ExtResource("28_qwbf5")]
 position = Vector2(96, 80)
 goTo = NodePath("../ToFirstFloor")
 
-[node name="ToFirstFloor" parent="." index="13" unique_id=902115656 node_paths=PackedStringArray("goTo") instance=ExtResource("28_h1y3c")]
+[node name="ToFirstFloor" parent="." index="13" unique_id=902115656 node_paths=PackedStringArray("goTo") instance=ExtResource("28_qwbf5")]
 position = Vector2(144, -592)
 goTo = NodePath("../ToSecondFloor")
 
@@ -328,7 +328,7 @@ goTo = NodePath("../ToSecondFloor")
 position = Vector2(304, 480)
 scale = Vector2(0.524795, 0.0439381)
 collision_layer = 16
-script = ExtResource("29_0io1b")
+script = ExtResource("29_qnshs")
 tag = SubResource("Resource_gb87b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerSensor" index="0" unique_id=1252401533]
@@ -339,7 +339,7 @@ one_way_collision_margin = 0.0
 position = Vector2(304, 392.00003)
 scale = Vector2(0.524795, 0.0439381)
 collision_layer = 16
-script = ExtResource("29_0io1b")
+script = ExtResource("29_qnshs")
 tag = SubResource("Resource_vrncr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerSensor2" index="0" unique_id=1461235476]
@@ -350,7 +350,7 @@ one_way_collision_margin = 0.0
 position = Vector2(80, -495.99997)
 scale = Vector2(0.524795, 0.0439381)
 collision_layer = 16
-script = ExtResource("29_0io1b")
+script = ExtResource("29_qnshs")
 tag = SubResource("Resource_qs07m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerSensor3" index="0" unique_id=1541590137]
