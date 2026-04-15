@@ -290,6 +290,9 @@ visible = false
 [node name="Dialogue" parent="HUD" index="2" unique_id=2001474479]
 visible = false
 
+[node name="Textbox" parent="HUD/Dialogue" index="0" unique_id=1851480463]
+dialogueScriptPath = &"res://Narrative/SampleText.txt"
+
 [node name="Ice Areas" type="Area2D" parent="." index="11" unique_id=1126104443 node_paths=PackedStringArray("soundPlayer")]
 audio_bus_name = &"Furniture"
 script = ExtResource("15_vp1u1")

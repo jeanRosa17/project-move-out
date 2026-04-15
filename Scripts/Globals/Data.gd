@@ -8,8 +8,7 @@ const Levels:Array[String] = \
 	"uid://dlp1pmhousfx7", #poolAlt
 	"uid://cduod51ifksbg", #RodriguezHouse
 	"uid://d317crqywlqve", #IceHouseAlt
-	"uid://bb3dywxtdya3a", #DollHouse
-	"uid://n31v0le4dxeh", #HubScene
+	"uid://cjree04v3e5qj", #DollHouse
 	"uid://c766m53y8wrk4" #FratHouseAlt
 	]
 var levelNum:int = 0
