@@ -25,7 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://pr8g204x513g" path="res://Levels/Prefabs/Door.tscn" id="20_n5378"]
 [ext_resource type="AudioStream" uid="uid://dujg6iy7hs4b5" path="res://Assets/Audio/rodriguez house.wav" id="21_8y6ju"]
 [ext_resource type="AudioStream" uid="uid://b1gx2u1temfdh" path="res://Assets/Audio/rodriguez restauaraunt.wav" id="22_5sow2"]
-[ext_resource type="Script" uid="uid://d0ca3o034njdg" path="res://Levels/level_music_sync.gd" id="23_4utxa"]
+[ext_resource type="Script" path="res://Levels/level_music_sync.gd" id="23_4utxa"]
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_hsjr8"]
 stream_count = 2

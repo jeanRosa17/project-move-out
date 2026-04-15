@@ -322,6 +322,8 @@ var initial_empty_cells: int = 0
 var tile_id: int = 1
 var next_piece_atlas: Vector2i
 
+var last_drawn_block: Array = []
+
 @onready var board_layer: TileMapLayer = $Board
 @onready var active_layer: TileMapLayer = $Active
 @onready var hud:HUDManager = %HUD
@@ -421,14 +423,17 @@ func initialize_tetromino() -> void:
 		render_tetromino(active_tetromino, current_position)
 
 func render_tetromino(tetromino: Array, position: Vector2i) -> void:
+	last_drawn_block.clear()
 	for block in tetromino:
+		var world_pos = position + block["pos"]
 		var block_pos: Vector2i = block["pos"]
 		var block_atlas: Vector2i = block["atlas"] #will need to ensure blcok atlas at location is done correctly for art
 		active_layer.set_cell(position + block_pos, tile_id, block_atlas)
+		last_drawn_block.append(world_pos)
 
 func clear_tetromino() -> void:
-	for block in active_tetromino:
-		active_layer.erase_cell(current_position + block["pos"])
+	for pos in last_drawn_block:
+		active_layer.erase_cell(pos)
 
 func rotate_tetromino() -> void:
 	if is_valid_rotation():
