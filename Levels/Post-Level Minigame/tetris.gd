@@ -319,11 +319,12 @@ var game_over: bool
 
 var initial_empty_cells: int = 0
 
-var tile_id: int = 1
+var tile_id: int = 0
 var next_piece_atlas: Vector2i
 
 @onready var board_layer: TileMapLayer = $Board
 @onready var active_layer: TileMapLayer = $Active
+@onready var preview_layer: TileMapLayer = $Preview
 @onready var hud:HUDManager = %HUD
 
 var audio_player:TetrisAudio
@@ -419,7 +420,7 @@ func choose_tetromino() -> Array:
 func initialize_tetromino() -> void:
 	current_position = START_POSITION
 	if (!next_tetromino_type.is_empty()):
-		render_tetromino(next_tetromino_type[0], Vector2i(12, -10))
+		render_preview(next_tetromino_type[0])
 	if (!current_tetromino_type.is_empty()):
 		active_tetromino = current_tetromino_type[rotation_index]
 		render_tetromino(active_tetromino, current_position)
@@ -429,6 +430,12 @@ func render_tetromino(tetromino: Array, position: Vector2i) -> void:
 		var world_pos = position + block["pos"]
 		var block_atlas: Vector2i = block["atlas"] #will need to ensure blcok atlas at location is done correctly for art
 		active_layer.set_cell(world_pos, tile_id, block_atlas)
+
+func render_preview(tetromino: Array) -> void:
+	preview_layer.clear()
+	for block in tetromino:
+		var pos = Vector2i(12, -10) + block["pos"]
+		preview_layer.set_cell(pos, tile_id, block["atlas"])
 
 func clear_tetromino() -> void:
 	for pos in active_layer.get_used_cells():

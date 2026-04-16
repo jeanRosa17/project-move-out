@@ -1,10 +1,8 @@
 [gd_scene format=4 uid="uid://5bnbyjpgb5kx"]
 
-[ext_resource type="Texture2D" uid="uid://dc6c1fdxyaabr" path="res://Assets/tiles/Walls3.png" id="1_3jbwy"]
 [ext_resource type="Script" uid="uid://c7sy6bup5u102" path="res://Levels/Post-Level Minigame/tetris.gd" id="1_c8yme"]
 [ext_resource type="Texture2D" uid="uid://dwq7a4tm5ylcp" path="res://Assets/Garage/truck_back.png" id="2_aehea"]
-[ext_resource type="Texture2D" uid="uid://digo2hq2r3kvr" path="res://Assets/Objects/Table Items/Boxes-Sheet.png" id="3_g7ucr"]
-[ext_resource type="Texture2D" uid="uid://b3ie640jo5njv" path="res://Assets/Garage/Van Border.png" id="4_00yoc"]
+[ext_resource type="TileSet" uid="uid://bmqrrtr1w0fn4" path="res://Levels/Tileset Resources/TetrisTileSet.tres" id="3_ir2mp"]
 [ext_resource type="AudioStream" uid="uid://de7tvpqomd55s" path="res://Assets/Audio/tetris landing thunk.wav" id="6_cntxc"]
 [ext_resource type="Script" uid="uid://fsccwseysgnw" path="res://Levels/Post-Level Minigame/TetrisAudio.gd" id="6_uh4k2"]
 [ext_resource type="AudioStream" uid="uid://bxq71pwdt1ist" path="res://Assets/Audio/tetris tick.wav" id="8_cntxc"]
@@ -51,241 +49,6 @@ texture = ExtResource("2_aehea")
 [sub_resource type="TileSet" id="TileSet_cntxc"]
 sources/0 = SubResource("TileSetAtlasSource_ctx31")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g7ucr"]
-texture = ExtResource("1_3jbwy")
-1:0/0 = 0
-2:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-7:0/0 = 0
-8:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-7:2/0 = 0
-8:2/0 = 0
-10:2/0 = 0
-11:2/0 = 0
-13:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-4:3/0 = 0
-5:3/0 = 0
-6:3/0 = 0
-7:3/0 = 0
-8:3/0 = 0
-9:3/0 = 0
-10:3/0 = 0
-11:3/0 = 0
-12:3/0 = 0
-13:3/0 = 0
-0:4/0 = 0
-2:4/0 = 0
-3:4/0 = 0
-4:4/0 = 0
-5:4/0 = 0
-7:4/0 = 0
-8:4/0 = 0
-10:4/0 = 0
-11:4/0 = 0
-12:4/0 = 0
-13:4/0 = 0
-14:4/0 = 0
-15:4/0 = 0
-16:4/0 = 0
-1:5/0 = 0
-2:5/0 = 0
-3:5/0 = 0
-4:5/0 = 0
-5:5/0 = 0
-6:5/0 = 0
-7:5/0 = 0
-8:5/0 = 0
-9:5/0 = 0
-10:5/0 = 0
-11:5/0 = 0
-12:5/0 = 0
-13:5/0 = 0
-14:5/0 = 0
-15:5/0 = 0
-16:5/0 = 0
-0:6/0 = 0
-1:6/0 = 0
-2:6/0 = 0
-3:6/0 = 0
-5:6/0 = 0
-6:6/0 = 0
-7:6/0 = 0
-8:6/0 = 0
-0:7/0 = 0
-1:7/0 = 0
-2:7/0 = 0
-3:7/0 = 0
-5:7/0 = 0
-6:7/0 = 0
-7:7/0 = 0
-5:8/0 = 0
-6:8/0 = 0
-7:8/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uh4k2"]
-texture = ExtResource("3_g7ucr")
-5:0/0 = 0
-6:0/0 = 0
-7:0/0 = 0
-8:0/0 = 0
-9:0/0 = 0
-5:1/0 = 0
-6:1/0 = 0
-7:1/0 = 0
-8:1/0 = 0
-9:1/0 = 0
-5:2/0 = 0
-6:2/0 = 0
-7:2/0 = 0
-8:2/0 = 0
-9:2/0 = 0
-5:3/0 = 0
-6:3/0 = 0
-7:3/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_00yoc"]
-sources/0 = SubResource("TileSetAtlasSource_g7ucr")
-sources/1 = SubResource("TileSetAtlasSource_uh4k2")
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c8yme"]
-texture = ExtResource("1_3jbwy")
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-7:2/0 = 0
-8:2/0 = 0
-10:2/0 = 0
-11:2/0 = 0
-13:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-4:3/0 = 0
-5:3/0 = 0
-6:3/0 = 0
-7:3/0 = 0
-8:3/0 = 0
-9:3/0 = 0
-10:3/0 = 0
-11:3/0 = 0
-12:3/0 = 0
-13:3/0 = 0
-0:4/0 = 0
-2:4/0 = 0
-3:4/0 = 0
-4:4/0 = 0
-5:4/0 = 0
-7:4/0 = 0
-8:4/0 = 0
-10:4/0 = 0
-11:4/0 = 0
-12:4/0 = 0
-13:4/0 = 0
-14:4/0 = 0
-15:4/0 = 0
-16:4/0 = 0
-1:5/0 = 0
-2:5/0 = 0
-3:5/0 = 0
-4:5/0 = 0
-5:5/0 = 0
-6:5/0 = 0
-7:5/0 = 0
-8:5/0 = 0
-9:5/0 = 0
-10:5/0 = 0
-11:5/0 = 0
-12:5/0 = 0
-13:5/0 = 0
-14:5/0 = 0
-15:5/0 = 0
-16:5/0 = 0
-0:6/0 = 0
-1:6/0 = 0
-2:6/0 = 0
-3:6/0 = 0
-5:6/0 = 0
-6:6/0 = 0
-7:6/0 = 0
-8:6/0 = 0
-0:7/0 = 0
-1:7/0 = 0
-2:7/0 = 0
-3:7/0 = 0
-5:7/0 = 0
-6:7/0 = 0
-7:7/0 = 0
-5:8/0 = 0
-6:8/0 = 0
-7:8/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_00yoc"]
-texture = ExtResource("3_g7ucr")
-5:0/0 = 0
-6:0/0 = 0
-7:0/0 = 0
-8:0/0 = 0
-9:0/0 = 0
-5:1/0 = 0
-6:1/0 = 0
-7:1/0 = 0
-8:1/0 = 0
-9:1/0 = 0
-5:2/0 = 0
-6:2/0 = 0
-7:2/0 = 0
-8:2/0 = 0
-9:2/0 = 0
-5:3/0 = 0
-6:3/0 = 0
-7:3/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aehea"]
-texture = ExtResource("4_00yoc")
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-3:1/0 = 0
-0:2/0 = 0
-3:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_g7ucr"]
-sources/0 = SubResource("TileSetAtlasSource_c8yme")
-sources/1 = SubResource("TileSetAtlasSource_00yoc")
-sources/2 = SubResource("TileSetAtlasSource_aehea")
-
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ctx31"]
 random_pitch = 1.0999337
 streams_count = 1
@@ -306,11 +69,14 @@ tile_map_data = PackedByteArray("AAD5//X/AAAAAAEAAAD5//b/AAAAAAEAAAD5//f/AAAAAAE
 tile_set = SubResource("TileSet_cntxc")
 
 [node name="Active" type="TileMapLayer" parent="." unique_id=57667984]
-tile_set = SubResource("TileSet_00yoc")
+tile_set = ExtResource("3_ir2mp")
+
+[node name="Preview" type="TileMapLayer" parent="." unique_id=2141454786]
+tile_set = ExtResource("3_ir2mp")
 
 [node name="Board" type="TileMapLayer" parent="." unique_id=1068667642]
-tile_map_data = PackedByteArray("AAD5//T/AgAAAAAAAAD5//X/AgAAAAIAAAD5//b/AgAAAAIAAAD5//f/AgAAAAIAAAD5//j/AgAAAAIAAAD5//n/AgAAAAIAAAD5//r/AgAAAAIAAAD5//v/AgAAAAIAAAD5//z/AgAAAAIAAAD5//3/AgAAAAIAAAD5//7/AgAAAAIAAAD5////AgAAAAIAAAD5/wAAAgAAAAIAAAD5/wEAAgAAAAIAAAD5/wIAAgAAAAIAAAD5/wMAAgAAAAIAAAD5/wQAAgAAAAIAAAD5/wUAAgAAAAIAAAD5/wYAAgAAAAIAAAD5/wcAAgAAAAIAAAD5/wgAAgAAAAIAAAD5/wkAAgAAAAIAAAD5/woAAgAAAAIAAAD5/wsAAgAAAAMAAAD6/wsAAgACAAMAAAD7/wsAAgACAAMAAAD8/wsAAgACAAMAAAD9/wsAAgACAAMAAAD+/wsAAgACAAMAAAD//wsAAgACAAMAAAAAAAsAAgACAAMAAAABAAsAAgACAAMAAAACAAsAAgACAAMAAAADAAsAAgACAAMAAAAEAAsAAgACAAMAAAAFAAsAAgACAAMAAAAGAPT/AgADAAAAAAAGAAsAAgADAAMAAAAGAPX/AgADAAEAAAAGAPb/AgADAAEAAAAGAPf/AgADAAEAAAAGAPj/AgADAAEAAAAGAPn/AgADAAEAAAAGAPr/AgADAAEAAAAGAPv/AgADAAEAAAAGAPz/AgADAAEAAAAGAP3/AgADAAEAAAAGAP7/AgADAAEAAAAGAP//AgADAAEAAAAGAAAAAgADAAEAAAAGAAEAAgADAAEAAAAGAAIAAgADAAEAAAAGAAMAAgADAAEAAAAGAAQAAgADAAEAAAAGAAUAAgADAAEAAAAGAAYAAgADAAEAAAAGAAcAAgADAAEAAAAGAAgAAgADAAEAAAAGAAkAAgADAAEAAAAGAAoAAgADAAEAAAD6//T/AgABAAAAAAD7//T/AgABAAAAAAD8//T/AgABAAAAAAD9//T/AgABAAAAAAD+//T/AgABAAAAAAD///T/AgABAAAAAAAAAPT/AgABAAAAAAABAPT/AgABAAAAAAADAPT/AgABAAAAAAAEAPT/AgABAAAAAAACAPT/AgABAAAAAAAFAPT/AgABAAAAAAAMAPX/AgACAAAAAAANAPX/AgACAAAAAAAMAPr/AgABAAMAAAANAPr/AgABAAMAAAALAPb/AgAAAAEAAAALAPf/AgAAAAEAAAALAPj/AgAAAAEAAAALAPn/AgAAAAEAAAAOAPX/AgACAAAAAAAPAPX/AgACAAAAAAAOAPr/AgABAAMAAAAPAPr/AgABAAMAAAAQAPb/AgADAAIAAAAQAPf/AgADAAIAAAAQAPj/AgADAAIAAAAQAPn/AgADAAIAAAAQAPX/AgADAAAAAAAQAPr/AgADAAMAAAALAPr/AgAAAAMAAAALAPX/AgAAAAAAAAA=")
-tile_set = SubResource("TileSet_g7ucr")
+tile_map_data = PackedByteArray("AAD5//T/AQAAAAAAAAD5//X/AQAAAAIAAAD5//b/AQAAAAIAAAD5//f/AQAAAAIAAAD5//j/AQAAAAIAAAD5//n/AQAAAAIAAAD5//r/AQAAAAIAAAD5//v/AQAAAAIAAAD5//z/AQAAAAIAAAD5//3/AQAAAAIAAAD5//7/AQAAAAIAAAD5////AQAAAAIAAAD5/wAAAQAAAAIAAAD5/wEAAQAAAAIAAAD5/wIAAQAAAAIAAAD5/wMAAQAAAAIAAAD5/wQAAQAAAAIAAAD5/wUAAQAAAAIAAAD5/wYAAQAAAAIAAAD5/wcAAQAAAAIAAAD5/wgAAQAAAAIAAAD5/wkAAQAAAAIAAAD5/woAAQAAAAIAAAD5/wsAAQAAAAMAAAD6/wsAAQACAAMAAAD7/wsAAQACAAMAAAD8/wsAAQACAAMAAAD9/wsAAQACAAMAAAD+/wsAAQACAAMAAAD//wsAAQACAAMAAAAAAAsAAQACAAMAAAABAAsAAQACAAMAAAACAAsAAQACAAMAAAADAAsAAQACAAMAAAAEAAsAAQACAAMAAAAFAAsAAQACAAMAAAAGAPT/AQADAAAAAAAGAAsAAQADAAMAAAAGAPX/AQADAAEAAAAGAPb/AQADAAEAAAAGAPf/AQADAAEAAAAGAPj/AQADAAEAAAAGAPn/AQADAAEAAAAGAPr/AQADAAEAAAAGAPv/AQADAAEAAAAGAPz/AQADAAEAAAAGAP3/AQADAAEAAAAGAP7/AQADAAEAAAAGAP//AQADAAEAAAAGAAAAAQADAAEAAAAGAAEAAQADAAEAAAAGAAIAAQADAAEAAAAGAAMAAQADAAEAAAAGAAQAAQADAAEAAAAGAAUAAQADAAEAAAAGAAYAAQADAAEAAAAGAAcAAQADAAEAAAAGAAgAAQADAAEAAAAGAAkAAQADAAEAAAAGAAoAAQADAAEAAAD6//T/AQABAAAAAAD7//T/AQABAAAAAAD8//T/AQABAAAAAAD9//T/AQABAAAAAAD+//T/AQABAAAAAAD///T/AQABAAAAAAAAAPT/AQABAAAAAAABAPT/AQABAAAAAAADAPT/AQABAAAAAAAEAPT/AQABAAAAAAACAPT/AQABAAAAAAAFAPT/AQABAAAAAAAMAPX/AQACAAAAAAANAPX/AQACAAAAAAAMAPr/AQABAAMAAAANAPr/AQABAAMAAAALAPb/AQAAAAEAAAALAPf/AQAAAAEAAAALAPj/AQAAAAEAAAALAPn/AQAAAAEAAAAOAPX/AQACAAAAAAAPAPX/AQACAAAAAAAOAPr/AQABAAMAAAAPAPr/AQABAAMAAAAQAPb/AQADAAIAAAAQAPf/AQADAAIAAAAQAPj/AQADAAIAAAAQAPn/AQADAAIAAAAQAPX/AQADAAAAAAAQAPr/AQADAAMAAAALAPr/AQAAAAMAAAALAPX/AQAAAAAAAAA=")
+tile_set = ExtResource("3_ir2mp")
 
 [node name="Tetris Audio" type="AudioStreamPlayer2D" parent="." unique_id=1369337591]
 stream = ExtResource("6_cntxc")
