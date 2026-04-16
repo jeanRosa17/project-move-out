@@ -40,7 +40,7 @@ func update(_delta:float) -> void:
 	
 	self.manager.detector.position = self.getManager().direction * 16
 	
-	if (self.manager.hasFurniture):
+	if (self.manager.furniture != null):
 		if (self.manager.furniture.isPushed):
 			prefix = "pushing"
 		if (self.manager.furniture.isLifted):

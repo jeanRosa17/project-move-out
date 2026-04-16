@@ -372,7 +372,7 @@ func enterPush(body: CharacterBody2D) -> void:
 		self.hud.setDialogueTo(dialogueTag)
 		dialogueTriggered = true;
 	self.player = body
-	print(player.name)
+	#print(player.name)
 	self.collision_layer = 1
 	self.collision_mask = 6
 	audioPlayer.push_sound(self)
@@ -395,7 +395,7 @@ func exitPush()-> void:
 #endregion
 
 # If has a rotated object and rotated version can fit, rotate.
-func rotateObj() -> void:
+func rotateObj(body: CharacterBody2D) -> void:
 	if (self.rotatedVersion):
 		if (tryRotate()):
 			print("rotate")
@@ -419,9 +419,12 @@ func rotateObj() -> void:
 			rotatedVersion.collision_layer = 2
 			rotatedVersion.collision_mask = 7
 			
+			self.player = body
+			
 			player.manager.furniture = rotatedVersion
 			
 			audioPlayer.rotate_noise()
+			
 			
 			rotatedVersion.enterPush(player)
 		else:

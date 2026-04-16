@@ -11,6 +11,7 @@ var canvas:CanvasLayer
 
 func _process(delta:float) -> void:
 		if(Input.is_action_just_pressed("Interact") && canOpen):
+			print("open")
 			canvas = self.get_parent()
 			
 			if (!canvas.visible):
