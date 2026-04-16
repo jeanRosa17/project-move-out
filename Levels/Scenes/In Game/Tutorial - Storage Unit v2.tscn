@@ -11,8 +11,6 @@
 [ext_resource type="Resource" uid="uid://cegr0ah81jv2j" path="res://Narrative/Cutscenes/Tutorial Unit.tres" id="9_6g0q4"]
 [ext_resource type="Texture2D" uid="uid://dlpy2hrdysfqq" path="res://Assets/Objects/Dressers & Shelves/storage_dresser_front.png" id="9_mvocf"]
 [ext_resource type="Texture2D" uid="uid://ca6n0lw2ip448" path="res://Assets/Objects/Dressers & Shelves/storage_dresser_side.png" id="10_3ygsq"]
-[ext_resource type="Texture2D" uid="uid://ws0hxis55nlq" path="res://Assets/Objects/Beds/double_bed_1.png" id="10_fctm3"]
-[ext_resource type="PackedScene" uid="uid://cmwh2w2blwcsq" path="res://Assets/Objects/Beds/Scene/Twin_Bed.tscn" id="11_wdhjx"]
 
 [sub_resource type="Resource" id="Resource_mvocf"]
 script = ExtResource("3_5g5vi")
@@ -49,12 +47,6 @@ script = ExtResource("3_5g5vi")
 dialogueScriptPath = &"res://Narrative/tutorialUnit.txt"
 dialogueTag = &"fridge"
 metadata/_custom_type_script = "uid://bmqryoobj44j2"
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6oqww"]
-size = Vector2(26, 42)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sf8pp"]
-size = Vector2(36, 52)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5g5vi"]
 size = Vector2(91.46428, 637.2596)
@@ -201,38 +193,6 @@ dialogueTag = SubResource("Resource_3ygsq")
 visible = false
 position = Vector2(488, 240)
 
-[node name="Double Bed" type="RigidBody2D" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="11" unique_id=2123895444 node_paths=PackedStringArray("rotatedVersion") groups=["Furniture"]]
-position = Vector2(344, 276)
-collision_layer = 2
-collision_mask = 7
-gravity_scale = 0.0
-can_sleep = false
-lock_rotation = true
-script = ExtResource("8_mvocf")
-canPush = true
-canPull = true
-canRotate = true
-rotatedVersion = NodePath("Twin_Bed")
-tetroShape = 6
-metadata/_custom_type_script = "uid://c2vh27coguldq"
-
-[node name="Sprite2D" type="Sprite2D" parent="Y-Sorting/Double Bed" index="0" unique_id=121146298]
-texture = ExtResource("10_fctm3")
-
-[node name="Collision" type="CollisionShape2D" parent="Y-Sorting/Double Bed" index="1" unique_id=1755016032]
-position = Vector2(0, 3)
-shape = SubResource("RectangleShape2D_6oqww")
-
-[node name="AreaDetector" type="Area2D" parent="Y-Sorting/Double Bed" index="2" unique_id=159031122 groups=["Furniture"]]
-collision_layer = 2
-collision_mask = 7
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Y-Sorting/Double Bed/AreaDetector" index="0" unique_id=1262477190]
-shape = SubResource("RectangleShape2D_sf8pp")
-
-[node name="Twin_Bed" parent="Y-Sorting/Double Bed" index="3" unique_id=932381668 instance=ExtResource("11_wdhjx")]
-visible = false
-
 [node name="CollisionShape2D(South)" parent="World Border" parent_id_path=PackedInt32Array(1282742655) index="0" unique_id=1840740475]
 position = Vector2(160, 400)
 
@@ -274,8 +234,6 @@ one_way_collision_margin = 0.0
 [connection signal="body_shape_exited" from="Y-Sorting/storage_dresser_front_ROTATE/storage_dresser_side/AreaDetector" to="Y-Sorting/storage_dresser_front_ROTATE/storage_dresser_side" method="_on_area_detector_body_shape_exited"]
 [connection signal="body_shape_entered" from="Y-Sorting/storage_dresser_side/AreaDetector" to="Y-Sorting/storage_dresser_side" method="_on_area_detector_body_shape_entered"]
 [connection signal="body_shape_exited" from="Y-Sorting/storage_dresser_side/AreaDetector" to="Y-Sorting/storage_dresser_side" method="_on_area_detector_body_shape_exited"]
-[connection signal="body_shape_entered" from="Y-Sorting/Double Bed/AreaDetector" to="Y-Sorting/Double Bed" method="_on_area_detector_body_shape_entered"]
-[connection signal="body_shape_exited" from="Y-Sorting/Double Bed/AreaDetector" to="Y-Sorting/Double Bed" method="_on_area_detector_body_shape_exited"]
 [connection signal="body_entered" from="TriggerSensor" to="TriggerSensor" method="_on_body_entered"]
 
 [editable path="HUD"]
