@@ -4,14 +4,16 @@ extends Node
 ## play it from any scene since it is linear progression, so be aware
 const Levels:Array[String] = \
 	["uid://crm2fqqeyg12f", #Tutorial - Storage Unit v2
-	"uid://jre5761gc8o1", #HubScene
 	"uid://cdnij7booxhs4", #Apartments
-	"uid://dlp1pmhousfx7", #poolAlt
-	"uid://cduod51ifksbg", #RodriguezHouse
+	"uid://dlp1pmhousfx7", #Poolalt
+	"uid://cfcephiffwtxg", #RodriguezHouse
 	"uid://d317crqywlqve", #IceHouseAlt
-	"uid://cjree04v3e5qj", #DollHouse
-	"uid://c766m53y8wrk4" #FratHouseAlt
+	"uid://c766m53y8wrk4", #FratHouseAlt
+	"uid://bb3dywxtdya3a", #DollHouse
+	"uid://rtrhhspwen6a" #TitleScreen
 	]
+	
+	# "uid://jre5761gc8o1", #HubScene
 var levelNum:int = 0
 
 enum Direction {

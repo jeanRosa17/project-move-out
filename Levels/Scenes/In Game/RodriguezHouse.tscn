@@ -211,9 +211,9 @@ position = Vector2(0, 3.5)
 
 [node name="Stool2" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="10" unique_id=1196443542 instance=ExtResource("9_4476o")]
 position = Vector2(460, 496)
+canLift = true
 canPush = false
 canPull = false
-canLift = true
 
 [node name="Sprite2D" parent="Y-Sorting/Stool2" index="0" unique_id=1942142751]
 texture = ExtResource("10_y3tot")
@@ -222,9 +222,9 @@ region_rect = Rect2(40, 5, 16, 23)
 
 [node name="Stool" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="11" unique_id=1443878156 instance=ExtResource("9_4476o")]
 position = Vector2(460, 472)
+canLift = true
 canPush = false
 canPull = false
-canLift = true
 
 [node name="Sprite2D" parent="Y-Sorting/Stool" index="0" unique_id=1942142751]
 texture = ExtResource("10_y3tot")

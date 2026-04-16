@@ -18,5 +18,5 @@ func _process(delta: float) -> void:
 	label.text = "%02d:%02d" % time_left_until_end()
 
 func _on_timer_timeout():
-	%HUD.setDialogueTo(DialogueTag.new().create("res://Narrative/GenericDialogue.txt", "endLevel"))
+	# %HUD.setDialogueTo(DialogueTag.new().create("res://Narrative/GenericDialogue.txt", "endLevel"))
 	%HUD.checkResults()

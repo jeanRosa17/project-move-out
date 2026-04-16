@@ -17,7 +17,7 @@
 }
 
 #hiddenroom {
-	Almost missed this one.
+	Almost missed this room.
 	...what's it for?
 }
 

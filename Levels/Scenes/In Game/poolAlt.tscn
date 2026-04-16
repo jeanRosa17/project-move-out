@@ -74,9 +74,9 @@ region_rect = Rect2(144, 0, 48, 32)
 
 [node name="Dino Pot" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="7" unique_id=2016765540 instance=ExtResource("3_2ot10")]
 position = Vector2(496, 96)
+canLift = true
 canPush = false
 canPull = false
-canLift = true
 
 [node name="Pool Chair" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="8" unique_id=1634053611 instance=ExtResource("4_mka3y")]
 position = Vector2(152, 176)
