@@ -18,7 +18,10 @@ extends Node2D
 @export var hasBeenOpened: bool = false
 
 @onready var shadow: Sprite2D = $Shadow
+
 @onready var door_texture: AnimatedSprite2D = $DoorTexture
+@export var doorMaterial:DoorMaterial
+@export var doorFrameMaterial:DoorFrameMaterial
 @onready var door_texture_2: AnimatedSprite2D = $DoorTexture2
 @onready var frame: Sprite2D = $Frame
 @onready var ap: AnimationPlayer = $AnimationPlayer
@@ -33,7 +36,16 @@ enum Frame {
 	TWO_BY_ONE,
 	TWO_BY_TWO,
 	DOUBLE_DOOR
-	
+}
+
+enum DoorMaterial {
+	WOOD,
+	GLASS
+}
+
+enum DoorFrameMaterial {
+	STONE,
+	WOOD,
 }
 
 
@@ -41,25 +53,34 @@ func _process(delta: float) -> void:
 	if (Engine.is_editor_hint()):
 		self.ap.play("debug")
 	
+	var materialName:String = "wood"
+	
+	match self.doorMaterial:
+		DoorMaterial.WOOD:
+			materialName = "wood"
+		DoorMaterial.GLASS:
+			materialName = "glass"
+			
 	match doorType:
 		Frame.TWO_BY_ONE:
 			door_texture.position = Vector2(0, 0)
-			door_texture.animation = "default"
+			door_texture.animation = materialName
 			door_texture_2.visible = false
-			frame.region_rect = Rect2(11, 8, 26, 34)
+			frame.region_rect = Rect2(11, 8 + (47 * (self.doorFrameMaterial)), 26, 34)
 			shadow.region_rect = Rect2(16, 23, 16, 25)
 		Frame.TWO_BY_TWO:
 			door_texture.position = Vector2(0, -2)
 			door_texture_2.visible = false
-			door_texture.animation = "big"
-			frame.region_rect = Rect2(119, 10, 34, 32)
+			door_texture.animation = materialName + "_big"
+			frame.region_rect = Rect2(119, 10 + (45 * (self.doorFrameMaterial)), 34, 32)
 			shadow.region_rect = Rect2(64, 23, 32, 25)
 		Frame.DOUBLE_DOOR:
 			door_texture.position = Vector2(-9, 0)
 			door_texture_2.position = Vector2(9, 0)
 			door_texture_2.visible = true
-			door_texture.animation = "default"
-			frame.region_rect = Rect2(59, 8, 42, 34)
+			door_texture.animation = materialName
+			door_texture_2.animation = materialName
+			frame.region_rect = Rect2(59, 8 + (47 * (self.doorFrameMaterial)), 42, 34)
 			shadow.region_rect = Rect2(64, 23, 32, 25)
 	
 	if (self.inRange):

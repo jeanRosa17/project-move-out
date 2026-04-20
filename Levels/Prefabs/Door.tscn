@@ -11,29 +11,53 @@ script = ExtResource("2_mnxhr")
 dialogueTag = &"door"
 metadata/_custom_type_script = "uid://bmqryoobj44j2"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wllpb"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_71wky"]
 atlas = ExtResource("3_tghek")
-region = Rect2(0, 48, 48, 48)
+region = Rect2(0, 96, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1x77j"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6r6ya"]
 atlas = ExtResource("3_tghek")
-region = Rect2(48, 48, 48, 48)
+region = Rect2(48, 96, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tghek"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ul0qp"]
 atlas = ExtResource("3_tghek")
-region = Rect2(96, 48, 48, 48)
+region = Rect2(96, 96, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mnxhr"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_4bh4g"]
 atlas = ExtResource("3_tghek")
-region = Rect2(144, 48, 48, 48)
+region = Rect2(144, 96, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rwnr4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_naou8"]
 atlas = ExtResource("3_tghek")
-region = Rect2(192, 48, 48, 48)
+region = Rect2(192, 96, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bq8e6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_chby7"]
 atlas = ExtResource("3_tghek")
-region = Rect2(240, 48, 48, 48)
+region = Rect2(240, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5r4v6"]
+atlas = ExtResource("3_tghek")
+region = Rect2(0, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e38u8"]
+atlas = ExtResource("3_tghek")
+region = Rect2(48, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qo4u2"]
+atlas = ExtResource("3_tghek")
+region = Rect2(96, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6agq"]
+atlas = ExtResource("3_tghek")
+region = Rect2(144, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dtw3"]
+atlas = ExtResource("3_tghek")
+region = Rect2(192, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q04ex"]
+atlas = ExtResource("3_tghek")
+region = Rect2(240, 144, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dlac0"]
 atlas = ExtResource("3_tghek")
@@ -59,29 +83,76 @@ region = Rect2(192, 0, 48, 48)
 atlas = ExtResource("3_tghek")
 region = Rect2(240, 0, 48, 48)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_wllpb"]
+atlas = ExtResource("3_tghek")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1x77j"]
+atlas = ExtResource("3_tghek")
+region = Rect2(48, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tghek"]
+atlas = ExtResource("3_tghek")
+region = Rect2(96, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnxhr"]
+atlas = ExtResource("3_tghek")
+region = Rect2(144, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwnr4"]
+atlas = ExtResource("3_tghek")
+region = Rect2(192, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bq8e6"]
+atlas = ExtResource("3_tghek")
+region = Rect2(240, 48, 48, 48)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_rwnr4"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wllpb")
+"texture": SubResource("AtlasTexture_71wky")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1x77j")
+"texture": SubResource("AtlasTexture_6r6ya")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tghek")
+"texture": SubResource("AtlasTexture_ul0qp")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mnxhr")
+"texture": SubResource("AtlasTexture_4bh4g")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rwnr4")
+"texture": SubResource("AtlasTexture_naou8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bq8e6")
+"texture": SubResource("AtlasTexture_chby7")
 }],
 "loop": false,
-"name": &"big",
+"name": &"glass",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5r4v6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e38u8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qo4u2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6agq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2dtw3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q04ex")
+}],
+"loop": false,
+"name": &"glass_big",
 "speed": 12.0
 }, {
 "frames": [{
@@ -104,7 +175,30 @@ animations = [{
 "texture": SubResource("AtlasTexture_s0413")
 }],
 "loop": false,
-"name": &"default",
+"name": &"wood",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wllpb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1x77j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tghek")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mnxhr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwnr4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bq8e6")
+}],
+"loop": false,
+"name": &"wood_big",
 "speed": 12.0
 }]
 
@@ -167,26 +261,30 @@ _data = {
 [node name="Door" type="Node2D" unique_id=1545158925]
 script = ExtResource("1_wllpb")
 tag = SubResource("Resource_dlac0")
+doorType = 1
 
 [node name="Shadow" type="Sprite2D" parent="." unique_id=1076252513]
 position = Vector2(0, 8)
 texture = ExtResource("2_tghek")
 region_enabled = true
-region_rect = Rect2(16, 23, 16, 25)
+region_rect = Rect2(64, 23, 32, 25)
 
 [node name="DoorTexture" type="AnimatedSprite2D" parent="." unique_id=663038554]
+position = Vector2(0, -2)
 sprite_frames = SubResource("SpriteFrames_rwnr4")
+animation = &"wood_big"
 
 [node name="DoorTexture2" type="AnimatedSprite2D" parent="." unique_id=1156574819]
 visible = false
 position = Vector2(9, 0)
 sprite_frames = SubResource("SpriteFrames_rwnr4")
+animation = &"wood"
 flip_h = true
 
 [node name="Frame" type="Sprite2D" parent="." unique_id=1808264747]
 texture = ExtResource("2_1x77j")
 region_enabled = true
-region_rect = Rect2(11, 8, 26, 34)
+region_rect = Rect2(119, 10, 34, 32)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=812913739]
 collision_layer = 3
