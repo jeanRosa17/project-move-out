@@ -20,6 +20,7 @@ func clearVan() -> void:
 		
 		for i in range(bodies.size()):
 			if bodies[i].is_in_group("Furniture"):
+				Data.previousItemList.append(bodies[i].duplicate())
 				hud.addPackedFurniture(bodies[i].getShape())
 				bodies[i].packInBox()
 				#bodies[i].queue_free()

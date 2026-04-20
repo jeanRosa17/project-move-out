@@ -4,6 +4,7 @@ extends Node
 ## play it from any scene since it is linear progression, so be aware
 const Levels:Array[String] = \
 	["uid://crm2fqqeyg12f", #Tutorial - Storage Unit v2
+	 "uid://jre5761gc8o1", #HubScene
 	"uid://cdnij7booxhs4", #Apartments
 	"uid://dlp1pmhousfx7", #Poolalt
 	"uid://cfcephiffwtxg", #RodriguezHouse
@@ -14,6 +15,7 @@ const Levels:Array[String] = \
 	]
 	
 	# "uid://jre5761gc8o1", #HubScene
+	
 var levelNum:int = 0
 
 enum Direction {
@@ -33,3 +35,7 @@ enum Tetronimo {
 	four_by_two,
 	four_by_three
 }
+
+var previousItemList:Array = [
+	
+]

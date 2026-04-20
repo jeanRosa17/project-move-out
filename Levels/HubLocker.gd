@@ -2,6 +2,7 @@ extends ItemList
 var canOpen = false
 
 var contents: Array[Furniture] = []
+var setup:bool = false
 
 var canvas:CanvasLayer
 
@@ -9,7 +10,19 @@ var canvas:CanvasLayer
 
 @export var y_sort:Node2D
 
+func _ready() -> void:
+	if (!Data.previousItemList.is_empty()):
+		var funiture:Furniture = Data.previousItemList.pick_random()
+		if not funiture in contents:
+			self.get_parent().add_child.call_deferred(funiture)
+			add.call_deferred(funiture)
+
 func _process(delta:float) -> void:
+		#if (!setup):
+			#await self.ready
+			#locker_setup()
+			#setup = true
+		
 		if(Input.is_action_just_pressed("Interact") && canOpen):
 			print("open")
 			canvas = self.get_parent()
@@ -40,10 +53,11 @@ func add(f: Furniture) -> void:
 	atlas.atlas = f.sprite_2d.texture
 	atlas.region = f.sprite_2d.region_rect
 	self.add_item(f.name, atlas)
-	if (f.canPush):
-		f.exitPush()
-	else:
-		f.exitLift()
+	if (f.player != null):
+		if (f.canPush):
+			f.exitPush()
+		else:
+			f.exitLift()
 	f.visible = false
 	f.collision_layer = 0
 	f.collision_mask = 0

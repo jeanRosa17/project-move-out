@@ -421,6 +421,8 @@ func initialize_tetromino() -> void:
 	current_position = START_POSITION
 	if (!next_tetromino_type.is_empty()):
 		render_preview(next_tetromino_type[0])
+	else:
+		preview_layer.clear()
 	if (!current_tetromino_type.is_empty()):
 		active_tetromino = current_tetromino_type[rotation_index]
 		render_tetromino(active_tetromino, current_position)

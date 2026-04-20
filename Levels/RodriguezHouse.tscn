@@ -287,17 +287,6 @@ offset_bottom = 88.0
 
 [node name="Door2" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="25" unique_id=571695690 instance=ExtResource("20_n5378")]
 position = Vector2(240, 140)
-doorType = 1
-
-[node name="Shadow" parent="Y-Sorting/Door2" index="0" unique_id=1076252513]
-region_rect = Rect2(64, 23, 32, 25)
-
-[node name="DoorTexture" parent="Y-Sorting/Door2" index="1" unique_id=663038554]
-position = Vector2(0, -2)
-animation = &"big"
-
-[node name="Frame" parent="Y-Sorting/Door2" index="3" unique_id=1808264747]
-region_rect = Rect2(119, 10, 34, 32)
 
 [node name="ColorRect" parent="Y-Sorting/Door2" index="6" unique_id=1441941952]
 offset_left = -16.0
@@ -309,11 +298,9 @@ offset_bottom = -32.0
 position = Vector2(112, 652)
 doorType = 2
 
-[node name="Shadow" parent="Y-Sorting/Door3" index="0" unique_id=1076252513]
-region_rect = Rect2(64, 23, 32, 25)
-
 [node name="DoorTexture" parent="Y-Sorting/Door3" index="1" unique_id=663038554]
 position = Vector2(-9, 0)
+animation = &"wood"
 
 [node name="DoorTexture2" parent="Y-Sorting/Door3" index="2" unique_id=1156574819]
 visible = true
