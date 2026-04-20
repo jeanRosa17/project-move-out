@@ -24,6 +24,7 @@
 [ext_resource type="Script" uid="uid://bmqryoobj44j2" path="res://Scripts/Dialogue/DialogueTag.gd" id="18_w68un"]
 [ext_resource type="Texture2D" uid="uid://k7cgusegy00m" path="res://Assets/tiles/Door-Sheet.png" id="19_pjx07"]
 [ext_resource type="Script" uid="uid://j5jhi8fi2uk0" path="res://Scripts/UI/LevelResults.gd" id="19_sjlcf"]
+[ext_resource type="Texture2D" uid="uid://5eiab6xn0erk" path="res://Assets/Objects/Carpets/Flying Carpet Side.png" id="19_wia7a"]
 [ext_resource type="AudioStream" uid="uid://b0cvmwsqex4x2" path="res://Assets/Audio/level transition sfx.wav" id="20_6renj"]
 [ext_resource type="Texture2D" uid="uid://g4t7b204owxc" path="res://Assets/tiles/Doorways-Sheet.png" id="20_w68un"]
 [ext_resource type="Texture2D" uid="uid://clksc0wyxfgal" path="res://Assets/UI/Level Finish Text.png" id="21_gx1wu"]
@@ -561,6 +562,11 @@ animation = &"wood_big"
 texture = ExtResource("20_w68un")
 region_enabled = true
 region_rect = Rect2(119, 10, 34, 32)
+
+[node name="Sprite2D" type="Sprite2D" parent="Y-Sorting/Node2D" unique_id=1931567781]
+z_index = -1
+position = Vector2(0, 40)
+texture = ExtResource("19_wia7a")
 
 [node name="Level Music" type="AudioStreamPlayer2D" parent="." unique_id=1340222311]
 stream = ExtResource("13_fmfjn")
