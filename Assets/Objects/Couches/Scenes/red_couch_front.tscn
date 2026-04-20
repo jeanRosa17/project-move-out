@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_jcvgw"]
 [ext_resource type="Texture2D" uid="uid://ckshi0keqqhq2" path="res://Assets/Objects/Couches/Couch-Sheet.png" id="2_i4xuv"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xsn4a"]
 size = Vector2(44, 22)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g6aub"]
 size = Vector2(48, 50)
 
 [node name="Couch" type="RigidBody2D" unique_id=741030412 groups=["Furniture"]]
@@ -28,7 +28,7 @@ region_enabled = true
 region_rect = Rect2(0, 96, 64, 48)
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1039096056]
-shape = SubResource("RectangleShape2D_xnri0")
+shape = SubResource("RectangleShape2D_xsn4a")
 
 [node name="AreaDetector" type="Area2D" parent="." unique_id=1818642556 groups=["Furniture"]]
 collision_layer = 2
@@ -36,7 +36,7 @@ collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector" unique_id=1188017287]
 position = Vector2(0, 2)
-shape = SubResource("RectangleShape2D_ardoa")
+shape = SubResource("RectangleShape2D_g6aub")
 
 [connection signal="body_shape_entered" from="AreaDetector" to="." method="_on_area_detector_body_shape_entered"]
 [connection signal="body_shape_exited" from="AreaDetector" to="." method="_on_area_detector_body_shape_exited"]

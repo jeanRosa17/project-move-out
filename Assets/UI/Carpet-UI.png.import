@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbnrqrxdmjxsu"
-path="res://.godot/imported/end.png-1497a101b05c1f66a3b971b59fd630cb.ctex"
+uid="uid://b4j8we2mee2ao"
+path="res://.godot/imported/Carpet-UI.png-1c2a05a3a7092fc65847e333458c4a79.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Fonts/end.png"
-dest_files=["res://.godot/imported/end.png-1497a101b05c1f66a3b971b59fd630cb.ctex"]
+source_file="res://Assets/UI/Carpet-UI.png"
+dest_files=["res://.godot/imported/Carpet-UI.png-1c2a05a3a7092fc65847e333458c4a79.ctex"]
 
 [params]
 

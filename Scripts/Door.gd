@@ -88,7 +88,7 @@ func _process(delta: float) -> void:
 			self.hud.setDialogueTo(self.tag)
 			self.isOpen = true
 			self.ap.play("Fade")
-			#await self.ap.animation_finished
+			#awaitwait self.ap.animation_finished
 			self.door_texture.play()
 			
 			if (self.doorType == Frame.DOUBLE_DOOR): self.door_texture_2.play()
@@ -108,3 +108,12 @@ func _on_player_detector_exited(area: Area2D) -> void:
 		player.manager.item_detector.visible = false
 		self.inRange = false
 		
+
+
+func _on_hub_leave(area: Area2D) -> void:
+	if (area.name == "Detector" and area.get_parent() is Player):
+		var player:Player = area.get_parent()
+		
+		
+		player.manager.item_detector.visible = true
+		self.inRange = true

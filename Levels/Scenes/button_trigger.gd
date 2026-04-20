@@ -14,7 +14,7 @@ func _process(_delta:float)  -> void:
 		print("pressed")
 		
 		
-		await get_tree().create_timer(1.5).timeout
+		await get_tree().create_timer(0.5).timeout
 		end_level.emit() ## Triggers the _on_end function in the StorageVan 
 
 func _on_body_entered(body: Node2D) -> void:

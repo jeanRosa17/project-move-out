@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://ds1nqvgtuae71"]
 
 [ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_wwlxk"]
-[ext_resource type="Texture2D" uid="uid://bh1tj50gjc856" path="res://Assets/Objects/Tables/wooden_table_1.png" id="2_wwlxk"]
+[ext_resource type="Texture2D" uid="uid://cd8oa26fgbila" path="res://Assets/Objects/Tables/Tables-Sheet.png" id="2_wwlxk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
-size = Vector2(32, 32)
+size = Vector2(24, 27)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
 size = Vector2(36, 50)
@@ -23,9 +23,11 @@ metadata/_custom_type_script = "uid://c2vh27coguldq"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1076306922]
 texture = ExtResource("2_wwlxk")
+region_enabled = true
+region_rect = Rect2(12, 8, 24, 37)
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1051376536]
-position = Vector2(0, 6)
+position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_xnri0")
 
 [node name="AreaDetector" type="Area2D" parent="." unique_id=73151564 groups=["Furniture"]]
