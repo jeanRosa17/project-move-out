@@ -23,27 +23,27 @@ stream_0/stream = ExtResource("9_s6uqw")
 
 [node name="Push_Pull Audio" type="AudioStreamPlayer2D" unique_id=287833891]
 stream = SubResource("AudioStreamRandomizer_b3xeb")
+volume_db = -4.526
 bus = &"Furniture"
 script = ExtResource("3_jnu4o")
 streams = [ExtResource("4_eewuc")]
 
 [node name="Put Down Noise" type="AudioStreamPlayer2D" parent="." unique_id=226472111]
 stream = ExtResource("5_jnu4o")
+pitch_scale = 2.25
 
 [node name="Pick Up noise" type="AudioStreamPlayer2D" parent="." unique_id=868084906]
 stream = ExtResource("6_jnu4o")
 volume_db = -3.613
-bus = &"Furniture"
+pitch_scale = 2.05
 
 [node name="Rotate" type="AudioStreamPlayer2D" parent="." unique_id=413451296]
 stream = ExtResource("7_xt7y1")
-volume_db = 0.34
-bus = &"Furniture"
+volume_db = 2.179
 
 [node name="Cant rotate" type="AudioStreamPlayer2D" parent="." unique_id=258875474]
 stream = ExtResource("8_s6uqw")
-volume_db = 0.34
-bus = &"Furniture"
+volume_db = 1.231
 
 [node name="Dialogue" type="AudioStreamPlayer2D" parent="." unique_id=1844515180]
 stream = SubResource("AudioStreamRandomizer_xt7y1")

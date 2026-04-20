@@ -2,8 +2,11 @@
 
 [sub_resource type="AudioEffectFilter" id="AudioEffectFilter_j3pel"]
 resource_name = "Filter"
-cutoff_hz = 9732.0
+cutoff_hz = 8012.0
 db = 3
+
+[sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_j3pel"]
+resource_name = "LowPassFilter"
 
 [sub_resource type="AudioEffectEQ21" id="AudioEffectEQ21_j3pel"]
 resource_name = "EQ21"
@@ -33,6 +36,8 @@ bus/1/volume_db = 0.0
 bus/1/send = &"Master"
 bus/1/effect/0/effect = SubResource("AudioEffectFilter_j3pel")
 bus/1/effect/0/enabled = true
+bus/1/effect/1/effect = SubResource("AudioEffectLowPassFilter_j3pel")
+bus/1/effect/1/enabled = true
 bus/2/name = &"Walking"
 bus/2/solo = false
 bus/2/mute = false

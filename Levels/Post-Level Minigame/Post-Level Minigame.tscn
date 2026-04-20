@@ -81,6 +81,7 @@ tile_set = ExtResource("3_ir2mp")
 [node name="Tetris Audio" type="AudioStreamPlayer2D" parent="." unique_id=1369337591]
 stream = ExtResource("6_cntxc")
 volume_db = 6.5
+pitch_scale = 1.53
 script = ExtResource("6_uh4k2")
 
 [node name="Rotate" type="AudioStreamPlayer2D" parent="Tetris Audio" unique_id=246082633]
