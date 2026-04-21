@@ -12,8 +12,9 @@ extends Node2D
 	set(value):
 		if (value == true):
 			self.hasBeenOpened = true
-			area_2d.monitoring = false
-			collisionShape.disabled = true
+			if (not Engine.is_editor_hint() and self.is_node_ready()):
+				area_2d.monitoring = false
+				collisionShape.disabled = true
 		isOpen = value
 @export var hasBeenOpened: bool = false
 
@@ -72,7 +73,8 @@ func _process(delta: float) -> void:
 			door_texture.position = Vector2(0, -2)
 			door_texture_2.visible = false
 			door_texture.animation = materialName + "_big"
-			frame.region_rect = Rect2(119, 10 + (45 * (self.doorFrameMaterial)), 34, 32)
+			frame.region_rect = Rect2(59, 8 + (47 * (self.doorFrameMaterial)), 42, 34)
+			#frame.region_rect = Rect2(119, 10 + (45 * (self.doorFrameMaterial)), 34, 32)
 			shadow.region_rect = Rect2(64, 23, 32, 25)
 		Frame.DOUBLE_DOOR:
 			door_texture.position = Vector2(-9, 0)

@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://d26wukook25xb"]
 
-[ext_resource type="Texture2D" uid="uid://bh1tj50gjc856" path="res://Assets/Objects/Tables/wooden_table_1.png" id="1_3hms5"]
 [ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_ms1eq"]
+[ext_resource type="Texture2D" uid="uid://cd8oa26fgbila" path="res://Assets/Objects/Tables/Tables-Sheet.png" id="2_ms1eq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
-size = Vector2(28, 34)
+size = Vector2(32, 34)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m2862"]
-size = Vector2(21, 28)
+size = Vector2(42, 51)
 
 [node name="Table" type="RigidBody2D" unique_id=382743384 groups=["Furniture"]]
 collision_layer = 2
@@ -17,13 +17,12 @@ script = ExtResource("1_ms1eq")
 tetroShape = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=394920035]
-position = Vector2(0, 10.5)
-texture = ExtResource("1_3hms5")
+position = Vector2(0, 4)
+texture = ExtResource("2_ms1eq")
 region_enabled = true
-region_rect = Rect2(0, 0, 32, 43)
+region_rect = Rect2(56, 0, 32, 48)
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1612712423]
-position = Vector2(0, 6.5)
 shape = SubResource("RectangleShape2D_xnri0")
 
 [node name="AreaDetector" type="Area2D" parent="." unique_id=1134988323 groups=["Furniture"]]
@@ -32,5 +31,4 @@ collision_layer = 2
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector" unique_id=1740333162]
-position = Vector2(-0.5, -6)
 shape = SubResource("RectangleShape2D_m2862")
