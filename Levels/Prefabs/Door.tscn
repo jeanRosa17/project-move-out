@@ -270,7 +270,7 @@ region_enabled = true
 region_rect = Rect2(64, 23, 32, 25)
 
 [node name="DoorTexture" type="AnimatedSprite2D" parent="." unique_id=663038554]
-position = Vector2(1, -2)
+position = Vector2(0, -2)
 sprite_frames = SubResource("SpriteFrames_rwnr4")
 animation = &"wood_big"
 

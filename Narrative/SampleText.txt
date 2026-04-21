@@ -65,5 +65,5 @@
 }
 
 #door {
-	You openned the door!
+	You opened the door!
 }
