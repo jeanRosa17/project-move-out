@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://crrrxjnccca1r" path="res://Levels/Level Sketches/Rodriguez House.png" id="2_nyy3e"]
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="3_4j11p"]
 [ext_resource type="PackedScene" uid="uid://bof0wxapyclor" path="res://Assets/Objects/Chairs/Scene/Stool.tscn" id="4_yebwh"]
+[ext_resource type="Texture2D" uid="uid://1pndgm8ucik4" path="res://Assets/Objects/Kitchen/Kitchen-Sheet.png" id="5_nyy3e"]
 [ext_resource type="PackedScene" uid="uid://byhkf48wxg1gp" path="res://Assets/Objects/Plants/Dino pot.tscn" id="5_ypkbl"]
 [ext_resource type="PackedScene" uid="uid://nomguund5j25" path="res://Assets/Objects/Couches/Scenes/red_couch_front.tscn" id="6_3bgmp"]
 [ext_resource type="Script" uid="uid://bmqryoobj44j2" path="res://Scripts/Dialogue/DialogueTag.gd" id="7_h30a5"]
@@ -165,20 +166,58 @@ limit_top = -16
 limit_right = 544
 limit_bottom = 820
 
-[node name="Storage Van" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="1" unique_id=726660232]
+[node name="Trash" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="1" unique_id=1659266552 instance=ExtResource("4_yebwh")]
+position = Vector2(364, 456)
+canPush = false
+canPull = false
+
+[node name="Sprite2D" parent="Y-Sorting/Trash" index="0" unique_id=698676050]
+texture = ExtResource("5_nyy3e")
+region_rect = Rect2(192, 64, 16, 32)
+
+[node name="Trash3" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="2" unique_id=1555999871 instance=ExtResource("4_yebwh")]
+position = Vector2(68, 456)
+canPush = false
+canPull = false
+
+[node name="Sprite2D" parent="Y-Sorting/Trash3" index="0" unique_id=698676050]
+texture = ExtResource("5_nyy3e")
+region_rect = Rect2(192, 64, 16, 32)
+
+[node name="Trash2" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="3" unique_id=812438840 instance=ExtResource("4_yebwh")]
+position = Vector2(320, 196)
+canPush = false
+canPull = false
+
+[node name="Sprite2D" parent="Y-Sorting/Trash2" index="0" unique_id=698676050]
+modulate = Color(0.62425226, 0.5565069, 0.023219623, 1)
+texture = ExtResource("5_nyy3e")
+region_rect = Rect2(224, 48, 16, 16)
+
+[node name="Trash4" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="4" unique_id=1663414136 instance=ExtResource("4_yebwh")]
+position = Vector2(68, 228)
+canPush = false
+canPull = false
+
+[node name="Sprite2D" parent="Y-Sorting/Trash4" index="0" unique_id=698676050]
+modulate = Color(0.62425226, 0.5565069, 0.023219623, 1)
+texture = ExtResource("5_nyy3e")
+region_rect = Rect2(224, 48, 16, 16)
+
+[node name="Storage Van" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="5" unique_id=726660232]
 position = Vector2(264, 676)
 direction = 0
 
-[node name="Stool3" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="2" unique_id=1659266552 instance=ExtResource("4_yebwh")]
+[node name="Stool3" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="6" unique_id=259383278 instance=ExtResource("4_yebwh")]
 position = Vector2(104, 272)
 
-[node name="Stool4" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="3" unique_id=854196179 instance=ExtResource("4_yebwh")]
+[node name="Stool4" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="7" unique_id=854196179 instance=ExtResource("4_yebwh")]
 position = Vector2(104, 248)
 
-[node name="Dino Pot" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="4" unique_id=2016765540 instance=ExtResource("5_ypkbl")]
+[node name="Dino Pot" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="8" unique_id=2016765540 instance=ExtResource("5_ypkbl")]
 position = Vector2(48, 256)
 
-[node name="Couch" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="5" unique_id=741030412 instance=ExtResource("6_3bgmp")]
+[node name="Couch" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="9" unique_id=741030412 instance=ExtResource("6_3bgmp")]
 position = Vector2(172, 616)
 dialogueTag = SubResource("Resource_4a6n3")
 
@@ -188,18 +227,18 @@ region_rect = Rect2(128, 20, 64, 40)
 [node name="Collision" parent="Y-Sorting/Couch" index="1" unique_id=1039096056]
 position = Vector2(0, 3.5)
 
-[node name="Table" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="6" unique_id=382743384 instance=ExtResource("8_m8hyy")]
+[node name="Table" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="10" unique_id=382743384 instance=ExtResource("8_m8hyy")]
 position = Vector2(456, 560)
 canLift = true
 
-[node name="Table3" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="7" unique_id=2066029479 instance=ExtResource("8_m8hyy")]
+[node name="Table3" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="11" unique_id=2066029479 instance=ExtResource("8_m8hyy")]
 position = Vector2(64, 580)
 
-[node name="Table2" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="8" unique_id=221116272 instance=ExtResource("8_m8hyy")]
+[node name="Table2" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="12" unique_id=221116272 instance=ExtResource("8_m8hyy")]
 position = Vector2(360, 552)
 canLift = true
 
-[node name="Couch2" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="9" unique_id=1128065855 instance=ExtResource("6_3bgmp")]
+[node name="Couch2" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="13" unique_id=1128065855 instance=ExtResource("6_3bgmp")]
 position = Vector2(496, 564)
 
 [node name="Sprite2D" parent="Y-Sorting/Couch2" index="0" unique_id=1572514591]
@@ -209,7 +248,7 @@ region_rect = Rect2(81, 3, 32, 74)
 [node name="Collision" parent="Y-Sorting/Couch2" index="1" unique_id=1039096056]
 position = Vector2(0, 3.5)
 
-[node name="Stool2" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="10" unique_id=1196443542 instance=ExtResource("9_4476o")]
+[node name="Stool2" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="14" unique_id=1196443542 instance=ExtResource("9_4476o")]
 position = Vector2(460, 496)
 canLift = true
 canPush = false
@@ -220,7 +259,7 @@ texture = ExtResource("10_y3tot")
 region_enabled = true
 region_rect = Rect2(40, 5, 16, 23)
 
-[node name="Stool" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="11" unique_id=1443878156 instance=ExtResource("9_4476o")]
+[node name="Stool" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="15" unique_id=1443878156 instance=ExtResource("9_4476o")]
 position = Vector2(460, 472)
 canLift = true
 canPush = false
@@ -231,7 +270,7 @@ texture = ExtResource("10_y3tot")
 region_enabled = true
 region_rect = Rect2(40, 5, 16, 23)
 
-[node name="Chair3" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="12" unique_id=1837471119 instance=ExtResource("9_4476o")]
+[node name="Chair3" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="16" unique_id=1837471119 instance=ExtResource("9_4476o")]
 position = Vector2(336, 560)
 
 [node name="Sprite2D" parent="Y-Sorting/Chair3" index="0" unique_id=1942142751]
@@ -240,7 +279,7 @@ flip_h = false
 region_enabled = true
 region_rect = Rect2(16, 0, 16, 32)
 
-[node name="Chair4" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="13" unique_id=27447039 instance=ExtResource("9_4476o")]
+[node name="Chair4" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="17" unique_id=27447039 instance=ExtResource("9_4476o")]
 position = Vector2(384, 560)
 
 [node name="Sprite2D" parent="Y-Sorting/Chair4" index="0" unique_id=1942142751]
@@ -248,14 +287,14 @@ texture = ExtResource("11_4hmg6")
 region_enabled = true
 region_rect = Rect2(16, 0, 16, 32)
 
-[node name="TV" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="14" unique_id=1942874015 instance=ExtResource("12_se43j")]
+[node name="TV" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="18" unique_id=1942874015 instance=ExtResource("12_se43j")]
 position = Vector2(492, 424)
 
-[node name="Shelf" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="15" unique_id=1973851103 instance=ExtResource("13_45g08")]
+[node name="Shelf" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="19" unique_id=1973851103 instance=ExtResource("13_45g08")]
 position = Vector2(336, 452)
 dialogueTag = SubResource("Resource_pt700")
 
-[node name="Shelf2" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="16" unique_id=1187782659 instance=ExtResource("13_45g08")]
+[node name="Shelf2" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="20" unique_id=1187782659 instance=ExtResource("13_45g08")]
 position = Vector2(504, 508)
 
 [node name="Sprite2D" parent="Y-Sorting/Shelf2" index="0" unique_id=2031858283]
@@ -263,7 +302,7 @@ position = Vector2(0, 4)
 flip_h = true
 region_rect = Rect2(32, 0, 32, 48)
 
-[node name="Fridge" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="17" unique_id=1812637953 instance=ExtResource("14_45htw")]
+[node name="Fridge" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="21" unique_id=1812637953 instance=ExtResource("14_45htw")]
 position = Vector2(32, 548)
 canLift = false
 canPush = true
@@ -288,16 +327,16 @@ texture = ExtResource("15_thnl7")
 region_enabled = true
 region_rect = Rect2(32, 0, 16, 16)
 
-[node name="Bathtub" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="18" unique_id=1637260061 instance=ExtResource("16_nmy6k")]
+[node name="Bathtub" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="22" unique_id=1637260061 instance=ExtResource("16_nmy6k")]
 position = Vector2(336, 172)
 
-[node name="Toilet" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="19" unique_id=1146501403 instance=ExtResource("17_hwr0q")]
-position = Vector2(304, 192)
+[node name="Toilet" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="23" unique_id=1146501403 instance=ExtResource("17_hwr0q")]
+position = Vector2(300, 196)
 
 [node name="Sprite2D" parent="Y-Sorting/Toilet" index="0"]
 region_rect = Rect2(52, 0, 16, 24)
 
-[node name="Sink" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="20" unique_id=1155474016 instance=ExtResource("18_ugw2m")]
+[node name="Sink" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="24" unique_id=1155474016 instance=ExtResource("18_ugw2m")]
 position = Vector2(296, 143)
 
 [node name="Sprite2D" parent="Y-Sorting/Sink" index="0" unique_id=2079446877]
@@ -305,10 +344,10 @@ position = Vector2(0, -8)
 texture = ExtResource("19_7jdwc")
 region_rect = Rect2(0, 72, 32, 56)
 
-[node name="wooden_wardrobe_front" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="21" unique_id=2060248601 instance=ExtResource("20_mioh0")]
+[node name="wooden_wardrobe_front" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="25" unique_id=2060248601 instance=ExtResource("20_mioh0")]
 position = Vector2(248, 48)
 
-[node name="Bed" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="22" unique_id=2143953877 instance=ExtResource("21_pcy1m")]
+[node name="Bed" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="26" unique_id=2143953877 instance=ExtResource("21_pcy1m")]
 position = Vector2(324, 64)
 dialogueTag = SubResource("Resource_q107y")
 
@@ -316,7 +355,7 @@ dialogueTag = SubResource("Resource_q107y")
 flip_h = true
 region_rect = Rect2(66, 6, 60, 55)
 
-[node name="bedside_table" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="23" unique_id=962155086 instance=ExtResource("22_e12p2")]
+[node name="bedside_table" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="27" unique_id=962155086 instance=ExtResource("22_e12p2")]
 position = Vector2(340, 40)
 
 [node name="Sprite2D" parent="Y-Sorting/bedside_table" index="0" unique_id=204191189]
@@ -326,7 +365,7 @@ region_rect = Rect2(204, 4, 25, 34)
 [node name="Collision" parent="Y-Sorting/bedside_table" index="1" unique_id=495142719]
 position = Vector2(0, -2)
 
-[node name="Door" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="24" unique_id=1545158925 instance=ExtResource("23_8mi2v")]
+[node name="Door" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="28" unique_id=1545158925 instance=ExtResource("23_8mi2v")]
 position = Vector2(88, 200)
 
 [node name="ColorRect" parent="Y-Sorting/Door" index="6" unique_id=1441941952]
@@ -335,7 +374,7 @@ offset_top = -12.0
 offset_right = 28.0
 offset_bottom = 88.0
 
-[node name="Door2" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="25" unique_id=571695690 instance=ExtResource("23_8mi2v")]
+[node name="Door2" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="29" unique_id=571695690 instance=ExtResource("23_8mi2v")]
 position = Vector2(240, 140)
 
 [node name="ColorRect" parent="Y-Sorting/Door2" index="6" unique_id=1441941952]
@@ -344,7 +383,7 @@ offset_top = -128.0
 offset_right = 112.0
 offset_bottom = -32.0
 
-[node name="Door3" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="26" unique_id=1684639836 instance=ExtResource("23_8mi2v")]
+[node name="Door3" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="30" unique_id=1684639836 instance=ExtResource("23_8mi2v")]
 position = Vector2(112, 652)
 doorType = 2
 
@@ -437,6 +476,10 @@ one_way_collision_margin = 0.0
 [connection signal="body_entered" from="TriggerSensor3" to="TriggerSensor3" method="_on_body_entered"]
 
 [editable path="Y-Sorting/Player"]
+[editable path="Y-Sorting/Trash"]
+[editable path="Y-Sorting/Trash3"]
+[editable path="Y-Sorting/Trash2"]
+[editable path="Y-Sorting/Trash4"]
 [editable path="Y-Sorting/Couch"]
 [editable path="Y-Sorting/Couch2"]
 [editable path="Y-Sorting/Stool2"]
