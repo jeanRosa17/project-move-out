@@ -368,6 +368,9 @@ func exitLift() -> void:
 	self.scale = Vector2(1, 1)
 	self.add_to_group("Furniture")
 	audioPlayer.put_down_noise()
+	self.owner = get_tree().current_scene
+	#for child in self.get_children():
+		#set_owner
 
 func enterPush(body: CharacterBody2D) -> void:
 	print("entered pushing")

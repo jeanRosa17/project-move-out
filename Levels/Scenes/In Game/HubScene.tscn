@@ -574,6 +574,9 @@ position = Vector2(1040, 116)
 isOpen = true
 hasBeenOpened = true
 
+[node name="ColorRect" parent="Y-Sorting/Door" index="6" unique_id=1441941952]
+visible = false
+
 [node name="Level Music" type="AudioStreamPlayer2D" parent="." unique_id=1340222311]
 stream = ExtResource("13_fmfjn")
 autoplay = true
@@ -830,3 +833,4 @@ one_way_collision_margin = 0.0
 [editable path="Y-Sorting/Box3"]
 [editable path="Y-Sorting/Box4"]
 [editable path="Y-Sorting/Box5"]
+[editable path="Y-Sorting/Door"]

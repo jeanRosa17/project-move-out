@@ -41,7 +41,7 @@ var Levels:Array[String] = \
 	
 	# "uid://jre5761gc8o1", #HubScene
 	
-var levelNum:int = 1
+var levelNum:int = 0
 
 enum Direction {
 	UP,
