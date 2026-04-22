@@ -42,7 +42,11 @@ func save_hub() -> void:
 		ResourceUID.add_id(ResourceUID.create_id(), path)
 		var uid = ResourceLoader.get_resource_uid(path)
 		#print(ResourceUID.id_to_text(uid))
+		print(uid)
+		print(ResourceUID.id_to_text(uid))
 		Data.newHub = ResourceUID.id_to_text(uid)
+		
+		_on_next_level_pressed()
 		if error != OK:
 			push_error("An error occurred while saving the scene to disk.")
 	

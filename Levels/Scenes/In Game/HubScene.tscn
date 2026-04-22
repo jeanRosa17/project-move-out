@@ -819,7 +819,6 @@ one_way_collision_margin = 0.0
 [connection signal="button_up" from="HUD/Level Results/Container/BoxContainer/Panel/Quit" to="HUD/Level Results/Container/BoxContainer/Panel/Quit/ButtonSound DownUp" method="_on_play_button_up"]
 [connection signal="pressed" from="HUD/Level Results/Container/BoxContainer/Panel/Quit" to="HUD/Level Results" method="_on_exit_game_pressed"]
 [connection signal="button_down" from="HUD/Dialogue/Textbox/Panel/YesOption" to="HUD/Level Results" method="save_hub"]
-[connection signal="button_down" from="HUD/Dialogue/Textbox/Panel/YesOption" to="HUD/Level Results" method="_on_next_level_pressed"]
 [connection signal="button_down" from="HUD/Dialogue/Textbox/Panel/YesOption" to="HUD/Dialogue/Textbox/Panel/YesOption/ButtonSound DownUp" method="_on_play_button_down"]
 [connection signal="button_up" from="HUD/Dialogue/Textbox/Panel/YesOption" to="HUD/Dialogue/Textbox/Panel/YesOption/ButtonSound DownUp" method="_on_play_button_up"]
 [connection signal="button_down" from="HUD/Dialogue/Textbox/Panel/NoOption" to="HUD" method="_on_no_leave_level_button_down"]

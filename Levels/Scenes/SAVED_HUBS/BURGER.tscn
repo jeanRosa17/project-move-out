@@ -482,7 +482,7 @@ metadata/_custom_type_script = "uid://c2vh27coguldq"
 [node name="Player" type="CharacterBody2D" parent="Y-Sorting" unique_id=1761221807 instance=ExtResource("5_ayprf")]
 unique_name_in_owner = true
 y_sort_enabled = true
-position = Vector2(1034.0616, 1.221939)
+position = Vector2(1031.2955, -2.450588)
 collision_mask = 6
 motion_mode = 1
 wall_min_slide_angle = 3.1415927
@@ -659,7 +659,7 @@ visible = false
 z_index = -1
 position = Vector2(59, 0)
 texture = ExtResource("18_vina4")
-offset = Vector2(0, 2.0409029)
+offset = Vector2(0, 1.726174)
 
 [node name="TetrisRunner" parent="Y-Sorting/Storage Van/Loading Carpet" index="0" unique_id=456820073]
 collision_layer = 7
@@ -1119,7 +1119,6 @@ one_way_collision_margin = 0.0
 [connection signal="button_up" from="HUD/Level Results/Container/BoxContainer/Panel/Quit" to="HUD/Level Results/Container/BoxContainer/Panel/Quit/ButtonSound DownUp" method="_on_play_button_up"]
 [connection signal="pressed" from="HUD/Level Results/Container/BoxContainer/Panel/Quit" to="HUD/Level Results" method="_on_exit_game_pressed"]
 [connection signal="button_down" from="HUD/Dialogue/Textbox/Panel/YesOption" to="HUD/Level Results" method="save_hub"]
-[connection signal="button_down" from="HUD/Dialogue/Textbox/Panel/YesOption" to="HUD/Level Results" method="_on_next_level_pressed"]
 [connection signal="button_down" from="HUD/Dialogue/Textbox/Panel/YesOption" to="HUD/Dialogue/Textbox/Panel/YesOption/ButtonSound DownUp" method="_on_play_button_down"]
 [connection signal="button_up" from="HUD/Dialogue/Textbox/Panel/YesOption" to="HUD/Dialogue/Textbox/Panel/YesOption/ButtonSound DownUp" method="_on_play_button_up"]
 [connection signal="button_down" from="HUD/Dialogue/Textbox/Panel/NoOption" to="HUD" method="_on_no_leave_level_button_down"]

@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://rtrhhspwen6a"]
 
 [ext_resource type="Script" uid="uid://bhcre3gsfa5n3" path="res://Scripts/UI/TitleScreen.gd" id="1_jpkfb"]
-[ext_resource type="FontFile" uid="uid://c17q41l7sknhq" path="res://Assets/fonts/m5x7.ttf" id="2_fbutq"]
+[ext_resource type="FontFile" uid="uid://c17q41l7sknhq" path="res://Assets/Fonts/m5x7.ttf" id="2_fbutq"]
 [ext_resource type="Theme" uid="uid://bxr4bn083148b" path="res://Scripts/UI/Resources/MainTheme.tres" id="2_saprj"]
-[ext_resource type="Script" path="res://Scripts/UI/Scenes/button_sound_down_up.gd" id="3_3yyyo"]
+[ext_resource type="Script" uid="uid://bma5rvd8gfbkv" path="res://Scripts/UI/Scenes/button_sound_down_up.gd" id="3_3yyyo"]
 [ext_resource type="PackedScene" uid="uid://d3lck2qquf5sx" path="res://Assets/Audio/play.tscn" id="3_n4klw"]
 [ext_resource type="AudioStream" uid="uid://dv4lnx8a37d0o" path="res://Assets/Audio/button down sfx.wav" id="4_5owlj"]
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="4_fbutq"]
