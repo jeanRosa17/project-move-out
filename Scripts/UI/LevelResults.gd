@@ -33,11 +33,11 @@ func _on_exit_game_pressed() -> void:
 
 func save_hub() -> void:
 	var scene = PackedScene.new()
-	var node = self.get_parent().find_child("HubScene")
+	var node = self.get_parent().get_parent()
 	var result = scene.pack(node)
 	if result == OK:
 		print("saved")
-		var error = ResourceSaver.save(scene, "res://path/name.tscn")  # Or "user://..."
+		var error = ResourceSaver.save(scene, "res://Levels/Scenes/SAVED_HUBS/BURGER.tscn")  # Or "user://..."
 		if error != OK:
 			push_error("An error occurred while saving the scene to disk.")
 	

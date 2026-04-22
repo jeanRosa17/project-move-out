@@ -101,7 +101,6 @@ func checkResults() -> void:
 	
 	self.player.setControls(false)
 
-	print("Gay gay homosexual gay");
 	var current_scene = get_tree().current_scene
 	if (current_scene.name != "HubScene"):
 		var _text:RichTextLabel = self.level_results.find_child("Score")

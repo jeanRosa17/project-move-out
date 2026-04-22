@@ -91,6 +91,7 @@ func parseCommandsInLine() -> void:
 		assert(options.length() != 0, "error options should be atleast one")
 		self.hasOptions = true
 		
+		print($Panel/YesOption)
 		$"Panel/YesOption".text = options.split(" ")[0]
 		$Panel/NoOption.text = options.split(" ")[1]
 		
