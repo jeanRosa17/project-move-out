@@ -1,11 +1,14 @@
 extends Node
 
+var newHub:String
+
 ## Stores a UID reference to the levels. It will always start from 0 when you
 ## play it from any scene since it is linear progression, so be aware
-const Levels:Array[String] = \
+var Levels:Array[String] = \
 	["uid://crm2fqqeyg12f", #Tutorial - Storage Unit v2
 	 "uid://jre5761gc8o1", #HubScene
 	"uid://cdnij7booxhs4", #Apartments
+	newHub,
 	"uid://dlp1pmhousfx7", #Poolalt
 	"uid://cfcephiffwtxg", #RodriguezHouse
 	"uid://d317crqywlqve", #IceHouseAlt

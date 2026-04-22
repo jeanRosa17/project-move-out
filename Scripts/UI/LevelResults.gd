@@ -37,7 +37,12 @@ func save_hub() -> void:
 	var result = scene.pack(node)
 	if result == OK:
 		print("saved")
-		var error = ResourceSaver.save(scene, "res://Levels/Scenes/SAVED_HUBS/BURGER.tscn")  # Or "user://..."
+		var error = ResourceSaver.save(scene, "res://Levels/Scenes/SAVED_HUBS/BURGER.tscn")
+		var path = "res://Levels/Scenes/SAVED_HUBS/BURGER.tscn"
+		ResourceUID.add_id(ResourceUID.create_id(), path)
+		var uid = ResourceLoader.get_resource_uid(path)
+		#print(ResourceUID.id_to_text(uid))
+		Data.newHub = ResourceUID.id_to_text(uid)
 		if error != OK:
 			push_error("An error occurred while saving the scene to disk.")
 	
