@@ -355,6 +355,9 @@ func exitLift() -> void:
 	self.killLiftingTween()
 	
 	self.get_node("Collision").disabled = false
+	if (self.player == null or self.player.manager == null):
+		return
+	
 	self.position = self.player.manager.detector.global_position
 	self.ghostSprite.queue_free()
 	self.collision_layer = 2;
@@ -383,6 +386,10 @@ func enterPush(body: CharacterBody2D) -> void:
 
 func exitPush()-> void:
 	print("exited pushing")
+	
+	if (self.player == null or self.player.manager == null):
+		return
+	
 	self.player.manager.item_detector.visible = false
 	self.player.manager.furniture = null
 	self.player = null
