@@ -5,20 +5,23 @@
 [ext_resource type="PackedScene" uid="uid://bof0wxapyclor" path="res://Assets/Objects/Chairs/Scene/Stool.tscn" id="3_jw4ej"]
 [ext_resource type="Texture2D" uid="uid://1pndgm8ucik4" path="res://Assets/Objects/Kitchen/Kitchen-Sheet.png" id="4_awddx"]
 [ext_resource type="PackedScene" uid="uid://c4t28bigi1yhq" path="res://Assets/Objects/Table Items/Scenes/possessed_pot.tscn" id="4_ybsv3"]
+[ext_resource type="Texture2D" uid="uid://bcsdv5xxl13c2" path="res://Assets/Objects/Tables/long_desk_side.png" id="5_roxi4"]
 [ext_resource type="PackedScene" uid="uid://b7qk52eapta2s" path="res://Assets/Objects/Dressers & Shelves/Scenes/wooden_wardrobe_front.tscn" id="5_ymwvh"]
+[ext_resource type="PackedScene" uid="uid://bcmy8dq2ef0uc" path="res://Assets/Objects/Tables/Scenes/long_desk_front.tscn" id="6_rhbln"]
 [ext_resource type="PackedScene" uid="uid://cjingj81fm3hm" path="res://Assets/Objects/Dressers & Shelves/Scenes/storage_dresser_front.tscn" id="6_xodi7"]
 [ext_resource type="PackedScene" uid="uid://ombsd650f300" path="res://Assets/Objects/Tables/Scenes/bedside_table.tscn" id="7_1jn5r"]
-[ext_resource type="PackedScene" uid="uid://cwxdgur52wxsm" path="res://Assets/Objects/Tables/Scenes/long_desk_side.tscn" id="8_74ehi"]
 [ext_resource type="PackedScene" uid="uid://c0a0h2j2xhek7" path="res://Assets/Objects/Tables/Scenes/selfcare_table.tscn" id="9_4uyrw"]
 [ext_resource type="PackedScene" uid="uid://cl3ww3w6r3n1r" path="res://Assets/Objects/Kitchen/Scenes/Fridge.tscn" id="10_6k4ek"]
 [ext_resource type="Script" uid="uid://bmqryoobj44j2" path="res://Scripts/Dialogue/DialogueTag.gd" id="11_d1u5m"]
 [ext_resource type="PackedScene" uid="uid://outwnejax5mt" path="res://Assets/Objects/Couches/Scenes/redder_couch_side.tscn" id="12_3bdis"]
 [ext_resource type="PackedScene" uid="uid://ce4x5g5hrvxce" path="res://Assets/Objects/Bathroom/Scenes/Bathtub.tscn" id="13_mkhci"]
 [ext_resource type="PackedScene" uid="uid://bfp82m6exqyhy" path="res://Assets/Objects/Bathroom/Scenes/Sink.tscn" id="14_3f1pg"]
-[ext_resource type="PackedScene" uid="uid://c638p25j2md1l" path="res://Assets/Objects/Bathroom/Scenes/Toilet.tscn" id="15_x7e06"]
-[ext_resource type="Script" path="res://Scripts/haunted_doll.gd" id="16_563mr"]
+[ext_resource type="Script" uid="uid://bver5klf3qji7" path="res://Scripts/haunted_doll.gd" id="16_563mr"]
+[ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="16_teehw"]
 [ext_resource type="Texture2D" uid="uid://mj83eila38sg" path="res://Assets/Objects/Table Items/haunted_doll.png" id="17_1k0rp"]
+[ext_resource type="Texture2D" uid="uid://dq5pqd6sqwcnf" path="res://Assets/Objects/Bathroom/Toilet-Sheet.png" id="17_d5mvn"]
 [ext_resource type="PackedScene" uid="uid://cmwh2w2blwcsq" path="res://Assets/Objects/Beds/Scene/Twin_Bed.tscn" id="18_q1x3y"]
+[ext_resource type="PackedScene" uid="uid://b88hxixgay80f" path="res://Assets/Objects/Bathroom/Scenes/Toilet_Side.tscn" id="18_roxi4"]
 [ext_resource type="PackedScene" uid="uid://pr8g204x513g" path="res://Levels/Prefabs/Door.tscn" id="19_e1n6s"]
 [ext_resource type="PackedScene" uid="uid://dpyl8x5qojmng" path="res://Assets/Objects/Table Items/Scenes/TV.tscn" id="20_s3cd3"]
 [ext_resource type="PackedScene" uid="uid://cuho4egtuhmvt" path="res://Assets/Objects/Tables/Scenes/TV_and_desk_front.tscn" id="21_yi2pw"]
@@ -32,12 +35,19 @@
 [ext_resource type="PackedScene" uid="uid://c1m5u3p8uir82" path="res://Levels/Prefabs/Teleporter.tscn" id="28_qwbf5"]
 [ext_resource type="Script" uid="uid://1ugs6cpgg5xy" path="res://Levels/Scenes/Tutorial/trigger_sensor.gd" id="29_qnshs"]
 [ext_resource type="Texture2D" uid="uid://bfonjlo03cx0s" path="res://Assets/tiles/Trapdoor-Sheet.png" id="30_c0dqx"]
-[ext_resource type="PackedScene" uid="uid://bujcbosiagjri" path="res://Assets/Objects/Dressers & Shelves/Scenes/wooden_shelf_front.tscn" id="31_c0dqx"]
+[ext_resource type="Texture2D" uid="uid://d3ls4oxtr262i" path="res://Assets/Objects/Dressers & Shelves/wooden_shelf-sheet.png" id="31_d5mvn"]
 [ext_resource type="Texture2D" uid="uid://b2xk22jllnhmg" path="res://Assets/tiles/Portal-Sheet.png" id="31_wmuuj"]
+[ext_resource type="PackedScene" uid="uid://edibr7locjaf" path="res://Assets/Objects/Dressers & Shelves/Scenes/wooden_shelf_side.tscn" id="32_roxi4"]
 [ext_resource type="PackedScene" uid="uid://l8cjl5djbbev" path="res://Assets/Objects/Dressers & Shelves/Scenes/wooden_wardrobe_back.tscn" id="32_wmuuj"]
 [ext_resource type="PackedScene" uid="uid://ctlkntl3tgxpl" path="res://Assets/Objects/Table Items/Box2.tscn" id="33_y481b"]
 [ext_resource type="Texture2D" uid="uid://coc80v4j0hq5l" path="res://Assets/New_Sprites/clock.png" id="36_y481b"]
 [ext_resource type="Texture2D" uid="uid://tq8l7mxma4l7" path="res://Assets/tiles/spider_Web.png" id="38_gdw5g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
+size = Vector2(16, 62)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
+size = Vector2(18, 76)
 
 [sub_resource type="Resource" id="Resource_fuwlr"]
 script = ExtResource("11_d1u5m")
@@ -45,16 +55,22 @@ dialogueScriptPath = &"res://Narrative/DollHouse.txt"
 dialogueTag = &"fridge"
 metadata/_custom_type_script = "uid://bmqryoobj44j2"
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_70hmx"]
+size = Vector2(24, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ac7ml"]
+size = Vector2(32, 32)
+
 [sub_resource type="Resource" id="Resource_ljmeb"]
 script = ExtResource("11_d1u5m")
 dialogueScriptPath = &"res://Narrative/DollHouse.txt"
 dialogueTag = &"doll"
 metadata/_custom_type_script = "uid://bmqryoobj44j2"
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rhbln"]
 size = Vector2(16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tu5k8"]
 size = Vector2(18, 18)
 
 [sub_resource type="Resource" id="Resource_6dw3n"]
@@ -68,6 +84,18 @@ size = Vector2(20, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bbw8h"]
 size = Vector2(24, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4hmg6"]
+size = Vector2(30, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_se43j"]
+size = Vector2(40, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ukpp8"]
+size = Vector2(15, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tcw3l"]
+size = Vector2(18, 42)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y481b"]
 atlas = ExtResource("31_wmuuj")
@@ -163,10 +191,44 @@ tile_map_data = PackedByteArray("AAAQAA4ACQACAAAAAAABAA4ACQACAAAAAAAQAAYACQACAAA
 [node name="Stool" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="0" unique_id=952689698 instance=ExtResource("3_jw4ej")]
 position = Vector2(440, 168)
 
-[node name="Stool2" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="1" unique_id=938136810 instance=ExtResource("3_jw4ej")]
+[node name="long_desk_side" type="RigidBody2D" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="1" unique_id=1061349882 node_paths=PackedStringArray("rotatedVersion") groups=["Furniture"]]
+position = Vector2(480, 184)
+collision_layer = 2
+collision_mask = 7
+gravity_scale = 0.0
+can_sleep = false
+lock_rotation = true
+script = ExtResource("16_teehw")
+canPush = true
+canPull = true
+canRotate = true
+rotatedVersion = NodePath("long_desk_front")
+tetroShape = 6
+metadata/_custom_type_script = "uid://c2vh27coguldq"
+
+[node name="Sprite2D" type="Sprite2D" parent="Y-Sorting/long_desk_side" index="0" unique_id=1387321397]
+texture = ExtResource("5_roxi4")
+
+[node name="Collision" type="CollisionShape2D" parent="Y-Sorting/long_desk_side" index="1" unique_id=2058164676]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_xnri0")
+
+[node name="AreaDetector" type="Area2D" parent="Y-Sorting/long_desk_side" index="2" unique_id=1842440594 groups=["Furniture"]]
+position = Vector2(0, -1)
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Y-Sorting/long_desk_side/AreaDetector" index="0" unique_id=2038369607]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_ardoa")
+
+[node name="long_desk_front" parent="Y-Sorting/long_desk_side" index="3" unique_id=516181273 instance=ExtResource("6_rhbln")]
+visible = false
+
+[node name="Stool2" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="2" unique_id=938136810 instance=ExtResource("3_jw4ej")]
 position = Vector2(440, 216)
 
-[node name="Trash" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="2" unique_id=1659266552 instance=ExtResource("3_jw4ej")]
+[node name="Trash" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="3" unique_id=1659266552 instance=ExtResource("3_jw4ej")]
 position = Vector2(456, 304)
 canPush = false
 canPull = false
@@ -175,7 +237,7 @@ canPull = false
 texture = ExtResource("4_awddx")
 region_rect = Rect2(192, 64, 16, 32)
 
-[node name="Trash2" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="3" unique_id=1805021845 instance=ExtResource("3_jw4ej")]
+[node name="Trash2" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="4" unique_id=1805021845 instance=ExtResource("3_jw4ej")]
 position = Vector2(244, 112)
 canPush = false
 canPull = false
@@ -185,32 +247,29 @@ modulate = Color(0.62425226, 0.5565069, 0.023219623, 1)
 texture = ExtResource("4_awddx")
 region_rect = Rect2(224, 48, 16, 16)
 
-[node name="Possessed_Pot" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="4" unique_id=165898543 instance=ExtResource("4_ybsv3")]
+[node name="Possessed_Pot" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="5" unique_id=165898543 instance=ExtResource("4_ybsv3")]
 position = Vector2(288, 128)
 move_offset = Vector2(35, 0)
 regular_furniture_scene = null
 
-[node name="Possessed_Pot2" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="5" unique_id=1795586457 instance=ExtResource("4_ybsv3")]
+[node name="Possessed_Pot2" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="6" unique_id=1795586457 instance=ExtResource("4_ybsv3")]
 position = Vector2(320, 216)
 move_offset = Vector2(-35, 0)
 regular_furniture_scene = null
 
-[node name="Possessed_Pot3" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="6" unique_id=816272811 instance=ExtResource("4_ybsv3")]
-position = Vector2(288, 256)
+[node name="Possessed_Pot3" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="7" unique_id=816272811 instance=ExtResource("4_ybsv3")]
+position = Vector2(288, 262)
 move_offset = Vector2(35, 0)
 regular_furniture_scene = null
 
-[node name="wooden_wardrobe_front" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="7" unique_id=2060248601 instance=ExtResource("5_ymwvh")]
+[node name="wooden_wardrobe_front" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="8" unique_id=2060248601 instance=ExtResource("5_ymwvh")]
 position = Vector2(184, 48)
 
-[node name="storage_dresser_front" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="8" unique_id=585338204 instance=ExtResource("6_xodi7")]
+[node name="storage_dresser_front" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="9" unique_id=585338204 instance=ExtResource("6_xodi7")]
 position = Vector2(136, 48)
 
-[node name="bedside_table" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="9" unique_id=962155086 instance=ExtResource("7_1jn5r")]
+[node name="bedside_table" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="10" unique_id=962155086 instance=ExtResource("7_1jn5r")]
 position = Vector2(56, 56)
-
-[node name="long_desk_side" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="10" unique_id=1061349882 instance=ExtResource("8_74ehi")]
-position = Vector2(480, 192)
 
 [node name="selfcare_table" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="11" unique_id=1682356519 instance=ExtResource("9_4uyrw")]
 position = Vector2(240, 144)
@@ -232,8 +291,41 @@ position = Vector2(528, 64)
 [node name="Sink" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="15" unique_id=1155474016 instance=ExtResource("14_3f1pg")]
 position = Vector2(416, 48)
 
-[node name="Toilet" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="16" unique_id=785602798 instance=ExtResource("15_x7e06")]
+[node name="Toilet" type="RigidBody2D" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="16" unique_id=785602798 node_paths=PackedStringArray("rotatedVersion") groups=["Furniture"]]
 position = Vector2(472, 56)
+collision_layer = 2
+collision_mask = 7
+gravity_scale = 0.0
+can_sleep = false
+lock_rotation = true
+script = ExtResource("16_teehw")
+canPush = true
+canPull = true
+canRotate = true
+rotatedVersion = NodePath("Toilet_Side")
+metadata/_custom_type_script = "uid://c2vh27coguldq"
+
+[node name="Sprite2D" type="Sprite2D" parent="Y-Sorting/Toilet" index="0" unique_id=1784569153]
+position = Vector2(0, -4)
+texture = ExtResource("17_d5mvn")
+region_enabled = true
+region_rect = Rect2(0, 0, 24, 24)
+
+[node name="Collision" type="CollisionShape2D" parent="Y-Sorting/Toilet" index="1" unique_id=1873549991]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_70hmx")
+
+[node name="AreaDetector" type="Area2D" parent="Y-Sorting/Toilet" index="2" unique_id=1502769618 groups=["Furniture"]]
+position = Vector2(0, -4)
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Y-Sorting/Toilet/AreaDetector" index="0" unique_id=870266730]
+shape = SubResource("RectangleShape2D_ac7ml")
+
+[node name="Toilet_Side" parent="Y-Sorting/Toilet" index="3" unique_id=83840151 instance=ExtResource("18_roxi4")]
+visible = false
+canRotate = true
 
 [node name="Haunted_doll" type="RigidBody2D" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="17" unique_id=1243734904 groups=["Furniture", "Possessed Item"]]
 position = Vector2(80, -272)
@@ -251,14 +343,14 @@ metadata/_custom_type_script = "uid://c2vh27coguldq"
 texture = ExtResource("17_1k0rp")
 
 [node name="Collision" type="CollisionShape2D" parent="Y-Sorting/Haunted_doll" index="1" unique_id=971950706]
-shape = SubResource("RectangleShape2D_xnri0")
+shape = SubResource("RectangleShape2D_rhbln")
 
 [node name="AreaDetector" type="Area2D" parent="Y-Sorting/Haunted_doll" index="2" unique_id=256561368 groups=["Furniture"]]
 collision_layer = 2
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Y-Sorting/Haunted_doll/AreaDetector" index="0" unique_id=397292190]
-shape = SubResource("RectangleShape2D_ardoa")
+shape = SubResource("RectangleShape2D_tu5k8")
 
 [node name="Twin_Bed" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="18" unique_id=932381668 instance=ExtResource("18_q1x3y")]
 position = Vector2(100, 72)
@@ -368,19 +460,108 @@ position = Vector2(131, 354)
 move_offset = Vector2(80, 0)
 
 [node name="Twin_Bed_Side" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="34" unique_id=777692504 instance=ExtResource("27_ljmeb")]
-position = Vector2(128, -320)
+position = Vector2(128, -312)
 
 [node name="Stool3" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="35" unique_id=844357139 instance=ExtResource("3_jw4ej")]
-position = Vector2(112, -288)
+position = Vector2(88, -296)
 
-[node name="Shelf" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="36" unique_id=1973851103 instance=ExtResource("31_c0dqx")]
+[node name="Shelf" type="RigidBody2D" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="36" unique_id=1973851103 node_paths=PackedStringArray("rotatedVersion") groups=["Furniture"]]
 position = Vector2(172, -288)
+collision_layer = 2
+collision_mask = 7
+gravity_scale = 0.0
+can_sleep = false
+lock_rotation = true
+script = ExtResource("16_teehw")
+canPush = true
+canPull = true
+canRotate = true
+rotatedVersion = NodePath("wooden_shelf_side")
+tetroShape = 1
+metadata/_custom_type_script = "uid://c2vh27coguldq"
 
-[node name="Shelf2" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="37" unique_id=1820739794 instance=ExtResource("31_c0dqx")]
+[node name="Sprite2D" type="Sprite2D" parent="Y-Sorting/Shelf" index="0" unique_id=2031858283]
+texture = ExtResource("31_d5mvn")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 48)
+
+[node name="Collision" type="CollisionShape2D" parent="Y-Sorting/Shelf" index="1" unique_id=2122759420]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_4hmg6")
+
+[node name="AreaDetector" type="Area2D" parent="Y-Sorting/Shelf" index="2" unique_id=942609934 groups=["Furniture"]]
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Y-Sorting/Shelf/AreaDetector" index="0" unique_id=1946646603]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_se43j")
+
+[node name="wooden_shelf_side" type="RigidBody2D" parent="Y-Sorting/Shelf" index="3" unique_id=338454524 groups=["Furniture"]]
+visible = false
+collision_layer = 2
+collision_mask = 7
+gravity_scale = 0.0
+can_sleep = false
+lock_rotation = true
+script = ExtResource("16_teehw")
+canPush = true
+canPull = true
+canRotate = true
+tetroShape = 1
+metadata/_custom_type_script = "uid://c2vh27coguldq"
+
+[node name="Sprite2D" type="Sprite2D" parent="Y-Sorting/Shelf/wooden_shelf_side" index="0" unique_id=1403426317]
+
+[node name="Collision" type="CollisionShape2D" parent="Y-Sorting/Shelf/wooden_shelf_side" index="1" unique_id=690474346]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_ukpp8")
+
+[node name="AreaDetector" type="Area2D" parent="Y-Sorting/Shelf/wooden_shelf_side" index="2" unique_id=1966833562 groups=["Furniture"]]
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Y-Sorting/Shelf/wooden_shelf_side/AreaDetector" index="0" unique_id=1599647702]
+shape = SubResource("RectangleShape2D_tcw3l")
+
+[node name="Shelf2" type="RigidBody2D" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="37" unique_id=1820739794 node_paths=PackedStringArray("rotatedVersion") groups=["Furniture"]]
 position = Vector2(208, -292)
+collision_layer = 2
+collision_mask = 7
+gravity_scale = 0.0
+can_sleep = false
+lock_rotation = true
+script = ExtResource("16_teehw")
+canPush = true
+canPull = true
+canRotate = true
+rotatedVersion = NodePath("wooden_shelf_side")
+tetroShape = 1
+metadata/_custom_type_script = "uid://c2vh27coguldq"
+
+[node name="Sprite2D" type="Sprite2D" parent="Y-Sorting/Shelf2" index="0" unique_id=1286604603]
+texture = ExtResource("31_d5mvn")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 48)
+
+[node name="Collision" type="CollisionShape2D" parent="Y-Sorting/Shelf2" index="1" unique_id=894914724]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_4hmg6")
+
+[node name="AreaDetector" type="Area2D" parent="Y-Sorting/Shelf2" index="2" unique_id=1026851535 groups=["Furniture"]]
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Y-Sorting/Shelf2/AreaDetector" index="0" unique_id=1504353012]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_se43j")
+
+[node name="wooden_shelf_side" parent="Y-Sorting/Shelf2" index="3" unique_id=1195840315 instance=ExtResource("32_roxi4")]
+visible = false
+canRotate = true
 
 [node name="wooden_wardrobe_back" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="38" unique_id=546951867 instance=ExtResource("32_wmuuj")]
-position = Vector2(172, -336)
+position = Vector2(168, -328)
 
 [node name="Box2" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="39" unique_id=296798017 instance=ExtResource("33_y481b")]
 position = Vector2(120, -332)
@@ -416,7 +597,7 @@ position = Vector2(224, -444)
 texture = ExtResource("38_gdw5g")
 
 [node name="Wood_Chair_Front3" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="47" unique_id=334995546 instance=ExtResource("23_62lw8")]
-position = Vector2(64, -288)
+position = Vector2(64, -296)
 
 [node name="Level Music" parent="." index="7" unique_id=1340222311]
 stream = ExtResource("27_63j4e")
@@ -440,7 +621,7 @@ visible = false
 visible = false
 
 [node name="ItemList" parent="HUD/ListHUD" index="0" unique_id=478689423 node_paths=PackedStringArray("needed")]
-needed = [NodePath("../../../Y-Sorting/Stool"), NodePath("../../../Y-Sorting/Stool2"), NodePath("../../../Y-Sorting/wooden_wardrobe_front"), NodePath("../../../Y-Sorting/storage_dresser_front"), NodePath("../../../Y-Sorting/bedside_table"), NodePath("../../../Y-Sorting/long_desk_side"), NodePath("../../../Y-Sorting/Fridge"), NodePath("../../../Y-Sorting/Haunted_doll"), NodePath("../../../Y-Sorting/Twin_Bed"), NodePath("../../../Y-Sorting/redder_couch_side2"), NodePath("../../../Y-Sorting/wooden_table2"), NodePath("../../../Y-Sorting/Wood_Chair_Front"), NodePath("../../../Y-Sorting/Wood_Chair_Front2"), NodePath("../../../Y-Sorting/Chair")]
+needed = [NodePath("../../../Y-Sorting/Stool"), NodePath("../../../Y-Sorting/Stool2"), NodePath("../../../Y-Sorting/wooden_wardrobe_front"), NodePath("../../../Y-Sorting/storage_dresser_front"), NodePath("../../../Y-Sorting/bedside_table"), NodePath(""), NodePath("../../../Y-Sorting/Fridge"), NodePath("../../../Y-Sorting/Haunted_doll"), NodePath("../../../Y-Sorting/Twin_Bed"), NodePath("../../../Y-Sorting/redder_couch_side2"), NodePath("../../../Y-Sorting/wooden_table2"), NodePath("../../../Y-Sorting/Wood_Chair_Front"), NodePath("../../../Y-Sorting/Wood_Chair_Front2"), NodePath("../../../Y-Sorting/Chair")]
 
 [node name="Level Results" parent="HUD" index="1" unique_id=720231760]
 visible = false
@@ -511,8 +692,18 @@ position = Vector2(64, -344)
 position = Vector2(304, 20)
 texture = ExtResource("36_y481b")
 
+[connection signal="body_shape_entered" from="Y-Sorting/long_desk_side/AreaDetector" to="Y-Sorting/long_desk_side" method="_on_area_detector_body_shape_entered"]
+[connection signal="body_shape_exited" from="Y-Sorting/long_desk_side/AreaDetector" to="Y-Sorting/long_desk_side" method="_on_area_detector_body_shape_exited"]
+[connection signal="body_shape_entered" from="Y-Sorting/Toilet/AreaDetector" to="Y-Sorting/Toilet" method="_on_area_detector_body_shape_entered"]
+[connection signal="body_shape_exited" from="Y-Sorting/Toilet/AreaDetector" to="Y-Sorting/Toilet" method="_on_area_detector_body_shape_exited"]
 [connection signal="body_shape_entered" from="Y-Sorting/Haunted_doll/AreaDetector" to="Y-Sorting/Haunted_doll" method="_on_area_detector_body_shape_entered"]
 [connection signal="body_shape_exited" from="Y-Sorting/Haunted_doll/AreaDetector" to="Y-Sorting/Haunted_doll" method="_on_area_detector_body_shape_exited"]
+[connection signal="body_shape_entered" from="Y-Sorting/Shelf/AreaDetector" to="Y-Sorting/Shelf" method="_on_area_detector_body_shape_entered"]
+[connection signal="body_shape_exited" from="Y-Sorting/Shelf/AreaDetector" to="Y-Sorting/Shelf" method="_on_area_detector_body_shape_exited"]
+[connection signal="body_shape_entered" from="Y-Sorting/Shelf/wooden_shelf_side/AreaDetector" to="Y-Sorting/Shelf/wooden_shelf_side" method="_on_area_detector_body_shape_entered"]
+[connection signal="body_shape_exited" from="Y-Sorting/Shelf/wooden_shelf_side/AreaDetector" to="Y-Sorting/Shelf/wooden_shelf_side" method="_on_area_detector_body_shape_exited"]
+[connection signal="body_shape_entered" from="Y-Sorting/Shelf2/AreaDetector" to="Y-Sorting/Shelf2" method="_on_area_detector_body_shape_entered"]
+[connection signal="body_shape_exited" from="Y-Sorting/Shelf2/AreaDetector" to="Y-Sorting/Shelf2" method="_on_area_detector_body_shape_exited"]
 [connection signal="body_entered" from="TriggerSensor" to="TriggerSensor" method="_on_body_entered"]
 [connection signal="body_entered" from="TriggerSensor2" to="TriggerSensor2" method="_on_body_entered"]
 [connection signal="body_entered" from="TriggerSensor3" to="TriggerSensor3" method="_on_body_entered"]

@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://d3rjdvbwh7auh" path="res://Levels/Scenes/Garadge2.tscn" id="12_87idw"]
 [ext_resource type="AudioStream" uid="uid://qeb7u2p7xni4" path="res://Assets/Audio/johns place.wav" id="13_87idw"]
 [ext_resource type="PackedScene" uid="uid://dpyl8x5qojmng" path="res://Assets/Objects/Table Items/Scenes/TV.tscn" id="13_unfai"]
-[ext_resource type="PackedScene" uid="uid://dns4vnk3a35fb" path="res://Assets/Objects/Couches/Scenes/red_couch_side.tscn" id="14_x7fdx"]
+[ext_resource type="PackedScene" uid="uid://dns4vnk3a35fb" path="res://Assets/Objects/Couches/Scenes/white_couch_side.tscn" id="14_x7fdx"]
 [ext_resource type="PackedScene" uid="uid://mcsayjbeibp3" path="res://dialogueTrigger.tscn" id="16_u4iui"]
 [ext_resource type="Script" uid="uid://bmqryoobj44j2" path="res://Scripts/Dialogue/DialogueTag.gd" id="17_7cof8"]
 

@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cl3ww3w6r3n1r" path="res://Assets/Objects/Kitchen/Scenes/Fridge.tscn" id="8_43m6m"]
 [ext_resource type="PackedScene" uid="uid://ds1nqvgtuae71" path="res://Assets/Objects/Tables/Scenes/wooden_table.tscn" id="9_f2w0t"]
 [ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="10_6renj"]
-[ext_resource type="PackedScene" uid="uid://dns4vnk3a35fb" path="res://Assets/Objects/Couches/Scenes/red_couch_side.tscn" id="11_6renj"]
+[ext_resource type="PackedScene" uid="uid://dns4vnk3a35fb" path="res://Assets/Objects/Couches/Scenes/white_couch_side.tscn" id="11_6renj"]
 [ext_resource type="Texture2D" uid="uid://cd8oa26fgbila" path="res://Assets/Objects/Tables/Tables-Sheet.png" id="11_gx1wu"]
 [ext_resource type="PackedScene" uid="uid://d3rjdvbwh7auh" path="res://Levels/Scenes/Garadge2.tscn" id="12_gx1wu"]
 [ext_resource type="Texture2D" uid="uid://t01fcfxbftut" path="res://Assets/Objects/Chairs/Stool-Sheet.png" id="12_sjlcf"]

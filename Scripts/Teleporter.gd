@@ -30,7 +30,7 @@ func _on_teleported(body: Node2D, tele:bool = false) -> void:
 		body.manager.call_deferred("changeState", "Idle")
 		body.call_deferred("set_position", self.goTo.position)
 	
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(3).timeout
 	
 	self.goTo.collision.call_deferred("set_disabled", false)
 	

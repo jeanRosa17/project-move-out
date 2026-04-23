@@ -71,12 +71,12 @@ func _process(delta:float) -> void:
 		_process_input()
 
 func _check_still(lastPosition:Vector2) -> void:
-	await get_tree().create_timer(0.1).timeout
-	if((lastPosition - player.position) == Vector2(0, 0)):
+	await get_tree().create_timer(0.2).timeout
+	if((lastPosition - player.position).length() < 0.2):
 		stopped = true
 # pushes the player if they attempt to move against the wind
 func _process_input() -> void:
-	await get_tree().create_timer(0.1).timeout
+	await get_tree().create_timer(0.2).timeout
 	match self.get_meta("Direction"):
 		"east":
 			if((lastPosition - player.position).x < 5):
