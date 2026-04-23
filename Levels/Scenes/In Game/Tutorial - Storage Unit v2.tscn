@@ -278,7 +278,7 @@ visible = false
 visible = false
 
 [node name="TriggerSensor" type="Area2D" parent="." index="11" unique_id=99069474]
-position = Vector2(264, 364)
+position = Vector2(168, 312)
 scale = Vector2(0.524795, 0.0439381)
 collision_layer = 16
 script = ExtResource("8_6g0q4")

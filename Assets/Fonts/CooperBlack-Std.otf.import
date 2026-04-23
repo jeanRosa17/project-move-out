@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://d307q4t4nwsnf"
-path="res://.godot/imported/CooperBlack-Std.otf-666820c1e55bf0c728257796762fceb4.fontdata"
+path="res://.godot/imported/CooperBlack-Std.otf-a7b8f611aa9400c4cf97d02968e07733.fontdata"
 
 [deps]
 
-source_file="res://Assets/Fonts/CooperBlack-Std.otf"
-dest_files=["res://.godot/imported/CooperBlack-Std.otf-666820c1e55bf0c728257796762fceb4.fontdata"]
+source_file="res://Assets/fonts/CooperBlack-Std.otf"
+dest_files=["res://.godot/imported/CooperBlack-Std.otf-a7b8f611aa9400c4cf97d02968e07733.fontdata"]
 
 [params]
 

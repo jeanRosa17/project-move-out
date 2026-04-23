@@ -259,6 +259,9 @@ position = Vector2(104, 248)
 
 [node name="Dino Pot" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="8" unique_id=2016765540 instance=ExtResource("5_ypkbl")]
 position = Vector2(48, 256)
+canLift = true
+canPush = false
+canPull = false
 
 [node name="Couch" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="9" unique_id=741030412 node_paths=PackedStringArray("rotatedVersion") instance=ExtResource("6_3bgmp")]
 position = Vector2(172, 616)

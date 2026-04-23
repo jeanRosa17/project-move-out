@@ -411,7 +411,7 @@ position = Vector2(996, 149)
 
 [node name="Player" parent="Y-Sorting" unique_id=1761221807 instance=ExtResource("4_u3b0i")]
 unique_name_in_owner = true
-position = Vector2(1036, 16)
+position = Vector2(992, 16)
 safe_margin = 1.159
 
 [node name="LOCKER" parent="Y-Sorting" unique_id=2060248601 instance=ExtResource("6_baqeo")]
@@ -801,7 +801,7 @@ script = ExtResource("17_pjx07")
 tag = SubResource("Resource_sqgtv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerSensor" unique_id=535693508]
-position = Vector2(312.503, -1456.5946)
+position = Vector2(198.17264, 0)
 shape = SubResource("RectangleShape2D_6evpb")
 one_way_collision_margin = 0.0
 

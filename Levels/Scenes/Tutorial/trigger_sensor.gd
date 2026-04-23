@@ -1,5 +1,5 @@
 extends Area2D
-var triggered:bool = false
+@export var triggered:bool = false
 @onready var hud: HUDManager = %HUD
 @export var tag: DialogueTag
 

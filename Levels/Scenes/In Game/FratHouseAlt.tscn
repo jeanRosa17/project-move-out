@@ -31,9 +31,10 @@
 [ext_resource type="PackedScene" uid="uid://b88hxixgay80f" path="res://Assets/Objects/Bathroom/Scenes/Toilet_Side.tscn" id="26_3vpjm"]
 [ext_resource type="Script" uid="uid://1ugs6cpgg5xy" path="res://Levels/Scenes/Tutorial/trigger_sensor.gd" id="26_d3wmj"]
 [ext_resource type="PackedScene" uid="uid://d3rjdvbwh7auh" path="res://Levels/Scenes/Garadge2.tscn" id="27_f4y48"]
-[ext_resource type="PackedScene" uid="uid://cnursnvxa4adk" path="res://Assets/Objects/Tables/Scenes/long_desk_side_rotate.tscn" id="28_4yphq"]
 [ext_resource type="PackedScene" uid="uid://dq40nni5jbwa2" path="res://Assets/Objects/Tables/Scenes/TV_and_desk_front_rotatable.tscn" id="29_f8fr1"]
+[ext_resource type="Texture2D" uid="uid://bcsdv5xxl13c2" path="res://Assets/Objects/Tables/long_desk_side.png" id="29_nqplf"]
 [ext_resource type="PackedScene" uid="uid://5bnbyjpgb5kx" path="res://Levels/Post-Level Minigame/Post-Level Minigame.tscn" id="30_jdgei"]
+[ext_resource type="PackedScene" uid="uid://bcmy8dq2ef0uc" path="res://Assets/Objects/Tables/Scenes/long_desk_front.tscn" id="30_xts1w"]
 [ext_resource type="Script" uid="uid://bmqryoobj44j2" path="res://Scripts/Dialogue/DialogueTag.gd" id="33_7f3y0"]
 [ext_resource type="AudioStream" uid="uid://dsckxieyb5eah" path="res://Assets/Audio/frat house 2 head.wav" id="34_7f3y0"]
 [ext_resource type="Script" uid="uid://dd0dqcxwjwhbu" path="res://Levels/Scenes/level_music.gd" id="35_x3cvq"]
@@ -78,6 +79,12 @@ script = ExtResource("33_7f3y0")
 dialogueScriptPath = &"res://Narrative/FratHouse.txt"
 dialogueTag = &"flute"
 metadata/_custom_type_script = "uid://bmqryoobj44j2"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cuk8f"]
+size = Vector2(16, 62)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_10di5"]
+size = Vector2(18, 76)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kmvwb"]
 size = Vector2(264.253, 23.5)
@@ -387,11 +394,42 @@ position = Vector2(272, 592.00006)
 rotation = 0.0059399605
 scale = Vector2(0.8402588, 0.8401288)
 
-[node name="long_desk_side2" parent="Y-Sorting" unique_id=1061349882 instance=ExtResource("28_4yphq")]
-position = Vector2(488, 352)
-
 [node name="TV_and_desk_front" parent="Y-Sorting" unique_id=472159025 instance=ExtResource("29_f8fr1")]
 position = Vector2(248, 48)
+
+[node name="long_desk_side" type="RigidBody2D" parent="Y-Sorting" unique_id=1061349882 node_paths=PackedStringArray("rotatedVersion") groups=["Furniture"]]
+position = Vector2(488, 352)
+collision_layer = 2
+collision_mask = 7
+gravity_scale = 0.0
+can_sleep = false
+lock_rotation = true
+script = ExtResource("11_4yphq")
+canPush = true
+canPull = true
+canRotate = true
+rotatedVersion = NodePath("long_desk_front")
+tetroShape = 6
+metadata/_custom_type_script = "uid://c2vh27coguldq"
+
+[node name="Sprite2D" type="Sprite2D" parent="Y-Sorting/long_desk_side" unique_id=1387321397]
+texture = ExtResource("29_nqplf")
+
+[node name="Collision" type="CollisionShape2D" parent="Y-Sorting/long_desk_side" unique_id=2058164676]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_cuk8f")
+
+[node name="AreaDetector" type="Area2D" parent="Y-Sorting/long_desk_side" unique_id=1842440594 groups=["Furniture"]]
+position = Vector2(0, -1)
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Y-Sorting/long_desk_side/AreaDetector" unique_id=2038369607]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_10di5")
+
+[node name="long_desk_front" parent="Y-Sorting/long_desk_side" unique_id=516181273 instance=ExtResource("30_xts1w")]
+visible = false
 
 [node name="HUD" parent="." unique_id=720819547 node_paths=PackedStringArray("player", "tetris") instance=ExtResource("3_jdgei")]
 unique_name_in_owner = true
@@ -403,7 +441,7 @@ tetris = NodePath("../PostLevelMinigame")
 visible = false
 
 [node name="ItemList" parent="HUD/ListHUD" index="0" unique_id=478689423 node_paths=PackedStringArray("needed")]
-needed = [NodePath("../../../Y-Sorting/Fridge"), NodePath(""), NodePath("../../../Y-Sorting/Couch"), NodePath("../../../Y-Sorting/Table"), NodePath(""), NodePath("../../../Y-Sorting/Orange Chair"), NodePath("../../../Y-Sorting/Orange_Chair_Side"), NodePath("../../../Y-Sorting/Table2"), NodePath("../../../Y-Sorting/Orange Chair4"), NodePath("../../../Y-Sorting/Orange_Chair_Side2"), NodePath("../../../Y-Sorting/Orange_Chair_Side3"), NodePath("../../../Y-Sorting/Double Bed"), NodePath("../../../Y-Sorting/Double Bed2"), NodePath("../../../Y-Sorting/Dino Pot"), NodePath("../../../Y-Sorting/Pot"), NodePath("../../../Y-Sorting/Pot2"), NodePath("../../../Y-Sorting/Pot3"), NodePath("../../../Y-Sorting/Redder couch"), NodePath("../../../Y-Sorting/Redder couch 2"), NodePath("../../../Y-Sorting/storage_dresser_back"), NodePath("../../../Y-Sorting/storage_dresser_back2"), NodePath("../../../Y-Sorting/Stool"), NodePath("../../../Y-Sorting/Wood_Chair_Front"), NodePath("../../../Y-Sorting/Trumpet2"), NodePath("../../../Y-Sorting/Trumpet1"), NodePath("../../../Y-Sorting/Flute")]
+needed = [NodePath("../../../Y-Sorting/Fridge"), NodePath("../../../Y-Sorting/long_desk_side"), NodePath("../../../Y-Sorting/Couch"), NodePath("../../../Y-Sorting/Table"), NodePath("../../../Y-Sorting/Couch"), NodePath("../../../Y-Sorting/Orange Chair"), NodePath("../../../Y-Sorting/Orange_Chair_Side"), NodePath("../../../Y-Sorting/Table2"), NodePath("../../../Y-Sorting/Orange Chair4"), NodePath("../../../Y-Sorting/Orange_Chair_Side2"), NodePath("../../../Y-Sorting/Orange_Chair_Side3"), NodePath("../../../Y-Sorting/Double Bed"), NodePath("../../../Y-Sorting/Double Bed2"), NodePath("../../../Y-Sorting/Dino Pot"), NodePath("../../../Y-Sorting/Pot"), NodePath("../../../Y-Sorting/Pot2"), NodePath("../../../Y-Sorting/Pot3"), NodePath("../../../Y-Sorting/Redder couch"), NodePath("../../../Y-Sorting/Redder couch 2"), NodePath("../../../Y-Sorting/storage_dresser_back"), NodePath("../../../Y-Sorting/storage_dresser_back2"), NodePath("../../../Y-Sorting/Stool"), NodePath("../../../Y-Sorting/Wood_Chair_Front"), NodePath("../../../Y-Sorting/Trumpet2"), NodePath("../../../Y-Sorting/Trumpet1"), NodePath("../../../Y-Sorting/Flute")]
 metadata/_edit_use_anchors_ = true
 
 [node name="Level Results" parent="HUD" index="1" unique_id=720231760]
@@ -743,6 +781,8 @@ one_way_collision_margin = 0.0
 [connection signal="body_shape_exited" from="Y-Sorting/Couch/AreaDetector" to="Y-Sorting/Couch" method="_on_area_detector_body_shape_exited"]
 [connection signal="body_shape_entered" from="Y-Sorting/Couch/red_couch_side/AreaDetector" to="Y-Sorting/Couch/red_couch_side" method="_on_area_detector_body_shape_entered"]
 [connection signal="body_shape_exited" from="Y-Sorting/Couch/red_couch_side/AreaDetector" to="Y-Sorting/Couch/red_couch_side" method="_on_area_detector_body_shape_exited"]
+[connection signal="body_shape_entered" from="Y-Sorting/long_desk_side/AreaDetector" to="Y-Sorting/long_desk_side" method="_on_area_detector_body_shape_entered"]
+[connection signal="body_shape_exited" from="Y-Sorting/long_desk_side/AreaDetector" to="Y-Sorting/long_desk_side" method="_on_area_detector_body_shape_exited"]
 [connection signal="body_entered" from="Wind/Wind_hallway_west" to="Wind/Wind_hallway_west" method="_on_body_entered"]
 [connection signal="body_exited" from="Wind/Wind_hallway_west" to="Wind/Wind_hallway_west" method="_on_body_exited"]
 [connection signal="body_entered" from="Wind/Wind_hallway_east" to="Wind/Wind_hallway_east" method="_on_body_entered"]

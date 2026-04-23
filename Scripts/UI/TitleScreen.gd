@@ -27,6 +27,7 @@ func _process(_delta:float) -> void:
 func _on_play_pressed() -> void:
 	var player:AudioStreamPlayer2D = self.find_child("Transition SFX")
 	player.play()
+	Data.levelNum = 0
 	LevelManager.loadScene(Data.Levels[Data.levelNum], LevelManager.Transitions.CIRCLE)
 
 func startTweens() -> void:
