@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://outwnejax5mt" path="res://Assets/Objects/Couches/Scenes/redder_couch_side.tscn" id="12_3bdis"]
 [ext_resource type="PackedScene" uid="uid://ce4x5g5hrvxce" path="res://Assets/Objects/Bathroom/Scenes/Bathtub.tscn" id="13_mkhci"]
 [ext_resource type="PackedScene" uid="uid://bfp82m6exqyhy" path="res://Assets/Objects/Bathroom/Scenes/Sink.tscn" id="14_3f1pg"]
-[ext_resource type="Script" uid="uid://bver5klf3qji7" path="res://Scripts/haunted_doll.gd" id="16_563mr"]
+[ext_resource type="Script" path="res://Scripts/haunted_doll.gd" id="16_563mr"]
 [ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="16_teehw"]
 [ext_resource type="Texture2D" uid="uid://mj83eila38sg" path="res://Assets/Objects/Table Items/haunted_doll.png" id="17_1k0rp"]
 [ext_resource type="Texture2D" uid="uid://dq5pqd6sqwcnf" path="res://Assets/Objects/Bathroom/Toilet-Sheet.png" id="17_d5mvn"]
@@ -621,7 +621,7 @@ visible = false
 visible = false
 
 [node name="ItemList" parent="HUD/ListHUD" index="0" unique_id=478689423 node_paths=PackedStringArray("needed")]
-needed = [NodePath("../../../Y-Sorting/Stool"), NodePath("../../../Y-Sorting/Stool2"), NodePath("../../../Y-Sorting/wooden_wardrobe_front"), NodePath("../../../Y-Sorting/storage_dresser_front"), NodePath("../../../Y-Sorting/bedside_table"), NodePath(""), NodePath("../../../Y-Sorting/Fridge"), NodePath("../../../Y-Sorting/Haunted_doll"), NodePath("../../../Y-Sorting/Twin_Bed"), NodePath("../../../Y-Sorting/redder_couch_side2"), NodePath("../../../Y-Sorting/wooden_table2"), NodePath("../../../Y-Sorting/Wood_Chair_Front"), NodePath("../../../Y-Sorting/Wood_Chair_Front2"), NodePath("../../../Y-Sorting/Chair")]
+needed = [NodePath("../../../Y-Sorting/Stool"), NodePath("../../../Y-Sorting/Stool2"), NodePath("../../../Y-Sorting/wooden_wardrobe_front"), NodePath("../../../Y-Sorting/storage_dresser_front"), NodePath("../../../Y-Sorting/bedside_table"), null, NodePath("../../../Y-Sorting/Fridge"), NodePath("../../../Y-Sorting/Haunted_doll"), NodePath("../../../Y-Sorting/Twin_Bed"), NodePath("../../../Y-Sorting/redder_couch_side2"), NodePath("../../../Y-Sorting/wooden_table2"), NodePath("../../../Y-Sorting/Wood_Chair_Front"), NodePath("../../../Y-Sorting/Wood_Chair_Front2"), NodePath("../../../Y-Sorting/Chair")]
 
 [node name="Level Results" parent="HUD" index="1" unique_id=720231760]
 visible = false
