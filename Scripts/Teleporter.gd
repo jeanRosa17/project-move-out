@@ -16,9 +16,11 @@ func _on_teleported(body: Node2D, tele:bool = false) -> void:
 		body.call_deferred("set_position", self.goTo.position)
 		
 		if (body.manager.hasFurniture):
-			body.manager.furniture.call_deferred("exitPush")
-			body.manager.furniture.call_deferred("exitLift")
-			body.manager.furniture.call_deferred("set_position", self.goTo.position + self.goTo.furniturePos)
+			if (body.manager.furniture.isPushed):
+				body.manager.furniture.call_deferred("exitPush")
+				body.manager.furniture.call_deferred("set_position", self.goTo.position + self.goTo.furniturePos)
+			#body.manager.furniture.call_deferred("exitLift")
+			
 	
 		await get_tree().create_timer(3).timeout
 	

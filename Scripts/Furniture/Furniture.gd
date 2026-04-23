@@ -226,21 +226,19 @@ func _physics_process(_delta: float) -> void:
 		self.ghostSprite.self_modulate = (Color.GREEN if (self.canBeDropped) else Color.RED)
 		#var offset:int = 32
 		var offset:int = 1
-		var pos:Vector2 = self.player.manager.detector.position
+		if (self.player and self.player.manager):
+			var pos:Vector2 = self.player.manager.detector.position
 		
-		self.ghostSprite.z_index = 0 if (self.player.manager.direction == Vector2.UP) else 10
+			self.ghostSprite.z_index = 0 if (self.player.manager.direction == Vector2.UP) else 10
+			#print(self.player.manager.direction)
+			if (self.followTween == null):
+				self.followTween = get_tree().create_tween()
+				self.followTween.tween_property(ghostSprite, "position", pos * offset , 0.2).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+			if (not self.followTween.is_running()):
+				self.followTween.kill()
+				self.followTween = create_tween()
+				self.followTween.tween_property(ghostSprite, "position", pos * offset , 0.2).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
 		
-		
-		
-		#print(self.player.manager.direction)
-		if (self.followTween == null):
-			self.followTween = get_tree().create_tween()
-			self.followTween.tween_property(ghostSprite, "position", pos * offset , 0.2).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
-		if (not self.followTween.is_running()):
-			self.followTween.kill()
-			self.followTween = create_tween()
-			self.followTween.tween_property(ghostSprite, "position", pos * offset , 0.2).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
-	
 	if (self.isPushed and self.player):
 		if (self.player.get_real_velocity().length() < 1): linear_velocity = Vector2.ZERO
 		
