@@ -16,6 +16,7 @@ func _ready() -> void:
 		if not funiture in contents:
 			self.get_parent().add_child.call_deferred(funiture)
 			add.call_deferred(funiture)
+			Data.previousItemList.erase(funiture)
 
 func _process(delta:float) -> void:
 		#if (!setup):
