@@ -18,11 +18,11 @@ func clearVan() -> void:
 		# gets all furniture in van
 		var bodies:Array[Node2D] = self.get_overlapping_bodies()
 		
-		for i in range(bodies.size()):
-			if bodies[i].is_in_group("Furniture"):
-				Data.previousItemList.append(bodies[i].duplicate())
-				hud.addPackedFurniture(bodies[i].getShape())
-				bodies[i].packInBox()
+		for body in bodies:
+			if body.is_in_group("Furniture"):
+				Data.previousItemList.append(body.duplicate())
+				hud.addPackedFurniture(body.getShape())
+				body.packInBox()
 				#bodies[i].queue_free()
 		
 		# hud.runTetris()

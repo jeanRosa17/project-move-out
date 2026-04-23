@@ -7,6 +7,7 @@ class_name HUDManager
 @export var list: CanvasLayer 
 @export var textbox: DialogueManager 
 @onready var ap: AnimationPlayer = $"Level Results/Node2D/AnimationPlayer"
+@onready var item_list:ItemList = $ListHUD/ItemList
 
 @export var packedFurniture: Array[Data.Tetronimo] = []
 @export var player: Player
@@ -16,7 +17,7 @@ var player_camera: Camera2D
 
 var levelFinished: bool = false
 var allFurniture: Array
-var score: int
+var hud_score: int
 
 ## ensures dialogue is invisible at the start of the level
 func _ready() ->void:
@@ -41,13 +42,7 @@ func get_all_furniture(startNode: Node, result: Array) -> void:
 			result.push_back(startNode)
 	for child in startNode.get_children():
 		get_all_furniture(child, result)
-		
-func get_max_score() -> float:
-	# calculates the maximum score available in the level
-	# NOT FULLY IMPLEMENTED
-	get_all_furniture($"../Y-Sorting", allFurniture)
-	return 1
-	
+
 ##runs tetris if the level is not over
 func runTetris() -> void:
 	var current_scene = get_tree().current_scene  
@@ -57,6 +52,14 @@ func runTetris() -> void:
 		return;
 	if (not self.player_camera): self.player_camera = self.player.getCamera()
 	if (not self.tetris_camera): self.tetris_camera = self.tetris.getCamera()
+	
+	#packedFurniture.clear()
+	#var furniture_nodes: Array = []
+	#get_all_furniture($"../Y-Sorting", furniture_nodes)
+#
+	#for f in furniture_nodes:
+		#if f.has_method("get_tetronimo"):
+			#packedFurniture.append(f.get_tetronimo())
 	
 	if (!levelFinished && !packedFurniture.is_empty()):
 		# switch controls
@@ -84,6 +87,7 @@ func stopTetris(score: int) -> void:
 	player_camera.make_current()
 	tetris_camera.enabled = false
 	player.setControls(true)
+	hud_score = score
 
 ## Makes the Dialogue layer visible and calls setDialogueTo on the textbox node
 func setDialogueTo(dTag:DialogueTag) -> void:
@@ -96,18 +100,14 @@ func addPackedFurniture(newFurniture:Data.Tetronimo) -> void:
 	#print("new tetro: " + packedFurniture[-1])
 
 func checkResults() -> void:
-	## Get score from Van script and display here.
-	## enable tetris and have the player play that first
 	
 	self.player.setControls(false)
 
 	var current_scene = get_tree().current_scene
 	if (current_scene.name != "HubScene"):
 		var _text:RichTextLabel = self.level_results.find_child("Score")
-		_text.text = "Your score is: " + str(score)
-
-	var _text:RichTextLabel = self.level_results.find_child("Score")
-	_text.text = "Your score is: " + str(score)
+		var percent:float = (float (hud_score)/item_list.item_count) * 100
+		_text.text = "Completion: " + str(percent).pad_decimals(2)
 
 	self.dialogue.visible = false
 	await get_tree().create_timer(0.3).timeout
