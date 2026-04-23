@@ -37,6 +37,12 @@ size = Vector2(15, 24)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mvocf"]
 size = Vector2(20, 40)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ygsq"]
+size = Vector2(30, 12.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fctm3"]
+size = Vector2(36, 41)
+
 [sub_resource type="Resource" id="Resource_5g5vi"]
 script = ExtResource("3_5g5vi")
 dialogueScriptPath = &"res://Narrative/tutorialUnit.txt"
@@ -137,7 +143,7 @@ collision_mask = 7
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_dc68y")
 
-[node name="storage_dresser_side" type="RigidBody2D" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="3" unique_id=675431871 groups=["Furniture"]]
+[node name="storage_dresser_side" type="RigidBody2D" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="3" unique_id=675431871 node_paths=PackedStringArray("rotatedVersion") groups=["Furniture"]]
 position = Vector2(424, 48)
 collision_layer = 2
 collision_mask = 7
@@ -147,6 +153,8 @@ lock_rotation = true
 script = ExtResource("8_mvocf")
 canPush = true
 canPull = true
+canRotate = true
+rotatedVersion = NodePath("storage_dresser_front")
 tetroShape = 2
 metadata/_custom_type_script = "uid://c2vh27coguldq"
 
@@ -164,6 +172,34 @@ collision_mask = 7
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Y-Sorting/storage_dresser_side/AreaDetector" index="0" unique_id=629244245]
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_mvocf")
+
+[node name="storage_dresser_front" type="RigidBody2D" parent="Y-Sorting/storage_dresser_side" index="3" unique_id=585338204 groups=["Furniture"]]
+visible = false
+collision_layer = 2
+collision_mask = 7
+gravity_scale = 0.0
+can_sleep = false
+lock_rotation = true
+script = ExtResource("8_mvocf")
+canPush = true
+canPull = true
+tetroShape = 2
+metadata/_custom_type_script = "uid://c2vh27coguldq"
+
+[node name="Sprite2D" type="Sprite2D" parent="Y-Sorting/storage_dresser_side/storage_dresser_front" index="0" unique_id=1304619592]
+texture = ExtResource("9_mvocf")
+
+[node name="Collision" type="CollisionShape2D" parent="Y-Sorting/storage_dresser_side/storage_dresser_front" index="1" unique_id=1672058262]
+position = Vector2(0, 14.25)
+shape = SubResource("RectangleShape2D_3ygsq")
+
+[node name="AreaDetector" type="Area2D" parent="Y-Sorting/storage_dresser_side/storage_dresser_front" index="2" unique_id=795511176 groups=["Furniture"]]
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Y-Sorting/storage_dresser_side/storage_dresser_front/AreaDetector" index="0" unique_id=1964977045]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_fctm3")
 
 [node name="Table4" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="4" unique_id=382743384 instance=ExtResource("3_uof60")]
 position = Vector2(256, 48)
@@ -258,6 +294,8 @@ one_way_collision_margin = 0.0
 [connection signal="body_shape_exited" from="Y-Sorting/storage_dresser_front_ROTATE/storage_dresser_side/AreaDetector" to="Y-Sorting/storage_dresser_front_ROTATE/storage_dresser_side" method="_on_area_detector_body_shape_exited"]
 [connection signal="body_shape_entered" from="Y-Sorting/storage_dresser_side/AreaDetector" to="Y-Sorting/storage_dresser_side" method="_on_area_detector_body_shape_entered"]
 [connection signal="body_shape_exited" from="Y-Sorting/storage_dresser_side/AreaDetector" to="Y-Sorting/storage_dresser_side" method="_on_area_detector_body_shape_exited"]
+[connection signal="body_shape_entered" from="Y-Sorting/storage_dresser_side/storage_dresser_front/AreaDetector" to="Y-Sorting/storage_dresser_side/storage_dresser_front" method="_on_area_detector_body_shape_entered"]
+[connection signal="body_shape_exited" from="Y-Sorting/storage_dresser_side/storage_dresser_front/AreaDetector" to="Y-Sorting/storage_dresser_side/storage_dresser_front" method="_on_area_detector_body_shape_exited"]
 [connection signal="body_entered" from="TriggerSensor" to="TriggerSensor" method="_on_body_entered"]
 
 [editable path="Y-Sorting/Door"]

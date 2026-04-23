@@ -16,7 +16,7 @@ size = Vector2(16, 64)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y1103"]
 size = Vector2(20, 80)
 
-[node name="TV_and_desk_front" type="RigidBody2D" unique_id=472159025 groups=["Furniture"]]
+[node name="TV_and_desk_front" type="RigidBody2D" unique_id=472159025 node_paths=PackedStringArray("rotatedVersion") groups=["Furniture"]]
 collision_layer = 2
 collision_mask = 7
 gravity_scale = 0.0
@@ -24,6 +24,8 @@ can_sleep = false
 script = ExtResource("1_crd3h")
 canPush = true
 canPull = true
+canRotate = true
+rotatedVersion = NodePath("TV_and_desk_side")
 tetroShape = 6
 metadata/_custom_type_script = "uid://c2vh27coguldq"
 
@@ -44,6 +46,7 @@ position = Vector2(0.5, 3.5)
 shape = SubResource("RectangleShape2D_g6aub")
 
 [node name="TV_and_desk_side" type="RigidBody2D" parent="." unique_id=1576853896 groups=["Furniture"]]
+visible = false
 collision_layer = 2
 collision_mask = 7
 gravity_scale = 0.0

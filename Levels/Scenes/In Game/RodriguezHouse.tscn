@@ -20,13 +20,13 @@
 [ext_resource type="PackedScene" uid="uid://c638p25j2md1l" path="res://Assets/Objects/Bathroom/Scenes/Toilet.tscn" id="17_hwr0q"]
 [ext_resource type="PackedScene" uid="uid://bfp82m6exqyhy" path="res://Assets/Objects/Bathroom/Scenes/Sink.tscn" id="18_ugw2m"]
 [ext_resource type="Texture2D" uid="uid://b3ejyebdb0ecd" path="res://Assets/Objects/Bathroom/Bathroom Sink-with-Mirror-Sheet.png" id="19_7jdwc"]
-[ext_resource type="PackedScene" uid="uid://b7qk52eapta2s" path="res://Assets/Objects/Dressers & Shelves/Scenes/wooden_wardrobe_front.tscn" id="20_mioh0"]
 [ext_resource type="PackedScene" uid="uid://dq5dgctxnghmb" path="res://Assets/Objects/Beds/Scene/Double_Bed.tscn" id="21_pcy1m"]
 [ext_resource type="PackedScene" uid="uid://ombsd650f300" path="res://Assets/Objects/Tables/Scenes/bedside_table.tscn" id="22_e12p2"]
 [ext_resource type="PackedScene" uid="uid://pr8g204x513g" path="res://Levels/Prefabs/Door.tscn" id="23_8mi2v"]
+[ext_resource type="PackedScene" uid="uid://bjrsq30sr1oxi" path="res://Assets/Objects/Dressers & Shelves/Scenes/wooden_wardrobe_front_rotatable.tscn" id="24_nyy3e"]
 [ext_resource type="AudioStream" uid="uid://dujg6iy7hs4b5" path="res://Assets/Audio/rodriguez house.wav" id="24_wj05s"]
 [ext_resource type="AudioStream" uid="uid://b1gx2u1temfdh" path="res://Assets/Audio/rodriguez restauaraunt.wav" id="25_4q68l"]
-[ext_resource type="Script" path="res://Levels/level_music_sync.gd" id="26_axvio"]
+[ext_resource type="Script" uid="uid://d0ca3o034njdg" path="res://Levels/level_music_sync.gd" id="26_axvio"]
 [ext_resource type="PackedScene" uid="uid://c1m5u3p8uir82" path="res://Levels/Prefabs/Teleporter.tscn" id="27_ql21c"]
 [ext_resource type="Script" uid="uid://1ugs6cpgg5xy" path="res://Levels/Scenes/Tutorial/trigger_sensor.gd" id="28_4qrtp"]
 
@@ -233,6 +233,7 @@ canLift = true
 
 [node name="Table3" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="11" unique_id=2066029479 instance=ExtResource("8_m8hyy")]
 position = Vector2(64, 580)
+canLift = true
 
 [node name="Table2" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="12" unique_id=221116272 instance=ExtResource("8_m8hyy")]
 position = Vector2(360, 552)
@@ -344,10 +345,7 @@ position = Vector2(0, -8)
 texture = ExtResource("19_7jdwc")
 region_rect = Rect2(0, 72, 32, 56)
 
-[node name="wooden_wardrobe_front" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="25" unique_id=2060248601 instance=ExtResource("20_mioh0")]
-position = Vector2(248, 48)
-
-[node name="Bed" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="26" unique_id=2143953877 instance=ExtResource("21_pcy1m")]
+[node name="Bed" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="25" unique_id=2143953877 instance=ExtResource("21_pcy1m")]
 position = Vector2(324, 64)
 dialogueTag = SubResource("Resource_q107y")
 
@@ -355,7 +353,7 @@ dialogueTag = SubResource("Resource_q107y")
 flip_h = true
 region_rect = Rect2(66, 6, 60, 55)
 
-[node name="bedside_table" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="27" unique_id=962155086 instance=ExtResource("22_e12p2")]
+[node name="bedside_table" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="26" unique_id=962155086 instance=ExtResource("22_e12p2")]
 position = Vector2(340, 40)
 
 [node name="Sprite2D" parent="Y-Sorting/bedside_table" index="0" unique_id=204191189]
@@ -365,7 +363,7 @@ region_rect = Rect2(204, 4, 25, 34)
 [node name="Collision" parent="Y-Sorting/bedside_table" index="1" unique_id=495142719]
 position = Vector2(0, -2)
 
-[node name="Door" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="28" unique_id=1545158925 instance=ExtResource("23_8mi2v")]
+[node name="Door" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="27" unique_id=1545158925 instance=ExtResource("23_8mi2v")]
 position = Vector2(88, 200)
 
 [node name="ColorRect" parent="Y-Sorting/Door" index="6" unique_id=1441941952]
@@ -374,7 +372,7 @@ offset_top = -12.0
 offset_right = 28.0
 offset_bottom = 88.0
 
-[node name="Door2" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="29" unique_id=571695690 instance=ExtResource("23_8mi2v")]
+[node name="Door2" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="28" unique_id=571695690 instance=ExtResource("23_8mi2v")]
 position = Vector2(240, 140)
 
 [node name="ColorRect" parent="Y-Sorting/Door2" index="6" unique_id=1441941952]
@@ -383,7 +381,7 @@ offset_top = -128.0
 offset_right = 112.0
 offset_bottom = -32.0
 
-[node name="Door3" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="30" unique_id=1684639836 instance=ExtResource("23_8mi2v")]
+[node name="Door3" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="29" unique_id=1684639836 instance=ExtResource("23_8mi2v")]
 position = Vector2(112, 652)
 doorType = 2
 
@@ -399,6 +397,9 @@ offset_left = -104.0
 offset_top = -224.0
 offset_right = 96.0
 offset_bottom = -32.0
+
+[node name="wooden_wardrobe_front" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="30" unique_id=2060248601 instance=ExtResource("24_nyy3e")]
+position = Vector2(256, 48)
 
 [node name="Level Music" parent="." index="14" unique_id=1340222311]
 stream = SubResource("AudioStreamSynchronized_hsjr8")
@@ -420,7 +421,7 @@ visible = false
 visible = false
 
 [node name="ItemList" parent="HUD/ListHUD" index="0" unique_id=478689423 node_paths=PackedStringArray("needed")]
-needed = [NodePath("../../../Y-Sorting/Stool3"), NodePath("../../../Y-Sorting/Stool4"), NodePath("../../../Y-Sorting/Dino Pot"), NodePath("../../../Y-Sorting/Couch"), NodePath("../../../Y-Sorting/Table"), NodePath("../../../Y-Sorting/Table3"), NodePath("../../../Y-Sorting/Table2"), NodePath("../../../Y-Sorting/Couch2"), NodePath("../../../Y-Sorting/Stool2"), NodePath("../../../Y-Sorting/Stool"), NodePath("../../../Y-Sorting/Chair3"), NodePath("../../../Y-Sorting/Chair4"), NodePath("../../../Y-Sorting/bedside_table"), NodePath("../../../Y-Sorting/Shelf"), NodePath("../../../Y-Sorting/Shelf2"), NodePath("../../../Y-Sorting/Fridge"), NodePath("../../../Y-Sorting/wooden_wardrobe_front"), NodePath("../../../Y-Sorting/Bed")]
+needed = [NodePath("../../../Y-Sorting/Stool3"), NodePath("../../../Y-Sorting/Stool4"), NodePath("../../../Y-Sorting/Dino Pot"), NodePath("../../../Y-Sorting/Couch"), NodePath("../../../Y-Sorting/Table"), NodePath("../../../Y-Sorting/Table3"), NodePath("../../../Y-Sorting/Table2"), NodePath("../../../Y-Sorting/Couch2"), NodePath("../../../Y-Sorting/Stool2"), NodePath("../../../Y-Sorting/Stool"), NodePath("../../../Y-Sorting/Chair3"), NodePath("../../../Y-Sorting/Chair4"), NodePath("../../../Y-Sorting/bedside_table"), NodePath("../../../Y-Sorting/Shelf"), NodePath("../../../Y-Sorting/Shelf2"), NodePath("../../../Y-Sorting/Fridge"), NodePath(""), NodePath("../../../Y-Sorting/Bed")]
 
 [node name="Level Results" parent="HUD" index="1" unique_id=720231760]
 visible = false

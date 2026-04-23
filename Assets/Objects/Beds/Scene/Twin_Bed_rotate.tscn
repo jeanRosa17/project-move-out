@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://dohkqq7hh4s4"]
+
+[ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_wiier"]
+[ext_resource type="Texture2D" uid="uid://d0isplmwp60m5" path="res://Assets/Objects/Beds/Red Beds-Sheet.png" id="2_mnp1a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
+size = Vector2(16, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
+size = Vector2(27.482693, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wiier"]
+size = Vector2(32, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mnp1a"]
+size = Vector2(32, 30)
+
+[node name="Twin_Bed" type="RigidBody2D" unique_id=2100734036 node_paths=PackedStringArray("rotatedVersion") groups=["Furniture"]]
+collision_layer = 2
+collision_mask = 7
+gravity_scale = 0.0
+can_sleep = false
+lock_rotation = true
+script = ExtResource("1_wiier")
+canPush = true
+canPull = true
+canRotate = true
+rotatedVersion = NodePath("Twin_Bed_Side")
+tetroShape = 5
+metadata/_custom_type_script = "uid://c2vh27coguldq"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2129338941]
+texture = ExtResource("2_mnp1a")
+region_enabled = true
+region_rect = Rect2(21.595, 207.2, 21.6, 47.2)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=2082596102]
+shape = SubResource("RectangleShape2D_xnri0")
+
+[node name="AreaDetector" type="Area2D" parent="." unique_id=1765425742 groups=["Furniture"]]
+scale = Vector2(0.8005038, 0.97342944)
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector" unique_id=1362498836]
+position = Vector2(-1.7870143e-06, 0)
+scale = Vector2(1.0000002, 1.0000002)
+shape = SubResource("RectangleShape2D_ardoa")
+
+[node name="Twin_Bed_Side" type="RigidBody2D" parent="." unique_id=777692504 groups=["Furniture"]]
+visible = false
+collision_layer = 2
+collision_mask = 7
+gravity_scale = 0.0
+can_sleep = false
+lock_rotation = true
+script = ExtResource("1_wiier")
+canPush = true
+canPull = true
+tetroShape = 5
+metadata/_custom_type_script = "uid://c2vh27coguldq"
+
+[node name="Sprite2D" type="Sprite2D" parent="Twin_Bed_Side" unique_id=634625746]
+texture = ExtResource("2_mnp1a")
+region_enabled = true
+region_rect = Rect2(76, 146, 40, 45)
+
+[node name="Collision" type="CollisionShape2D" parent="Twin_Bed_Side" unique_id=1772229569]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_wiier")
+
+[node name="AreaDetector" type="Area2D" parent="Twin_Bed_Side" unique_id=479206349 groups=["Furniture"]]
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Twin_Bed_Side/AreaDetector" unique_id=2089923403]
+shape = SubResource("RectangleShape2D_mnp1a")
+
+[connection signal="body_shape_entered" from="AreaDetector" to="." method="_on_area_detector_body_shape_entered"]
+[connection signal="body_shape_exited" from="AreaDetector" to="." method="_on_area_detector_body_shape_exited"]
+[connection signal="body_shape_entered" from="Twin_Bed_Side/AreaDetector" to="Twin_Bed_Side" method="_on_area_detector_body_shape_entered"]
+[connection signal="body_shape_exited" from="Twin_Bed_Side/AreaDetector" to="Twin_Bed_Side" method="_on_area_detector_body_shape_exited"]

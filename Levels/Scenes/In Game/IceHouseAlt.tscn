@@ -2,9 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://bjyjc8mdpa2ey" path="res://Levels/LevelTemplate.tscn" id="1_yejfy"]
 [ext_resource type="PackedScene" uid="uid://dns4vnk3a35fb" path="res://Assets/Objects/Couches/Scenes/red_couch_side.tscn" id="2_13qr0"]
+[ext_resource type="PackedScene" uid="uid://dohkqq7hh4s4" path="res://Assets/Objects/Beds/Scene/Twin_Bed_rotate.tscn" id="3_145m2"]
 [ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="3_nlvel"]
-[ext_resource type="Texture2D" uid="uid://ws0hxis55nlq" path="res://Assets/Objects/Beds/double_bed_1.png" id="4_20nmy"]
-[ext_resource type="PackedScene" uid="uid://cmwh2w2blwcsq" path="res://Assets/Objects/Beds/Scene/Twin_Bed.tscn" id="5_145m2"]
+[ext_resource type="Texture2D" uid="uid://dbwg58xoehpib" path="res://Assets/Objects/Tables/TV_and_desk_side.png" id="4_145m2"]
+[ext_resource type="Texture2D" uid="uid://b4ibf7urtrqja" path="res://Assets/Objects/Tables/TV_and_desk_front.png" id="5_kaitf"]
 [ext_resource type="PackedScene" uid="uid://3y6qm1obo8js" path="res://Assets/Objects/Tables/Scenes/TV_and_desk_side.tscn" id="6_kaitf"]
 [ext_resource type="Texture2D" uid="uid://b7khqnu6qdglp" path="res://Assets/Objects/Kitchen/Deep Freezer-Sheet.png" id="7_13qr0"]
 [ext_resource type="PackedScene" uid="uid://ombsd650f300" path="res://Assets/Objects/Tables/Scenes/bedside_table.tscn" id="7_bv5xn"]
@@ -16,16 +17,23 @@
 [ext_resource type="PackedScene" uid="uid://ds1nqvgtuae71" path="res://Assets/Objects/Tables/Scenes/wooden_table.tscn" id="12_6xeta"]
 [ext_resource type="PackedScene" uid="uid://diwhnfkrarfj4" path="res://Assets/New_Sprites/Scenes/Glass table.tscn" id="13_uad02"]
 [ext_resource type="PackedScene" uid="uid://bof0wxapyclor" path="res://Assets/Objects/Chairs/Scene/Stool.tscn" id="14_nikoe"]
+[ext_resource type="Resource" uid="uid://brwl51b3u5pqg" path="res://Scripts/Dialogue/nullDialogue.tres" id="15_20nmy"]
 [ext_resource type="Script" uid="uid://cyso0emuh7ori" path="res://Levels/Scenes/ice_areas.gd" id="15_vp1u1"]
 [ext_resource type="AudioStream" uid="uid://0q4m8jstuh5j" path="res://Assets/Audio/ice slide noise.wav" id="16_0f5h6"]
 [ext_resource type="Script" uid="uid://1ugs6cpgg5xy" path="res://Levels/Scenes/Tutorial/trigger_sensor.gd" id="17_b5g3n"]
 [ext_resource type="Script" uid="uid://bmqryoobj44j2" path="res://Scripts/Dialogue/DialogueTag.gd" id="18_fbglu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
-size = Vector2(26, 42)
+size = Vector2(16, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
-size = Vector2(36, 52)
+size = Vector2(20, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s8yj2"]
+size = Vector2(64, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t2g4d"]
+size = Vector2(69, 47)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlvel"]
 size = Vector2(64, 24)
@@ -103,79 +111,82 @@ tile_map_data = PackedByteArray("AAAIAAAABAAIAAEAAAAIAAEABAAIAAEAAAAIAAMABAAIAAE
 
 [node name="Wall Collisions" parent="." index="4" unique_id=890800813]
 visible = false
-tile_map_data = PackedByteArray("AAAIABEACQACAAAAAAAJABEACQACAAAAAAAKABEACQACAAAAAAALABEACQACAAAAAAAMABEACQACAAAAAAANABEACQACAAAAAAAOABEACQACAAAAAAAPABEACQACAAAAAAAIABAACQACAAAAAAAJABAACQACAAAAAAAKABAACQACAAAAAAALABAACQACAAAAAAAMABAACQACAAAAAAANABAACQACAAAAAAAOABAACQACAAAAAAAPABAACQACAAAAAAATABAACQACAAAAAAATABEACQACAAAAAAAhAAoACQACAAAAAAAUAAsACQACAAAAAAAVAAsACQACAAAAAAAWAAsACQACAAAAAAAXAAsACQACAAAAAAAYAAsACQACAAAAAAAZAAsACQACAAAAAAAaAAsACQACAAAAAAAbAAsACQACAAAAAAAcAAsACQACAAAAAAAdAAsACQACAAAAAAAeAAsACQACAAAAAAAfAAsACQACAAAAAAAgAAsACQACAAAAAAAhAAsACQACAAAAAAATAAsACQACAAAAAAATAAwACQACAAAAAAATAA0ACQACAAAAAAATAA4ACQACAAAAAAATAA8ACQACAAAAAAAIAAsACQACAAAAAAAIAAwACQACAAAAAAAIAA8ACQACAAAAAAAIAA4ACQACAAAAAAAIAA0ACQACAAAAAAAIAAoACQACAAAAAAAIAAkACQACAAAAAAAIAAgACQACAAAAAAAIAAcACQACAAAAAAAIAAYACQACAAAAAAAIAAUACQACAAAAAAAIAAQACQACAAAAAAAIAAAACQACAAAAAAAIAAEACQACAAAAAAAIAAIACQACAAAAAAAIAAMACQACAAAAAAAhAAEACQACAAAAAAAhAAIACQACAAAAAAAhAAAACQACAAAAAAAhAAMACQACAAAAAAAhAAQACQACAAAAAAAhAAUACQACAAAAAAAhAAYACQACAAAAAAAhAAcACQACAAAAAAAhAAgACQACAAAAAAAhAAkACQACAAAAAAAPAA8ACQACAAAAAAAIABcACQACAAAAAAAJABcACQACAAAAAAAKABcACQACAAAAAAALABcACQACAAAAAAAMABcACQACAAAAAAANABcACQACAAAAAAAOABcACQACAAAAAAAPABcACQACAAAAAAAQABcACQACAAAAAAARABcACQACAAAAAAASABcACQACAAAAAAATABcACQACAAAAAAAUABcACQACAAAAAAAVABcACQACAAAAAAAWABcACQACAAAAAAAXABcACQACAAAAAAAYABcACQACAAAAAAAZABcACQACAAAAAAAaABcACQACAAAAAAAbABcACQACAAAAAAAcABcACQACAAAAAAAdABcACQACAAAAAAAeABcACQACAAAAAAAfABcACQACAAAAAAAgABcACQACAAAAAAAhABcACQACAAAAAAAUABAACQACAAAAAAAUABEACQACAAAAAAAVABAACQACAAAAAAAVABEACQACAAAAAAAWABAACQACAAAAAAAWABEACQACAAAAAAAXABAACQACAAAAAAAXABEACQACAAAAAAAYABAACQACAAAAAAAYABEACQACAAAAAAAZABAACQACAAAAAAAZABEACQACAAAAAAAaABAACQACAAAAAAAaABEACQACAAAAAAAbABAACQACAAAAAAAbABEACQACAAAAAAAcABAACQACAAAAAAAcABEACQACAAAAAAAdABAACQACAAAAAAAdABEACQACAAAAAAAeABAACQACAAAAAAAeABEACQACAAAAAAAfABAACQACAAAAAAAfABEACQACAAAAAAAgABAACQACAAAAAAAgABEACQACAAAAAAAhABAACQACAAAAAAAhABEACQACAAAAAAAYAAoACQACAAAAAAAZAAoACQACAAAAAAAaAAoACQACAAAAAAAbAAoACQACAAAAAAAcAAoACQACAAAAAAAdAAoACQACAAAAAAAeAAoACQACAAAAAAAfAAoACQACAAAAAAAgAAoACQACAAAAAAAYAAkACQACAAAAAAAZAAkACQACAAAAAAAaAAkACQACAAAAAAAbAAkACQACAAAAAAAcAAkACQACAAAAAAAdAAkACQACAAAAAAAeAAkACQACAAAAAAAfAAkACQACAAAAAAAgAAkACQACAAAAAAATAAoACQACAAAAAAAUAAoACQACAAAAAAAVAAoACQACAAAAAAAWAAoACQACAAAAAAAXAAoACQACAAAAAAAJAA8ACQAEAAAAACAKAA8ACQAEAAAAACALAA8ACQAEAAAAACAMAA8ACQAEAAAAACANAA8ACQAEAAAAACAOAA8ACQAEAAAAACAJAPz/CQACAAAAAAAJAP3/CQACAAAAAAAKAPz/CQACAAAAAAAKAP3/CQACAAAAAAALAPz/CQACAAAAAAALAP3/CQACAAAAAAAMAPz/CQACAAAAAAAMAP3/CQACAAAAAAANAPz/CQACAAAAAAANAP3/CQACAAAAAAAOAPz/CQACAAAAAAAOAP3/CQACAAAAAAAJAAIACQAEAAAAACAJAAMACQACAAAAAAAKAAIACQAEAAAAACAKAAMACQACAAAAAAALAAIACQAEAAAAACALAAMACQACAAAAAAAMAAIACQAEAAAAACAMAAMACQACAAAAAAANAAIACQAEAAAAACANAAMACQACAAAAAAAOAAIACQAEAAAAACAOAAMACQACAAAAAAAPAAEACQACAAAAAAAPAAIACQACAAAAAAAPAAMACQACAAAAAAAPAAAACQACAAAAAAAJAAgACQAEAAAAACAJAAkACQACAAAAAAAKAAgACQAEAAAAACAKAAkACQACAAAAAAALAAgACQAEAAAAACALAAkACQACAAAAAAAMAAgACQAEAAAAACAMAAkACQACAAAAAAANAAgACQAEAAAAACANAAkACQACAAAAAAAOAAgACQAEAAAAACAOAAkACQACAAAAAAAPAAcACQACAAAAAAAPAAgACQACAAAAAAAPAAkACQACAAAAAAAJAAQACQACAAAAAAAKAAQACQACAAAAAAALAAQACQACAAAAAAAMAAQACQACAAAAAAANAAQACQACAAAAAAAOAAQACQACAAAAAAAPAAQACQACAAAAAAAJAAoACQACAAAAAAAKAAoACQACAAAAAAALAAoACQACAAAAAAAMAAoACQACAAAAAAANAAoACQACAAAAAAAOAAoACQACAAAAAAAPAAoACQACAAAAAAAPAA0ACQACAAAAAAAPAA4ACQACAAAAAAAbAAUACQAFAAAAACAcAAUACQAFAAAAACAdAAUACQAFAAAAACAeAAUACQAFAAAAACAfAAUACQAFAAAAACAgAAUACQAFAAAAACAbAAYACQAEAAAAAAAcAAYACQAEAAAAAAAdAAYACQAEAAAAAAAeAAYACQAEAAAAAAAfAAYACQAEAAAAAAAgAAYACQAEAAAAAAAIAP//CQACAAAAAAAIAP7/CQACAAAAAAAIAP3/CQACAAAAAAAIAPz/CQACAAAAAAAhAP7/CQACAAAAAAAhAP//CQACAAAAAAAPAPj/CQACAAAAAAAPAPn/CQACAAAAAAAQAPj/CQACAAAAAAAQAPn/CQACAAAAAAARAPj/CQACAAAAAAARAPn/CQACAAAAAAASAPj/CQACAAAAAAASAPn/CQACAAAAAAATAPj/CQACAAAAAAATAPn/CQACAAAAAAAUAPj/CQACAAAAAAAUAPn/CQACAAAAAAAVAPj/CQACAAAAAAAVAPn/CQACAAAAAAAWAPj/CQACAAAAAAAWAPn/CQACAAAAAAAXAPj/CQACAAAAAAAXAPn/CQACAAAAAAAYAPj/CQACAAAAAAAYAPn/CQACAAAAAAAZAPj/CQACAAAAAAAZAPn/CQACAAAAAAAaAPj/CQACAAAAAAAaAPn/CQACAAAAAAAbAPj/CQACAAAAAAAbAPn/CQACAAAAAAAcAPj/CQACAAAAAAAcAPn/CQACAAAAAAAdAPj/CQACAAAAAAAdAPn/CQACAAAAAAAeAPj/CQACAAAAAAAeAPn/CQACAAAAAAAfAPj/CQACAAAAAAAfAPn/CQACAAAAAAAgAPj/CQACAAAAAAAgAPn/CQACAAAAAAAhAPj/CQACAAAAAAAhAPn/CQACAAAAAAAhAPr/CQACAAAAAAAhAPv/CQACAAAAAAAhAPz/CQACAAAAAAAhAP3/CQACAAAAAAAPAPr/CQACAAAAAAAPAPv/CQACAAAAAAAPAPz/CQACAAAAAAAPAP3/CQACAAAAAAA=")
+tile_map_data = PackedByteArray("AAAIABEACQACAAAAAAAJABEACQACAAAAAAAKABEACQACAAAAAAALABEACQACAAAAAAAMABEACQACAAAAAAANABEACQACAAAAAAAOABEACQACAAAAAAAPABEACQACAAAAAAAIABAACQACAAAAAAAJABAACQACAAAAAAAKABAACQACAAAAAAALABAACQACAAAAAAAMABAACQACAAAAAAANABAACQACAAAAAAAOABAACQACAAAAAAAPABAACQACAAAAAAATABAACQACAAAAAAATABEACQACAAAAAAAhAAoACQACAAAAAAAUAAsACQACAAAAAAAVAAsACQACAAAAAAAWAAsACQACAAAAAAAXAAsACQACAAAAAAAYAAsACQACAAAAAAAZAAsACQACAAAAAAAaAAsACQACAAAAAAAbAAsACQACAAAAAAAcAAsACQACAAAAAAAdAAsACQACAAAAAAAeAAsACQACAAAAAAAfAAsACQACAAAAAAAgAAsACQACAAAAAAAhAAsACQACAAAAAAATAAsACQACAAAAAAATAAwACQACAAAAAAATAA0ACQACAAAAAAATAA4ACQACAAAAAAATAA8ACQACAAAAAAAIAAsACQACAAAAAAAIAAwACQACAAAAAAAIAA8ACQACAAAAAAAIAA4ACQACAAAAAAAIAA0ACQACAAAAAAAIAAoACQACAAAAAAAIAAkACQACAAAAAAAIAAgACQACAAAAAAAIAAcACQACAAAAAAAIAAYACQACAAAAAAAIAAUACQACAAAAAAAIAAQACQACAAAAAAAIAAAACQACAAAAAAAIAAEACQACAAAAAAAIAAIACQACAAAAAAAIAAMACQACAAAAAAAhAAEACQACAAAAAAAhAAIACQACAAAAAAAhAAAACQACAAAAAAAhAAMACQACAAAAAAAhAAQACQACAAAAAAAhAAUACQACAAAAAAAhAAYACQACAAAAAAAhAAcACQACAAAAAAAhAAgACQACAAAAAAAhAAkACQACAAAAAAAPAA8ACQACAAAAAAAIABcACQACAAAAAAAJABcACQACAAAAAAAKABcACQACAAAAAAALABcACQACAAAAAAAMABcACQACAAAAAAANABcACQACAAAAAAAOABcACQACAAAAAAAPABcACQACAAAAAAAQABcACQACAAAAAAARABcACQACAAAAAAASABcACQACAAAAAAATABcACQACAAAAAAAUABcACQACAAAAAAAVABcACQACAAAAAAAWABcACQACAAAAAAAXABcACQACAAAAAAAYABcACQACAAAAAAAZABcACQACAAAAAAAaABcACQACAAAAAAAbABcACQACAAAAAAAcABcACQACAAAAAAAdABcACQACAAAAAAAeABcACQACAAAAAAAfABcACQACAAAAAAAgABcACQACAAAAAAAhABcACQACAAAAAAAUABAACQACAAAAAAAUABEACQACAAAAAAAVABAACQACAAAAAAAVABEACQACAAAAAAAWABAACQACAAAAAAAWABEACQACAAAAAAAXABAACQACAAAAAAAXABEACQACAAAAAAAYABAACQACAAAAAAAYABEACQACAAAAAAAZABAACQACAAAAAAAZABEACQACAAAAAAAaABAACQACAAAAAAAaABEACQACAAAAAAAbABAACQACAAAAAAAbABEACQACAAAAAAAcABAACQACAAAAAAAcABEACQACAAAAAAAdABAACQACAAAAAAAdABEACQACAAAAAAAeABAACQACAAAAAAAeABEACQACAAAAAAAfABAACQACAAAAAAAfABEACQACAAAAAAAgABAACQACAAAAAAAgABEACQACAAAAAAAhABAACQACAAAAAAAhABEACQACAAAAAAAYAAoACQACAAAAAAAZAAoACQACAAAAAAAaAAoACQACAAAAAAAbAAoACQACAAAAAAAcAAoACQACAAAAAAAdAAoACQACAAAAAAAeAAoACQACAAAAAAAfAAoACQACAAAAAAAgAAoACQACAAAAAAAYAAkACQACAAAAAAAZAAkACQACAAAAAAAaAAkACQACAAAAAAAbAAkACQACAAAAAAAcAAkACQACAAAAAAAdAAkACQACAAAAAAAeAAkACQACAAAAAAAfAAkACQACAAAAAAAgAAkACQACAAAAAAATAAoACQACAAAAAAAUAAoACQACAAAAAAAVAAoACQACAAAAAAAWAAoACQACAAAAAAAXAAoACQACAAAAAAAJAA8ACQAEAAAAACAKAA8ACQAEAAAAACALAA8ACQAEAAAAACAMAA8ACQAEAAAAACANAA8ACQAEAAAAACAOAA8ACQAEAAAAACAJAPz/CQACAAAAAAAJAP3/CQACAAAAAAAKAPz/CQACAAAAAAAKAP3/CQACAAAAAAALAPz/CQACAAAAAAALAP3/CQACAAAAAAAMAPz/CQACAAAAAAAMAP3/CQACAAAAAAANAPz/CQACAAAAAAANAP3/CQACAAAAAAAOAPz/CQACAAAAAAAOAP3/CQACAAAAAAAJAAIACQAEAAAAACAJAAMACQACAAAAAAAKAAIACQAEAAAAACAKAAMACQACAAAAAAALAAIACQAEAAAAACALAAMACQACAAAAAAAMAAIACQAEAAAAACAMAAMACQACAAAAAAANAAIACQAEAAAAACANAAMACQACAAAAAAAOAAIACQAEAAAAACAOAAMACQACAAAAAAAPAAEACQACAAAAAAAPAAIACQACAAAAAAAPAAMACQACAAAAAAAPAAAACQACAAAAAAAJAAgACQAEAAAAACAJAAkACQACAAAAAAAKAAgACQAEAAAAACAKAAkACQACAAAAAAALAAgACQAEAAAAACALAAkACQACAAAAAAAMAAgACQAEAAAAACAMAAkACQACAAAAAAANAAgACQAEAAAAACANAAkACQACAAAAAAAOAAgACQAEAAAAACAOAAkACQACAAAAAAAPAAcACQACAAAAAAAPAAgACQACAAAAAAAPAAkACQACAAAAAAAJAAQACQACAAAAAAAKAAQACQACAAAAAAALAAQACQACAAAAAAAMAAQACQACAAAAAAANAAQACQACAAAAAAAOAAQACQACAAAAAAAPAAQACQACAAAAAAAJAAoACQACAAAAAAAKAAoACQACAAAAAAALAAoACQACAAAAAAAMAAoACQACAAAAAAANAAoACQACAAAAAAAOAAoACQACAAAAAAAPAAoACQACAAAAAAAPAA0ACQACAAAAAAAPAA4ACQACAAAAAAAbAAUACQAFAAAAACAcAAUACQAFAAAAACAdAAUACQAFAAAAACAeAAUACQAFAAAAACAfAAUACQAFAAAAACAgAAUACQAFAAAAACAbAAYACQAEAAAAAAAcAAYACQAEAAAAAAAdAAYACQAEAAAAAAAeAAYACQAEAAAAAAAfAAYACQAEAAAAAAAgAAYACQAEAAAAAAAIAP//CQACAAAAAAAIAP7/CQACAAAAAAAIAP3/CQACAAAAAAAIAPz/CQACAAAAAAAhAP7/CQACAAAAAAAhAP//CQACAAAAAAAPAPj/CQACAAAAAAAPAPn/CQACAAAAAAAQAPj/CQACAAAAAAAQAPn/CQACAAAAAAARAPj/CQACAAAAAAARAPn/CQACAAAAAAASAPj/CQACAAAAAAASAPn/CQACAAAAAAATAPj/CQACAAAAAAATAPn/CQACAAAAAAAUAPj/CQACAAAAAAAUAPn/CQACAAAAAAAVAPj/CQACAAAAAAAVAPn/CQACAAAAAAAWAPj/CQACAAAAAAAWAPn/CQACAAAAAAAXAPj/CQACAAAAAAAXAPn/CQACAAAAAAAYAPj/CQACAAAAAAAYAPn/CQACAAAAAAAZAPj/CQACAAAAAAAZAPn/CQACAAAAAAAaAPj/CQACAAAAAAAaAPn/CQACAAAAAAAbAPj/CQACAAAAAAAbAPn/CQACAAAAAAAcAPj/CQACAAAAAAAcAPn/CQACAAAAAAAdAPj/CQACAAAAAAAdAPn/CQACAAAAAAAeAPj/CQACAAAAAAAeAPn/CQACAAAAAAAfAPj/CQACAAAAAAAfAPn/CQACAAAAAAAgAPj/CQACAAAAAAAgAPn/CQACAAAAAAAhAPj/CQACAAAAAAAhAPn/CQACAAAAAAAhAPr/CQACAAAAAAAhAPv/CQACAAAAAAAhAPz/CQACAAAAAAAhAP3/CQACAAAAAAAPAPr/CQACAAAAAAAPAPv/CQACAAAAAAAPAPz/CQACAAAAAAAPAP3/CQACAAAAAAAUAPr/CQACAAAAAAAVAPr/CQACAAAAAAAWAPr/CQACAAAAAAAXAPr/CQACAAAAAAAYAPr/CQACAAAAAAAZAPr/CQACAAAAAAAaAPr/CQACAAAAAAAbAPr/CQACAAAAAAAcAPr/CQACAAAAAAAdAPr/CQACAAAAAAAeAPr/CQACAAAAAAAfAPr/CQACAAAAAAAgAPr/CQACAAAAAAAgAPv/CQACAAAAAAAfAPv/CQACAAAAAAAeAPv/CQACAAAAAAAdAPv/CQACAAAAAAAcAPv/CQACAAAAAAAbAPv/CQACAAAAAAAaAPv/CQACAAAAAAAZAPv/CQACAAAAAAAYAPv/CQACAAAAAAAXAPv/CQACAAAAAAAWAPv/CQACAAAAAAAVAPv/CQACAAAAAAAUAPv/CQACAAAAAAAUAPz/CQACAAAAAAAVAPz/CQACAAAAAAAWAPz/CQACAAAAAAAXAPz/CQACAAAAAAAYAPz/CQACAAAAAAAZAPz/CQACAAAAAAAaAPz/CQACAAAAAAAbAPz/CQACAAAAAAAcAPz/CQACAAAAAAAdAPz/CQACAAAAAAAeAPz/CQACAAAAAAAfAPz/CQACAAAAAAAgAPz/CQACAAAAAAAQAPv/CQACAAAAAAARAPv/CQACAAAAAAASAPv/CQACAAAAAAATAPv/CQACAAAAAAATAPr/CQACAAAAAAASAPr/CQACAAAAAAARAPr/CQACAAAAAAAQAPr/CQACAAAAAAAQAPz/CQACAAAAAAARAPz/CQACAAAAAAASAPz/CQACAAAAAAATAPz/CQACAAAAAAA=")
 
 [node name="Player" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="0" unique_id=1761221807]
 position = Vector2(272, 328)
 
-[node name="Storage Van" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="1" unique_id=726660232]
+[node name="Twin_Bed" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="1" unique_id=2100734036 instance=ExtResource("3_145m2")]
+position = Vector2(160, -16)
+
+[node name="Twin_Bed2" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="2" unique_id=764203831 instance=ExtResource("3_145m2")]
+position = Vector2(160, 96)
+
+[node name="Storage Van" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="3" unique_id=726660232]
 position = Vector2(224, 328)
 
-[node name="red_couch_side" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="2" unique_id=902029875 instance=ExtResource("2_13qr0")]
-position = Vector2(424, 8)
-
-[node name="Double Bed" type="RigidBody2D" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="3" unique_id=2123895444 node_paths=PackedStringArray("rotatedVersion") groups=["Furniture"]]
-position = Vector2(160, 0)
-collision_layer = 2
-collision_mask = 7
-gravity_scale = 0.0
-can_sleep = false
-lock_rotation = true
-script = ExtResource("3_nlvel")
-canPush = true
-canPull = true
-rotatedVersion = NodePath("Twin_Bed")
-tetroShape = 6
-metadata/_custom_type_script = "uid://c2vh27coguldq"
-
-[node name="Sprite2D" type="Sprite2D" parent="Y-Sorting/Double Bed" index="0" unique_id=121146298]
-texture = ExtResource("4_20nmy")
-
-[node name="Collision" type="CollisionShape2D" parent="Y-Sorting/Double Bed" index="1" unique_id=1755016032]
-position = Vector2(0, 3)
-shape = SubResource("RectangleShape2D_xnri0")
-
-[node name="AreaDetector" type="Area2D" parent="Y-Sorting/Double Bed" index="2" unique_id=159031122 groups=["Furniture"]]
-collision_layer = 2
-collision_mask = 7
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Y-Sorting/Double Bed/AreaDetector" index="0" unique_id=1262477190]
-shape = SubResource("RectangleShape2D_ardoa")
-
-[node name="Twin_Bed" parent="Y-Sorting/Double Bed" index="3" unique_id=932381668 instance=ExtResource("5_145m2")]
-
-[node name="Double Bed2" type="RigidBody2D" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="4" unique_id=2038254872 node_paths=PackedStringArray("rotatedVersion") groups=["Furniture"]]
-position = Vector2(160, 96)
-collision_layer = 2
-collision_mask = 7
-gravity_scale = 0.0
-can_sleep = false
-lock_rotation = true
-script = ExtResource("3_nlvel")
-canPush = true
-canPull = true
-rotatedVersion = NodePath("Twin_Bed")
-tetroShape = 6
-metadata/_custom_type_script = "uid://c2vh27coguldq"
-
-[node name="Sprite2D" type="Sprite2D" parent="Y-Sorting/Double Bed2" index="0" unique_id=1005721411]
-texture = ExtResource("4_20nmy")
-
-[node name="Collision" type="CollisionShape2D" parent="Y-Sorting/Double Bed2" index="1" unique_id=45751446]
-position = Vector2(0, 3)
-shape = SubResource("RectangleShape2D_xnri0")
-
-[node name="AreaDetector" type="Area2D" parent="Y-Sorting/Double Bed2" index="2" unique_id=322086110 groups=["Furniture"]]
-collision_layer = 2
-collision_mask = 7
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Y-Sorting/Double Bed2/AreaDetector" index="0" unique_id=388602854]
-shape = SubResource("RectangleShape2D_ardoa")
-
-[node name="Twin_Bed" parent="Y-Sorting/Double Bed2" index="3" unique_id=218243820 instance=ExtResource("5_145m2")]
-
-[node name="TV_and_desk_side" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="5" unique_id=1576853896 instance=ExtResource("6_kaitf")]
+[node name="TV_and_desk_side" type="RigidBody2D" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="4" unique_id=1576853896 node_paths=PackedStringArray("rotatedVersion") groups=["Furniture"]]
 position = Vector2(512, 0)
+collision_layer = 2
+collision_mask = 7
+gravity_scale = 0.0
+can_sleep = false
+lock_rotation = true
+script = ExtResource("3_nlvel")
+canPush = true
+canPull = true
+canRotate = true
+rotatedVersion = NodePath("TV_and_desk_front")
+tetroShape = 6
+metadata/_custom_type_script = "uid://c2vh27coguldq"
+
+[node name="Sprite2D" type="Sprite2D" parent="Y-Sorting/TV_and_desk_side" index="0" unique_id=2128468314]
+texture = ExtResource("4_145m2")
+
+[node name="Collision" type="CollisionShape2D" parent="Y-Sorting/TV_and_desk_side" index="1" unique_id=1211745920]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_xnri0")
+
+[node name="AreaDetector" type="Area2D" parent="Y-Sorting/TV_and_desk_side" index="2" unique_id=1077459425 groups=["Furniture"]]
+position = Vector2(0, -1)
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Y-Sorting/TV_and_desk_side/AreaDetector" index="0" unique_id=906462788]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_ardoa")
+
+[node name="TV_and_desk_front" type="RigidBody2D" parent="Y-Sorting/TV_and_desk_side" index="3" unique_id=472159025 groups=["Furniture"]]
+visible = false
+collision_layer = 2
+collision_mask = 7
+gravity_scale = 0.0
+can_sleep = false
+lock_rotation = true
+script = ExtResource("3_nlvel")
+canPush = true
+canPull = true
+tetroShape = 6
+metadata/_custom_type_script = "uid://c2vh27coguldq"
+
+[node name="Sprite2D" type="Sprite2D" parent="Y-Sorting/TV_and_desk_side/TV_and_desk_front" index="0" unique_id=1858359844]
+texture = ExtResource("5_kaitf")
+
+[node name="Collision" type="CollisionShape2D" parent="Y-Sorting/TV_and_desk_side/TV_and_desk_front" index="1" unique_id=445537357]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_s8yj2")
+
+[node name="AreaDetector" type="Area2D" parent="Y-Sorting/TV_and_desk_side/TV_and_desk_front" index="2" unique_id=22840679 groups=["Furniture"]]
+position = Vector2(0, -1)
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Y-Sorting/TV_and_desk_side/TV_and_desk_front/AreaDetector" index="0" unique_id=1093782882]
+position = Vector2(0.5, 3.5)
+shape = SubResource("RectangleShape2D_t2g4d")
+
+[node name="red_couch_side" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="5" unique_id=902029875 instance=ExtResource("2_13qr0")]
+position = Vector2(424, 8)
 
 [node name="Deep Freezer" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="6" unique_id=57159275 instance=ExtResource("6_kaitf")]
 position = Vector2(288, -88)
@@ -272,7 +283,7 @@ dialogueTag = SubResource("Resource_yejfy")
 
 [node name="Shelf" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="10" unique_id=1973851103 instance=ExtResource("11_0yxri")]
 position = Vector2(344, -40)
-dialogueTag = SubResource("Resource_13qr0")
+dialogueTag = ExtResource("15_20nmy")
 
 [node name="Shelf3" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="11" unique_id=1262493493 instance=ExtResource("11_0yxri")]
 position = Vector2(384, -40)
@@ -283,7 +294,7 @@ position = Vector2(160, 224)
 
 [node name="Shelf2" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="13" unique_id=2066179714 instance=ExtResource("11_0yxri")]
 position = Vector2(344, 32)
-dialogueTag = SubResource("Resource_13qr0")
+dialogueTag = ExtResource("15_20nmy")
 
 [node name="bedside_table" parent="Y-Sorting" parent_id_path=PackedInt32Array(8786395) index="14" unique_id=79029164 instance=ExtResource("7_bv5xn")]
 position = Vector2(200, 80)
@@ -327,7 +338,7 @@ visible = false
 visible = false
 
 [node name="ItemList" parent="HUD/ListHUD" index="0" unique_id=478689423 node_paths=PackedStringArray("needed")]
-needed = [NodePath("../../../Y-Sorting/red_couch_side"), NodePath("../../../Y-Sorting/Double Bed"), NodePath("../../../Y-Sorting/Double Bed2"), NodePath("../../../Y-Sorting/TV_and_desk_side"), NodePath("../../../Y-Sorting/bedside_table2"), NodePath("../../../Y-Sorting/redder_couch_front"), NodePath("../../../Y-Sorting/Table"), NodePath("../../../Y-Sorting/Shelf"), NodePath("../../../Y-Sorting/Shelf3"), NodePath("../../../Y-Sorting/Shelf4"), NodePath("../../../Y-Sorting/Shelf2"), NodePath("../../../Y-Sorting/bedside_table"), NodePath("../../../Y-Sorting/wooden_table"), NodePath("../../../Y-Sorting/Glass Table"), NodePath("../../../Y-Sorting/Stool"), NodePath("../../../Y-Sorting/Stool2"), NodePath("../../../Y-Sorting/Glass Table2")]
+needed = [NodePath("../../../Y-Sorting/red_couch_side"), NodePath(""), NodePath(""), NodePath(""), NodePath("../../../Y-Sorting/bedside_table2"), NodePath("../../../Y-Sorting/redder_couch_front"), NodePath("../../../Y-Sorting/Table"), NodePath("../../../Y-Sorting/Shelf"), NodePath("../../../Y-Sorting/Shelf3"), NodePath("../../../Y-Sorting/Shelf4"), NodePath("../../../Y-Sorting/Shelf2"), NodePath("../../../Y-Sorting/bedside_table"), NodePath("../../../Y-Sorting/wooden_table"), NodePath("../../../Y-Sorting/Glass Table"), NodePath("../../../Y-Sorting/Stool"), NodePath("../../../Y-Sorting/Stool2"), NodePath("../../../Y-Sorting/Glass Table2")]
 
 [node name="Level Results" parent="HUD" index="1" unique_id=720231760]
 visible = false
@@ -363,10 +374,10 @@ tag = SubResource("Resource_eovdj")
 shape = SubResource("RectangleShape2D_f7kl6")
 one_way_collision_margin = 0.0
 
-[connection signal="body_shape_entered" from="Y-Sorting/Double Bed/AreaDetector" to="Y-Sorting/Double Bed" method="_on_area_detector_body_shape_entered"]
-[connection signal="body_shape_exited" from="Y-Sorting/Double Bed/AreaDetector" to="Y-Sorting/Double Bed" method="_on_area_detector_body_shape_exited"]
-[connection signal="body_shape_entered" from="Y-Sorting/Double Bed2/AreaDetector" to="Y-Sorting/Double Bed2" method="_on_area_detector_body_shape_entered"]
-[connection signal="body_shape_exited" from="Y-Sorting/Double Bed2/AreaDetector" to="Y-Sorting/Double Bed2" method="_on_area_detector_body_shape_exited"]
+[connection signal="body_shape_entered" from="Y-Sorting/TV_and_desk_side/AreaDetector" to="Y-Sorting/TV_and_desk_side" method="_on_area_detector_body_shape_entered"]
+[connection signal="body_shape_exited" from="Y-Sorting/TV_and_desk_side/AreaDetector" to="Y-Sorting/TV_and_desk_side" method="_on_area_detector_body_shape_exited"]
+[connection signal="body_shape_entered" from="Y-Sorting/TV_and_desk_side/TV_and_desk_front/AreaDetector" to="Y-Sorting/TV_and_desk_side/TV_and_desk_front" method="_on_area_detector_body_shape_entered"]
+[connection signal="body_shape_exited" from="Y-Sorting/TV_and_desk_side/TV_and_desk_front/AreaDetector" to="Y-Sorting/TV_and_desk_side/TV_and_desk_front" method="_on_area_detector_body_shape_exited"]
 [connection signal="body_shape_entered" from="Y-Sorting/redder_couch_front/AreaDetector" to="Y-Sorting/redder_couch_front" method="_on_area_detector_body_shape_entered"]
 [connection signal="body_shape_exited" from="Y-Sorting/redder_couch_front/AreaDetector" to="Y-Sorting/redder_couch_front" method="_on_area_detector_body_shape_exited"]
 [connection signal="body_shape_entered" from="Y-Sorting/redder_couch_front/redder_couch_side/AreaDetector" to="Y-Sorting/redder_couch_front/redder_couch_side" method="_on_area_detector_body_shape_entered"]

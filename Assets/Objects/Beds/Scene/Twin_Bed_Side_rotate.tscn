@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://llnolmcpltmh"]
+
+[ext_resource type="Script" uid="uid://c2vh27coguldq" path="res://Scripts/Furniture/Furniture.gd" id="1_sxpnd"]
+[ext_resource type="Texture2D" uid="uid://d0isplmwp60m5" path="res://Assets/Objects/Beds/Red Beds-Sheet.png" id="2_vwpgh"]
+[ext_resource type="PackedScene" uid="uid://cmwh2w2blwcsq" path="res://Assets/Objects/Beds/Scene/Twin_Bed.tscn" id="3_vwpgh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
+size = Vector2(32, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ardoa"]
+size = Vector2(32, 30)
+
+[node name="Twin_Bed_Side" type="RigidBody2D" unique_id=777692504 node_paths=PackedStringArray("rotatedVersion") groups=["Furniture"]]
+collision_layer = 2
+collision_mask = 7
+gravity_scale = 0.0
+can_sleep = false
+lock_rotation = true
+script = ExtResource("1_sxpnd")
+canPush = true
+canPull = true
+canRotate = true
+rotatedVersion = NodePath("Twin_Bed")
+tetroShape = 5
+metadata/_custom_type_script = "uid://c2vh27coguldq"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=634625746]
+texture = ExtResource("2_vwpgh")
+region_enabled = true
+region_rect = Rect2(76, 146, 40, 45)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1772229569]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_xnri0")
+
+[node name="AreaDetector" type="Area2D" parent="." unique_id=479206349 groups=["Furniture"]]
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector" unique_id=2089923403]
+shape = SubResource("RectangleShape2D_ardoa")
+
+[node name="Twin_Bed" parent="." unique_id=2100734036 instance=ExtResource("3_vwpgh")]
+visible = false
+
+[connection signal="body_shape_entered" from="AreaDetector" to="." method="_on_area_detector_body_shape_entered"]
+[connection signal="body_shape_exited" from="AreaDetector" to="." method="_on_area_detector_body_shape_exited"]
