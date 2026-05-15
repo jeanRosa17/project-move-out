@@ -11,7 +11,10 @@ func _ready() -> void:
 	playerInArea = false;
 
 func _process(_delta:float)  -> void:
-	pass
+	if (playerInArea && Input.is_action_just_pressed("Interact")):
+		await(get_tree().create_timer(0.5).timeout)
+		hud.runTetris()
+	
 
 func clearVan() -> void:
 	if (!hud.levelFinished):
