@@ -10,12 +10,15 @@ extends CanvasLayer
 
 var transition_audio:AudioStreamPlayer2D
 
+var canPress:bool = true
 
 func _on_next_level_pressed() -> void:
-	transition_audio = find_child("Level Transition Audio")
-	Data.levelNum += 1
-	LevelManager.loadScene(Data.Levels[Data.levelNum])
-	transition_audio.play()
+	if (!LevelManager.loadInProgress):
+		transition_audio = find_child("Level Transition Audio")
+		Data.levelNum += 1
+		LevelManager.loadScene(Data.Levels[Data.levelNum])
+		print(Data.levelNum)
+		transition_audio.play()
 
 func _on_replay_level_pressed() -> void:
 	var current_scene := get_tree().current_scene

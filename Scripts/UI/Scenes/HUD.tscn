@@ -9,110 +9,26 @@
 [ext_resource type="PackedScene" uid="uid://dochgtqsf34" path="res://Assets/Audio/button_sound_down_up.tscn" id="6_s3vaa"]
 [ext_resource type="AudioStream" uid="uid://b0cvmwsqex4x2" path="res://Assets/Audio/level transition sfx.wav" id="8_1q8va"]
 
-[sub_resource type="Animation" id="Animation_s414o"]
-resource_name = "Complete"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Node2D/Level:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.72),
-"transitions": PackedFloat32Array(0.05831501, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Node2D/Complete:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.53333336, 1),
-"transitions": PackedFloat32Array(0.12940809, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../Node2D:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.033333335),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="Animation" id="Animation_nu68y"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Node2D/Level:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Node2D/Complete:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../Node2D:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_s3vaa"]
-_data = {
-&"Complete": SubResource("Animation_s414o"),
-&"RESET": SubResource("Animation_nu68y")
-}
-
-[node name="HUD" type="CanvasLayer" unique_id=1725586568 node_paths=PackedStringArray("level_results", "dialogue", "list", "textbox")]
+[node name="HUD" type="CanvasLayer" unique_id=42643786 node_paths=PackedStringArray("level_results", "dialogue", "list", "textbox")]
 script = ExtResource("1_t2p4a")
 level_results = NodePath("Level Results")
 dialogue = NodePath("Dialogue")
 list = NodePath("ListHUD")
 textbox = NodePath("Dialogue/Textbox")
 
-[node name="ListHUD" type="CanvasLayer" parent="." unique_id=1378780322]
+[node name="ListHUD" type="CanvasLayer" parent="." unique_id=1888669433]
 
-[node name="ItemList" type="ItemList" parent="ListHUD" unique_id=478689423 node_paths=PackedStringArray("needed")]
+[node name="ItemList" type="ItemList" parent="ListHUD" unique_id=1184501359 node_paths=PackedStringArray("needed")]
 offset_right = 320.0
 offset_bottom = 190.0
 auto_width = true
 script = ExtResource("2_nu68y")
 needed = [null, null, null, null, null, null, null, null]
 
-[node name="Level Results" type="CanvasLayer" parent="." unique_id=720231760]
+[node name="Level Results" type="CanvasLayer" parent="." unique_id=1269238119]
 script = ExtResource("1_4n7mi")
 
-[node name="ColorRect" type="ColorRect" parent="Level Results" unique_id=1276998284]
+[node name="ColorRect" type="ColorRect" parent="Level Results" unique_id=530006667]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -120,30 +36,29 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.34117648)
 
-[node name="Level Transition Audio" type="AudioStreamPlayer2D" parent="Level Results" unique_id=1404975707]
+[node name="Level Transition Audio" type="AudioStreamPlayer2D" parent="Level Results" unique_id=1687668808]
 stream = ExtResource("8_1q8va")
 
-[node name="Node2D" type="Node2D" parent="Level Results" unique_id=1374108181]
+[node name="Node2D" type="Node2D" parent="Level Results" unique_id=2083818818]
 position = Vector2(150, 56)
 scale = Vector2(0.75, 0.75)
 
-[node name="Level" type="Sprite2D" parent="Level Results/Node2D" unique_id=1814714830]
+[node name="Level" type="Sprite2D" parent="Level Results/Node2D" unique_id=276503211]
 position = Vector2(-11, -43)
 texture = ExtResource("3_nu68y")
 region_enabled = true
 region_rect = Rect2(52, 10, 108, 54)
 
-[node name="Complete" type="Sprite2D" parent="Level Results/Node2D" unique_id=1458894290]
+[node name="Complete" type="Sprite2D" parent="Level Results/Node2D" unique_id=803362210]
 texture = ExtResource("3_nu68y")
 region_enabled = true
 region_rect = Rect2(239, 44, 226, 69)
 region_filter_clip_enabled = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Level Results/Node2D" unique_id=911706019]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Level Results/Node2D" unique_id=277303129]
 root_node = NodePath("../../Container")
-libraries/ = SubResource("AnimationLibrary_s3vaa")
 
-[node name="Container" type="CenterContainer" parent="Level Results" unique_id=482829432]
+[node name="Container" type="CenterContainer" parent="Level Results" unique_id=1606287208]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -157,11 +72,11 @@ grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("3_s414o")
 
-[node name="BoxContainer" type="BoxContainer" parent="Level Results/Container" unique_id=1835812336]
+[node name="BoxContainer" type="BoxContainer" parent="Level Results/Container" unique_id=1885353033]
 layout_mode = 2
 vertical = true
 
-[node name="Stars Text" type="RichTextLabel" parent="Level Results/Container/BoxContainer" unique_id=1060215766]
+[node name="Stars Text" type="RichTextLabel" parent="Level Results/Container/BoxContainer" unique_id=2039066231]
 custom_minimum_size = Vector2(100, 15)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 14
@@ -170,11 +85,11 @@ text = "You earned..."
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Star Box" type="Panel" parent="Level Results/Container/BoxContainer" unique_id=124764439]
+[node name="Star Box" type="Panel" parent="Level Results/Container/BoxContainer" unique_id=1664374950]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 
-[node name="Score" type="RichTextLabel" parent="Level Results/Container/BoxContainer" unique_id=750066112]
+[node name="Score" type="RichTextLabel" parent="Level Results/Container/BoxContainer" unique_id=678801028]
 custom_minimum_size = Vector2(100, 10)
 layout_mode = 2
 size_flags_vertical = 4
@@ -184,43 +99,43 @@ text = "Your score is:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Panel" type="HFlowContainer" parent="Level Results/Container/BoxContainer" unique_id=1877994026]
+[node name="Panel" type="HFlowContainer" parent="Level Results/Container/BoxContainer" unique_id=1955110441]
 custom_minimum_size = Vector2(320, 0)
 layout_mode = 2
 size_flags_vertical = 4
 alignment = 1
 
-[node name="Replay" type="Button" parent="Level Results/Container/BoxContainer/Panel" unique_id=1904150237]
+[node name="Replay" type="Button" parent="Level Results/Container/BoxContainer/Panel" unique_id=321048610]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 10
 text = "Replay"
 
-[node name="ButtonSound DownUp" parent="Level Results/Container/BoxContainer/Panel/Replay" unique_id=195620157 instance=ExtResource("6_s3vaa")]
+[node name="ButtonSound DownUp" parent="Level Results/Container/BoxContainer/Panel/Replay" unique_id=1022924308 instance=ExtResource("6_s3vaa")]
 
-[node name="Next Level" type="Button" parent="Level Results/Container/BoxContainer/Panel" unique_id=219272830]
+[node name="Next Level" type="Button" parent="Level Results/Container/BoxContainer/Panel" unique_id=1618509693]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 10
 text = "Next Level"
 
-[node name="ButtonSound DownUp" parent="Level Results/Container/BoxContainer/Panel/Next Level" unique_id=1258649347 instance=ExtResource("6_s3vaa")]
+[node name="ButtonSound DownUp" parent="Level Results/Container/BoxContainer/Panel/Next Level" unique_id=1118520179 instance=ExtResource("6_s3vaa")]
 
-[node name="Quit" type="Button" parent="Level Results/Container/BoxContainer/Panel" unique_id=722774201]
+[node name="Quit" type="Button" parent="Level Results/Container/BoxContainer/Panel" unique_id=1242491075]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 10
 text = "Quit"
 
-[node name="ButtonSound DownUp" parent="Level Results/Container/BoxContainer/Panel/Quit" unique_id=478437252 instance=ExtResource("6_s3vaa")]
+[node name="ButtonSound DownUp" parent="Level Results/Container/BoxContainer/Panel/Quit" unique_id=1779572153 instance=ExtResource("6_s3vaa")]
 
-[node name="Dialogue" type="CanvasLayer" parent="." unique_id=2001474479]
+[node name="Dialogue" type="CanvasLayer" parent="." unique_id=519059366]
 layer = 2
 
-[node name="Textbox" parent="Dialogue" unique_id=1851480463 instance=ExtResource("2_ijstf")]
+[node name="Textbox" parent="Dialogue" unique_id=2055871009 instance=ExtResource("2_ijstf")]
 
 [connection signal="button_down" from="Level Results/Container/BoxContainer/Panel/Replay" to="Level Results/Container/BoxContainer/Panel/Replay/ButtonSound DownUp" method="_on_play_button_down"]
 [connection signal="button_up" from="Level Results/Container/BoxContainer/Panel/Replay" to="Level Results/Container/BoxContainer/Panel/Replay/ButtonSound DownUp" method="_on_play_button_up"]

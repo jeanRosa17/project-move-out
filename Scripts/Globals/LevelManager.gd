@@ -9,6 +9,7 @@ var scenePath:String
 var progress: Array = []
 var useSubThreads: bool = true ## Loads the scene on a seperate Thread. If game crashes, set to false.
 
+var loadInProgress:bool = false
 
 func _ready() -> void:
 	set_process(false)
@@ -30,8 +31,9 @@ const CIRCLE_TRANSITION = preload("uid://dnx65kt5siyol")
 func loadScene(_scenePath:String, transition:LevelManager.Transitions = Transitions.FADE) -> void:
 	self.scenePath = _scenePath
 	
-	
+	loadInProgress = true
 	match transition:
+
 		Transitions.FADE:
 			var newLoadScreen:Node = FADE_TRANSITION.instantiate()
 			self.add_child(newLoadScreen)
@@ -46,6 +48,7 @@ func loadScene(_scenePath:String, transition:LevelManager.Transitions = Transiti
 			await newLoadScreen.loading_screen_ready
 	
 	startLoad()
+	loadInProgress = false
 
 ## Sends a reques to the ResourceLoader to load self.scenePath on a thread if self.useSubThreads == true.
 func startLoad() -> void:
