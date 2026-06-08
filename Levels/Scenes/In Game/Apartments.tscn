@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://bh0p10hhemt1" path="res://Assets/Objects/Bathroom/Scenes/Toilet_Side2.tscn" id="14_s77ne"]
 [ext_resource type="PackedScene" uid="uid://dlj0g6t453wk6" path="res://Assets/Objects/Bathroom/Scenes/Sink_Side.tscn" id="15_te8i2"]
 [ext_resource type="PackedScene" uid="uid://c63sjbuok03ik" path="res://Assets/Objects/Kitchen/Microwave.tscn" id="16_te8i2"]
-[ext_resource type="PackedScene" uid="uid://co1ahpewxcatg" path="res://Assets/Objects/Kitchen/Blender.tscn" id="16_xsn4a"]
+[ext_resource type="PackedScene" uid="uid://cej1okt6o4xno" path="res://Assets/Objects/Kitchen/Blender.tscn" id="16_xsn4a"]
 [ext_resource type="Script" uid="uid://1ugs6cpgg5xy" path="res://Levels/Scenes/Tutorial/trigger_sensor.gd" id="18_m46ep"]
 [ext_resource type="Script" uid="uid://bmqryoobj44j2" path="res://Scripts/Dialogue/DialogueTag.gd" id="19_82rdr"]
 [ext_resource type="PackedScene" uid="uid://coa7mf03ty0ht" path="res://Assets/Objects/Couches/electric_couch_side.tscn" id="20_kjjct"]
@@ -454,19 +454,25 @@ position = Vector2(592, 96)
 [node name="Tetris" parent="." index="13" unique_id=762999373]
 position = Vector2(1184, 0)
 
+[node name="TetrisCamera" parent="Tetris" index="0" unique_id=840978758]
+offset = Vector2(24, -4)
+
+[node name="Board" parent="Tetris" index="4" unique_id=1068667642]
+tile_map_data = PackedByteArray("AAD5//T/AQAAAAAAAAD5//X/AQAAAAIAAAD5//b/AQAAAAIAAAD5//f/AQAAAAIAAAD5//j/AQAAAAIAAAD5//n/AQAAAAIAAAD5//r/AQAAAAIAAAD5//v/AQAAAAIAAAD5//z/AQAAAAIAAAD5//3/AQAAAAIAAAD5//7/AQAAAAIAAAD5////AQAAAAIAAAD5/wAAAQAAAAIAAAD5/wEAAQAAAAIAAAD5/wIAAQAAAAIAAAD5/wMAAQAAAAIAAAD5/wQAAQAAAAIAAAD5/wUAAQAAAAIAAAD5/wYAAQAAAAIAAAD5/wcAAQAAAAIAAAD5/wgAAQAAAAIAAAD5/wkAAQAAAAIAAAD5/woAAQAAAAIAAAD5/wsAAQAAAAMAAAD6/wsAAQACAAMAAAD7/wsAAQACAAMAAAD8/wsAAQACAAMAAAD9/wsAAQACAAMAAAD+/wsAAQACAAMAAAD//wsAAQACAAMAAAAAAAsAAQACAAMAAAABAAsAAQACAAMAAAACAAsAAQACAAMAAAADAAsAAQACAAMAAAAEAAsAAQACAAMAAAAFAAsAAQACAAMAAAAGAPT/AQADAAAAAAAGAAsAAQADAAMAAAAGAPX/AQADAAEAAAAGAPb/AQADAAEAAAAGAPf/AQADAAEAAAAGAPj/AQADAAEAAAAGAPn/AQADAAEAAAAGAPr/AQADAAEAAAAGAPv/AQADAAEAAAAGAPz/AQADAAEAAAAGAP3/AQADAAEAAAAGAP7/AQADAAEAAAAGAP//AQADAAEAAAAGAAAAAQADAAEAAAAGAAEAAQADAAEAAAAGAAIAAQADAAEAAAAGAAMAAQADAAEAAAAGAAQAAQADAAEAAAAGAAUAAQADAAEAAAAGAAYAAQADAAEAAAAGAAcAAQADAAEAAAAGAAgAAQADAAEAAAAGAAkAAQADAAEAAAAGAAoAAQADAAEAAAD6//T/AQACAAAAAAD7//T/AQACAAAAAAD8//T/AQACAAAAAAD9//T/AQACAAAAAAD+//T/AQACAAAAAAD///T/AQACAAAAAAAAAPT/AQACAAAAAAABAPT/AQACAAAAAAADAPT/AQACAAAAAAAEAPT/AQACAAAAAAACAPT/AQACAAAAAAAFAPT/AQACAAAAAAAMAPX/AQACAAAAAAANAPX/AQACAAAAAAAMAPr/AQABAAMAAAANAPr/AQABAAMAAAALAPb/AQAAAAEAAAALAPf/AQAAAAEAAAALAPj/AQAAAAEAAAALAPn/AQAAAAEAAAAOAPX/AQACAAAAAAAPAPX/AQACAAAAAAAOAPr/AQABAAMAAAAPAPr/AQABAAMAAAAQAPb/AQADAAIAAAAQAPf/AQADAAIAAAAQAPj/AQADAAIAAAAQAPn/AQADAAIAAAAQAPX/AQADAAAAAAAQAPr/AQADAAMAAAALAPr/AQAAAAMAAAALAPX/AQAAAAAAAAD6/wkAAAAFAAEAAAD6/woAAAAFAAIAAAD7/wkAAAAGAAEAAAD7/woAAAAGAAIAAAD8/wkAAAAHAAEAAAD8/woAAAAHAAIAAAADAAkAAAAFAAEAAAADAAoAAAAFAAIAAAAEAAkAAAAGAAEAAAAEAAoAAAAGAAIAAAAFAAkAAAAHAAEAAAAFAAoAAAAHAAIAAAADAAcAAAAFAAAAAAADAAgAAAAFAAEAAAAEAAcAAAAGAAAAAAAEAAgAAAAGAAEAAAAFAAcAAAAHAAAAAAAFAAgAAAAHAAEAAAD6/wcAAAAFAAAAAAD6/wgAAAAFAAEAAAD7/wcAAAAGAAAAAAD7/wgAAAAGAAEAAAD8/wcAAAAHAAAAAAD8/wgAAAAHAAEAAAD6/wUAAAAFAAEAAAD6/wYAAAAFAAIAAAD7/wUAAAAGAAEAAAD7/wYAAAAGAAIAAAD8/wUAAAAHAAEAAAD8/wYAAAAHAAIAAAADAAUAAAAFAAEAAAADAAYAAAAFAAIAAAAEAAUAAAAGAAEAAAAEAAYAAAAGAAIAAAAFAAUAAAAHAAEAAAAFAAYAAAAHAAIAAAD6/wMAAAAFAAAAAAD6/wQAAAAFAAEAAAD7/wMAAAAGAAAAAAD7/wQAAAAGAAEAAAD8/wMAAAAHAAAAAAD8/wQAAAAHAAEAAAADAAMAAAAFAAAAAAADAAQAAAAFAAEAAAAEAAMAAAAGAAAAAAAEAAQAAAAGAAEAAAAFAAMAAAAHAAAAAAAFAAQAAAAHAAEAAAD6/wAAAAAFAAAAAAD6/wEAAAAFAAEAAAD6/wIAAAAFAAIAAAD7/wAAAAAGAAAAAAD7/wEAAAAGAAEAAAD7/wIAAAAGAAIAAAD8/wAAAAAHAAAAAAD8/wEAAAAHAAEAAAD8/wIAAAAHAAIAAAADAAAAAAAFAAAAAAADAAEAAAAFAAEAAAADAAIAAAAFAAIAAAAEAAAAAAAGAAAAAAAEAAEAAAAGAAEAAAAEAAIAAAAGAAIAAAAFAAAAAAAHAAAAAAAFAAEAAAAHAAEAAAAFAAIAAAAHAAIAAAA=")
+
 [node name="HUD" parent="." index="14" unique_id=1725586568]
 visible = false
 
-[node name="ListHUD" parent="HUD" index="0" unique_id=1378780322]
+[node name="ListHUD" parent="HUD" index="0" unique_id=1888669433]
 visible = false
 
-[node name="ItemList" parent="HUD/ListHUD" index="0" unique_id=478689423 node_paths=PackedStringArray("needed")]
+[node name="ItemList" parent="HUD/ListHUD" index="0" unique_id=1184501359 node_paths=PackedStringArray("needed")]
 needed = [NodePath("../../../Y-Sorting/Wood_Chair_Side"), NodePath("../../../Y-Sorting/Wood_Chair_Side2"), NodePath("../../../Y-Sorting/Fire Chair"), NodePath("../../../Y-Sorting/Ice Chair"), NodePath("../../../Y-Sorting/Fridge"), null, NodePath("../../../Y-Sorting/Box4"), NodePath("../../../Y-Sorting/Table4"), null, NodePath("../../../Y-Sorting/Ice Bed"), NodePath("../../../Y-Sorting/Ice Wardrobe"), NodePath("../../../Y-Sorting/Ice Table"), NodePath("../../../Y-Sorting/Ice Shelf"), NodePath("../../../Y-Sorting/Fire Bed"), NodePath("../../../Y-Sorting/Table"), NodePath("../../../Y-Sorting/Fire Wardrobe"), NodePath("../../../Y-Sorting/Fire Shelf"), NodePath("../../../Y-Sorting/Pot"), NodePath("../../../Y-Sorting/Box8"), NodePath("../../../Y-Sorting/Box9"), NodePath("../../../Y-Sorting/Box5"), NodePath("../../../Y-Sorting/Box7"), NodePath("../../../Y-Sorting/Box6"), NodePath("../../../Y-Sorting/Microwave"), NodePath("../../../Y-Sorting/Box")]
 
-[node name="Level Results" parent="HUD" index="1" unique_id=720231760]
+[node name="Level Results" parent="HUD" index="1" unique_id=1269238119]
 visible = false
 
-[node name="Dialogue" parent="HUD" index="2" unique_id=2001474479]
+[node name="Dialogue" parent="HUD" index="2" unique_id=519059366]
 visible = false
 
 [node name="TriggerSensor" type="Area2D" parent="." index="15" unique_id=409281390]
@@ -519,4 +525,5 @@ one_way_collision_margin = 0.0
 [editable path="Y-Sorting/Door2"]
 [editable path="Y-Sorting/Door3"]
 [editable path="Y-Sorting/Door4"]
+[editable path="Tetris"]
 [editable path="HUD"]
