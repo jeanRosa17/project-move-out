@@ -200,11 +200,8 @@ region = Rect2(192, 0, 48, 48)
 atlas = ExtResource("24_vo027")
 region = Rect2(240, 0, 48, 48)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2xab4"]
-load_path = "res://.godot/imported/Door-Sheet.png-14773c93ffe120c1cd2e410a359dbc23.ctex"
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_wllpb"]
-atlas = SubResource("CompressedTexture2D_2xab4")
+atlas = ExtResource("24_vo027")
 region = Rect2(0, 48, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1x77j"]
@@ -733,7 +730,7 @@ metadata/_custom_type_script = "uid://c2vh27coguldq"
 [node name="Player" type="CharacterBody2D" parent="Y-Sorting" unique_id=1761221807 instance=ExtResource("5_tg7fd")]
 unique_name_in_owner = true
 y_sort_enabled = true
-position = Vector2(1023.9573, -4.898958)
+position = Vector2(1039.2505, -0.5059043)
 collision_mask = 6
 motion_mode = 1
 wall_min_slide_angle = 3.1415927
@@ -910,7 +907,7 @@ visible = false
 z_index = -1
 position = Vector2(59, 0)
 texture = ExtResource("18_b3qxb")
-offset = Vector2(0, 1.9723688)
+offset = Vector2(0, -0.33998013)
 
 [node name="TetrisRunner" parent="Y-Sorting/Storage Van/Loading Carpet" index="0" unique_id=456820073]
 collision_layer = 7
@@ -967,6 +964,7 @@ top_level = true
 position = Vector2(0, 42)
 
 [node name="CollisionShape2D" parent="Y-Sorting/Storage Van/Leave Area" index="4" unique_id=1864252806]
+position = Vector2(-16.011723, 0)
 shape = SubResource("RectangleShape2D_k1l4a")
 
 [node name="AnimationPlayer" parent="Y-Sorting/Storage Van" index="3" unique_id=2078876963]
@@ -1429,7 +1427,6 @@ one_way_collision_margin = 0.0
 [connection signal="body_shape_entered" from="Y-Sorting/Old TV/AreaDetector" to="Y-Sorting/Old TV" method="_on_area_detector_body_shape_entered"]
 [connection signal="body_shape_exited" from="Y-Sorting/Old TV/AreaDetector" to="Y-Sorting/Old TV" method="_on_area_detector_body_shape_exited"]
 [connection signal="body_entered" from="Y-Sorting/Storage Van/Loading Carpet/TetrisRunner" to="Y-Sorting/Storage Van/Loading Carpet/TetrisRunner" method="_on_body_entered"]
-[connection signal="body_exited" from="Y-Sorting/Storage Van/Loading Carpet/TetrisRunner" to="Y-Sorting/Storage Van" method="_trigger_tetris"]
 [connection signal="body_exited" from="Y-Sorting/Storage Van/Loading Carpet/TetrisRunner" to="Y-Sorting/Storage Van/Loading Carpet/TetrisRunner" method="_on_body_exited"]
 [connection signal="body_entered" from="Y-Sorting/Storage Van/Leave Area" to="Y-Sorting/Storage Van/Leave Area" method="_on_body_entered"]
 [connection signal="body_exited" from="Y-Sorting/Storage Van/Leave Area" to="Y-Sorting/Storage Van/Leave Area" method="_on_body_exited"]
