@@ -326,6 +326,7 @@ var next_piece_atlas: Vector2i
 @onready var active_layer: TileMapLayer = $Active
 @onready var preview_layer: TileMapLayer = $Preview
 @onready var hud:HUDManager = %HUD
+@onready var score_text: RichTextLabel = $ScoreValue
 
 var audio_player:TetrisAudio
 
@@ -460,6 +461,8 @@ func move_tetromino(direction: Vector2i) -> void:
 	else: 
 		if direction == Vector2i.DOWN:
 			land_tetromino()
+			#update score value
+			score_text.text = str(score)
 			current_tetromino_type = next_tetromino_type
 			next_tetromino_type = choose_tetromino()
 			clear_next_tetromino_preview()
@@ -525,6 +528,8 @@ func is_game_over() -> void:
 		for block in active_tetromino:
 			if not is_within_bounds(block["pos"] + current_position):
 				land_tetromino()
+				#update score value
+				score_text.text = str(score)
 				is_game_running = false
 				print("You lose idiot!")
 				game_over = true

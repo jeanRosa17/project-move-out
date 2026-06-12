@@ -18,6 +18,7 @@ var player_camera: Camera2D
 var levelFinished: bool = false
 var allFurniture: Array
 var hud_score: int
+var item_count: int = 0
 
 ## ensures dialogue is invisible at the start of the level
 func _ready() ->void:
