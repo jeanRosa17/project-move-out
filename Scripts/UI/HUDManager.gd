@@ -8,7 +8,7 @@ class_name HUDManager
 @export var textbox: DialogueManager 
 @onready var ap: AnimationPlayer = $"Level Results/Node2D/AnimationPlayer"
 @onready var item_list:ItemList = $ListHUD/ItemList
-@onready var required_items = item_list.size
+@onready var required_items: int = item_list.needed.size()
 
 @export var packedFurniture: Array[Data.Tetronimo] = []
 @export var player: Player
@@ -20,6 +20,7 @@ var levelFinished: bool = false
 var allFurniture: Array
 var hud_score: int
 var best_score: float = 0
+var stored_items: float = 0
 
 ## ensures dialogue is invisible at the start of the level
 func _ready() ->void:
@@ -28,8 +29,8 @@ func _ready() ->void:
 		self.setAllOff()
 	#self.dialogue.visible = false  
 	
-	best_score = calc_best_score()
-	print("Best possible score: ", best_score)
+	if(tetris != null):
+		best_score = calc_best_score()
 	
 ## Helper function that makes all other CanvasLayers of the Hud turn off when
 ## the root HUD node is set invisible
@@ -102,7 +103,7 @@ func setDialogueTo(dTag:DialogueTag) -> void:
 
 func addPackedFurniture(newFurniture:Data.Tetronimo) -> void:
 	packedFurniture.append(newFurniture)
-	#print("new tetro: " + packedFurniture[-1])
+	stored_items += 1
 
 func checkResults() -> void:
 	
@@ -111,8 +112,14 @@ func checkResults() -> void:
 	var current_scene = get_tree().current_scene
 	if (current_scene.name != "HubScene"):
 		var _text:RichTextLabel = self.level_results.find_child("Score")
-		var percent:float = (float (hud_score)/item_list.item_count) * 100
-		_text.text = "Completion: " + str(percent).pad_decimals(2)
+		var percent:float = calc_total_score()
+		var scoreText: String = ""
+		scoreText += "Score: "
+		scoreText += str(percent).pad_decimals(2)
+		scoreText += " / "
+		scoreText += str(best_score).pad_decimals(2)
+		_text.text = scoreText
+		# _text.text = "Score: " + str(percent).pad_decimals(2) + " / " + str(best_score).pad_decimals(2)_
 
 	self.dialogue.visible = false
 	await get_tree().create_timer(0.3).timeout
@@ -151,33 +158,37 @@ func _on_no_leave_level_button_down() -> void:
 ## !! we currently miss edge cases where the player
 ## packs a bunch of items but fails tetris
 func calc_total_score() -> float:
-	var percent_complete = (1 - (item_list.size/required_items))
-	var total_score = tetris.get_score * percent_complete
+	var percent_complete: float = stored_items/required_items
+	# make missing items a lighter modifier
+	var adjusted_completeness = 0.5 + (percent_complete / 2)
+	var total_score: float = tetris.score * adjusted_completeness
 	return total_score
 
 ## calculates the best possible score for the level
 func calc_best_score() -> float:
 	var tetromino_score = 0
-	for i in range(item_list.needed.size):
-		if item_list.needed[i] == null:
+	var tempFurniture: Furniture
+	for i in range(item_list.needed.size()):
+		tempFurniture = item_list.fetch_item(i)
+		if tempFurniture == null:
 			continue
-		print("null item")
-		match item_list.needed[i].tetroShape:
-			Data.one_by_one:
+			print("null item")
+		match tempFurniture.getShape():
+			Data.Tetronimo.one_by_one:
 				tetromino_score += 1
-			Data.two_by_one:
+			Data.Tetronimo.two_by_one:
 				tetromino_score += 2
-			Data.three_by_one:
+			Data.Tetronimo.three_by_one:
 				tetromino_score += 3
-			Data.two_by_two:
+			Data.Tetronimo.two_by_two:
 				tetromino_score += 4
-			Data.three_by_two:
+			Data.Tetronimo.three_by_two:
 				tetromino_score += 6
-			Data.four_by_two:
+			Data.Tetronimo.four_by_two:
 				tetromino_score += 8
-			Data.three_by_three:
+			Data.Tetronimo.three_by_three:
 				tetromino_score += 9
-			Data.four_by_three:
+			Data.Tetronimo.four_by_three:
 				tetromino_score += 12
-				
+
 	return tetromino_score * tetris.max_score_multiplier

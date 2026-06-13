@@ -302,7 +302,7 @@ var score: int = 0
 @export var MIN_ROW: int = -12   #top value of tetris board
 @export var MAX_ROW: int = 11    #bottom value of tetris board
 
-@export var max_score_multiplier: int = 2
+@export var max_score_multiplier: int = 1
 
 const START_POSITION: Vector2i = Vector2i(-1, -11)
 var current_position: Vector2i

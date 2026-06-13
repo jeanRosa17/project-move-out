@@ -730,7 +730,7 @@ metadata/_custom_type_script = "uid://c2vh27coguldq"
 [node name="Player" type="CharacterBody2D" parent="Y-Sorting" unique_id=1761221807 instance=ExtResource("5_tg7fd")]
 unique_name_in_owner = true
 y_sort_enabled = true
-position = Vector2(1039.2505, -0.5059043)
+position = Vector2(1030.1538, -4.898958)
 collision_mask = 6
 motion_mode = 1
 wall_min_slide_angle = 3.1415927
@@ -907,7 +907,7 @@ visible = false
 z_index = -1
 position = Vector2(59, 0)
 texture = ExtResource("18_b3qxb")
-offset = Vector2(0, -0.33998013)
+offset = Vector2(0, 0.040701065)
 
 [node name="TetrisRunner" parent="Y-Sorting/Storage Van/Loading Carpet" index="0" unique_id=456820073]
 collision_layer = 7

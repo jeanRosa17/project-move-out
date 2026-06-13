@@ -23,3 +23,9 @@ func _process(float) -> void:
 		else:
 			layer.visible = true
 	
+
+func fetch_item(index: int) -> Furniture:
+	if needed[index] == null:
+		return null
+	else:
+		return needed[index]

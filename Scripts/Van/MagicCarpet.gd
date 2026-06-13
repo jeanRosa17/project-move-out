@@ -4,11 +4,12 @@ extends Area2D
 
 var playerInArea:bool
 var player:Player
+var heldFurniture:Furniture
 @export var vanDoor:Area2D
 @export var furniture:Array[Node]
 
 func _ready() -> void:
-	playerInArea = false;
+	playerInArea = false
 
 func _process(_delta:float)  -> void:
 	if (playerInArea && Input.is_action_just_pressed("Interact")):
@@ -23,20 +24,22 @@ func clearVan() -> void:
 		
 		for body in bodies:
 			if body.is_in_group("Furniture"):
-				Data.previousItemList.append(body.duplicate())
-				hud.addPackedFurniture(body.getShape())
-				body.packInBox()
-				#bodies[i].queue_free()
-		
-		# hud.runTetris()
+				if(body != heldFurniture):
+					Data.previousItemList.append(body.duplicate())
+					hud.addPackedFurniture(body.getShape())
+					body.packInBox()
+	
 
 # tracks if the player is on the carpet.
 func _on_body_entered(body: Node2D) -> void:
 	if (body is Player):
-		playerInArea = true;
+		playerInArea = true
 		player = body
 
 func _on_body_exited(body: Node2D) -> void:
 	if (body is Player):
+		heldFurniture = null
+		if(body.manager.hasFurniture):
+			heldFurniture = player.manager.furniture
 		playerInArea = false
 		clearVan()

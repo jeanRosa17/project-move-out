@@ -570,7 +570,7 @@ func packInBox() -> void:
 	child.position = self.position
 	#self.reparent(child.marker_2d)
 	
-	#t.set_parallel(false)
+	# t.set_parallel(false)
 	t.tween_property(self, "position:y", -8, 0.2).from(0).set_delay(0.33)
 	#t.tween_property(self, "position:y", 8, 0.2).from(0).set_delay(0.33)
 	t.parallel()
