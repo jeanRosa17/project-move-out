@@ -106,7 +106,6 @@ func addPackedFurniture(newFurniture:Data.Tetronimo) -> void:
 	stored_items += 1
 
 func checkResults() -> void:
-	
 	self.player.setControls(false)
 
 	var current_scene = get_tree().current_scene
@@ -125,6 +124,7 @@ func checkResults() -> void:
 	await get_tree().create_timer(0.3).timeout
 	if (current_scene.name != "HubScene"):
 		ap.play("Complete")
+	player.manager.changeState("Idle")
 	self.level_results.visible = true
 
 ## Ensures that the Dialogue Box turns itself off when the dialogue is finished.
@@ -166,7 +166,7 @@ func calc_total_score() -> float:
 
 ## calculates the best possible score for the level
 func calc_best_score() -> float:
-	var tetromino_score = 0
+	var tetromino_score: int = 0
 	var tempFurniture: Furniture
 	for i in range(item_list.needed.size()):
 		tempFurniture = item_list.fetch_item(i)

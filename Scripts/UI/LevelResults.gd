@@ -13,6 +13,11 @@ var transition_audio:AudioStreamPlayer2D
 var canPress:bool = true
 
 func _on_next_level_pressed() -> void:
+	if(canPress):
+		canPress = false
+	else:
+		return
+	
 	if (!LevelManager.loadInProgress):
 		transition_audio = find_child("Level Transition Audio")
 		Data.levelNum += 1
@@ -21,6 +26,11 @@ func _on_next_level_pressed() -> void:
 		transition_audio.play()
 
 func _on_replay_level_pressed() -> void:
+	if(canPress):
+		canPress = false
+	else:
+		return
+	
 	var current_scene := get_tree().current_scene
 	transition_audio = find_child("Level Transition Audio")
 	if current_scene:
@@ -29,6 +39,11 @@ func _on_replay_level_pressed() -> void:
 		transition_audio.play()
 
 func _on_exit_game_pressed() -> void:
+	if(canPress):
+		canPress = false
+	else:
+		return
+	
 	#get_tree().quit()
 	transition_audio = find_child("Level Transition Audio")
 	LevelManager.loadScene("res://Scripts/UI/Scenes/TitleScreen.tscn")
