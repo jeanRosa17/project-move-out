@@ -7,15 +7,15 @@ var newHub:String:
 	["uid://crm2fqqeyg12f", #Tutorial - Storage Unit v2
 	 "uid://jre5761gc8o1", #HubScene
 	"uid://cdnij7booxhs4", #Apartments
-	newHub,
+	#newHub,
 	"uid://dlp1pmhousfx7", #Poolalt,
-	newHub,
+	#newHub,
 	"uid://cfcephiffwtxg", #RodriguezHouse
-	newHub,
+	#newHub,
 	"uid://d317crqywlqve", #IceHouseAlt
-	newHub,
+	#newHub,
 	"uid://c766m53y8wrk4", #FratHouseAlt
-	newHub,
+	#newHub,
 	"uid://bb3dywxtdya3a", #DollHouse
 	"uid://rtrhhspwen6a" #TitleScreen
 	]

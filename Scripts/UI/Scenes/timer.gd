@@ -2,10 +2,12 @@ extends Node2D
 
 @onready var label = $Label
 @onready var timer = $Timer
+var is_active: bool
 
 func _ready() -> void:
 	timer.timeout.connect(_on_timer_timeout)
 	timer.start()
+	is_active = true
 	
 
 func time_left_until_end():

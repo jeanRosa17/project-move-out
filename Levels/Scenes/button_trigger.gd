@@ -10,7 +10,7 @@ func _ready() -> void:
 
 func _process(_delta:float)  -> void:
 	# try to call the level manager to advance to tetris
-	if (Input.is_action_just_pressed("Lift") && playerIn):
+	if (Input.is_action_just_pressed("Interact") && playerIn):
 		print("pressed")
 		
 		

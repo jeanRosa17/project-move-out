@@ -10,7 +10,7 @@
 size = Vector2(56, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k1l4a"]
-size = Vector2(47.976547, 32)
+size = Vector2(80, 32)
 
 [sub_resource type="Animation" id="Animation_u5oop"]
 resource_name = "Floating"

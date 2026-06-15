@@ -1,6 +1,6 @@
 #start {
 	It's a good thing I had the funds to rent an apartment.
-	It doesn't really need to be decorated, Ah'll just hop in my van when I'm ready to go.
+	It doesn't really need to be decorated, Ah'll just head out the door when I'm ready to go.
 }
 
 #shelf {

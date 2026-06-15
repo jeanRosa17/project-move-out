@@ -1,7 +1,7 @@
 #start {
-	My first job in a while, lucky me they just hired me to empty this old storage unit.
-	(use WSAD to move, e to open doors, and space to pick up and push objects)
+	My first job in a while, lucky they just hired me to empty this old storage unit.
 	The space magic on my carpet should be able to handle everything here easily, 'f I pack it well.'
+	(use WSAD to move, e to interact with doors, the carpet, and the truck, and space to pick up and push objects)
 }
 
 #shelf {

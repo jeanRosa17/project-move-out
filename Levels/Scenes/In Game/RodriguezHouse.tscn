@@ -33,7 +33,7 @@
 [ext_resource type="AudioStream" uid="uid://b1gx2u1temfdh" path="res://Assets/Audio/rodriguez restauaraunt.wav" id="25_4q68l"]
 [ext_resource type="Texture2D" uid="uid://byeei70f2yc5p" path="res://Assets/Objects/Dressers & Shelves/wardrobe-sheet.png" id="25_ypkbl"]
 [ext_resource type="Texture2D" uid="uid://bbrra3i2smrsc" path="res://Assets/Objects/Dressers & Shelves/wardrobe_3.png" id="26_3bgmp"]
-[ext_resource type="Script" path="res://Levels/level_music_sync.gd" id="26_axvio"]
+[ext_resource type="Script" uid="uid://d0ca3o034njdg" path="res://Levels/level_music_sync.gd" id="26_axvio"]
 [ext_resource type="PackedScene" uid="uid://c1m5u3p8uir82" path="res://Levels/Prefabs/Teleporter.tscn" id="27_ql21c"]
 [ext_resource type="Script" uid="uid://1ugs6cpgg5xy" path="res://Levels/Scenes/Tutorial/trigger_sensor.gd" id="28_4qrtp"]
 

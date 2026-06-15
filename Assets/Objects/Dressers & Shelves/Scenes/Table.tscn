@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cd8oa26fgbila" path="res://Assets/Objects/Tables/Tables-Sheet.png" id="2_ms1eq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnri0"]
-size = Vector2(32, 34)
+size = Vector2(28, 34)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m2862"]
 size = Vector2(42, 51)

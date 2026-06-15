@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://digo2hq2r3kvr" path="res://Assets/Objects/Table Items/Boxes-Sheet.png" id="4_cntxc"]
 [ext_resource type="Texture2D" uid="uid://c24ta3tikijpu" path="res://Assets/Objects/Table Items/Trash-Sheet.png" id="6_7van5"]
 [ext_resource type="AudioStream" uid="uid://de7tvpqomd55s" path="res://Assets/Audio/tetris landing thunk.wav" id="6_cntxc"]
-[ext_resource type="Script" uid="uid://fsccwseysgnw" path="res://Levels/Post-Level Minigame/TetrisAudio.gd" id="6_uh4k2"]
+[ext_resource type="Script" path="res://Levels/Post-Level Minigame/TetrisAudio.gd" id="6_uh4k2"]
 [ext_resource type="TileSet" uid="uid://c7j0gyu0tnn1m" path="res://Levels/Tileset Resources/MainTileSet.tres" id="7_bggkb"]
 [ext_resource type="AudioStream" uid="uid://bxq71pwdt1ist" path="res://Assets/Audio/tetris tick.wav" id="8_cntxc"]
 [ext_resource type="Theme" uid="uid://bxr4bn083148b" path="res://Scripts/UI/Resources/MainTheme.tres" id="9_ir2mp"]
